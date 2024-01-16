@@ -1,0 +1,193 @@
+package resource
+
+import (
+	"encoding/json"
+
+	tfjson "github.com/hashicorp/terraform-json"
+)
+
+const awsccCleanroomsCollaboration = `{
+  "block": {
+    "attributes": {
+      "arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "collaboration_identifier": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "creator_display_name": {
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "creator_member_abilities": {
+        "description_kind": "plain",
+        "required": true,
+        "type": [
+          "set",
+          "string"
+        ]
+      },
+      "creator_payment_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "query_compute": {
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "is_responsible": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "required": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "data_encryption_metadata": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "allow_cleartext": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "bool"
+            },
+            "allow_duplicates": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "bool"
+            },
+            "allow_joins_on_columns_with_different_names": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "bool"
+            },
+            "preserve_nulls": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "description": {
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "id": {
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "members": {
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "account_id": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "display_name": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "member_abilities": {
+              "description_kind": "plain",
+              "required": true,
+              "type": [
+                "set",
+                "string"
+              ]
+            },
+            "payment_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "query_compute": {
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "is_responsible": {
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "required": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "required": true
+      },
+      "name": {
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "query_log_status": {
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "An arbitrary set of tags (key-value pairs) for this cleanrooms collaboration.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "value": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      }
+    },
+    "description": "Represents a collaboration between AWS accounts that allows for secure data collaboration",
+    "description_kind": "plain"
+  },
+  "version": 1
+}`
+
+func AwsccCleanroomsCollaborationSchema() *tfjson.Schema {
+	var result tfjson.Schema
+	_ = json.Unmarshal([]byte(awsccCleanroomsCollaboration), &result)
+	return &result
+}

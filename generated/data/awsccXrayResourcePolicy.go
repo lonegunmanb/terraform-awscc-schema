@@ -1,0 +1,47 @@
+package data
+
+import (
+	"encoding/json"
+
+	tfjson "github.com/hashicorp/terraform-json"
+)
+
+const awsccXrayResourcePolicy = `{
+  "block": {
+    "attributes": {
+      "bypass_policy_lockout_check": {
+        "computed": true,
+        "description": "A flag to indicate whether to bypass the resource policy lockout safety check",
+        "description_kind": "plain",
+        "type": "bool"
+      },
+      "id": {
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "policy_document": {
+        "computed": true,
+        "description": "The resource policy document, which can be up to 5kb in size.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "policy_name": {
+        "computed": true,
+        "description": "The name of the resource policy. Must be unique within a specific AWS account.",
+        "description_kind": "plain",
+        "type": "string"
+      }
+    },
+    "description": "Data Source schema for AWS::XRay::ResourcePolicy",
+    "description_kind": "plain"
+  },
+  "version": 0
+}`
+
+func AwsccXrayResourcePolicySchema() *tfjson.Schema {
+	var result tfjson.Schema
+	_ = json.Unmarshal([]byte(awsccXrayResourcePolicy), &result)
+	return &result
+}

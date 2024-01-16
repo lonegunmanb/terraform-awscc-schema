@@ -1,0 +1,154 @@
+package resource
+
+import (
+	"encoding/json"
+
+	tfjson "github.com/hashicorp/terraform-json"
+)
+
+const awsccCleanroomsMembership = `{
+  "block": {
+    "attributes": {
+      "arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "collaboration_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "collaboration_creator_account_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "collaboration_identifier": {
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "default_result_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "output_configuration": {
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "s3": {
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "bucket": {
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "string"
+                        },
+                        "key_prefix": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "result_format": {
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "required": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "required": true
+            },
+            "role_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "id": {
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "membership_identifier": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "payment_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "query_compute": {
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "is_responsible": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "required": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "query_log_status": {
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "An arbitrary set of tags (key-value pairs) for this cleanrooms membership.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "value": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      }
+    },
+    "description": "Represents an AWS account that is a part of a collaboration",
+    "description_kind": "plain"
+  },
+  "version": 1
+}`
+
+func AwsccCleanroomsMembershipSchema() *tfjson.Schema {
+	var result tfjson.Schema
+	_ = json.Unmarshal([]byte(awsccCleanroomsMembership), &result)
+	return &result
+}

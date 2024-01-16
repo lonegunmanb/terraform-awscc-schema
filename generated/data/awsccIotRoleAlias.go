@@ -1,0 +1,70 @@
+package data
+
+import (
+	"encoding/json"
+
+	tfjson "github.com/hashicorp/terraform-json"
+)
+
+const awsccIotRoleAlias = `{
+  "block": {
+    "attributes": {
+      "credential_duration_seconds": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "id": {
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "role_alias": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "role_alias_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "role_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      }
+    },
+    "description": "Data Source schema for AWS::IoT::RoleAlias",
+    "description_kind": "plain"
+  },
+  "version": 0
+}`
+
+func AwsccIotRoleAliasSchema() *tfjson.Schema {
+	var result tfjson.Schema
+	_ = json.Unmarshal([]byte(awsccIotRoleAlias), &result)
+	return &result
+}

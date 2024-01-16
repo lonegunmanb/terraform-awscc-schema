@@ -1,0 +1,264 @@
+package resource
+
+import (
+	"encoding/json"
+
+	tfjson "github.com/hashicorp/terraform-json"
+)
+
+const awsccCloudtrailEventDataStore = `{
+  "block": {
+    "attributes": {
+      "advanced_event_selectors": {
+        "computed": true,
+        "description": "The advanced event selectors that were used to select events for the data store.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "field_selectors": {
+              "description": "Contains all selector statements in an advanced event selector.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "ends_with": {
+                    "computed": true,
+                    "description": "An operator that includes events that match the last few characters of the event record field specified as the value of Field.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
+                  "equals": {
+                    "computed": true,
+                    "description": "An operator that includes events that match the exact value of the event record field specified as the value of Field. This is the only valid operator that you can use with the readOnly, eventCategory, and resources.type fields.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
+                  "field": {
+                    "description": "A field in an event record on which to filter events to be logged. Supported fields include readOnly, eventCategory, eventSource (for management events), eventName, resources.type, and resources.ARN.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  },
+                  "not_ends_with": {
+                    "computed": true,
+                    "description": "An operator that excludes events that match the last few characters of the event record field specified as the value of Field.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
+                  "not_equals": {
+                    "computed": true,
+                    "description": "An operator that excludes events that match the exact value of the event record field specified as the value of Field.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
+                  "not_starts_with": {
+                    "computed": true,
+                    "description": "An operator that excludes events that match the first few characters of the event record field specified as the value of Field.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
+                  "starts_with": {
+                    "computed": true,
+                    "description": "An operator that includes events that match the first few characters of the event record field specified as the value of Field.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "set"
+              },
+              "required": true
+            },
+            "name": {
+              "computed": true,
+              "description": "An optional, descriptive name for an advanced event selector, such as \"Log data events for only two S3 buckets\".",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
+      "billing_mode": {
+        "computed": true,
+        "description": "The mode that the event data store will use to charge for event storage.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "created_timestamp": {
+        "computed": true,
+        "description": "The timestamp of the event data store's creation.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "event_data_store_arn": {
+        "computed": true,
+        "description": "The ARN of the event data store.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "federation_enabled": {
+        "computed": true,
+        "description": "Indicates whether federation is enabled on an event data store.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
+      "federation_role_arn": {
+        "computed": true,
+        "description": "The ARN of the role used for event data store federation.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "id": {
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "ingestion_enabled": {
+        "computed": true,
+        "description": "Indicates whether the event data store is ingesting events.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
+      "insight_selectors": {
+        "computed": true,
+        "description": "Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an existing event data store. Both InsightSelectors and InsightsDestination need to have a value in order to enable Insights events on an event data store.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "insight_type": {
+              "computed": true,
+              "description": "The type of Insights to log on an event data store.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
+      "insights_destination": {
+        "computed": true,
+        "description": "Specifies the ARN of the event data store that will collect Insights events. Both InsightSelectors and InsightsDestination need to have a value in order to enable Insights events on an event data store",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "kms_key_id": {
+        "computed": true,
+        "description": "Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by 'alias/', a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "multi_region_enabled": {
+        "computed": true,
+        "description": "Indicates whether the event data store includes events from all regions, or only from the region in which it was created.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
+      "name": {
+        "computed": true,
+        "description": "The name of the event data store.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "organization_enabled": {
+        "computed": true,
+        "description": "Indicates that an event data store is collecting logged events for an organization.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
+      "retention_period": {
+        "computed": true,
+        "description": "The retention period, in days.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
+      "status": {
+        "computed": true,
+        "description": "The status of an event data store. Values are STARTING_INGESTION, ENABLED, STOPPING_INGESTION, STOPPED_INGESTION and PENDING_DELETION.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "value": {
+              "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
+      "termination_protection_enabled": {
+        "computed": true,
+        "description": "Indicates whether the event data store is protected from termination.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
+      "updated_timestamp": {
+        "computed": true,
+        "description": "The timestamp showing when an event data store was updated, if applicable. UpdatedTimestamp is always either the same or newer than the time shown in CreatedTimestamp.",
+        "description_kind": "plain",
+        "type": "string"
+      }
+    },
+    "description": "A storage lake of event data against which you can run complex SQL-based queries. An event data store can include events that you have logged on your account from the last 7 to 2557 or 3653 days (about seven or ten years) depending on the selected BillingMode.",
+    "description_kind": "plain"
+  },
+  "version": 1
+}`
+
+func AwsccCloudtrailEventDataStoreSchema() *tfjson.Schema {
+	var result tfjson.Schema
+	_ = json.Unmarshal([]byte(awsccCloudtrailEventDataStore), &result)
+	return &result
+}

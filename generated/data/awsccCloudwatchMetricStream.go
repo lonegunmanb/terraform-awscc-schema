@@ -1,0 +1,196 @@
+package data
+
+import (
+	"encoding/json"
+
+	tfjson "github.com/hashicorp/terraform-json"
+)
+
+const awsccCloudwatchMetricStream = `{
+  "block": {
+    "attributes": {
+      "arn": {
+        "computed": true,
+        "description": "Amazon Resource Name of the metric stream.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "creation_date": {
+        "computed": true,
+        "description": "The date of creation of the metric stream.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "exclude_filters": {
+        "computed": true,
+        "description": "Define which metrics will be not streamed. Metrics matched by multiple instances of MetricStreamFilter are joined with an OR operation by default. If both IncludeFilters and ExcludeFilters are omitted, all metrics in the account will be streamed. IncludeFilters and ExcludeFilters are mutually exclusive. Default to null.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "metric_names": {
+              "computed": true,
+              "description": "Only metrics with MetricNames matching these values will be streamed. Must be set together with Namespace.",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "namespace": {
+              "computed": true,
+              "description": "Only metrics with Namespace matching this value will be streamed.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
+      "firehose_arn": {
+        "computed": true,
+        "description": "The ARN of the Kinesis Firehose where to stream the data.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "id": {
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "include_filters": {
+        "computed": true,
+        "description": "Define which metrics will be streamed. Metrics matched by multiple instances of MetricStreamFilter are joined with an OR operation by default. If both IncludeFilters and ExcludeFilters are omitted, all metrics in the account will be streamed. IncludeFilters and ExcludeFilters are mutually exclusive. Default to null.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "metric_names": {
+              "computed": true,
+              "description": "Only metrics with MetricNames matching these values will be streamed. Must be set together with Namespace.",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "namespace": {
+              "computed": true,
+              "description": "Only metrics with Namespace matching this value will be streamed.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
+      "include_linked_accounts_metrics": {
+        "computed": true,
+        "description": "If you are creating a metric stream in a monitoring account, specify true to include metrics from source accounts that are linked to this monitoring account, in the metric stream. The default is false.",
+        "description_kind": "plain",
+        "type": "bool"
+      },
+      "last_update_date": {
+        "computed": true,
+        "description": "The date of the last update of the metric stream.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "name": {
+        "computed": true,
+        "description": "Name of the metric stream.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "output_format": {
+        "computed": true,
+        "description": "The output format of the data streamed to the Kinesis Firehose.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "role_arn": {
+        "computed": true,
+        "description": "The ARN of the role that provides access to the Kinesis Firehose.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "state": {
+        "computed": true,
+        "description": "Displays the state of the Metric Stream.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "statistics_configurations": {
+        "computed": true,
+        "description": "By default, a metric stream always sends the MAX, MIN, SUM, and SAMPLECOUNT statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "additional_statistics": {
+              "computed": true,
+              "description": "The additional statistics to stream for the metrics listed in IncludeMetrics.",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "include_metrics": {
+              "computed": true,
+              "description": "An array that defines the metrics that are to have additional statistics streamed.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "metric_name": {
+                    "computed": true,
+                    "description": "The name of the metric.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "namespace": {
+                    "computed": true,
+                    "description": "The namespace of the metric.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
+      "tags": {
+        "computed": true,
+        "description": "A set of tags to assign to the delivery stream.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "A unique identifier for the tag.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "String which you can use to describe or define the tag.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      }
+    },
+    "description": "Data Source schema for AWS::CloudWatch::MetricStream",
+    "description_kind": "plain"
+  },
+  "version": 0
+}`
+
+func AwsccCloudwatchMetricStreamSchema() *tfjson.Schema {
+	var result tfjson.Schema
+	_ = json.Unmarshal([]byte(awsccCloudwatchMetricStream), &result)
+	return &result
+}
