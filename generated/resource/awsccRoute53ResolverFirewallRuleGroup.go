@@ -78,6 +78,13 @@ const awsccRoute53ResolverFirewallRuleGroup = `{
               "description_kind": "plain",
               "required": true,
               "type": "number"
+            },
+            "qtype": {
+              "computed": true,
+              "description": "Qtype",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             }
           },
           "nesting_mode": "set"

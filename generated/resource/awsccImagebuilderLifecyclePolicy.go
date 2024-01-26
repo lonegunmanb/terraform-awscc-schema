@@ -244,10 +244,9 @@ const awsccImagebuilderLifecyclePolicy = `{
                     "type": "string"
                   },
                   "semantic_version": {
-                    "computed": true,
                     "description": "The recipe version.",
                     "description_kind": "plain",
-                    "optional": true,
+                    "required": true,
                     "type": "string"
                   }
                 },

@@ -45,6 +45,13 @@ const awsccLogsAccountPolicy = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "selection_criteria": {
+        "computed": true,
+        "description": "Log group  selection criteria to apply policy only to a subset of log groups. SelectionCriteria string can be up to 25KB and cloudwatchlogs determines the length of selectionCriteria by using its UTF-8 bytes",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       }
     },
     "description": "The AWS::Logs::AccountPolicy resource specifies a CloudWatch Logs AccountPolicy.",

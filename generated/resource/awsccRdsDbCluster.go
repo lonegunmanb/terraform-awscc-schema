@@ -179,7 +179,7 @@ const awsccRdsDbCluster = `{
       },
       "enable_http_endpoint": {
         "computed": true,
-        "description": "A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint is disabled.",
+        "description": "A value that indicates whether to enable the HTTP endpoint for DB cluster. By default, the HTTP endpoint is disabled.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"

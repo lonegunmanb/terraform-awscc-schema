@@ -160,6 +160,36 @@ const awsccEc2IpamPool = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "source_resource": {
+        "computed": true,
+        "description": "The resource associated with this pool's space. Depending on the ResourceType, setting a SourceResource changes which space can be provisioned in this pool and which types of resources can receive allocations",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "resource_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "resource_owner": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "resource_region": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "resource_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "state": {
         "computed": true,
         "description": "The state of this pool. This can be one of the following values: \"create-in-progress\", \"create-complete\", \"modify-in-progress\", \"modify-complete\", \"delete-in-progress\", or \"delete-complete\"",

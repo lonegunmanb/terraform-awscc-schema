@@ -21,6 +21,12 @@ const awsccElasticloadbalancingv2LoadBalancer = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "enforce_security_group_inbound_rules_on_private_link_traffic": {
+        "computed": true,
+        "description": "Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through PrivateLink",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

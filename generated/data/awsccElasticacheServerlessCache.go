@@ -97,7 +97,7 @@ const awsccElasticacheServerlessCache = `{
               "computed": true,
               "description": "Endpoint port.",
               "description_kind": "plain",
-              "type": "number"
+              "type": "string"
             }
           },
           "nesting_mode": "single"
@@ -155,7 +155,7 @@ const awsccElasticacheServerlessCache = `{
               "computed": true,
               "description": "Endpoint port.",
               "description_kind": "plain",
-              "type": "number"
+              "type": "string"
             }
           },
           "nesting_mode": "single"
