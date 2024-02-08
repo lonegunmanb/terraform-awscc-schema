@@ -235,6 +235,11 @@ const awsccDynamodbTable = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "approximate_creation_date_time_precision": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "stream_arn": {
               "computed": true,
               "description_kind": "plain",

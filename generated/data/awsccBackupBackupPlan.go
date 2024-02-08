@@ -72,6 +72,11 @@ const awsccBackupBackupPlan = `{
                                 "computed": true,
                                 "description_kind": "plain",
                                 "type": "number"
+                              },
+                              "opt_in_to_archive_for_supported_resources": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
                               }
                             },
                             "nesting_mode": "single"
@@ -100,6 +105,11 @@ const awsccBackupBackupPlan = `{
                           "computed": true,
                           "description_kind": "plain",
                           "type": "number"
+                        },
+                        "opt_in_to_archive_for_supported_resources": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
                         }
                       },
                       "nesting_mode": "single"

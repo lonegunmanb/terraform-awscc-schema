@@ -766,6 +766,34 @@ const awsccSagemakerDomain = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "docker_settings": {
+              "computed": true,
+              "description": "A collection of settings that are required to start docker-proxy server.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enable_docker_access": {
+                    "computed": true,
+                    "description": "The flag to enable/disable docker-proxy server",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "vpc_only_trusted_accounts": {
+                    "computed": true,
+                    "description": "A list of account id's that would be used to pull images from in VpcOnly mode",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "r_studio_server_pro_domain_settings": {
               "computed": true,
               "description": "A collection of settings that update the current configuration for the RStudioServerPro Domain-level app.",

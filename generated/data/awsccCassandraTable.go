@@ -9,6 +9,146 @@ import (
 const awsccCassandraTable = `{
   "block": {
     "attributes": {
+      "auto_scaling_specifications": {
+        "computed": true,
+        "description": "Represents the read and write settings used for AutoScaling.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "read_capacity_auto_scaling": {
+              "computed": true,
+              "description": "Represents configuration for auto scaling.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "auto_scaling_disabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "maximum_units": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "minimum_units": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "scaling_policy": {
+                    "computed": true,
+                    "description": "Represents scaling policy.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "target_tracking_scaling_policy_configuration": {
+                          "computed": true,
+                          "description": "Represents configuration for target tracking scaling policy.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "disable_scale_in": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
+                              },
+                              "scale_in_cooldown": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "scale_out_cooldown": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "target_value": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "write_capacity_auto_scaling": {
+              "computed": true,
+              "description": "Represents configuration for auto scaling.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "auto_scaling_disabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "maximum_units": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "minimum_units": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "scaling_policy": {
+                    "computed": true,
+                    "description": "Represents scaling policy.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "target_tracking_scaling_policy_configuration": {
+                          "computed": true,
+                          "description": "Represents configuration for target tracking scaling policy.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "disable_scale_in": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
+                              },
+                              "scale_in_cooldown": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "scale_out_cooldown": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "target_value": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "billing_mode": {
         "computed": true,
         "description_kind": "plain",
@@ -168,6 +308,90 @@ const awsccCassandraTable = `{
             }
           },
           "nesting_mode": "set"
+        }
+      },
+      "replica_specifications": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "read_capacity_auto_scaling": {
+              "computed": true,
+              "description": "Represents configuration for auto scaling.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "auto_scaling_disabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "maximum_units": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "minimum_units": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "scaling_policy": {
+                    "computed": true,
+                    "description": "Represents scaling policy.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "target_tracking_scaling_policy_configuration": {
+                          "computed": true,
+                          "description": "Represents configuration for target tracking scaling policy.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "disable_scale_in": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
+                              },
+                              "scale_in_cooldown": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "scale_out_cooldown": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "target_value": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "read_capacity_units": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "region": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
         }
       },
       "table_name": {

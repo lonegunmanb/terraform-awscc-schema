@@ -44,7 +44,7 @@ const awsccIotFleetMetric = `{
         "computed": true,
         "description": "The creation date of a fleet metric",
         "description_kind": "plain",
-        "type": "number"
+        "type": "string"
       },
       "description": {
         "computed": true,
@@ -68,7 +68,7 @@ const awsccIotFleetMetric = `{
         "computed": true,
         "description": "The last modified date of a fleet metric",
         "description_kind": "plain",
-        "type": "number"
+        "type": "string"
       },
       "metric_arn": {
         "computed": true,

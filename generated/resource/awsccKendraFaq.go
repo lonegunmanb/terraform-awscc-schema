@@ -40,13 +40,6 @@ const awsccKendraFaq = `{
         "required": true,
         "type": "string"
       },
-      "language_code": {
-        "computed": true,
-        "description": "The code for a language.",
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
       "name": {
         "description": "FAQ name",
         "description_kind": "plain",

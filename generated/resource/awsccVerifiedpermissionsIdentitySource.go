@@ -85,9 +85,8 @@ const awsccVerifiedpermissionsIdentitySource = `{
         "type": "string"
       },
       "policy_store_id": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "principal_entity_type": {

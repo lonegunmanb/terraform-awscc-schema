@@ -27,6 +27,14 @@ const awsccEcsTaskDefinition = `{
               "description_kind": "plain",
               "type": "number"
             },
+            "credential_specs": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
             "depends_on": {
               "computed": true,
               "description_kind": "plain",

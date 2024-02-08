@@ -9,9 +9,15 @@ import (
 const awsccRedshiftserverlessNamespace = `{
   "block": {
     "attributes": {
+      "admin_password_secret_kms_key_id": {
+        "computed": true,
+        "description": "The ID of the AWS Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if manageAdminPassword is true.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "admin_user_password": {
         "computed": true,
-        "description": "The password associated with the admin user for the namespace that is being created. Password must be at least 8 characters in length, should be any printable ASCII character. Must contain at least one lowercase letter, one uppercase letter and one decimal digit.",
+        "description": "The password associated with the admin user for the namespace that is being created. Password must be at least 8 characters in length, should be any printable ASCII character. Must contain at least one lowercase letter, one uppercase letter and one decimal digit. You can't use adminUserPassword if manageAdminPassword is true.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -75,11 +81,28 @@ const awsccRedshiftserverlessNamespace = `{
           "string"
         ]
       },
+      "manage_admin_password": {
+        "computed": true,
+        "description": "If true, Amazon Redshift uses AWS Secrets Manager to manage the namespace's admin credentials. You can't use adminUserPassword if manageAdminPassword is true. If manageAdminPassword is false or not set, Amazon Redshift uses adminUserPassword for the admin user account's password.",
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "namespace": {
         "computed": true,
+        "description": "Definition of Namespace resource.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "admin_password_secret_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "admin_password_secret_kms_key_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "admin_username": {
               "computed": true,
               "description_kind": "plain",
@@ -148,6 +171,18 @@ const awsccRedshiftserverlessNamespace = `{
       "namespace_name": {
         "computed": true,
         "description": "A unique identifier for the namespace. You use this identifier to refer to the namespace for any subsequent namespace operations such as deleting or modifying. All alphabetical characters must be lower case. Namespace name should be unique for all namespaces within an AWS account.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "namespace_resource_policy": {
+        "computed": true,
+        "description": "The resource policy document that will be attached to the namespace.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "redshift_idc_application_arn": {
+        "computed": true,
+        "description": "The ARN for the Redshift application that integrates with IAM Identity Center.",
         "description_kind": "plain",
         "type": "string"
       },

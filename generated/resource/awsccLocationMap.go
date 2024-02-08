@@ -18,6 +18,15 @@ const awsccLocationMap = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "custom_layers": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            },
             "political_view": {
               "computed": true,
               "description_kind": "plain",

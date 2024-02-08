@@ -27,6 +27,64 @@ const awsccSagemakerAppImageConfig = `{
         "required": true,
         "type": "string"
       },
+      "jupyter_lab_app_image_config": {
+        "computed": true,
+        "description": "The JupyterLabAppImageConfig.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "container_config": {
+              "computed": true,
+              "description": "The container configuration for a SageMaker image.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "container_arguments": {
+                    "computed": true,
+                    "description": "A list of arguments to apply to the container.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "container_entrypoint": {
+                    "computed": true,
+                    "description": "The custom entry point to use on container.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "container_environment_variables": {
+                    "computed": true,
+                    "description": "A list of variables to apply to the custom container.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "key": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "value": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "kernel_gateway_image_config": {
         "computed": true,
         "description": "The KernelGatewayImageConfig.",

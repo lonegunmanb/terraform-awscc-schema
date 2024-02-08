@@ -21,10 +21,31 @@ const awsccSagemakerSpace = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "ownership_settings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "owner_user_profile_name": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "space_arn": {
         "computed": true,
         "description": "The space Amazon Resource Name (ARN).",
         "description_kind": "plain",
+        "type": "string"
+      },
+      "space_display_name": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "space_name": {
@@ -39,6 +60,138 @@ const awsccSagemakerSpace = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "app_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "code_editor_app_settings": {
+              "computed": true,
+              "description": "The CodeEditor app settings.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "default_resource_spec": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "instance_type": {
+                          "computed": true,
+                          "description": "The instance type that the image version runs on.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "sage_maker_image_arn": {
+                          "computed": true,
+                          "description": "The ARN of the SageMaker image that the image version belongs to.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "sage_maker_image_version_arn": {
+                          "computed": true,
+                          "description": "The ARN of the image version created on the instance.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "custom_file_systems": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "efs_file_system": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "file_system_id": {
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "jupyter_lab_app_settings": {
+              "computed": true,
+              "description": "The JupyterLab app settings.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "code_repositories": {
+                    "computed": true,
+                    "description": "A list of CodeRepositories available for use with JupyterLab apps.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "repository_url": {
+                          "description": "A CodeRepository (valid URL) to be used within Jupyter's Git extension.",
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
+                  "default_resource_spec": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "instance_type": {
+                          "computed": true,
+                          "description": "The instance type that the image version runs on.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "sage_maker_image_arn": {
+                          "computed": true,
+                          "description": "The ARN of the SageMaker image that the image version belongs to.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "sage_maker_image_version_arn": {
+                          "computed": true,
+                          "description": "The ARN of the image version created on the instance.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "jupyter_server_app_settings": {
               "computed": true,
               "description": "The Jupyter server's app settings.",
@@ -153,6 +306,49 @@ const awsccSagemakerSpace = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            },
+            "space_storage_settings": {
+              "computed": true,
+              "description": "Default storage settings for a space.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "ebs_storage_settings": {
+                    "computed": true,
+                    "description": "Properties related to the space's Amazon Elastic Block Store volume.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "ebs_volume_size_in_gb": {
+                          "description": "Size of the Amazon EBS volume in Gb",
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "space_sharing_settings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "sharing_type": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
             }
           },
           "nesting_mode": "single"
@@ -179,6 +375,11 @@ const awsccSagemakerSpace = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "url": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Resource Type definition for AWS::SageMaker::Space",

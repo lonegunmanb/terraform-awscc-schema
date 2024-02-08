@@ -6,23 +6,24 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccKendraFaq = `{
+const awsccAppconfigEnvironment = `{
   "block": {
     "attributes": {
-      "arn": {
+      "application_id": {
         "computed": true,
+        "description": "The application ID.",
         "description_kind": "plain",
         "type": "string"
       },
       "description": {
         "computed": true,
-        "description": "FAQ description",
+        "description": "A description of the environment.",
         "description_kind": "plain",
         "type": "string"
       },
-      "file_format": {
+      "environment_id": {
         "computed": true,
-        "description": "FAQ file format",
+        "description": "The environment ID.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -32,75 +33,65 @@ const awsccKendraFaq = `{
         "required": true,
         "type": "string"
       },
-      "index_id": {
+      "monitors": {
         "computed": true,
-        "description": "Index ID",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "name": {
-        "computed": true,
-        "description": "FAQ name",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "role_arn": {
-        "computed": true,
-        "description": "FAQ role ARN",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "s3_path": {
-        "computed": true,
-        "description": "FAQ S3 path",
+        "description": "Amazon CloudWatch alarms to monitor during the deployment process.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "bucket": {
+            "alarm_arn": {
               "computed": true,
+              "description": "Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.",
               "description_kind": "plain",
               "type": "string"
             },
-            "key": {
+            "alarm_role_arn": {
               "computed": true,
-              "description_kind": "plain",
-              "type": "string"
-            }
-          },
-          "nesting_mode": "single"
-        }
-      },
-      "tags": {
-        "computed": true,
-        "description": "Tags for labeling the FAQ",
-        "description_kind": "plain",
-        "nested_type": {
-          "attributes": {
-            "key": {
-              "computed": true,
-              "description": "A string used to identify this tag",
-              "description_kind": "plain",
-              "type": "string"
-            },
-            "value": {
-              "computed": true,
-              "description": "A string containing the value for the tag",
+              "description": "ARN of an AWS Identity and Access Management (IAM) role for AWS AppConfig to monitor AlarmArn.",
               "description_kind": "plain",
               "type": "string"
             }
           },
           "nesting_mode": "list"
         }
+      },
+      "name": {
+        "computed": true,
+        "description": "A name for the environment.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "Metadata to assign to the environment. Tags help organize and categorize your AWS AppConfig resources. Each tag consists of a key and an optional value, both of which you define.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key-value string map. The valid character set is [a-zA-Z1-9+-=._:/]. The tag key can be up to 128 characters and must not start with aws:.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The tag value can be up to 256 characters.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        }
       }
     },
-    "description": "Data Source schema for AWS::Kendra::Faq",
+    "description": "Data Source schema for AWS::AppConfig::Environment",
     "description_kind": "plain"
   },
   "version": 0
 }`
 
-func AwsccKendraFaqSchema() *tfjson.Schema {
+func AwsccAppconfigEnvironmentSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccKendraFaq), &result)
+	_ = json.Unmarshal([]byte(awsccAppconfigEnvironment), &result)
 	return &result
 }
