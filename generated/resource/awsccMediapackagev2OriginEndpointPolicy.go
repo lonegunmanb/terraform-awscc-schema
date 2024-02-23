@@ -10,15 +10,13 @@ const awsccMediapackagev2OriginEndpointPolicy = `{
   "block": {
     "attributes": {
       "channel_group_name": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "channel_name": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "id": {
@@ -28,9 +26,8 @@ const awsccMediapackagev2OriginEndpointPolicy = `{
         "type": "string"
       },
       "origin_endpoint_name": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "policy": {
@@ -39,7 +36,7 @@ const awsccMediapackagev2OriginEndpointPolicy = `{
         "type": "string"
       }
     },
-    "description": "Definition of AWS::MediaPackageV2::OriginEndpointPolicy Resource Type",
+    "description": "\u003cp\u003eRepresents a resource policy that allows or denies access to an origin endpoint.\u003c/p\u003e",
     "description_kind": "plain"
   },
   "version": 1

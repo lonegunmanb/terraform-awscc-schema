@@ -156,6 +156,28 @@ const awsccSagemakerFeatureGroup = `{
               "computed": true,
               "description_kind": "plain",
               "type": "string"
+            },
+            "ttl_duration": {
+              "computed": true,
+              "description": "TTL configuration of the feature group",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "unit": {
+                    "computed": true,
+                    "description": "Unit of ttl configuration",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description": "Value of ttl configuration",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

@@ -74,6 +74,22 @@ const awsccIotDomainConfiguration = `{
           "string"
         ]
       },
+      "server_certificate_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enable_ocsp_check": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "server_certificates": {
         "computed": true,
         "description_kind": "plain",

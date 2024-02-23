@@ -102,6 +102,7 @@ const awsccEc2Subnet = `{
       },
       "network_acl_association_id": {
         "computed": true,
+        "description": "The ID of the network ACL that is associated with the subnet's VPC",
         "description_kind": "plain",
         "type": "string"
       },
@@ -141,6 +142,7 @@ const awsccEc2Subnet = `{
       },
       "subnet_id": {
         "computed": true,
+        "description": "The ID of the subnet",
         "description_kind": "plain",
         "type": "string"
       },

@@ -50,9 +50,10 @@ const awsccEc2PrefixList = `{
         "type": "string"
       },
       "max_entries": {
+        "computed": true,
         "description": "Max Entries of Prefix List.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "number"
       },
       "owner_id": {

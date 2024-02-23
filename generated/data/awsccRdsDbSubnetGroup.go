@@ -11,11 +11,13 @@ const awsccRdsDbSubnetGroup = `{
     "attributes": {
       "db_subnet_group_description": {
         "computed": true,
+        "description": "The description for the DB subnet group.",
         "description_kind": "plain",
         "type": "string"
       },
       "db_subnet_group_name": {
         "computed": true,
+        "description": "The name for the DB subnet group. This value is stored as a lowercase string.\n Constraints: Must contain no more than 255 lowercase alphanumeric characters or hyphens. Must not be \"Default\".\n Example: ` + "`" + `` + "`" + `mysubnetgroup` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "type": "string"
       },
@@ -27,6 +29,7 @@ const awsccRdsDbSubnetGroup = `{
       },
       "subnet_ids": {
         "computed": true,
+        "description": "The EC2 Subnet IDs for the DB subnet group.",
         "description_kind": "plain",
         "type": [
           "list",
@@ -35,19 +38,19 @@ const awsccRdsDbSubnetGroup = `{
       },
       "tags": {
         "computed": true,
-        "description": "An array of key-value pairs to apply to this resource.",
+        "description": "An optional array of key-value pairs to apply to this DB subnet group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
               "computed": true,
-              "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
+              "description": "A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't be prefixed with ` + "`" + `` + "`" + `aws:` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `rds:` + "`" + `` + "`" + `. The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: \"^([\\\\p{L}\\\\p{Z}\\\\p{N}_.:/=+\\\\-@]*)$\").",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
+              "description": "A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and can't be prefixed with ` + "`" + `` + "`" + `aws:` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `rds:` + "`" + `` + "`" + `. The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: \"^([\\\\p{L}\\\\p{Z}\\\\p{N}_.:/=+\\\\-@]*)$\").",
               "description_kind": "plain",
               "type": "string"
             }

@@ -116,53 +116,6 @@ const awsccWafv2LoggingConfiguration = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "json_body": {
-              "computed": true,
-              "description": "Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. ",
-              "description_kind": "plain",
-              "nested_type": {
-                "attributes": {
-                  "invalid_fallback_behavior": {
-                    "computed": true,
-                    "description": "What AWS WAF should do if it fails to completely parse the JSON body.",
-                    "description_kind": "plain",
-                    "type": "string"
-                  },
-                  "match_pattern": {
-                    "computed": true,
-                    "description": "The patterns to look for in the JSON body. AWS WAF inspects the results of these pattern matches against the rule inspection criteria. ",
-                    "description_kind": "plain",
-                    "nested_type": {
-                      "attributes": {
-                        "all": {
-                          "computed": true,
-                          "description": "Match all of the elements. See also MatchScope in JsonBody. You must specify either this setting or the IncludedPaths setting, but not both.",
-                          "description_kind": "plain",
-                          "type": "string"
-                        },
-                        "included_paths": {
-                          "computed": true,
-                          "description": "Match only the specified include paths. See also MatchScope in JsonBody.",
-                          "description_kind": "plain",
-                          "type": [
-                            "list",
-                            "string"
-                          ]
-                        }
-                      },
-                      "nesting_mode": "single"
-                    }
-                  },
-                  "match_scope": {
-                    "computed": true,
-                    "description": "The parts of the JSON to match against using the MatchPattern. If you specify All, AWS WAF matches against keys and values. ",
-                    "description_kind": "plain",
-                    "type": "string"
-                  }
-                },
-                "nesting_mode": "single"
-              }
-            },
             "method": {
               "computed": true,
               "description": "Inspect the HTTP method. The method indicates the type of operation that the request is asking the origin to perform. ",

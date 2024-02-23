@@ -11,7 +11,7 @@ const awsccAppsyncResolver = `{
     "attributes": {
       "api_id": {
         "computed": true,
-        "description": "The AWS AppSync GraphQL API to which you want to attach this resolver.",
+        "description": "The APSYlong GraphQL API to which you want to attach this resolver.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -23,7 +23,7 @@ const awsccAppsyncResolver = `{
           "attributes": {
             "caching_keys": {
               "computed": true,
-              "description": "The caching keys for a resolver that has caching activated. Valid values are entries from the $context.arguments, $context.source, and $context.identity maps.",
+              "description": "The caching keys for a resolver that has caching activated.\n Valid values are entries from the ` + "`" + `` + "`" + `$context.arguments` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `$context.source` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `$context.identity` + "`" + `` + "`" + ` maps.",
               "description_kind": "plain",
               "type": [
                 "list",
@@ -32,7 +32,7 @@ const awsccAppsyncResolver = `{
             },
             "ttl": {
               "computed": true,
-              "description": "The TTL in seconds for a resolver that has caching activated. Valid values are 1-36.00 seconds.",
+              "description": "The TTL in seconds for a resolver that has caching activated.\n Valid values are 1?3,600 seconds.",
               "description_kind": "plain",
               "type": "number"
             }
@@ -42,7 +42,7 @@ const awsccAppsyncResolver = `{
       },
       "code": {
         "computed": true,
-        "description": "The resolver code that contains the request and response functions. When code is used, the runtime is required.",
+        "description": "The ` + "`" + `` + "`" + `resolver` + "`" + `` + "`" + ` code that contains the request and response functions. When code is used, the ` + "`" + `` + "`" + `runtime` + "`" + `` + "`" + ` is required. The runtime value must be ` + "`" + `` + "`" + `APPSYNC_JS` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -72,15 +72,20 @@ const awsccAppsyncResolver = `{
       },
       "kind": {
         "computed": true,
-        "description": "The resolver type.",
+        "description": "The resolver type.\n  +   *UNIT*: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.\n  +   *PIPELINE*: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of ` + "`" + `` + "`" + `Function` + "`" + `` + "`" + ` objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.",
         "description_kind": "plain",
         "type": "string"
       },
       "max_batch_size": {
         "computed": true,
-        "description": "The maximum number of resolver request inputs that will be sent to a single AWS Lambda function in a BatchInvoke operation.",
+        "description": "The maximum number of resolver request inputs that will be sent to a single LAMlong function in a ` + "`" + `` + "`" + `BatchInvoke` + "`" + `` + "`" + ` operation.",
         "description_kind": "plain",
         "type": "number"
+      },
+      "metrics_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "pipeline_config": {
         "computed": true,
@@ -90,7 +95,7 @@ const awsccAppsyncResolver = `{
           "attributes": {
             "functions": {
               "computed": true,
-              "description": "A list of Function objects.",
+              "description": "A list of ` + "`" + `` + "`" + `Function` + "`" + `` + "`" + ` objects.",
               "description_kind": "plain",
               "type": [
                 "list",
@@ -103,19 +108,18 @@ const awsccAppsyncResolver = `{
       },
       "request_mapping_template": {
         "computed": true,
-        "description": "Request mapping templates are optional when using a Lambda data source. For all other data sources, a request mapping template is required.",
+        "description": "The request mapping template.\n Request mapping templates are optional when using a Lambda data source. For all other data sources, a request mapping template is required.",
         "description_kind": "plain",
         "type": "string"
       },
       "request_mapping_template_s3_location": {
         "computed": true,
-        "description": "The location of a request mapping template in an Amazon S3 bucket. Use this if you want to provision with a template file in Amazon S3 rather than embedding it in your CloudFormation template.",
+        "description": "The location of a request mapping template in an S3 bucket. Use this if you want to provision with a template file in S3 rather than embedding it in your CFNshort template.",
         "description_kind": "plain",
         "type": "string"
       },
       "resolver_arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) for the resolver.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -127,25 +131,25 @@ const awsccAppsyncResolver = `{
       },
       "response_mapping_template_s3_location": {
         "computed": true,
-        "description": "The location of a response mapping template in an Amazon S3 bucket. Use this if you want to provision with a template file in Amazon S3 rather than embedding it in your CloudFormation template.",
+        "description": "The location of a response mapping template in an S3 bucket. Use this if you want to provision with a template file in S3 rather than embedding it in your CFNshort template.",
         "description_kind": "plain",
         "type": "string"
       },
       "runtime": {
         "computed": true,
-        "description": "Describes a runtime used by an AWS AppSync pipeline resolver or AWS AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.",
+        "description": "Describes a runtime used by an APSYlong resolver or APSYlong function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "name": {
               "computed": true,
-              "description": "The name of the runtime to use.",
+              "description": "The ` + "`" + `` + "`" + `name` + "`" + `` + "`" + ` of the runtime to use. Currently, the only allowed value is ` + "`" + `` + "`" + `APPSYNC_JS` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "type": "string"
             },
             "runtime_version": {
               "computed": true,
-              "description": "The version of the runtime to use.",
+              "description": "The ` + "`" + `` + "`" + `version` + "`" + `` + "`" + ` of the runtime to use. Currently, the only allowed version is ` + "`" + `` + "`" + `1.0.0` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -155,25 +159,25 @@ const awsccAppsyncResolver = `{
       },
       "sync_config": {
         "computed": true,
-        "description": "The SyncConfig for a resolver attached to a versioned data source.",
+        "description": "The ` + "`" + `` + "`" + `SyncConfig` + "`" + `` + "`" + ` for a resolver attached to a versioned data source.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "conflict_detection": {
               "computed": true,
-              "description": "The Conflict Detection strategy to use.",
+              "description": "The Conflict Detection strategy to use.\n  +   *VERSION*: Detect conflicts based on object versions for this resolver.\n  +   *NONE*: Do not detect conflicts when invoking this resolver.",
               "description_kind": "plain",
               "type": "string"
             },
             "conflict_handler": {
               "computed": true,
-              "description": "The Conflict Resolution strategy to perform in the event of a conflict.",
+              "description": "The Conflict Resolution strategy to perform in the event of a conflict.\n  +   *OPTIMISTIC_CONCURRENCY*: Resolve conflicts by rejecting mutations when versions don't match the latest version at the server.\n  +   *AUTOMERGE*: Resolve conflicts with the Automerge conflict resolution strategy.\n  +   *LAMBDA*: Resolve conflicts with an LAMlong function supplied in the ` + "`" + `` + "`" + `LambdaConflictHandlerConfig` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "type": "string"
             },
             "lambda_conflict_handler_config": {
               "computed": true,
-              "description": "The LambdaConflictHandlerConfig when configuring LAMBDA as the Conflict Handler.",
+              "description": "The ` + "`" + `` + "`" + `LambdaConflictHandlerConfig` + "`" + `` + "`" + ` when configuring ` + "`" + `` + "`" + `LAMBDA` + "`" + `` + "`" + ` as the Conflict Handler.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {

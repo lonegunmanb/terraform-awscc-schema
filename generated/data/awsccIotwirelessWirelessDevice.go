@@ -131,6 +131,43 @@ const awsccIotwirelessWirelessDevice = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "f_ports": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "applications": {
+                    "computed": true,
+                    "description": "A list of optional LoRaWAN application information, which can be used for geolocation.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "destination_name": {
+                          "computed": true,
+                          "description": "The name of the position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "f_port": {
+                          "computed": true,
+                          "description": "The Fport value.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "type": {
+                          "computed": true,
+                          "description": "Application type, which can be specified to obtain real-time position information of your LoRaWAN device.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "set"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "otaa_v10_x": {
               "computed": true,
               "description_kind": "plain",

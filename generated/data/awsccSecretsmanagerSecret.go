@@ -11,73 +11,73 @@ const awsccSecretsmanagerSecret = `{
     "attributes": {
       "description": {
         "computed": true,
-        "description": "(Optional) Specifies a user-provided description of the secret.",
+        "description": "The description of the secret.",
         "description_kind": "plain",
         "type": "string"
       },
       "generate_secret_string": {
         "computed": true,
-        "description": "(Optional) Specifies text data that you want to encrypt and store in this new version of the secret.",
+        "description": "A structure that specifies how to generate a password to encrypt and store in the secret. To include a specific string in the secret, use ` + "`" + `` + "`" + `SecretString` + "`" + `` + "`" + ` instead. If you omit both ` + "`" + `` + "`" + `GenerateSecretString` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `SecretString` + "`" + `` + "`" + `, you create an empty secret. When you make a change to this property, a new secret version is created.\n We recommend that you specify the maximum length and include every character type that the system you are generating a password for can support.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "exclude_characters": {
               "computed": true,
-              "description": "A string that excludes characters in the generated password. By default, all characters from the included sets can be used. The string can be a minimum length of 0 characters and a maximum length of 7168 characters. ",
+              "description": "A string of the characters that you don't want in the password.",
               "description_kind": "plain",
               "type": "string"
             },
             "exclude_lowercase": {
               "computed": true,
-              "description": "Specifies the generated password should not include lowercase letters. By default, ecrets Manager disables this parameter, and the generated password can include lowercase False, and the generated password can include lowercase letters.",
+              "description": "Specifies whether to exclude lowercase letters from the password. If you don't include this switch, the password can contain lowercase letters.",
               "description_kind": "plain",
               "type": "bool"
             },
             "exclude_numbers": {
               "computed": true,
-              "description": "Specifies that the generated password should exclude digits. By default, Secrets Manager does not enable the parameter, False, and the generated password can include digits.",
+              "description": "Specifies whether to exclude numbers from the password. If you don't include this switch, the password can contain numbers.",
               "description_kind": "plain",
               "type": "bool"
             },
             "exclude_punctuation": {
               "computed": true,
-              "description": "Specifies that the generated password should not include punctuation characters. The default if you do not include this switch parameter is that punctuation characters can be included. ",
+              "description": "Specifies whether to exclude the following punctuation characters from the password: ` + "`" + `` + "`" + `! \" # $ % \u0026 ' ( ) * + , - . / : ; \u003c = \u003e ? @ [ \\ ] ^ _ ` + "`" + ` { | } ~` + "`" + `` + "`" + `. If you don't include this switch, the password can contain punctuation.",
               "description_kind": "plain",
               "type": "bool"
             },
             "exclude_uppercase": {
               "computed": true,
-              "description": "Specifies that the generated password should not include uppercase letters. The default behavior is False, and the generated password can include uppercase letters. ",
+              "description": "Specifies whether to exclude uppercase letters from the password. If you don't include this switch, the password can contain uppercase letters.",
               "description_kind": "plain",
               "type": "bool"
             },
             "generate_string_key": {
               "computed": true,
-              "description": "The JSON key name used to add the generated password to the JSON structure specified by the SecretStringTemplate parameter. If you specify this parameter, then you must also specify SecretStringTemplate. ",
+              "description": "The JSON key name for the key/value pair, where the value is the generated password. This pair is added to the JSON structure specified by the ` + "`" + `` + "`" + `SecretStringTemplate` + "`" + `` + "`" + ` parameter. If you specify this parameter, then you must also specify ` + "`" + `` + "`" + `SecretStringTemplate` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "type": "string"
             },
             "include_space": {
               "computed": true,
-              "description": "Specifies that the generated password can include the space character. By default, Secrets Manager disables this parameter, and the generated password doesn't include space",
+              "description": "Specifies whether to include the space character. If you include this switch, the password can contain space characters.",
               "description_kind": "plain",
               "type": "bool"
             },
             "password_length": {
               "computed": true,
-              "description": "The desired length of the generated password. The default value if you do not include this parameter is 32 characters. ",
+              "description": "The length of the password. If you don't include this parameter, the default length is 32 characters.",
               "description_kind": "plain",
               "type": "number"
             },
             "require_each_included_type": {
               "computed": true,
-              "description": "Specifies whether the generated password must include at least one of every allowed character type. By default, Secrets Manager enables this parameter, and the generated password includes at least one of every character type.",
+              "description": "Specifies whether to include at least one upper and lowercase letter, one number, and one punctuation. If you don't include this switch, the password contains at least one of every character type.",
               "description_kind": "plain",
               "type": "bool"
             },
             "secret_string_template": {
               "computed": true,
-              "description": "A properly structured JSON string that the generated password can be added to. If you specify this parameter, then you must also specify GenerateStringKey.",
+              "description": "A template that the generated string must match. When you make a change to this property, a new secret version is created.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -93,31 +93,31 @@ const awsccSecretsmanagerSecret = `{
       },
       "kms_key_id": {
         "computed": true,
-        "description": "(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) used to encrypt the SecretString.",
+        "description": "The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret. An alias is always prefixed by ` + "`" + `` + "`" + `alias/` + "`" + `` + "`" + `, for example ` + "`" + `` + "`" + `alias/aws/secretsmanager` + "`" + `` + "`" + `. For more information, see [About aliases](https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html).\n To use a KMS key in a different account, use the key ARN or the alias ARN.\n If you don't specify this value, then Secrets Manager uses the key ` + "`" + `` + "`" + `aws/secretsmanager` + "`" + `` + "`" + `. If that key doesn't yet exist, then Secrets Manager creates it for you automatically the first time it encrypts the secret value.\n If the secret is in a different AWS account from the credentials calling the API, then you can't use ` + "`" + `` + "`" + `aws/secretsmanager` + "`" + `` + "`" + ` to encrypt the secret, and you must create and use a customer managed KMS key.",
         "description_kind": "plain",
         "type": "string"
       },
       "name": {
         "computed": true,
-        "description": "The friendly name of the secret. You can use forward slashes in the name to represent a path hierarchy.",
+        "description": "The name of the new secret.\n The secret name can contain ASCII letters, numbers, and the following characters: /_+=.@-\n Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and six random characters after the secret name at the end of the ARN.",
         "description_kind": "plain",
         "type": "string"
       },
       "replica_regions": {
         "computed": true,
-        "description": "(Optional) A list of ReplicaRegion objects. The ReplicaRegion type consists of a Region (required) and the KmsKeyId which can be an ARN, Key ID, or Alias.",
+        "description": "A custom type that specifies a ` + "`" + `` + "`" + `Region` + "`" + `` + "`" + ` and the ` + "`" + `` + "`" + `KmsKeyId` + "`" + `` + "`" + ` for a replica secret.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "kms_key_id": {
               "computed": true,
-              "description": "The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't include this field, Secrets Manager uses aws/secretsmanager.",
+              "description": "The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't include this field, Secrets Manager uses ` + "`" + `` + "`" + `aws/secretsmanager` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "type": "string"
             },
             "region": {
               "computed": true,
-              "description": "(Optional) A string that represents a Region, for example \"us-east-1\".",
+              "description": "A string that represents a ` + "`" + `` + "`" + `Region` + "`" + `` + "`" + `, for example \"us-east-1\".",
               "description_kind": "plain",
               "type": "string"
             }
@@ -127,25 +127,25 @@ const awsccSecretsmanagerSecret = `{
       },
       "secret_string": {
         "computed": true,
-        "description": "(Optional) Specifies text data that you want to encrypt and store in this new version of the secret.",
+        "description": "The text to encrypt and store in the secret. We recommend you use a JSON structure of key/value pairs for your secret value. To generate a random password, use ` + "`" + `` + "`" + `GenerateSecretString` + "`" + `` + "`" + ` instead. If you omit both ` + "`" + `` + "`" + `GenerateSecretString` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `SecretString` + "`" + `` + "`" + `, you create an empty secret. When you make a change to this property, a new secret version is created.",
         "description_kind": "plain",
         "type": "string"
       },
       "tags": {
         "computed": true,
-        "description": "The list of user-defined tags associated with the secret. Use tags to manage your AWS resources. For additional information about tags, see TagResource.",
+        "description": "A list of tags to attach to the secret. Each tag is a key and value pair of strings in a JSON text string, for example:\n  ` + "`" + `` + "`" + `[{\"Key\":\"CostCenter\",\"Value\":\"12345\"},{\"Key\":\"environment\",\"Value\":\"production\"}]` + "`" + `` + "`" + ` \n Secrets Manager tag key names are case sensitive. A tag with the key \"ABC\" is a different tag from one with key \"abc\".\n Stack-level tags, tags you apply to the CloudFormation stack, are also attached to the secret. \n If you check tags in permissions policies as part of your security strategy, then adding or removing a tag can change permissions. If the completion of this operation would result in you losing your permissions for this secret, then Secrets Manager blocks the operation and returns an ` + "`" + `` + "`" + `Access Denied` + "`" + `` + "`" + ` error. For more information, see [Control access to secrets using tags](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html#tag-secrets-abac) and [Limit access to identities with tags that match secrets' tags](https://docs.aws.amazo",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
               "computed": true,
-              "description": "The value for the tag. You can specify a value that's 1 to 256 characters in length.",
+              "description": "The key identifier, or name, of the tag.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "The key name of the tag. You can specify a value that's 1 to 128 Unicode characters in length and can't be prefixed with aws.",
+              "description": "The string value associated with the key of the tag.",
               "description_kind": "plain",
               "type": "string"
             }

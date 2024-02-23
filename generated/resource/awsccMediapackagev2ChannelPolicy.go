@@ -10,15 +10,13 @@ const awsccMediapackagev2ChannelPolicy = `{
   "block": {
     "attributes": {
       "channel_group_name": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "channel_name": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "id": {
@@ -33,7 +31,7 @@ const awsccMediapackagev2ChannelPolicy = `{
         "type": "string"
       }
     },
-    "description": "Definition of AWS::MediaPackageV2::ChannelPolicy Resource Type",
+    "description": "\u003cp\u003eRepresents a resource-based policy that allows or denies access to a channel.\u003c/p\u003e",
     "description_kind": "plain"
   },
   "version": 1

@@ -17,7 +17,6 @@ const awsccEc2RouteTable = `{
       },
       "route_table_id": {
         "computed": true,
-        "description": "The route table ID.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -29,11 +28,13 @@ const awsccEc2RouteTable = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "The tag key.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The tag value.",
               "description_kind": "plain",
               "type": "string"
             }

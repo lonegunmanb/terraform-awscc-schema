@@ -10,6 +10,7 @@ const awsccEfsMountTarget = `{
   "block": {
     "attributes": {
       "file_system_id": {
+        "description": "The ID of the file system for which to create the mount target.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -21,11 +22,13 @@ const awsccEfsMountTarget = `{
       },
       "ip_address": {
         "computed": true,
+        "description": "Valid IPv4 address within the address range of the specified subnet.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "security_groups": {
+        "description": "Up to five VPC security group IDs, of the form ` + "`" + `` + "`" + `sg-xxxxxxxx` + "`" + `` + "`" + `. These must be for the same VPC as subnet specified.",
         "description_kind": "plain",
         "required": true,
         "type": [
@@ -34,12 +37,13 @@ const awsccEfsMountTarget = `{
         ]
       },
       "subnet_id": {
+        "description": "The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       }
     },
-    "description": "Resource Type definition for AWS::EFS::MountTarget",
+    "description": "The ` + "`" + `` + "`" + `AWS::EFS::MountTarget` + "`" + `` + "`" + ` resource is an Amazon EFS resource that creates a mount target for an EFS file system. You can then mount the file system on Amazon EC2 instances or other resources by using the mount target.",
     "description_kind": "plain"
   },
   "version": 1

@@ -27,7 +27,7 @@ const awsccGameliftFleet = `{
       },
       "apply_capacity": {
         "computed": true,
-        "description": "ComputeType to differentiate EC2 hardware managed by GameLift and Anywhere hardware managed by the customer.",
+        "description": "Determines whether to apply fleet or location capacities on fleet creation.",
         "description_kind": "plain",
         "type": "string"
       },

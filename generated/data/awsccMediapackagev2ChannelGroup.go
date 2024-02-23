@@ -11,6 +11,7 @@ const awsccMediapackagev2ChannelGroup = `{
     "attributes": {
       "arn": {
         "computed": true,
+        "description": "\u003cp\u003eThe Amazon Resource Name (ARN) associated with the resource.\u003c/p\u003e",
         "description_kind": "plain",
         "type": "string"
       },
@@ -21,16 +22,19 @@ const awsccMediapackagev2ChannelGroup = `{
       },
       "created_at": {
         "computed": true,
+        "description": "\u003cp\u003eThe date and time the channel group was created.\u003c/p\u003e",
         "description_kind": "plain",
         "type": "string"
       },
       "description": {
         "computed": true,
+        "description": "\u003cp\u003eEnter any descriptive text that helps you to identify the channel group.\u003c/p\u003e",
         "description_kind": "plain",
         "type": "string"
       },
       "egress_domain": {
         "computed": true,
+        "description": "\u003cp\u003eThe output domain where the source stream should be sent. Integrate the domain with a downstream CDN (such as Amazon CloudFront) or playback device.\u003c/p\u003e",
         "description_kind": "plain",
         "type": "string"
       },
@@ -42,6 +46,7 @@ const awsccMediapackagev2ChannelGroup = `{
       },
       "modified_at": {
         "computed": true,
+        "description": "\u003cp\u003eThe date and time the channel group was modified.\u003c/p\u003e",
         "description_kind": "plain",
         "type": "string"
       },

@@ -11,19 +11,19 @@ const awsccSecurityhubStandard = `{
     "attributes": {
       "disabled_standards_controls": {
         "computed": true,
-        "description": "StandardsControls to disable from this Standard.",
+        "description": "Specifies which controls are to be disabled in a standard. \n *Maximum*: ` + "`" + `` + "`" + `100` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "reason": {
               "computed": true,
-              "description": "the reason the standard control is disabled",
+              "description": "A user-defined reason for changing a control's enablement status in a specified standard. If you are disabling a control, then this property is required.",
               "description_kind": "plain",
               "type": "string"
             },
             "standards_control_arn": {
               "computed": true,
-              "description": "the Arn for the standard control.",
+              "description": "The Amazon Resource Name (ARN) of the control.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -39,13 +39,12 @@ const awsccSecurityhubStandard = `{
       },
       "standards_arn": {
         "computed": true,
-        "description": "The ARN of the Standard being enabled",
+        "description": "The ARN of the standard that you want to enable. To view a list of available ASH standards and their ARNs, use the [DescribeStandards](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html) API operation.",
         "description_kind": "plain",
         "type": "string"
       },
       "standards_subscription_arn": {
         "computed": true,
-        "description": "The ARN of the StandardsSubscription for the account ID, region, and Standard.",
         "description_kind": "plain",
         "type": "string"
       }

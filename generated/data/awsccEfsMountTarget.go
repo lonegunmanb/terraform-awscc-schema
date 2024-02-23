@@ -11,6 +11,7 @@ const awsccEfsMountTarget = `{
     "attributes": {
       "file_system_id": {
         "computed": true,
+        "description": "The ID of the file system for which to create the mount target.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -22,11 +23,13 @@ const awsccEfsMountTarget = `{
       },
       "ip_address": {
         "computed": true,
+        "description": "Valid IPv4 address within the address range of the specified subnet.",
         "description_kind": "plain",
         "type": "string"
       },
       "security_groups": {
         "computed": true,
+        "description": "Up to five VPC security group IDs, of the form ` + "`" + `` + "`" + `sg-xxxxxxxx` + "`" + `` + "`" + `. These must be for the same VPC as subnet specified.",
         "description_kind": "plain",
         "type": [
           "set",
@@ -35,6 +38,7 @@ const awsccEfsMountTarget = `{
       },
       "subnet_id": {
         "computed": true,
+        "description": "The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone.",
         "description_kind": "plain",
         "type": "string"
       }

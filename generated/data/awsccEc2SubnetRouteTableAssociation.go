@@ -17,11 +17,13 @@ const awsccEc2SubnetRouteTableAssociation = `{
       },
       "route_table_id": {
         "computed": true,
+        "description": "The ID of the route table.\n The physical ID changes when the route table ID is changed.",
         "description_kind": "plain",
         "type": "string"
       },
       "subnet_id": {
         "computed": true,
+        "description": "The ID of the subnet.",
         "description_kind": "plain",
         "type": "string"
       }

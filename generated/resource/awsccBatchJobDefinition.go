@@ -296,6 +296,21 @@ const awsccBatchJobDefinition = `{
               "optional": true,
               "type": "bool"
             },
+            "repository_credentials": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "credentials_parameter": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "resource_requirements": {
               "computed": true,
               "description_kind": "plain",
@@ -1084,6 +1099,21 @@ const awsccBatchJobDefinition = `{
                           "description_kind": "plain",
                           "optional": true,
                           "type": "bool"
+                        },
+                        "repository_credentials": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "credentials_parameter": {
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
                         },
                         "resource_requirements": {
                           "computed": true,

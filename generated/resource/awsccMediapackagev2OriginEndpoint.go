@@ -16,20 +16,19 @@ const awsccMediapackagev2OriginEndpoint = `{
         "type": "string"
       },
       "channel_group_name": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "channel_name": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "container_type": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "created_at": {
@@ -260,9 +259,8 @@ const awsccMediapackagev2OriginEndpoint = `{
         "type": "string"
       },
       "origin_endpoint_name": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "segment": {

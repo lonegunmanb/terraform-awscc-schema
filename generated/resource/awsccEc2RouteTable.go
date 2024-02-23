@@ -17,7 +17,6 @@ const awsccEc2RouteTable = `{
       },
       "route_table_id": {
         "computed": true,
-        "description": "The route table ID.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -28,11 +27,13 @@ const awsccEc2RouteTable = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "description": "The tag key.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
             },
             "value": {
+              "description": "The tag value.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
@@ -49,7 +50,7 @@ const awsccEc2RouteTable = `{
         "type": "string"
       }
     },
-    "description": "Resource Type definition for AWS::EC2::RouteTable",
+    "description": "Specifies a route table for the specified VPC. After you create a route table, you can add routes and associate the table with a subnet.\n For more information, see [Route tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html) in the *Amazon VPC User Guide*.",
     "description_kind": "plain"
   },
   "version": 1

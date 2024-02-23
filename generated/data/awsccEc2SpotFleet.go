@@ -283,6 +283,11 @@ const awsccEc2SpotFleet = `{
                             "string"
                           ]
                         },
+                        "max_spot_price_as_percentage_of_optimal_on_demand_price": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
                         "memory_gi_b_per_v_cpu": {
                           "computed": true,
                           "description_kind": "plain",
@@ -814,6 +819,11 @@ const awsccEc2SpotFleet = `{
                                   "list",
                                   "string"
                                 ]
+                              },
+                              "max_spot_price_as_percentage_of_optimal_on_demand_price": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
                               },
                               "memory_gi_b_per_v_cpu": {
                                 "computed": true,
