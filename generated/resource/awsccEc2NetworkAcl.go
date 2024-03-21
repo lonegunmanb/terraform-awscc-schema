@@ -16,16 +16,18 @@ const awsccEc2NetworkAcl = `{
       },
       "tags": {
         "computed": true,
-        "description": "The tags to assign to the network ACL.",
+        "description": "The tags for the network ACL.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
+              "description": "The tag key.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
             },
             "value": {
+              "description": "The tag value.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
@@ -36,13 +38,13 @@ const awsccEc2NetworkAcl = `{
         "optional": true
       },
       "vpc_id": {
-        "description": "The ID of the VPC.",
+        "description": "The ID of the VPC for the network ACL.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       }
     },
-    "description": "Resource Type definition for AWS::EC2::NetworkAcl",
+    "description": "Specifies a network ACL for your VPC.",
     "description_kind": "plain"
   },
   "version": 1

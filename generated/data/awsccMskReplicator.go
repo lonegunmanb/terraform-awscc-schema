@@ -169,6 +169,22 @@ const awsccMskReplicator = `{
                     "description_kind": "plain",
                     "type": "bool"
                   },
+                  "starting_position": {
+                    "computed": true,
+                    "description": "Configuration for specifying the position in the topics to start replicating from.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "type": {
+                          "computed": true,
+                          "description": "The type of replication starting position.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "topics_to_exclude": {
                     "computed": true,
                     "description": "List of regular expression patterns indicating the topics that should not be replicated.",

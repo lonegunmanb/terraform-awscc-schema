@@ -17,17 +17,19 @@ const awsccEc2NetworkAcl = `{
       },
       "tags": {
         "computed": true,
-        "description": "The tags to assign to the network ACL.",
+        "description": "The tags for the network ACL.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
               "computed": true,
+              "description": "The tag key.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The tag value.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -37,7 +39,7 @@ const awsccEc2NetworkAcl = `{
       },
       "vpc_id": {
         "computed": true,
-        "description": "The ID of the VPC.",
+        "description": "The ID of the VPC for the network ACL.",
         "description_kind": "plain",
         "type": "string"
       }

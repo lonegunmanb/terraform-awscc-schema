@@ -15,6 +15,13 @@ const awsccApplicationinsightsApplication = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "attach_missing_permission": {
+        "computed": true,
+        "description": "If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "auto_configuration_enabled": {
         "computed": true,
         "description": "If set to true, application will be configured with recommended monitoring configuration.",
@@ -238,6 +245,95 @@ const awsccApplicationinsightsApplication = `{
                           },
                           "optional": true
                         },
+                        "net_weaver_prometheus_exporter": {
+                          "computed": true,
+                          "description": "The NetWeaver Prometheus Exporter settings.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "instance_numbers": {
+                                "description": "SAP instance numbers for ASCS, ERS, and App Servers.",
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "prometheus_port": {
+                                "computed": true,
+                                "description": "Prometheus exporter port.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "sapsid": {
+                                "description": "SAP NetWeaver SID.",
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "processes": {
+                          "computed": true,
+                          "description": "A list of processes to monitor for the component. Only Windows EC2 instances can have a processes section.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "alarm_metrics": {
+                                "description": "A list of metrics to monitor for the component.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "alarm_metric_name": {
+                                      "description": "The name of the metric to be monitored for the component.",
+                                      "description_kind": "plain",
+                                      "required": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                },
+                                "required": true
+                              },
+                              "process_name": {
+                                "description": "The name of the process to be monitored for the component.",
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          },
+                          "optional": true
+                        },
+                        "sql_server_prometheus_exporter": {
+                          "computed": true,
+                          "description": "The SQL Prometheus Exporter settings.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "prometheus_port": {
+                                "description": "Prometheus exporter port.",
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": "string"
+                              },
+                              "sql_secret_name": {
+                                "description": "Secret name which managers SQL exporter connection. e.g. {\"data_source_name\": \"sqlserver://\u003cUSERNAME\u003e:\u003cPASSWORD\u003e@localhost:1433\"}",
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
                         "windows_events": {
                           "computed": true,
                           "description": "A list of Windows Events to log.",
@@ -348,6 +444,39 @@ const awsccApplicationinsightsApplication = `{
                                       "description": "The name of the log pattern set.",
                                       "description_kind": "plain",
                                       "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                },
+                                "optional": true
+                              },
+                              "processes": {
+                                "computed": true,
+                                "description": "A list of processes to monitor for the component. Only Windows EC2 instances can have a processes section.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "alarm_metrics": {
+                                      "description": "A list of metrics to monitor for the component.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "alarm_metric_name": {
+                                            "description": "The name of the metric to be monitored for the component.",
+                                            "description_kind": "plain",
+                                            "required": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      },
+                                      "required": true
+                                    },
+                                    "process_name": {
+                                      "description": "The name of the process to be monitored for the component.",
+                                      "description_kind": "plain",
+                                      "required": true,
                                       "type": "string"
                                     }
                                   },
@@ -605,6 +734,95 @@ const awsccApplicationinsightsApplication = `{
                           },
                           "optional": true
                         },
+                        "net_weaver_prometheus_exporter": {
+                          "computed": true,
+                          "description": "The NetWeaver Prometheus Exporter settings.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "instance_numbers": {
+                                "description": "SAP instance numbers for ASCS, ERS, and App Servers.",
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "prometheus_port": {
+                                "computed": true,
+                                "description": "Prometheus exporter port.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "sapsid": {
+                                "description": "SAP NetWeaver SID.",
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "processes": {
+                          "computed": true,
+                          "description": "A list of processes to monitor for the component. Only Windows EC2 instances can have a processes section.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "alarm_metrics": {
+                                "description": "A list of metrics to monitor for the component.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "alarm_metric_name": {
+                                      "description": "The name of the metric to be monitored for the component.",
+                                      "description_kind": "plain",
+                                      "required": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                },
+                                "required": true
+                              },
+                              "process_name": {
+                                "description": "The name of the process to be monitored for the component.",
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          },
+                          "optional": true
+                        },
+                        "sql_server_prometheus_exporter": {
+                          "computed": true,
+                          "description": "The SQL Prometheus Exporter settings.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "prometheus_port": {
+                                "description": "Prometheus exporter port.",
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": "string"
+                              },
+                              "sql_secret_name": {
+                                "description": "Secret name which managers SQL exporter connection. e.g. {\"data_source_name\": \"sqlserver://\u003cUSERNAME\u003e:\u003cPASSWORD\u003e@localhost:1433\"}",
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
                         "windows_events": {
                           "computed": true,
                           "description": "A list of Windows Events to log.",
@@ -715,6 +933,39 @@ const awsccApplicationinsightsApplication = `{
                                       "description": "The name of the log pattern set.",
                                       "description_kind": "plain",
                                       "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                },
+                                "optional": true
+                              },
+                              "processes": {
+                                "computed": true,
+                                "description": "A list of processes to monitor for the component. Only Windows EC2 instances can have a processes section.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "alarm_metrics": {
+                                      "description": "A list of metrics to monitor for the component.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "alarm_metric_name": {
+                                            "description": "The name of the metric to be monitored for the component.",
+                                            "description_kind": "plain",
+                                            "required": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      },
+                                      "required": true
+                                    },
+                                    "process_name": {
+                                      "description": "The name of the process to be monitored for the component.",
+                                      "description_kind": "plain",
+                                      "required": true,
                                       "type": "string"
                                     }
                                   },

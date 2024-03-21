@@ -11,7 +11,7 @@ const awsccSsmParameter = `{
     "attributes": {
       "allowed_pattern": {
         "computed": true,
-        "description": "A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: ` + "`" + `` + "`" + `AllowedPattern=^\\d+$` + "`" + `` + "`" + `",
+        "description": "A regular expression used to validate the parameter value. For example, for ` + "`" + `` + "`" + `String` + "`" + `` + "`" + ` types with values restricted to numbers, you can specify the following: ` + "`" + `` + "`" + `AllowedPattern=^\\d+$` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "type": "string"
       },
@@ -35,7 +35,7 @@ const awsccSsmParameter = `{
       },
       "name": {
         "computed": true,
-        "description": "The name of the parameter.\n The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter ARN, is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters: ` + "`" + `` + "`" + `arn:aws:ssm:us-east-2:111222333444:parameter/ExampleParameterName` + "`" + `` + "`" + `",
+        "description": "The name of the parameter.\n The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter Amazon Resource Name (ARN), is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters: ` + "`" + `` + "`" + `arn:aws:ssm:us-east-2:111222333444:parameter/ExampleParameterName` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "type": "string"
       },
@@ -62,7 +62,7 @@ const awsccSsmParameter = `{
       },
       "type": {
         "computed": true,
-        "description": "The type of parameter.\n  Although ` + "`" + `` + "`" + `SecureString` + "`" + `` + "`" + ` is included in the list of valid values, CFNlong does *not* currently support creating a ` + "`" + `` + "`" + `SecureString` + "`" + `` + "`" + ` parameter type.",
+        "description": "The type of parameter.",
         "description_kind": "plain",
         "type": "string"
       },

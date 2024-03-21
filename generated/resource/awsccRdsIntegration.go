@@ -87,7 +87,7 @@ const awsccRdsIntegration = `{
         "type": "string"
       }
     },
-    "description": "An example resource schema demonstrating some basic constructs and validation rules.",
+    "description": "Creates a zero-ETL integration with Amazon Redshift.",
     "description_kind": "plain"
   },
   "version": 1

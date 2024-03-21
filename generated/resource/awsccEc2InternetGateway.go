@@ -17,7 +17,6 @@ const awsccEc2InternetGateway = `{
       },
       "internet_gateway_id": {
         "computed": true,
-        "description": "ID of internet gateway.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -28,11 +27,13 @@ const awsccEc2InternetGateway = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "description": "The tag key.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
             },
             "value": {
+              "description": "The tag value.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
@@ -43,7 +44,7 @@ const awsccEc2InternetGateway = `{
         "optional": true
       }
     },
-    "description": "Resource Type definition for AWS::EC2::InternetGateway",
+    "description": "Allocates an internet gateway for use with a VPC. After creating the Internet gateway, you then attach it to a VPC.",
     "description_kind": "plain"
   },
   "version": 1

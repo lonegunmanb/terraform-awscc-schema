@@ -493,6 +493,45 @@ const awsccDynamodbGlobalTable = `{
               "required": true,
               "type": "string"
             },
+            "replica_stream_specification": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "resource_policy": {
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "policy_document": {
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "required": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "resource_policy": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "policy_document": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "sse_specification": {
               "computed": true,
               "description_kind": "plain",

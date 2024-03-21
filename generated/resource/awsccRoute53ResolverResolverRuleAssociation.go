@@ -24,12 +24,11 @@ const awsccRoute53ResolverResolverRuleAssociation = `{
       },
       "resolver_rule_association_id": {
         "computed": true,
-        "description": "Primary Identifier for Resolver Rule Association",
         "description_kind": "plain",
         "type": "string"
       },
       "resolver_rule_id": {
-        "description": "The ID of the Resolver rule that you associated with the VPC that is specified by VPCId.",
+        "description": "The ID of the Resolver rule that you associated with the VPC that is specified by ` + "`" + `` + "`" + `VPCId` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -41,7 +40,7 @@ const awsccRoute53ResolverResolverRuleAssociation = `{
         "type": "string"
       }
     },
-    "description": "Resource Type definition for AWS::Route53Resolver::ResolverRuleAssociation",
+    "description": "In the response to an [AssociateResolverRule](https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html), [DisassociateResolverRule](https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html), or [ListResolverRuleAssociations](https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html) request, provides information about an association between a resolver rule and a VPC. The association determines which DNS queries that originate in the VPC are forwarded to your network.",
     "description_kind": "plain"
   },
   "version": 1

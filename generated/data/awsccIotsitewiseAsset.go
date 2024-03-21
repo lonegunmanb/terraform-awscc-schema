@@ -21,6 +21,12 @@ const awsccIotsitewiseAsset = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "asset_external_id": {
+        "computed": true,
+        "description": "The External ID of the asset",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "asset_hierarchies": {
         "computed": true,
         "description_kind": "plain",
@@ -29,6 +35,18 @@ const awsccIotsitewiseAsset = `{
             "child_asset_id": {
               "computed": true,
               "description": "The ID of the child asset to be associated.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "external_id": {
+              "computed": true,
+              "description": "String-friendly customer provided external ID",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "id": {
+              "computed": true,
+              "description": "Customer provided actual UUID for property",
               "description_kind": "plain",
               "type": "string"
             },
@@ -68,6 +86,18 @@ const awsccIotsitewiseAsset = `{
             "alias": {
               "computed": true,
               "description": "The property alias that identifies the property.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "external_id": {
+              "computed": true,
+              "description": "String-friendly customer provided external ID",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "id": {
+              "computed": true,
+              "description": "Customer provided actual UUID for property",
               "description_kind": "plain",
               "type": "string"
             },

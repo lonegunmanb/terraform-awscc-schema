@@ -27,6 +27,34 @@ const awsccEc2NetworkInterfaceAttachment = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "ena_srd_specification": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "ena_srd_enabled": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "ena_srd_udp_specification": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "ena_srd_udp_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

@@ -11,11 +11,13 @@ const awsccRedshiftserverlessWorkgroup = `{
     "attributes": {
       "base_capacity": {
         "computed": true,
+        "description": "The base compute capacity of the workgroup in Redshift Processing Units (RPUs).",
         "description_kind": "plain",
         "type": "number"
       },
       "config_parameters": {
         "computed": true,
+        "description": "A list of parameters to set for finer control over a database. Available options are datestyle, enable_user_activity_logging, query_group, search_path, max_query_execution_time, and require_ssl.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -35,6 +37,7 @@ const awsccRedshiftserverlessWorkgroup = `{
       },
       "enhanced_vpc_routing": {
         "computed": true,
+        "description": "The value that specifies whether to enable enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.",
         "description_kind": "plain",
         "type": "bool"
       },
@@ -44,23 +47,33 @@ const awsccRedshiftserverlessWorkgroup = `{
         "required": true,
         "type": "string"
       },
+      "max_capacity": {
+        "computed": true,
+        "description": "The max compute capacity of the workgroup in Redshift Processing Units (RPUs).",
+        "description_kind": "plain",
+        "type": "number"
+      },
       "namespace_name": {
         "computed": true,
+        "description": "The namespace the workgroup is associated with.",
         "description_kind": "plain",
         "type": "string"
       },
       "port": {
         "computed": true,
+        "description": "The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.",
         "description_kind": "plain",
         "type": "number"
       },
       "publicly_accessible": {
         "computed": true,
+        "description": "A value that specifies whether the workgroup can be accessible from a public network.",
         "description_kind": "plain",
         "type": "bool"
       },
       "security_group_ids": {
         "computed": true,
+        "description": "A list of security group IDs to associate with the workgroup.",
         "description_kind": "plain",
         "type": [
           "list",
@@ -69,6 +82,7 @@ const awsccRedshiftserverlessWorkgroup = `{
       },
       "subnet_ids": {
         "computed": true,
+        "description": "A list of subnet IDs the workgroup is associated with.",
         "description_kind": "plain",
         "type": [
           "list",
@@ -77,6 +91,7 @@ const awsccRedshiftserverlessWorkgroup = `{
       },
       "tags": {
         "computed": true,
+        "description": "The map of the key-value pairs used to tag the workgroup.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -96,6 +111,7 @@ const awsccRedshiftserverlessWorkgroup = `{
       },
       "workgroup": {
         "computed": true,
+        "description": "Definition for workgroup resource",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -200,6 +216,11 @@ const awsccRedshiftserverlessWorkgroup = `{
               "description_kind": "plain",
               "type": "bool"
             },
+            "max_capacity": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
             "namespace_name": {
               "computed": true,
               "description_kind": "plain",
@@ -252,6 +273,7 @@ const awsccRedshiftserverlessWorkgroup = `{
       },
       "workgroup_name": {
         "computed": true,
+        "description": "The name of the workgroup.",
         "description_kind": "plain",
         "type": "string"
       }

@@ -1073,6 +1073,12 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true,
               "type": "string"
             },
+            "custom_time_zone": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "data_format_conversion_configuration": {
               "computed": true,
               "description_kind": "plain",
@@ -1408,6 +1414,12 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true
             },
             "error_output_prefix": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "file_extension": {
               "computed": true,
               "description_kind": "plain",
               "optional": true,

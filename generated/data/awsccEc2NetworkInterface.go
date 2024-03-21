@@ -213,6 +213,12 @@ const awsccEc2NetworkInterface = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "vpc_id": {
+        "computed": true,
+        "description": "The ID of the VPC",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::EC2::NetworkInterface",

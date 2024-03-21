@@ -17,7 +17,7 @@ const awsccEcrRegistryPolicy = `{
       },
       "policy_text": {
         "computed": true,
-        "description": "The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see Registry permissions (https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html) in the Amazon Elastic Container Registry User Guide.",
+        "description": "The JSON policy text for your registry.",
         "description_kind": "plain",
         "type": "string"
       },

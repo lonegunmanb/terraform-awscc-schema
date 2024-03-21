@@ -9,6 +9,13 @@ import (
 const awsccConnectSecurityProfile = `{
   "block": {
     "attributes": {
+      "allowed_access_control_hierarchy_group_id": {
+        "computed": true,
+        "description": "The identifier of the hierarchy group that a security profile uses to restrict access to resources in Amazon Connect.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "allowed_access_control_tags": {
         "computed": true,
         "description": "The list of tags that a security profile uses to restrict access to resources in Amazon Connect.",
@@ -32,12 +39,48 @@ const awsccConnectSecurityProfile = `{
         },
         "optional": true
       },
+      "applications": {
+        "computed": true,
+        "description": "A list of third-party applications that the security profile will give access to.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "application_permissions": {
+              "description": "The permissions that the agent is granted on the application",
+              "description_kind": "plain",
+              "required": true,
+              "type": [
+                "set",
+                "string"
+              ]
+            },
+            "namespace": {
+              "description": "Namespace of the application that you want to give access to.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
       "description": {
         "computed": true,
         "description": "The description of the security profile.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "hierarchy_restricted_resources": {
+        "computed": true,
+        "description": "The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "set",
+          "string"
+        ]
       },
       "id": {
         "computed": true,
@@ -50,6 +93,18 @@ const awsccConnectSecurityProfile = `{
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "last_modified_region": {
+        "computed": true,
+        "description": "The AWS Region where this resource was last modified.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "last_modified_time": {
+        "computed": true,
+        "description": "The timestamp when this resource was last modified.",
+        "description_kind": "plain",
+        "type": "number"
       },
       "permissions": {
         "computed": true,

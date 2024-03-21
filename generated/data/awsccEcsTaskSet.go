@@ -172,6 +172,25 @@ const awsccEcsTaskSet = `{
           "nesting_mode": "list"
         }
       },
+      "tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "task_definition": {
         "computed": true,
         "description": "The short name or full Amazon Resource Name (ARN) of the task definition for the tasks in the task set to use.",

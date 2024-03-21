@@ -93,13 +93,13 @@ const awsccOsisPipeline = `{
         "optional": true
       },
       "max_units": {
-        "description": "The maximum pipeline capacity, in Ingestion Compute Units (ICUs).",
+        "description": "The maximum pipeline capacity, in Ingestion OpenSearch Compute Units (OCUs).",
         "description_kind": "plain",
         "required": true,
         "type": "number"
       },
       "min_units": {
-        "description": "The minimum pipeline capacity, in Ingestion Compute Units (ICUs).",
+        "description": "The minimum pipeline capacity, in Ingestion OpenSearch Compute Units (OCUs).",
         "description_kind": "plain",
         "required": true,
         "type": "number"
@@ -111,7 +111,7 @@ const awsccOsisPipeline = `{
         "type": "string"
       },
       "pipeline_configuration_body": {
-        "description": "The Data Prepper pipeline configuration in YAML format.",
+        "description": "The Data Prepper pipeline configuration.",
         "description_kind": "plain",
         "required": true,
         "type": "string"

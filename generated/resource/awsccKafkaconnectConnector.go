@@ -368,6 +368,27 @@ const awsccKafkaconnectConnector = `{
         "required": true,
         "type": "string"
       },
+      "tags": {
+        "computed": true,
+        "description": "A collection of tags associated with a resource",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "value": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
       "worker_configuration": {
         "computed": true,
         "description": "Specifies the worker configuration to use with the connector.",

@@ -11,16 +11,19 @@ const awsccEc2SecurityGroup = `{
     "attributes": {
       "group_description": {
         "computed": true,
+        "description": "A description for the security group.",
         "description_kind": "plain",
         "type": "string"
       },
       "group_id": {
         "computed": true,
+        "description": "The group ID of the specified security group.",
         "description_kind": "plain",
         "type": "string"
       },
       "group_name": {
         "computed": true,
+        "description": "The name of the security group.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -32,6 +35,7 @@ const awsccEc2SecurityGroup = `{
       },
       "security_group_egress": {
         "computed": true,
+        "description": "[VPC only] The outbound rules associated with the security group. There is a short interruption during which you cannot connect to the security group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -70,6 +74,11 @@ const awsccEc2SecurityGroup = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "source_security_group_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "to_port": {
               "computed": true,
               "description_kind": "plain",
@@ -81,6 +90,7 @@ const awsccEc2SecurityGroup = `{
       },
       "security_group_ingress": {
         "computed": true,
+        "description": "The inbound rules associated with the security group. There is a short interruption during which you cannot connect to the security group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -140,6 +150,7 @@ const awsccEc2SecurityGroup = `{
       },
       "tags": {
         "computed": true,
+        "description": "Any tags assigned to the security group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -159,6 +170,7 @@ const awsccEc2SecurityGroup = `{
       },
       "vpc_id": {
         "computed": true,
+        "description": "The ID of the VPC for the security group.",
         "description_kind": "plain",
         "type": "string"
       }

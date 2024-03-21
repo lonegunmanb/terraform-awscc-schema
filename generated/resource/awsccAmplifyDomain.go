@@ -34,10 +34,60 @@ const awsccAmplifyDomain = `{
         "optional": true,
         "type": "string"
       },
+      "certificate": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "certificate_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "certificate_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "certificate_verification_dns_record": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "certificate_record": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "certificate_settings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "certificate_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "custom_certificate_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "domain_name": {
         "description_kind": "plain",
@@ -84,6 +134,12 @@ const awsccAmplifyDomain = `{
           "nesting_mode": "list"
         },
         "required": true
+      },
+      "update_status": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       }
     },
     "description": "The AWS::Amplify::Domain resource allows you to connect a custom domain to your app.",

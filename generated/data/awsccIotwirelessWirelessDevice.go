@@ -226,6 +226,12 @@ const awsccIotwirelessWirelessDevice = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "positioning": {
+        "computed": true,
+        "description": "FPort values for the GNSS, stream, and ClockSync functions of the positioning information.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "A list of key-value pairs that contain metadata for the device. Currently not supported, will not create if tags are passed.",

@@ -22,6 +22,13 @@ const awsccIotsitewiseAsset = `{
         "optional": true,
         "type": "string"
       },
+      "asset_external_id": {
+        "computed": true,
+        "description": "The External ID of the asset",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "asset_hierarchies": {
         "computed": true,
         "description_kind": "plain",
@@ -33,10 +40,25 @@ const awsccIotsitewiseAsset = `{
               "required": true,
               "type": "string"
             },
+            "external_id": {
+              "computed": true,
+              "description": "String-friendly customer provided external ID",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "id": {
+              "computed": true,
+              "description": "Customer provided actual UUID for property",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "logical_id": {
+              "computed": true,
               "description": "The LogicalID of a hierarchy in the parent asset's model.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -74,10 +96,25 @@ const awsccIotsitewiseAsset = `{
               "optional": true,
               "type": "string"
             },
+            "external_id": {
+              "computed": true,
+              "description": "String-friendly customer provided external ID",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "id": {
+              "computed": true,
+              "description": "Customer provided actual UUID for property",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "logical_id": {
+              "computed": true,
               "description": "Customer provided ID for property.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "notification_state": {

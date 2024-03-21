@@ -23,7 +23,7 @@ const awsccSnsTopicPolicy = `{
       },
       "topics": {
         "computed": true,
-        "description": "The Amazon Resource Names (ARN) of the topics to which you want to add the policy. You can use the [Ref](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)` + "`" + ` function to specify an [AWS::SNS::Topic](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html) resource.",
+        "description": "The Amazon Resource Names (ARN) of the topics to which you want to add the policy. You can use the ` + "`" + `` + "`" + `Ref` + "`" + `` + "`" + ` function to specify an ` + "`" + `` + "`" + `AWS::SNS::Topic` + "`" + `` + "`" + ` resource.",
         "description_kind": "plain",
         "type": [
           "list",

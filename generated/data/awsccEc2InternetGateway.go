@@ -17,7 +17,6 @@ const awsccEc2InternetGateway = `{
       },
       "internet_gateway_id": {
         "computed": true,
-        "description": "ID of internet gateway.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -29,11 +28,13 @@ const awsccEc2InternetGateway = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "The tag key.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The tag value.",
               "description_kind": "plain",
               "type": "string"
             }

@@ -26,20 +26,96 @@ const awsccResiliencehubResiliencyPolicy = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "rpo_in_secs": {
+            "az": {
               "computed": true,
-              "description": "RPO in seconds.",
+              "description": "Failure Policy.",
               "description_kind": "plain",
-              "type": "number"
+              "nested_type": {
+                "attributes": {
+                  "rpo_in_secs": {
+                    "computed": true,
+                    "description": "RPO in seconds.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "rto_in_secs": {
+                    "computed": true,
+                    "description": "RTO in seconds.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             },
-            "rto_in_secs": {
+            "hardware": {
               "computed": true,
-              "description": "RTO in seconds.",
+              "description": "Failure Policy.",
               "description_kind": "plain",
-              "type": "number"
+              "nested_type": {
+                "attributes": {
+                  "rpo_in_secs": {
+                    "computed": true,
+                    "description": "RPO in seconds.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "rto_in_secs": {
+                    "computed": true,
+                    "description": "RTO in seconds.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "region": {
+              "computed": true,
+              "description": "Failure Policy.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "rpo_in_secs": {
+                    "computed": true,
+                    "description": "RPO in seconds.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "rto_in_secs": {
+                    "computed": true,
+                    "description": "RTO in seconds.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "software": {
+              "computed": true,
+              "description": "Failure Policy.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "rpo_in_secs": {
+                    "computed": true,
+                    "description": "RPO in seconds.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "rto_in_secs": {
+                    "computed": true,
+                    "description": "RTO in seconds.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
-          "nesting_mode": "map"
+          "nesting_mode": "single"
         }
       },
       "policy_arn": {

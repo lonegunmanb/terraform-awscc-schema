@@ -11,7 +11,6 @@ const awsccSnsTopicPolicy = `{
     "attributes": {
       "id": {
         "computed": true,
-        "description": "The provider-assigned unique ID for this managed resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -22,7 +21,7 @@ const awsccSnsTopicPolicy = `{
         "type": "string"
       },
       "topics": {
-        "description": "The Amazon Resource Names (ARN) of the topics to which you want to add the policy. You can use the [Ref](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)` + "`" + ` function to specify an [AWS::SNS::Topic](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html) resource.",
+        "description": "The Amazon Resource Names (ARN) of the topics to which you want to add the policy. You can use the ` + "`" + `` + "`" + `Ref` + "`" + `` + "`" + ` function to specify an ` + "`" + `` + "`" + `AWS::SNS::Topic` + "`" + `` + "`" + ` resource.",
         "description_kind": "plain",
         "required": true,
         "type": [
@@ -31,7 +30,7 @@ const awsccSnsTopicPolicy = `{
         ]
       }
     },
-    "description": "Schema for AWS::SNS::TopicPolicy",
+    "description": "The ` + "`" + `` + "`" + `AWS::SNS::TopicPolicy` + "`" + `` + "`" + ` resource associates SNS topics with a policy. For an example snippet, see [Declaring an policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html#scenario-sns-policy) in the *User Guide*.",
     "description_kind": "plain"
   },
   "version": 1

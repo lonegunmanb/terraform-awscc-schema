@@ -457,6 +457,12 @@ const awsccRdsDbCluster = `{
         "description_kind": "plain",
         "type": "bool"
       },
+      "storage_throughput": {
+        "computed": true,
+        "description": "Specifies the storage throughput value for the DB cluster. This setting applies only to the gp3 storage type.",
+        "description_kind": "plain",
+        "type": "number"
+      },
       "storage_type": {
         "computed": true,
         "description": "Specifies the storage type to be associated with the DB cluster.",

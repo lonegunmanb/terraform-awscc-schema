@@ -45,6 +45,36 @@ const awsccBatchJobQueue = `{
         "optional": true,
         "type": "string"
       },
+      "job_state_time_limit_actions": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "action": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "max_time_seconds": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "number"
+            },
+            "reason": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "state": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "priority": {
         "description_kind": "plain",
         "required": true,

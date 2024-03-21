@@ -17,7 +17,7 @@ const awsccGameliftGameServerGroup = `{
       },
       "auto_scaling_policy": {
         "computed": true,
-        "description": "Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting",
+        "description": "Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting. Updating this game server group property will not take effect for the created EC2 Auto Scaling group, please update the EC2 Auto Scaling group directly after creating the resource.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -113,7 +113,7 @@ const awsccGameliftGameServerGroup = `{
       },
       "launch_template": {
         "computed": true,
-        "description": "The EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group.",
+        "description": "The EC2 launch template that contains configuration settings and game server code to be deployed to all instances in the game server group. Updating this game server group property will not take effect for the created EC2 Auto Scaling group, please update the EC2 Auto Scaling group directly after creating the resource.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -145,14 +145,14 @@ const awsccGameliftGameServerGroup = `{
       },
       "max_size": {
         "computed": true,
-        "description": "The maximum number of instances allowed in the EC2 Auto Scaling group.",
+        "description": "The maximum number of instances allowed in the EC2 Auto Scaling group. Updating this game server group property will not take effect for the created EC2 Auto Scaling group, please update the EC2 Auto Scaling group directly after creating the resource.",
         "description_kind": "plain",
         "optional": true,
         "type": "number"
       },
       "min_size": {
         "computed": true,
-        "description": "The minimum number of instances allowed in the EC2 Auto Scaling group.",
+        "description": "The minimum number of instances allowed in the EC2 Auto Scaling group. Updating this game server group property will not take effect for the created EC2 Auto Scaling group, please update the EC2 Auto Scaling group directly after creating the resource.",
         "description_kind": "plain",
         "optional": true,
         "type": "number"
@@ -165,7 +165,7 @@ const awsccGameliftGameServerGroup = `{
       },
       "tags": {
         "computed": true,
-        "description": "A list of labels to assign to the new game server group resource.",
+        "description": "A list of labels to assign to the new game server group resource. Updating game server group tags with CloudFormation will not take effect. Please update this property using AWS GameLift APIs instead.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -190,7 +190,7 @@ const awsccGameliftGameServerGroup = `{
       },
       "vpc_subnets": {
         "computed": true,
-        "description": "A list of virtual private cloud (VPC) subnets to use with instances in the game server group.",
+        "description": "A list of virtual private cloud (VPC) subnets to use with instances in the game server group. Updating this game server group property will not take effect for the created EC2 Auto Scaling group, please update the EC2 Auto Scaling group directly after creating the resource.",
         "description_kind": "plain",
         "optional": true,
         "type": [

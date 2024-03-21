@@ -85,6 +85,80 @@ const awsccDatasyncTask = `{
         },
         "optional": true
       },
+      "manifest_config": {
+        "computed": true,
+        "description": "Configures a manifest, which is a list of files or objects that you want DataSync to transfer.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "action": {
+              "computed": true,
+              "description": "Specifies what DataSync uses the manifest for.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "format": {
+              "computed": true,
+              "description": "Specifies the file format of your manifest.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "source": {
+              "description": "Specifies the manifest that you want DataSync to use and where it's hosted.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "s3": {
+                    "computed": true,
+                    "description": "Specifies the S3 bucket where you're hosting the manifest that you want AWS DataSync to use.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "bucket_access_role_arn": {
+                          "computed": true,
+                          "description": "Specifies the AWS Identity and Access Management (IAM) role that allows DataSync to access your manifest.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "manifest_object_path": {
+                          "computed": true,
+                          "description": "Specifies the Amazon S3 object key of your manifest.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "manifest_object_version_id": {
+                          "computed": true,
+                          "description": "Specifies the object version ID of the manifest that you want DataSync to use.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "s3_bucket_arn": {
+                          "computed": true,
+                          "description": "Specifies the Amazon Resource Name (ARN) of the S3 bucket where you're hosting your manifest.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "required": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "name": {
         "computed": true,
         "description": "The name of a task. This value is a text reference that is used to identify the task in the console.",

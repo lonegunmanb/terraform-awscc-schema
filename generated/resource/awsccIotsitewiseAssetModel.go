@@ -21,6 +21,13 @@ const awsccIotsitewiseAssetModel = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "composed_asset_model_id": {
+              "computed": true,
+              "description": "The component model ID for which the composite model is composed of",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "composite_model_properties": {
               "computed": true,
               "description": "The property definitions of the asset model. You can specify up to 200 properties per asset model.",
@@ -40,10 +47,25 @@ const awsccIotsitewiseAssetModel = `{
                     "optional": true,
                     "type": "string"
                   },
-                  "logical_id": {
-                    "description": "Customer provided ID for property.",
+                  "external_id": {
+                    "computed": true,
+                    "description": "The External ID of the Asset Model Property",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "id": {
+                    "computed": true,
+                    "description": "The ID of the Asset Model Property",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "logical_id": {
+                    "computed": true,
+                    "description": "Customer provided Logical ID for property.",
+                    "description_kind": "plain",
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
@@ -100,16 +122,62 @@ const awsccIotsitewiseAssetModel = `{
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
+                                          "hierarchy_external_id": {
+                                            "computed": true,
+                                            "description": "The External ID of the hierarchy that is trying to be referenced",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "hierarchy_id": {
+                                            "computed": true,
+                                            "description": "The ID of the hierarchy that is trying to be referenced",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
                                           "hierarchy_logical_id": {
                                             "computed": true,
                                             "description_kind": "plain",
                                             "optional": true,
                                             "type": "string"
                                           },
-                                          "property_logical_id": {
+                                          "property_external_id": {
+                                            "computed": true,
+                                            "description": "The External ID of the property that is trying to be referenced",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
+                                          },
+                                          "property_id": {
+                                            "computed": true,
+                                            "description": "The ID of the property that is trying to be referenced",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "property_logical_id": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "property_path": {
+                                            "computed": true,
+                                            "description": "The path of the property that is trying to be referenced",
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "name": {
+                                                  "description": "The name of the property",
+                                                  "description_kind": "plain",
+                                                  "required": true,
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            },
+                                            "optional": true
                                           }
                                         },
                                         "nesting_mode": "single"
@@ -187,16 +255,62 @@ const awsccIotsitewiseAssetModel = `{
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
+                                          "hierarchy_external_id": {
+                                            "computed": true,
+                                            "description": "The External ID of the hierarchy that is trying to be referenced",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "hierarchy_id": {
+                                            "computed": true,
+                                            "description": "The ID of the hierarchy that is trying to be referenced",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
                                           "hierarchy_logical_id": {
                                             "computed": true,
                                             "description_kind": "plain",
                                             "optional": true,
                                             "type": "string"
                                           },
-                                          "property_logical_id": {
+                                          "property_external_id": {
+                                            "computed": true,
+                                            "description": "The External ID of the property that is trying to be referenced",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
+                                          },
+                                          "property_id": {
+                                            "computed": true,
+                                            "description": "The ID of the property that is trying to be referenced",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "property_logical_id": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "property_path": {
+                                            "computed": true,
+                                            "description": "The path of the property that is trying to be referenced",
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "name": {
+                                                  "description": "The name of the property",
+                                                  "description_kind": "plain",
+                                                  "required": true,
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            },
+                                            "optional": true
                                           }
                                         },
                                         "nesting_mode": "single"
@@ -242,11 +356,42 @@ const awsccIotsitewiseAssetModel = `{
               "optional": true,
               "type": "string"
             },
+            "external_id": {
+              "computed": true,
+              "description": "The External ID of the composite model",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "id": {
+              "computed": true,
+              "description": "The Actual ID of the composite model",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "name": {
               "description": "A unique, friendly name for the asset composite model.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
+            },
+            "parent_asset_model_composite_model_external_id": {
+              "computed": true,
+              "description": "The parent composite model External ID",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "path": {
+              "computed": true,
+              "description": "The path of the composite model. This is only for derived composite models",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
             },
             "type": {
               "description": "The type of the composite model. For alarm composite models, this type is AWS/ALARM",
@@ -266,6 +411,13 @@ const awsccIotsitewiseAssetModel = `{
         "optional": true,
         "type": "string"
       },
+      "asset_model_external_id": {
+        "computed": true,
+        "description": "The external ID of the asset model.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "asset_model_hierarchies": {
         "computed": true,
         "description": "The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. You can specify up to 10 hierarchies per asset model.",
@@ -278,10 +430,25 @@ const awsccIotsitewiseAssetModel = `{
               "required": true,
               "type": "string"
             },
-            "logical_id": {
-              "description": "Customer provided ID for hierarchy.",
+            "external_id": {
+              "computed": true,
+              "description": "Customer provided external ID for hierarchy",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
+              "type": "string"
+            },
+            "id": {
+              "computed": true,
+              "description": "Customer provided actual ID for hierarchy",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "logical_id": {
+              "computed": true,
+              "description": "Customer provided logical ID for hierarchy.",
+              "description_kind": "plain",
+              "optional": true,
               "type": "string"
             },
             "name": {
@@ -326,10 +493,25 @@ const awsccIotsitewiseAssetModel = `{
               "optional": true,
               "type": "string"
             },
-            "logical_id": {
-              "description": "Customer provided ID for property.",
+            "external_id": {
+              "computed": true,
+              "description": "The External ID of the Asset Model Property",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
+              "type": "string"
+            },
+            "id": {
+              "computed": true,
+              "description": "The ID of the Asset Model Property",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "logical_id": {
+              "computed": true,
+              "description": "Customer provided Logical ID for property.",
+              "description_kind": "plain",
+              "optional": true,
               "type": "string"
             },
             "name": {
@@ -386,16 +568,62 @@ const awsccIotsitewiseAssetModel = `{
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
+                                    "hierarchy_external_id": {
+                                      "computed": true,
+                                      "description": "The External ID of the hierarchy that is trying to be referenced",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "hierarchy_id": {
+                                      "computed": true,
+                                      "description": "The ID of the hierarchy that is trying to be referenced",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
                                     "hierarchy_logical_id": {
                                       "computed": true,
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": "string"
                                     },
-                                    "property_logical_id": {
+                                    "property_external_id": {
+                                      "computed": true,
+                                      "description": "The External ID of the property that is trying to be referenced",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
+                                    },
+                                    "property_id": {
+                                      "computed": true,
+                                      "description": "The ID of the property that is trying to be referenced",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "property_logical_id": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "property_path": {
+                                      "computed": true,
+                                      "description": "The path of the property that is trying to be referenced",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "name": {
+                                            "description": "The name of the property",
+                                            "description_kind": "plain",
+                                            "required": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      },
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -473,16 +701,62 @@ const awsccIotsitewiseAssetModel = `{
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
+                                    "hierarchy_external_id": {
+                                      "computed": true,
+                                      "description": "The External ID of the hierarchy that is trying to be referenced",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "hierarchy_id": {
+                                      "computed": true,
+                                      "description": "The ID of the hierarchy that is trying to be referenced",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
                                     "hierarchy_logical_id": {
                                       "computed": true,
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": "string"
                                     },
-                                    "property_logical_id": {
+                                    "property_external_id": {
+                                      "computed": true,
+                                      "description": "The External ID of the property that is trying to be referenced",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
+                                    },
+                                    "property_id": {
+                                      "computed": true,
+                                      "description": "The ID of the property that is trying to be referenced",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "property_logical_id": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "property_path": {
+                                      "computed": true,
+                                      "description": "The path of the property that is trying to be referenced",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "name": {
+                                            "description": "The name of the property",
+                                            "description_kind": "plain",
+                                            "required": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      },
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -520,6 +794,13 @@ const awsccIotsitewiseAssetModel = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "asset_model_type": {
+        "computed": true,
+        "description": "The type of the asset model (ASSET_MODEL OR COMPONENT_MODEL)",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       },
       "id": {
         "computed": true,

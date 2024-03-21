@@ -26,22 +26,97 @@ const awsccResiliencehubResiliencyPolicy = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "rpo_in_secs": {
-              "computed": true,
-              "description": "RPO in seconds.",
+            "az": {
+              "description": "Failure Policy.",
               "description_kind": "plain",
-              "optional": true,
-              "type": "number"
+              "nested_type": {
+                "attributes": {
+                  "rpo_in_secs": {
+                    "description": "RPO in seconds.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "number"
+                  },
+                  "rto_in_secs": {
+                    "description": "RTO in seconds.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "required": true
             },
-            "rto_in_secs": {
-              "computed": true,
-              "description": "RTO in seconds.",
+            "hardware": {
+              "description": "Failure Policy.",
               "description_kind": "plain",
-              "optional": true,
-              "type": "number"
+              "nested_type": {
+                "attributes": {
+                  "rpo_in_secs": {
+                    "description": "RPO in seconds.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "number"
+                  },
+                  "rto_in_secs": {
+                    "description": "RTO in seconds.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "required": true
+            },
+            "region": {
+              "computed": true,
+              "description": "Failure Policy.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "rpo_in_secs": {
+                    "description": "RPO in seconds.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "number"
+                  },
+                  "rto_in_secs": {
+                    "description": "RTO in seconds.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "software": {
+              "description": "Failure Policy.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "rpo_in_secs": {
+                    "description": "RPO in seconds.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "number"
+                  },
+                  "rto_in_secs": {
+                    "description": "RTO in seconds.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "required": true
             }
           },
-          "nesting_mode": "map"
+          "nesting_mode": "single"
         },
         "required": true
       },

@@ -64,7 +64,6 @@ const awsccB2BiTransformer = `{
       "modified_at": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "name": {

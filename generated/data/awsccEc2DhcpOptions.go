@@ -35,6 +35,12 @@ const awsccEc2DhcpOptions = `{
         "required": true,
         "type": "string"
       },
+      "ipv_6_address_preferred_lease_time": {
+        "computed": true,
+        "description": "The preferred Lease Time for ipV6 address in seconds.",
+        "description_kind": "plain",
+        "type": "number"
+      },
       "netbios_name_servers": {
         "computed": true,
         "description": "The IPv4 addresses of up to four NetBIOS name servers.",

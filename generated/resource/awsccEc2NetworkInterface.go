@@ -232,6 +232,12 @@ const awsccEc2NetworkInterface = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "vpc_id": {
+        "computed": true,
+        "description": "The ID of the VPC",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "The AWS::EC2::NetworkInterface resource creates network interface",

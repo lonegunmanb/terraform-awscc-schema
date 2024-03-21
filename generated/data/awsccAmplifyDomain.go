@@ -32,10 +32,53 @@ const awsccAmplifyDomain = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "certificate": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "certificate_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "certificate_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "certificate_verification_dns_record": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "certificate_record": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "certificate_settings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "certificate_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "custom_certificate_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "domain_name": {
         "computed": true,
@@ -81,6 +124,11 @@ const awsccAmplifyDomain = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "update_status": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::Amplify::Domain",

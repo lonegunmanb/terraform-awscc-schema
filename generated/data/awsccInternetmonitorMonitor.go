@@ -88,6 +88,11 @@ const awsccInternetmonitorMonitor = `{
         "required": true,
         "type": "string"
       },
+      "include_linked_accounts": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "internet_measurements_log_delivery": {
         "computed": true,
         "description_kind": "plain",
@@ -120,6 +125,11 @@ const awsccInternetmonitorMonitor = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "linked_account_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "max_city_networks_to_monitor": {
         "computed": true,

@@ -23,13 +23,12 @@ const awsccRoute53ResolverResolverRuleAssociation = `{
       },
       "resolver_rule_association_id": {
         "computed": true,
-        "description": "Primary Identifier for Resolver Rule Association",
         "description_kind": "plain",
         "type": "string"
       },
       "resolver_rule_id": {
         "computed": true,
-        "description": "The ID of the Resolver rule that you associated with the VPC that is specified by VPCId.",
+        "description": "The ID of the Resolver rule that you associated with the VPC that is specified by ` + "`" + `` + "`" + `VPCId` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "type": "string"
       },

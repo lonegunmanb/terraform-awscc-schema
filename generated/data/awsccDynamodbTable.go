@@ -66,7 +66,7 @@ const awsccDynamodbTable = `{
       },
       "global_secondary_indexes": {
         "computed": true,
-        "description": "Global secondary indexes to be created on the table. You can create up to 20 global secondary indexes.\n  If you update a table to include a new global secondary index, CFNlong initiates the index creation and then proceeds with the stack update. CFNlong doesn't wait for the index to complete creation because the backfilling phase can take a long time, depending on the size of the table. You can't use the index or update the table until the index's status is ` + "`" + `` + "`" + `ACTIVE` + "`" + `` + "`" + `. You can track its status by using the DynamoDB [DescribeTable](https://docs.aws.amazon.com/cli/latest/reference/dynamodb/describe-table.html) command.\n If you add or delete an index during an update, we recommend that you don't update any other resources. If your stack fails to update and is rolled back while adding a new index, you must manually delete the index. \n Updates are not supported. The following are exceptions:\n  +  If you update either the contributor insights specification or the provisioned throughput value",
+        "description": "Global secondary indexes to be created on the table. You can create up to 20 global secondary indexes.\n  If you update a table to include a new global secondary index, CFNlong initiates the index creation and then proceeds with the stack update. CFNlong doesn't wait for the index to complete creation because the backfilling phase can take a long time, depending on the size of the table. You can't use the index or update the table until the index's status is ` + "`" + `` + "`" + `ACTIVE` + "`" + `` + "`" + `. You can track its status by using the DynamoDB [DescribeTable](https://docs.aws.amazon.com/cli/latest/reference/dynamodb/describe-table.html) command.\n If you add or delete an index during an update, we recommend that you don't update any other resources. If your stack fails to update and is rolled back while adding a new index, you must manually delete the index. \n Updates are not supported. The following are exceptions:\n  +  If you update either the contributor insights specification or the provisioned throughput values of global secondary indexes, you can update the table without interruption.\n  +  You can delete or add one global secondary index without interruption. If you do both in the same update (for example, by changing the index's logical ID), the update fails.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -131,7 +131,7 @@ const awsccDynamodbTable = `{
                   },
                   "projection_type": {
                     "computed": true,
-                    "description": "The set of attributes that are projected into the index:\n  +   ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the index and primary keys are projected into the index.\n  +   ` + "`" + `` + "`" + `INCLUDE` + "`" + `` + "`" + ` - In addition to the attributes described in ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + `, the secondary index will include other non-key attributes that you specify.\n  +   ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` - All of the table attributes are projected into the index.",
+                    "description": "The set of attributes that are projected into the index:\n  +   ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the index and primary keys are projected into the index.\n  +   ` + "`" + `` + "`" + `INCLUDE` + "`" + `` + "`" + ` - In addition to the attributes described in ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + `, the secondary index will include other non-key attributes that you specify.\n  +   ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` - All of the table attributes are projected into the index.\n  \n When using the DynamoDB console, ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` is selected by default.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -335,7 +335,7 @@ const awsccDynamodbTable = `{
                   },
                   "projection_type": {
                     "computed": true,
-                    "description": "The set of attributes that are projected into the index:\n  +   ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the index and primary keys are projected into the index.\n  +   ` + "`" + `` + "`" + `INCLUDE` + "`" + `` + "`" + ` - In addition to the attributes described in ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + `, the secondary index will include other non-key attributes that you specify.\n  +   ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` - All of the table attributes are projected into the index.",
+                    "description": "The set of attributes that are projected into the index:\n  +   ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the index and primary keys are projected into the index.\n  +   ` + "`" + `` + "`" + `INCLUDE` + "`" + `` + "`" + ` - In addition to the attributes described in ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + `, the secondary index will include other non-key attributes that you specify.\n  +   ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` - All of the table attributes are projected into the index.\n  \n When using the DynamoDB console, ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` is selected by default.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -385,6 +385,20 @@ const awsccDynamodbTable = `{
           "nesting_mode": "single"
         }
       },
+      "resource_policy": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "policy_document": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "sse_specification": {
         "computed": true,
         "description": "Specifies the settings to enable server-side encryption.",
@@ -424,6 +438,20 @@ const awsccDynamodbTable = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "resource_policy": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "policy_document": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "stream_view_type": {
               "computed": true,
               "description": "When an item in the table is modified, ` + "`" + `` + "`" + `StreamViewType` + "`" + `` + "`" + ` determines what information is written to the stream for this table. Valid values for ` + "`" + `` + "`" + `StreamViewType` + "`" + `` + "`" + ` are:\n  +   ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the key attributes of the modified item are written to the stream.\n  +   ` + "`" + `` + "`" + `NEW_IMAGE` + "`" + `` + "`" + ` - The entire item, as it appears after it was modified, is written to the stream.\n  +   ` + "`" + `` + "`" + `OLD_IMAGE` + "`" + `` + "`" + ` - The entire item, as it appeared before it was modified, is written to the stream.\n  +   ` + "`" + `` + "`" + `NEW_AND_OLD_IMAGES` + "`" + `` + "`" + ` - Both the new and the old item images of the item are written to the stream.",

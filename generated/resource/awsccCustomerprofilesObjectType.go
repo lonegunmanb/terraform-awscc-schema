@@ -23,10 +23,9 @@ const awsccCustomerprofilesObjectType = `{
         "type": "string"
       },
       "description": {
-        "computed": true,
         "description": "Description of the profile object type.",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "domain_name": {
@@ -158,10 +157,9 @@ const awsccCustomerprofilesObjectType = `{
         "type": "string"
       },
       "object_type_name": {
-        "computed": true,
         "description": "The name of the profile object type.",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "source_last_updated_timestamp_format": {
