@@ -48,9 +48,15 @@ const awsccEc2FlowLog = `{
         },
         "optional": true
       },
-      "id": {
+      "flow_log_id": {
         "computed": true,
         "description": "The Flow Log ID",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "id": {
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

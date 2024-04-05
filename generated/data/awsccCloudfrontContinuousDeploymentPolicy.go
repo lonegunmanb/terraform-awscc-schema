@@ -154,6 +154,11 @@ const awsccCloudfrontContinuousDeploymentPolicy = `{
           "nesting_mode": "single"
         }
       },
+      "continuous_deployment_policy_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

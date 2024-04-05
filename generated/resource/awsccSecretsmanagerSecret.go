@@ -99,6 +99,7 @@ const awsccSecretsmanagerSecret = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -139,6 +140,11 @@ const awsccSecretsmanagerSecret = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "secret_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "secret_string": {
         "computed": true,

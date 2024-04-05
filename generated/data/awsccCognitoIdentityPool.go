@@ -83,6 +83,11 @@ const awsccCognitoIdentityPool = `{
         "required": true,
         "type": "string"
       },
+      "identity_pool_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "identity_pool_name": {
         "computed": true,
         "description_kind": "plain",

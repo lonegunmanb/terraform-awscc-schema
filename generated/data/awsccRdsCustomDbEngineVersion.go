@@ -51,6 +51,12 @@ const awsccRdsCustomDbEngineVersion = `{
         "required": true,
         "type": "string"
       },
+      "image_id": {
+        "computed": true,
+        "description": "The identifier of Amazon Machine Image (AMI) used for CEV.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "kms_key_id": {
         "computed": true,
         "description": "The AWS KMS key identifier for an encrypted CEV. A symmetric KMS key is required for RDS Custom, but optional for Amazon RDS.",
@@ -60,6 +66,12 @@ const awsccRdsCustomDbEngineVersion = `{
       "manifest": {
         "computed": true,
         "description": "The CEV manifest, which is a JSON document that describes the installation .zip files stored in Amazon S3. Specify the name/value pairs in a file or a quoted string. RDS Custom applies the patches in the order in which they are listed.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "source_custom_db_engine_version_identifier": {
+        "computed": true,
+        "description": "The identifier of the source custom engine version.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -90,6 +102,12 @@ const awsccRdsCustomDbEngineVersion = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "use_aws_provided_latest_image": {
+        "computed": true,
+        "description": "A value that indicates whether AWS provided latest image is applied automatically to the Custom Engine Version. By default, AWS provided latest image is applied automatically. This value is only applied on create.",
+        "description_kind": "plain",
+        "type": "bool"
       }
     },
     "description": "Data Source schema for AWS::RDS::CustomDBEngineVersion",

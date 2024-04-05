@@ -98,6 +98,29 @@ const awsccCloudwatchCompositeAlarm = `{
           "list",
           "string"
         ]
+      },
+      "tags": {
+        "computed": true,
+        "description": "A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "description": "A unique identifier for the tag. The combination of tag keys and values can help you organize and categorize your resources.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "value": {
+              "description": "The value for the specified tag key.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       }
     },
     "description": "The AWS::CloudWatch::CompositeAlarm type specifies an alarm which aggregates the states of other Alarms (Metric or Composite Alarms) as defined by the AlarmRule expression",

@@ -25,6 +25,11 @@ const awsccEventschemasRegistryPolicy = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "registry_policy_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "revision_id": {
         "computed": true,
         "description_kind": "plain",

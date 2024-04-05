@@ -162,8 +162,14 @@ const awsccCloudfrontContinuousDeploymentPolicy = `{
         },
         "required": true
       },
+      "continuous_deployment_policy_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

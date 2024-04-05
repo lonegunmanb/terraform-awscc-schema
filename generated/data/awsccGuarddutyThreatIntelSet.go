@@ -58,6 +58,11 @@ const awsccGuarddutyThreatIntelSet = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "threat_intel_set_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::GuardDuty::ThreatIntelSet",

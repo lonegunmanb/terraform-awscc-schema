@@ -11,6 +11,7 @@ const awsccCognitoLogDeliveryConfiguration = `{
     "attributes": {
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -51,6 +52,11 @@ const awsccCognitoLogDeliveryConfiguration = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "log_delivery_configuration_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "user_pool_id": {
         "description_kind": "plain",

@@ -37,6 +37,12 @@ const awsccLambdaPermission = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "permission_id": {
+        "computed": true,
         "description_kind": "plain",
         "type": "string"
       },

@@ -52,7 +52,7 @@ const awsccDatazoneProject = `{
       },
       "id": {
         "computed": true,
-        "description": "The ID of the Amazon DataZone project.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -66,6 +66,12 @@ const awsccDatazoneProject = `{
         "description": "The name of the Amazon DataZone project.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "project_id": {
+        "computed": true,
+        "description": "The ID of the Amazon DataZone project.",
+        "description_kind": "plain",
         "type": "string"
       }
     },

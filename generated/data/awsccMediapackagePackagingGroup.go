@@ -65,6 +65,12 @@ const awsccMediapackagePackagingGroup = `{
         "required": true,
         "type": "string"
       },
+      "packaging_group_id": {
+        "computed": true,
+        "description": "The ID of the PackagingGroup.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "A collection of tags associated with a resource",

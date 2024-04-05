@@ -39,6 +39,11 @@ const awsccLambdaPermission = `{
         "required": true,
         "type": "string"
       },
+      "permission_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "principal": {
         "computed": true,
         "description": "The AWS-service or AWS-account that invokes the function. If you specify a service, use ` + "`" + `` + "`" + `SourceArn` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `SourceAccount` + "`" + `` + "`" + ` to limit who can invoke the function through that service.",

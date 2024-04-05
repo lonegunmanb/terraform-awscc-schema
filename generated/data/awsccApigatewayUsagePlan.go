@@ -137,6 +137,11 @@ const awsccApigatewayUsagePlan = `{
           "nesting_mode": "single"
         }
       },
+      "usage_plan_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "usage_plan_name": {
         "computed": true,
         "description": "The name of a usage plan.",

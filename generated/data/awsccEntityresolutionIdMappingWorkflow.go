@@ -87,13 +87,18 @@ const awsccEntityresolutionIdMappingWorkflow = `{
           "attributes": {
             "input_source_arn": {
               "computed": true,
-              "description": "An Glue table ARN for the input source table",
+              "description": "An Glue table ARN for the input source table or IdNamespace ARN",
               "description_kind": "plain",
               "type": "string"
             },
             "schema_arn": {
               "computed": true,
               "description": "The SchemaMapping arn associated with the Schema",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "type": {
+              "computed": true,
               "description_kind": "plain",
               "type": "string"
             }

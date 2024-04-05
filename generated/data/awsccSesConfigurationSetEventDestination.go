@@ -9,6 +9,11 @@ import (
 const awsccSesConfigurationSetEventDestination = `{
   "block": {
     "attributes": {
+      "configuration_set_event_destination_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "configuration_set_name": {
         "computed": true,
         "description": "The name of the configuration set that contains the event destination.",

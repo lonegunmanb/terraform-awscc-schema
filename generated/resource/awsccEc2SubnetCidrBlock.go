@@ -11,7 +11,7 @@ const awsccEc2SubnetCidrBlock = `{
     "attributes": {
       "id": {
         "computed": true,
-        "description": "Information about the IPv6 association.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -35,6 +35,12 @@ const awsccEc2SubnetCidrBlock = `{
         "description_kind": "plain",
         "optional": true,
         "type": "number"
+      },
+      "subnet_cidr_block_id": {
+        "computed": true,
+        "description": "Information about the IPv6 association.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "subnet_id": {
         "description": "The ID of the subnet",

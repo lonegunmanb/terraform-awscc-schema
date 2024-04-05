@@ -55,6 +55,12 @@ const awsccMedialiveMultiplex = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "multiplex_id": {
+        "computed": true,
         "description": "The unique id of the multiplex.",
         "description_kind": "plain",
         "type": "string"

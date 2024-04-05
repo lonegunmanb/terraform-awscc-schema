@@ -39,6 +39,13 @@ const awsccCodestarconnectionsSyncConfiguration = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "publish_deployment_status": {
+        "computed": true,
+        "description": "Whether to enable or disable publishing of deployment status to source providers.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "repository_link_id": {
         "description": "A UUID that uniquely identifies the RepositoryLink that the SyncConfig is associated with.",
         "description_kind": "plain",
@@ -67,6 +74,13 @@ const awsccCodestarconnectionsSyncConfiguration = `{
         "description": "The type of resource synchronization service that is to be configured, for example, CFN_STACK_SYNC.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "trigger_resource_update_on": {
+        "computed": true,
+        "description": "When to trigger Git sync to begin the stack update.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       }
     },

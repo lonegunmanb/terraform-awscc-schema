@@ -125,6 +125,11 @@ const awsccSecretsmanagerSecret = `{
           "nesting_mode": "list"
         }
       },
+      "secret_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "secret_string": {
         "computed": true,
         "description": "The text to encrypt and store in the secret. We recommend you use a JSON structure of key/value pairs for your secret value. To generate a random password, use ` + "`" + `` + "`" + `GenerateSecretString` + "`" + `` + "`" + ` instead. If you omit both ` + "`" + `` + "`" + `GenerateSecretString` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `SecretString` + "`" + `` + "`" + `, you create an empty secret. When you make a change to this property, a new secret version is created.",

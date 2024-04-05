@@ -27,6 +27,11 @@ const awsccEfsMountTarget = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "mount_target_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "security_groups": {
         "computed": true,
         "description": "Up to five VPC security group IDs, of the form ` + "`" + `` + "`" + `sg-xxxxxxxx` + "`" + `` + "`" + `. These must be for the same VPC as subnet specified.",

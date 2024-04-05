@@ -24,7 +24,7 @@ const awsccIotwirelessWirelessGateway = `{
       },
       "id": {
         "computed": true,
-        "description": "Id for Wireless Gateway. Returned upon successful create.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -97,6 +97,12 @@ const awsccIotwirelessWirelessGateway = `{
         "description": "Thing Name. If there is a Thing created, this can be returned with a Get call.",
         "description_kind": "plain",
         "optional": true,
+        "type": "string"
+      },
+      "wireless_gateway_id": {
+        "computed": true,
+        "description": "Id for Wireless Gateway. Returned upon successful create.",
+        "description_kind": "plain",
         "type": "string"
       }
     },

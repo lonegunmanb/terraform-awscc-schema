@@ -23,7 +23,7 @@ const awsccIotwirelessTaskDefinition = `{
       },
       "id": {
         "computed": true,
-        "description": "The ID of the new wireless gateway task definition",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -123,6 +123,12 @@ const awsccIotwirelessTaskDefinition = `{
           "nesting_mode": "set"
         },
         "optional": true
+      },
+      "task_definition_id": {
+        "computed": true,
+        "description": "The ID of the new wireless gateway task definition",
+        "description_kind": "plain",
+        "type": "string"
       },
       "task_definition_type": {
         "computed": true,

@@ -65,6 +65,11 @@ const awsccEc2VpcPeeringConnection = `{
         "description": "The ID of the VPC.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "vpc_peering_connection_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::EC2::VPCPeeringConnection",

@@ -63,7 +63,7 @@ const awsccEc2NetworkInterface = `{
       },
       "id": {
         "computed": true,
-        "description": "Network interface id.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -142,6 +142,12 @@ const awsccEc2NetworkInterface = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "network_interface_id": {
+        "computed": true,
+        "description": "Network interface id.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "primary_ipv_6_address": {
         "computed": true,

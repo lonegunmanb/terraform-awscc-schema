@@ -38,7 +38,7 @@ const awsccIotwirelessMulticastGroup = `{
       },
       "id": {
         "computed": true,
-        "description": "Multicast group id. Returned after successful create.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -75,6 +75,12 @@ const awsccIotwirelessMulticastGroup = `{
           "nesting_mode": "single"
         },
         "required": true
+      },
+      "multicast_group_id": {
+        "computed": true,
+        "description": "Multicast group id. Returned after successful create.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "name": {
         "computed": true,

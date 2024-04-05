@@ -166,7 +166,7 @@ const awsccSsmPatchBaseline = `{
       },
       "id": {
         "computed": true,
-        "description": "The ID of the patch baseline.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -181,6 +181,12 @@ const awsccSsmPatchBaseline = `{
         "description": "Defines the operating system the patch baseline applies to. The Default value is WINDOWS.",
         "description_kind": "plain",
         "optional": true,
+        "type": "string"
+      },
+      "patch_baseline_id": {
+        "computed": true,
+        "description": "The ID of the patch baseline.",
+        "description_kind": "plain",
         "type": "string"
       },
       "patch_groups": {

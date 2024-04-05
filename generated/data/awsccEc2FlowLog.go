@@ -45,6 +45,12 @@ const awsccEc2FlowLog = `{
           "nesting_mode": "single"
         }
       },
+      "flow_log_id": {
+        "computed": true,
+        "description": "The Flow Log ID",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

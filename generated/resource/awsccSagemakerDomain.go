@@ -196,6 +196,36 @@ const awsccSagemakerDomain = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "custom_images": {
+                    "computed": true,
+                    "description": "A list of custom images for use for CodeEditor apps.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "app_image_config_name": {
+                          "description": "The Name of the AppImageConfig.",
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "string"
+                        },
+                        "image_name": {
+                          "description": "The name of the CustomImage. Must be unique to your account.",
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "string"
+                        },
+                        "image_version_number": {
+                          "computed": true,
+                          "description": "The version number of the CustomImage.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
                   "default_resource_spec": {
                     "computed": true,
                     "description": "The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the CodeEditor app.",

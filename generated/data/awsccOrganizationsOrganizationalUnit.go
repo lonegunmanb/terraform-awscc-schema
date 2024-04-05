@@ -27,6 +27,12 @@ const awsccOrganizationsOrganizationalUnit = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "organizational_unit_id": {
+        "computed": true,
+        "description": "The unique identifier (ID) associated with this OU.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "parent_id": {
         "computed": true,
         "description": "The unique identifier (ID) of the parent root or OU that you want to create the new OU in.",

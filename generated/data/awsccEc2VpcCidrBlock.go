@@ -63,6 +63,12 @@ const awsccEc2VpcCidrBlock = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "vpc_cidr_block_id": {
+        "computed": true,
+        "description": "The Id of the VPC associated CIDR Block.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "vpc_id": {
         "computed": true,
         "description": "The ID of the VPC.",

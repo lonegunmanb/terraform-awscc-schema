@@ -15,6 +15,12 @@ const awsccMacieCustomDataIdentifier = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "custom_data_identifier_id": {
+        "computed": true,
+        "description": "Custom data identifier ID.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description": "Description of custom data identifier.",

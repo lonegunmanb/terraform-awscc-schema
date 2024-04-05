@@ -39,6 +39,12 @@ const awsccRoute53ResolverResolverQueryLoggingConfigAssociation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "resolver_query_logging_config_association_id": {
+        "computed": true,
+        "description": "Id",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "resource_id": {
         "computed": true,
         "description": "ResourceId",

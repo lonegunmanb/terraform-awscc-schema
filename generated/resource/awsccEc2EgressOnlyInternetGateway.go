@@ -9,9 +9,15 @@ import (
 const awsccEc2EgressOnlyInternetGateway = `{
   "block": {
     "attributes": {
-      "id": {
+      "egress_only_internet_gateway_id": {
         "computed": true,
         "description": "Service Generated ID of the EgressOnlyInternetGateway",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "id": {
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

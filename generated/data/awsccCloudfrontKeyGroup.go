@@ -42,6 +42,11 @@ const awsccCloudfrontKeyGroup = `{
           "nesting_mode": "single"
         }
       },
+      "key_group_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "last_modified_time": {
         "computed": true,
         "description_kind": "plain",

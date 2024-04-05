@@ -90,15 +90,22 @@ const awsccEntityresolutionIdMappingWorkflow = `{
         "nested_type": {
           "attributes": {
             "input_source_arn": {
-              "description": "An Glue table ARN for the input source table",
+              "description": "An Glue table ARN for the input source table or IdNamespace ARN",
               "description_kind": "plain",
               "required": true,
               "type": "string"
             },
             "schema_arn": {
+              "computed": true,
               "description": "The SchemaMapping arn associated with the Schema",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
+              "type": "string"
+            },
+            "type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
               "type": "string"
             }
           },
@@ -107,6 +114,7 @@ const awsccEntityresolutionIdMappingWorkflow = `{
         "required": true
       },
       "output_source_config": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -125,7 +133,7 @@ const awsccEntityresolutionIdMappingWorkflow = `{
           },
           "nesting_mode": "list"
         },
-        "required": true
+        "optional": true
       },
       "role_arn": {
         "description_kind": "plain",

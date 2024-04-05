@@ -74,11 +74,6 @@ const awsccEc2SecurityGroup = `{
               "description_kind": "plain",
               "type": "string"
             },
-            "source_security_group_id": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": "string"
-            },
             "to_port": {
               "computed": true,
               "description_kind": "plain",
@@ -87,6 +82,12 @@ const awsccEc2SecurityGroup = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "security_group_id": {
+        "computed": true,
+        "description": "The group name or group ID depending on whether the SG is created in default or specific VPC",
+        "description_kind": "plain",
+        "type": "string"
       },
       "security_group_ingress": {
         "computed": true,

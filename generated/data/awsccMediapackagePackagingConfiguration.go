@@ -642,6 +642,12 @@ const awsccMediapackagePackagingConfiguration = `{
           "nesting_mode": "single"
         }
       },
+      "packaging_configuration_id": {
+        "computed": true,
+        "description": "The ID of the PackagingConfiguration.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "packaging_group_id": {
         "computed": true,
         "description": "The ID of a PackagingGroup.",

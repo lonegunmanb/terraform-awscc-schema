@@ -11,6 +11,7 @@ const awsccEventschemasRegistryPolicy = `{
     "attributes": {
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -22,6 +23,11 @@ const awsccEventschemasRegistryPolicy = `{
       "registry_name": {
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "registry_policy_id": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       },
       "revision_id": {

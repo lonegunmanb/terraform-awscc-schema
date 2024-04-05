@@ -21,6 +21,69 @@ const awsccSagemakerAppImageConfig = `{
         "required": true,
         "type": "string"
       },
+      "code_editor_app_image_config": {
+        "computed": true,
+        "description": "The CodeEditorAppImageConfig.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "container_config": {
+              "computed": true,
+              "description": "The container configuration for a SageMaker image.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "container_arguments": {
+                    "computed": true,
+                    "description": "A list of arguments to apply to the container.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "container_entrypoint": {
+                    "computed": true,
+                    "description": "The custom entry point to use on container.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "container_environment_variables": {
+                    "computed": true,
+                    "description": "A list of variables to apply to the custom container.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "key": {
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "string"
+                        },
+                        "value": {
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

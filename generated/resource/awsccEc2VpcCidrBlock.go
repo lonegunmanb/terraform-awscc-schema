@@ -25,7 +25,7 @@ const awsccEc2VpcCidrBlock = `{
       },
       "id": {
         "computed": true,
-        "description": "The Id of the VPC associated CIDR Block.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -69,6 +69,12 @@ const awsccEc2VpcCidrBlock = `{
         "description": "The ID of an IPv6 address pool from which to allocate the IPv6 CIDR block.",
         "description_kind": "plain",
         "optional": true,
+        "type": "string"
+      },
+      "vpc_cidr_block_id": {
+        "computed": true,
+        "description": "The Id of the VPC associated CIDR Block.",
+        "description_kind": "plain",
         "type": "string"
       },
       "vpc_id": {

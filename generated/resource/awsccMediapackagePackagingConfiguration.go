@@ -562,9 +562,9 @@ const awsccMediapackagePackagingConfiguration = `{
         "optional": true
       },
       "id": {
-        "description": "The ID of the PackagingConfiguration.",
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
-        "required": true,
         "type": "string"
       },
       "mss_package": {
@@ -698,6 +698,12 @@ const awsccMediapackagePackagingConfiguration = `{
           "nesting_mode": "single"
         },
         "optional": true
+      },
+      "packaging_configuration_id": {
+        "description": "The ID of the PackagingConfiguration.",
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
       },
       "packaging_group_id": {
         "description": "The ID of a PackagingGroup.",

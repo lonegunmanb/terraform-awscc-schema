@@ -158,6 +158,11 @@ const awsccBackupBackupSelection = `{
           "nesting_mode": "single"
         }
       },
+      "backup_selection_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

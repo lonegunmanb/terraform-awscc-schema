@@ -111,6 +111,12 @@ const awsccIotwirelessTaskDefinition = `{
           "nesting_mode": "set"
         }
       },
+      "task_definition_id": {
+        "computed": true,
+        "description": "The ID of the new wireless gateway task definition",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "task_definition_type": {
         "computed": true,
         "description": "A filter to list only the wireless gateway task definitions that use this task definition type",

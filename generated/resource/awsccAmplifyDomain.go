@@ -42,25 +42,21 @@ const awsccAmplifyDomain = `{
             "certificate_arn": {
               "computed": true,
               "description_kind": "plain",
-              "optional": true,
               "type": "string"
             },
             "certificate_type": {
               "computed": true,
               "description_kind": "plain",
-              "optional": true,
               "type": "string"
             },
             "certificate_verification_dns_record": {
               "computed": true,
               "description_kind": "plain",
-              "optional": true,
               "type": "string"
             }
           },
           "nesting_mode": "single"
-        },
-        "optional": true
+        }
       },
       "certificate_record": {
         "computed": true,
@@ -138,7 +134,6 @@ const awsccAmplifyDomain = `{
       "update_status": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       }
     },

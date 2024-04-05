@@ -57,6 +57,12 @@ const awsccIotwirelessFuotaTask = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "fuota_task_id": {
+        "computed": true,
+        "description": "FUOTA task id. Returned after successful create.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "fuota_task_status": {
         "computed": true,
         "description": "FUOTA task status. Returned after successful read.",

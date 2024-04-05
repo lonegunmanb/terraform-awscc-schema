@@ -343,6 +343,11 @@ const awsccCloudfrontResponseHeadersPolicy = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "response_headers_policy_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::CloudFront::ResponseHeadersPolicy",

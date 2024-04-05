@@ -9,6 +9,12 @@ import (
 const awsccMacieAllowList = `{
   "block": {
     "attributes": {
+      "allow_list_id": {
+        "computed": true,
+        "description": "AllowList ID.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "arn": {
         "computed": true,
         "description": "AllowList ARN.",
@@ -62,7 +68,7 @@ const awsccMacieAllowList = `{
       },
       "id": {
         "computed": true,
-        "description": "AllowList ID.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

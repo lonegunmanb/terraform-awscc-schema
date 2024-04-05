@@ -33,6 +33,12 @@ const awsccEc2SubnetCidrBlock = `{
         "description_kind": "plain",
         "type": "number"
       },
+      "subnet_cidr_block_id": {
+        "computed": true,
+        "description": "Information about the IPv6 association.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "subnet_id": {
         "computed": true,
         "description": "The ID of the subnet",

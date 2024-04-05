@@ -196,6 +196,12 @@ const awsccEcsTaskSet = `{
         "description": "The short name or full Amazon Resource Name (ARN) of the task definition for the tasks in the task set to use.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "task_set_id": {
+        "computed": true,
+        "description": "The ID of the task set.",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::ECS::TaskSet",

@@ -15,6 +15,12 @@ const awsccRoute53CidrCollection = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "cidr_collection_id": {
+        "computed": true,
+        "description": "UUID of the CIDR collection.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

@@ -36,7 +36,7 @@ const awsccOrganizationsPolicy = `{
       },
       "id": {
         "computed": true,
-        "description": "Id of the Policy",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -44,6 +44,12 @@ const awsccOrganizationsPolicy = `{
         "description": "Name of the Policy",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "policy_id": {
+        "computed": true,
+        "description": "Id of the Policy",
+        "description_kind": "plain",
         "type": "string"
       },
       "tags": {

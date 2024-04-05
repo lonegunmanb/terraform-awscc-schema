@@ -25,6 +25,11 @@ const awsccRoute53HostedZone = `{
           "nesting_mode": "single"
         }
       },
+      "hosted_zone_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "hosted_zone_tags": {
         "computed": true,
         "description": "Adds, edits, or deletes tags for a health check or a hosted zone.\n For information about using tags for cost allocation, see [Using Cost Allocation Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the *User Guide*.",
@@ -85,19 +90,19 @@ const awsccRoute53HostedZone = `{
       },
       "vp_cs": {
         "computed": true,
-        "description": "*Private hosted zones:* A complex type that contains information about the VPCs that are associated with the specified hosted zone.\n For public hosted zones, omit ` + "`" + `` + "`" + `VPCs` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `VPCId` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `VPCRegion` + "`" + `` + "`" + `.",
+        "description": "*Private hosted zones:* A complex type that contains information about the VPCs that are associated with the specified hosted zone.\n  For public hosted zones, omit ` + "`" + `` + "`" + `VPCs` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `VPCId` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `VPCRegion` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "vpc_id": {
               "computed": true,
-              "description": "*Private hosted zones only:* The ID of an Amazon VPC.\n For public hosted zones, omit ` + "`" + `` + "`" + `VPCs` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `VPCId` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `VPCRegion` + "`" + `` + "`" + `.",
+              "description": "*Private hosted zones only:* The ID of an Amazon VPC.\n  For public hosted zones, omit ` + "`" + `` + "`" + `VPCs` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `VPCId` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `VPCRegion` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "type": "string"
             },
             "vpc_region": {
               "computed": true,
-              "description": "*Private hosted zones only:* The region that an Amazon VPC was created in.\n For public hosted zones, omit ` + "`" + `` + "`" + `VPCs` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `VPCId` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `VPCRegion` + "`" + `` + "`" + `.",
+              "description": "*Private hosted zones only:* The region that an Amazon VPC was created in.\n  For public hosted zones, omit ` + "`" + `` + "`" + `VPCs` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `VPCId` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `VPCRegion` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "type": "string"
             }

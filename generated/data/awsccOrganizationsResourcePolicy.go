@@ -27,6 +27,12 @@ const awsccOrganizationsResourcePolicy = `{
         "required": true,
         "type": "string"
       },
+      "resource_policy_id": {
+        "computed": true,
+        "description": "The unique identifier (ID) associated with this resource policy.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "A list of tags that you want to attach to the resource policy",

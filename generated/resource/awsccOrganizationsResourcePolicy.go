@@ -23,6 +23,12 @@ const awsccOrganizationsResourcePolicy = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "resource_policy_id": {
+        "computed": true,
         "description": "The unique identifier (ID) associated with this resource policy.",
         "description_kind": "plain",
         "type": "string"

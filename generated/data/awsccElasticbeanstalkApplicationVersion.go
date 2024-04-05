@@ -15,6 +15,11 @@ const awsccElasticbeanstalkApplicationVersion = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "application_version_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description": "A description of this application version.",

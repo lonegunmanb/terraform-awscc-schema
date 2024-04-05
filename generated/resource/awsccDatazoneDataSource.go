@@ -249,6 +249,12 @@ const awsccDatazoneDataSource = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "data_source_id": {
+        "computed": true,
+        "description": "The unique identifier of the data source.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description": "The description of the data source.",
@@ -289,7 +295,7 @@ const awsccDatazoneDataSource = `{
       },
       "id": {
         "computed": true,
-        "description": "The unique identifier of the data source.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

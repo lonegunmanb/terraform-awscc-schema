@@ -9,6 +9,11 @@ import (
 const awsccServicecatalogappregistryApplication = `{
   "block": {
     "attributes": {
+      "application_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "application_name": {
         "computed": true,
         "description": "The name of the application. ",
@@ -41,6 +46,7 @@ const awsccServicecatalogappregistryApplication = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

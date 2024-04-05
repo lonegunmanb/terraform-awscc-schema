@@ -128,6 +128,11 @@ const awsccCloudfrontCachePolicy = `{
           "nesting_mode": "single"
         }
       },
+      "cache_policy_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

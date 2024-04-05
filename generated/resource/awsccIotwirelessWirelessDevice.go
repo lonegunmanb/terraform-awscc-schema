@@ -30,7 +30,7 @@ const awsccIotwirelessWirelessDevice = `{
       },
       "id": {
         "computed": true,
-        "description": "Wireless device Id. Returned after successful create.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -289,6 +289,12 @@ const awsccIotwirelessWirelessDevice = `{
         "description": "Wireless device type, currently only Sidewalk and LoRa",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "wireless_device_id": {
+        "computed": true,
+        "description": "Wireless device Id. Returned after successful create.",
+        "description_kind": "plain",
         "type": "string"
       }
     },

@@ -84,6 +84,11 @@ const awsccGuarddutyDetector = `{
         },
         "optional": true
       },
+      "detector_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "enable": {
         "description_kind": "plain",
         "required": true,
@@ -139,6 +144,7 @@ const awsccGuarddutyDetector = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

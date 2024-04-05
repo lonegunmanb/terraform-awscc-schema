@@ -27,6 +27,12 @@ const awsccLexResourcePolicy = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "resource_policy_id": {
+        "computed": true,
+        "description": "The Physical ID of the resource policy.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "revision_id": {
         "computed": true,
         "description": "The current revision of the resource policy. Use the revision ID to make sure that you are updating the most current version of a resource policy when you add a policy statement to a resource, delete a resource, or update a resource.",

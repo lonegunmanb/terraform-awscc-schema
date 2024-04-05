@@ -11,13 +11,19 @@ const awsccRoute53ResolverResolverDnssecConfig = `{
     "attributes": {
       "id": {
         "computed": true,
-        "description": "Id",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
       "owner_id": {
         "computed": true,
         "description": "AccountId",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "resolver_dnssec_config_id": {
+        "computed": true,
+        "description": "Id",
         "description_kind": "plain",
         "type": "string"
       },

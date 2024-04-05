@@ -9,6 +9,11 @@ import (
 const awsccApigatewayAccount = `{
   "block": {
     "attributes": {
+      "account_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "cloudwatch_role_arn": {
         "computed": true,
         "description": "The ARN of an Amazon CloudWatch role for the current Account.",
@@ -18,6 +23,7 @@ const awsccApigatewayAccount = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       }

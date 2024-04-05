@@ -45,6 +45,12 @@ const awsccOrganizationsOrganization = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "organization_id": {
+        "computed": true,
+        "description": "The unique identifier (ID) of an organization.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "root_id": {
         "computed": true,
         "description": "The unique identifier (ID) for the root.",

@@ -90,6 +90,12 @@ const awsccIotwirelessWirelessGateway = `{
         "description": "Thing Name. If there is a Thing created, this can be returned with a Get call.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "wireless_gateway_id": {
+        "computed": true,
+        "description": "Id for Wireless Gateway. Returned upon successful create.",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::IoTWireless::WirelessGateway",

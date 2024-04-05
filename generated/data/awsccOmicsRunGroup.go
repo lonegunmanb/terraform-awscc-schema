@@ -50,6 +50,11 @@ const awsccOmicsRunGroup = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "run_group_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "A map of resource tags",

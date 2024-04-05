@@ -47,12 +47,18 @@ const awsccServicecatalogServiceAction = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
       "name": {
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "service_action_id": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       }
     },

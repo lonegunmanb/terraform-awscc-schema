@@ -61,6 +61,12 @@ const awsccOpensearchserverlessSecurityConfig = `{
           "nesting_mode": "single"
         }
       },
+      "security_config_id": {
+        "computed": true,
+        "description": "The identifier of the security config",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "type": {
         "computed": true,
         "description": "Config type for security config",

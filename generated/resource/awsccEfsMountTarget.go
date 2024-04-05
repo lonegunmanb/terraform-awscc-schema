@@ -17,6 +17,7 @@ const awsccEfsMountTarget = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -25,6 +26,11 @@ const awsccEfsMountTarget = `{
         "description": "Valid IPv4 address within the address range of the specified subnet.",
         "description_kind": "plain",
         "optional": true,
+        "type": "string"
+      },
+      "mount_target_id": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       },
       "security_groups": {

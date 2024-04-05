@@ -78,6 +78,11 @@ const awsccGuarddutyDetector = `{
           "nesting_mode": "single"
         }
       },
+      "detector_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "enable": {
         "computed": true,
         "description_kind": "plain",

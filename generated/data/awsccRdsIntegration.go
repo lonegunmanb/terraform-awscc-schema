@@ -23,6 +23,18 @@ const awsccRdsIntegration = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "data_filter": {
+        "computed": true,
+        "description": "The data filter for the integration.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "description": {
+        "computed": true,
+        "description": "The description of the integration.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

@@ -21,6 +21,12 @@ const awsccOpensearchserverlessCollection = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "collection_id": {
+        "computed": true,
+        "description": "The identifier of the collection",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "dashboard_endpoint": {
         "computed": true,
         "description": "The OpenSearch Dashboards endpoint for the collection.",
@@ -36,7 +42,7 @@ const awsccOpensearchserverlessCollection = `{
       },
       "id": {
         "computed": true,
-        "description": "The identifier of the collection",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

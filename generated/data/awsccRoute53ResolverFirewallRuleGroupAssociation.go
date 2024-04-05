@@ -27,6 +27,12 @@ const awsccRoute53ResolverFirewallRuleGroupAssociation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "firewall_rule_group_association_id": {
+        "computed": true,
+        "description": "Id",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "firewall_rule_group_id": {
         "computed": true,
         "description": "FirewallRuleGroupId",

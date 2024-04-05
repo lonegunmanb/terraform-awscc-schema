@@ -11,6 +11,7 @@ const awsccSnsTopicPolicy = `{
     "attributes": {
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -18,6 +19,11 @@ const awsccSnsTopicPolicy = `{
         "description": "A policy document that contains permissions to add to the specified SNS topics.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "topic_policy_id": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       },
       "topics": {

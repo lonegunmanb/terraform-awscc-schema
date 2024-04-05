@@ -11,6 +11,7 @@ const awsccApigatewayUsagePlanKey = `{
     "attributes": {
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -30,6 +31,11 @@ const awsccApigatewayUsagePlanKey = `{
         "description": "The Id of the UsagePlan resource representing the usage plan containing the UsagePlanKey resource representing a plan customer.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "usage_plan_key_id": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       }
     },

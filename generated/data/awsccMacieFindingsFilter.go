@@ -83,6 +83,12 @@ const awsccMacieFindingsFilter = `{
           "nesting_mode": "single"
         }
       },
+      "findings_filter_id": {
+        "computed": true,
+        "description": "Findings filter ID.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

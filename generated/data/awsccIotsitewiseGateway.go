@@ -80,6 +80,22 @@ const awsccIotsitewiseGateway = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "siemens_ie": {
+              "computed": true,
+              "description": "A gateway that runs on Siemens Industrial Edge.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "iot_core_thing_name": {
+                    "computed": true,
+                    "description": "The name of the IoT Core Thing.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

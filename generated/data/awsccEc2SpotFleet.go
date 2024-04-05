@@ -15,6 +15,11 @@ const awsccEc2SpotFleet = `{
         "required": true,
         "type": "string"
       },
+      "spot_fleet_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "spot_fleet_request_config_data": {
         "computed": true,
         "description_kind": "plain",

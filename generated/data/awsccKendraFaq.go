@@ -20,6 +20,12 @@ const awsccKendraFaq = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "faq_id": {
+        "computed": true,
+        "description": "Unique ID of the FAQ",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "file_format": {
         "computed": true,
         "description": "FAQ file format",

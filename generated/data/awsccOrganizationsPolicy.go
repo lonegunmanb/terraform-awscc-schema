@@ -45,6 +45,12 @@ const awsccOrganizationsPolicy = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "policy_id": {
+        "computed": true,
+        "description": "Id of the Policy",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "A list of tags that you want to attach to the newly created policy. For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string, but you can't set it to null.",

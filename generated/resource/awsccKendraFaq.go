@@ -21,6 +21,12 @@ const awsccKendraFaq = `{
         "optional": true,
         "type": "string"
       },
+      "faq_id": {
+        "computed": true,
+        "description": "Unique ID of the FAQ",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "file_format": {
         "computed": true,
         "description": "FAQ file format",
@@ -30,7 +36,7 @@ const awsccKendraFaq = `{
       },
       "id": {
         "computed": true,
-        "description": "Unique ID of the FAQ",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

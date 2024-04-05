@@ -9,6 +9,11 @@ import (
 const awsccManagedblockchainAccessor = `{
   "block": {
     "attributes": {
+      "accessor_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "accessor_type": {
         "description_kind": "plain",
         "required": true,
@@ -31,6 +36,7 @@ const awsccManagedblockchainAccessor = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

@@ -97,6 +97,11 @@ const awsccOmicsWorkflow = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "workflow_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::Omics::Workflow",

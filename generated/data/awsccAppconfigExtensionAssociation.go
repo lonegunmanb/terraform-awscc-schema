@@ -19,6 +19,11 @@ const awsccAppconfigExtensionAssociation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "extension_association_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "extension_identifier": {
         "computed": true,
         "description_kind": "plain",

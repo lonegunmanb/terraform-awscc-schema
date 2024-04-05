@@ -17,13 +17,19 @@ const awsccFmsResourceSet = `{
       },
       "id": {
         "computed": true,
-        "description": "A Base62 ID",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
       "name": {
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "resource_set_id": {
+        "computed": true,
+        "description": "A Base62 ID",
+        "description_kind": "plain",
         "type": "string"
       },
       "resource_type_list": {

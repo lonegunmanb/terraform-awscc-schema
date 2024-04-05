@@ -24,7 +24,7 @@ const awsccEcsTaskSet = `{
       },
       "id": {
         "computed": true,
-        "description": "The ID of the task set.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -217,6 +217,12 @@ const awsccEcsTaskSet = `{
         "description": "The short name or full Amazon Resource Name (ARN) of the task definition for the tasks in the task set to use.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "task_set_id": {
+        "computed": true,
+        "description": "The ID of the task set.",
+        "description_kind": "plain",
         "type": "string"
       }
     },

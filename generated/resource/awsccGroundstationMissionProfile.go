@@ -51,6 +51,7 @@ const awsccGroundstationMissionProfile = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -59,6 +60,11 @@ const awsccGroundstationMissionProfile = `{
         "description_kind": "plain",
         "required": true,
         "type": "number"
+      },
+      "mission_profile_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "name": {
         "description": "A name used to identify a mission profile.",

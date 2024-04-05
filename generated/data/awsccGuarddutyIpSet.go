@@ -30,6 +30,11 @@ const awsccGuarddutyIpSet = `{
         "required": true,
         "type": "string"
       },
+      "ip_set_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "location": {
         "computed": true,
         "description_kind": "plain",

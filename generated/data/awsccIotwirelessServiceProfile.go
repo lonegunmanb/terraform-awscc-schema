@@ -132,6 +132,12 @@ const awsccIotwirelessServiceProfile = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "service_profile_id": {
+        "computed": true,
+        "description": "Service profile Id. Returned after successful create.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "A list of key-value pairs that contain metadata for the service profile.",

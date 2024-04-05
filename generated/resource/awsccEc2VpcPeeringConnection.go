@@ -11,6 +11,7 @@ const awsccEc2VpcPeeringConnection = `{
     "attributes": {
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -67,6 +68,11 @@ const awsccEc2VpcPeeringConnection = `{
         "description": "The ID of the VPC.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "vpc_peering_connection_id": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       }
     },

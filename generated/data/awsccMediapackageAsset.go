@@ -15,6 +15,12 @@ const awsccMediapackageAsset = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "asset_id": {
+        "computed": true,
+        "description": "The unique identifier for the Asset.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "created_at": {
         "computed": true,
         "description": "The time the Asset was initially submitted for Ingest.",

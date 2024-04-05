@@ -98,7 +98,7 @@ const awsccRumAppMonitor = `{
                       "attributes": {
                         "dimension_keys": {
                           "computed": true,
-                          "description": "Use this field only if you are sending the metric to CloudWatch.\n\nThis field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in CloudWatch. Valid values for the entries in this field are the following:\n\n\"metadata.pageId\": \"PageId\"\n\n\"metadata.browserName\": \"BrowserName\"\n\n\"metadata.deviceType\": \"DeviceType\"\n\n\"metadata.osName\": \"OSName\"\n\n\"metadata.countryCode\": \"CountryCode\"\n\n\"event_details.fileType\": \"FileType\"\n\nAll dimensions listed in this field must also be included in EventPattern.",
+                          "description": "Use this field only if you are sending the metric to CloudWatch.\n\nThis field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in CloudWatch. For extended metrics, valid values for the entries in this field are the following:\n\n\"metadata.pageId\": \"PageId\"\n\n\"metadata.browserName\": \"BrowserName\"\n\n\"metadata.deviceType\": \"DeviceType\"\n\n\"metadata.osName\": \"OSName\"\n\n\"metadata.countryCode\": \"CountryCode\"\n\n\"event_details.fileType\": \"FileType\"\n\nAll dimensions listed in this field must also be included in EventPattern.",
                           "description_kind": "plain",
                           "type": [
                             "map",
@@ -113,7 +113,13 @@ const awsccRumAppMonitor = `{
                         },
                         "name": {
                           "computed": true,
-                          "description": "The name for the metric that is defined in this structure. Valid values are the following:\n\nPerformanceNavigationDuration\n\nPerformanceResourceDuration\n\nNavigationSatisfiedTransaction\n\nNavigationToleratedTransaction\n\nNavigationFrustratedTransaction\n\nWebVitalsCumulativeLayoutShift\n\nWebVitalsFirstInputDelay\n\nWebVitalsLargestContentfulPaint\n\nJsErrorCount\n\nHttpErrorCount\n\nSessionCount",
+                          "description": "The name for the metric that is defined in this structure. For extended metrics, valid values are the following:\n\nPerformanceNavigationDuration\n\nPerformanceResourceDuration\n\nNavigationSatisfiedTransaction\n\nNavigationToleratedTransaction\n\nNavigationFrustratedTransaction\n\nWebVitalsCumulativeLayoutShift\n\nWebVitalsFirstInputDelay\n\nWebVitalsLargestContentfulPaint\n\nJsErrorCount\n\nHttpErrorCount\n\nSessionCount",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "namespace": {
+                          "computed": true,
+                          "description": "The namespace used by CloudWatch Metrics for the metric that is defined in this structure",
                           "description_kind": "plain",
                           "type": "string"
                         },
@@ -155,6 +161,12 @@ const awsccRumAppMonitor = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "app_monitor_id": {
+        "computed": true,
+        "description": "The unique ID of the new app monitor.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "custom_events": {
         "computed": true,

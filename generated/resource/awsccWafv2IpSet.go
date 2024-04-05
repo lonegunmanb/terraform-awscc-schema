@@ -33,7 +33,7 @@ const awsccWafv2IpSet = `{
       },
       "id": {
         "computed": true,
-        "description": "Id of the IPSet",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -41,6 +41,12 @@ const awsccWafv2IpSet = `{
         "description": "Type of addresses in the IPSet, use IPV4 for IPV4 IP addresses, IPV6 for IPV6 address.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "ip_set_id": {
+        "computed": true,
+        "description": "Id of the IPSet",
+        "description_kind": "plain",
         "type": "string"
       },
       "name": {

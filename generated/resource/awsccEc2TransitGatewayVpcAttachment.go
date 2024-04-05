@@ -20,6 +20,7 @@ const awsccEc2TransitGatewayVpcAttachment = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -95,6 +96,11 @@ const awsccEc2TransitGatewayVpcAttachment = `{
       "transit_gateway_id": {
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "transit_gateway_vpc_attachment_id": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       },
       "vpc_id": {

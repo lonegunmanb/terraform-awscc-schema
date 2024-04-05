@@ -63,6 +63,11 @@ const awsccEc2SecurityGroupEgress = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "security_group_egress_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "to_port": {
         "computed": true,
         "description": "If the protocol is TCP or UDP, this is the end of the port range. If the protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the start port is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).",

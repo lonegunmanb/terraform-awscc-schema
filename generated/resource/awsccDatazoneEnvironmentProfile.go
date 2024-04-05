@@ -64,9 +64,15 @@ const awsccDatazoneEnvironmentProfile = `{
         "required": true,
         "type": "string"
       },
-      "id": {
+      "environment_profile_id": {
         "computed": true,
         "description": "The ID of this Amazon DataZone environment profile.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "id": {
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

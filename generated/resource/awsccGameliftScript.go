@@ -23,7 +23,7 @@ const awsccGameliftScript = `{
       },
       "id": {
         "computed": true,
-        "description": "A unique identifier for the Realtime script",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -32,6 +32,12 @@ const awsccGameliftScript = `{
         "description": "A descriptive label that is associated with a script. Script names do not need to be unique.",
         "description_kind": "plain",
         "optional": true,
+        "type": "string"
+      },
+      "script_id": {
+        "computed": true,
+        "description": "A unique identifier for the Realtime script",
+        "description_kind": "plain",
         "type": "string"
       },
       "size_on_disk": {

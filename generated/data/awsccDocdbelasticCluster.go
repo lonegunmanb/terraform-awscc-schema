@@ -24,6 +24,11 @@ const awsccDocdbelasticCluster = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "backup_retention_period": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "number"
+      },
       "cluster_arn": {
         "computed": true,
         "description_kind": "plain",
@@ -50,6 +55,11 @@ const awsccDocdbelasticCluster = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "preferred_backup_window": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "preferred_maintenance_window": {
         "computed": true,
         "description_kind": "plain",
@@ -61,6 +71,11 @@ const awsccDocdbelasticCluster = `{
         "type": "number"
       },
       "shard_count": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "shard_instance_count": {
         "computed": true,
         "description_kind": "plain",
         "type": "number"

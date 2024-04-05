@@ -21,6 +21,12 @@ const awsccEc2EipAssociation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "eip_association_id": {
+        "computed": true,
+        "description": "Composite ID of non-empty properties, to determine the identification.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

@@ -50,9 +50,15 @@ const awsccRoute53ResolverFirewallDomainList = `{
           "string"
         ]
       },
-      "id": {
+      "firewall_domain_list_id": {
         "computed": true,
         "description": "ResourceId",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "id": {
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

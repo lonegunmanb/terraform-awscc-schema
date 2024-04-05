@@ -20,6 +20,11 @@ const awsccIotCaCertificate = `{
         "optional": true,
         "type": "string"
       },
+      "ca_certificate_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "ca_certificate_pem": {
         "description_kind": "plain",
         "required": true,
@@ -33,6 +38,7 @@ const awsccIotCaCertificate = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

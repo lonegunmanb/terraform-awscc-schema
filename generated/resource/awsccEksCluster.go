@@ -9,6 +9,31 @@ import (
 const awsccEksCluster = `{
   "block": {
     "attributes": {
+      "access_config": {
+        "computed": true,
+        "description": "An object representing the Access Config to use for the cluster.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "authentication_mode": {
+              "computed": true,
+              "description": "Specify the authentication mode that should be used to create your cluster.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "bootstrap_cluster_creator_admin_permissions": {
+              "computed": true,
+              "description": "Set this value to false to avoid creating a default cluster admin Access Entry using the IAM principal used to create the cluster.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "arn": {
         "computed": true,
         "description": "The ARN of the cluster, such as arn:aws:eks:us-west-2:666666666666:cluster/prod.",
@@ -18,6 +43,12 @@ const awsccEksCluster = `{
       "certificate_authority_data": {
         "computed": true,
         "description": "The certificate-authority-data for your cluster.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "cluster_id": {
+        "computed": true,
+        "description": "The unique ID given to your cluster.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -166,6 +197,50 @@ const awsccEksCluster = `{
         "description": "The issuer URL for the cluster's OIDC identity provider, such as https://oidc.eks.us-west-2.amazonaws.com/id/EXAMPLED539D4633E53DE1B716D3041E. If you need to remove https:// from this output value, you can include the following code in your template.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "outpost_config": {
+        "computed": true,
+        "description": "An object representing the Outpost configuration to use for AWS EKS outpost cluster.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "control_plane_instance_type": {
+              "description": "Specify the Instance type of the machines that should be used to create your cluster.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "control_plane_placement": {
+              "computed": true,
+              "description": "Specify the placement group of the control plane machines for your cluster.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "group_name": {
+                    "computed": true,
+                    "description": "Specify the placement group name of the control place machines for your cluster.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "outpost_arns": {
+              "description": "Specify one or more Arn(s) of Outpost(s) on which you would like to create your cluster.",
+              "description_kind": "plain",
+              "required": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "resources_vpc_config": {
         "description": "An object representing the VPC configuration to use for an Amazon EKS cluster.",

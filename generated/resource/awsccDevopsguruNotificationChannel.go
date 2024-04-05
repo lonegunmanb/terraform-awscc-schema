@@ -69,6 +69,12 @@ const awsccDevopsguruNotificationChannel = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "notification_channel_id": {
+        "computed": true,
         "description": "The ID of a notification channel.",
         "description_kind": "plain",
         "type": "string"

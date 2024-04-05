@@ -1482,6 +1482,12 @@ const awsccBatchJobDefinition = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "job_definition_id": {
+        "computed": true,
         "description_kind": "plain",
         "type": "string"
       },

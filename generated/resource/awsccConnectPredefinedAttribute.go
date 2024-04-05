@@ -21,6 +21,18 @@ const awsccConnectPredefinedAttribute = `{
         "required": true,
         "type": "string"
       },
+      "last_modified_region": {
+        "computed": true,
+        "description": "Last modified region.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "last_modified_time": {
+        "computed": true,
+        "description": "Last modified time.",
+        "description_kind": "plain",
+        "type": "number"
+      },
       "name": {
         "description": "The name of the predefined attribute.",
         "description_kind": "plain",

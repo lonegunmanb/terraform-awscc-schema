@@ -149,6 +149,12 @@ const awsccKendraIndex = `{
         "required": true,
         "type": "string"
       },
+      "index_id": {
+        "computed": true,
+        "description": "Unique ID of index",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "name": {
         "computed": true,
         "description": "Name of index",

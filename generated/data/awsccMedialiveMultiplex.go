@@ -56,6 +56,12 @@ const awsccMedialiveMultiplex = `{
         "required": true,
         "type": "string"
       },
+      "multiplex_id": {
+        "computed": true,
+        "description": "The unique id of the multiplex.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "multiplex_settings": {
         "computed": true,
         "description": "Configuration for a multiplex event.",

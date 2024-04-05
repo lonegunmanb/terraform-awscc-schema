@@ -163,6 +163,12 @@ const awsccSsmPatchBaseline = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "patch_baseline_id": {
+        "computed": true,
+        "description": "The ID of the patch baseline.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "patch_groups": {
         "computed": true,
         "description": "PatchGroups is used to associate instances with a specific patch baseline",

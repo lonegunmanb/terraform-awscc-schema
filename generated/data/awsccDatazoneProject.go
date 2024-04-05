@@ -65,6 +65,12 @@ const awsccDatazoneProject = `{
         "description": "The name of the Amazon DataZone project.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "project_id": {
+        "computed": true,
+        "description": "The ID of the Amazon DataZone project.",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::DataZone::Project",

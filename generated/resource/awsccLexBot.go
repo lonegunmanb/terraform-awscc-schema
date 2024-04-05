@@ -51,6 +51,12 @@ const awsccLexBot = `{
         },
         "optional": true
       },
+      "bot_id": {
+        "computed": true,
+        "description": "Unique ID of resource",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "bot_locales": {
         "computed": true,
         "description": "List of bot locales",
@@ -4173,7 +4179,7 @@ const awsccLexBot = `{
       },
       "id": {
         "computed": true,
-        "description": "Unique ID of resource",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

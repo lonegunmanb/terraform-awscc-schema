@@ -24,6 +24,7 @@ const awsccEc2VpcEndpoint = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -84,6 +85,11 @@ const awsccEc2VpcEndpoint = `{
           "set",
           "string"
         ]
+      },
+      "vpc_endpoint_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "vpc_endpoint_type": {
         "computed": true,

@@ -11,6 +11,7 @@ const awsccEc2SubnetRouteTableAssociation = `{
     "attributes": {
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -24,6 +25,11 @@ const awsccEc2SubnetRouteTableAssociation = `{
         "description": "The ID of the subnet.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "subnet_route_table_association_id": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       }
     },

@@ -11,6 +11,12 @@ const awsccEc2SpotFleet = `{
     "attributes": {
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "spot_fleet_id": {
+        "computed": true,
         "description_kind": "plain",
         "type": "string"
       },

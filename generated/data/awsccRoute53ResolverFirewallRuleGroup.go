@@ -27,6 +27,12 @@ const awsccRoute53ResolverFirewallRuleGroup = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "firewall_rule_group_id": {
+        "computed": true,
+        "description": "ResourceId",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "firewall_rules": {
         "computed": true,
         "description": "FirewallRules",

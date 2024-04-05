@@ -48,6 +48,11 @@ const awsccCognitoLogDeliveryConfiguration = `{
           "nesting_mode": "list"
         }
       },
+      "log_delivery_configuration_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "user_pool_id": {
         "computed": true,
         "description_kind": "plain",

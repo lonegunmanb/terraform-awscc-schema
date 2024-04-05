@@ -53,6 +53,11 @@ const awsccServicecatalogServiceAction = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "service_action_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::ServiceCatalog::ServiceAction",

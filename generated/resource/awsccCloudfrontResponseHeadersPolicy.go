@@ -11,6 +11,7 @@ const awsccCloudfrontResponseHeadersPolicy = `{
     "attributes": {
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -361,6 +362,11 @@ const awsccCloudfrontResponseHeadersPolicy = `{
           "nesting_mode": "single"
         },
         "required": true
+      },
+      "response_headers_policy_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Resource Type definition for AWS::CloudFront::ResponseHeadersPolicy",

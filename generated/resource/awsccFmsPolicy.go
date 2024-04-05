@@ -57,6 +57,7 @@ const awsccFmsPolicy = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -93,6 +94,11 @@ const awsccFmsPolicy = `{
         "computed": true,
         "description_kind": "plain",
         "optional": true,
+        "type": "string"
+      },
+      "policy_id": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       },
       "policy_name": {

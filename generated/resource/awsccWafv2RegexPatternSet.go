@@ -24,7 +24,7 @@ const awsccWafv2RegexPatternSet = `{
       },
       "id": {
         "computed": true,
-        "description": "Id of the RegexPatternSet",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -33,6 +33,12 @@ const awsccWafv2RegexPatternSet = `{
         "description": "Name of the RegexPatternSet.",
         "description_kind": "plain",
         "optional": true,
+        "type": "string"
+      },
+      "regex_pattern_set_id": {
+        "computed": true,
+        "description": "Id of the RegexPatternSet",
+        "description_kind": "plain",
         "type": "string"
       },
       "regular_expression_list": {

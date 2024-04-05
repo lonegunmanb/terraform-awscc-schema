@@ -15,6 +15,16 @@ const awsccMediatailorChannel = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "audiences": {
+        "computed": true,
+        "description": "\u003cp\u003eThe list of audiences defined in channel.\u003c/p\u003e",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "channel_name": {
         "description_kind": "plain",
         "required": true,

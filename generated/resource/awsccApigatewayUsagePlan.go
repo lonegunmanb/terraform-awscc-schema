@@ -68,6 +68,7 @@ const awsccApigatewayUsagePlan = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -150,6 +151,11 @@ const awsccApigatewayUsagePlan = `{
           "nesting_mode": "single"
         },
         "optional": true
+      },
+      "usage_plan_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "usage_plan_name": {
         "computed": true,

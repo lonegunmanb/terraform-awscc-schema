@@ -53,7 +53,7 @@ const awsccEc2SecurityGroupIngress = `{
       },
       "id": {
         "computed": true,
-        "description": "The Security Group Rule Id",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -61,6 +61,12 @@ const awsccEc2SecurityGroupIngress = `{
         "description": "The IP protocol name (tcp, udp, icmp, icmpv6) or number (see Protocol Numbers).\n\n[VPC only] Use -1 to specify all protocols. When authorizing security group rules, specifying -1 or a protocol number other than tcp, udp, icmp, or icmpv6 allows traffic on all ports, regardless of any port range you specify. For tcp, udp, and icmp, you must specify a port range. For icmpv6, the port range is optional; if you omit the port range, traffic for all types and codes is allowed.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "security_group_ingress_id": {
+        "computed": true,
+        "description": "The Security Group Rule Id",
+        "description_kind": "plain",
         "type": "string"
       },
       "source_prefix_list_id": {

@@ -125,6 +125,12 @@ const awsccIotwirelessWirelessDeviceImportTask = `{
           },
           "nesting_mode": "set"
         }
+      },
+      "wireless_device_import_task_id": {
+        "computed": true,
+        "description": "Id for Wireless Device Import Task, Returned upon successful start.",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::IoTWireless::WirelessDeviceImportTask",

@@ -34,9 +34,15 @@ const awsccDatazoneDomain = `{
         "required": true,
         "type": "string"
       },
-      "id": {
+      "domain_id": {
         "computed": true,
         "description": "The id of the Amazon DataZone domain.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "id": {
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

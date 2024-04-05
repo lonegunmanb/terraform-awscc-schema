@@ -149,6 +149,29 @@ const awsccCleanroomsConfiguredTable = `{
                                   "list",
                                   "string"
                                 ]
+                              },
+                              "differential_privacy": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "columns": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "name": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
                               }
                             },
                             "nesting_mode": "single"

@@ -92,6 +92,11 @@ const awsccEc2TransitGateway = `{
           "string"
         ]
       },
+      "transit_gateway_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "vpn_ecmp_support": {
         "computed": true,
         "description_kind": "plain",

@@ -14,6 +14,11 @@ const awsccServicecatalogappregistryAttributeGroup = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "attribute_group_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "attributes": {
         "computed": true,
         "description_kind": "plain",

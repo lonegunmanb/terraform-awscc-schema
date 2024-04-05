@@ -81,6 +81,11 @@ const awsccEc2VpcEndpoint = `{
           "string"
         ]
       },
+      "vpc_endpoint_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "vpc_endpoint_type": {
         "computed": true,
         "description": "The type of endpoint.\n Default: Gateway",

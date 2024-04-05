@@ -32,6 +32,11 @@ const awsccApigatewayUsagePlanKey = `{
         "description": "The Id of the UsagePlan resource representing the usage plan containing the UsagePlanKey resource representing a plan customer.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "usage_plan_key_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::ApiGateway::UsagePlanKey",

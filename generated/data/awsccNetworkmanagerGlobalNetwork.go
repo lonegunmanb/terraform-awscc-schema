@@ -27,6 +27,12 @@ const awsccNetworkmanagerGlobalNetwork = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "global_network_id": {
+        "computed": true,
+        "description": "The ID of the global network.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

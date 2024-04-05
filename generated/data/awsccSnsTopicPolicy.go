@@ -21,6 +21,11 @@ const awsccSnsTopicPolicy = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "topic_policy_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "topics": {
         "computed": true,
         "description": "The Amazon Resource Names (ARN) of the topics to which you want to add the policy. You can use the ` + "`" + `` + "`" + `Ref` + "`" + `` + "`" + ` function to specify an ` + "`" + `` + "`" + `AWS::SNS::Topic` + "`" + `` + "`" + ` resource.",

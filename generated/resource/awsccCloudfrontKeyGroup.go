@@ -11,6 +11,7 @@ const awsccCloudfrontKeyGroup = `{
     "attributes": {
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -41,6 +42,11 @@ const awsccCloudfrontKeyGroup = `{
           "nesting_mode": "single"
         },
         "required": true
+      },
+      "key_group_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "last_modified_time": {
         "computed": true,

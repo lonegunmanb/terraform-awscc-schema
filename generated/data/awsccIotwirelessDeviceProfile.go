@@ -15,6 +15,12 @@ const awsccIotwirelessDeviceProfile = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "device_profile_id": {
+        "computed": true,
+        "description": "Service profile Id. Returned after successful create.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

@@ -19,6 +19,11 @@ const awsccEc2CapacityReservation = `{
         "description_kind": "plain",
         "type": "number"
       },
+      "capacity_reservation_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "ebs_optimized": {
         "computed": true,
         "description_kind": "plain",
@@ -45,6 +50,7 @@ const awsccEc2CapacityReservation = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

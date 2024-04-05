@@ -57,6 +57,11 @@ const awsccGroundstationMissionProfile = `{
         "description_kind": "plain",
         "type": "number"
       },
+      "mission_profile_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "name": {
         "computed": true,
         "description": "A name used to identify a mission profile.",

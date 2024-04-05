@@ -28,6 +28,7 @@ const awsccGuarddutyThreatIntelSet = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -61,6 +62,11 @@ const awsccGuarddutyThreatIntelSet = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "threat_intel_set_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Resource Type definition for AWS::GuardDuty::ThreatIntelSet",

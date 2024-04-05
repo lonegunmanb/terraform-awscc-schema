@@ -59,6 +59,11 @@ const awsccQldbStream = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "stream_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "stream_name": {
         "computed": true,
         "description_kind": "plain",

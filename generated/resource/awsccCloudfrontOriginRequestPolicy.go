@@ -11,6 +11,7 @@ const awsccCloudfrontOriginRequestPolicy = `{
     "attributes": {
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -107,6 +108,11 @@ const awsccCloudfrontOriginRequestPolicy = `{
           "nesting_mode": "single"
         },
         "required": true
+      },
+      "origin_request_policy_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Resource Type definition for AWS::CloudFront::OriginRequestPolicy",

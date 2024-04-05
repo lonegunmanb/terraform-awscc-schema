@@ -76,6 +76,11 @@ const awsccEc2TransitGatewayAttachment = `{
           "nesting_mode": "list"
         }
       },
+      "transit_gateway_attachment_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "transit_gateway_id": {
         "computed": true,
         "description_kind": "plain",

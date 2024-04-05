@@ -44,6 +44,13 @@ const awsccEc2Subnet = `{
         "optional": true,
         "type": "bool"
       },
+      "enable_lni_at_device_index": {
+        "computed": true,
+        "description": "Indicates the device position for local network interfaces in this subnet. For example, ` + "`" + `` + "`" + `1` + "`" + `` + "`" + ` indicates local network interfaces in this subnet are the secondary network interface (eth1).",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -104,7 +111,7 @@ const awsccEc2Subnet = `{
       },
       "map_public_ip_on_launch": {
         "computed": true,
-        "description": "Indicates whether instances launched in this subnet receive a public IPv4 address. The default value is ` + "`" + `` + "`" + `false` + "`" + `` + "`" + `.\n AWS charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the *Public IPv4 Address* tab on the [VPC pricing page](https://docs.aws.amazon.com/vpc/pricing/).",
+        "description": "Indicates whether instances launched in this subnet receive a public IPv4 address. The default value is ` + "`" + `` + "`" + `false` + "`" + `` + "`" + `.\n  AWS charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the *Public IPv4 Address* tab on the [VPC pricing page](https://docs.aws.amazon.com/vpc/pricing/).",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
@@ -123,7 +130,7 @@ const awsccEc2Subnet = `{
       },
       "private_dns_name_options_on_launch": {
         "computed": true,
-        "description": "The hostname type for EC2 instances launched into this subnet and how DNS A and AAAA record queries to the instances should be handled. For more information, see [Amazon EC2 instance hostname types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html) in the *User Guide*.\n Available options:\n  + EnableResourceNameDnsAAAARecord (true | false)\n + EnableResourceNameDnsARecord (true | false)\n + HostnameType (ip-name | resource-name)",
+        "description": "The hostname type for EC2 instances launched into this subnet and how DNS A and AAAA record queries to the instances should be handled. For more information, see [Amazon EC2 instance hostname types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html) in the *User Guide*.\n Available options:\n  +  EnableResourceNameDnsAAAARecord (true | false)\n  +  EnableResourceNameDnsARecord (true | false)\n  +  HostnameType (ip-name | resource-name)",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

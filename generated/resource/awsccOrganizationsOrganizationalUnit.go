@@ -17,7 +17,7 @@ const awsccOrganizationsOrganizationalUnit = `{
       },
       "id": {
         "computed": true,
-        "description": "The unique identifier (ID) associated with this OU.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -25,6 +25,12 @@ const awsccOrganizationsOrganizationalUnit = `{
         "description": "The friendly name of this OU.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "organizational_unit_id": {
+        "computed": true,
+        "description": "The unique identifier (ID) associated with this OU.",
+        "description_kind": "plain",
         "type": "string"
       },
       "parent_id": {

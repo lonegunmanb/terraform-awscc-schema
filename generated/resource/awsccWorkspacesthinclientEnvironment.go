@@ -53,9 +53,15 @@ const awsccWorkspacesthinclientEnvironment = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "id": {
+      "environment_id": {
         "computed": true,
         "description": "Unique identifier of the environment.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "id": {
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

@@ -17,7 +17,7 @@ const awsccIotwirelessServiceProfile = `{
       },
       "id": {
         "computed": true,
-        "description": "Service profile Id. Returned after successful create.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -135,6 +135,12 @@ const awsccIotwirelessServiceProfile = `{
         "description": "Name of service profile",
         "description_kind": "plain",
         "optional": true,
+        "type": "string"
+      },
+      "service_profile_id": {
+        "computed": true,
+        "description": "Service profile Id. Returned after successful create.",
+        "description_kind": "plain",
         "type": "string"
       },
       "tags": {

@@ -48,6 +48,12 @@ const awsccLexBot = `{
           "nesting_mode": "single"
         }
       },
+      "bot_id": {
+        "computed": true,
+        "description": "Unique ID of resource",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "bot_locales": {
         "computed": true,
         "description": "List of bot locales",

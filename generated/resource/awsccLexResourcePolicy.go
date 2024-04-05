@@ -11,7 +11,7 @@ const awsccLexResourcePolicy = `{
     "attributes": {
       "id": {
         "computed": true,
-        "description": "The Physical ID of the resource policy.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -25,6 +25,12 @@ const awsccLexResourcePolicy = `{
         "description": "The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "resource_policy_id": {
+        "computed": true,
+        "description": "The Physical ID of the resource policy.",
+        "description_kind": "plain",
         "type": "string"
       },
       "revision_id": {

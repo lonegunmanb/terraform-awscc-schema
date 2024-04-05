@@ -269,6 +269,12 @@ const awsccIotwirelessWirelessDevice = `{
         "description": "Wireless device type, currently only Sidewalk and LoRa",
         "description_kind": "plain",
         "type": "string"
+      },
+      "wireless_device_id": {
+        "computed": true,
+        "description": "Wireless device Id. Returned after successful create.",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::IoTWireless::WirelessDevice",

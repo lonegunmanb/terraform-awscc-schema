@@ -15,6 +15,11 @@ const awsccEc2NetworkAcl = `{
         "required": true,
         "type": "string"
       },
+      "network_acl_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "The tags for the network ACL.",

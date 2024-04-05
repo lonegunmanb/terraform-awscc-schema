@@ -39,6 +39,12 @@ const awsccOpensearchserverlessVpcEndpoint = `{
           "string"
         ]
       },
+      "vpc_endpoint_id": {
+        "computed": true,
+        "description": "The identifier of the VPC Endpoint",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "vpc_id": {
         "computed": true,
         "description": "The ID of the VPC in which the endpoint will be used.",

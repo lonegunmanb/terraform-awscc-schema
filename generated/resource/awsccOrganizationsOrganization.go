@@ -24,7 +24,7 @@ const awsccOrganizationsOrganization = `{
       },
       "id": {
         "computed": true,
-        "description": "The unique identifier (ID) of an organization.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -43,6 +43,12 @@ const awsccOrganizationsOrganization = `{
       "management_account_id": {
         "computed": true,
         "description": "The unique identifier (ID) of the management account of an organization.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "organization_id": {
+        "computed": true,
+        "description": "The unique identifier (ID) of an organization.",
         "description_kind": "plain",
         "type": "string"
       },

@@ -22,6 +22,7 @@ const awsccQldbStream = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -59,6 +60,11 @@ const awsccQldbStream = `{
       "role_arn": {
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "stream_id": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       },
       "stream_name": {

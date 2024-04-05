@@ -11,6 +11,12 @@ const awsccEc2NetworkAcl = `{
     "attributes": {
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "network_acl_id": {
+        "computed": true,
         "description_kind": "plain",
         "type": "string"
       },

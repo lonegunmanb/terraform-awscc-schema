@@ -15,6 +15,12 @@ const awsccMediapackageAsset = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "asset_id": {
+        "description": "The unique identifier for the Asset.",
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
       "created_at": {
         "computed": true,
         "description": "The time the Asset was initially submitted for Ingest.",
@@ -45,9 +51,9 @@ const awsccMediapackageAsset = `{
         "optional": true
       },
       "id": {
-        "description": "The unique identifier for the Asset.",
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
-        "required": true,
         "type": "string"
       },
       "packaging_group_id": {

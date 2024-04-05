@@ -28,6 +28,11 @@ const awsccGroundstationDataflowEndpointGroup = `{
         "optional": true,
         "type": "number"
       },
+      "dataflow_endpoint_group_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "endpoint_details": {
         "description_kind": "plain",
         "nested_type": {
@@ -249,6 +254,7 @@ const awsccGroundstationDataflowEndpointGroup = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

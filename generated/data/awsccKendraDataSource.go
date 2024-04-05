@@ -1718,6 +1718,12 @@ const awsccKendraDataSource = `{
           "nesting_mode": "single"
         }
       },
+      "data_source_id": {
+        "computed": true,
+        "description": "ID of data source",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description": "Description of data source",

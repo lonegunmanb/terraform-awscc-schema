@@ -33,6 +33,12 @@ const awsccGameliftScript = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "script_id": {
+        "computed": true,
+        "description": "A unique identifier for the Realtime script",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "size_on_disk": {
         "computed": true,
         "description": "The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location, this value remains at \"0\".",

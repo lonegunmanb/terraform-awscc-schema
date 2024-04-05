@@ -33,9 +33,15 @@ const awsccElasticacheServerlessCache = `{
                     "description_kind": "plain",
                     "type": "number"
                   },
+                  "minimum": {
+                    "computed": true,
+                    "description": "The minimum cached data capacity of the Serverless Cache.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
                   "unit": {
                     "computed": true,
-                    "description": "The unix of cached data capacity of the Serverless Cache.",
+                    "description": "The unit of cached data capacity of the Serverless Cache.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -52,6 +58,12 @@ const awsccElasticacheServerlessCache = `{
                   "maximum": {
                     "computed": true,
                     "description": "The maximum ECPU per second of the Serverless Cache.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "minimum": {
+                    "computed": true,
+                    "description": "The minimum ECPU per second of the Serverless Cache.",
                     "description_kind": "plain",
                     "type": "number"
                   }

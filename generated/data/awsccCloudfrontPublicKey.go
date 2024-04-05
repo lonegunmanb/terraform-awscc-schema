@@ -48,6 +48,11 @@ const awsccCloudfrontPublicKey = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "public_key_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::CloudFront::PublicKey",

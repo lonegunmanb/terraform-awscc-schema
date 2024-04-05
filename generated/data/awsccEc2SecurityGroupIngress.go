@@ -57,6 +57,12 @@ const awsccEc2SecurityGroupIngress = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "security_group_ingress_id": {
+        "computed": true,
+        "description": "The Security Group Rule Id",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "source_prefix_list_id": {
         "computed": true,
         "description": "[EC2-VPC only] The ID of a prefix list.\n\n",

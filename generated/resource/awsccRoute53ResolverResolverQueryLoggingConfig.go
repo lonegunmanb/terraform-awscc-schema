@@ -42,7 +42,7 @@ const awsccRoute53ResolverResolverQueryLoggingConfig = `{
       },
       "id": {
         "computed": true,
-        "description": "ResourceId",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -56,6 +56,12 @@ const awsccRoute53ResolverResolverQueryLoggingConfig = `{
       "owner_id": {
         "computed": true,
         "description": "AccountId",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "resolver_query_logging_config_id": {
+        "computed": true,
+        "description": "ResourceId",
         "description_kind": "plain",
         "type": "string"
       },

@@ -20,6 +20,11 @@ const awsccIotCertificate = `{
         "optional": true,
         "type": "string"
       },
+      "certificate_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "certificate_mode": {
         "computed": true,
         "description_kind": "plain",
@@ -40,6 +45,7 @@ const awsccIotCertificate = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

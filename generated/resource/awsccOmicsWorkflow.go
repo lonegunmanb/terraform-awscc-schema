@@ -45,6 +45,7 @@ const awsccOmicsWorkflow = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -104,6 +105,11 @@ const awsccOmicsWorkflow = `{
         ]
       },
       "type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "workflow_id": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"

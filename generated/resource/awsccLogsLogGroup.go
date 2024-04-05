@@ -36,7 +36,7 @@ const awsccLogsLogGroup = `{
       },
       "log_group_class": {
         "computed": true,
-        "description": "Specifies the log group class for this log group. There are two classes:\n  + The ` + "`" + `` + "`" + `Standard` + "`" + `` + "`" + ` log class supports all CWL features.\n + The ` + "`" + `` + "`" + `Infrequent Access` + "`" + `` + "`" + ` log class supports a subset of CWL features and incurs lower costs.\n \n For details about the features supported by each class, see [Log classes](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html)",
+        "description": "Specifies the log group class for this log group. There are two classes:\n  +  The ` + "`" + `` + "`" + `Standard` + "`" + `` + "`" + ` log class supports all CWL features.\n  +  The ` + "`" + `` + "`" + `Infrequent Access` + "`" + `` + "`" + ` log class supports a subset of CWL features and incurs lower costs.\n  \n For details about the features supported by each class, see [Log classes](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html)",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

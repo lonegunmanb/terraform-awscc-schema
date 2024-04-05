@@ -69,7 +69,7 @@ const awsccGrafanaWorkspace = `{
       },
       "id": {
         "computed": true,
-        "description": "The id that uniquely identifies a Grafana workspace.",
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -353,6 +353,12 @@ const awsccGrafanaWorkspace = `{
           "nesting_mode": "single"
         },
         "optional": true
+      },
+      "workspace_id": {
+        "computed": true,
+        "description": "The id that uniquely identifies a Grafana workspace.",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Definition of AWS::Grafana::Workspace Resource Type",

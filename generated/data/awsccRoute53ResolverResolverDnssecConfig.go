@@ -21,6 +21,12 @@ const awsccRoute53ResolverResolverDnssecConfig = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "resolver_dnssec_config_id": {
+        "computed": true,
+        "description": "Id",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "resource_id": {
         "computed": true,
         "description": "ResourceId",

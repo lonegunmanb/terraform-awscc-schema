@@ -21,6 +21,7 @@ const awsccOmicsRunGroup = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -52,6 +53,11 @@ const awsccOmicsRunGroup = `{
         "computed": true,
         "description_kind": "plain",
         "optional": true,
+        "type": "string"
+      },
+      "run_group_id": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       },
       "tags": {

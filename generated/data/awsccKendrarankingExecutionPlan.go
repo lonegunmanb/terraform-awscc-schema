@@ -35,6 +35,12 @@ const awsccKendrarankingExecutionPlan = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "execution_plan_id": {
+        "computed": true,
+        "description": "Unique ID of rescore execution plan",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

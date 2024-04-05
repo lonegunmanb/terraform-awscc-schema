@@ -57,6 +57,12 @@ const awsccRoute53ResolverResolverQueryLoggingConfig = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "resolver_query_logging_config_id": {
+        "computed": true,
+        "description": "ResourceId",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "share_status": {
         "computed": true,
         "description": "ShareStatus, possible values are NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME.",

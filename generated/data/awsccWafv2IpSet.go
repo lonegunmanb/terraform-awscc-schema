@@ -42,6 +42,12 @@ const awsccWafv2IpSet = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "ip_set_id": {
+        "computed": true,
+        "description": "Id of the IPSet",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "name": {
         "computed": true,
         "description": "Name of the IPSet.",

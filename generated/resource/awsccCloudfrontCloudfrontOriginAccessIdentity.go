@@ -23,8 +23,14 @@ const awsccCloudfrontCloudfrontOriginAccessIdentity = `{
         },
         "required": true
       },
+      "cloudfront_origin_access_identity_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },

@@ -33,6 +33,12 @@ const awsccRoute53ResolverResolverConfig = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "resolver_config_id": {
+        "computed": true,
+        "description": "Id",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "resource_id": {
         "computed": true,
         "description": "ResourceId",

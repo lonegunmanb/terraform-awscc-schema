@@ -67,6 +67,12 @@ const awsccDevopsguruNotificationChannel = `{
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "notification_channel_id": {
+        "computed": true,
+        "description": "The ID of a notification channel.",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::DevOpsGuru::NotificationChannel",

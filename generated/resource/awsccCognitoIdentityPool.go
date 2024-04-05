@@ -88,6 +88,12 @@ const awsccCognitoIdentityPool = `{
       },
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "identity_pool_id": {
+        "computed": true,
         "description_kind": "plain",
         "type": "string"
       },

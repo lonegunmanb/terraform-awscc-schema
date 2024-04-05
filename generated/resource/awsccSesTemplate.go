@@ -11,6 +11,7 @@ const awsccSesTemplate = `{
     "attributes": {
       "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -51,6 +52,11 @@ const awsccSesTemplate = `{
           "nesting_mode": "single"
         },
         "optional": true
+      },
+      "template_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Resource Type definition for AWS::SES::Template",
