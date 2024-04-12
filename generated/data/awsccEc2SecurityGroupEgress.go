@@ -11,13 +11,13 @@ const awsccEc2SecurityGroupEgress = `{
     "attributes": {
       "cidr_ip": {
         "computed": true,
-        "description": "The IPv4 address range, in CIDR format.\n You must specify a destination security group (` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `) or a CIDR range (` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `).\n For examples of rules that you can add to security groups for specific access scenarios, see [Security group rules for different use cases](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html) in the *User Guide*.",
+        "description": "The IPv4 address range, in CIDR format.\n You must specify exactly one of the following: ` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `.\n For examples of rules that you can add to security groups for specific access scenarios, see [Security group rules for different use cases](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html) in the *User Guide*.",
         "description_kind": "plain",
         "type": "string"
       },
       "cidr_ipv_6": {
         "computed": true,
-        "description": "The IPv6 address range, in CIDR format.\n You must specify a destination security group (` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `) or a CIDR range (` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `).\n For examples of rules that you can add to security groups for specific access scenarios, see [Security group rules for different use cases](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html) in the *User Guide*.",
+        "description": "The IPv6 address range, in CIDR format.\n You must specify exactly one of the following: ` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `.\n For examples of rules that you can add to security groups for specific access scenarios, see [Security group rules for different use cases](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html) in the *User Guide*.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -29,13 +29,13 @@ const awsccEc2SecurityGroupEgress = `{
       },
       "destination_prefix_list_id": {
         "computed": true,
-        "description": "The prefix list IDs for an AWS service. This is the AWS service that you want to access through a VPC endpoint from instances associated with the security group.\n You must specify a destination security group (` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `) or a CIDR range (` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `).",
+        "description": "The prefix list IDs for an AWS service. This is the AWS service to access through a VPC endpoint from instances associated with the security group.\n You must specify exactly one of the following: ` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "type": "string"
       },
       "destination_security_group_id": {
         "computed": true,
-        "description": "The ID of the security group.\n You must specify a destination security group (` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `) or a CIDR range (` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `).",
+        "description": "The ID of the security group.\n You must specify exactly one of the following: ` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "type": "string"
       },

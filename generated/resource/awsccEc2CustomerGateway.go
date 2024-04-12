@@ -11,20 +11,25 @@ const awsccEc2CustomerGateway = `{
     "attributes": {
       "bgp_asn": {
         "computed": true,
-        "description": "For devices that support BGP, the customer gateway's BGP ASN.",
+        "description": "For devices that support BGP, the customer gateway's BGP ASN.\n Default: 65000",
         "description_kind": "plain",
         "optional": true,
         "type": "number"
       },
+      "certificate_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "customer_gateway_id": {
         "computed": true,
-        "description": "CustomerGateway ID generated after customer gateway is created. Each customer gateway has a unique ID.",
         "description_kind": "plain",
         "type": "string"
       },
       "device_name": {
         "computed": true,
-        "description": "A name for the customer gateway device.",
+        "description": "The name of customer gateway device.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -36,7 +41,7 @@ const awsccEc2CustomerGateway = `{
         "type": "string"
       },
       "ip_address": {
-        "description": "The internet-routable IP address for the customer gateway's outside interface. The address must be static.",
+        "description": "IPv4 address for the customer gateway device's outside interface. The address must be static.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -48,11 +53,13 @@ const awsccEc2CustomerGateway = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "description": "The tag key.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
             },
             "value": {
+              "description": "The tag value.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
@@ -63,13 +70,13 @@ const awsccEc2CustomerGateway = `{
         "optional": true
       },
       "type": {
-        "description": "The type of VPN connection that this customer gateway supports.",
+        "description": "The type of VPN connection that this customer gateway supports (` + "`" + `` + "`" + `ipsec.1` + "`" + `` + "`" + `).",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       }
     },
-    "description": "Resource Type definition for AWS::EC2::CustomerGateway",
+    "description": "Specifies a customer gateway.",
     "description_kind": "plain"
   },
   "version": 1

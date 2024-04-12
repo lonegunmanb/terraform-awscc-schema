@@ -27,6 +27,20 @@ const awsccVerifiedpermissionsIdentitySource = `{
                       "string"
                     ]
                   },
+                  "group_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "group_entity_type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "user_pool_arn": {
                     "computed": true,
                     "description_kind": "plain",

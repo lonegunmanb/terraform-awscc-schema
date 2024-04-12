@@ -55,13 +55,13 @@ const awsccEc2NatGateway = `{
       },
       "secondary_private_ip_address_count": {
         "computed": true,
-        "description": "[Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway. For more information about secondary addresses, see [Create a NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating) in the *Amazon Virtual Private Cloud User Guide*.\n ` + "`" + `` + "`" + `SecondaryPrivateIpAddressCount` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `SecondaryPrivateIpAddresses` + "`" + `` + "`" + ` cannot be set at the same time.",
+        "description": "[Private NAT gateway only] The number of secondary private IPv4 addresses you want to assign to the NAT gateway. For more information about secondary addresses, see [Create a NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating) in the *Amazon Virtual Private Cloud User Guide*.\n  ` + "`" + `` + "`" + `SecondaryPrivateIpAddressCount` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `SecondaryPrivateIpAddresses` + "`" + `` + "`" + ` cannot be set at the same time.",
         "description_kind": "plain",
         "type": "number"
       },
       "secondary_private_ip_addresses": {
         "computed": true,
-        "description": "Secondary private IPv4 addresses. For more information about secondary addresses, see [Create a NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating) in the *Amazon Virtual Private Cloud User Guide*.\n ` + "`" + `` + "`" + `SecondaryPrivateIpAddressCount` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `SecondaryPrivateIpAddresses` + "`" + `` + "`" + ` cannot be set at the same time.",
+        "description": "Secondary private IPv4 addresses. For more information about secondary addresses, see [Create a NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating) in the *Amazon Virtual Private Cloud User Guide*.\n  ` + "`" + `` + "`" + `SecondaryPrivateIpAddressCount` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `SecondaryPrivateIpAddresses` + "`" + `` + "`" + ` cannot be set at the same time.",
         "description_kind": "plain",
         "type": [
           "list",

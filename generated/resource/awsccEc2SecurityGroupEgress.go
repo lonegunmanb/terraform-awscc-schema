@@ -11,14 +11,14 @@ const awsccEc2SecurityGroupEgress = `{
     "attributes": {
       "cidr_ip": {
         "computed": true,
-        "description": "The IPv4 address range, in CIDR format.\n You must specify a destination security group (` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `) or a CIDR range (` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `).\n For examples of rules that you can add to security groups for specific access scenarios, see [Security group rules for different use cases](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html) in the *User Guide*.",
+        "description": "The IPv4 address range, in CIDR format.\n You must specify exactly one of the following: ` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `.\n For examples of rules that you can add to security groups for specific access scenarios, see [Security group rules for different use cases](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html) in the *User Guide*.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "cidr_ipv_6": {
         "computed": true,
-        "description": "The IPv6 address range, in CIDR format.\n You must specify a destination security group (` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `) or a CIDR range (` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `).\n For examples of rules that you can add to security groups for specific access scenarios, see [Security group rules for different use cases](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html) in the *User Guide*.",
+        "description": "The IPv6 address range, in CIDR format.\n You must specify exactly one of the following: ` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `.\n For examples of rules that you can add to security groups for specific access scenarios, see [Security group rules for different use cases](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html) in the *User Guide*.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -32,14 +32,14 @@ const awsccEc2SecurityGroupEgress = `{
       },
       "destination_prefix_list_id": {
         "computed": true,
-        "description": "The prefix list IDs for an AWS service. This is the AWS service that you want to access through a VPC endpoint from instances associated with the security group.\n You must specify a destination security group (` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `) or a CIDR range (` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `).",
+        "description": "The prefix list IDs for an AWS service. This is the AWS service to access through a VPC endpoint from instances associated with the security group.\n You must specify exactly one of the following: ` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "destination_security_group_id": {
         "computed": true,
-        "description": "The ID of the security group.\n You must specify a destination security group (` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `) or a CIDR range (` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `).",
+        "description": "The ID of the security group.\n You must specify exactly one of the following: ` + "`" + `` + "`" + `CidrIp` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `CidrIpv6` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `DestinationPrefixListId` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `DestinationSecurityGroupId` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -82,7 +82,7 @@ const awsccEc2SecurityGroupEgress = `{
         "type": "number"
       }
     },
-    "description": "Adds the specified outbound (egress) rule to a security group.\n An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 address range, the IP addresses that are specified by a prefix list, or the instances that are associated with a destination security group. For more information, see [Security group rules](https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html).\n You must specify exactly one of the following destinations: an IPv4 or IPv6 address range, a prefix list, or a security group. Otherwise, the stack launches successfully but the rule is not added to the security group.\n You must specify a protocol for each rule (for example, TCP). If the protocol is TCP or UDP, you must also specify a port or port range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP/ICMPv6 type and code. To specify all types or all codes, use -1.\n Rule changes are propagated to instances associated with the security group as quickly as possible",
+    "description": "Adds the specified outbound (egress) rule to a security group.\n An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 address range, the IP addresses that are specified by a prefix list, or the instances that are associated with a destination security group. For more information, see [Security group rules](https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html).\n You must specify exactly one of the following destinations: an IPv4 address range, an IPv6 address range, a prefix list, or a security group.\n You must specify a protocol for each rule (for example, TCP). If the protocol is TCP or UDP, you must also specify a port or port range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP/ICMPv6 type and code. To specify all types or all codes, use -1.\n Rule changes are propagated to instances associated with the security group as quickly as possible. However, a small delay might occur.",
     "description_kind": "plain"
   },
   "version": 1

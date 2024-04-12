@@ -11,19 +11,23 @@ const awsccEc2CustomerGateway = `{
     "attributes": {
       "bgp_asn": {
         "computed": true,
-        "description": "For devices that support BGP, the customer gateway's BGP ASN.",
+        "description": "For devices that support BGP, the customer gateway's BGP ASN.\n Default: 65000",
         "description_kind": "plain",
         "type": "number"
       },
+      "certificate_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "customer_gateway_id": {
         "computed": true,
-        "description": "CustomerGateway ID generated after customer gateway is created. Each customer gateway has a unique ID.",
         "description_kind": "plain",
         "type": "string"
       },
       "device_name": {
         "computed": true,
-        "description": "A name for the customer gateway device.",
+        "description": "The name of customer gateway device.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -35,7 +39,7 @@ const awsccEc2CustomerGateway = `{
       },
       "ip_address": {
         "computed": true,
-        "description": "The internet-routable IP address for the customer gateway's outside interface. The address must be static.",
+        "description": "IPv4 address for the customer gateway device's outside interface. The address must be static.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -47,11 +51,13 @@ const awsccEc2CustomerGateway = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "The tag key.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The tag value.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -61,7 +67,7 @@ const awsccEc2CustomerGateway = `{
       },
       "type": {
         "computed": true,
-        "description": "The type of VPN connection that this customer gateway supports.",
+        "description": "The type of VPN connection that this customer gateway supports (` + "`" + `` + "`" + `ipsec.1` + "`" + `` + "`" + `).",
         "description_kind": "plain",
         "type": "string"
       }
