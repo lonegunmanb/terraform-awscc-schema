@@ -387,6 +387,16 @@ const awsccBedrockAgent = `{
           "string"
         ]
       },
+      "test_alias_tags": {
+        "computed": true,
+        "description": "A map of tag keys and values",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "map",
+          "string"
+        ]
+      },
       "updated_at": {
         "computed": true,
         "description": "Time Stamp.",

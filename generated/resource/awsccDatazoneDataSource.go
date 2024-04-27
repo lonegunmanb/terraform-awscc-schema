@@ -58,6 +58,13 @@ const awsccDatazoneDataSource = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "auto_import_data_quality_result": {
+                    "computed": true,
+                    "description": "Specifies whether to automatically import data quality metrics as part of the data source run.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
                   "data_access_role": {
                     "computed": true,
                     "description": "The data access role included in the configuration details of the AWS Glue data source.",
@@ -404,7 +411,7 @@ const awsccDatazoneDataSource = `{
         "type": "string"
       }
     },
-    "description": "Definition of AWS::DataZone::DataSource Resource Type",
+    "description": "A data source is used to import technical metadata of assets (data) from the source databases or data warehouses into Amazon DataZone. ",
     "description_kind": "plain"
   },
   "version": 1

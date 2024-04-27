@@ -62,7 +62,7 @@ const awsccVerifiedpermissionsPolicyStore = `{
         "required": true
       }
     },
-    "description": "Definition of AWS::VerifiedPermissions::PolicyStore Resource Type",
+    "description": "Represents a policy store that you can place schema, policies, and policy templates in to validate authorization requests",
     "description_kind": "plain"
   },
   "version": 1

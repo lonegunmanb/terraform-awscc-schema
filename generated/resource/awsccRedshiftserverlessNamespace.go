@@ -199,6 +199,34 @@ const awsccRedshiftserverlessNamespace = `{
         "optional": true,
         "type": "string"
       },
+      "snapshot_copy_configurations": {
+        "computed": true,
+        "description": "The snapshot copy configurations for the namespace.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "destination_kms_key_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "destination_region": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "snapshot_retention_period": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "tags": {
         "computed": true,
         "description": "The list of tags for the namespace.",

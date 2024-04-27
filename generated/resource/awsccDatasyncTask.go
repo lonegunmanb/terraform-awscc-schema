@@ -289,9 +289,17 @@ const awsccDatasyncTask = `{
         "nested_type": {
           "attributes": {
             "schedule_expression": {
+              "computed": true,
               "description": "A cron expression that specifies when AWS DataSync initiates a scheduled transfer from a source to a destination location",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
+              "type": "string"
+            },
+            "status": {
+              "computed": true,
+              "description": "Specifies status of a schedule.",
+              "description_kind": "plain",
+              "optional": true,
               "type": "string"
             }
           },

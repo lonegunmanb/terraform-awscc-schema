@@ -54,6 +54,12 @@ const awsccDatazoneDataSource = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "auto_import_data_quality_result": {
+                    "computed": true,
+                    "description": "Specifies whether to automatically import data quality metrics as part of the data source run.",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
                   "data_access_role": {
                     "computed": true,
                     "description": "The data access role included in the configuration details of the AWS Glue data source.",

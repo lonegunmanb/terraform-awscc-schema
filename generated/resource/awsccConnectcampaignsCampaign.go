@@ -120,6 +120,13 @@ const awsccConnectcampaignsCampaign = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "await_answer_machine_prompt": {
+                    "computed": true,
+                    "description": "Enables detection of prompts (e.g., beep after after a voicemail greeting)",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
                   "enable_answer_machine_detection": {
                     "description": "Flag to decided whether outbound calls should have answering machine detection enabled or not",
                     "description_kind": "plain",

@@ -77,6 +77,15 @@ const awsccAppintegrationsApplication = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "permissions": {
+        "computed": true,
+        "description": "The configuration of events or requests that the application has access to.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "tags": {
         "computed": true,
         "description": "The tags (keys and values) associated with the application.",

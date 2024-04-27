@@ -58,11 +58,23 @@ const awsccWorkspaceswebPortal = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "instance_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "ip_access_settings_arn": {
         "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "max_concurrent_sessions": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
       },
       "network_settings_arn": {
         "computed": true,

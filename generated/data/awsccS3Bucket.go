@@ -81,7 +81,7 @@ const awsccS3Bucket = `{
                               },
                               "format": {
                                 "computed": true,
-                                "description": "Specifies the file format used when exporting data to Amazon S3.\n *Allowed values*: ` + "`" + `` + "`" + `CSV` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `ORC` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Parquet` + "`" + `` + "`" + `",
+                                "description": "Specifies the file format used when exporting data to Amazon S3.\n  *Allowed values*: ` + "`" + `` + "`" + `CSV` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `ORC` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Parquet` + "`" + `` + "`" + `",
                                 "description_kind": "plain",
                                 "type": "string"
                               },
@@ -137,7 +137,7 @@ const awsccS3Bucket = `{
       },
       "arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the specified bucket.",
+        "description": "the Amazon Resource Name (ARN) of the specified bucket.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -218,7 +218,7 @@ const awsccS3Bucket = `{
                   },
                   "allowed_methods": {
                     "computed": true,
-                    "description": "An HTTP method that you allow the origin to run.\n *Allowed values*: ` + "`" + `` + "`" + `GET` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `PUT` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `HEAD` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `POST` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `DELETE` + "`" + `` + "`" + `",
+                    "description": "An HTTP method that you allow the origin to run.\n  *Allowed values*: ` + "`" + `` + "`" + `GET` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `PUT` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `HEAD` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `POST` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `DELETE` + "`" + `` + "`" + `",
                     "description_kind": "plain",
                     "type": [
                       "list",
@@ -265,13 +265,11 @@ const awsccS3Bucket = `{
       },
       "domain_name": {
         "computed": true,
-        "description": "The IPv4 DNS name of the specified bucket.",
         "description_kind": "plain",
         "type": "string"
       },
       "dual_stack_domain_name": {
         "computed": true,
-        "description": "The IPv6 DNS name of the specified bucket. For more information about dual-stack endpoints, see [Using Amazon S3 Dual-Stack Endpoints](https://docs.aws.amazon.com/AmazonS3/latest/dev/dual-stack-endpoints.html).",
         "description_kind": "plain",
         "type": "string"
       },
@@ -379,7 +377,7 @@ const awsccS3Bucket = `{
                   },
                   "format": {
                     "computed": true,
-                    "description": "Specifies the file format used when exporting data to Amazon S3.\n *Allowed values*: ` + "`" + `` + "`" + `CSV` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `ORC` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Parquet` + "`" + `` + "`" + `",
+                    "description": "Specifies the file format used when exporting data to Amazon S3.\n  *Allowed values*: ` + "`" + `` + "`" + `CSV` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `ORC` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Parquet` + "`" + `` + "`" + `",
                     "description_kind": "plain",
                     "type": "string"
                   },
@@ -851,7 +849,7 @@ const awsccS3Bucket = `{
                                       "type": "string"
                                     }
                                   },
-                                  "nesting_mode": "list"
+                                  "nesting_mode": "set"
                                 }
                               }
                             },
@@ -915,7 +913,7 @@ const awsccS3Bucket = `{
                                       "type": "string"
                                     }
                                   },
-                                  "nesting_mode": "list"
+                                  "nesting_mode": "set"
                                 }
                               }
                             },
@@ -979,7 +977,7 @@ const awsccS3Bucket = `{
                                       "type": "string"
                                     }
                                   },
-                                  "nesting_mode": "list"
+                                  "nesting_mode": "set"
                                 }
                               }
                             },
@@ -1126,7 +1124,6 @@ const awsccS3Bucket = `{
       },
       "regional_domain_name": {
         "computed": true,
-        "description": "Returns the regional domain name of the specified bucket.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -1396,7 +1393,7 @@ const awsccS3Bucket = `{
                             "attributes": {
                               "status": {
                                 "computed": true,
-                                "description": "Specifies whether Amazon S3 replicates modifications on replicas.\n *Allowed values*: ` + "`" + `` + "`" + `Enabled` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Disabled` + "`" + `` + "`" + `",
+                                "description": "Specifies whether Amazon S3 replicates modifications on replicas.\n  *Allowed values*: ` + "`" + `` + "`" + `Enabled` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Disabled` + "`" + `` + "`" + `",
                                 "description_kind": "plain",
                                 "type": "string"
                               }
@@ -1594,7 +1591,6 @@ const awsccS3Bucket = `{
       },
       "website_url": {
         "computed": true,
-        "description": "The Amazon S3 website endpoint for the specified bucket.",
         "description_kind": "plain",
         "type": "string"
       }

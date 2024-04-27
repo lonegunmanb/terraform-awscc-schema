@@ -63,6 +63,72 @@ const awsccGameliftFleet = `{
         "optional": true,
         "type": "string"
       },
+      "container_groups_configuration": {
+        "computed": true,
+        "description": "Specifies container groups that this instance will hold. You must specify exactly one replica group. Optionally, you may specify exactly one daemon group. You can't change this property after you create the fleet.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "connection_port_range": {
+              "description": "Defines the range of ports on the instance that allow inbound traffic to connect with containers in a fleet.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "from_port": {
+                    "description": "A starting value for a range of allowed port numbers.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "number"
+                  },
+                  "to_port": {
+                    "description": "An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than FromPort.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "required": true
+            },
+            "container_group_definition_names": {
+              "description": "The names of the container group definitions that will be created in an instance. You must specify exactly one REPLICA container group. You have the option to also specify one DAEMON container group.",
+              "description_kind": "plain",
+              "required": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "container_groups_per_instance": {
+              "computed": true,
+              "description": "The number of container groups per instance.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "desired_replica_container_groups_per_instance": {
+                    "computed": true,
+                    "description": "Use this parameter to override the number of replica container groups GameLift will launch per instance with a number that is lower than that calculated maximum.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "max_replica_container_groups_per_instance": {
+                    "computed": true,
+                    "description": "GameLift calculates the maximum number of replica container groups it can launch per instance based on instance properties such as CPU, memory, and connection ports.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "description": {
         "computed": true,
         "description": "A human-readable description of a fleet.",

@@ -807,7 +807,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "network_interfaces": {
               "computed": true,
-              "description": "One or more network interfaces. If you specify a network interface, you must specify any security groups and subnets as part of the network interface.",
+              "description": "The network interfaces for the instance.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1144,7 +1144,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "security_group_ids": {
               "computed": true,
-              "description": "The IDs of the security groups. You can specify the IDs of existing security groups and references to resources created by the stack template.",
+              "description": "The IDs of the security groups. You can specify the IDs of existing security groups and references to resources created by the stack template.\n If you specify a network interface, you must specify any security groups as part of the network interface instead.",
               "description_kind": "plain",
               "type": [
                 "list",
@@ -1153,7 +1153,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "security_groups": {
               "computed": true,
-              "description": "One or more security group names. For a nondefault VPC, you must use security group IDs instead.",
+              "description": "The names of the security groups. For a nondefault VPC, you must use security group IDs instead.\n If you specify a network interface, you must specify any security groups as part of the network interface instead of using this parameter.",
               "description_kind": "plain",
               "type": [
                 "list",

@@ -36,8 +36,9 @@ const awsccAppintegrationsApplication = `{
                     "type": "string"
                   },
                   "approved_origins": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -77,6 +78,16 @@ const awsccAppintegrationsApplication = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "permissions": {
+        "computed": true,
+        "description": "The configuration of events or requests that the application has access to.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
       },
       "tags": {
         "computed": true,

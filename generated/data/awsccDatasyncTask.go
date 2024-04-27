@@ -261,6 +261,12 @@ const awsccDatasyncTask = `{
               "description": "A cron expression that specifies when AWS DataSync initiates a scheduled transfer from a source to a destination location",
               "description_kind": "plain",
               "type": "string"
+            },
+            "status": {
+              "computed": true,
+              "description": "Specifies status of a schedule.",
+              "description_kind": "plain",
+              "type": "string"
             }
           },
           "nesting_mode": "single"
