@@ -17,55 +17,53 @@ const awsccEc2KeyPair = `{
       },
       "key_fingerprint": {
         "computed": true,
-        "description": "A short sequence of bytes used for public key verification",
         "description_kind": "plain",
         "type": "string"
       },
       "key_format": {
         "computed": true,
-        "description": "The format of the private key",
+        "description": "The format of the key pair.\n Default: ` + "`" + `` + "`" + `pem` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "type": "string"
       },
       "key_name": {
         "computed": true,
-        "description": "The name of the SSH key pair",
+        "description": "A unique name for the key pair.\n Constraints: Up to 255 ASCII characters",
         "description_kind": "plain",
         "type": "string"
       },
       "key_pair_id": {
         "computed": true,
-        "description": "An AWS generated ID for the key pair",
         "description_kind": "plain",
         "type": "string"
       },
       "key_type": {
         "computed": true,
-        "description": "The crypto-system used to generate a key pair.",
+        "description": "The type of key pair. Note that ED25519 keys are not supported for Windows instances.\n If the ` + "`" + `` + "`" + `PublicKeyMaterial` + "`" + `` + "`" + ` property is specified, the ` + "`" + `` + "`" + `KeyType` + "`" + `` + "`" + ` property is ignored, and the key type is inferred from the ` + "`" + `` + "`" + `PublicKeyMaterial` + "`" + `` + "`" + ` value.\n Default: ` + "`" + `` + "`" + `rsa` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "type": "string"
       },
       "public_key_material": {
         "computed": true,
-        "description": "Plain text public key to import",
+        "description": "The public key material. The ` + "`" + `` + "`" + `PublicKeyMaterial` + "`" + `` + "`" + ` property is used to import a key pair. If this property is not specified, then a new key pair will be created.",
         "description_kind": "plain",
         "type": "string"
       },
       "tags": {
         "computed": true,
-        "description": "An array of key-value pairs to apply to this resource.",
+        "description": "The tags to apply to the key pair.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
               "computed": true,
-              "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+              "description": "The tag key.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+              "description": "The tag value.",
               "description_kind": "plain",
               "type": "string"
             }

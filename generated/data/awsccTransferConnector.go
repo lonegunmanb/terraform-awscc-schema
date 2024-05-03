@@ -103,6 +103,21 @@ const awsccTransferConnector = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "security_policy_name": {
+        "computed": true,
+        "description": "Security policy for SFTP Connector",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "service_managed_egress_ip_addresses": {
+        "computed": true,
+        "description": "The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "sftp_config": {
         "computed": true,
         "description": "Configuration for an SFTP connector.",

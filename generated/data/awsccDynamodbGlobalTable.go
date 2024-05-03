@@ -89,6 +89,20 @@ const awsccDynamodbGlobalTable = `{
                 "nesting_mode": "single"
               }
             },
+            "write_on_demand_throughput_settings": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "max_write_request_units": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "write_provisioned_throughput_settings": {
               "computed": true,
               "description_kind": "plain",
@@ -283,6 +297,20 @@ const awsccDynamodbGlobalTable = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "read_on_demand_throughput_settings": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "max_read_request_units": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "read_provisioned_throughput_settings": {
                     "computed": true,
                     "description_kind": "plain",
@@ -382,6 +410,20 @@ const awsccDynamodbGlobalTable = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "read_on_demand_throughput_settings": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "max_read_request_units": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
                   }
                 },
                 "nesting_mode": "single"
@@ -600,6 +642,20 @@ const awsccDynamodbGlobalTable = `{
               "computed": true,
               "description_kind": "plain",
               "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "write_on_demand_throughput_settings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "max_write_request_units": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
             }
           },
           "nesting_mode": "single"

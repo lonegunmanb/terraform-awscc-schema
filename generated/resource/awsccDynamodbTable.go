@@ -119,6 +119,28 @@ const awsccDynamodbTable = `{
               },
               "required": true
             },
+            "on_demand_throughput": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "max_read_request_units": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "max_write_request_units": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "projection": {
               "description": "Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.",
               "description_kind": "plain",
@@ -366,6 +388,28 @@ const awsccDynamodbTable = `{
             }
           },
           "nesting_mode": "list"
+        },
+        "optional": true
+      },
+      "on_demand_throughput": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "max_read_request_units": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "max_write_request_units": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
         },
         "optional": true
       },

@@ -987,7 +987,7 @@ const awsccEcsTaskDefinition = `{
       },
       "runtime_platform": {
         "computed": true,
-        "description": "The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type. \n When you specify a task definition in a service, this value must match the ` + "`" + `` + "`" + `runtimePlatform` + "`" + `` + "`" + ` value of the service.",
+        "description": "The operating system that your tasks definitions run on. A platform family is specified only for tasks using the Fargate launch type.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -1177,11 +1177,13 @@ const awsccEcsTaskDefinition = `{
             },
             "fsx_windows_file_server_volume_configuration": {
               "computed": true,
+              "description": "This parameter is specified when you use Amazon FSx for Windows File Server file system for task storage.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "authorization_config": {
                     "computed": true,
+                    "description": "The authorization configuration details for the Amazon FSx for Windows File Server file system.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -1201,11 +1203,13 @@ const awsccEcsTaskDefinition = `{
                     "optional": true
                   },
                   "file_system_id": {
+                    "description": "The Amazon FSx for Windows File Server file system ID to use.",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "root_directory": {
+                    "description": "The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"

@@ -612,6 +612,28 @@ const awsccEc2Instance = `{
           "nesting_mode": "list"
         }
       },
+      "state": {
+        "computed": true,
+        "description": "The current state of the instance.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "code": {
+              "computed": true,
+              "description": "The state of the instance as a 16-bit unsigned integer.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "name": {
+              "computed": true,
+              "description": "The current state of the instance.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "subnet_id": {
         "computed": true,
         "description": "[EC2-VPC] The ID of the subnet to launch the instance into.\n\n",

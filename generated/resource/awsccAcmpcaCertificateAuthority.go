@@ -234,8 +234,9 @@ const awsccAcmpcaCertificateAuthority = `{
                           "nested_type": {
                             "attributes": {
                               "name_assigner": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "party_name": {
@@ -391,9 +392,8 @@ const awsccAcmpcaCertificateAuthority = `{
                     "type": "string"
                   },
                   "enabled": {
-                    "computed": true,
                     "description_kind": "plain",
-                    "optional": true,
+                    "required": true,
                     "type": "bool"
                   },
                   "expiration_in_days": {
@@ -426,9 +426,8 @@ const awsccAcmpcaCertificateAuthority = `{
               "nested_type": {
                 "attributes": {
                   "enabled": {
-                    "computed": true,
                     "description_kind": "plain",
-                    "optional": true,
+                    "required": true,
                     "type": "bool"
                   },
                   "ocsp_custom_cname": {
@@ -575,9 +574,8 @@ const awsccAcmpcaCertificateAuthority = `{
         "nested_type": {
           "attributes": {
             "key": {
-              "computed": true,
               "description_kind": "plain",
-              "optional": true,
+              "required": true,
               "type": "string"
             },
             "value": {

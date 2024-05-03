@@ -148,7 +148,6 @@ const awsccTransferWorkflow = `{
               "nested_type": {
                 "attributes": {
                   "destination_file_location": {
-                    "computed": true,
                     "description": "Specifies the location for the file being decrypted. Only applicable for the Decrypt type of workflow steps.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -206,7 +205,7 @@ const awsccTransferWorkflow = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "optional": true
+                    "required": true
                   },
                   "name": {
                     "computed": true,
@@ -230,10 +229,9 @@ const awsccTransferWorkflow = `{
                     "type": "string"
                   },
                   "type": {
-                    "computed": true,
                     "description": "Specifies which encryption method to use.",
                     "description_kind": "plain",
-                    "optional": true,
+                    "required": true,
                     "type": "string"
                   }
                 },
@@ -444,7 +442,6 @@ const awsccTransferWorkflow = `{
               "nested_type": {
                 "attributes": {
                   "destination_file_location": {
-                    "computed": true,
                     "description": "Specifies the location for the file being decrypted. Only applicable for the Decrypt type of workflow steps.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -502,7 +499,7 @@ const awsccTransferWorkflow = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "optional": true
+                    "required": true
                   },
                   "name": {
                     "computed": true,
@@ -526,10 +523,9 @@ const awsccTransferWorkflow = `{
                     "type": "string"
                   },
                   "type": {
-                    "computed": true,
                     "description": "Specifies which encryption method to use.",
                     "description_kind": "plain",
-                    "optional": true,
+                    "required": true,
                     "type": "string"
                   }
                 },

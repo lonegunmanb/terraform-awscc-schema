@@ -241,6 +241,12 @@ const awsccQuicksightTopic = `{
                     },
                     "optional": true
                   },
+                  "disable_indexing": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
                   "expression": {
                     "description_kind": "plain",
                     "required": true,
@@ -566,6 +572,12 @@ const awsccQuicksightTopic = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "disable_indexing": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
                   },
                   "is_included_in_topic": {
                     "computed": true,

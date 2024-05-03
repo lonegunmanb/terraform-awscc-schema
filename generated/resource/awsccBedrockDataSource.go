@@ -15,6 +15,13 @@ const awsccBedrockDataSource = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "data_deletion_policy": {
+        "computed": true,
+        "description": "The deletion policy for the data source.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "data_source_configuration": {
         "description": "Specifies a raw data source location to ingest.",
         "description_kind": "plain",
@@ -29,6 +36,13 @@ const awsccBedrockDataSource = `{
                     "description": "The ARN of the bucket that contains the data source.",
                     "description_kind": "plain",
                     "required": true,
+                    "type": "string"
+                  },
+                  "bucket_owner_account_id": {
+                    "computed": true,
+                    "description": "The account ID for the owner of the S3 bucket.",
+                    "description_kind": "plain",
+                    "optional": true,
                     "type": "string"
                   },
                   "inclusion_prefixes": {
@@ -75,6 +89,15 @@ const awsccBedrockDataSource = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "failure_reasons": {
+        "computed": true,
+        "description": "The details of the failure reasons related to the data source.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
       },
       "id": {
         "computed": true,
