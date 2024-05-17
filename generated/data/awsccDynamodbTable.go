@@ -116,16 +116,19 @@ const awsccDynamodbTable = `{
             },
             "on_demand_throughput": {
               "computed": true,
+              "description": "The maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify ` + "`" + `` + "`" + `MaxReadRequestUnits` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `MaxWriteRequestUnits` + "`" + `` + "`" + `, or both.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "max_read_request_units": {
                     "computed": true,
+                    "description": "Maximum number of read request units for the specified table.\n To specify a maximum ` + "`" + `` + "`" + `OnDemandThroughput` + "`" + `` + "`" + ` on your table, set the value of ` + "`" + `` + "`" + `MaxReadRequestUnits` + "`" + `` + "`" + ` as greater than or equal to 1. To remove the maximum ` + "`" + `` + "`" + `OnDemandThroughput` + "`" + `` + "`" + ` that is currently set on your table, set the value of ` + "`" + `` + "`" + `MaxReadRequestUnits` + "`" + `` + "`" + ` to -1.",
                     "description_kind": "plain",
                     "type": "number"
                   },
                   "max_write_request_units": {
                     "computed": true,
+                    "description": "Maximum number of write request units for the specified table.\n To specify a maximum ` + "`" + `` + "`" + `OnDemandThroughput` + "`" + `` + "`" + ` on your table, set the value of ` + "`" + `` + "`" + `MaxWriteRequestUnits` + "`" + `` + "`" + ` as greater than or equal to 1. To remove the maximum ` + "`" + `` + "`" + `OnDemandThroughput` + "`" + `` + "`" + ` that is currently set on your table, set the value of ` + "`" + `` + "`" + `MaxWriteRequestUnits` + "`" + `` + "`" + ` to -1.",
                     "description_kind": "plain",
                     "type": "number"
                   }
@@ -368,16 +371,19 @@ const awsccDynamodbTable = `{
       },
       "on_demand_throughput": {
         "computed": true,
+        "description": "Sets the maximum number of read and write units for the specified on-demand table. If you use this property, you must specify ` + "`" + `` + "`" + `MaxReadRequestUnits` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `MaxWriteRequestUnits` + "`" + `` + "`" + `, or both.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "max_read_request_units": {
               "computed": true,
+              "description": "Maximum number of read request units for the specified table.\n To specify a maximum ` + "`" + `` + "`" + `OnDemandThroughput` + "`" + `` + "`" + ` on your table, set the value of ` + "`" + `` + "`" + `MaxReadRequestUnits` + "`" + `` + "`" + ` as greater than or equal to 1. To remove the maximum ` + "`" + `` + "`" + `OnDemandThroughput` + "`" + `` + "`" + ` that is currently set on your table, set the value of ` + "`" + `` + "`" + `MaxReadRequestUnits` + "`" + `` + "`" + ` to -1.",
               "description_kind": "plain",
               "type": "number"
             },
             "max_write_request_units": {
               "computed": true,
+              "description": "Maximum number of write request units for the specified table.\n To specify a maximum ` + "`" + `` + "`" + `OnDemandThroughput` + "`" + `` + "`" + ` on your table, set the value of ` + "`" + `` + "`" + `MaxWriteRequestUnits` + "`" + `` + "`" + ` as greater than or equal to 1. To remove the maximum ` + "`" + `` + "`" + `OnDemandThroughput` + "`" + `` + "`" + ` that is currently set on your table, set the value of ` + "`" + `` + "`" + `MaxWriteRequestUnits` + "`" + `` + "`" + ` to -1.",
               "description_kind": "plain",
               "type": "number"
             }

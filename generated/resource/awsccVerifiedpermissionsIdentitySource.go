@@ -14,6 +14,7 @@ const awsccVerifiedpermissionsIdentitySource = `{
         "nested_type": {
           "attributes": {
             "cognito_user_pool_configuration": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -49,7 +50,7 @@ const awsccVerifiedpermissionsIdentitySource = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"

@@ -865,7 +865,7 @@ const awsccEc2LaunchTemplate = `{
                   },
                   "device_index": {
                     "computed": true,
-                    "description": "The device index for the network interface attachment.",
+                    "description": "The device index for the network interface attachment. Each network interface requires a device index. If you create a launch template that includes secondary network interfaces but not a primary network interface, then you must add a primary network interface as a launch parameter when you launch an instance from the template.",
                     "description_kind": "plain",
                     "type": "number"
                   },

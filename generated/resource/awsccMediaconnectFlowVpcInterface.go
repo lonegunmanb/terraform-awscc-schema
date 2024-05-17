@@ -37,7 +37,7 @@ const awsccMediaconnectFlowVpcInterface = `{
         ]
       },
       "role_arn": {
-        "description": "Role Arn MediaConnect can assumes to create ENIs in customer's account.",
+        "description": "Role Arn MediaConnect can assume to create ENIs in customer's account.",
         "description_kind": "plain",
         "required": true,
         "type": "string"

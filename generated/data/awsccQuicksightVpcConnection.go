@@ -11,6 +11,7 @@ const awsccQuicksightVpcConnection = `{
     "attributes": {
       "arn": {
         "computed": true,
+        "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the VPC connection.\u003c/p\u003e",
         "description_kind": "plain",
         "type": "string"
       },
@@ -26,6 +27,7 @@ const awsccQuicksightVpcConnection = `{
       },
       "created_time": {
         "computed": true,
+        "description": "\u003cp\u003eThe time that the VPC connection was created.\u003c/p\u003e",
         "description_kind": "plain",
         "type": "string"
       },
@@ -45,6 +47,7 @@ const awsccQuicksightVpcConnection = `{
       },
       "last_updated_time": {
         "computed": true,
+        "description": "\u003cp\u003eThe time that the VPC connection was last updated.\u003c/p\u003e",
         "description_kind": "plain",
         "type": "string"
       },
@@ -55,21 +58,25 @@ const awsccQuicksightVpcConnection = `{
       },
       "network_interfaces": {
         "computed": true,
+        "description": "\u003cp\u003eA list of network interfaces.\u003c/p\u003e",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "availability_zone": {
               "computed": true,
+              "description": "\u003cp\u003eThe availability zone that the network interface resides in.\u003c/p\u003e",
               "description_kind": "plain",
               "type": "string"
             },
             "error_message": {
               "computed": true,
+              "description": "\u003cp\u003eAn error message.\u003c/p\u003e",
               "description_kind": "plain",
               "type": "string"
             },
             "network_interface_id": {
               "computed": true,
+              "description": "\u003cp\u003eThe network interface ID.\u003c/p\u003e",
               "description_kind": "plain",
               "type": "string"
             },
@@ -80,6 +87,7 @@ const awsccQuicksightVpcConnection = `{
             },
             "subnet_id": {
               "computed": true,
+              "description": "\u003cp\u003eThe subnet ID associated with the network interface.\u003c/p\u003e",
               "description_kind": "plain",
               "type": "string"
             }
@@ -120,11 +128,13 @@ const awsccQuicksightVpcConnection = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "\u003cp\u003eTag key.\u003c/p\u003e",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "\u003cp\u003eTag value.\u003c/p\u003e",
               "description_kind": "plain",
               "type": "string"
             }
@@ -139,6 +149,7 @@ const awsccQuicksightVpcConnection = `{
       },
       "vpc_id": {
         "computed": true,
+        "description": "\u003cp\u003eThe Amazon EC2 VPC ID associated with the VPC connection.\u003c/p\u003e",
         "description_kind": "plain",
         "type": "string"
       }

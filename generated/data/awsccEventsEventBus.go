@@ -15,6 +15,27 @@ const awsccEventsEventBus = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "dead_letter_config": {
+        "computed": true,
+        "description": "Dead Letter Queue for the event bus.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "description": {
+        "computed": true,
+        "description": "The description of the event bus.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "event_source_name": {
         "computed": true,
         "description": "If you are creating a partner event bus, this specifies the partner event source that the new event bus will be matched with.",
@@ -25,6 +46,12 @@ const awsccEventsEventBus = `{
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "kms_key_identifier": {
+        "computed": true,
+        "description": "Kms Key Identifier used to encrypt events at rest in the event bus.",
+        "description_kind": "plain",
         "type": "string"
       },
       "name": {

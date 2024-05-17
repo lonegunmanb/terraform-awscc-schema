@@ -156,6 +156,15 @@ const awsccLightsailInstance = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "ipv_6_addresses": {
+        "computed": true,
+        "description": "IPv6 addresses of the instance",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "is_static_ip": {
         "computed": true,
         "description": "Is the IP Address of the Instance is the static IP",

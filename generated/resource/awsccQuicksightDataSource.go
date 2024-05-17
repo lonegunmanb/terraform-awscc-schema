@@ -17,12 +17,12 @@ const awsccQuicksightDataSource = `{
           "attributes": {
             "amazon_elasticsearch_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon Elasticsearch Service parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for OpenSearch.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "domain": {
-                    "description": "\u003cp\u003eThe Amazon Elasticsearch Service domain.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe OpenSearch domain.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
@@ -34,12 +34,12 @@ const awsccQuicksightDataSource = `{
             },
             "amazon_open_search_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon OpenSearch Service parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for OpenSearch.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "domain": {
-                    "description": "\u003cp\u003eThe Amazon OpenSearch Service domain.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe OpenSearch domain.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
@@ -51,7 +51,7 @@ const awsccQuicksightDataSource = `{
             },
             "athena_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon Athena parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eParameters for Amazon Athena.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -76,7 +76,7 @@ const awsccQuicksightDataSource = `{
             },
             "aurora_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon Aurora parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eParameters for Amazon Aurora.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -93,9 +93,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -105,26 +106,27 @@ const awsccQuicksightDataSource = `{
             },
             "aurora_postgre_sql_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon Aurora with PostgreSQL compatibility parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eParameters for Amazon Aurora PostgreSQL-Compatible Edition.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "database": {
-                    "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe Amazon Aurora PostgreSQL database to connect to.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "host": {
-                    "description": "\u003cp\u003eHost.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe Amazon Aurora PostgreSQL-Compatible host to connect to.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "port": {
-                    "description": "\u003cp\u003ePort.\u003c/p\u003e",
+                    "computed": true,
+                    "description": "\u003cp\u003eThe port that Amazon Aurora PostgreSQL is listening on.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -134,24 +136,25 @@ const awsccQuicksightDataSource = `{
             },
             "databricks_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eDatabricks parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters that are required to connect to a Databricks data source.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "host": {
-                    "description": "\u003cp\u003eHost.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe host name of the Databricks data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "port": {
-                    "description": "\u003cp\u003ePort.\u003c/p\u003e",
+                    "computed": true,
+                    "description": "\u003cp\u003eThe port for the Databricks data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "sql_endpoint_path": {
-                    "description": "\u003cp\u003eThe HTTP Path of the Databricks data source.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe HTTP path of the Databricks data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
@@ -163,7 +166,7 @@ const awsccQuicksightDataSource = `{
             },
             "maria_db_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eMariaDB parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for MariaDB.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -180,9 +183,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -192,7 +196,7 @@ const awsccQuicksightDataSource = `{
             },
             "my_sql_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eMySQL parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for MySQL.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -209,9 +213,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -221,22 +226,27 @@ const awsccQuicksightDataSource = `{
             },
             "oracle_parameters": {
               "computed": true,
+              "description": "\u003cp\u003eThe parameters for Oracle.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "description": "\u003cp\u003eThe database.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "host": {
+                    "description": "\u003cp\u003eAn Oracle host.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe port.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -246,7 +256,7 @@ const awsccQuicksightDataSource = `{
             },
             "postgre_sql_parameters": {
               "computed": true,
-              "description": "\u003cp\u003ePostgreSQL parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for PostgreSQL.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -263,9 +273,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -275,7 +286,7 @@ const awsccQuicksightDataSource = `{
             },
             "presto_parameters": {
               "computed": true,
-              "description": "\u003cp\u003ePresto parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for Presto.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -292,9 +303,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -304,7 +316,7 @@ const awsccQuicksightDataSource = `{
             },
             "rds_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon RDS parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for Amazon RDS.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -327,7 +339,7 @@ const awsccQuicksightDataSource = `{
             },
             "redshift_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon Redshift parameters. The \u003ccode\u003eClusterId\u003c/code\u003e field can be blank if\n            \u003ccode\u003eHost\u003c/code\u003e and \u003ccode\u003ePort\u003c/code\u003e are both set. The \u003ccode\u003eHost\u003c/code\u003e and\n            \u003ccode\u003ePort\u003c/code\u003e fields can be blank if the \u003ccode\u003eClusterId\u003c/code\u003e field is set.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for Amazon Redshift. The \u003ccode\u003eClusterId\u003c/code\u003e field can be blank if\n            \u003ccode\u003eHost\u003c/code\u003e and \u003ccode\u003ePort\u003c/code\u003e are both set. The \u003ccode\u003eHost\u003c/code\u003e and \u003ccode\u003ePort\u003c/code\u003e fields can be blank if the \u003ccode\u003eClusterId\u003c/code\u003e field is set.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -351,6 +363,24 @@ const awsccQuicksightDataSource = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "identity_center_configuration": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe parameters for an IAM Identity Center configuration.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enable_identity_propagation": {
+                          "computed": true,
+                          "description": "\u003cp\u003eA Boolean option that controls whether Trusted Identity Propagation should be used.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "port": {
                     "computed": true,
                     "description": "\u003cp\u003ePort. This field can be blank if the \u003ccode\u003eClusterId\u003c/code\u003e is provided.\u003c/p\u003e",
@@ -365,7 +395,7 @@ const awsccQuicksightDataSource = `{
             },
             "s3_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eS3 parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for S3.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -405,7 +435,7 @@ const awsccQuicksightDataSource = `{
             },
             "snowflake_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eSnowflake parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for Snowflake.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -434,7 +464,7 @@ const awsccQuicksightDataSource = `{
             },
             "spark_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eSpark parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for Spark.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -445,9 +475,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -457,7 +488,7 @@ const awsccQuicksightDataSource = `{
             },
             "sql_server_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eSQL Server parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for SQL Server.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -474,9 +505,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -486,26 +518,27 @@ const awsccQuicksightDataSource = `{
             },
             "starburst_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eStarburst parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters that are required to connect to a Starburst data source.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "catalog": {
-                    "description": "\u003cp\u003eCatalog.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe catalog name for the Starburst data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "host": {
-                    "description": "\u003cp\u003eHost.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe host name of the Starburst data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "port": {
-                    "description": "\u003cp\u003ePort.\u003c/p\u003e",
+                    "computed": true,
+                    "description": "\u003cp\u003eThe port for the Starburst data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "product_type": {
@@ -521,7 +554,7 @@ const awsccQuicksightDataSource = `{
             },
             "teradata_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eTeradata parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for Teradata.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -538,9 +571,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -550,26 +584,27 @@ const awsccQuicksightDataSource = `{
             },
             "trino_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eTrino parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters that are required to connect to a Trino data source.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "catalog": {
-                    "description": "\u003cp\u003eCatalog.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe catalog name for the Trino data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "host": {
-                    "description": "\u003cp\u003eHost.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe host name of the Trino data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "port": {
-                    "description": "\u003cp\u003ePort.\u003c/p\u003e",
+                    "computed": true,
+                    "description": "\u003cp\u003eThe port for the Trino data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -627,12 +662,12 @@ const awsccQuicksightDataSource = `{
                       "attributes": {
                         "amazon_elasticsearch_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eAmazon Elasticsearch Service parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for OpenSearch.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "domain": {
-                                "description": "\u003cp\u003eThe Amazon Elasticsearch Service domain.\u003c/p\u003e",
+                                "description": "\u003cp\u003eThe OpenSearch domain.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "required": true,
                                 "type": "string"
@@ -644,12 +679,12 @@ const awsccQuicksightDataSource = `{
                         },
                         "amazon_open_search_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eAmazon OpenSearch Service parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for OpenSearch.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "domain": {
-                                "description": "\u003cp\u003eThe Amazon OpenSearch Service domain.\u003c/p\u003e",
+                                "description": "\u003cp\u003eThe OpenSearch domain.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "required": true,
                                 "type": "string"
@@ -661,7 +696,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "athena_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eAmazon Athena parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eParameters for Amazon Athena.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -686,7 +721,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "aurora_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eAmazon Aurora parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eParameters for Amazon Aurora.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -703,9 +738,10 @@ const awsccQuicksightDataSource = `{
                                 "type": "string"
                               },
                               "port": {
+                                "computed": true,
                                 "description": "\u003cp\u003ePort.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -715,26 +751,27 @@ const awsccQuicksightDataSource = `{
                         },
                         "aurora_postgre_sql_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eAmazon Aurora with PostgreSQL compatibility parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eParameters for Amazon Aurora PostgreSQL-Compatible Edition.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "database": {
-                                "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
+                                "description": "\u003cp\u003eThe Amazon Aurora PostgreSQL database to connect to.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "required": true,
                                 "type": "string"
                               },
                               "host": {
-                                "description": "\u003cp\u003eHost.\u003c/p\u003e",
+                                "description": "\u003cp\u003eThe Amazon Aurora PostgreSQL-Compatible host to connect to.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "required": true,
                                 "type": "string"
                               },
                               "port": {
-                                "description": "\u003cp\u003ePort.\u003c/p\u003e",
+                                "computed": true,
+                                "description": "\u003cp\u003eThe port that Amazon Aurora PostgreSQL is listening on.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -744,24 +781,25 @@ const awsccQuicksightDataSource = `{
                         },
                         "databricks_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eDatabricks parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters that are required to connect to a Databricks data source.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "host": {
-                                "description": "\u003cp\u003eHost.\u003c/p\u003e",
+                                "description": "\u003cp\u003eThe host name of the Databricks data source.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "required": true,
                                 "type": "string"
                               },
                               "port": {
-                                "description": "\u003cp\u003ePort.\u003c/p\u003e",
+                                "computed": true,
+                                "description": "\u003cp\u003eThe port for the Databricks data source.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               },
                               "sql_endpoint_path": {
-                                "description": "\u003cp\u003eThe HTTP Path of the Databricks data source.\u003c/p\u003e",
+                                "description": "\u003cp\u003eThe HTTP path of the Databricks data source.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "required": true,
                                 "type": "string"
@@ -773,7 +811,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "maria_db_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eMariaDB parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for MariaDB.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -790,9 +828,10 @@ const awsccQuicksightDataSource = `{
                                 "type": "string"
                               },
                               "port": {
+                                "computed": true,
                                 "description": "\u003cp\u003ePort.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -802,7 +841,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "my_sql_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eMySQL parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for MySQL.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -819,9 +858,10 @@ const awsccQuicksightDataSource = `{
                                 "type": "string"
                               },
                               "port": {
+                                "computed": true,
                                 "description": "\u003cp\u003ePort.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -831,22 +871,27 @@ const awsccQuicksightDataSource = `{
                         },
                         "oracle_parameters": {
                           "computed": true,
+                          "description": "\u003cp\u003eThe parameters for Oracle.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "database": {
+                                "description": "\u003cp\u003eThe database.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "required": true,
                                 "type": "string"
                               },
                               "host": {
+                                "description": "\u003cp\u003eAn Oracle host.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "required": true,
                                 "type": "string"
                               },
                               "port": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe port.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -856,7 +901,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "postgre_sql_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003ePostgreSQL parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for PostgreSQL.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -873,9 +918,10 @@ const awsccQuicksightDataSource = `{
                                 "type": "string"
                               },
                               "port": {
+                                "computed": true,
                                 "description": "\u003cp\u003ePort.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -885,7 +931,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "presto_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003ePresto parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for Presto.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -902,9 +948,10 @@ const awsccQuicksightDataSource = `{
                                 "type": "string"
                               },
                               "port": {
+                                "computed": true,
                                 "description": "\u003cp\u003ePort.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -914,7 +961,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "rds_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eAmazon RDS parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for Amazon RDS.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -937,7 +984,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "redshift_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eAmazon Redshift parameters. The \u003ccode\u003eClusterId\u003c/code\u003e field can be blank if\n            \u003ccode\u003eHost\u003c/code\u003e and \u003ccode\u003ePort\u003c/code\u003e are both set. The \u003ccode\u003eHost\u003c/code\u003e and\n            \u003ccode\u003ePort\u003c/code\u003e fields can be blank if the \u003ccode\u003eClusterId\u003c/code\u003e field is set.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for Amazon Redshift. The \u003ccode\u003eClusterId\u003c/code\u003e field can be blank if\n            \u003ccode\u003eHost\u003c/code\u003e and \u003ccode\u003ePort\u003c/code\u003e are both set. The \u003ccode\u003eHost\u003c/code\u003e and \u003ccode\u003ePort\u003c/code\u003e fields can be blank if the \u003ccode\u003eClusterId\u003c/code\u003e field is set.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -961,6 +1008,24 @@ const awsccQuicksightDataSource = `{
                                 "optional": true,
                                 "type": "string"
                               },
+                              "identity_center_configuration": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe parameters for an IAM Identity Center configuration.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "enable_identity_propagation": {
+                                      "computed": true,
+                                      "description": "\u003cp\u003eA Boolean option that controls whether Trusted Identity Propagation should be used.\u003c/p\u003e",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "bool"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
                               "port": {
                                 "computed": true,
                                 "description": "\u003cp\u003ePort. This field can be blank if the \u003ccode\u003eClusterId\u003c/code\u003e is provided.\u003c/p\u003e",
@@ -975,7 +1040,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "s3_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eS3 parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for S3.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -1015,7 +1080,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "snowflake_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eSnowflake parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for Snowflake.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -1044,7 +1109,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "spark_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eSpark parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for Spark.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -1055,9 +1120,10 @@ const awsccQuicksightDataSource = `{
                                 "type": "string"
                               },
                               "port": {
+                                "computed": true,
                                 "description": "\u003cp\u003ePort.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -1067,7 +1133,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "sql_server_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eSQL Server parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for SQL Server.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -1084,9 +1150,10 @@ const awsccQuicksightDataSource = `{
                                 "type": "string"
                               },
                               "port": {
+                                "computed": true,
                                 "description": "\u003cp\u003ePort.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -1096,26 +1163,27 @@ const awsccQuicksightDataSource = `{
                         },
                         "starburst_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eStarburst parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters that are required to connect to a Starburst data source.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "catalog": {
-                                "description": "\u003cp\u003eCatalog.\u003c/p\u003e",
+                                "description": "\u003cp\u003eThe catalog name for the Starburst data source.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "required": true,
                                 "type": "string"
                               },
                               "host": {
-                                "description": "\u003cp\u003eHost.\u003c/p\u003e",
+                                "description": "\u003cp\u003eThe host name of the Starburst data source.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "required": true,
                                 "type": "string"
                               },
                               "port": {
-                                "description": "\u003cp\u003ePort.\u003c/p\u003e",
+                                "computed": true,
+                                "description": "\u003cp\u003eThe port for the Starburst data source.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               },
                               "product_type": {
@@ -1131,7 +1199,7 @@ const awsccQuicksightDataSource = `{
                         },
                         "teradata_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eTeradata parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters for Teradata.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -1148,9 +1216,10 @@ const awsccQuicksightDataSource = `{
                                 "type": "string"
                               },
                               "port": {
+                                "computed": true,
                                 "description": "\u003cp\u003ePort.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -1160,26 +1229,27 @@ const awsccQuicksightDataSource = `{
                         },
                         "trino_parameters": {
                           "computed": true,
-                          "description": "\u003cp\u003eTrino parameters.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe parameters that are required to connect to a Trino data source.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "catalog": {
-                                "description": "\u003cp\u003eCatalog.\u003c/p\u003e",
+                                "description": "\u003cp\u003eThe catalog name for the Trino data source.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "required": true,
                                 "type": "string"
                               },
                               "host": {
-                                "description": "\u003cp\u003eHost.\u003c/p\u003e",
+                                "description": "\u003cp\u003eThe host name of the Trino data source.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "required": true,
                                 "type": "string"
                               },
                               "port": {
-                                "description": "\u003cp\u003ePort.\u003c/p\u003e",
+                                "computed": true,
+                                "description": "\u003cp\u003eThe port for the Trino data source.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -1235,12 +1305,12 @@ const awsccQuicksightDataSource = `{
           "attributes": {
             "amazon_elasticsearch_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon Elasticsearch Service parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for OpenSearch.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "domain": {
-                    "description": "\u003cp\u003eThe Amazon Elasticsearch Service domain.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe OpenSearch domain.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
@@ -1252,12 +1322,12 @@ const awsccQuicksightDataSource = `{
             },
             "amazon_open_search_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon OpenSearch Service parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for OpenSearch.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "domain": {
-                    "description": "\u003cp\u003eThe Amazon OpenSearch Service domain.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe OpenSearch domain.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
@@ -1269,7 +1339,7 @@ const awsccQuicksightDataSource = `{
             },
             "athena_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon Athena parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eParameters for Amazon Athena.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1294,7 +1364,7 @@ const awsccQuicksightDataSource = `{
             },
             "aurora_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon Aurora parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eParameters for Amazon Aurora.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1311,9 +1381,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -1323,26 +1394,27 @@ const awsccQuicksightDataSource = `{
             },
             "aurora_postgre_sql_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon Aurora with PostgreSQL compatibility parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eParameters for Amazon Aurora PostgreSQL-Compatible Edition.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "database": {
-                    "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe Amazon Aurora PostgreSQL database to connect to.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "host": {
-                    "description": "\u003cp\u003eHost.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe Amazon Aurora PostgreSQL-Compatible host to connect to.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "port": {
-                    "description": "\u003cp\u003ePort.\u003c/p\u003e",
+                    "computed": true,
+                    "description": "\u003cp\u003eThe port that Amazon Aurora PostgreSQL is listening on.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -1352,24 +1424,25 @@ const awsccQuicksightDataSource = `{
             },
             "databricks_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eDatabricks parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters that are required to connect to a Databricks data source.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "host": {
-                    "description": "\u003cp\u003eHost.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe host name of the Databricks data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "port": {
-                    "description": "\u003cp\u003ePort.\u003c/p\u003e",
+                    "computed": true,
+                    "description": "\u003cp\u003eThe port for the Databricks data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "sql_endpoint_path": {
-                    "description": "\u003cp\u003eThe HTTP Path of the Databricks data source.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe HTTP path of the Databricks data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
@@ -1381,7 +1454,7 @@ const awsccQuicksightDataSource = `{
             },
             "maria_db_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eMariaDB parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for MariaDB.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1398,9 +1471,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -1410,7 +1484,7 @@ const awsccQuicksightDataSource = `{
             },
             "my_sql_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eMySQL parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for MySQL.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1427,9 +1501,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -1439,22 +1514,27 @@ const awsccQuicksightDataSource = `{
             },
             "oracle_parameters": {
               "computed": true,
+              "description": "\u003cp\u003eThe parameters for Oracle.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "description": "\u003cp\u003eThe database.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "host": {
+                    "description": "\u003cp\u003eAn Oracle host.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe port.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -1464,7 +1544,7 @@ const awsccQuicksightDataSource = `{
             },
             "postgre_sql_parameters": {
               "computed": true,
-              "description": "\u003cp\u003ePostgreSQL parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for PostgreSQL.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1481,9 +1561,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -1493,7 +1574,7 @@ const awsccQuicksightDataSource = `{
             },
             "presto_parameters": {
               "computed": true,
-              "description": "\u003cp\u003ePresto parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for Presto.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1510,9 +1591,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -1522,7 +1604,7 @@ const awsccQuicksightDataSource = `{
             },
             "rds_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon RDS parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for Amazon RDS.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1545,7 +1627,7 @@ const awsccQuicksightDataSource = `{
             },
             "redshift_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eAmazon Redshift parameters. The \u003ccode\u003eClusterId\u003c/code\u003e field can be blank if\n            \u003ccode\u003eHost\u003c/code\u003e and \u003ccode\u003ePort\u003c/code\u003e are both set. The \u003ccode\u003eHost\u003c/code\u003e and\n            \u003ccode\u003ePort\u003c/code\u003e fields can be blank if the \u003ccode\u003eClusterId\u003c/code\u003e field is set.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for Amazon Redshift. The \u003ccode\u003eClusterId\u003c/code\u003e field can be blank if\n            \u003ccode\u003eHost\u003c/code\u003e and \u003ccode\u003ePort\u003c/code\u003e are both set. The \u003ccode\u003eHost\u003c/code\u003e and \u003ccode\u003ePort\u003c/code\u003e fields can be blank if the \u003ccode\u003eClusterId\u003c/code\u003e field is set.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1569,6 +1651,24 @@ const awsccQuicksightDataSource = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "identity_center_configuration": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe parameters for an IAM Identity Center configuration.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enable_identity_propagation": {
+                          "computed": true,
+                          "description": "\u003cp\u003eA Boolean option that controls whether Trusted Identity Propagation should be used.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "port": {
                     "computed": true,
                     "description": "\u003cp\u003ePort. This field can be blank if the \u003ccode\u003eClusterId\u003c/code\u003e is provided.\u003c/p\u003e",
@@ -1583,7 +1683,7 @@ const awsccQuicksightDataSource = `{
             },
             "s3_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eS3 parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for S3.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1623,7 +1723,7 @@ const awsccQuicksightDataSource = `{
             },
             "snowflake_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eSnowflake parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for Snowflake.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1652,7 +1752,7 @@ const awsccQuicksightDataSource = `{
             },
             "spark_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eSpark parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for Spark.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1663,9 +1763,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -1675,7 +1776,7 @@ const awsccQuicksightDataSource = `{
             },
             "sql_server_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eSQL Server parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for SQL Server.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1692,9 +1793,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -1704,26 +1806,27 @@ const awsccQuicksightDataSource = `{
             },
             "starburst_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eStarburst parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters that are required to connect to a Starburst data source.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "catalog": {
-                    "description": "\u003cp\u003eCatalog.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe catalog name for the Starburst data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "host": {
-                    "description": "\u003cp\u003eHost.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe host name of the Starburst data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "port": {
-                    "description": "\u003cp\u003ePort.\u003c/p\u003e",
+                    "computed": true,
+                    "description": "\u003cp\u003eThe port for the Starburst data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "product_type": {
@@ -1739,7 +1842,7 @@ const awsccQuicksightDataSource = `{
             },
             "teradata_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eTeradata parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters for Teradata.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1756,9 +1859,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "\u003cp\u003ePort.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -1768,26 +1872,27 @@ const awsccQuicksightDataSource = `{
             },
             "trino_parameters": {
               "computed": true,
-              "description": "\u003cp\u003eTrino parameters.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe parameters that are required to connect to a Trino data source.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "catalog": {
-                    "description": "\u003cp\u003eCatalog.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe catalog name for the Trino data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "host": {
-                    "description": "\u003cp\u003eHost.\u003c/p\u003e",
+                    "description": "\u003cp\u003eThe host name of the Trino data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
                   },
                   "port": {
-                    "description": "\u003cp\u003ePort.\u003c/p\u003e",
+                    "computed": true,
+                    "description": "\u003cp\u003eThe port for the Trino data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -1837,15 +1942,12 @@ const awsccQuicksightDataSource = `{
         "type": "string"
       },
       "name": {
-        "computed": true,
-        "description": "\u003cp\u003eA display name for the data source.\u003c/p\u003e",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "permissions": {
         "computed": true,
-        "description": "\u003cp\u003eA list of resource permissions on the data source.\u003c/p\u003e",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -1859,9 +1961,15 @@ const awsccQuicksightDataSource = `{
               ]
             },
             "principal": {
-              "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the principal. This can be one of the\n            following:\u003c/p\u003e\n        \u003cul\u003e\n            \u003cli\u003e\n                \u003cp\u003eThe ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n                \u003cp\u003eThe ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n                \u003cp\u003eThe ARN of an AWS account root: This is an IAM ARN rather than a QuickSight\n                    ARN. Use this option only to share resources (templates) across AWS accounts.\n                    (This is less common.) \u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
+              "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the principal. This can be one of the\n            following:\u003c/p\u003e\n         \u003cul\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight\n                    ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.\n                    (This is less common.) \u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
               "description_kind": "plain",
               "required": true,
+              "type": "string"
+            },
+            "resource": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
               "type": "string"
             }
           },
@@ -1871,7 +1979,7 @@ const awsccQuicksightDataSource = `{
       },
       "ssl_properties": {
         "computed": true,
-        "description": "\u003cp\u003eSecure Socket Layer (SSL) properties that apply when QuickSight connects to your\n            underlying data source.\u003c/p\u003e",
+        "description": "\u003cp\u003eSecure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your\n            underlying data source.\u003c/p\u003e",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -1894,7 +2002,6 @@ const awsccQuicksightDataSource = `{
       },
       "tags": {
         "computed": true,
-        "description": "\u003cp\u003eContains a map of the key-value pairs for the resource tag or tags assigned to the data source.\u003c/p\u003e",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -1916,9 +2023,8 @@ const awsccQuicksightDataSource = `{
         "optional": true
       },
       "type": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "vpc_connection_properties": {

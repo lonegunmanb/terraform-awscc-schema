@@ -33,11 +33,156 @@ const awsccSagemakerDomain = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "custom_file_system_configs": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "efs_file_system_config": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "file_system_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "file_system_path": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
+            "custom_posix_user_config": {
+              "computed": true,
+              "description": "The Jupyter lab's custom posix user configurations.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "gid": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "uid": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "execution_role": {
               "computed": true,
               "description": "The execution role for the space.",
               "description_kind": "plain",
               "type": "string"
+            },
+            "jupyter_lab_app_settings": {
+              "computed": true,
+              "description": "The Jupyter lab's app settings.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "code_repositories": {
+                    "computed": true,
+                    "description": "A list of CodeRepositories available for use with JupyterLab apps.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "repository_url": {
+                          "computed": true,
+                          "description": "A CodeRepository (valid URL) to be used within Jupyter's Git extension.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
+                  "custom_images": {
+                    "computed": true,
+                    "description": "A list of custom images for use for JupyterLab apps.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "app_image_config_name": {
+                          "computed": true,
+                          "description": "The Name of the AppImageConfig.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "image_name": {
+                          "computed": true,
+                          "description": "The name of the CustomImage. Must be unique to your account.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "image_version_number": {
+                          "computed": true,
+                          "description": "The version number of the CustomImage.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
+                  "default_resource_spec": {
+                    "computed": true,
+                    "description": "The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the JupyterLab app.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "instance_type": {
+                          "computed": true,
+                          "description": "The instance type that the image version runs on.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "lifecycle_config_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the Lifecycle Configuration to attach to the Resource.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "sage_maker_image_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the SageMaker image that the image version belongs to.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "sage_maker_image_version_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the image version created on the instance.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "lifecycle_config_arns": {
+                    "computed": true,
+                    "description": "A list of LifecycleConfigArns available for use with JupyterLab apps.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
             },
             "jupyter_server_app_settings": {
               "computed": true,
@@ -162,6 +307,38 @@ const awsccSagemakerDomain = `{
                 "list",
                 "string"
               ]
+            },
+            "space_storage_settings": {
+              "computed": true,
+              "description": "The Jupyter lab's space storage settings.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "default_ebs_storage_settings": {
+                    "computed": true,
+                    "description": "Properties related to the Amazon Elastic Block Store volume. Must be provided if storage type is Amazon EBS and must not be provided if storage type is not Amazon EBS",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "default_ebs_volume_size_in_gb": {
+                          "computed": true,
+                          "description": "Default size of the Amazon EBS volume in Gb",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "maximum_ebs_volume_size_in_gb": {
+                          "computed": true,
+                          "description": "Maximum size of the Amazon EBS volume in Gb. Must be greater than or equal to the DefaultEbsVolumeSizeInGb.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

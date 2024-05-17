@@ -16,6 +16,12 @@ const awsccMediaconnectFlow = `{
         "optional": true,
         "type": "string"
       },
+      "egress_ip": {
+        "computed": true,
+        "description": "The IP address from which video will be sent to output destinations.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "flow_arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.",
@@ -33,6 +39,164 @@ const awsccMediaconnectFlow = `{
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "maintenance": {
+        "computed": true,
+        "description": "The maintenance settings you want to use for the flow. ",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "maintenance_day": {
+              "description": "A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "maintenance_start_hour": {
+              "description": "UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "media_streams": {
+        "computed": true,
+        "description": "The media streams associated with the flow. You can associate any of these media streams with sources and outputs on the flow.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "attributes": {
+              "computed": true,
+              "description": "Attributes that are related to the media stream.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "fmtp": {
+                    "computed": true,
+                    "description": "A set of parameters that define the media stream.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "channel_order": {
+                          "computed": true,
+                          "description": "The format of the audio channel.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "colorimetry": {
+                          "computed": true,
+                          "description": "The format used for the representation of color.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "exact_framerate": {
+                          "computed": true,
+                          "description": "The frame rate for the video stream, in frames/second. For example: 60000/1001.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "par": {
+                          "computed": true,
+                          "description": "The pixel aspect ratio (PAR) of the video.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "range": {
+                          "computed": true,
+                          "description": "The encoding range of the video.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "scan_mode": {
+                          "computed": true,
+                          "description": "The type of compression that was used to smooth the video's appearance.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "tcs": {
+                          "computed": true,
+                          "description": "The transfer characteristic system (TCS) that is used in the video.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "lang": {
+                    "computed": true,
+                    "description": "The audio language, in a format that is recognized by the receiver.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "clock_rate": {
+              "computed": true,
+              "description": "The sample rate for the stream. This value in measured in kHz.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "description": {
+              "computed": true,
+              "description": "A description that can help you quickly identify what your media stream is used for.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "fmt": {
+              "computed": true,
+              "description": "The format type number (sometimes referred to as RTP payload type) of the media stream. MediaConnect assigns this value to the media stream. For ST 2110 JPEG XS outputs, you need to provide this value to the receiver.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "media_stream_id": {
+              "description": "A unique identifier for the media stream.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "number"
+            },
+            "media_stream_name": {
+              "description": "A name that helps you distinguish one media stream from another.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "media_stream_type": {
+              "description": "The type of media stream.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "video_format": {
+              "computed": true,
+              "description": "The resolution of the video.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       },
       "name": {
         "description": "The name of the flow.",
@@ -194,6 +358,69 @@ const awsccMediaconnectFlow = `{
               "optional": true,
               "type": "number"
             },
+            "max_sync_buffer": {
+              "computed": true,
+              "description": "The size of the buffer (in milliseconds) to use to sync incoming source data.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "media_stream_source_configurations": {
+              "computed": true,
+              "description": "The media stream that is associated with the source, and the parameters for that association.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "encoding_name": {
+                    "description": "The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  },
+                  "input_configurations": {
+                    "computed": true,
+                    "description": "The media streams that you want to associate with the source.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "input_port": {
+                          "description": "The port that the flow listens on for an incoming media stream.",
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "number"
+                        },
+                        "interface": {
+                          "description": "The VPC interface where the media stream comes in from.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "name": {
+                                "description": "The name of the VPC interface that you want to use for the media stream associated with the output.",
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "required": true
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
+                  "media_stream_name": {
+                    "description": "A name that helps you distinguish one media stream from another.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
             "min_latency": {
               "computed": true,
               "description": "The minimum latency in milliseconds.",
@@ -326,6 +553,61 @@ const awsccMediaconnectFlow = `{
             }
           },
           "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "vpc_interfaces": {
+        "computed": true,
+        "description": "The VPC interfaces that you added to this flow.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "name": {
+              "description": "Immutable and has to be a unique against other VpcInterfaces in this Flow.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "network_interface_ids": {
+              "computed": true,
+              "description": "IDs of the network interfaces created in customer's account by MediaConnect.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "network_interface_type": {
+              "computed": true,
+              "description": "The type of network adapter that you want MediaConnect to use on this interface. If you don't set this value, it defaults to ENA.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "role_arn": {
+              "description": "Role Arn MediaConnect can assume to create ENIs in customer's account.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "security_group_ids": {
+              "description": "Security Group IDs to be used on ENI.",
+              "description_kind": "plain",
+              "required": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "subnet_id": {
+              "description": "Subnet must be in the AZ of the Flow",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
         },
         "optional": true
       }

@@ -167,6 +167,26 @@ const awsccBudgetsBudgetsAction = `{
         "required": true,
         "type": "string"
       },
+      "resource_tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "value": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "subscribers": {
         "description_kind": "plain",
         "nested_type": {

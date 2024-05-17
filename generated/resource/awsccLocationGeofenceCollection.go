@@ -56,6 +56,7 @@ const awsccLocationGeofenceCollection = `{
       },
       "pricing_plan_data_source": {
         "computed": true,
+        "description": "This shape is deprecated since 2022-02-01: Deprecated. No longer allowed.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

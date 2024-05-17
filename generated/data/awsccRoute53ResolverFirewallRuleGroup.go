@@ -75,6 +75,12 @@ const awsccRoute53ResolverFirewallRuleGroup = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "firewall_domain_redirection_action": {
+              "computed": true,
+              "description": "FirewallDomainRedirectionAction",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "priority": {
               "computed": true,
               "description": "Rule Priority",

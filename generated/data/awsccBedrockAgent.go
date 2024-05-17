@@ -17,9 +17,16 @@ const awsccBedrockAgent = `{
           "attributes": {
             "action_group_executor": {
               "computed": true,
+              "description": "Type of Executors for an Action Group",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "custom_control": {
+                    "computed": true,
+                    "description": "Custom control of action execution",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "lambda": {
                     "computed": true,
                     "description": "ARN of a Lambda.",
@@ -85,6 +92,66 @@ const awsccBedrockAgent = `{
               "description": "Description of action group",
               "description_kind": "plain",
               "type": "string"
+            },
+            "function_schema": {
+              "computed": true,
+              "description": "Schema of Functions",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "functions": {
+                    "computed": true,
+                    "description": "List of Function definitions",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "description": {
+                          "computed": true,
+                          "description": "Description of function",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "name": {
+                          "computed": true,
+                          "description": "Name for a resource.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "parameters": {
+                          "computed": true,
+                          "description": "A map of parameter name and detail",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "description": {
+                                "computed": true,
+                                "description": "Description of function parameter.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "required": {
+                                "computed": true,
+                                "description": "Information about if a parameter is required for function call. Default to false.",
+                                "description_kind": "plain",
+                                "type": "bool"
+                              },
+                              "type": {
+                                "computed": true,
+                                "description": "Parameter Type",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "map"
+                          }
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
             },
             "parent_action_group_signature": {
               "computed": true,

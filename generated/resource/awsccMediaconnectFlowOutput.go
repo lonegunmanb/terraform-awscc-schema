@@ -89,6 +89,92 @@ const awsccMediaconnectFlowOutput = `{
         "optional": true,
         "type": "number"
       },
+      "media_stream_output_configurations": {
+        "computed": true,
+        "description": "The definition for each media stream that is associated with the output.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "destination_configurations": {
+              "computed": true,
+              "description": "The media streams that you want to associate with the output.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "destination_ip": {
+                    "description": "The IP address where contents of the media stream will be sent.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  },
+                  "destination_port": {
+                    "description": "The port to use when the content of the media stream is distributed to the output.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "number"
+                  },
+                  "interface": {
+                    "description": "The VPC interface that is used for the media stream associated with the output.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "name": {
+                          "description": "The name of the VPC interface that you want to use for the media stream associated with the output.",
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "required": true
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "encoding_name": {
+              "description": "The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video streams on sources or outputs that use the CDI protocol, set the encoding name to raw. For video streams on sources or outputs that use the ST 2110 JPEG XS protocol, set the encoding name to jxsv.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "encoding_parameters": {
+              "computed": true,
+              "description": "A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "compression_factor": {
+                    "description": "A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are in the range of 3.0 to 10.0, inclusive.",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "number"
+                  },
+                  "encoder_profile": {
+                    "computed": true,
+                    "description": "A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "media_stream_name": {
+              "description": "A name that helps you distinguish one media stream from another.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "min_latency": {
         "computed": true,
         "description": "The minimum latency in milliseconds.",
