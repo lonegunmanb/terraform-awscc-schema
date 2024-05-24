@@ -233,9 +233,23 @@ const awsccMwaaEnvironment = `{
         },
         "optional": true
       },
+      "max_webservers": {
+        "computed": true,
+        "description": "Maximum webserver compute units.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "max_workers": {
         "computed": true,
         "description": "Maximum worker compute units.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
+      "min_webservers": {
+        "computed": true,
+        "description": "Minimum webserver compute units.",
         "description_kind": "plain",
         "optional": true,
         "type": "number"

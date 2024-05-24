@@ -87,6 +87,7 @@ const awsccKmsKey = `{
       },
       "rotation_period_in_days": {
         "computed": true,
+        "description": "Specifies a custom period of time between each rotation date. If no value is specified, the default value is 365 days.\n The rotation period defines the number of days after you enable automatic key rotation that KMS will rotate your key material, and the number of days between each automatic rotation thereafter.\n You can use the [kms:RotationPeriodInDays](https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-rotation-period-in-days) condition key to further constrain the values that principals can specify in the ` + "`" + `` + "`" + `RotationPeriodInDays` + "`" + `` + "`" + ` parameter.\n For more information about rotating KMS keys and automatic rotation, see [Rotating keys](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html) in the *Developer Guide*.",
         "description_kind": "plain",
         "type": "number"
       },

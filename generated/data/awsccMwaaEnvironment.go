@@ -210,9 +210,21 @@ const awsccMwaaEnvironment = `{
           "nesting_mode": "single"
         }
       },
+      "max_webservers": {
+        "computed": true,
+        "description": "Maximum webserver compute units.",
+        "description_kind": "plain",
+        "type": "number"
+      },
       "max_workers": {
         "computed": true,
         "description": "Maximum worker compute units.",
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "min_webservers": {
+        "computed": true,
+        "description": "Minimum webserver compute units.",
         "description_kind": "plain",
         "type": "number"
       },
