@@ -29,6 +29,41 @@ const awsccCodebuildFleet = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "fleet_service_role": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "fleet_vpc_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "security_group_ids": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "subnets": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "vpc_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -36,6 +71,11 @@ const awsccCodebuildFleet = `{
         "type": "string"
       },
       "name": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "overflow_behavior": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"

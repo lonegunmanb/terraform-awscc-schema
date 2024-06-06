@@ -69,6 +69,26 @@ const awsccChatbotSlackChannelConfiguration = `{
           "string"
         ]
       },
+      "tags": {
+        "computed": true,
+        "description": "The tags to add to the configuration",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "user_role_required": {
         "computed": true,
         "description": "Enables use of a user role requirement in your chat configuration",

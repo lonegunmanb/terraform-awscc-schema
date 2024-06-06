@@ -60,6 +60,27 @@ const awsccChatbotMicrosoftTeamsChannelConfiguration = `{
           "string"
         ]
       },
+      "tags": {
+        "computed": true,
+        "description": "The tags to add to the configuration",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "value": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "team_id": {
         "description": "The id of the Microsoft Teams team",
         "description_kind": "plain",

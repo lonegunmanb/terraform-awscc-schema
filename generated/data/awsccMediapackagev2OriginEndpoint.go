@@ -36,6 +36,135 @@ const awsccMediapackagev2OriginEndpoint = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "dash_manifests": {
+        "computed": true,
+        "description": "\u003cp\u003eA DASH manifest configuration.\u003c/p\u003e",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "drm_signaling": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "filter_configuration": {
+              "computed": true,
+              "description": "\u003cp\u003eFilter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. \u003c/p\u003e",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "end": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "manifest_filter": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify one or more manifest filters for all of your manifest egress requests. When you include a manifest filter, note that you cannot use an identical manifest filter query parameter for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "start": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify the start time for all of your manifest egress requests. When you include start time, note that you cannot use start time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "time_delay_seconds": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify the time delay for all of your manifest egress requests. Enter a value that is smaller than your endpoint's startover window. When you include time delay, note that you cannot use time delay query parameters for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "manifest_name": {
+              "computed": true,
+              "description": "\u003cp\u003eA short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. \u003c/p\u003e",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "manifest_window_seconds": {
+              "computed": true,
+              "description": "\u003cp\u003eThe total duration (in seconds) of the manifest's content.\u003c/p\u003e",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "min_buffer_time_seconds": {
+              "computed": true,
+              "description": "\u003cp\u003eMinimum amount of content (in seconds) that a player must keep available in the buffer.\u003c/p\u003e",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "min_update_period_seconds": {
+              "computed": true,
+              "description": "\u003cp\u003eMinimum amount of time (in seconds) that the player should wait before requesting updates to the manifest.\u003c/p\u003e",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "period_triggers": {
+              "computed": true,
+              "description": "\u003cp\u003eA list of triggers that controls when AWS Elemental MediaPackage separates the MPEG-DASH manifest into multiple periods. Leave this value empty to indicate that the manifest is contained all in one period.\n         For more information about periods in the DASH manifest, see \u003ca href=\"https://docs.aws.amazon.com/mediapackage/latest/userguide/multi-period.html\"\u003eMulti-period DASH in AWS Elemental MediaPackage\u003c/a\u003e.\u003c/p\u003e",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "scte_dash": {
+              "computed": true,
+              "description": "\u003cp\u003eThe SCTE configuration.\u003c/p\u003e",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "ad_marker_dash": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "segment_template_format": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "suggested_presentation_delay_seconds": {
+              "computed": true,
+              "description": "\u003cp\u003eThe amount of time (in seconds) that the player should be from the end of the manifest.\u003c/p\u003e",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "utc_timing": {
+              "computed": true,
+              "description": "\u003cp\u003eDetermines the type of UTC timing included in the DASH Media Presentation Description (MPD).\u003c/p\u003e",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "timing_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "timing_source": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe the method that the player uses to synchronize to coordinated universal time (UTC) wall clock time.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "description": {
         "computed": true,
         "description": "\u003cp\u003eEnter any descriptive text that helps you to identify the origin endpoint.\u003c/p\u003e",

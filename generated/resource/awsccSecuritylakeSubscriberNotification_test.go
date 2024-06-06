@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestAwsccSecuritylakeSubscriberSchema(t *testing.T) {
+func TestAwsccSecuritylakeSubscriberNotificationSchema(t *testing.T) {
 	defaultSchema := &tfjson.Schema{}
-	s := resource.AwsccSecuritylakeSubscriberSchema()
+	s := resource.AwsccSecuritylakeSubscriberNotificationSchema()
 	assert.NotNil(t, s)
 	assert.NotEqual(t, defaultSchema, s)
 }

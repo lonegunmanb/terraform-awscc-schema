@@ -6,7 +6,7 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccSecuritylakeSubscribers = `{
+const awsccSecurityhubOrganizationConfigurations = `{
   "block": {
     "attributes": {
       "id": {
@@ -25,14 +25,14 @@ const awsccSecuritylakeSubscribers = `{
         ]
       }
     },
-    "description": "Plural Data Source schema for AWS::SecurityLake::Subscriber",
+    "description": "Plural Data Source schema for AWS::SecurityHub::OrganizationConfiguration",
     "description_kind": "plain"
   },
   "version": 0
 }`
 
-func AwsccSecuritylakeSubscribersSchema() *tfjson.Schema {
+func AwsccSecurityhubOrganizationConfigurationsSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccSecuritylakeSubscribers), &result)
+	_ = json.Unmarshal([]byte(awsccSecurityhubOrganizationConfigurations), &result)
 	return &result
 }

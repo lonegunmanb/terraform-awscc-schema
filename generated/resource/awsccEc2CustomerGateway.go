@@ -16,6 +16,12 @@ const awsccEc2CustomerGateway = `{
         "optional": true,
         "type": "number"
       },
+      "bgp_asn_extended": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "certificate_arn": {
         "computed": true,
         "description_kind": "plain",

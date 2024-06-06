@@ -45,6 +45,28 @@ const awsccEksAddon = `{
         "required": true,
         "type": "string"
       },
+      "pod_identity_associations": {
+        "computed": true,
+        "description": "An array of pod identities to apply to this add-on.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "role_arn": {
+              "computed": true,
+              "description": "The IAM role ARN that the pod identity association is created for.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "service_account": {
+              "computed": true,
+              "description": "The Kubernetes service account that the pod identity association is created for.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        }
+      },
       "preserve_on_delete": {
         "computed": true,
         "description": "PreserveOnDelete parameter value",

@@ -11,7 +11,7 @@ const awsccApigatewayVpcLink = `{
     "attributes": {
       "description": {
         "computed": true,
-        "description": "A description of the VPC link.",
+        "description": "The description of the VPC link.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -23,13 +23,13 @@ const awsccApigatewayVpcLink = `{
       },
       "name": {
         "computed": true,
-        "description": "A name for the VPC link.",
+        "description": "The name used to label and identify the VPC link.",
         "description_kind": "plain",
         "type": "string"
       },
       "tags": {
         "computed": true,
-        "description": "An array of arbitrary tags (key-value pairs) to associate with the stage.",
+        "description": "An array of arbitrary tags (key-value pairs) to associate with the VPC link.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -49,7 +49,7 @@ const awsccApigatewayVpcLink = `{
       },
       "target_arns": {
         "computed": true,
-        "description": "The ARN of network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.",
+        "description": "The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS-account of the API owner.",
         "description_kind": "plain",
         "type": [
           "list",
@@ -58,7 +58,6 @@ const awsccApigatewayVpcLink = `{
       },
       "vpc_link_id": {
         "computed": true,
-        "description": "The ID of the instance that backs VPC link.",
         "description_kind": "plain",
         "type": "string"
       }

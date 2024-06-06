@@ -9,6 +9,35 @@ import (
 const awsccRolesanywhereProfile = `{
   "block": {
     "attributes": {
+      "attribute_mappings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "certificate_field": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "mapping_rules": {
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "specifier": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "required": true
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "duration_seconds": {
         "computed": true,
         "description_kind": "plain",
