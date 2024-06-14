@@ -139,6 +139,12 @@ const awsccOsisPipeline = `{
           "nesting_mode": "set"
         }
       },
+      "vpc_endpoint_service": {
+        "computed": true,
+        "description": "The VPC endpoint service name for the pipeline.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "vpc_endpoints": {
         "computed": true,
         "description": "The VPC interface endpoints that have access to the pipeline.",
@@ -180,6 +186,12 @@ const awsccOsisPipeline = `{
                       "list",
                       "string"
                     ]
+                  },
+                  "vpc_endpoint_management": {
+                    "computed": true,
+                    "description": "Defines whether you or Amazon OpenSearch Ingestion service create and manage the VPC endpoint configured for the pipeline.",
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -212,6 +224,12 @@ const awsccOsisPipeline = `{
                 "list",
                 "string"
               ]
+            },
+            "vpc_endpoint_management": {
+              "computed": true,
+              "description": "Defines whether you or Amazon OpenSearch Ingestion service create and manage the VPC endpoint configured for the pipeline.",
+              "description_kind": "plain",
+              "type": "string"
             }
           },
           "nesting_mode": "single"

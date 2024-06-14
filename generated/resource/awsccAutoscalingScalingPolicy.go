@@ -559,18 +559,114 @@ const awsccAutoscalingScalingPolicy = `{
                     "optional": true
                   },
                   "metric_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
-                  "namespace": {
+                  "metrics": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "nested_type": {
+                      "attributes": {
+                        "expression": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "id": {
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "string"
+                        },
+                        "label": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "metric_stat": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "metric": {
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "dimensions": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "name": {
+                                            "description_kind": "plain",
+                                            "required": true,
+                                            "type": "string"
+                                          },
+                                          "value": {
+                                            "description_kind": "plain",
+                                            "required": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "set"
+                                      },
+                                      "optional": true
+                                    },
+                                    "metric_name": {
+                                      "description_kind": "plain",
+                                      "required": true,
+                                      "type": "string"
+                                    },
+                                    "namespace": {
+                                      "description_kind": "plain",
+                                      "required": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "required": true
+                              },
+                              "stat": {
+                                "description_kind": "plain",
+                                "required": true,
+                                "type": "string"
+                              },
+                              "unit": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "return_data": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "set"
+                    },
+                    "optional": true
+                  },
+                  "namespace": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
                     "type": "string"
                   },
                   "statistic": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "unit": {

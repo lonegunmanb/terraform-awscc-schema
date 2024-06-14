@@ -118,6 +118,25 @@ const awsccEcsCluster = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "managed_storage_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "fargate_ephemeral_storage_kms_key_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "kms_key_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"
