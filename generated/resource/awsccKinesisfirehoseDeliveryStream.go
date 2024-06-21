@@ -1930,6 +1930,33 @@ const awsccKinesisfirehoseDeliveryStream = `{
                 "nesting_mode": "single"
               },
               "required": true
+            },
+            "secrets_manager_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "bool"
+                  },
+                  "role_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "secret_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -2066,8 +2093,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "required": true
             },
             "password": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "processing_configuration": {
@@ -2385,9 +2413,37 @@ const awsccKinesisfirehoseDeliveryStream = `{
               },
               "required": true
             },
-            "username": {
+            "secrets_manager_configuration": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "bool"
+                  },
+                  "role_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "secret_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "username": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
               "type": "string"
             }
           },
@@ -2582,8 +2638,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "private_key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "processing_configuration": {
@@ -2787,6 +2844,33 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "required": true,
               "type": "string"
             },
+            "secrets_manager_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "bool"
+                  },
+                  "role_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "secret_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "snowflake_role_configuration": {
               "computed": true,
               "description_kind": "plain",
@@ -2830,8 +2914,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "user": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -2911,8 +2996,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "hec_token": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "processing_configuration": {
@@ -3105,6 +3191,33 @@ const awsccKinesisfirehoseDeliveryStream = `{
                 "nesting_mode": "single"
               },
               "required": true
+            },
+            "secrets_manager_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "bool"
+                  },
+                  "role_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "secret_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

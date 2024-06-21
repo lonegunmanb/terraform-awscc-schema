@@ -43,6 +43,14 @@ const awsccMediapackagev2Channel = `{
         "required": true,
         "type": "string"
       },
+      "ingest_endpoint_urls": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "ingest_endpoints": {
         "computed": true,
         "description": "\u003cp\u003eThe list of ingest endpoints.\u003c/p\u003e",

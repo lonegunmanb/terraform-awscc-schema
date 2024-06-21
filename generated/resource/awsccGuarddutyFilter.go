@@ -22,9 +22,8 @@ const awsccGuarddutyFilter = `{
         "type": "string"
       },
       "detector_id": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "finding_criteria": {
@@ -137,9 +136,8 @@ const awsccGuarddutyFilter = `{
         "type": "string"
       },
       "name": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "rank": {

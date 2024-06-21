@@ -72,6 +72,22 @@ const awsccSesConfigurationSetEventDestination = `{
               "optional": true,
               "type": "bool"
             },
+            "event_bridge_destination": {
+              "computed": true,
+              "description": "An object that contains Event bus ARN associated with the event bridge destination.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "event_bus_arn": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "kinesis_firehose_destination": {
               "computed": true,
               "description": "An object that contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.",

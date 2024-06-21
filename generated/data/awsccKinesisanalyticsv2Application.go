@@ -97,6 +97,22 @@ const awsccKinesisanalyticsv2Application = `{
                 "nesting_mode": "single"
               }
             },
+            "application_system_rollback_configuration": {
+              "computed": true,
+              "description": "Describes whether system initiated rollbacks are enabled for a Flink-based Kinesis Data Analytics application.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "rollback_enabled": {
+                    "computed": true,
+                    "description": "Describes whether system initiated rollbacks are enabled for a Flink-based Kinesis Data Analytics application.",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "environment_properties": {
               "computed": true,
               "description": "Describes execution properties for a Flink-based Kinesis Data Analytics application.",

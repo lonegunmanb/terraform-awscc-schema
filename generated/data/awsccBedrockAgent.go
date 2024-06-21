@@ -244,6 +244,28 @@ const awsccBedrockAgent = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "guardrail_configuration": {
+        "computed": true,
+        "description": "Configuration for a guardrail.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "guardrail_identifier": {
+              "computed": true,
+              "description": "Identifier for the guardrail, could be the id or the arn",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "guardrail_version": {
+              "computed": true,
+              "description": "Version of the guardrail",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

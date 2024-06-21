@@ -191,6 +191,13 @@ const awsccRdsDbCluster = `{
         "optional": true,
         "type": "bool"
       },
+      "enable_local_write_forwarding": {
+        "computed": true,
+        "description": "Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "endpoint": {
         "computed": true,
         "description_kind": "plain",
@@ -215,6 +222,13 @@ const awsccRdsDbCluster = `{
       "engine": {
         "computed": true,
         "description": "The name of the database engine to be used for this DB cluster. Valid Values: aurora (for MySQL 5.6-compatible Aurora), aurora-mysql (for MySQL 5.7-compatible Aurora), and aurora-postgresql",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "engine_lifecycle_support": {
+        "computed": true,
+        "description": "The life cycle type of the DB cluster. You can use this setting to enroll your DB cluster into Amazon RDS Extended Support.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

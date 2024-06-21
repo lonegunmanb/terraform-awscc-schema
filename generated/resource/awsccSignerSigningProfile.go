@@ -29,7 +29,7 @@ const awsccSignerSigningProfile = `{
       },
       "profile_name": {
         "computed": true,
-        "description": "A name for the signing profile. AWS CloudFormation generates a unique physical ID and uses that ID for the signing profile name. ",
+        "description": "A name for the signing profile. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the signing profile name. ",
         "description_kind": "plain",
         "type": "string"
       },

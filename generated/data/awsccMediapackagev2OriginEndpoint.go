@@ -36,6 +36,14 @@ const awsccMediapackagev2OriginEndpoint = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "dash_manifest_urls": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "dash_manifests": {
         "computed": true,
         "description": "\u003cp\u003eA DASH manifest configuration.\u003c/p\u003e",
@@ -171,6 +179,14 @@ const awsccMediapackagev2OriginEndpoint = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "hls_manifest_urls": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "hls_manifests": {
         "computed": true,
         "description": "\u003cp\u003eAn HTTP live streaming (HLS) manifest configuration.\u003c/p\u003e",
@@ -265,6 +281,14 @@ const awsccMediapackagev2OriginEndpoint = `{
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "low_latency_hls_manifest_urls": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
       },
       "low_latency_hls_manifests": {
         "computed": true,
