@@ -49,9 +49,10 @@ const awsccCloudwatchMetricStream = `{
         "optional": true
       },
       "firehose_arn": {
+        "computed": true,
         "description": "The ARN of the Kinesis Firehose where to stream the data.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "id": {
@@ -108,15 +109,17 @@ const awsccCloudwatchMetricStream = `{
         "type": "string"
       },
       "output_format": {
+        "computed": true,
         "description": "The output format of the data streamed to the Kinesis Firehose.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "role_arn": {
+        "computed": true,
         "description": "The ARN of the role that provides access to the Kinesis Firehose.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "state": {

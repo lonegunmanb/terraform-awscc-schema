@@ -102,7 +102,7 @@ const awsccRdsDbInstance = `{
             },
             "valid_till": {
               "computed": true,
-              "description": "The expiration date of the DB instance’s server certificate.",
+              "description": "The expiration date of the DB instance?s server certificate.",
               "description_kind": "plain",
               "type": "string"
             }

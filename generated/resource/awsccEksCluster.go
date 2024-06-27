@@ -40,6 +40,13 @@ const awsccEksCluster = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "bootstrap_self_managed_addons": {
+        "computed": true,
+        "description": "Set this value to false to avoid creating the default networking addons when the cluster is created.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "certificate_authority_data": {
         "computed": true,
         "description": "The certificate-authority-data for your cluster.",

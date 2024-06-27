@@ -6,25 +6,20 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccIotDomainConfiguration = `{
+const awsccWorkspacesWorkspacesPool = `{
   "block": {
     "attributes": {
-      "arn": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "authorizer_config": {
+      "application_settings": {
         "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "allow_authorizer_override": {
+            "settings_group": {
               "computed": true,
               "description_kind": "plain",
-              "type": "bool"
+              "type": "string"
             },
-            "default_authorizer_name": {
+            "status": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -33,22 +28,36 @@ const awsccIotDomainConfiguration = `{
           "nesting_mode": "single"
         }
       },
-      "domain_configuration_name": {
+      "bundle_id": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
       },
-      "domain_configuration_status": {
+      "capacity": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "desired_user_sessions": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "created_at": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
       },
-      "domain_name": {
+      "description": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
       },
-      "domain_type": {
+      "directory_id": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
@@ -59,53 +68,17 @@ const awsccIotDomainConfiguration = `{
         "required": true,
         "type": "string"
       },
-      "server_certificate_arns": {
+      "pool_arn": {
         "computed": true,
         "description_kind": "plain",
-        "type": [
-          "list",
-          "string"
-        ]
+        "type": "string"
       },
-      "server_certificate_config": {
+      "pool_id": {
         "computed": true,
         "description_kind": "plain",
-        "nested_type": {
-          "attributes": {
-            "enable_ocsp_check": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": "bool"
-            }
-          },
-          "nesting_mode": "single"
-        }
+        "type": "string"
       },
-      "server_certificates": {
-        "computed": true,
-        "description_kind": "plain",
-        "nested_type": {
-          "attributes": {
-            "server_certificate_arn": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": "string"
-            },
-            "server_certificate_status": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": "string"
-            },
-            "server_certificate_status_detail": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": "string"
-            }
-          },
-          "nesting_mode": "list"
-        }
-      },
-      "service_type": {
+      "pool_name": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
@@ -126,37 +99,42 @@ const awsccIotDomainConfiguration = `{
               "type": "string"
             }
           },
-          "nesting_mode": "set"
+          "nesting_mode": "list"
         }
       },
-      "tls_config": {
+      "timeout_settings": {
         "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "security_policy": {
+            "disconnect_timeout_in_seconds": {
               "computed": true,
               "description_kind": "plain",
-              "type": "string"
+              "type": "number"
+            },
+            "idle_disconnect_timeout_in_seconds": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "max_user_duration_in_seconds": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
             }
           },
           "nesting_mode": "single"
         }
-      },
-      "validation_certificate_arn": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
       }
     },
-    "description": "Data Source schema for AWS::IoT::DomainConfiguration",
+    "description": "Data Source schema for AWS::WorkSpaces::WorkspacesPool",
     "description_kind": "plain"
   },
   "version": 0
 }`
 
-func AwsccIotDomainConfigurationSchema() *tfjson.Schema {
+func AwsccWorkspacesWorkspacesPoolSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccIotDomainConfiguration), &result)
+	_ = json.Unmarshal([]byte(awsccWorkspacesWorkspacesPool), &result)
 	return &result
 }

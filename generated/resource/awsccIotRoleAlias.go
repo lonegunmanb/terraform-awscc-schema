@@ -55,7 +55,7 @@ const awsccIotRoleAlias = `{
               "type": "string"
             }
           },
-          "nesting_mode": "list"
+          "nesting_mode": "set"
         },
         "optional": true
       }

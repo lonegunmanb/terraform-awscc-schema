@@ -51,7 +51,7 @@ const awsccIotPolicy = `{
               "type": "string"
             }
           },
-          "nesting_mode": "list"
+          "nesting_mode": "set"
         }
       }
     },

@@ -93,7 +93,7 @@ const awsccIotCaCertificate = `{
               "type": "string"
             }
           },
-          "nesting_mode": "list"
+          "nesting_mode": "set"
         }
       },
       "verification_certificate_pem": {

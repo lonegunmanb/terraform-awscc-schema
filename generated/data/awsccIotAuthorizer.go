@@ -61,7 +61,7 @@ const awsccIotAuthorizer = `{
               "type": "string"
             }
           },
-          "nesting_mode": "list"
+          "nesting_mode": "set"
         }
       },
       "token_key_name": {

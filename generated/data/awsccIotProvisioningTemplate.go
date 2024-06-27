@@ -65,7 +65,7 @@ const awsccIotProvisioningTemplate = `{
               "type": "string"
             }
           },
-          "nesting_mode": "list"
+          "nesting_mode": "set"
         }
       },
       "template_arn": {

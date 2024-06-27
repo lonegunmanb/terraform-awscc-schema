@@ -86,7 +86,6 @@ const awsccDmsReplicationConfig = `{
         "computed": true,
         "description": "The Amazon Resource Name (ARN) of the Replication Config",
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "replication_config_identifier": {

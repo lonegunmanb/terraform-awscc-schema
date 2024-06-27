@@ -23,6 +23,13 @@ const awsccRdsGlobalCluster = `{
         "optional": true,
         "type": "string"
       },
+      "engine_lifecycle_support": {
+        "computed": true,
+        "description": "The life cycle type of the global cluster. You can use this setting to enroll your global cluster into Amazon RDS Extended Support.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "engine_version": {
         "computed": true,
         "description": "The version number of the database engine to use. If you specify the SourceDBClusterIdentifier property, don't specify this property. The value is inherited from the cluster.",

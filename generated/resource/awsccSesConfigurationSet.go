@@ -110,10 +110,9 @@ const awsccSesConfigurationSet = `{
         "nested_type": {
           "attributes": {
             "custom_redirect_domain": {
-              "computed": true,
               "description": "The domain to use for tracking open and click events.",
               "description_kind": "plain",
-              "optional": true,
+              "required": true,
               "type": "string"
             }
           },
