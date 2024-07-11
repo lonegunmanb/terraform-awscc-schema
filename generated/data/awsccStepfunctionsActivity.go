@@ -14,6 +14,30 @@ const awsccStepfunctionsActivity = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "encryption_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "kms_data_key_reuse_period_seconds": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "kms_key_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

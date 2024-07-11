@@ -869,6 +869,34 @@ const awsccSagemakerDomain = `{
               "description": "Indicates whether the Studio experience is available to users. If not, users cannot access Studio.",
               "description_kind": "plain",
               "type": "string"
+            },
+            "studio_web_portal_settings": {
+              "computed": true,
+              "description": "Studio settings. If these settings are applied on a user level, they take priority over the settings applied on a domain level.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "hidden_app_types": {
+                    "computed": true,
+                    "description": "Applications supported in Studio that are hidden from the Studio left navigation pane.",
+                    "description_kind": "plain",
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
+                  "hidden_ml_tools": {
+                    "computed": true,
+                    "description": "The machine learning tools that are hidden from the Studio left navigation pane.",
+                    "description_kind": "plain",
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

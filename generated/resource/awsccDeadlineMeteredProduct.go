@@ -17,7 +17,6 @@ const awsccDeadlineMeteredProduct = `{
       "family": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "id": {
@@ -35,7 +34,6 @@ const awsccDeadlineMeteredProduct = `{
       "port": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "number"
       },
       "product_id": {
@@ -47,7 +45,6 @@ const awsccDeadlineMeteredProduct = `{
       "vendor": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       }
     },

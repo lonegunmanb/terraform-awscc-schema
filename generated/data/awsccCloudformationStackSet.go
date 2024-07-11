@@ -92,6 +92,12 @@ const awsccCloudformationStackSet = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "concurrency_mode": {
+              "computed": true,
+              "description": "Specifies how the concurrency level behaves during the operation execution.",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "failure_tolerance_count": {
               "computed": true,
               "description_kind": "plain",

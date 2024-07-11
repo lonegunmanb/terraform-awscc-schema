@@ -38,6 +38,12 @@ const awsccEntityresolutionIdMappingWorkflow = `{
               "optional": true,
               "type": "string"
             },
+            "normalization_version": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "provider_properties": {
               "computed": true,
               "description_kind": "plain",
@@ -79,6 +85,55 @@ const awsccEntityresolutionIdMappingWorkflow = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            },
+            "rule_based_properties": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "attribute_matching_model": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  },
+                  "record_matching_model": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  },
+                  "rule_definition_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "rules": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "matching_keys": {
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
+                        "rule_name": {
+                          "description_kind": "plain",
+                          "required": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -90,7 +145,7 @@ const awsccEntityresolutionIdMappingWorkflow = `{
         "nested_type": {
           "attributes": {
             "input_source_arn": {
-              "description": "An Glue table ARN for the input source table or IdNamespace ARN",
+              "description": "An Glue table ARN for the input source table, MatchingWorkflow arn or IdNamespace ARN",
               "description_kind": "plain",
               "required": true,
               "type": "string"

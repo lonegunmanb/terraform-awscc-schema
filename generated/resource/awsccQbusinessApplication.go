@@ -83,6 +83,21 @@ const awsccQbusinessApplication = `{
         "optional": true,
         "type": "string"
       },
+      "q_apps_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "q_apps_control_mode": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "role_arn": {
         "computed": true,
         "description_kind": "plain",

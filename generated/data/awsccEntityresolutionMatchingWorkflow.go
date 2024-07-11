@@ -156,6 +156,11 @@ const awsccEntityresolutionMatchingWorkflow = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "match_purpose": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "rules": {
                     "computed": true,
                     "description_kind": "plain",

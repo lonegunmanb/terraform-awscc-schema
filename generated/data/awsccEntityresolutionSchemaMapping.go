@@ -49,6 +49,11 @@ const awsccEntityresolutionSchemaMapping = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "hashed": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "bool"
+            },
             "match_key": {
               "computed": true,
               "description_kind": "plain",

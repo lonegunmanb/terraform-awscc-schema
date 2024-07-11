@@ -53,8 +53,9 @@ const awsccIamOidcProvider = `{
         "optional": true
       },
       "thumbprint_list": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": [
           "list",
           "string"
