@@ -10,7 +10,6 @@ const awsccDmsReplicationConfig = `{
   "block": {
     "attributes": {
       "compute_config": {
-        "computed": true,
         "description": "Configuration parameters for provisioning a AWS DMS Serverless replication",
         "description_kind": "plain",
         "nested_type": {
@@ -74,7 +73,7 @@ const awsccDmsReplicationConfig = `{
           },
           "nesting_mode": "single"
         },
-        "optional": true
+        "required": true
       },
       "id": {
         "computed": true,
@@ -89,10 +88,9 @@ const awsccDmsReplicationConfig = `{
         "type": "string"
       },
       "replication_config_identifier": {
-        "computed": true,
         "description": "A unique identifier of replication configuration",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "replication_settings": {
@@ -103,10 +101,9 @@ const awsccDmsReplicationConfig = `{
         "type": "string"
       },
       "replication_type": {
-        "computed": true,
         "description": "The type of AWS DMS Serverless replication to provision using this replication configuration",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "resource_identifier": {
@@ -117,10 +114,9 @@ const awsccDmsReplicationConfig = `{
         "type": "string"
       },
       "source_endpoint_arn": {
-        "computed": true,
         "description": "The Amazon Resource Name (ARN) of the source endpoint for this AWS DMS Serverless replication configuration",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "supplemental_settings": {
@@ -131,10 +127,9 @@ const awsccDmsReplicationConfig = `{
         "type": "string"
       },
       "table_mappings": {
-        "computed": true,
         "description": "JSON table mappings for AWS DMS Serverless replications that are provisioned using this replication configuration",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "tags": {
@@ -161,10 +156,9 @@ const awsccDmsReplicationConfig = `{
         "optional": true
       },
       "target_endpoint_arn": {
-        "computed": true,
         "description": "The Amazon Resource Name (ARN) of the target endpoint for this AWS DMS Serverless replication configuration",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       }
     },

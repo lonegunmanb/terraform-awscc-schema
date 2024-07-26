@@ -62,7 +62,7 @@ const awsccLightsailAlarm = `{
         "type": "string"
       },
       "monitored_resource_name": {
-        "description": "The validation status of the SSL/TLS certificate.",
+        "description": "The name of the Lightsail resource that the alarm monitors.",
         "description_kind": "plain",
         "required": true,
         "type": "string"

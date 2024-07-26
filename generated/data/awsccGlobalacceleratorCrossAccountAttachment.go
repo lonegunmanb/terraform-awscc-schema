@@ -42,6 +42,11 @@ const awsccGlobalacceleratorCrossAccountAttachment = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "cidr": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "endpoint_id": {
               "computed": true,
               "description_kind": "plain",

@@ -100,6 +100,12 @@ const awsccWorkspaceswebUserSettings = `{
         "optional": true,
         "type": "string"
       },
+      "deep_link_allowed": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "disconnect_timeout_in_minutes": {
         "computed": true,
         "description_kind": "plain",

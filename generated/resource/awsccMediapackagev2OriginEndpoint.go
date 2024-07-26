@@ -199,6 +199,27 @@ const awsccMediapackagev2OriginEndpoint = `{
         "optional": true,
         "type": "string"
       },
+      "force_endpoint_error_configuration": {
+        "computed": true,
+        "description": "\u003cp\u003eThe failover settings for the endpoint.\u003c/p\u003e",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "endpoint_error_conditions": {
+              "computed": true,
+              "description": "\u003cp\u003eThe failover settings for the endpoint. The options are:\u003c/p\u003e\n         \u003cul\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eSTALE_MANIFEST\u003c/code\u003e - The manifest stalled and there a no new segments or parts.\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eINCOMPLETE_MANIFEST\u003c/code\u003e - There is a gap in the manifest.\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eMISSING_DRM_KEY\u003c/code\u003e - Key rotation is enabled but we're unable to fetch the key for the current key period.\u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "hls_manifest_urls": {
         "computed": true,
         "description_kind": "plain",

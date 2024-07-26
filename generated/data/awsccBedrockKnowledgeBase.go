@@ -65,6 +65,32 @@ const awsccBedrockKnowledgeBase = `{
                     "description": "The ARN of the model used to create vector embeddings for the knowledge base.",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "embedding_model_configuration": {
+                    "computed": true,
+                    "description": "The embeddings model configuration details for the vector model used in Knowledge Base.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "bedrock_embedding_model_configuration": {
+                          "computed": true,
+                          "description": "The vector configuration details for the Bedrock embeddings model.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "dimensions": {
+                                "computed": true,
+                                "description": "The dimensions details for the vector configuration used on the Bedrock embeddings model.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"
@@ -104,6 +130,80 @@ const awsccBedrockKnowledgeBase = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "mongo_db_atlas_configuration": {
+              "computed": true,
+              "description": "Contains the storage configuration of the knowledge base in MongoDb Atlas Cloud.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "collection_name": {
+                    "computed": true,
+                    "description": "Name of the collection within MongoDB Atlas.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "credentials_secret_arn": {
+                    "computed": true,
+                    "description": "The ARN of the secret that you created in AWS Secrets Manager that is linked to your Amazon Mongo database.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "database_name": {
+                    "computed": true,
+                    "description": "Name of the database within MongoDB Atlas.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "endpoint": {
+                    "computed": true,
+                    "description": "MongoDB Atlas endpoint.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "endpoint_service_name": {
+                    "computed": true,
+                    "description": "MongoDB Atlas endpoint service name.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "field_mapping": {
+                    "computed": true,
+                    "description": "Contains the names of the fields to which to map information about the vector store.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metadata_field": {
+                          "computed": true,
+                          "description": "The name of the field in which Amazon Bedrock stores metadata about the vector store.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "text_field": {
+                          "computed": true,
+                          "description": "The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "vector_field": {
+                          "computed": true,
+                          "description": "The name of the field in which Amazon Bedrock stores the vector embeddings for your data sources.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "vector_index_name": {
+                    "computed": true,
+                    "description": "Name of a MongoDB Atlas index.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "opensearch_serverless_configuration": {
               "computed": true,
               "description": "Contains the storage configuration of the knowledge base in Amazon OpenSearch Service.",

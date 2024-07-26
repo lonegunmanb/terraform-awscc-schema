@@ -331,6 +331,24 @@ const awsccEksCluster = `{
         },
         "optional": true
       },
+      "upgrade_policy": {
+        "computed": true,
+        "description": "An object representing the Upgrade Policy to use for the cluster.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "support_type": {
+              "computed": true,
+              "description": "Specify the support type for your cluster.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "version": {
         "computed": true,
         "description": "The desired Kubernetes version for your cluster. If you don't specify a value here, the latest version available in Amazon EKS is used.",

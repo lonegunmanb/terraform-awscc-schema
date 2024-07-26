@@ -24,6 +24,13 @@ const awsccEcrRepositoryCreationTemplate = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "custom_role_arn": {
+        "computed": true,
+        "description": "The ARN of the role to be assumed by ECR. This role must be in the same account as the registry that you are configuring.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description": "The description of the template.",

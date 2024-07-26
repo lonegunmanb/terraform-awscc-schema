@@ -73,7 +73,7 @@ const awsccLightsailCertificate = `{
         "optional": true
       }
     },
-    "description": "An example resource schema demonstrating some basic constructs and validation rules.",
+    "description": "Resource Type definition for AWS::Lightsail::Certificate.",
     "description_kind": "plain"
   },
   "version": 1

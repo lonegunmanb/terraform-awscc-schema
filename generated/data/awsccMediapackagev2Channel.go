@@ -73,6 +73,11 @@ const awsccMediapackagev2Channel = `{
           "nesting_mode": "list"
         }
       },
+      "input_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "modified_at": {
         "computed": true,
         "description": "\u003cp\u003eThe date and time the channel was modified.\u003c/p\u003e",

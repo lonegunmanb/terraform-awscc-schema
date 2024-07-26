@@ -182,6 +182,12 @@ const awsccMediaconnectFlowOutput = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "output_status": {
+        "computed": true,
+        "description": "An indication of whether the output should transmit data or not.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "port": {
         "computed": true,
         "description": "The port to use when content is distributed to this output.",

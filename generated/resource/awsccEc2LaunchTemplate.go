@@ -174,7 +174,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "cpu_options": {
               "computed": true,
-              "description": "The CPU options for the instance. For more information, see [Optimizing CPU Options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html) in the *Amazon Elastic Compute Cloud User Guide*.",
+              "description": "The CPU options for the instance. For more information, see [Optimize CPU options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html) in the *Amazon EC2 User Guide*.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -224,7 +224,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "disable_api_stop": {
               "computed": true,
-              "description": "Indicates whether to enable the instance for stop protection. For more information, see [Stop protection](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection) in the *Amazon Elastic Compute Cloud User Guide*.",
+              "description": "Indicates whether to enable the instance for stop protection. For more information, see [Enable stop protection for your instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html) in the *Amazon EC2 User Guide*.",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
@@ -251,7 +251,7 @@ const awsccEc2LaunchTemplate = `{
                 "attributes": {
                   "type": {
                     "computed": true,
-                    "description": "The type of Elastic Graphics accelerator. For more information about the values to specify for ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + `, see [Elastic Graphics Basics](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html#elastic-graphics-basics), specifically the Elastic Graphics accelerator column, in the *Amazon Elastic Compute Cloud User Guide for Windows Instances*.",
+                    "description": "The type of Elastic Graphics accelerator.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -306,7 +306,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "hibernation_options": {
               "computed": true,
-              "description": "Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the [hibernation prerequisites](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html). For more information, see [Hibernate your instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html) in the *Amazon Elastic Compute Cloud User Guide*.",
+              "description": "Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the [hibernation prerequisites](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html). For more information, see [Hibernate your Amazon EC2 instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html) in the *Amazon EC2 User Guide*.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -609,7 +609,7 @@ const awsccEc2LaunchTemplate = `{
                   },
                   "max_spot_price_as_percentage_of_optimal_on_demand_price": {
                     "computed": true,
-                    "description": "[Price protection] The price protection threshold for Spot Instances, as a percentage of an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from the lowest priced current generation instance types, and failing that, from the lowest priced previous generation instance types that match your attributes. When Amazon EC2 selects instance types with your attributes, it will exclude instance types whose price exceeds your specified threshold.\n The parameter accepts an integer, which Amazon EC2 interprets as a percentage.\n If you set ` + "`" + `` + "`" + `DesiredCapacityType` + "`" + `` + "`" + ` to ` + "`" + `` + "`" + `vcpu` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `memory-mib` + "`" + `` + "`" + `, the price protection threshold is based on the per vCPU or per memory price instead of the per instance price.\n  Only one of ` + "`" + `` + "`" + `SpotMaxPricePercentageOverLowestPrice` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `MaxSpotPriceAsPercentageOfOptimalOnDemandPrice` + "`" + `` + "`" + ` can be specified. If you don't specify either, Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types that match your attributes, include one of these parameters and specify a high value, such as ` + "`" + `` + "`" + `999999` + "`" + `` + "`" + `.",
+                    "description": "[Price protection] The price protection threshold for Spot Instances, as a percentage of an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from the lowest priced current generation instance types, and failing that, from the lowest priced previous generation instance types that match your attributes. When Amazon EC2 selects instance types with your attributes, it will exclude instance types whose price exceeds your specified threshold.\n The parameter accepts an integer, which Amazon EC2 interprets as a percentage.\n If you set ` + "`" + `` + "`" + `TargetCapacityUnitType` + "`" + `` + "`" + ` to ` + "`" + `` + "`" + `vcpu` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `memory-mib` + "`" + `` + "`" + `, the price protection threshold is based on the per vCPU or per memory price instead of the per instance price.\n  Only one of ` + "`" + `` + "`" + `SpotMaxPricePercentageOverLowestPrice` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `MaxSpotPriceAsPercentageOfOptimalOnDemandPrice` + "`" + `` + "`" + ` can be specified. If you don't specify either, Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types that match your attributes, include one of these parameters and specify a high value, such as ` + "`" + `` + "`" + `999999` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
@@ -792,7 +792,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "instance_type": {
               "computed": true,
-              "description": "The instance type. For more information, see [Instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon Elastic Compute Cloud User Guide*.\n If you specify ` + "`" + `` + "`" + `InstanceType` + "`" + `` + "`" + `, you can't specify ` + "`" + `` + "`" + `InstanceRequirements` + "`" + `` + "`" + `.",
+              "description": "The instance type. For more information, see [Amazon EC2 instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide*.\n If you specify ` + "`" + `` + "`" + `InstanceType` + "`" + `` + "`" + `, you can't specify ` + "`" + `` + "`" + `InstanceRequirements` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -849,7 +849,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "metadata_options": {
               "computed": true,
-              "description": "The metadata options for the instance. For more information, see [Instance metadata and user data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html) in the *Amazon Elastic Compute Cloud User Guide*.",
+              "description": "The metadata options for the instance. For more information, see [Instance metadata and user data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html) in the *Amazon EC2 User Guide*.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1032,7 +1032,7 @@ const awsccEc2LaunchTemplate = `{
                   },
                   "interface_type": {
                     "computed": true,
-                    "description": "The type of network interface. To create an Elastic Fabric Adapter (EFA), specify ` + "`" + `` + "`" + `efa` + "`" + `` + "`" + `. For more information, see [Elastic Fabric Adapter](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html) in the *Amazon Elastic Compute Cloud User Guide*.\n If you are not creating an EFA, specify ` + "`" + `` + "`" + `interface` + "`" + `` + "`" + ` or omit this parameter.\n Valid values: ` + "`" + `` + "`" + `interface` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `efa` + "`" + `` + "`" + `",
+                    "description": "The type of network interface. To create an Elastic Fabric Adapter (EFA), specify ` + "`" + `` + "`" + `efa` + "`" + `` + "`" + `. For more information, see [Elastic Fabric Adapter](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html) in the *Amazon EC2 User Guide*.\n If you are not creating an EFA, specify ` + "`" + `` + "`" + `interface` + "`" + `` + "`" + ` or omit this parameter.\n Valid values: ` + "`" + `` + "`" + `interface` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `efa` + "`" + `` + "`" + `",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -1052,7 +1052,7 @@ const awsccEc2LaunchTemplate = `{
                       "attributes": {
                         "ipv_4_prefix": {
                           "computed": true,
-                          "description": "The IPv4 prefix. For information, see [Assigning prefixes to Amazon EC2 network interfaces](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html) in the *Amazon Elastic Compute Cloud User Guide*.",
+                          "description": "The IPv4 prefix. For information, see [Assigning prefixes to network interfaces](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html) in the *Amazon EC2 User Guide*.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -1292,7 +1292,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "ram_disk_id": {
               "computed": true,
-              "description": "The ID of the RAM disk.\n  We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see [User provided kernels](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html) in the *Amazon Elastic Compute Cloud User Guide*.",
+              "description": "The ID of the RAM disk.\n  We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see [User provided kernels](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html) in the *Amazon EC2 User Guide*.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -1325,7 +1325,7 @@ const awsccEc2LaunchTemplate = `{
                 "attributes": {
                   "resource_type": {
                     "computed": true,
-                    "description": "The type of resource to tag.\n Valid Values lists all resource types for Amazon EC2 that can be tagged. When you create a launch template, you can specify tags for the following resource types only: ` + "`" + `` + "`" + `instance` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `volume` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `network-interface` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `spot-instances-request` + "`" + `` + "`" + `. If the instance does not include the resource type that you specify, the instance launch fails. For example, not all instance types include a volume.\n To tag a resource after it has been created, see [CreateTags](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html).",
+                    "description": "The type of resource to tag. You can specify tags for the following resource types only: ` + "`" + `` + "`" + `instance` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `volume` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `network-interface` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `spot-instances-request` + "`" + `` + "`" + `. If the instance does not include the resource type that you specify, the instance launch fails. For example, not all instance types include a volume.\n To tag a resource after it has been created, see [CreateTags](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html).",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -1360,7 +1360,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "user_data": {
               "computed": true,
-              "description": "The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see [Run commands on your Linux instance at launch](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) (Linux) or [Work with instance user data](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instancedata-add-user-data.html) (Windows) in the *Amazon Elastic Compute Cloud User Guide*.\n If you are creating the launch template for use with BATCH, the user data must be provided in the [MIME multi-part archive format](https://docs.aws.amazon.com/https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive). For more information, see [Amazon EC2 user data in launch templates](https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html) in the *User Guide*.",
+              "description": "The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see [Run commands on your Amazon EC2 instance at launch](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) in the *Amazon EC2 User Guide*.\n If you are creating the launch template for use with BATCH, the user data must be provided in the [MIME multi-part archive format](https://docs.aws.amazon.com/https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive). For more information, see [Amazon EC2 user data in launch templates](https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html) in the *User Guide*.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -1390,7 +1390,7 @@ const awsccEc2LaunchTemplate = `{
           "attributes": {
             "resource_type": {
               "computed": true,
-              "description": "The type of resource. To tag the launch template, ` + "`" + `` + "`" + `ResourceType` + "`" + `` + "`" + ` must be ` + "`" + `` + "`" + `launch-template` + "`" + `` + "`" + `.",
+              "description": "The type of resource. To tag a launch template, ` + "`" + `` + "`" + `ResourceType` + "`" + `` + "`" + ` must be ` + "`" + `` + "`" + `launch-template` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
