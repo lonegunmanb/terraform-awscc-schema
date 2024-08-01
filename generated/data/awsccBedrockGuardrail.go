@@ -59,6 +59,38 @@ const awsccBedrockGuardrail = `{
           "nesting_mode": "single"
         }
       },
+      "contextual_grounding_policy_config": {
+        "computed": true,
+        "description": "Contextual grounding policy config for a guardrail.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "filters_config": {
+              "computed": true,
+              "description": "List of contextual grounding filter configs.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "threshold": {
+                    "computed": true,
+                    "description": "The threshold for this filter.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "type": {
+                    "computed": true,
+                    "description": "Type of contextual grounding filter",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "created_at": {
         "computed": true,
         "description": "Time Stamp",

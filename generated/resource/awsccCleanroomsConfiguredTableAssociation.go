@@ -14,6 +14,123 @@ const awsccCleanroomsConfiguredTableAssociation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "configured_table_association_analysis_rules": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "policy": {
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "v1": {
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "aggregation": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "allowed_additional_analyses": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "allowed_result_receivers": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "custom": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "allowed_additional_analyses": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "allowed_result_receivers": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "list": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "allowed_additional_analyses": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "allowed_result_receivers": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "required": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "required": true
+            },
+            "type": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "configured_table_association_identifier": {
         "computed": true,
         "description_kind": "plain",

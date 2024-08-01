@@ -243,6 +243,16 @@ const awsccSagemakerDomain = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "lifecycle_config_arns": {
+                    "computed": true,
+                    "description": "A list of LifecycleConfigArns available for use with JupyterServer apps.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   }
                 },
                 "nesting_mode": "single"
@@ -323,6 +333,16 @@ const awsccSagemakerDomain = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "lifecycle_config_arns": {
+                    "computed": true,
+                    "description": "A list of LifecycleConfigArns available for use with KernelGateway apps.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   }
                 },
                 "nesting_mode": "single"
@@ -687,6 +707,16 @@ const awsccSagemakerDomain = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "lifecycle_config_arns": {
+                    "computed": true,
+                    "description": "A list of LifecycleConfigArns available for use with JupyterServer apps.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   }
                 },
                 "nesting_mode": "single"
@@ -767,6 +797,16 @@ const awsccSagemakerDomain = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "lifecycle_config_arns": {
+                    "computed": true,
+                    "description": "A list of LifecycleConfigArns available for use with KernelGateway apps.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   }
                 },
                 "nesting_mode": "single"

@@ -32,36 +32,43 @@ const awsccPanoramaPackage = `{
       },
       "package_name": {
         "computed": true,
+        "description": "A name for the package.",
         "description_kind": "plain",
         "type": "string"
       },
       "storage_location": {
         "computed": true,
+        "description": "A storage location.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "binary_prefix_location": {
               "computed": true,
+              "description": "The location's binary prefix.",
               "description_kind": "plain",
               "type": "string"
             },
             "bucket": {
               "computed": true,
+              "description": "The location's bucket.",
               "description_kind": "plain",
               "type": "string"
             },
             "generated_prefix_location": {
               "computed": true,
+              "description": "The location's generated prefix.",
               "description_kind": "plain",
               "type": "string"
             },
             "manifest_prefix_location": {
               "computed": true,
+              "description": "The location's manifest prefix.",
               "description_kind": "plain",
               "type": "string"
             },
             "repo_prefix_location": {
               "computed": true,
+              "description": "The location's repo prefix.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -71,6 +78,7 @@ const awsccPanoramaPackage = `{
       },
       "tags": {
         "computed": true,
+        "description": "Tags for the package.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

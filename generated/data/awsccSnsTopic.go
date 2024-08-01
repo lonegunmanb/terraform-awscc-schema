@@ -29,26 +29,31 @@ const awsccSnsTopic = `{
       },
       "delivery_status_logging": {
         "computed": true,
+        "description": "The ` + "`" + `` + "`" + `DeliveryStatusLogging` + "`" + `` + "`" + ` configuration enables you to log the delivery status of messages sent from your Amazon SNS topic to subscribed endpoints with the following supported delivery protocols:\n  +  HTTP \n  +  Amazon Kinesis Data Firehose\n  +   AWS Lambda\n  +  Platform application endpoint\n  +  Amazon Simple Queue Service\n  \n Once configured, log entries are sent to Amazon CloudWatch Logs.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "failure_feedback_role_arn": {
               "computed": true,
+              "description": "The IAM role ARN to be used when logging failed message deliveries in Amazon CloudWatch.",
               "description_kind": "plain",
               "type": "string"
             },
             "protocol": {
               "computed": true,
+              "description": "Indicates one of the supported protocols for the Amazon SNS topic.\n  At least one of the other three ` + "`" + `` + "`" + `LoggingConfig` + "`" + `` + "`" + ` properties is recommend along with ` + "`" + `` + "`" + `Protocol` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "type": "string"
             },
             "success_feedback_role_arn": {
               "computed": true,
+              "description": "The IAM role ARN to be used when logging successful message deliveries in Amazon CloudWatch.",
               "description_kind": "plain",
               "type": "string"
             },
             "success_feedback_sample_rate": {
               "computed": true,
+              "description": "The percentage of successful message deliveries to be logged in Amazon CloudWatch. Valid percentage values range from 0 to 100.",
               "description_kind": "plain",
               "type": "string"
             }

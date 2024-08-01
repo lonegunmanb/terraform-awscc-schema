@@ -31,37 +31,44 @@ const awsccPanoramaPackage = `{
         "type": "string"
       },
       "package_name": {
+        "description": "A name for the package.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
       "storage_location": {
         "computed": true,
+        "description": "A storage location.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "binary_prefix_location": {
               "computed": true,
+              "description": "The location's binary prefix.",
               "description_kind": "plain",
               "type": "string"
             },
             "bucket": {
               "computed": true,
+              "description": "The location's bucket.",
               "description_kind": "plain",
               "type": "string"
             },
             "generated_prefix_location": {
               "computed": true,
+              "description": "The location's generated prefix.",
               "description_kind": "plain",
               "type": "string"
             },
             "manifest_prefix_location": {
               "computed": true,
+              "description": "The location's manifest prefix.",
               "description_kind": "plain",
               "type": "string"
             },
             "repo_prefix_location": {
               "computed": true,
+              "description": "The location's repo prefix.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -72,6 +79,7 @@ const awsccPanoramaPackage = `{
       },
       "tags": {
         "computed": true,
+        "description": "Tags for the package.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -91,7 +99,7 @@ const awsccPanoramaPackage = `{
         "optional": true
       }
     },
-    "description": "Schema for Package CloudFormation Resource",
+    "description": "Creates a package and storage location in an Amazon S3 access point.",
     "description_kind": "plain"
   },
   "version": 1

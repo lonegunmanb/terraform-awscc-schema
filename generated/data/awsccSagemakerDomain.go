@@ -222,6 +222,15 @@ const awsccSagemakerDomain = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "lifecycle_config_arns": {
+                    "computed": true,
+                    "description": "A list of LifecycleConfigArns available for use with JupyterServer apps.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   }
                 },
                 "nesting_mode": "single"
@@ -294,6 +303,15 @@ const awsccSagemakerDomain = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "lifecycle_config_arns": {
+                    "computed": true,
+                    "description": "A list of LifecycleConfigArns available for use with KernelGateway apps.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   }
                 },
                 "nesting_mode": "single"
@@ -625,6 +643,15 @@ const awsccSagemakerDomain = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "lifecycle_config_arns": {
+                    "computed": true,
+                    "description": "A list of LifecycleConfigArns available for use with JupyterServer apps.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   }
                 },
                 "nesting_mode": "single"
@@ -697,6 +724,15 @@ const awsccSagemakerDomain = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "lifecycle_config_arns": {
+                    "computed": true,
+                    "description": "A list of LifecycleConfigArns available for use with KernelGateway apps.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   }
                 },
                 "nesting_mode": "single"

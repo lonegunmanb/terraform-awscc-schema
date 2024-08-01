@@ -22,11 +22,13 @@ const awsccPanoramaPackageVersion = `{
       },
       "mark_latest": {
         "computed": true,
+        "description": "Whether to mark the new version as the latest version.",
         "description_kind": "plain",
         "type": "bool"
       },
       "owner_account": {
         "computed": true,
+        "description": "An owner account.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -37,6 +39,7 @@ const awsccPanoramaPackageVersion = `{
       },
       "package_id": {
         "computed": true,
+        "description": "A package ID.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -47,11 +50,13 @@ const awsccPanoramaPackageVersion = `{
       },
       "package_version": {
         "computed": true,
+        "description": "A package version.",
         "description_kind": "plain",
         "type": "string"
       },
       "patch_version": {
         "computed": true,
+        "description": "A patch version.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -72,6 +77,7 @@ const awsccPanoramaPackageVersion = `{
       },
       "updated_latest_patch_version": {
         "computed": true,
+        "description": "If the version was marked latest, the new version to maker as latest.",
         "description_kind": "plain",
         "type": "string"
       }

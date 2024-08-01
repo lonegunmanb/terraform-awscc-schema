@@ -22,14 +22,12 @@ const awsccInspectorv2CisScanConfiguration = `{
         "type": "string"
       },
       "scan_name": {
-        "computed": true,
         "description": "Name of the scan",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "schedule": {
-        "computed": true,
         "description": "Choose a Schedule cadence",
         "description_kind": "plain",
         "nested_type": {
@@ -143,12 +141,11 @@ const awsccInspectorv2CisScanConfiguration = `{
           },
           "nesting_mode": "single"
         },
-        "optional": true
+        "required": true
       },
       "security_level": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "tags": {
@@ -161,7 +158,6 @@ const awsccInspectorv2CisScanConfiguration = `{
         ]
       },
       "targets": {
-        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -188,7 +184,7 @@ const awsccInspectorv2CisScanConfiguration = `{
           },
           "nesting_mode": "single"
         },
-        "optional": true
+        "required": true
       }
     },
     "description": "CIS Scan Configuration resource schema",

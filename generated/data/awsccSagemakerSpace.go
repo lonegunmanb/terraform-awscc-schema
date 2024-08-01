@@ -80,6 +80,12 @@ const awsccSagemakerSpace = `{
                           "description_kind": "plain",
                           "type": "string"
                         },
+                        "lifecycle_config_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the Lifecycle Configuration to attach to the Resource.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "sage_maker_image_arn": {
                           "computed": true,
                           "description": "The ARN of the SageMaker image that the image version belongs to.",
@@ -156,6 +162,12 @@ const awsccSagemakerSpace = `{
                           "description_kind": "plain",
                           "type": "string"
                         },
+                        "lifecycle_config_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the Lifecycle Configuration to attach to the Resource.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "sage_maker_image_arn": {
                           "computed": true,
                           "description": "The ARN of the SageMaker image that the image version belongs to.",
@@ -193,6 +205,12 @@ const awsccSagemakerSpace = `{
                           "description_kind": "plain",
                           "type": "string"
                         },
+                        "lifecycle_config_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the Lifecycle Configuration to attach to the Resource.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "sage_maker_image_arn": {
                           "computed": true,
                           "description": "The ARN of the SageMaker image that the image version belongs to.",
@@ -208,6 +226,15 @@ const awsccSagemakerSpace = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "lifecycle_config_arns": {
+                    "computed": true,
+                    "description": "A list of LifecycleConfigArns available for use with JupyterServer apps.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   }
                 },
                 "nesting_mode": "single"
@@ -259,6 +286,12 @@ const awsccSagemakerSpace = `{
                           "description_kind": "plain",
                           "type": "string"
                         },
+                        "lifecycle_config_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the Lifecycle Configuration to attach to the Resource.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "sage_maker_image_arn": {
                           "computed": true,
                           "description": "The ARN of the SageMaker image that the image version belongs to.",
@@ -274,6 +307,15 @@ const awsccSagemakerSpace = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "lifecycle_config_arns": {
+                    "computed": true,
+                    "description": "A list of LifecycleConfigArns available for use with KernelGateway apps.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   }
                 },
                 "nesting_mode": "single"

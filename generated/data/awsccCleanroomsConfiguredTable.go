@@ -42,6 +42,11 @@ const awsccCleanroomsConfiguredTable = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "additional_analyses": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
                               "aggregate_columns": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -134,6 +139,11 @@ const awsccCleanroomsConfiguredTable = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "additional_analyses": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
                               "allowed_analyses": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -172,6 +182,14 @@ const awsccCleanroomsConfiguredTable = `{
                                   },
                                   "nesting_mode": "single"
                                 }
+                              },
+                              "disallowed_output_columns": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
                               }
                             },
                             "nesting_mode": "single"
@@ -182,6 +200,11 @@ const awsccCleanroomsConfiguredTable = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "additional_analyses": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
                               "allowed_join_operators": {
                                 "computed": true,
                                 "description_kind": "plain",

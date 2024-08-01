@@ -51,6 +51,12 @@ const awsccSagemakerApp = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "lifecycle_config_arn": {
+              "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the Lifecycle Configuration to attach to the Resource.",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "sage_maker_image_arn": {
               "computed": true,
               "description": "The ARN of the SageMaker image that the image version belongs to.",

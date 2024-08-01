@@ -16,6 +16,7 @@ const awsccPanoramaApplicationInstance = `{
       },
       "application_instance_id_to_replace": {
         "computed": true,
+        "description": "The ID of an application instance to replace with the new instance.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -31,6 +32,7 @@ const awsccPanoramaApplicationInstance = `{
         "type": "number"
       },
       "default_runtime_context_device": {
+        "description": "The device's ID.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -42,6 +44,7 @@ const awsccPanoramaApplicationInstance = `{
       },
       "description": {
         "computed": true,
+        "description": "A description for the application instance.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -64,11 +67,13 @@ const awsccPanoramaApplicationInstance = `{
       },
       "manifest_overrides_payload": {
         "computed": true,
+        "description": "Setting overrides for the application manifest.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "payload_data": {
               "computed": true,
+              "description": "The overrides document.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -79,11 +84,13 @@ const awsccPanoramaApplicationInstance = `{
         "optional": true
       },
       "manifest_payload": {
+        "description": "The application's manifest document.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "payload_data": {
               "computed": true,
+              "description": "The application manifest.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -95,12 +102,14 @@ const awsccPanoramaApplicationInstance = `{
       },
       "name": {
         "computed": true,
+        "description": "A name for the application instance.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "runtime_role_arn": {
         "computed": true,
+        "description": "The ARN of a runtime role for the application instance.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -117,18 +126,16 @@ const awsccPanoramaApplicationInstance = `{
       },
       "tags": {
         "computed": true,
-        "description": "List of tags",
+        "description": "Tags for the application instance.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
-              "description": "A string used to identify this tag",
               "description_kind": "plain",
               "required": true,
               "type": "string"
             },
             "value": {
-              "description": "A string containing the value for the tag",
               "description_kind": "plain",
               "required": true,
               "type": "string"
@@ -139,7 +146,7 @@ const awsccPanoramaApplicationInstance = `{
         "optional": true
       }
     },
-    "description": "Schema for ApplicationInstance CloudFormation Resource",
+    "description": "Creates an application instance and deploys it to a device.",
     "description_kind": "plain"
   },
   "version": 1
