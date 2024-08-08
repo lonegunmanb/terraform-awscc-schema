@@ -33,12 +33,6 @@ const awsccEc2TransitGatewayMulticastGroupSource = `{
         "required": true,
         "type": "string"
       },
-      "member_type": {
-        "computed": true,
-        "description": "The member type (for example, static).",
-        "description_kind": "plain",
-        "type": "string"
-      },
       "network_interface_id": {
         "computed": true,
         "description": "The ID of the transit gateway attachment.",

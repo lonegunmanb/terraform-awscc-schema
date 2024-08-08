@@ -448,9 +448,8 @@ const awsccDeadlineFleet = `{
         "type": "string"
       },
       "farm_id": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "fleet_id": {

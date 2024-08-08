@@ -57,6 +57,7 @@ const awsccRdsDbInstance = `{
       },
       "automatic_backup_replication_region": {
         "computed": true,
+        "description": "The AWS-Region associated with the automated backup.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -126,7 +127,7 @@ const awsccRdsDbInstance = `{
       },
       "db_cluster_identifier": {
         "computed": true,
-        "description": "The identifier of the DB cluster that the instance will belong to.",
+        "description": "The identifier of the DB cluster that this DB instance will belong to.\n This setting doesn't apply to RDS Custom DB instances.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -182,7 +183,7 @@ const awsccRdsDbInstance = `{
       },
       "db_subnet_group_name": {
         "computed": true,
-        "description": "A DB subnet group to associate with the DB instance. If you update this value, the new subnet group must be a subnet group in a new VPC. \n If there's no DB subnet group, then the DB instance isn't a VPC DB instance.\n For more information about using Amazon RDS in a VPC, see [Using Amazon RDS with Amazon Virtual Private Cloud (VPC)](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.html) in the *Amazon RDS User Guide*. \n  *Amazon Aurora* \n Not applicable. The DB subnet group is managed by the DB cluster. If specified, the setting must match the DB cluster setting.",
+        "description": "A DB subnet group to associate with the DB instance. If you update this value, the new subnet group must be a subnet group in a new VPC. \n If there's no DB subnet group, then the DB instance isn't a VPC DB instance.\n For more information about using Amazon RDS in a VPC, see [Amazon VPC and Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.html) in the *Amazon RDS User Guide*. \n This setting doesn't apply to Amazon Aurora DB instances. The DB subnet group is managed by the DB cluster. If specified, the setting must match the DB cluster setting.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -211,7 +212,7 @@ const awsccRdsDbInstance = `{
       },
       "deletion_protection": {
         "computed": true,
-        "description": "A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. For more information, see [Deleting a DB Instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html). \n  *Amazon Aurora* \n Not applicable. You can enable or disable deletion protection for the DB cluster. For more information, see ` + "`" + `` + "`" + `CreateDBCluster` + "`" + `` + "`" + `. DB instances in a DB cluster can be deleted even when deletion protection is enabled for the DB cluster.",
+        "description": "Specifies whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see [Deleting a DB Instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html).\n This setting doesn't apply to Amazon Aurora DB instances. You can enable or disable deletion protection for the DB cluster. For more information, see ` + "`" + `` + "`" + `CreateDBCluster` + "`" + `` + "`" + `. DB instances in a DB cluster can be deleted even when deletion protection is enabled for the DB cluster.",
         "description_kind": "plain",
         "type": "bool"
       },
@@ -381,7 +382,7 @@ const awsccRdsDbInstance = `{
       },
       "master_username": {
         "computed": true,
-        "description": "The master user name for the DB instance.\n  If you specify the ` + "`" + `` + "`" + `SourceDBInstanceIdentifier` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DBSnapshotIdentifier` + "`" + `` + "`" + ` property, don't specify this property. The value is inherited from the source DB instance or snapshot.\n When migrating a self-managed Db2 database, we recommend that you use the same master username as your self-managed Db2 instance name.\n   *Amazon Aurora* \n Not applicable. The name for the master user is managed by the DB cluster. \n  *RDS for Db2* \n Constraints:\n  +  Must be 1 to 16 letters or numbers.\n  +  First character must be a letter.\n  +  Can't be a reserved word for the chosen database engine.\n  \n  *RDS for MariaDB* \n Constraints:\n   +  Must be 1 to 16 letters or numbers.\n  +  Can't be a reserved word for the chosen database engine.\n  \n  *RDS for Microsoft SQL Server* \n Constraints:\n   +  Must be 1 to 128 letters or numbers.\n  +  First character must be a letter.\n  +  Can't be a reserved word for the chosen database engine.\n  \n  *RDS for MySQL* \n Constraints:\n   +  Must be 1 to 16 letters or numbers.\n  +  First character must be a letter.\n  +  Can't be a reserved word for the chosen database engine.\n  \n  *RDS for Oracle* \n Constraints:\n   +  Must be 1 to 30 letters or numbers.\n  +  First character must be a letter.\n  +  Can't be a reserved word for the chosen database engine.\n  \n  *RDS for PostgreSQL* \n Constraints:\n   +  Must be 1 to 63 letters or numbers.\n  +  First character must be a letter.\n  +  Can't be a reserved word for the chosen database engine.",
+        "description": "The master user name for the DB instance.\n  If you specify the ` + "`" + `` + "`" + `SourceDBInstanceIdentifier` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DBSnapshotIdentifier` + "`" + `` + "`" + ` property, don't specify this property. The value is inherited from the source DB instance or snapshot.\n When migrating a self-managed Db2 database, we recommend that you use the same master username as your self-managed Db2 instance name.\n   *Amazon Aurora* \n Not applicable. The name for the master user is managed by the DB cluster. \n  *RDS for Db2* \n Constraints:\n  +  Must be 1 to 16 letters or numbers.\n  +  First character must be a letter.\n  +  Can't be a reserved word for the chosen database engine.\n  \n  *RDS for MariaDB* \n Constraints:\n  +  Must be 1 to 16 letters or numbers.\n  +  Can't be a reserved word for the chosen database engine.\n  \n  *RDS for Microsoft SQL Server* \n Constraints:\n  +  Must be 1 to 128 letters or numbers.\n  +  First character must be a letter.\n  +  Can't be a reserved word for the chosen database engine.\n  \n  *RDS for MySQL* \n Constraints:\n  +  Must be 1 to 16 letters or numbers.\n  +  First character must be a letter.\n  +  Can't be a reserved word for the chosen database engine.\n  \n  *RDS for Oracle* \n Constraints:\n  +  Must be 1 to 30 letters or numbers.\n  +  First character must be a letter.\n  +  Can't be a reserved word for the chosen database engine.\n  \n  *RDS for PostgreSQL* \n Constraints:\n  +  Must be 1 to 63 letters or numbers.\n  +  First character must be a letter.\n  +  Can't be a reserved word for the chosen database engine.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -393,7 +394,7 @@ const awsccRdsDbInstance = `{
       },
       "monitoring_interval": {
         "computed": true,
-        "description": "The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collection of Enhanced Monitoring metrics, specify 0. The default is 0.\n If ` + "`" + `` + "`" + `MonitoringRoleArn` + "`" + `` + "`" + ` is specified, then you must set ` + "`" + `` + "`" + `MonitoringInterval` + "`" + `` + "`" + ` to a value other than 0.\n This setting doesn't apply to RDS Custom.\n Valid Values: ` + "`" + `` + "`" + `0, 1, 5, 10, 15, 30, 60` + "`" + `` + "`" + `",
+        "description": "The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collection of Enhanced Monitoring metrics, specify ` + "`" + `` + "`" + `0` + "`" + `` + "`" + `.\n If ` + "`" + `` + "`" + `MonitoringRoleArn` + "`" + `` + "`" + ` is specified, then you must set ` + "`" + `` + "`" + `MonitoringInterval` + "`" + `` + "`" + ` to a value other than ` + "`" + `` + "`" + `0` + "`" + `` + "`" + `.\n This setting doesn't apply to RDS Custom DB instances.\n Valid Values: ` + "`" + `` + "`" + `0 | 1 | 5 | 10 | 15 | 30 | 60` + "`" + `` + "`" + ` \n Default: ` + "`" + `` + "`" + `0` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "type": "number"
       },
@@ -405,7 +406,7 @@ const awsccRdsDbInstance = `{
       },
       "multi_az": {
         "computed": true,
-        "description": "Specifies whether the database instance is a Multi-AZ DB instance deployment. You can't set the ` + "`" + `` + "`" + `AvailabilityZone` + "`" + `` + "`" + ` parameter if the ` + "`" + `` + "`" + `MultiAZ` + "`" + `` + "`" + ` parameter is set to true. \n  For more information, see [Multi-AZ deployments for high availability](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html) in the *Amazon RDS User Guide*.\n  *Amazon Aurora* \n Not applicable. Amazon Aurora storage is replicated across all of the Availability Zones and doesn't require the ` + "`" + `` + "`" + `MultiAZ` + "`" + `` + "`" + ` option to be set.",
+        "description": "Specifies whether the DB instance is a Multi-AZ deployment. You can't set the ` + "`" + `` + "`" + `AvailabilityZone` + "`" + `` + "`" + ` parameter if the DB instance is a Multi-AZ deployment.\n This setting doesn't apply to the following DB instances:\n  +  Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)\n  +  RDS Custom",
         "description_kind": "plain",
         "type": "bool"
       },
@@ -441,7 +442,7 @@ const awsccRdsDbInstance = `{
       },
       "port": {
         "computed": true,
-        "description": "The port number on which the database accepts connections.\n  *Amazon Aurora* \n Not applicable. The port number is managed by the DB cluster.\n  *Db2* \n Default value: ` + "`" + `` + "`" + `50000` + "`" + `` + "`" + `",
+        "description": "The port number on which the database accepts connections.\n This setting doesn't apply to Aurora DB instances. The port number is managed by the cluster.\n Valid Values: ` + "`" + `` + "`" + `1150-65535` + "`" + `` + "`" + ` \n Default:\n  +  RDS for Db2 - ` + "`" + `` + "`" + `50000` + "`" + `` + "`" + ` \n  +  RDS for MariaDB - ` + "`" + `` + "`" + `3306` + "`" + `` + "`" + ` \n  +  RDS for Microsoft SQL Server - ` + "`" + `` + "`" + `1433` + "`" + `` + "`" + ` \n  +  RDS for MySQL - ` + "`" + `` + "`" + `3306` + "`" + `` + "`" + ` \n  +  RDS for Oracle - ` + "`" + `` + "`" + `1521` + "`" + `` + "`" + ` \n  +  RDS for PostgreSQL - ` + "`" + `` + "`" + `5432` + "`" + `` + "`" + ` \n  \n Constraints:\n  +  For RDS for Microsoft SQL Server, the value can't be ` + "`" + `` + "`" + `1234` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `1434` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `3260` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `3343` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `3389` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `47001` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `49152-49156` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -553,7 +554,7 @@ const awsccRdsDbInstance = `{
       },
       "tags": {
         "computed": true,
-        "description": "An optional array of key-value pairs to apply to this DB instance.",
+        "description": "Tags to assign to the DB instance.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

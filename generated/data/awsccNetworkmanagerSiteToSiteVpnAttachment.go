@@ -57,11 +57,61 @@ const awsccNetworkmanagerSiteToSiteVpnAttachment = `{
         "required": true,
         "type": "string"
       },
+      "network_function_group_name": {
+        "computed": true,
+        "description": "The name of the network function group attachment.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "owner_account_id": {
         "computed": true,
         "description": "Owner account of the attachment.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "proposed_network_function_group_change": {
+        "computed": true,
+        "description": "The attachment to move from one network function group to another.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "attachment_policy_rule_number": {
+              "computed": true,
+              "description": "The rule number in the policy document that applies to this change.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "network_function_group_name": {
+              "computed": true,
+              "description": "The name of the network function group to change.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "tags": {
+              "computed": true,
+              "description": "The key-value tags that changed for the network function group.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "proposed_segment_change": {
         "computed": true,

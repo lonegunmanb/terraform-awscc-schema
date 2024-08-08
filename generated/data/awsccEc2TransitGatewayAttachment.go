@@ -38,12 +38,6 @@ const awsccEc2TransitGatewayAttachment = `{
               "description": "Indicates whether to enable Ipv6 Support for Vpc Attachment. Valid Values: enable | disable",
               "description_kind": "plain",
               "type": "string"
-            },
-            "security_group_referencing_support": {
-              "computed": true,
-              "description": "Indicates whether to enable Security Group referencing support for Vpc Attachment. Valid Values: enable | disable",
-              "description_kind": "plain",
-              "type": "string"
             }
           },
           "nesting_mode": "single"

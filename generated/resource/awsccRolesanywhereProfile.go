@@ -9,6 +9,12 @@ import (
 const awsccRolesanywhereProfile = `{
   "block": {
     "attributes": {
+      "accept_role_session_name": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "attribute_mappings": {
         "computed": true,
         "description_kind": "plain",

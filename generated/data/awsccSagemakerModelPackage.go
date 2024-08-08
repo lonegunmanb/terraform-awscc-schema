@@ -60,6 +60,60 @@ const awsccSagemakerModelPackage = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "model_data_source": {
+                    "computed": true,
+                    "description": "Specifies the location of ML model data to deploy during endpoint creation.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "s3_data_source": {
+                          "computed": true,
+                          "description": "Specifies the S3 location of ML model data to deploy.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "compression_type": {
+                                "computed": true,
+                                "description": "Specifies how the ML model data is prepared.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "model_access_config": {
+                                "computed": true,
+                                "description": "Specifies the access configuration file for the ML model.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "accept_eula": {
+                                      "computed": true,
+                                      "description": "Specifies agreement to the model end-user license agreement (EULA).",
+                                      "description_kind": "plain",
+                                      "type": "bool"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "s3_data_type": {
+                                "computed": true,
+                                "description": "Specifies the type of ML model data to deploy.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "s3_uri": {
+                                "computed": true,
+                                "description": "Specifies the S3 path of ML model data to deploy.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "model_data_url": {
                     "computed": true,
                     "description": "A structure with Model Input details.",
@@ -193,6 +247,60 @@ const awsccSagemakerModelPackage = `{
                     "description": "An MD5 hash of the training algorithm that identifies the Docker image used for training.",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "model_data_source": {
+                    "computed": true,
+                    "description": "Specifies the location of ML model data to deploy during endpoint creation.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "s3_data_source": {
+                          "computed": true,
+                          "description": "Specifies the S3 location of ML model data to deploy.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "compression_type": {
+                                "computed": true,
+                                "description": "Specifies how the ML model data is prepared.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "model_access_config": {
+                                "computed": true,
+                                "description": "Specifies the access configuration file for the ML model.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "accept_eula": {
+                                      "computed": true,
+                                      "description": "Specifies agreement to the model end-user license agreement (EULA).",
+                                      "description_kind": "plain",
+                                      "type": "bool"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "s3_data_type": {
+                                "computed": true,
+                                "description": "Specifies the type of ML model data to deploy.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "s3_uri": {
+                                "computed": true,
+                                "description": "Specifies the S3 path of ML model data to deploy.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   },
                   "model_data_url": {
                     "computed": true,
@@ -675,6 +783,60 @@ const awsccSagemakerModelPackage = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "model_data_source": {
+                    "computed": true,
+                    "description": "Specifies the location of ML model data to deploy during endpoint creation.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "s3_data_source": {
+                          "computed": true,
+                          "description": "Specifies the S3 location of ML model data to deploy.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "compression_type": {
+                                "computed": true,
+                                "description": "Specifies how the ML model data is prepared.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "model_access_config": {
+                                "computed": true,
+                                "description": "Specifies the access configuration file for the ML model.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "accept_eula": {
+                                      "computed": true,
+                                      "description": "Specifies agreement to the model end-user license agreement (EULA).",
+                                      "description_kind": "plain",
+                                      "type": "bool"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "s3_data_type": {
+                                "computed": true,
+                                "description": "Specifies the type of ML model data to deploy.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "s3_uri": {
+                                "computed": true,
+                                "description": "Specifies the S3 path of ML model data to deploy.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "model_data_url": {
                     "computed": true,
                     "description": "A structure with Model Input details.",
@@ -791,6 +953,28 @@ const awsccSagemakerModelPackage = `{
         "description": "The approval status of the model package.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "model_card": {
+        "computed": true,
+        "description": "The model card associated with the model package.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "model_card_content": {
+              "computed": true,
+              "description": "The content of the model card.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "model_card_status": {
+              "computed": true,
+              "description": "The approval status of the model card within your organization.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "model_metrics": {
         "computed": true,
@@ -1145,6 +1329,22 @@ const awsccSagemakerModelPackage = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "security_config": {
+        "computed": true,
+        "description": "An optional AWS Key Management Service key to encrypt, decrypt, and re-encrypt model package information for regulated workloads with highly sensitive data.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "kms_key_id": {
+              "computed": true,
+              "description": "The AWS KMS Key ID (KMSKeyId) used for encryption of model package information.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "skip_model_validation": {
         "computed": true,
         "description": "Indicates if you want to skip model validation.",
@@ -1182,6 +1382,12 @@ const awsccSagemakerModelPackage = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "source_uri": {
+        "computed": true,
+        "description": "The URI of the source for the model package.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "tags": {
         "computed": true,

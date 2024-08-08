@@ -15,9 +15,8 @@ const awsccDeadlineStorageProfile = `{
         "type": "string"
       },
       "farm_id": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "file_system_locations": {

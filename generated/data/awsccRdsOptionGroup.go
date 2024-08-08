@@ -29,13 +29,13 @@ const awsccRdsOptionGroup = `{
       },
       "option_configurations": {
         "computed": true,
-        "description": "A list of options and the settings for each option.",
+        "description": "A list of all available options for an option group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "db_security_group_memberships": {
               "computed": true,
-              "description": "A list of DBSecurityGroupMembership name strings used for this option.",
+              "description": "A list of DB security groups used for this option.",
               "description_kind": "plain",
               "type": [
                 "set",
@@ -84,7 +84,7 @@ const awsccRdsOptionGroup = `{
             },
             "vpc_security_group_memberships": {
               "computed": true,
-              "description": "A list of VpcSecurityGroupMembership name strings used for this option.",
+              "description": "A list of VPC security group names used for this option.",
               "description_kind": "plain",
               "type": [
                 "set",
@@ -109,7 +109,7 @@ const awsccRdsOptionGroup = `{
       },
       "tags": {
         "computed": true,
-        "description": "An optional array of key-value pairs to apply to this option group.",
+        "description": "Tags to assign to the option group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

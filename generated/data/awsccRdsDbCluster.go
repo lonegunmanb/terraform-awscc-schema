@@ -54,7 +54,7 @@ const awsccRdsDbCluster = `{
       },
       "backtrack_window": {
         "computed": true,
-        "description": "The target backtrack window, in seconds. To disable backtracking, set this value to 0. \n  Currently, Backtrack is only supported for Aurora MySQL DB clusters.\n  Default: 0\n Constraints:\n  +  If specified, this value must be set to a number from 0 to 259,200 (72 hours).\n  \n Valid for: Aurora MySQL DB clusters only",
+        "description": "The target backtrack window, in seconds. To disable backtracking, set this value to ` + "`" + `` + "`" + `0` + "`" + `` + "`" + `.\n Valid for Cluster Type: Aurora MySQL DB clusters only\n Default: ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` \n Constraints:\n  +  If specified, this value must be set to a number from 0 to 259,200 (72 hours).",
         "description_kind": "plain",
         "type": "number"
       },
@@ -373,7 +373,7 @@ const awsccRdsDbCluster = `{
       },
       "restore_type": {
         "computed": true,
-        "description": "The type of restore to be performed. You can specify one of the following values:\n  +   ` + "`" + `` + "`" + `full-copy` + "`" + `` + "`" + ` - The new DB cluster is restored as a full copy of the source DB cluster.\n  +   ` + "`" + `` + "`" + `copy-on-write` + "`" + `` + "`" + ` - The new DB cluster is restored as a clone of the source DB cluster.\n  \n  If you don't specify a ` + "`" + `` + "`" + `RestoreType` + "`" + `` + "`" + ` value, then the new DB cluster is restored as a full copy of the source DB cluster.\n Valid for: Aurora DB clusters and Multi-AZ DB clusters",
+        "description": "The type of restore to be performed. You can specify one of the following values:\n  +   ` + "`" + `` + "`" + `full-copy` + "`" + `` + "`" + ` - The new DB cluster is restored as a full copy of the source DB cluster.\n  +   ` + "`" + `` + "`" + `copy-on-write` + "`" + `` + "`" + ` - The new DB cluster is restored as a clone of the source DB cluster.\n  \n If you don't specify a ` + "`" + `` + "`" + `RestoreType` + "`" + `` + "`" + ` value, then the new DB cluster is restored as a full copy of the source DB cluster.\n Valid for: Aurora DB clusters and Multi-AZ DB clusters",
         "description_kind": "plain",
         "type": "string"
       },
@@ -482,7 +482,7 @@ const awsccRdsDbCluster = `{
       },
       "tags": {
         "computed": true,
-        "description": "An optional array of key-value pairs to apply to this DB cluster.\n Valid for: Aurora DB clusters and Multi-AZ DB clusters",
+        "description": "Tags to assign to the DB cluster.\n Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

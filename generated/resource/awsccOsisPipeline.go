@@ -193,6 +193,28 @@ const awsccOsisPipeline = `{
                       "string"
                     ]
                   },
+                  "vpc_attachment_options": {
+                    "computed": true,
+                    "description": "Options for attaching a VPC to the pipeline.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "attach_to_vpc": {
+                          "computed": true,
+                          "description": "Whether the pipeline should be attached to the provided VPC",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "cidr_block": {
+                          "computed": true,
+                          "description": "The CIDR block to be reserved for OpenSearch Ingestion to create elastic network interfaces (ENIs).",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "vpc_endpoint_management": {
                     "computed": true,
                     "description": "Defines whether you or Amazon OpenSearch Ingestion service create and manage the VPC endpoint configured for the pipeline.",
@@ -231,6 +253,29 @@ const awsccOsisPipeline = `{
                 "list",
                 "string"
               ]
+            },
+            "vpc_attachment_options": {
+              "computed": true,
+              "description": "Options for attaching a VPC to the pipeline.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "attach_to_vpc": {
+                    "description": "Whether the pipeline should be attached to the provided VPC",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "bool"
+                  },
+                  "cidr_block": {
+                    "description": "The CIDR block to be reserved for OpenSearch Ingestion to create elastic network interfaces (ENIs).",
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "vpc_endpoint_management": {
               "computed": true,

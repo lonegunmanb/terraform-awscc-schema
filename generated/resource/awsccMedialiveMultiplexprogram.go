@@ -13,7 +13,6 @@ const awsccMedialiveMultiplexprogram = `{
         "computed": true,
         "description": "The MediaLive channel associated with the program.",
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "id": {

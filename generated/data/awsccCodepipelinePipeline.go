@@ -292,6 +292,113 @@ const awsccCodepipelinePipeline = `{
                 "nesting_mode": "list"
               }
             },
+            "before_entry": {
+              "computed": true,
+              "description": "The method to use before stage runs.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "conditions": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "result": {
+                          "computed": true,
+                          "description": "The specified result for when the failure conditions are met, such as rolling back the stage",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "rules": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "configuration": {
+                                "computed": true,
+                                "description": "The rule's configuration. These are key-value pairs that specify input values for a rule.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "input_artifacts": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "name": {
+                                      "computed": true,
+                                      "description": "The name of the artifact to be worked on (for example, \"My App\").",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              },
+                              "name": {
+                                "computed": true,
+                                "description": "The rule declaration's name.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "region": {
+                                "computed": true,
+                                "description": "The rule declaration's AWS Region, such as us-east-1.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "role_arn": {
+                                "computed": true,
+                                "description": "The ARN of the IAM service role that performs the declared rule. This is assumed through the roleArn for the pipeline.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "rule_type_id": {
+                                "computed": true,
+                                "description": "Represents information about a rule type.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "category": {
+                                      "computed": true,
+                                      "description": "A category for the provider type for the rule.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "owner": {
+                                      "computed": true,
+                                      "description": "The creator of the rule being called. Only AWS is supported.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "provider": {
+                                      "computed": true,
+                                      "description": "The provider of the service being called by the rule.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "version": {
+                                      "computed": true,
+                                      "description": "A string that describes the rule version.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "blockers": {
               "computed": true,
               "description_kind": "plain",
@@ -325,11 +432,215 @@ const awsccCodepipelinePipeline = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "conditions": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "result": {
+                          "computed": true,
+                          "description": "The specified result for when the failure conditions are met, such as rolling back the stage",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "rules": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "configuration": {
+                                "computed": true,
+                                "description": "The rule's configuration. These are key-value pairs that specify input values for a rule.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "input_artifacts": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "name": {
+                                      "computed": true,
+                                      "description": "The name of the artifact to be worked on (for example, \"My App\").",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              },
+                              "name": {
+                                "computed": true,
+                                "description": "The rule declaration's name.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "region": {
+                                "computed": true,
+                                "description": "The rule declaration's AWS Region, such as us-east-1.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "role_arn": {
+                                "computed": true,
+                                "description": "The ARN of the IAM service role that performs the declared rule. This is assumed through the roleArn for the pipeline.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "rule_type_id": {
+                                "computed": true,
+                                "description": "Represents information about a rule type.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "category": {
+                                      "computed": true,
+                                      "description": "A category for the provider type for the rule.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "owner": {
+                                      "computed": true,
+                                      "description": "The creator of the rule being called. Only AWS is supported.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "provider": {
+                                      "computed": true,
+                                      "description": "The provider of the service being called by the rule.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "version": {
+                                      "computed": true,
+                                      "description": "A string that describes the rule version.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
                   "result": {
                     "computed": true,
                     "description": "The specified result for when the failure conditions are met, such as rolling back the stage",
                     "description_kind": "plain",
                     "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "on_success": {
+              "computed": true,
+              "description": "The method to use when a stage has completed successfully",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "conditions": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "result": {
+                          "computed": true,
+                          "description": "The specified result for when the failure conditions are met, such as rolling back the stage",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "rules": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "configuration": {
+                                "computed": true,
+                                "description": "The rule's configuration. These are key-value pairs that specify input values for a rule.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "input_artifacts": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "name": {
+                                      "computed": true,
+                                      "description": "The name of the artifact to be worked on (for example, \"My App\").",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              },
+                              "name": {
+                                "computed": true,
+                                "description": "The rule declaration's name.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "region": {
+                                "computed": true,
+                                "description": "The rule declaration's AWS Region, such as us-east-1.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "role_arn": {
+                                "computed": true,
+                                "description": "The ARN of the IAM service role that performs the declared rule. This is assumed through the roleArn for the pipeline.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "rule_type_id": {
+                                "computed": true,
+                                "description": "Represents information about a rule type.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "category": {
+                                      "computed": true,
+                                      "description": "A category for the provider type for the rule.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "owner": {
+                                      "computed": true,
+                                      "description": "The creator of the rule being called. Only AWS is supported.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "provider": {
+                                      "computed": true,
+                                      "description": "The provider of the service being called by the rule.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "version": {
+                                      "computed": true,
+                                      "description": "A string that describes the rule version.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
                   }
                 },
                 "nesting_mode": "single"

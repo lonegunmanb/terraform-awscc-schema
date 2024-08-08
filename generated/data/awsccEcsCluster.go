@@ -53,7 +53,7 @@ const awsccEcsCluster = `{
       },
       "configuration": {
         "computed": true,
-        "description": "The execute command configuration for the cluster.",
+        "description": "The execute command and managed storage configuration for the cluster.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -121,16 +121,19 @@ const awsccEcsCluster = `{
             },
             "managed_storage_configuration": {
               "computed": true,
+              "description": "The details of the managed storage configuration.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "fargate_ephemeral_storage_kms_key_id": {
                     "computed": true,
+                    "description": "Specify the KMSlong key ID for the Fargate ephemeral storage.",
                     "description_kind": "plain",
                     "type": "string"
                   },
                   "kms_key_id": {
                     "computed": true,
+                    "description": "Specify a KMSlong key ID to encrypt the managed storage.",
                     "description_kind": "plain",
                     "type": "string"
                   }

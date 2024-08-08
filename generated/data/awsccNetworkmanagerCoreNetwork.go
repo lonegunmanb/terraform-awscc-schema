@@ -75,6 +75,55 @@ const awsccNetworkmanagerCoreNetwork = `{
         "required": true,
         "type": "string"
       },
+      "network_function_groups": {
+        "computed": true,
+        "description": "The network function groups within a core network.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "edge_locations": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "name": {
+              "computed": true,
+              "description": "Name of network function group",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "segments": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "send_to": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "send_via": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "owner_account": {
         "computed": true,
         "description": "Owner of the core network",

@@ -218,6 +218,19 @@ const awsccRedshiftCluster = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "log_destination_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "log_exports": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
             "s3_key_prefix": {
               "computed": true,
               "description_kind": "plain",

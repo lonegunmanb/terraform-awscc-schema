@@ -57,12 +57,6 @@ const awsccEc2TransitGatewayMulticastGroupMember = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "source_type": {
-        "computed": true,
-        "description": "The source type.",
-        "description_kind": "plain",
-        "type": "string"
-      },
       "subnet_id": {
         "computed": true,
         "description": "The ID of the subnet.",

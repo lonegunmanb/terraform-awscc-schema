@@ -17,7 +17,7 @@ const awsccRdsDbSubnetGroup = `{
       },
       "db_subnet_group_name": {
         "computed": true,
-        "description": "The name for the DB subnet group. This value is stored as a lowercase string.\n Constraints: Must contain no more than 255 lowercase alphanumeric characters or hyphens. Must not be \"Default\".\n Example: ` + "`" + `` + "`" + `mysubnetgroup` + "`" + `` + "`" + `",
+        "description": "The name for the DB subnet group. This value is stored as a lowercase string.\n Constraints:\n  +  Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.\n  +  Must not be default.\n  +  First character must be a letter.\n  \n Example: ` + "`" + `` + "`" + `mydbsubnetgroup` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -39,7 +39,7 @@ const awsccRdsDbSubnetGroup = `{
       },
       "tags": {
         "computed": true,
-        "description": "An optional array of key-value pairs to apply to this DB subnet group.",
+        "description": "Tags to assign to the DB subnet group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

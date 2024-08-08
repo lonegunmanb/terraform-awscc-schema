@@ -2076,6 +2076,11 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "read_from_timestamp": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "topic_name": {
               "computed": true,
               "description_kind": "plain",
