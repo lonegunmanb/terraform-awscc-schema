@@ -21,7 +21,7 @@ const awsccSystemsmanagersapApplication = `{
       },
       "arn": {
         "computed": true,
-        "description": "The ARN of the Helix application",
+        "description": "The ARN of the SSM-SAP application",
         "description_kind": "plain",
         "type": "string"
       },
@@ -52,6 +52,13 @@ const awsccSystemsmanagersapApplication = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "database_arn": {
+        "computed": true,
+        "description": "The ARN of the SAP HANA database",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       },
       "id": {
         "computed": true,

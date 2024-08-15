@@ -27,9 +27,123 @@ const awsccBedrockDataSource = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "confluence_configuration": {
+              "computed": true,
+              "description": "The configuration information to connect to Confluence as your data source.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "crawler_configuration": {
+                    "computed": true,
+                    "description": "The configuration of the Confluence content. For example, configuring specific types of Confluence content.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "filter_configuration": {
+                          "computed": true,
+                          "description": "The type of filtering that you want to apply to certain objects or content of the data source. For example, the PATTERN type is regular expression patterns you can apply to filter your content.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "pattern_object_filter": {
+                                "computed": true,
+                                "description": "The configuration of specific filters applied to your data source content. You can filter out or include certain content.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "filters": {
+                                      "computed": true,
+                                      "description": "Contains information",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "exclusion_filters": {
+                                            "computed": true,
+                                            "description": "A set of regular expression filter patterns for a type of object.",
+                                            "description_kind": "plain",
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          },
+                                          "inclusion_filters": {
+                                            "computed": true,
+                                            "description": "A set of regular expression filter patterns for a type of object.",
+                                            "description_kind": "plain",
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          },
+                                          "object_type": {
+                                            "computed": true,
+                                            "description": "The supported object type or content type of the data source.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "type": {
+                                "computed": true,
+                                "description": "The crawl filter type.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "source_configuration": {
+                    "computed": true,
+                    "description": "The endpoint information to connect to your Confluence data source.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "auth_type": {
+                          "computed": true,
+                          "description": "The supported authentication type to authenticate and connect to your Confluence instance.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "credentials_secret_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name of an AWS Secrets Manager secret that stores your authentication credentials for your Confluence instance URL. For more information on the key-value pairs that must be included in your secret, depending on your authentication type, see Confluence connection configuration.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "host_type": {
+                          "computed": true,
+                          "description": "The supported host type, whether online/cloud or server/on-premises.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "host_url": {
+                          "computed": true,
+                          "description": "The Confluence host URL or instance URL.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "s3_configuration": {
               "computed": true,
-              "description": "Contains information about the S3 configuration of the data source.",
+              "description": "The configuration information to connect to Amazon S3 as your data source.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -58,11 +172,344 @@ const awsccBedrockDataSource = `{
                 "nesting_mode": "single"
               }
             },
+            "salesforce_configuration": {
+              "computed": true,
+              "description": "The configuration information to connect to Salesforce as your data source.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "crawler_configuration": {
+                    "computed": true,
+                    "description": "The configuration of filtering the Salesforce content. For example, configuring regular expression patterns to include or exclude certain content.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "filter_configuration": {
+                          "computed": true,
+                          "description": "The type of filtering that you want to apply to certain objects or content of the data source. For example, the PATTERN type is regular expression patterns you can apply to filter your content.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "pattern_object_filter": {
+                                "computed": true,
+                                "description": "The configuration of specific filters applied to your data source content. You can filter out or include certain content.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "filters": {
+                                      "computed": true,
+                                      "description": "Contains information",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "exclusion_filters": {
+                                            "computed": true,
+                                            "description": "A set of regular expression filter patterns for a type of object.",
+                                            "description_kind": "plain",
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          },
+                                          "inclusion_filters": {
+                                            "computed": true,
+                                            "description": "A set of regular expression filter patterns for a type of object.",
+                                            "description_kind": "plain",
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          },
+                                          "object_type": {
+                                            "computed": true,
+                                            "description": "The supported object type or content type of the data source.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "type": {
+                                "computed": true,
+                                "description": "The crawl filter type.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "source_configuration": {
+                    "computed": true,
+                    "description": "The endpoint information to connect to your Salesforce data source.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "auth_type": {
+                          "computed": true,
+                          "description": "The supported authentication type to authenticate and connect to your Salesforce instance.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "credentials_secret_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name of an AWS Secrets Manager secret that stores your authentication credentials for your Salesforce instance URL. For more information on the key-value pairs that must be included in your secret, depending on your authentication type, see Salesforce connection configuration.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "host_url": {
+                          "computed": true,
+                          "description": "The Salesforce host URL or instance URL.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "share_point_configuration": {
+              "computed": true,
+              "description": "The configuration information to connect to SharePoint as your data source.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "crawler_configuration": {
+                    "computed": true,
+                    "description": "The configuration of the SharePoint content. For example, configuring specific types of SharePoint content.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "filter_configuration": {
+                          "computed": true,
+                          "description": "The type of filtering that you want to apply to certain objects or content of the data source. For example, the PATTERN type is regular expression patterns you can apply to filter your content.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "pattern_object_filter": {
+                                "computed": true,
+                                "description": "The configuration of specific filters applied to your data source content. You can filter out or include certain content.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "filters": {
+                                      "computed": true,
+                                      "description": "Contains information",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "exclusion_filters": {
+                                            "computed": true,
+                                            "description": "A set of regular expression filter patterns for a type of object.",
+                                            "description_kind": "plain",
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          },
+                                          "inclusion_filters": {
+                                            "computed": true,
+                                            "description": "A set of regular expression filter patterns for a type of object.",
+                                            "description_kind": "plain",
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          },
+                                          "object_type": {
+                                            "computed": true,
+                                            "description": "The supported object type or content type of the data source.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "type": {
+                                "computed": true,
+                                "description": "The crawl filter type.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "source_configuration": {
+                    "computed": true,
+                    "description": "The endpoint information to connect to your SharePoint data source.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "auth_type": {
+                          "computed": true,
+                          "description": "The supported authentication type to authenticate and connect to your SharePoint site/sites.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "credentials_secret_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name of an AWS Secrets Manager secret that stores your authentication credentials for your SharePoint site/sites. For more information on the key-value pairs that must be included in your secret, depending on your authentication type, see SharePoint connection configuration.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "domain": {
+                          "computed": true,
+                          "description": "The domain of your SharePoint instance or site URL/URLs.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "host_type": {
+                          "computed": true,
+                          "description": "The supported host type, whether online/cloud or server/on-premises.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "site_urls": {
+                          "computed": true,
+                          "description": "A list of one or more SharePoint site URLs.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
+                        "tenant_id": {
+                          "computed": true,
+                          "description": "The identifier of your Microsoft 365 tenant.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "type": {
               "computed": true,
               "description": "The type of the data source location.",
               "description_kind": "plain",
               "type": "string"
+            },
+            "web_configuration": {
+              "computed": true,
+              "description": "Configures a web data source location.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "crawler_configuration": {
+                    "computed": true,
+                    "description": "Configuration for the web crawler.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "crawler_limits": {
+                          "computed": true,
+                          "description": "Limit settings for the web crawler.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "rate_limit": {
+                                "computed": true,
+                                "description": "Rate of web URLs retrieved per minute.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "exclusion_filters": {
+                          "computed": true,
+                          "description": "A set of regular expression filter patterns for a type of object.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
+                        "inclusion_filters": {
+                          "computed": true,
+                          "description": "A set of regular expression filter patterns for a type of object.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
+                        "scope": {
+                          "computed": true,
+                          "description": "The scope that a web crawl job will be restricted to.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "source_configuration": {
+                    "computed": true,
+                    "description": "A web source configuration.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "url_configuration": {
+                          "computed": true,
+                          "description": "A url configuration.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "seed_urls": {
+                                "computed": true,
+                                "description": "A list of web urls.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "url": {
+                                      "computed": true,
+                                      "description": "A web url.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"
@@ -174,6 +621,192 @@ const awsccBedrockDataSource = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "hierarchical_chunking_configuration": {
+                    "computed": true,
+                    "description": "Configurations for when you choose hierarchical chunking. If you set the chunkingStrategy as NONE, exclude this field.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "level_configurations": {
+                          "computed": true,
+                          "description": "Token settings for each layer.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "max_tokens": {
+                                "computed": true,
+                                "description": "The maximum number of tokens that a chunk can contain in this layer.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        },
+                        "overlap_tokens": {
+                          "computed": true,
+                          "description": "The number of tokens to repeat across chunks in the same layer.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "semantic_chunking_configuration": {
+                    "computed": true,
+                    "description": "Configurations for when you choose semantic chunking. If you set the chunkingStrategy as NONE, exclude this field.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "breakpoint_percentile_threshold": {
+                          "computed": true,
+                          "description": "The dissimilarity threshold for splitting chunks.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "buffer_size": {
+                          "computed": true,
+                          "description": "The buffer size.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "max_tokens": {
+                          "computed": true,
+                          "description": "The maximum number of tokens that a chunk can contain.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "custom_transformation_configuration": {
+              "computed": true,
+              "description": "Settings for customizing steps in the data source content ingestion pipeline.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "intermediate_storage": {
+                    "computed": true,
+                    "description": "A location for storing content from data sources temporarily as it is processed by custom components in the ingestion pipeline.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "s3_location": {
+                          "computed": true,
+                          "description": "An Amazon S3 location.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "uri": {
+                                "computed": true,
+                                "description": "The location's URI",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "transformations": {
+                    "computed": true,
+                    "description": "A list of Lambda functions that process documents.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "step_to_apply": {
+                          "computed": true,
+                          "description": "When the service applies the transformation.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "transformation_function": {
+                          "computed": true,
+                          "description": "A Lambda function that processes documents.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "transformation_lambda_configuration": {
+                                "computed": true,
+                                "description": "A Lambda function that processes documents.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "lambda_arn": {
+                                      "computed": true,
+                                      "description": "The function's ARN identifier.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "parsing_configuration": {
+              "computed": true,
+              "description": "Settings for parsing document contents",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "bedrock_foundation_model_configuration": {
+                    "computed": true,
+                    "description": "Settings for a foundation model used to parse documents for a data source.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "model_arn": {
+                          "computed": true,
+                          "description": "The model's ARN.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "parsing_prompt": {
+                          "computed": true,
+                          "description": "Instructions for interpreting the contents of a document.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "parsing_prompt_text": {
+                                "computed": true,
+                                "description": "Instructions for interpreting the contents of a document.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "parsing_strategy": {
+                    "computed": true,
+                    "description": "The parsing strategy for the data source.",
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"

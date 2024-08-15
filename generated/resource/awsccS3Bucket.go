@@ -763,7 +763,7 @@ const awsccS3Bucket = `{
                       "attributes": {
                         "partition_date_source": {
                           "computed": true,
-                          "description": "Specifies the partition date source for the partitioned prefix. PartitionDateSource can be EventTime or DeliveryTime.",
+                          "description": "Specifies the partition date source for the partitioned prefix. ` + "`" + `` + "`" + `PartitionDateSource` + "`" + `` + "`" + ` can be ` + "`" + `` + "`" + `EventTime` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DeliveryTime` + "`" + `` + "`" + `.\n For ` + "`" + `` + "`" + `DeliveryTime` + "`" + `` + "`" + `, the time in the log file names corresponds to the delivery time for the log files. \n  For ` + "`" + `` + "`" + `EventTime` + "`" + `` + "`" + `, The logs delivered are for a specific day only. The year, month, and day correspond to the day on which the event occurred, and the hour, minutes and seconds are set to 00 in the key.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -1566,7 +1566,7 @@ const awsccS3Bucket = `{
       },
       "versioning_configuration": {
         "computed": true,
-        "description": "Enables multiple versions of all objects in this bucket. You might enable versioning to prevent objects from being deleted or overwritten by mistake or to archive objects so that you can retrieve previous versions of them.",
+        "description": "Enables multiple versions of all objects in this bucket. You might enable versioning to prevent objects from being deleted or overwritten by mistake or to archive objects so that you can retrieve previous versions of them.\n  When you enable versioning on a bucket for the first time, it might take a short amount of time for the change to be fully propagated. We recommend that you wait for 15 minutes after enabling versioning before issuing write operations (` + "`" + `` + "`" + `PUT` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DELETE` + "`" + `` + "`" + `) on objects in the bucket.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

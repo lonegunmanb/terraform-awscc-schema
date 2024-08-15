@@ -39,10 +39,38 @@ const awsccCognitoLogDeliveryConfiguration = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "firehose_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "stream_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "log_level": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
+            },
+            "s3_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "bucket_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "list"

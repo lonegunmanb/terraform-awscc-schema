@@ -15,6 +15,18 @@ const awsccEc2SubnetCidrBlock = `{
         "required": true,
         "type": "string"
       },
+      "ip_source": {
+        "computed": true,
+        "description": "The IP Source of an IPv6 Subnet CIDR Block.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "ipv_6_address_attribute": {
+        "computed": true,
+        "description": "The value denoting whether an IPv6 Subnet CIDR Block is public or private.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "ipv_6_cidr_block": {
         "computed": true,
         "description": "The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length",
