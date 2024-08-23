@@ -194,6 +194,24 @@ const awsccMskReplicator = `{
                     },
                     "optional": true
                   },
+                  "topic_name_configuration": {
+                    "computed": true,
+                    "description": "Configuration for specifying replicated topic names should be the same as their corresponding upstream topics or prefixed with source cluster alias.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "type": {
+                          "computed": true,
+                          "description": "The type of replicated topic name.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "topics_to_exclude": {
                     "computed": true,
                     "description": "List of regular expression patterns indicating the topics that should not be replicated.",

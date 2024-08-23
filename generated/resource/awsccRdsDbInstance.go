@@ -565,7 +565,7 @@ const awsccRdsDbInstance = `{
       },
       "restore_time": {
         "computed": true,
-        "description": "The date and time to restore from.\n Constraints:\n  +  Must be a time in Universal Coordinated Time (UTC) format.\n  +  Must be before the latest restorable time for the DB instance.\n  +  Can't be specified if the ` + "`" + `` + "`" + `UseLatestRestorableTime` + "`" + `` + "`" + ` parameter is enabled.\n  \n Example: ` + "`" + `` + "`" + `2009-09-07T23:45:00Z` + "`" + `` + "`" + `",
+        "description": "The date and time to restore from. This parameter applies to point-in-time recovery. For more information, see [Restoring a DB instance to a specified time](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIT.html) in the in the *Amazon RDS User Guide*.\n Constraints:\n  +  Must be a time in Universal Coordinated Time (UTC) format.\n  +  Must be before the latest restorable time for the DB instance.\n  +  Can't be specified if the ` + "`" + `` + "`" + `UseLatestRestorableTime` + "`" + `` + "`" + ` parameter is enabled.\n  \n Example: ` + "`" + `` + "`" + `2009-09-07T23:45:00Z` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -678,7 +678,7 @@ const awsccRdsDbInstance = `{
       },
       "use_latest_restorable_time": {
         "computed": true,
-        "description": "Specifies whether the DB instance is restored from the latest backup time. By default, the DB instance isn't restored from the latest backup time.\n Constraints:\n  +  Can't be specified if the ` + "`" + `` + "`" + `RestoreTime` + "`" + `` + "`" + ` parameter is provided.",
+        "description": "Specifies whether the DB instance is restored from the latest backup time. By default, the DB instance isn't restored from the latest backup time. This parameter applies to point-in-time recovery. For more information, see [Restoring a DB instance to a specified time](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIT.html) in the in the *Amazon RDS User Guide*.\n Constraints:\n  +  Can't be specified if the ` + "`" + `` + "`" + `RestoreTime` + "`" + `` + "`" + ` parameter is provided.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"

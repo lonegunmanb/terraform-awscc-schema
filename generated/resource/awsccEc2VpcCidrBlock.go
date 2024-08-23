@@ -29,6 +29,12 @@ const awsccEc2VpcCidrBlock = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "ip_source": {
+        "computed": true,
+        "description": "The IP Source of an IPv6 VPC CIDR Block.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "ipv_4_ipam_pool_id": {
         "computed": true,
         "description": "The ID of the IPv4 IPAM pool to Associate a CIDR from to a VPC.",
@@ -42,6 +48,12 @@ const awsccEc2VpcCidrBlock = `{
         "description_kind": "plain",
         "optional": true,
         "type": "number"
+      },
+      "ipv_6_address_attribute": {
+        "computed": true,
+        "description": "The value denoting whether an IPv6 VPC CIDR Block is public or private.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "ipv_6_cidr_block": {
         "computed": true,

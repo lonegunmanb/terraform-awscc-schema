@@ -32,6 +32,12 @@ const awsccEc2Ipam = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "enable_private_gua": {
+        "computed": true,
+        "description": "Enable provisioning of GUA space in private pools.",
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

@@ -70,6 +70,11 @@ const awsccCodebuildFleet = `{
         "required": true,
         "type": "string"
       },
+      "image_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "name": {
         "computed": true,
         "description_kind": "plain",

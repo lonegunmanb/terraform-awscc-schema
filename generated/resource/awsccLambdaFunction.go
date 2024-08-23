@@ -296,6 +296,13 @@ const awsccLambdaFunction = `{
         "optional": true,
         "type": "string"
       },
+      "recursive_loop": {
+        "computed": true,
+        "description": "The function recursion configuration.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "reserved_concurrent_executions": {
         "computed": true,
         "description": "The number of simultaneous executions to reserve for the function.",

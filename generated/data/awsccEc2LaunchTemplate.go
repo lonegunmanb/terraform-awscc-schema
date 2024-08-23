@@ -1221,7 +1221,7 @@ const awsccEc2LaunchTemplate = `{
       },
       "tag_specifications": {
         "computed": true,
-        "description": "The tags to apply to the launch template on creation. To tag the launch template, the resource type must be ` + "`" + `` + "`" + `launch-template` + "`" + `` + "`" + `.\n To specify the tags for the resources that are created when an instance is launched, you must use [TagSpecifications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-tagspecifications).",
+        "description": "The tags to apply to the launch template on creation. To tag the launch template, the resource type must be ` + "`" + `` + "`" + `launch-template` + "`" + `` + "`" + `.\n To specify the tags for the resources that are created when an instance is launched, you must use [TagSpecifications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications).",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

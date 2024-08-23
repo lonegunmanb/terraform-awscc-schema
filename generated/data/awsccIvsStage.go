@@ -21,6 +21,31 @@ const awsccIvsStage = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "auto_participant_recording_configuration": {
+        "computed": true,
+        "description": "Configuration object for individual participant recording, to attach to the new stage.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "media_types": {
+              "computed": true,
+              "description": "Types of media to be recorded. Default: AUDIO_VIDEO.",
+              "description_kind": "plain",
+              "type": [
+                "set",
+                "string"
+              ]
+            },
+            "storage_configuration_arn": {
+              "computed": true,
+              "description": "ARN of the StorageConfiguration resource to use for individual participant recording.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
