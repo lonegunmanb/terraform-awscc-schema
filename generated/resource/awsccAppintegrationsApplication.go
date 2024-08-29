@@ -73,10 +73,9 @@ const awsccAppintegrationsApplication = `{
         "type": "string"
       },
       "namespace": {
-        "computed": true,
         "description": "The namespace of the application.",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "permissions": {

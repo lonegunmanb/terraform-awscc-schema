@@ -27,6 +27,20 @@ const awsccEntityresolutionMatchingWorkflow = `{
         "required": true,
         "type": "string"
       },
+      "incremental_run_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "incremental_run_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "input_source_config": {
         "computed": true,
         "description_kind": "plain",

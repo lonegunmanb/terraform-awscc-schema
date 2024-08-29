@@ -33,6 +33,33 @@ const awsccQbusinessApplication = `{
           "nesting_mode": "single"
         }
       },
+      "auto_subscription_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "auto_subscribe": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "default_subscription_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "client_ids_for_oidc": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "created_at": {
         "computed": true,
         "description_kind": "plain",
@@ -62,6 +89,11 @@ const awsccQbusinessApplication = `{
           "nesting_mode": "single"
         }
       },
+      "iam_identity_provider_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -77,6 +109,25 @@ const awsccQbusinessApplication = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "identity_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "personalization_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "personalization_control_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "q_apps_configuration": {
         "computed": true,

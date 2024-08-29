@@ -92,6 +92,26 @@ const awsccIotfleetwiseCampaign = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "mqtt_topic_config": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "execution_role_arn": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  },
+                  "mqtt_topic_arn": {
+                    "description_kind": "plain",
+                    "required": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "s3_config": {
               "computed": true,
               "description_kind": "plain",

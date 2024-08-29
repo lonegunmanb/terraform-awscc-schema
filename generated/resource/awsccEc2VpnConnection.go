@@ -17,6 +17,7 @@ const awsccEc2VpnConnection = `{
       },
       "enable_acceleration": {
         "computed": true,
+        "description": "Indicate whether to enable acceleration for the VPN connection.\n Default: ` + "`" + `` + "`" + `false` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
@@ -25,6 +26,36 @@ const awsccEc2VpnConnection = `{
         "computed": true,
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
+        "type": "string"
+      },
+      "local_ipv_4_network_cidr": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "local_ipv_6_network_cidr": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "outside_ip_address_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "remote_ipv_4_network_cidr": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "remote_ipv_6_network_cidr": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "static_routes_only": {
@@ -60,6 +91,18 @@ const awsccEc2VpnConnection = `{
       "transit_gateway_id": {
         "computed": true,
         "description": "The ID of the transit gateway associated with the VPN connection.\n You must specify either ` + "`" + `` + "`" + `TransitGatewayId` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `VpnGatewayId` + "`" + `` + "`" + `, but not both.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "transport_transit_gateway_attachment_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "tunnel_inside_ip_version": {
+        "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "string"

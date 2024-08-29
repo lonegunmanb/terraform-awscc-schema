@@ -34,6 +34,36 @@ const awsccQbusinessApplication = `{
         },
         "optional": true
       },
+      "auto_subscription_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "auto_subscribe": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            },
+            "default_subscription_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "client_ids_for_oidc": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "created_at": {
         "computed": true,
         "description_kind": "plain",
@@ -66,6 +96,12 @@ const awsccQbusinessApplication = `{
         },
         "optional": true
       },
+      "iam_identity_provider_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -82,6 +118,27 @@ const awsccQbusinessApplication = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "identity_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "personalization_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "personalization_control_mode": {
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "q_apps_configuration": {
         "computed": true,

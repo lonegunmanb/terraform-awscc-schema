@@ -30,6 +30,48 @@ const awsccQbusinessWebExperience = `{
         "required": true,
         "type": "string"
       },
+      "identity_provider_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "open_id_connect_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "secrets_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "secrets_role": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "saml_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "authentication_url": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "role_arn": {
         "computed": true,
         "description_kind": "plain",

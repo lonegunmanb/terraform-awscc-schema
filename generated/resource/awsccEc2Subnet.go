@@ -82,7 +82,6 @@ const awsccEc2Subnet = `{
         "computed": true,
         "description": "The IPv6 network ranges for the subnet, in CIDR notation.",
         "description_kind": "plain",
-        "optional": true,
         "type": [
           "list",
           "string"
