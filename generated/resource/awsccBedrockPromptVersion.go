@@ -21,6 +21,12 @@ const awsccBedrockPromptVersion = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "customer_encryption_key_arn": {
+        "computed": true,
+        "description": "A KMS key ARN",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "default_variant": {
         "computed": true,
         "description": "Name for a variant.",
@@ -57,6 +63,16 @@ const awsccBedrockPromptVersion = `{
         "description": "Identifier for a Prompt",
         "description_kind": "plain",
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "A map of tag keys and values",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "map",
+          "string"
+        ]
       },
       "updated_at": {
         "computed": true,

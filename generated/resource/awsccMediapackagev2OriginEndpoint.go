@@ -26,9 +26,8 @@ const awsccMediapackagev2OriginEndpoint = `{
         "type": "string"
       },
       "container_type": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "created_at": {

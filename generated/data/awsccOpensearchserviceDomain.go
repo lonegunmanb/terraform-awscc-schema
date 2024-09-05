@@ -47,6 +47,35 @@ const awsccOpensearchserviceDomain = `{
               "description_kind": "plain",
               "type": "bool"
             },
+            "jwt_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "public_key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "roles_key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "subject_key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "master_user_options": {
               "computed": true,
               "description_kind": "plain",
@@ -513,6 +542,11 @@ const awsccOpensearchserviceDomain = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "skip_shard_migration_wait": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
       },
       "snapshot_options": {
         "computed": true,

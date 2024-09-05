@@ -15,6 +15,12 @@ const awsccBedrockFlowVersion = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "customer_encryption_key_arn": {
+        "computed": true,
+        "description": "A KMS key ARN",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "definition": {
         "computed": true,
         "description": "Flow definition",
@@ -115,6 +121,28 @@ const awsccBedrockFlowVersion = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "agent": {
+                          "computed": true,
+                          "description": "Agent flow node configuration",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "agent_alias_arn": {
+                                "computed": true,
+                                "description": "Arn representation of the Agent Alias.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "collector": {
+                          "computed": true,
+                          "description": "Collector flow node configuration",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "condition": {
                           "computed": true,
                           "description": "Condition flow node configuration",
@@ -150,6 +178,12 @@ const awsccBedrockFlowVersion = `{
                         "input": {
                           "computed": true,
                           "description": "Input flow node configuration",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "iterator": {
+                          "computed": true,
+                          "description": "Iterator flow node configuration",
                           "description_kind": "plain",
                           "type": "string"
                         },
@@ -357,6 +391,78 @@ const awsccBedrockFlowVersion = `{
                                           "prompt_arn": {
                                             "computed": true,
                                             "description": "ARN of a prompt resource possibly with a version",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "retrieval": {
+                          "computed": true,
+                          "description": "Retrieval flow node configuration",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "service_configuration": {
+                                "computed": true,
+                                "description": "Retrieval service configuration for Retrieval node",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "s3": {
+                                      "computed": true,
+                                      "description": "s3 Retrieval configuration for Retrieval node",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "bucket_name": {
+                                            "computed": true,
+                                            "description": "bucket name of an s3 that will be used for Retrieval flow node configuration",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "storage": {
+                          "computed": true,
+                          "description": "Storage flow node configuration",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "service_configuration": {
+                                "computed": true,
+                                "description": "storage service configuration for storage node",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "s3": {
+                                      "computed": true,
+                                      "description": "s3 storage configuration for storage node",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "bucket_name": {
+                                            "computed": true,
+                                            "description": "bucket name of an s3 that will be used for storage flow node configuration",
                                             "description_kind": "plain",
                                             "type": "string"
                                           }

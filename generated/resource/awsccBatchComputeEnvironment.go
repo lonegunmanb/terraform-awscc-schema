@@ -191,6 +191,12 @@ const awsccBatchComputeEnvironment = `{
         },
         "optional": true
       },
+      "context": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "eks_configuration": {
         "computed": true,
         "description_kind": "plain",

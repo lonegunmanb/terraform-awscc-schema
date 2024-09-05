@@ -169,6 +169,11 @@ const awsccBatchComputeEnvironment = `{
           "nesting_mode": "single"
         }
       },
+      "context": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "eks_configuration": {
         "computed": true,
         "description_kind": "plain",
