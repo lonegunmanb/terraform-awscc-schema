@@ -42,7 +42,7 @@ const awsccMediaconnectFlow = `{
       },
       "maintenance": {
         "computed": true,
-        "description": "The maintenance settings you want to use for the flow. ",
+        "description": "The maintenance settings you want to use for the flow.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -549,6 +549,23 @@ const awsccMediaconnectFlow = `{
               "computed": true,
               "description_kind": "plain",
               "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "source_monitoring_config": {
+        "computed": true,
+        "description": "The source monitoring config of the flow.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "thumbnail_state": {
+              "description": "The state of thumbnail monitoring.",
+              "description_kind": "plain",
+              "required": true,
               "type": "string"
             }
           },

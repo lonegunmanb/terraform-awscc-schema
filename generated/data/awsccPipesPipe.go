@@ -92,6 +92,11 @@ const awsccPipesPipe = `{
         "required": true,
         "type": "string"
       },
+      "kms_key_identifier": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "last_modified_time": {
         "computed": true,
         "description_kind": "plain",

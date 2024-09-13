@@ -147,9 +147,8 @@ const awsccPaymentcryptographyKey = `{
               "type": "string"
             },
             "value": {
-              "computed": true,
               "description_kind": "plain",
-              "optional": true,
+              "required": true,
               "type": "string"
             }
           },

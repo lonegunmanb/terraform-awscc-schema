@@ -27,6 +27,12 @@ const awsccApplicationsignalsServiceLevelObjective = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "evaluation_type": {
+        "computed": true,
+        "description": "Displays whether this is a period-based SLO or a request-based SLO.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "goal": {
         "computed": true,
         "description": "A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.",
@@ -126,6 +132,387 @@ const awsccApplicationsignalsServiceLevelObjective = `{
         "description": "The name of this SLO.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "request_based_sli": {
+        "computed": true,
+        "description": "This structure contains information about the performance metric that a request-based SLO monitors.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "comparison_operator": {
+              "computed": true,
+              "description": "The arithmetic operation used when comparing the specified metric to the threshold.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "metric_threshold": {
+              "computed": true,
+              "description": "The value that the SLI metric is compared to.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "request_based_sli_metric": {
+              "computed": true,
+              "description": "This structure contains the information about the metric that is used for a request-based SLO.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key_attributes": {
+                    "computed": true,
+                    "description": "This is a string-to-string map that contains information about the type of object that this SLO is related to.",
+                    "description_kind": "plain",
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  },
+                  "metric_type": {
+                    "computed": true,
+                    "description": "If the SLO monitors either the LATENCY or AVAILABILITY metric that Application Signals collects, this field displays which of those metrics is used.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "monitored_request_count_metric": {
+                    "computed": true,
+                    "description": "This structure defines the metric that is used as the \"good request\" or \"bad request\" value for a request-based SLO. This value observed for the metric defined in ` + "`" + `TotalRequestCountMetric` + "`" + ` is divided by the number found for ` + "`" + `MonitoredRequestCountMetric` + "`" + ` to determine the percentage of successful requests that this SLO tracks.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "bad_count_metric": {
+                          "computed": true,
+                          "description": "If you want to count \"bad requests\" to determine the percentage of successful requests for this request-based SLO, specify the metric to use as \"bad requests\" in this structure.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "account_id": {
+                                "computed": true,
+                                "description": "The ID of the account where the metrics are located, if this is a cross-account alarm.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "expression": {
+                                "computed": true,
+                                "description": "The math expression to be performed on the returned data.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "id": {
+                                "computed": true,
+                                "description": "A short name used to tie this object to the results in the response.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "metric_stat": {
+                                "computed": true,
+                                "description": "A metric to be used directly for the SLO, or to be used in the math expression that will be used for the SLO. Within one MetricDataQuery, you must specify either Expression or MetricStat but not both.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "metric": {
+                                      "computed": true,
+                                      "description": "This structure defines the metric used for a service level indicator, including the metric name, namespace, and dimensions.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "dimensions": {
+                                            "computed": true,
+                                            "description": "An array of one or more dimensions to use to define the metric that you want to use.",
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "name": {
+                                                  "computed": true,
+                                                  "description": "The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (:). ASCII control characters are not supported as part of dimension names.",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "value": {
+                                                  "computed": true,
+                                                  "description": "The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character. ASCII control characters are not supported as part of dimension values",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            }
+                                          },
+                                          "metric_name": {
+                                            "computed": true,
+                                            "description": "The name of the metric to use.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "namespace": {
+                                            "computed": true,
+                                            "description": "The namespace of the metric.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "period": {
+                                      "computed": true,
+                                      "description": "The granularity, in seconds, to be used for the metric.",
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    },
+                                    "stat": {
+                                      "computed": true,
+                                      "description": "The statistic to use for comparison to the threshold. It can be any CloudWatch statistic or extended statistic.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "unit": {
+                                      "computed": true,
+                                      "description": "If you omit Unit then all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "return_data": {
+                                "computed": true,
+                                "description": "This option indicates whether to return the timestamps and raw data values of this metric.",
+                                "description_kind": "plain",
+                                "type": "bool"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        },
+                        "good_count_metric": {
+                          "computed": true,
+                          "description": "If you want to count \"good requests\" to determine the percentage of successful requests for this request-based SLO, specify the metric to use as \"good requests\" in this structure.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "account_id": {
+                                "computed": true,
+                                "description": "The ID of the account where the metrics are located, if this is a cross-account alarm.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "expression": {
+                                "computed": true,
+                                "description": "The math expression to be performed on the returned data.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "id": {
+                                "computed": true,
+                                "description": "A short name used to tie this object to the results in the response.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "metric_stat": {
+                                "computed": true,
+                                "description": "A metric to be used directly for the SLO, or to be used in the math expression that will be used for the SLO. Within one MetricDataQuery, you must specify either Expression or MetricStat but not both.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "metric": {
+                                      "computed": true,
+                                      "description": "This structure defines the metric used for a service level indicator, including the metric name, namespace, and dimensions.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "dimensions": {
+                                            "computed": true,
+                                            "description": "An array of one or more dimensions to use to define the metric that you want to use.",
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "name": {
+                                                  "computed": true,
+                                                  "description": "The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (:). ASCII control characters are not supported as part of dimension names.",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "value": {
+                                                  "computed": true,
+                                                  "description": "The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character. ASCII control characters are not supported as part of dimension values",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            }
+                                          },
+                                          "metric_name": {
+                                            "computed": true,
+                                            "description": "The name of the metric to use.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "namespace": {
+                                            "computed": true,
+                                            "description": "The namespace of the metric.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "period": {
+                                      "computed": true,
+                                      "description": "The granularity, in seconds, to be used for the metric.",
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    },
+                                    "stat": {
+                                      "computed": true,
+                                      "description": "The statistic to use for comparison to the threshold. It can be any CloudWatch statistic or extended statistic.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "unit": {
+                                      "computed": true,
+                                      "description": "If you omit Unit then all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "return_data": {
+                                "computed": true,
+                                "description": "This option indicates whether to return the timestamps and raw data values of this metric.",
+                                "description_kind": "plain",
+                                "type": "bool"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "operation_name": {
+                    "computed": true,
+                    "description": "If the SLO monitors a specific operation of the service, this field displays that operation name.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "total_request_count_metric": {
+                    "computed": true,
+                    "description": "This structure defines the metric that is used as the \"total requests\" number for a request-based SLO. The number observed for this metric is divided by the number of \"good requests\" or \"bad requests\" that is observed for the metric defined in ` + "`" + `MonitoredRequestCountMetric` + "`" + `.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "account_id": {
+                          "computed": true,
+                          "description": "The ID of the account where the metrics are located, if this is a cross-account alarm.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "expression": {
+                          "computed": true,
+                          "description": "The math expression to be performed on the returned data.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "id": {
+                          "computed": true,
+                          "description": "A short name used to tie this object to the results in the response.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "metric_stat": {
+                          "computed": true,
+                          "description": "A metric to be used directly for the SLO, or to be used in the math expression that will be used for the SLO. Within one MetricDataQuery, you must specify either Expression or MetricStat but not both.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "metric": {
+                                "computed": true,
+                                "description": "This structure defines the metric used for a service level indicator, including the metric name, namespace, and dimensions.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "dimensions": {
+                                      "computed": true,
+                                      "description": "An array of one or more dimensions to use to define the metric that you want to use.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "name": {
+                                            "computed": true,
+                                            "description": "The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (:). ASCII control characters are not supported as part of dimension names.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "value": {
+                                            "computed": true,
+                                            "description": "The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character. ASCII control characters are not supported as part of dimension values",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      }
+                                    },
+                                    "metric_name": {
+                                      "computed": true,
+                                      "description": "The name of the metric to use.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "namespace": {
+                                      "computed": true,
+                                      "description": "The namespace of the metric.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "period": {
+                                "computed": true,
+                                "description": "The granularity, in seconds, to be used for the metric.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "stat": {
+                                "computed": true,
+                                "description": "The statistic to use for comparison to the threshold. It can be any CloudWatch statistic or extended statistic.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "unit": {
+                                "computed": true,
+                                "description": "If you omit Unit then all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "return_data": {
+                          "computed": true,
+                          "description": "This option indicates whether to return the timestamps and raw data values of this metric.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "sli": {
         "computed": true,

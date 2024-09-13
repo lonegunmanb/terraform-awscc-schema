@@ -72,6 +72,33 @@ const awsccSagemakerSpace = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "app_lifecycle_management": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "idle_settings": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "idle_timeout_in_minutes": {
+                                "computed": true,
+                                "description": "The space idle timeout value set in minutes",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "default_resource_spec": {
                     "computed": true,
                     "description_kind": "plain",
@@ -146,6 +173,33 @@ const awsccSagemakerSpace = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "app_lifecycle_management": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "idle_settings": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "idle_timeout_in_minutes": {
+                                "computed": true,
+                                "description": "The space idle timeout value set in minutes",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "code_repositories": {
                     "computed": true,
                     "description": "A list of CodeRepositories available for use with JupyterLab apps.",

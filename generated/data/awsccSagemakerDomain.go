@@ -93,6 +93,48 @@ const awsccSagemakerDomain = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "app_lifecycle_management": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "idle_settings": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "idle_timeout_in_minutes": {
+                                "computed": true,
+                                "description": "The idle timeout value set in minutes",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "lifecycle_management": {
+                                "computed": true,
+                                "description": "A flag to enable/disable AppLifecycleManagement settings",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "max_idle_timeout_in_minutes": {
+                                "computed": true,
+                                "description": "The maximum idle timeout value set in minutes",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "min_idle_timeout_in_minutes": {
+                                "computed": true,
+                                "description": "The minimum idle timeout value set in minutes",
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "code_repositories": {
                     "computed": true,
                     "description": "A list of CodeRepositories available for use with JupyterLab apps.",
@@ -374,6 +416,48 @@ const awsccSagemakerDomain = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "app_lifecycle_management": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "idle_settings": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "idle_timeout_in_minutes": {
+                                "computed": true,
+                                "description": "The idle timeout value set in minutes",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "lifecycle_management": {
+                                "computed": true,
+                                "description": "A flag to enable/disable AppLifecycleManagement settings",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "max_idle_timeout_in_minutes": {
+                                "computed": true,
+                                "description": "The maximum idle timeout value set in minutes",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "min_idle_timeout_in_minutes": {
+                                "computed": true,
+                                "description": "The minimum idle timeout value set in minutes",
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "custom_images": {
                     "computed": true,
                     "description": "A list of custom images for use for CodeEditor apps.",
@@ -514,6 +598,48 @@ const awsccSagemakerDomain = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "app_lifecycle_management": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "idle_settings": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "idle_timeout_in_minutes": {
+                                "computed": true,
+                                "description": "The idle timeout value set in minutes",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "lifecycle_management": {
+                                "computed": true,
+                                "description": "A flag to enable/disable AppLifecycleManagement settings",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "max_idle_timeout_in_minutes": {
+                                "computed": true,
+                                "description": "The maximum idle timeout value set in minutes",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "min_idle_timeout_in_minutes": {
+                                "computed": true,
+                                "description": "The minimum idle timeout value set in minutes",
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "code_repositories": {
                     "computed": true,
                     "description": "A list of CodeRepositories available for use with JupyterLab apps.",

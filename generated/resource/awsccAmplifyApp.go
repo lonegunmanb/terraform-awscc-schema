@@ -179,6 +179,22 @@ const awsccAmplifyApp = `{
         "optional": true,
         "type": "string"
       },
+      "cache_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "custom_headers": {
         "computed": true,
         "description_kind": "plain",
