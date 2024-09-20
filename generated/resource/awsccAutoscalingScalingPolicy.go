@@ -93,6 +93,7 @@ const awsccAutoscalingScalingPolicy = `{
               "type": "number"
             },
             "metric_specifications": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -102,6 +103,7 @@ const awsccAutoscalingScalingPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "metric_data_queries": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -112,8 +114,9 @@ const awsccAutoscalingScalingPolicy = `{
                                 "type": "string"
                               },
                               "id": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "label": {
@@ -128,6 +131,7 @@ const awsccAutoscalingScalingPolicy = `{
                                 "nested_type": {
                                   "attributes": {
                                     "metric": {
+                                      "computed": true,
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
@@ -137,13 +141,15 @@ const awsccAutoscalingScalingPolicy = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "name": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "value": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -152,23 +158,26 @@ const awsccAutoscalingScalingPolicy = `{
                                             "optional": true
                                           },
                                           "metric_name": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "namespace": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "stat": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "unit": {
@@ -191,7 +200,7 @@ const awsccAutoscalingScalingPolicy = `{
                             },
                             "nesting_mode": "set"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -204,6 +213,7 @@ const awsccAutoscalingScalingPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "metric_data_queries": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -214,8 +224,9 @@ const awsccAutoscalingScalingPolicy = `{
                                 "type": "string"
                               },
                               "id": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "label": {
@@ -230,6 +241,7 @@ const awsccAutoscalingScalingPolicy = `{
                                 "nested_type": {
                                   "attributes": {
                                     "metric": {
+                                      "computed": true,
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
@@ -239,13 +251,15 @@ const awsccAutoscalingScalingPolicy = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "name": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "value": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -254,23 +268,26 @@ const awsccAutoscalingScalingPolicy = `{
                                             "optional": true
                                           },
                                           "metric_name": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "namespace": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "stat": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "unit": {
@@ -293,7 +310,7 @@ const awsccAutoscalingScalingPolicy = `{
                             },
                             "nesting_mode": "set"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -306,6 +323,7 @@ const awsccAutoscalingScalingPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "metric_data_queries": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -316,8 +334,9 @@ const awsccAutoscalingScalingPolicy = `{
                                 "type": "string"
                               },
                               "id": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "label": {
@@ -332,6 +351,7 @@ const awsccAutoscalingScalingPolicy = `{
                                 "nested_type": {
                                   "attributes": {
                                     "metric": {
+                                      "computed": true,
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
@@ -341,13 +361,15 @@ const awsccAutoscalingScalingPolicy = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "name": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "value": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -356,23 +378,26 @@ const awsccAutoscalingScalingPolicy = `{
                                             "optional": true
                                           },
                                           "metric_name": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "namespace": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "stat": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "unit": {
@@ -395,7 +420,7 @@ const awsccAutoscalingScalingPolicy = `{
                             },
                             "nesting_mode": "set"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -408,8 +433,9 @@ const awsccAutoscalingScalingPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "predefined_metric_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "resource_label": {
@@ -429,8 +455,9 @@ const awsccAutoscalingScalingPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "predefined_metric_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "resource_label": {
@@ -450,8 +477,9 @@ const awsccAutoscalingScalingPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "predefined_metric_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "resource_label": {
@@ -466,14 +494,15 @@ const awsccAutoscalingScalingPolicy = `{
                     "optional": true
                   },
                   "target_value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
                 "nesting_mode": "set"
               },
-              "required": true
+              "optional": true
             },
             "mode": {
               "computed": true,
@@ -518,8 +547,9 @@ const awsccAutoscalingScalingPolicy = `{
               "type": "number"
             },
             "scaling_adjustment": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -544,13 +574,15 @@ const awsccAutoscalingScalingPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -576,8 +608,9 @@ const awsccAutoscalingScalingPolicy = `{
                           "type": "string"
                         },
                         "id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "label": {
@@ -592,6 +625,7 @@ const awsccAutoscalingScalingPolicy = `{
                           "nested_type": {
                             "attributes": {
                               "metric": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
@@ -601,13 +635,15 @@ const awsccAutoscalingScalingPolicy = `{
                                       "nested_type": {
                                         "attributes": {
                                           "name": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "value": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -616,23 +652,26 @@ const awsccAutoscalingScalingPolicy = `{
                                       "optional": true
                                     },
                                     "metric_name": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "namespace": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "stat": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "unit": {
@@ -692,8 +731,9 @@ const awsccAutoscalingScalingPolicy = `{
               "nested_type": {
                 "attributes": {
                   "predefined_metric_type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "resource_label": {
@@ -708,8 +748,9 @@ const awsccAutoscalingScalingPolicy = `{
               "optional": true
             },
             "target_value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },

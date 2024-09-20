@@ -22,15 +22,17 @@ const awsccEc2TransitGatewayRouteTable = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key of the associated tag key-value pair",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value of the associated tag key-value pair",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

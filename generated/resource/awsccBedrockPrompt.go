@@ -150,9 +150,10 @@ const awsccBedrockPrompt = `{
               "type": "string"
             },
             "name": {
+              "computed": true,
               "description": "Name for a variant.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "template_configuration": {
@@ -199,15 +200,17 @@ const awsccBedrockPrompt = `{
                           "nested_type": {
                             "attributes": {
                               "bucket": {
+                                "computed": true,
                                 "description": "A bucket in S3",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "key": {
+                                "computed": true,
                                 "description": "A object key in S3",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "version": {
@@ -233,9 +236,10 @@ const awsccBedrockPrompt = `{
               "optional": true
             },
             "template_type": {
+              "computed": true,
               "description": "Prompt template type",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

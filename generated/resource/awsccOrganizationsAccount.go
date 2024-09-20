@@ -81,15 +81,17 @@ const awsccOrganizationsAccount = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key identifier, or name, of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The string value that's associated with the key of the tag. You can set the value of a tag to an empty string, but you can't set the value of a tag to null.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

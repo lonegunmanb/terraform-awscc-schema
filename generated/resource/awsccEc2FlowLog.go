@@ -29,18 +29,21 @@ const awsccEc2FlowLog = `{
         "nested_type": {
           "attributes": {
             "file_format": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "hive_compatible_partitions": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "per_hour_partition": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             }
           },
@@ -114,13 +117,15 @@ const awsccEc2FlowLog = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

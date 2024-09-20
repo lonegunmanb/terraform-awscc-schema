@@ -29,15 +29,17 @@ const awsccCodepipelineCustomActionType = `{
               "type": "string"
             },
             "key": {
+              "computed": true,
               "description": "Whether the configuration property is a key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "name": {
+              "computed": true,
               "description": "The name of the action configuration property.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "queryable": {
@@ -48,15 +50,17 @@ const awsccCodepipelineCustomActionType = `{
               "type": "bool"
             },
             "required": {
+              "computed": true,
               "description": "Whether the configuration property is a required value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "secret": {
+              "computed": true,
               "description": "Whether the configuration property is secret. Secrets are hidden from all calls except for GetJobDetails, GetThirdPartyJobDetails, PollForJobs, and PollForThirdPartyJobs.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "type": {
@@ -178,13 +182,15 @@ const awsccCodepipelineCustomActionType = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

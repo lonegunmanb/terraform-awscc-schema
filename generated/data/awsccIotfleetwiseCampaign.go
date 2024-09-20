@@ -235,6 +235,75 @@ const awsccIotfleetwiseCampaign = `{
           "nesting_mode": "list"
         }
       },
+      "signals_to_fetch": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "actions": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "condition_language_version": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "fully_qualified_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "signal_fetch_config": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "condition_based": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "condition_expression": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "trigger_mode": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "time_based": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "execution_frequency_ms": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "spooling_mode": {
         "computed": true,
         "description_kind": "plain",

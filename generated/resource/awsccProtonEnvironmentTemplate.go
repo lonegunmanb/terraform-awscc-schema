@@ -61,15 +61,17 @@ const awsccProtonEnvironmentTemplate = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "\u003cp\u003eThe key of the resource tag.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "\u003cp\u003eThe value of the resource tag.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

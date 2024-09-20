@@ -16,6 +16,7 @@ const awsccSagemakerModelPackage = `{
         "nested_type": {
           "attributes": {
             "containers": {
+              "computed": true,
               "description": "The Amazon ECR registry path of the Docker image that contains the inference code.",
               "description_kind": "plain",
               "nested_type": {
@@ -52,9 +53,10 @@ const awsccSagemakerModelPackage = `{
                     "type": "string"
                   },
                   "image": {
+                    "computed": true,
                     "description": "The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "image_digest": {
@@ -77,9 +79,10 @@ const awsccSagemakerModelPackage = `{
                           "nested_type": {
                             "attributes": {
                               "compression_type": {
+                                "computed": true,
                                 "description": "Specifies how the ML model data is prepared.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "model_access_config": {
@@ -89,9 +92,10 @@ const awsccSagemakerModelPackage = `{
                                 "nested_type": {
                                   "attributes": {
                                     "accept_eula": {
+                                      "computed": true,
                                       "description": "Specifies agreement to the model end-user license agreement (EULA).",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "bool"
                                     }
                                   },
@@ -100,15 +104,17 @@ const awsccSagemakerModelPackage = `{
                                 "optional": true
                               },
                               "s3_data_type": {
+                                "computed": true,
                                 "description": "Specifies the type of ML model data to deploy.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "s3_uri": {
+                                "computed": true,
                                 "description": "Specifies the S3 path of ML model data to deploy.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -134,9 +140,10 @@ const awsccSagemakerModelPackage = `{
                     "nested_type": {
                       "attributes": {
                         "data_input_config": {
+                          "computed": true,
                           "description": "The input configuration object for the model.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -154,7 +161,7 @@ const awsccSagemakerModelPackage = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "description": {
               "computed": true,
@@ -164,9 +171,10 @@ const awsccSagemakerModelPackage = `{
               "type": "string"
             },
             "name": {
+              "computed": true,
               "description": "A unique name to identify the additional inference specification. The name must be unique within the list of your additional inference specifications for a particular model package.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "supported_content_types": {
@@ -221,6 +229,7 @@ const awsccSagemakerModelPackage = `{
         "nested_type": {
           "attributes": {
             "containers": {
+              "computed": true,
               "description": "The Amazon ECR registry path of the Docker image that contains the inference code.",
               "description_kind": "plain",
               "nested_type": {
@@ -257,9 +266,10 @@ const awsccSagemakerModelPackage = `{
                     "type": "string"
                   },
                   "image": {
+                    "computed": true,
                     "description": "The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "image_digest": {
@@ -282,9 +292,10 @@ const awsccSagemakerModelPackage = `{
                           "nested_type": {
                             "attributes": {
                               "compression_type": {
+                                "computed": true,
                                 "description": "Specifies how the ML model data is prepared.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "model_access_config": {
@@ -294,9 +305,10 @@ const awsccSagemakerModelPackage = `{
                                 "nested_type": {
                                   "attributes": {
                                     "accept_eula": {
+                                      "computed": true,
                                       "description": "Specifies agreement to the model end-user license agreement (EULA).",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "bool"
                                     }
                                   },
@@ -305,15 +317,17 @@ const awsccSagemakerModelPackage = `{
                                 "optional": true
                               },
                               "s3_data_type": {
+                                "computed": true,
                                 "description": "Specifies the type of ML model data to deploy.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "s3_uri": {
+                                "computed": true,
                                 "description": "Specifies the S3 path of ML model data to deploy.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -339,9 +353,10 @@ const awsccSagemakerModelPackage = `{
                     "nested_type": {
                       "attributes": {
                         "data_input_config": {
+                          "computed": true,
                           "description": "The input configuration object for the model.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -359,7 +374,7 @@ const awsccSagemakerModelPackage = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "description": {
               "computed": true,
@@ -369,9 +384,10 @@ const awsccSagemakerModelPackage = `{
               "type": "string"
             },
             "name": {
+              "computed": true,
               "description": "A unique name to identify the additional inference specification. The name must be unique within the list of your additional inference specifications for a particular model package.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "supported_content_types": {
@@ -496,9 +512,10 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the file source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -520,15 +537,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -550,15 +569,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -598,9 +619,10 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the file source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -622,15 +644,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -663,15 +687,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -693,15 +719,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -734,15 +762,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -764,15 +794,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -803,6 +835,7 @@ const awsccSagemakerModelPackage = `{
         "nested_type": {
           "attributes": {
             "containers": {
+              "computed": true,
               "description": "The Amazon ECR registry path of the Docker image that contains the inference code.",
               "description_kind": "plain",
               "nested_type": {
@@ -839,9 +872,10 @@ const awsccSagemakerModelPackage = `{
                     "type": "string"
                   },
                   "image": {
+                    "computed": true,
                     "description": "The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "image_digest": {
@@ -864,9 +898,10 @@ const awsccSagemakerModelPackage = `{
                           "nested_type": {
                             "attributes": {
                               "compression_type": {
+                                "computed": true,
                                 "description": "Specifies how the ML model data is prepared.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "model_access_config": {
@@ -876,9 +911,10 @@ const awsccSagemakerModelPackage = `{
                                 "nested_type": {
                                   "attributes": {
                                     "accept_eula": {
+                                      "computed": true,
                                       "description": "Specifies agreement to the model end-user license agreement (EULA).",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "bool"
                                     }
                                   },
@@ -887,15 +923,17 @@ const awsccSagemakerModelPackage = `{
                                 "optional": true
                               },
                               "s3_data_type": {
+                                "computed": true,
                                 "description": "Specifies the type of ML model data to deploy.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "s3_uri": {
+                                "computed": true,
                                 "description": "Specifies the S3 path of ML model data to deploy.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -921,9 +959,10 @@ const awsccSagemakerModelPackage = `{
                     "nested_type": {
                       "attributes": {
                         "data_input_config": {
+                          "computed": true,
                           "description": "The input configuration object for the model.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -941,12 +980,13 @@ const awsccSagemakerModelPackage = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "supported_content_types": {
+              "computed": true,
               "description": "The supported MIME types for the input data.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
@@ -963,9 +1003,10 @@ const awsccSagemakerModelPackage = `{
               ]
             },
             "supported_response_mime_types": {
+              "computed": true,
               "description": "The supported MIME types for the output data.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
@@ -1046,15 +1087,17 @@ const awsccSagemakerModelPackage = `{
         "nested_type": {
           "attributes": {
             "model_card_content": {
+              "computed": true,
               "description": "The content of the model card.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "model_card_status": {
+              "computed": true,
               "description": "The approval status of the model card within your organization.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -1088,15 +1131,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1118,15 +1163,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1148,15 +1195,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1189,15 +1238,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1230,15 +1281,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1260,15 +1313,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1301,15 +1356,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1331,15 +1388,17 @@ const awsccSagemakerModelPackage = `{
                           "type": "string"
                         },
                         "content_type": {
+                          "computed": true,
                           "description": "The type of content stored in the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_uri": {
+                          "computed": true,
                           "description": "The Amazon S3 URI for the metric source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1409,15 +1468,17 @@ const awsccSagemakerModelPackage = `{
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description": "The name of the model package for which the overall status is being reported.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "status": {
+                    "computed": true,
                     "description": "The current status.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1451,9 +1512,10 @@ const awsccSagemakerModelPackage = `{
         "nested_type": {
           "attributes": {
             "kms_key_id": {
+              "computed": true,
               "description": "The AWS KMS Key ID (KMSKeyId) used for encryption of model package information.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -1475,14 +1537,16 @@ const awsccSagemakerModelPackage = `{
         "nested_type": {
           "attributes": {
             "source_algorithms": {
+              "computed": true,
               "description": "A list of algorithms that were used to create a model package.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "algorithm_name": {
+                    "computed": true,
                     "description": "The name of an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "model_data_url": {
@@ -1495,7 +1559,7 @@ const awsccSagemakerModelPackage = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -1516,15 +1580,17 @@ const awsccSagemakerModelPackage = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -1546,16 +1612,19 @@ const awsccSagemakerModelPackage = `{
         "nested_type": {
           "attributes": {
             "validation_profiles": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "profile_name": {
+                    "computed": true,
                     "description": "The name of the profile for the model package.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "transform_job_definition": {
+                    "computed": true,
                     "description": "Defines the input needed to run a transform job using the inference specification specified in the algorithm.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -1592,6 +1661,7 @@ const awsccSagemakerModelPackage = `{
                           "type": "number"
                         },
                         "transform_input": {
+                          "computed": true,
                           "description": "Describes the input source of a transform job and the way the transform job consumes it.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -1611,36 +1681,40 @@ const awsccSagemakerModelPackage = `{
                                 "type": "string"
                               },
                               "data_source": {
+                                "computed": true,
                                 "description": "Describes the input source of a transform job and the way the transform job consumes it.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "s3_data_source": {
+                                      "computed": true,
                                       "description": "Describes the S3 data source.",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "s3_data_type": {
+                                            "computed": true,
                                             "description": "The S3 Data Source Type",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "s3_uri": {
+                                            "computed": true,
                                             "description": "Depending on the value specified for the S3DataType, identifies either a key name prefix or a manifest.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "split_type": {
                                 "computed": true,
@@ -1652,9 +1726,10 @@ const awsccSagemakerModelPackage = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "transform_output": {
+                          "computed": true,
                           "description": "Describes the results of a transform job.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -1681,31 +1756,35 @@ const awsccSagemakerModelPackage = `{
                                 "type": "string"
                               },
                               "s3_output_path": {
+                                "computed": true,
                                 "description": "The Amazon S3 path where you want Amazon SageMaker to store the results of the transform job.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "transform_resources": {
+                          "computed": true,
                           "description": "Describes the resources, including ML instance types and ML instance count, to use for transform job.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "instance_count": {
+                                "computed": true,
                                 "description": "The number of ML compute instances to use in the transform job. For distributed transform jobs, specify a value greater than 1. The default value is 1.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               },
                               "instance_type": {
+                                "computed": true,
                                 "description": "The ML compute instance type for the transform job.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "volume_kms_key_id": {
@@ -1718,22 +1797,23 @@ const awsccSagemakerModelPackage = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "validation_role": {
+              "computed": true,
               "description": "The IAM roles to be used for the validation of the model package.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

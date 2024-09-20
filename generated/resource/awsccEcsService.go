@@ -61,24 +61,27 @@ const awsccEcsService = `{
               "nested_type": {
                 "attributes": {
                   "alarm_names": {
+                    "computed": true,
                     "description": "One or more CloudWatch alarm names. Use a \",\" to separate the alarms.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
                     ]
                   },
                   "enable": {
+                    "computed": true,
                     "description": "Determines whether to use the CloudWatch alarm option in the service deployment process.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "rollback": {
+                    "computed": true,
                     "description": "Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -93,15 +96,17 @@ const awsccEcsService = `{
               "nested_type": {
                 "attributes": {
                   "enable": {
+                    "computed": true,
                     "description": "Determines whether to use the deployment circuit breaker logic for the service.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "rollback": {
+                    "computed": true,
                     "description": "Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -294,9 +299,10 @@ const awsccEcsService = `{
               "type": "string"
             },
             "type": {
+              "computed": true,
               "description": "The type of constraint. Use ` + "`" + `` + "`" + `distinctInstance` + "`" + `` + "`" + ` to ensure that each task in a particular group is running on a different container instance. Use ` + "`" + `` + "`" + `memberOf` + "`" + `` + "`" + ` to restrict the selection to a group of valid candidates.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -318,9 +324,10 @@ const awsccEcsService = `{
               "type": "string"
             },
             "type": {
+              "computed": true,
               "description": "The type of placement strategy. The ` + "`" + `` + "`" + `random` + "`" + `` + "`" + ` placement strategy randomly places tasks on available candidates. The ` + "`" + `` + "`" + `spread` + "`" + `` + "`" + ` placement strategy spreads placement across available candidates evenly based on the ` + "`" + `` + "`" + `field` + "`" + `` + "`" + ` parameter. The ` + "`" + `` + "`" + `binpack` + "`" + `` + "`" + ` strategy places tasks on available candidates that have the least available amount of the resource that's specified with the ` + "`" + `` + "`" + `field` + "`" + `` + "`" + ` parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory but still enough to run the task.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -368,9 +375,10 @@ const awsccEcsService = `{
         "nested_type": {
           "attributes": {
             "enabled": {
+              "computed": true,
               "description": "Specifies whether to use Service Connect with this service.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "log_configuration": {
@@ -403,15 +411,17 @@ const awsccEcsService = `{
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "The name of the secret.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value_from": {
+                          "computed": true,
                           "description": "The secret to expose to the container. The supported values are either the full ARN of the ASMlong secret or the full ARN of the parameter in the SSM Parameter Store.\n For information about the require IAMlong permissions, see [Required IAM permissions for Amazon ECS secrets](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam) (for Secrets Manager) or [Required IAM permissions for Amazon ECS secrets](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html) (for Systems Manager Parameter store) in the *Amazon Elastic Container Service Developer Guide*.\n  If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -451,9 +461,10 @@ const awsccEcsService = `{
                           "type": "string"
                         },
                         "port": {
+                          "computed": true,
                           "description": "The listening port number for the Service Connect proxy. This port is available inside of all of the tasks within the same namespace.\n To avoid changing your applications in client Amazon ECS services, set this to the same port that the client application uses by default. For more information, see [Service Connect](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html) in the *Amazon Elastic Container Service Developer Guide*.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -476,9 +487,10 @@ const awsccEcsService = `{
                     "type": "number"
                   },
                   "port_name": {
+                    "computed": true,
                     "description": "The ` + "`" + `` + "`" + `portName` + "`" + `` + "`" + ` must match the name of one of the ` + "`" + `` + "`" + `portMappings` + "`" + `` + "`" + ` from all the containers in the task definition of this Amazon ECS service.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "timeout": {
@@ -513,6 +525,7 @@ const awsccEcsService = `{
                     "nested_type": {
                       "attributes": {
                         "issuer_certificate_authority": {
+                          "computed": true,
                           "description": "The signer certificate authority.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -527,7 +540,7 @@ const awsccEcsService = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "kms_key": {
                           "computed": true,
@@ -677,9 +690,10 @@ const awsccEcsService = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description": "The ARN of the IAM role to associate with this volume. This is the Amazon ECS infrastructure IAM role that is used to manage your AWS infrastructure. We recommend using the Amazon ECS-managed ` + "`" + `` + "`" + `AmazonECSInfrastructureRolePolicyForVolumes` + "`" + `` + "`" + ` IAM policy with this role. For more information, see [Amazon ECS infrastructure IAM role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/infrastructure_IAM_role.html) in the *Amazon ECS Developer Guide*.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "size_in_gi_b": {
@@ -710,9 +724,10 @@ const awsccEcsService = `{
                           "type": "string"
                         },
                         "resource_type": {
+                          "computed": true,
                           "description": "The type of volume resource.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "tags": {
@@ -765,9 +780,10 @@ const awsccEcsService = `{
               "optional": true
             },
             "name": {
+              "computed": true,
               "description": "The name of the volume. This value must match the volume name from the ` + "`" + `` + "`" + `Volume` + "`" + `` + "`" + ` object in the task definition.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

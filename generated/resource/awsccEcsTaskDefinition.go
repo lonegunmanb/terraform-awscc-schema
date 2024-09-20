@@ -291,9 +291,10 @@ const awsccEcsTaskDefinition = `{
               "type": "string"
             },
             "image": {
+              "computed": true,
               "description": "The image used to start a container. This string is passed directly to the Docker daemon. By default, images in the Docker Hub registry are available. Other repositories are specified with either ` + "`" + `` + "`" + `repository-url/image:tag` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `repository-url/image@digest` + "`" + `` + "`" + `. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to ` + "`" + `` + "`" + `Image` + "`" + `` + "`" + ` in the docker container create command and the ` + "`" + `` + "`" + `IMAGE` + "`" + `` + "`" + ` parameter of docker run.\n  +  When a new task starts, the Amazon ECS container agent pulls the latest version of the specified image and tag for the container to use. However, subsequent updates to a repository image aren't propagated to already running tasks.\n  +  Images in Amazon ECR repositories can be specified by either using the full ` + "`" + `` + "`" + `registry/repository:tag` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `registry/repository@digest` + "`" + `` + "`" + `. For example, ` + "`" + `` + "`" + `012345678910.dkr.ecr.\u003cregion-name\u003e.amazonaws.com/\u003crepository-name\u003e:latest` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `012345678910.dkr.ecr.\u003cregion-name\u003e.amazonaws.com/\u003crepository-name\u003e@sha256:94afd1f2e64d908bc90dbca0035a5b567EXAMPLE` + "`" + `` + "`" + `. \n  +  Images in official repositories on Docker Hub use a single name (for example, ` + "`" + `` + "`" + `ubuntu` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `mongo` + "`" + `` + "`" + `).\n  +  Images in other repositories on Docker Hub are qualified with an organization name (for example, ` + "`" + `` + "`" + `amazon/amazon-ecs-agent` + "`" + `` + "`" + `).\n  +  Images in other online repositories are qualified further by a domain name (for example, ` + "`" + `` + "`" + `quay.io/assemblyline/ubuntu` + "`" + `` + "`" + `).",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "interactive": {
@@ -437,9 +438,10 @@ const awsccEcsTaskDefinition = `{
                           ]
                         },
                         "size": {
+                          "computed": true,
                           "description": "The maximum size (in MiB) of the tmpfs volume.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -459,9 +461,10 @@ const awsccEcsTaskDefinition = `{
               "nested_type": {
                 "attributes": {
                   "log_driver": {
+                    "computed": true,
                     "description": "The log driver to use for the container.\n For tasks on FARGATElong, the supported log drivers are ` + "`" + `` + "`" + `awslogs` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `splunk` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `awsfirelens` + "`" + `` + "`" + `.\n For tasks hosted on Amazon EC2 instances, the supported log drivers are ` + "`" + `` + "`" + `awslogs` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `fluentd` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `gelf` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `json-file` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `journald` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `syslog` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `splunk` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `awsfirelens` + "`" + `` + "`" + `.\n For more information about using the ` + "`" + `` + "`" + `awslogs` + "`" + `` + "`" + ` log driver, see [Send Amazon ECS logs to CloudWatch](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html) in the *Amazon Elastic Container Service Developer Guide*.\n For more information about using the ` + "`" + `` + "`" + `awsfirelens` + "`" + `` + "`" + ` log driver, see [Send Amazon ECS logs to an service or Partner](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html).\n  If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's [available on GitHub](https://docs.aws.amazon.com/https://github.com/aws/amazon-ecs-agent) and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "options": {
@@ -481,15 +484,17 @@ const awsccEcsTaskDefinition = `{
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "The name of the secret.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value_from": {
+                          "computed": true,
                           "description": "The secret to expose to the container. The supported values are either the full ARN of the ASMlong secret or the full ARN of the parameter in the SSM Parameter Store.\n For information about the require IAMlong permissions, see [Required IAM permissions for Amazon ECS secrets](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam) (for Secrets Manager) or [Required IAM permissions for Amazon ECS secrets](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html) (for Systems Manager Parameter store) in the *Amazon Elastic Container Service Developer Guide*.\n  If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -549,9 +554,10 @@ const awsccEcsTaskDefinition = `{
               "optional": true
             },
             "name": {
+              "computed": true,
               "description": "The name of a container. If you're linking multiple containers together in a task definition, the ` + "`" + `` + "`" + `name` + "`" + `` + "`" + ` of one container can be entered in the ` + "`" + `` + "`" + `links` + "`" + `` + "`" + ` of another container to connect the containers. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This parameter maps to ` + "`" + `` + "`" + `name` + "`" + `` + "`" + ` in tthe docker container create command and the ` + "`" + `` + "`" + `--name` + "`" + `` + "`" + ` option to docker run.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "port_mappings": {
@@ -653,15 +659,17 @@ const awsccEcsTaskDefinition = `{
               "nested_type": {
                 "attributes": {
                   "type": {
+                    "computed": true,
                     "description": "The type of resource to assign to a container.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "The value for the specified resource type.\n When the type is ` + "`" + `` + "`" + `GPU` + "`" + `` + "`" + `, the value is the number of physical ` + "`" + `` + "`" + `GPUs` + "`" + `` + "`" + ` the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.\n When the type is ` + "`" + `` + "`" + `InferenceAccelerator` + "`" + `` + "`" + `, the ` + "`" + `` + "`" + `value` + "`" + `` + "`" + ` matches the ` + "`" + `` + "`" + `deviceName` + "`" + `` + "`" + ` for an [InferenceAccelerator](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html) specified in a task definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -711,15 +719,17 @@ const awsccEcsTaskDefinition = `{
               "nested_type": {
                 "attributes": {
                   "name": {
+                    "computed": true,
                     "description": "The name of the secret.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value_from": {
+                    "computed": true,
                     "description": "The secret to expose to the container. The supported values are either the full ARN of the ASMlong secret or the full ARN of the parameter in the SSM Parameter Store.\n For information about the require IAMlong permissions, see [Required IAM permissions for Amazon ECS secrets](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-secrets.html#secrets-iam) (for Secrets Manager) or [Required IAM permissions for Amazon ECS secrets](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data-parameters.html) (for Systems Manager Parameter store) in the *Amazon Elastic Container Service Developer Guide*.\n  If the SSM Parameter Store parameter exists in the same Region as the task you're launching, then you can use either the full ARN or name of the parameter. If the parameter exists in a different Region, then the full ARN must be specified.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -773,21 +783,24 @@ const awsccEcsTaskDefinition = `{
               "nested_type": {
                 "attributes": {
                   "hard_limit": {
+                    "computed": true,
                     "description": "The hard limit for the ` + "`" + `` + "`" + `ulimit` + "`" + `` + "`" + ` type.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "name": {
+                    "computed": true,
                     "description": "The ` + "`" + `` + "`" + `type` + "`" + `` + "`" + ` of the ` + "`" + `` + "`" + `ulimit` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "soft_limit": {
+                    "computed": true,
                     "description": "The soft limit for the ` + "`" + `` + "`" + `ulimit` + "`" + `` + "`" + ` type.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -951,9 +964,10 @@ const awsccEcsTaskDefinition = `{
               "type": "string"
             },
             "type": {
+              "computed": true,
               "description": "The type of constraint. The ` + "`" + `` + "`" + `MemberOf` + "`" + `` + "`" + ` constraint restricts selection to be from a group of valid candidates.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -968,9 +982,10 @@ const awsccEcsTaskDefinition = `{
         "nested_type": {
           "attributes": {
             "container_name": {
+              "computed": true,
               "description": "The name of the container that will serve as the App Mesh proxy.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "proxy_configuration_properties": {
@@ -1179,9 +1194,10 @@ const awsccEcsTaskDefinition = `{
                     "optional": true
                   },
                   "filesystem_id": {
+                    "computed": true,
                     "description": "The Amazon EFS file system ID to use.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "root_directory": {
@@ -1223,15 +1239,17 @@ const awsccEcsTaskDefinition = `{
                     "nested_type": {
                       "attributes": {
                         "credentials_parameter": {
+                          "computed": true,
                           "description": "The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an ASMlong secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "domain": {
+                          "computed": true,
                           "description": "A fully qualified domain name hosted by an [](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html) Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1240,15 +1258,17 @@ const awsccEcsTaskDefinition = `{
                     "optional": true
                   },
                   "file_system_id": {
+                    "computed": true,
                     "description": "The Amazon FSx for Windows File Server file system ID to use.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "root_directory": {
+                    "computed": true,
                     "description": "The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

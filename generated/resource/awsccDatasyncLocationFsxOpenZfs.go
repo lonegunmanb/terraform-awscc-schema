@@ -46,6 +46,7 @@ const awsccDatasyncLocationFsxOpenZfs = `{
               "nested_type": {
                 "attributes": {
                   "mount_options": {
+                    "computed": true,
                     "description": "The NFS mount options that DataSync can use to mount your NFS share.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -60,7 +61,7 @@ const awsccDatasyncLocationFsxOpenZfs = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -95,15 +96,17 @@ const awsccDatasyncLocationFsxOpenZfs = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key for an AWS resource tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for an AWS resource tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

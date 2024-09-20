@@ -34,8 +34,9 @@ const awsccEntityresolutionMatchingWorkflow = `{
         "nested_type": {
           "attributes": {
             "incremental_run_type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -132,9 +133,10 @@ const awsccEntityresolutionMatchingWorkflow = `{
                     "nested_type": {
                       "attributes": {
                         "intermediate_s3_path": {
+                          "computed": true,
                           "description": "The s3 path that would be used to stage the intermediate data being generated during workflow execution.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -153,9 +155,10 @@ const awsccEntityresolutionMatchingWorkflow = `{
                     ]
                   },
                   "provider_service_arn": {
+                    "computed": true,
                     "description": "Arn of the Provider service being used.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -175,8 +178,9 @@ const awsccEntityresolutionMatchingWorkflow = `{
               "nested_type": {
                 "attributes": {
                   "attribute_matching_model": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "match_purpose": {
@@ -186,26 +190,29 @@ const awsccEntityresolutionMatchingWorkflow = `{
                     "type": "string"
                   },
                   "rules": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "matching_keys": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
                           ]
                         },
                         "rule_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -228,15 +235,17 @@ const awsccEntityresolutionMatchingWorkflow = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

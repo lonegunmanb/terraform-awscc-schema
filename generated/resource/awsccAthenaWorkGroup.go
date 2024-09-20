@@ -55,13 +55,15 @@ const awsccAthenaWorkGroup = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -96,9 +98,10 @@ const awsccAthenaWorkGroup = `{
               "nested_type": {
                 "attributes": {
                   "kms_key": {
+                    "computed": true,
                     "description": "For SSE-KMS and CSE-KMS, this is the KMS key ARN or ID. ",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -171,9 +174,10 @@ const awsccAthenaWorkGroup = `{
                     "nested_type": {
                       "attributes": {
                         "s3_acl_option": {
+                          "computed": true,
                           "description": "The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is BUCKET_OWNER_FULL_CONTROL",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -188,9 +192,10 @@ const awsccAthenaWorkGroup = `{
                     "nested_type": {
                       "attributes": {
                         "encryption_option": {
+                          "computed": true,
                           "description": "Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (SSE-S3), server-side encryption with KMS-managed keys (SSE-KMS), or client-side encryption with KMS-managed keys (CSE-KMS) is used.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "kms_key": {
@@ -256,9 +261,10 @@ const awsccAthenaWorkGroup = `{
               "nested_type": {
                 "attributes": {
                   "kms_key": {
+                    "computed": true,
                     "description": "For SSE-KMS and CSE-KMS, this is the KMS key ARN or ID. ",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -344,9 +350,10 @@ const awsccAthenaWorkGroup = `{
                     "nested_type": {
                       "attributes": {
                         "s3_acl_option": {
+                          "computed": true,
                           "description": "The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is BUCKET_OWNER_FULL_CONTROL",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -361,9 +368,10 @@ const awsccAthenaWorkGroup = `{
                     "nested_type": {
                       "attributes": {
                         "encryption_option": {
+                          "computed": true,
                           "description": "Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (SSE-S3), server-side encryption with KMS-managed keys (SSE-KMS), or client-side encryption with KMS-managed keys (CSE-KMS) is used.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "kms_key": {

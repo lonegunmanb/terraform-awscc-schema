@@ -23,9 +23,10 @@ const awsccNeptuneDbCluster = `{
               "type": "string"
             },
             "role_arn": {
+              "computed": true,
               "description": "The Amazon Resource Name (ARN) of the IAM role that is associated with the DB cluster.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -195,15 +196,17 @@ const awsccNeptuneDbCluster = `{
         "nested_type": {
           "attributes": {
             "max_capacity": {
+              "computed": true,
               "description": "The maximum number of Neptune capacity units (NCUs) for a DB instance in an Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on. The smallest value you can use is 2.5, whereas the largest is 128.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "min_capacity": {
+              "computed": true,
               "description": "The minimum number of Neptune capacity units (NCUs) for a DB instance in an Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on. The smallest value you can use is 1, whereas the largest is 128.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -239,9 +242,10 @@ const awsccNeptuneDbCluster = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {

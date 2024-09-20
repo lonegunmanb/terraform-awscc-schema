@@ -39,15 +39,17 @@ const awsccRoute53HostedZone = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The value of ` + "`" + `` + "`" + `Key` + "`" + `` + "`" + ` depends on the operation that you want to perform:\n  +   *Add a tag to a health check or hosted zone*: ` + "`" + `` + "`" + `Key` + "`" + `` + "`" + ` is the name that you want to give the new tag.\n  +   *Edit a tag*: ` + "`" + `` + "`" + `Key` + "`" + `` + "`" + ` is the name of the tag that you want to change the ` + "`" + `` + "`" + `Value` + "`" + `` + "`" + ` for.\n  +   *Delete a key*: ` + "`" + `` + "`" + `Key` + "`" + `` + "`" + ` is the name of the tag you want to remove.\n  +   *Give a name to a health check*: Edit the default ` + "`" + `` + "`" + `Name` + "`" + `` + "`" + ` tag. In the Amazon Route 53 console, the list of your health checks includes a *Name* column that lets you see the name that you've given to each health check.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value of ` + "`" + `` + "`" + `Value` + "`" + `` + "`" + ` depends on the operation that you want to perform:\n  +   *Add a tag to a health check or hosted zone*: ` + "`" + `` + "`" + `Value` + "`" + `` + "`" + ` is the value that you want to give the new tag.\n  +   *Edit a tag*: ` + "`" + `` + "`" + `Value` + "`" + `` + "`" + ` is the new value that you want to assign the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -83,9 +85,10 @@ const awsccRoute53HostedZone = `{
         "nested_type": {
           "attributes": {
             "cloudwatch_logs_log_group_arn": {
+              "computed": true,
               "description": "The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -100,15 +103,17 @@ const awsccRoute53HostedZone = `{
         "nested_type": {
           "attributes": {
             "vpc_id": {
+              "computed": true,
               "description": "*Private hosted zones only:* The ID of an Amazon VPC.\n  For public hosted zones, omit ` + "`" + `` + "`" + `VPCs` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `VPCId` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `VPCRegion` + "`" + `` + "`" + `.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "vpc_region": {
+              "computed": true,
               "description": "*Private hosted zones only:* The region that an Amazon VPC was created in.\n  For public hosted zones, omit ` + "`" + `` + "`" + `VPCs` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `VPCId` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `VPCRegion` + "`" + `` + "`" + `.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

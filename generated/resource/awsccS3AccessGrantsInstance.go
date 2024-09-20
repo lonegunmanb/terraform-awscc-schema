@@ -40,13 +40,15 @@ const awsccS3AccessGrantsInstance = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

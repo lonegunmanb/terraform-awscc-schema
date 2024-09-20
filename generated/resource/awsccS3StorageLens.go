@@ -163,6 +163,7 @@ const awsccS3StorageLens = `{
                           "nested_type": {
                             "attributes": {
                               "storage_metrics": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
@@ -208,7 +209,7 @@ const awsccS3StorageLens = `{
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
@@ -290,9 +291,10 @@ const awsccS3StorageLens = `{
               "nested_type": {
                 "attributes": {
                   "arn": {
+                    "computed": true,
                     "description": "The Amazon Resource Name (ARN) of the specified resource.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -313,9 +315,10 @@ const awsccS3StorageLens = `{
                     "nested_type": {
                       "attributes": {
                         "is_enabled": {
+                          "computed": true,
                           "description": "Specifies whether CloudWatch metrics are enabled or disabled.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -330,15 +333,17 @@ const awsccS3StorageLens = `{
                     "nested_type": {
                       "attributes": {
                         "account_id": {
+                          "computed": true,
                           "description": "The AWS account ID that owns the destination S3 bucket.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "arn": {
+                          "computed": true,
                           "description": "The ARN of the bucket to which Amazon S3 Storage Lens exports will be placed.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "encryption": {
@@ -354,9 +359,10 @@ const awsccS3StorageLens = `{
                                 "nested_type": {
                                   "attributes": {
                                     "key_id": {
+                                      "computed": true,
                                       "description": "The ARN of the KMS key to use for encryption.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -377,15 +383,17 @@ const awsccS3StorageLens = `{
                           "optional": true
                         },
                         "format": {
+                          "computed": true,
                           "description": "Specifies the file format to use when exporting Amazon S3 Storage Lens metrics export.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "output_schema_version": {
+                          "computed": true,
                           "description": "The version of the output schema to use when exporting Amazon S3 Storage Lens metrics.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "prefix": {
@@ -493,13 +501,15 @@ const awsccS3StorageLens = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

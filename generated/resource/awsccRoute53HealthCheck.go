@@ -21,15 +21,17 @@ const awsccRoute53HealthCheck = `{
               "nested_type": {
                 "attributes": {
                   "name": {
+                    "computed": true,
                     "description": "The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "region": {
+                    "computed": true,
                     "description": "For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -155,15 +157,17 @@ const awsccRoute53HealthCheck = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

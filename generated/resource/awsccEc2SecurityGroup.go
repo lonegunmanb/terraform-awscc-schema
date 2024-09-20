@@ -77,8 +77,9 @@ const awsccEc2SecurityGroup = `{
               "type": "number"
             },
             "ip_protocol": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "to_port": {
@@ -129,8 +130,9 @@ const awsccEc2SecurityGroup = `{
               "type": "number"
             },
             "ip_protocol": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "source_prefix_list_id": {
@@ -175,13 +177,15 @@ const awsccEc2SecurityGroup = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

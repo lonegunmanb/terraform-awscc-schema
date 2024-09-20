@@ -91,13 +91,15 @@ const awsccEvidentlyExperiment = `{
               "nested_type": {
                 "attributes": {
                   "split_weight": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "treatment": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -185,15 +187,17 @@ const awsccEvidentlyExperiment = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

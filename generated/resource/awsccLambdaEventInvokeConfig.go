@@ -22,9 +22,10 @@ const awsccLambdaEventInvokeConfig = `{
               "nested_type": {
                 "attributes": {
                   "destination": {
+                    "computed": true,
                     "description": "The Amazon Resource Name (ARN) of the destination resource.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -39,9 +40,10 @@ const awsccLambdaEventInvokeConfig = `{
               "nested_type": {
                 "attributes": {
                   "destination": {
+                    "computed": true,
                     "description": "The Amazon Resource Name (ARN) of the destination resource.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

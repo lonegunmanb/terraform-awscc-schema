@@ -16,9 +16,10 @@ const awsccS3Bucket = `{
         "nested_type": {
           "attributes": {
             "acceleration_status": {
+              "computed": true,
               "description": "Specifies the transfer acceleration status of the bucket.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -40,9 +41,10 @@ const awsccS3Bucket = `{
         "nested_type": {
           "attributes": {
             "id": {
+              "computed": true,
               "description": "The ID that identifies the analytics configuration.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "prefix": {
@@ -53,6 +55,7 @@ const awsccS3Bucket = `{
               "type": "string"
             },
             "storage_class_analysis": {
+              "computed": true,
               "description": "Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes.",
               "description_kind": "plain",
               "nested_type": {
@@ -64,6 +67,7 @@ const awsccS3Bucket = `{
                     "nested_type": {
                       "attributes": {
                         "destination": {
+                          "computed": true,
                           "description": "The place to store the data for an analysis.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -76,15 +80,17 @@ const awsccS3Bucket = `{
                                 "type": "string"
                               },
                               "bucket_arn": {
+                                "computed": true,
                                 "description": "The Amazon Resource Name (ARN) of the bucket to which data is exported.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "format": {
+                                "computed": true,
                                 "description": "Specifies the file format used when exporting data to Amazon S3.\n  *Allowed values*: ` + "`" + `` + "`" + `CSV` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `ORC` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Parquet` + "`" + `` + "`" + `",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "prefix": {
@@ -97,12 +103,13 @@ const awsccS3Bucket = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "output_schema_version": {
+                          "computed": true,
                           "description": "The version of the output schema to use when exporting data. Must be ` + "`" + `` + "`" + `V_1` + "`" + `` + "`" + `.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -113,7 +120,7 @@ const awsccS3Bucket = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "tag_filters": {
               "computed": true,
@@ -122,15 +129,17 @@ const awsccS3Bucket = `{
               "nested_type": {
                 "attributes": {
                   "key": {
+                    "computed": true,
                     "description": "The tag key.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "The tag value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -156,6 +165,7 @@ const awsccS3Bucket = `{
         "nested_type": {
           "attributes": {
             "server_side_encryption_configuration": {
+              "computed": true,
               "description": "Specifies the default server-side-encryption configuration.",
               "description_kind": "plain",
               "nested_type": {
@@ -181,9 +191,10 @@ const awsccS3Bucket = `{
                           "type": "string"
                         },
                         "sse_algorithm": {
+                          "computed": true,
                           "description": "Server-side encryption algorithm to use for the default encryption.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -194,7 +205,7 @@ const awsccS3Bucket = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -215,6 +226,7 @@ const awsccS3Bucket = `{
         "nested_type": {
           "attributes": {
             "cors_rules": {
+              "computed": true,
               "description": "A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.",
               "description_kind": "plain",
               "nested_type": {
@@ -230,18 +242,20 @@ const awsccS3Bucket = `{
                     ]
                   },
                   "allowed_methods": {
+                    "computed": true,
                     "description": "An HTTP method that you allow the origin to run.\n  *Allowed values*: ` + "`" + `` + "`" + `GET` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `PUT` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `HEAD` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `POST` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `DELETE` + "`" + `` + "`" + `",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
                     ]
                   },
                   "allowed_origins": {
+                    "computed": true,
                     "description": "One or more origins you want customers to be able to access the bucket from.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -274,7 +288,7 @@ const awsccS3Bucket = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -304,9 +318,10 @@ const awsccS3Bucket = `{
         "nested_type": {
           "attributes": {
             "id": {
+              "computed": true,
               "description": "The ID used to identify the S3 Intelligent-Tiering configuration.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "prefix": {
@@ -317,9 +332,10 @@ const awsccS3Bucket = `{
               "type": "string"
             },
             "status": {
+              "computed": true,
               "description": "Specifies the status of the configuration.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "tag_filters": {
@@ -329,15 +345,17 @@ const awsccS3Bucket = `{
               "nested_type": {
                 "attributes": {
                   "key": {
+                    "computed": true,
                     "description": "The tag key.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "The tag value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -346,26 +364,29 @@ const awsccS3Bucket = `{
               "optional": true
             },
             "tierings": {
+              "computed": true,
               "description": "Specifies a list of S3 Intelligent-Tiering storage class tiers in the configuration. At least one tier must be defined in the list. At most, you can specify two tiers in the list, one for each available AccessTier: ` + "`" + `` + "`" + `ARCHIVE_ACCESS` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `DEEP_ARCHIVE_ACCESS` + "`" + `` + "`" + `.\n  You only need Intelligent Tiering Configuration enabled on a bucket if you want to automatically move objects stored in the Intelligent-Tiering storage class to Archive Access or Deep Archive Access tiers.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "access_tier": {
+                    "computed": true,
                     "description": "S3 Intelligent-Tiering access tier. See [Storage class for automatically optimizing frequently and infrequently accessed objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access) for a list of access tiers in the S3 Intelligent-Tiering storage class.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "days": {
+                    "computed": true,
                     "description": "The number of consecutive days of no access after which an object will be eligible to be transitioned to the corresponding tier. The minimum number of days specified for Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least 180 days. The maximum can be up to 2 years (730 days).",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "list"
@@ -379,6 +400,7 @@ const awsccS3Bucket = `{
         "nested_type": {
           "attributes": {
             "destination": {
+              "computed": true,
               "description": "Contains information about where to publish the inventory results.",
               "description_kind": "plain",
               "nested_type": {
@@ -391,15 +413,17 @@ const awsccS3Bucket = `{
                     "type": "string"
                   },
                   "bucket_arn": {
+                    "computed": true,
                     "description": "The Amazon Resource Name (ARN) of the bucket to which data is exported.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "format": {
+                    "computed": true,
                     "description": "Specifies the file format used when exporting data to Amazon S3.\n  *Allowed values*: ` + "`" + `` + "`" + `CSV` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `ORC` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Parquet` + "`" + `` + "`" + `",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "prefix": {
@@ -412,24 +436,27 @@ const awsccS3Bucket = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "enabled": {
+              "computed": true,
               "description": "Specifies whether the inventory is enabled or disabled. If set to ` + "`" + `` + "`" + `True` + "`" + `` + "`" + `, an inventory list is generated. If set to ` + "`" + `` + "`" + `False` + "`" + `` + "`" + `, no inventory list is generated.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "id": {
+              "computed": true,
               "description": "The ID used to identify the inventory configuration.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "included_object_versions": {
+              "computed": true,
               "description": "Object versions to include in the inventory list. If set to ` + "`" + `` + "`" + `All` + "`" + `` + "`" + `, the list includes all the object versions, which adds the version-related fields ` + "`" + `` + "`" + `VersionId` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `IsLatest` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `DeleteMarker` + "`" + `` + "`" + ` to the list. If set to ` + "`" + `` + "`" + `Current` + "`" + `` + "`" + `, the list does not contain these version-related fields.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "optional_fields": {
@@ -450,9 +477,10 @@ const awsccS3Bucket = `{
               "type": "string"
             },
             "schedule_frequency": {
+              "computed": true,
               "description": "Specifies the schedule for generating inventory results.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -467,6 +495,7 @@ const awsccS3Bucket = `{
         "nested_type": {
           "attributes": {
             "rules": {
+              "computed": true,
               "description": "A lifecycle rule for individual objects in an Amazon S3 bucket.",
               "description_kind": "plain",
               "nested_type": {
@@ -478,9 +507,10 @@ const awsccS3Bucket = `{
                     "nested_type": {
                       "attributes": {
                         "days_after_initiation": {
+                          "computed": true,
                           "description": "Specifies the number of days after which Amazon S3 stops an incomplete multipart upload.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -530,9 +560,10 @@ const awsccS3Bucket = `{
                           "type": "number"
                         },
                         "noncurrent_days": {
+                          "computed": true,
                           "description": "Specifies the number of days an object is noncurrent before S3 can perform the associated action. For information about the noncurrent days calculations, see [How Amazon S3 Calculates When an Object Became Noncurrent](https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations) in the *Amazon S3 User Guide*.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -561,15 +592,17 @@ const awsccS3Bucket = `{
                           "type": "number"
                         },
                         "storage_class": {
+                          "computed": true,
                           "description": "The class of storage used to store the object.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "transition_in_days": {
+                          "computed": true,
                           "description": "Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see [How Amazon S3 Calculates How Long an Object Has Been Noncurrent](https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations) in the *Amazon S3 User Guide*.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -591,15 +624,17 @@ const awsccS3Bucket = `{
                           "type": "number"
                         },
                         "storage_class": {
+                          "computed": true,
                           "description": "The class of storage used to store the object.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "transition_in_days": {
+                          "computed": true,
                           "description": "Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see [How Amazon S3 Calculates How Long an Object Has Been Noncurrent](https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations) in the *Amazon S3 User Guide*.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -629,9 +664,10 @@ const awsccS3Bucket = `{
                     "type": "string"
                   },
                   "status": {
+                    "computed": true,
                     "description": "If ` + "`" + `` + "`" + `Enabled` + "`" + `` + "`" + `, the rule is currently being applied. If ` + "`" + `` + "`" + `Disabled` + "`" + `` + "`" + `, the rule is not currently being applied.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "tag_filters": {
@@ -641,15 +677,17 @@ const awsccS3Bucket = `{
                     "nested_type": {
                       "attributes": {
                         "key": {
+                          "computed": true,
                           "description": "The tag key.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "The tag value.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -664,9 +702,10 @@ const awsccS3Bucket = `{
                     "nested_type": {
                       "attributes": {
                         "storage_class": {
+                          "computed": true,
                           "description": "The storage class to which you want the object to transition.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "transition_date": {
@@ -695,9 +734,10 @@ const awsccS3Bucket = `{
                     "nested_type": {
                       "attributes": {
                         "storage_class": {
+                          "computed": true,
                           "description": "The storage class to which you want the object to transition.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "transition_date": {
@@ -722,7 +762,7 @@ const awsccS3Bucket = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -804,9 +844,10 @@ const awsccS3Bucket = `{
               "type": "string"
             },
             "id": {
+              "computed": true,
               "description": "The ID used to identify the metrics configuration. This can be any value you choose that helps you identify your metrics configuration.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "prefix": {
@@ -823,15 +864,17 @@ const awsccS3Bucket = `{
               "nested_type": {
                 "attributes": {
                   "key": {
+                    "computed": true,
                     "description": "The tag key.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "The tag value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -875,9 +918,10 @@ const awsccS3Bucket = `{
               "nested_type": {
                 "attributes": {
                   "event": {
+                    "computed": true,
                     "description": "The Amazon S3 bucket event for which to invoke the LAMlong function. For more information, see [Supported Event Types](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) in the *Amazon S3 User Guide*.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "filter": {
@@ -887,36 +931,40 @@ const awsccS3Bucket = `{
                     "nested_type": {
                       "attributes": {
                         "s3_key": {
+                          "computed": true,
                           "description": "A container for object key name prefix and suffix filtering rules.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "rules": {
+                                "computed": true,
                                 "description": "A list of containers for the key-value pair that defines the criteria for the filter rule.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "name": {
+                                      "computed": true,
                                       "description": "The object key name prefix or suffix identifying one or more objects to which the filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, see [Configuring Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) in the *Amazon S3 User Guide*.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description": "The value that the filter searches for in object key names.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "set"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -924,9 +972,10 @@ const awsccS3Bucket = `{
                     "optional": true
                   },
                   "function": {
+                    "computed": true,
                     "description": "The Amazon Resource Name (ARN) of the LAMlong function that Amazon S3 invokes when the specified event type occurs.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -941,9 +990,10 @@ const awsccS3Bucket = `{
               "nested_type": {
                 "attributes": {
                   "event": {
+                    "computed": true,
                     "description": "The Amazon S3 bucket event about which you want to publish messages to Amazon SQS. For more information, see [Supported Event Types](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) in the *Amazon S3 User Guide*.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "filter": {
@@ -953,36 +1003,40 @@ const awsccS3Bucket = `{
                     "nested_type": {
                       "attributes": {
                         "s3_key": {
+                          "computed": true,
                           "description": "A container for object key name prefix and suffix filtering rules.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "rules": {
+                                "computed": true,
                                 "description": "A list of containers for the key-value pair that defines the criteria for the filter rule.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "name": {
+                                      "computed": true,
                                       "description": "The object key name prefix or suffix identifying one or more objects to which the filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, see [Configuring Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) in the *Amazon S3 User Guide*.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description": "The value that the filter searches for in object key names.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "set"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -990,9 +1044,10 @@ const awsccS3Bucket = `{
                     "optional": true
                   },
                   "queue": {
+                    "computed": true,
                     "description": "The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message when it detects events of the specified type. FIFO queues are not allowed when enabling an SQS queue as the event notification destination.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1007,9 +1062,10 @@ const awsccS3Bucket = `{
               "nested_type": {
                 "attributes": {
                   "event": {
+                    "computed": true,
                     "description": "The Amazon S3 bucket event about which to send notifications. For more information, see [Supported Event Types](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) in the *Amazon S3 User Guide*.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "filter": {
@@ -1019,36 +1075,40 @@ const awsccS3Bucket = `{
                     "nested_type": {
                       "attributes": {
                         "s3_key": {
+                          "computed": true,
                           "description": "A container for object key name prefix and suffix filtering rules.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "rules": {
+                                "computed": true,
                                 "description": "A list of containers for the key-value pair that defines the criteria for the filter rule.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "name": {
+                                      "computed": true,
                                       "description": "The object key name prefix or suffix identifying one or more objects to which the filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, see [Configuring Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) in the *Amazon S3 User Guide*.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description": "The value that the filter searches for in object key names.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "set"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -1056,9 +1116,10 @@ const awsccS3Bucket = `{
                     "optional": true
                   },
                   "topic": {
+                    "computed": true,
                     "description": "The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message when it detects events of the specified type.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1146,6 +1207,7 @@ const awsccS3Bucket = `{
         "nested_type": {
           "attributes": {
             "rules": {
+              "computed": true,
               "description": "Specifies the container element for Object Ownership rules.",
               "description_kind": "plain",
               "nested_type": {
@@ -1160,7 +1222,7 @@ const awsccS3Bucket = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -1218,12 +1280,14 @@ const awsccS3Bucket = `{
         "nested_type": {
           "attributes": {
             "role": {
+              "computed": true,
               "description": "The Amazon Resource Name (ARN) of the IAMlong (IAM) role that Amazon S3 assumes when replicating objects. For more information, see [How to Set Up Replication](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html) in the *Amazon S3 User Guide*.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "rules": {
+              "computed": true,
               "description": "A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules.",
               "description_kind": "plain",
               "nested_type": {
@@ -1247,6 +1311,7 @@ const awsccS3Bucket = `{
                     "optional": true
                   },
                   "destination": {
+                    "computed": true,
                     "description": "A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control (S3 RTC).",
                     "description_kind": "plain",
                     "nested_type": {
@@ -1258,9 +1323,10 @@ const awsccS3Bucket = `{
                           "nested_type": {
                             "attributes": {
                               "owner": {
+                                "computed": true,
                                 "description": "Specifies the replica ownership. For default and valid values, see [PUT bucket replication](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html) in the *Amazon S3 API Reference*.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1276,9 +1342,10 @@ const awsccS3Bucket = `{
                           "type": "string"
                         },
                         "bucket": {
+                          "computed": true,
                           "description": "The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store the results.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "encryption_configuration": {
@@ -1288,9 +1355,10 @@ const awsccS3Bucket = `{
                           "nested_type": {
                             "attributes": {
                               "replica_kms_key_id": {
+                                "computed": true,
                                 "description": "Specifies the ID (Key ARN or Alias ARN) of the customer managed AWS KMS key stored in AWS Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports symmetric encryption KMS keys. For more information, see [Asymmetric keys in KMS](https://docs.aws.amazon.com//kms/latest/developerguide/symmetric-asymmetric.html) in the *Key Management Service Developer Guide*.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1311,9 +1379,10 @@ const awsccS3Bucket = `{
                                 "nested_type": {
                                   "attributes": {
                                     "minutes": {
+                                      "computed": true,
                                       "description": "Contains an integer specifying time in minutes. \n  Valid value: 15",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "number"
                                     }
                                   },
@@ -1322,9 +1391,10 @@ const awsccS3Bucket = `{
                                 "optional": true
                               },
                               "status": {
+                                "computed": true,
                                 "description": "Specifies whether the replication metrics are enabled.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1339,26 +1409,29 @@ const awsccS3Bucket = `{
                           "nested_type": {
                             "attributes": {
                               "status": {
+                                "computed": true,
                                 "description": "Specifies whether the replication time is enabled.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "time": {
+                                "computed": true,
                                 "description": "A container specifying the time by which replication should be complete for all objects and operations on objects.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "minutes": {
+                                      "computed": true,
                                       "description": "Contains an integer specifying time in minutes. \n  Valid value: 15",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "number"
                                     }
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
@@ -1375,7 +1448,7 @@ const awsccS3Bucket = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "filter": {
                     "computed": true,
@@ -1403,15 +1476,17 @@ const awsccS3Bucket = `{
                                 "nested_type": {
                                   "attributes": {
                                     "key": {
+                                      "computed": true,
                                       "description": "The tag key.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description": "The tag value.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -1438,15 +1513,17 @@ const awsccS3Bucket = `{
                           "nested_type": {
                             "attributes": {
                               "key": {
+                                "computed": true,
                                 "description": "The tag key.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description": "The tag value.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1493,9 +1570,10 @@ const awsccS3Bucket = `{
                           "nested_type": {
                             "attributes": {
                               "status": {
+                                "computed": true,
                                 "description": "Specifies whether Amazon S3 replicates modifications on replicas.\n  *Allowed values*: ` + "`" + `` + "`" + `Enabled` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Disabled` + "`" + `` + "`" + `",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1510,9 +1588,10 @@ const awsccS3Bucket = `{
                           "nested_type": {
                             "attributes": {
                               "status": {
+                                "computed": true,
                                 "description": "Specifies whether Amazon S3 replicates objects created with server-side encryption using an AWS KMS key stored in AWS Key Management Service.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1526,15 +1605,16 @@ const awsccS3Bucket = `{
                     "optional": true
                   },
                   "status": {
+                    "computed": true,
                     "description": "Specifies whether the rule is enabled.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -1548,15 +1628,17 @@ const awsccS3Bucket = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "Name of the object key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "Value of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -1609,9 +1691,10 @@ const awsccS3Bucket = `{
               "nested_type": {
                 "attributes": {
                   "host_name": {
+                    "computed": true,
                     "description": "Name of the host where requests are redirected.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "protocol": {
@@ -1633,6 +1716,7 @@ const awsccS3Bucket = `{
               "nested_type": {
                 "attributes": {
                   "redirect_rule": {
+                    "computed": true,
                     "description": "Container for redirect information. You can redirect requests to another host, to another page, or with another protocol. In the event of an error, you can specify a different error code to return.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -1675,7 +1759,7 @@ const awsccS3Bucket = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "routing_rule_condition": {
                     "computed": true,

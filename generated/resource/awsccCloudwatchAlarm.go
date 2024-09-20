@@ -65,15 +65,17 @@ const awsccCloudwatchAlarm = `{
         "nested_type": {
           "attributes": {
             "name": {
+              "computed": true,
               "description": "The name of the dimension, from 1?255 characters in length. This dimension name must have been included when the metric was published.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the dimension, from 1?255 characters in length.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -145,9 +147,10 @@ const awsccCloudwatchAlarm = `{
               "type": "string"
             },
             "id": {
+              "computed": true,
               "description": "A short name used to tie this object to the results in the response. This name must be unique within a single call to ` + "`" + `` + "`" + `GetMetricData` + "`" + `` + "`" + `. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscore. The first character must be a lowercase letter.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "label": {
@@ -164,6 +167,7 @@ const awsccCloudwatchAlarm = `{
               "nested_type": {
                 "attributes": {
                   "metric": {
+                    "computed": true,
                     "description": "The metric to return, including the metric name, namespace, and dimensions.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -175,15 +179,17 @@ const awsccCloudwatchAlarm = `{
                           "nested_type": {
                             "attributes": {
                               "name": {
+                                "computed": true,
                                 "description": "The name of the dimension, from 1?255 characters in length. This dimension name must have been included when the metric was published.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description": "The value for the dimension, from 1?255 characters in length.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -208,18 +214,20 @@ const awsccCloudwatchAlarm = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "period": {
+                    "computed": true,
                     "description": "The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a ` + "`" + `` + "`" + `PutMetricData` + "`" + `` + "`" + ` call that includes a ` + "`" + `` + "`" + `StorageResolution` + "`" + `` + "`" + ` of 1 second.\n If the ` + "`" + `` + "`" + `StartTime` + "`" + `` + "`" + ` parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:\n  +  Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).\n  +  Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).\n  +  Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "stat": {
+                    "computed": true,
                     "description": "The statistic to return. It can include any CW statistic or extended statistic. For a list of valid values, see the table in [Statistics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic) in the *User Guide*.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "unit": {
@@ -291,15 +299,17 @@ const awsccCloudwatchAlarm = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the specified tag key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

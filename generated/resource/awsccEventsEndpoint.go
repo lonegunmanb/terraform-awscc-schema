@@ -62,8 +62,9 @@ const awsccEventsEndpoint = `{
         "nested_type": {
           "attributes": {
             "state": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

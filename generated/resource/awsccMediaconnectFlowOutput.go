@@ -54,15 +54,17 @@ const awsccMediaconnectFlowOutput = `{
               "type": "string"
             },
             "role_arn": {
+              "computed": true,
               "description": "The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "secret_arn": {
+              "computed": true,
               "description": " The ARN of the secret that you created in AWS Secrets Manager to store the encryption key. This parameter is required for static key encryption and is not valid for SPEKE encryption.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -102,32 +104,36 @@ const awsccMediaconnectFlowOutput = `{
               "nested_type": {
                 "attributes": {
                   "destination_ip": {
+                    "computed": true,
                     "description": "The IP address where contents of the media stream will be sent.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "destination_port": {
+                    "computed": true,
                     "description": "The port to use when the content of the media stream is distributed to the output.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "interface": {
+                    "computed": true,
                     "description": "The VPC interface that is used for the media stream associated with the output.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "The name of the VPC interface that you want to use for the media stream associated with the output.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "list"
@@ -135,9 +141,10 @@ const awsccMediaconnectFlowOutput = `{
               "optional": true
             },
             "encoding_name": {
+              "computed": true,
               "description": "The format that will be used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video streams on sources or outputs that use the CDI protocol, set the encoding name to raw. For video streams on sources or outputs that use the ST 2110 JPEG XS protocol, set the encoding name to jxsv.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "encoding_parameters": {
@@ -147,9 +154,10 @@ const awsccMediaconnectFlowOutput = `{
               "nested_type": {
                 "attributes": {
                   "compression_factor": {
+                    "computed": true,
                     "description": "A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are in the range of 3.0 to 10.0, inclusive.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "encoder_profile": {
@@ -165,9 +173,10 @@ const awsccMediaconnectFlowOutput = `{
               "optional": true
             },
             "media_stream_name": {
+              "computed": true,
               "description": "A name that helps you distinguish one media stream from another.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

@@ -180,9 +180,10 @@ const awsccConfigConfigRule = `{
               "nested_type": {
                 "attributes": {
                   "event_source": {
+                    "computed": true,
                     "description": "The source of the event, such as an AWS service, that triggers CC to evaluate your AWS resources.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "maximum_execution_frequency": {
@@ -193,9 +194,10 @@ const awsccConfigConfigRule = `{
                     "type": "string"
                   },
                   "message_type": {
+                    "computed": true,
                     "description": "The type of notification that triggers CC to run an evaluation for a rule. You can specify the following notification types:\n  +   ` + "`" + `` + "`" + `ConfigurationItemChangeNotification` + "`" + `` + "`" + ` - Triggers an evaluation when CC delivers a configuration item as a result of a resource change.\n  +   ` + "`" + `` + "`" + `OversizedConfigurationItemChangeNotification` + "`" + `` + "`" + ` - Triggers an evaluation when CC delivers an oversized configuration item. CC may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.\n  +   ` + "`" + `` + "`" + `ScheduledNotification` + "`" + `` + "`" + ` - Triggers a periodic evaluation at the frequency specified for ` + "`" + `` + "`" + `MaximumExecutionFrequency` + "`" + `` + "`" + `.\n  +   ` + "`" + `` + "`" + `ConfigurationSnapshotDeliveryCompleted` + "`" + `` + "`" + ` - Triggers a periodic evaluation when CC delivers a configuration snapshot.\n  \n If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for ` + "`" + `` + "`" + `ConfigurationItemChangeNotification` + "`" + `` + "`" + ` and one for ` + "`" + `` + "`" + `OversizedConfigurationItemChangeNotification` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

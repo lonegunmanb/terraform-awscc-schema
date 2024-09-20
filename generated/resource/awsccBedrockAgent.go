@@ -41,9 +41,10 @@ const awsccBedrockAgent = `{
               "optional": true
             },
             "action_group_name": {
+              "computed": true,
               "description": "Name of the action group",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "action_group_state": {
@@ -110,6 +111,7 @@ const awsccBedrockAgent = `{
               "nested_type": {
                 "attributes": {
                   "functions": {
+                    "computed": true,
                     "description": "List of Function definitions",
                     "description_kind": "plain",
                     "nested_type": {
@@ -122,9 +124,10 @@ const awsccBedrockAgent = `{
                           "type": "string"
                         },
                         "name": {
+                          "computed": true,
                           "description": "Name for a resource.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "parameters": {
@@ -162,7 +165,7 @@ const awsccBedrockAgent = `{
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -320,15 +323,17 @@ const awsccBedrockAgent = `{
         "nested_type": {
           "attributes": {
             "description": {
+              "computed": true,
               "description": "Description of the Resource.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "knowledge_base_id": {
+              "computed": true,
               "description": "Identifier for a resource.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "knowledge_base_state": {
@@ -363,6 +368,7 @@ const awsccBedrockAgent = `{
               "type": "string"
             },
             "prompt_configurations": {
+              "computed": true,
               "description": "List of BasePromptConfiguration",
               "description_kind": "plain",
               "nested_type": {
@@ -454,7 +460,7 @@ const awsccBedrockAgent = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"

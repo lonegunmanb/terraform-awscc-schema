@@ -47,15 +47,17 @@ const awsccMediaconnectFlow = `{
         "nested_type": {
           "attributes": {
             "maintenance_day": {
+              "computed": true,
               "description": "A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "maintenance_start_hour": {
+              "computed": true,
               "description": "UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -169,21 +171,24 @@ const awsccMediaconnectFlow = `{
               "type": "number"
             },
             "media_stream_id": {
+              "computed": true,
               "description": "A unique identifier for the media stream.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "media_stream_name": {
+              "computed": true,
               "description": "A name that helps you distinguish one media stream from another.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "media_stream_type": {
+              "computed": true,
               "description": "The type of media stream.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "video_format": {
@@ -258,9 +263,10 @@ const awsccMediaconnectFlow = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description": "The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "secret_arn": {
@@ -303,9 +309,10 @@ const awsccMediaconnectFlow = `{
               "nested_type": {
                 "attributes": {
                   "bridge_arn": {
+                    "computed": true,
                     "description": "The ARN of the bridge feeding this flow.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "vpc_interface_attachment": {
@@ -372,9 +379,10 @@ const awsccMediaconnectFlow = `{
               "nested_type": {
                 "attributes": {
                   "encoding_name": {
+                    "computed": true,
                     "description": "The format that was used to encode the data. For ancillary data streams, set the encoding name to smpte291. For audio streams, set the encoding name to pcm. For video, 2110 streams, set the encoding name to raw. For video, JPEG XS streams, set the encoding name to jxsv.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "input_configurations": {
@@ -384,26 +392,29 @@ const awsccMediaconnectFlow = `{
                     "nested_type": {
                       "attributes": {
                         "input_port": {
+                          "computed": true,
                           "description": "The port that the flow listens on for an incoming media stream.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "interface": {
+                          "computed": true,
                           "description": "The VPC interface where the media stream comes in from.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "name": {
+                                "computed": true,
                                 "description": "The name of the VPC interface that you want to use for the media stream associated with the output.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "list"
@@ -411,9 +422,10 @@ const awsccMediaconnectFlow = `{
                     "optional": true
                   },
                   "media_stream_name": {
+                    "computed": true,
                     "description": "A name that helps you distinguish one media stream from another.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -535,9 +547,10 @@ const awsccMediaconnectFlow = `{
               "nested_type": {
                 "attributes": {
                   "primary_source": {
+                    "computed": true,
                     "description": "The name of the source you choose as the primary source for this flow.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -563,9 +576,10 @@ const awsccMediaconnectFlow = `{
         "nested_type": {
           "attributes": {
             "thumbnail_state": {
+              "computed": true,
               "description": "The state of thumbnail monitoring.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -580,9 +594,10 @@ const awsccMediaconnectFlow = `{
         "nested_type": {
           "attributes": {
             "name": {
+              "computed": true,
               "description": "Immutable and has to be a unique against other VpcInterfaces in this Flow.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "network_interface_ids": {
@@ -603,24 +618,27 @@ const awsccMediaconnectFlow = `{
               "type": "string"
             },
             "role_arn": {
+              "computed": true,
               "description": "Role Arn MediaConnect can assume to create ENIs in customer's account.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "security_group_ids": {
+              "computed": true,
               "description": "Security Group IDs to be used on ENI.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
               ]
             },
             "subnet_id": {
+              "computed": true,
               "description": "Subnet must be in the AZ of the Flow",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

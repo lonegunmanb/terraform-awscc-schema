@@ -34,9 +34,10 @@ const awsccQuicksightDataSet = `{
               "nested_type": {
                 "attributes": {
                   "columns": {
+                    "computed": true,
                     "description": "\u003cp\u003eColumns in this hierarchy.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -49,9 +50,10 @@ const awsccQuicksightDataSet = `{
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description": "\u003cp\u003eA display name for the hierarchy.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -226,9 +228,10 @@ const awsccQuicksightDataSet = `{
                     "nested_type": {
                       "attributes": {
                         "column_name": {
+                          "computed": true,
                           "description": "\u003cp\u003eColumn name.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "format": {
@@ -239,8 +242,9 @@ const awsccQuicksightDataSet = `{
                           "type": "string"
                         },
                         "new_column_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -255,32 +259,36 @@ const awsccQuicksightDataSet = `{
                     "nested_type": {
                       "attributes": {
                         "columns": {
+                          "computed": true,
                           "description": "\u003cp\u003eCalculated columns to create.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "column_id": {
+                                "computed": true,
                                 "description": "\u003cp\u003eA unique ID to identify a calculated column. During a dataset update, if the column ID\n            of a calculated column matches that of an existing calculated column, Amazon QuickSight\n            preserves the existing calculated column.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "column_name": {
+                                "computed": true,
                                 "description": "\u003cp\u003eColumn name.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "expression": {
+                                "computed": true,
                                 "description": "\u003cp\u003eAn expression that defines the calculated column.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -294,9 +302,10 @@ const awsccQuicksightDataSet = `{
                     "nested_type": {
                       "attributes": {
                         "condition_expression": {
+                          "computed": true,
                           "description": "\u003cp\u003eAn expression that must evaluate to a Boolean value. Rows for which the expression\n            evaluates to true are kept in the dataset.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -311,9 +320,10 @@ const awsccQuicksightDataSet = `{
                     "nested_type": {
                       "attributes": {
                         "projected_columns": {
+                          "computed": true,
                           "description": "\u003cp\u003eProjected columns.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -331,15 +341,17 @@ const awsccQuicksightDataSet = `{
                     "nested_type": {
                       "attributes": {
                         "column_name": {
+                          "computed": true,
                           "description": "\u003cp\u003eThe name of the column to be renamed.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "new_column_name": {
+                          "computed": true,
                           "description": "\u003cp\u003eThe new name for the column.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -354,12 +366,14 @@ const awsccQuicksightDataSet = `{
                     "nested_type": {
                       "attributes": {
                         "column_name": {
+                          "computed": true,
                           "description": "\u003cp\u003eThe column that this operation acts on.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "tags": {
+                          "computed": true,
                           "description": "\u003cp\u003eThe dataset column tag, currently only used for geospatial type tagging. .\u003c/p\u003e\n        \u003cnote\u003e\n            \u003cp\u003eThis is not tags for the AWS tagging feature. .\u003c/p\u003e\n        \u003c/note\u003e",
                           "description_kind": "plain",
                           "nested_type": {
@@ -391,7 +405,7 @@ const awsccQuicksightDataSet = `{
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -439,15 +453,17 @@ const awsccQuicksightDataSet = `{
                           "optional": true
                         },
                         "left_operand": {
+                          "computed": true,
                           "description": "\u003cp\u003eLeft operand.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "on_clause": {
+                          "computed": true,
                           "description": "\u003cp\u003eOn Clause.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "right_join_key_properties": {
@@ -467,14 +483,16 @@ const awsccQuicksightDataSet = `{
                           "optional": true
                         },
                         "right_operand": {
+                          "computed": true,
                           "description": "\u003cp\u003eRight operand.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -540,18 +558,20 @@ const awsccQuicksightDataSet = `{
         "nested_type": {
           "attributes": {
             "actions": {
+              "computed": true,
               "description": "\u003cp\u003eThe IAM action to grant or revoke permissions on.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
               ]
             },
             "principal": {
+              "computed": true,
               "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the principal. This can be one of the\n            following:\u003c/p\u003e\n        \u003cul\u003e\n            \u003cli\u003e\n                \u003cp\u003eThe ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n                \u003cp\u003eThe ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n                \u003cp\u003eThe ARN of an AWS account root: This is an IAM ARN rather than a QuickSight\n                    ARN. Use this option only to share resources (templates) across AWS accounts.\n                    (This is less common.) \u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -571,42 +591,48 @@ const awsccQuicksightDataSet = `{
               "nested_type": {
                 "attributes": {
                   "columns": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe column schema from the SQL query result set.\u003c/p\u003e",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "\u003cp\u003eThe name of this column in the underlying data source.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "data_source_arn": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description": "\u003cp\u003eA display name for the SQL query result.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "sql_query": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe SQL query.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -628,36 +654,41 @@ const awsccQuicksightDataSet = `{
                     "type": "string"
                   },
                   "data_source_arn": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe Amazon Resource Name (ARN) for the data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "input_columns": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe column schema of the table.\u003c/p\u003e",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "\u003cp\u003eThe name of this column in the underlying data source.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "name": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe name of the relational table.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "schema": {
@@ -679,31 +710,35 @@ const awsccQuicksightDataSet = `{
               "nested_type": {
                 "attributes": {
                   "data_source_arn": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe amazon Resource Name (ARN) for the data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "input_columns": {
+                    "computed": true,
                     "description": "\u003cp\u003eA physical table type for as S3 data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "\u003cp\u003eThe name of this column in the underlying data source.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "upload_settings": {
                     "computed": true,
@@ -766,9 +801,10 @@ const awsccQuicksightDataSet = `{
         "nested_type": {
           "attributes": {
             "arn": {
+              "computed": true,
               "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the permission dataset.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "format_version": {
@@ -785,8 +821,9 @@ const awsccQuicksightDataSet = `{
               "type": "string"
             },
             "permission_policy": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -801,15 +838,17 @@ const awsccQuicksightDataSet = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "\u003cp\u003eTag key.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "\u003cp\u003eTag value.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

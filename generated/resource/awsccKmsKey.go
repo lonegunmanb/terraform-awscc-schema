@@ -109,15 +109,17 @@ const awsccKmsKey = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that's 1 to 128 Unicode characters in length and can't be prefixed with ` + "`" + `` + "`" + `aws:` + "`" + `` + "`" + `. digits, whitespace, ` + "`" + `` + "`" + `_` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `.` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `:` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `/` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `=` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `+` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `@` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `-` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `\"` + "`" + `` + "`" + `.\n For more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that's 1 to 256 characters in length. You can use any of the following characters: the set of Unicode letters, digits, whitespace, ` + "`" + `` + "`" + `_` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `.` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `/` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `=` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `+` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `-` + "`" + `` + "`" + `.\n For more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

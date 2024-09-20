@@ -40,16 +40,18 @@ const awsccComprehendDocumentClassifier = `{
               "nested_type": {
                 "attributes": {
                   "attribute_names": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "set",
                       "string"
                     ]
                   },
                   "s3_uri": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "split": {
@@ -75,8 +77,9 @@ const awsccComprehendDocumentClassifier = `{
               "nested_type": {
                 "attributes": {
                   "document_read_action": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "document_read_mode": {
@@ -111,8 +114,9 @@ const awsccComprehendDocumentClassifier = `{
               "nested_type": {
                 "attributes": {
                   "s3_uri": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "test_s3_uri": {
@@ -200,13 +204,15 @@ const awsccComprehendDocumentClassifier = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -232,16 +238,18 @@ const awsccComprehendDocumentClassifier = `{
         "nested_type": {
           "attributes": {
             "security_group_ids": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "set",
                 "string"
               ]
             },
             "subnets": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "set",
                 "string"

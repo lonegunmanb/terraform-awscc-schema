@@ -16,9 +16,10 @@ const awsccOsisPipeline = `{
         "nested_type": {
           "attributes": {
             "persistent_buffer_enabled": {
+              "computed": true,
               "description": "Whether persistent buffering should be enabled.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             }
           },
@@ -33,9 +34,10 @@ const awsccOsisPipeline = `{
         "nested_type": {
           "attributes": {
             "kms_key_arn": {
+              "computed": true,
               "description": "The KMS key to use for encrypting data. By default an AWS owned key is used",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -71,8 +73,9 @@ const awsccOsisPipeline = `{
               "nested_type": {
                 "attributes": {
                   "log_group": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -129,15 +132,17 @@ const awsccOsisPipeline = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -246,9 +251,10 @@ const awsccOsisPipeline = `{
               ]
             },
             "subnet_ids": {
+              "computed": true,
               "description": "A list of subnet IDs associated with the VPC endpoint.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
@@ -261,15 +267,17 @@ const awsccOsisPipeline = `{
               "nested_type": {
                 "attributes": {
                   "attach_to_vpc": {
+                    "computed": true,
                     "description": "Whether the pipeline should be attached to the provided VPC",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "cidr_block": {
+                    "computed": true,
                     "description": "The CIDR block to be reserved for OpenSearch Ingestion to create elastic network interfaces (ENIs).",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

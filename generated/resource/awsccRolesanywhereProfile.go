@@ -21,23 +21,26 @@ const awsccRolesanywhereProfile = `{
         "nested_type": {
           "attributes": {
             "certificate_field": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "mapping_rules": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "specifier": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "list"
@@ -112,13 +115,15 @@ const awsccRolesanywhereProfile = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

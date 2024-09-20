@@ -16,9 +16,10 @@ const awsccLightsailInstance = `{
         "nested_type": {
           "attributes": {
             "add_on_type": {
+              "computed": true,
               "description": "The add-on type",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "auto_snapshot_add_on_request": {
@@ -103,9 +104,10 @@ const awsccLightsailInstance = `{
                     "type": "string"
                   },
                   "disk_name": {
+                    "computed": true,
                     "description": "The names to use for your new Lightsail disk.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "iops": {
@@ -123,9 +125,10 @@ const awsccLightsailInstance = `{
                     "type": "bool"
                   },
                   "path": {
+                    "computed": true,
                     "description": "Path of the disk attached to the instance.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "size_in_gb": {
@@ -237,6 +240,7 @@ const awsccLightsailInstance = `{
               "optional": true
             },
             "ports": {
+              "computed": true,
               "description": "Ports to the Instance.",
               "description_kind": "plain",
               "nested_type": {
@@ -323,7 +327,7 @@ const awsccLightsailInstance = `{
                 },
                 "nesting_mode": "set"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -390,9 +394,10 @@ const awsccLightsailInstance = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {

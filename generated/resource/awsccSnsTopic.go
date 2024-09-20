@@ -44,9 +44,10 @@ const awsccSnsTopic = `{
               "type": "string"
             },
             "protocol": {
+              "computed": true,
               "description": "Indicates one of the supported protocols for the Amazon SNS topic.\n  At least one of the other three ` + "`" + `` + "`" + `LoggingConfig` + "`" + `` + "`" + ` properties is recommend along with ` + "`" + `` + "`" + `Protocol` + "`" + `` + "`" + `.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "success_feedback_role_arn": {
@@ -109,15 +110,17 @@ const awsccSnsTopic = `{
         "nested_type": {
           "attributes": {
             "endpoint": {
+              "computed": true,
               "description": "The endpoint that receives notifications from the SNS topic. The endpoint value depends on the protocol that you specify. For more information, see the ` + "`" + `` + "`" + `Endpoint` + "`" + `` + "`" + ` parameter of the ` + "`" + `` + "`" + `Subscribe` + "`" + `` + "`" + ` action in the *API Reference*.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "protocol": {
+              "computed": true,
               "description": "The subscription's protocol. For more information, see the ` + "`" + `` + "`" + `Protocol` + "`" + `` + "`" + ` parameter of the ` + "`" + `` + "`" + `Subscribe` + "`" + `` + "`" + ` action in the *API Reference*.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -132,15 +135,17 @@ const awsccSnsTopic = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The required key portion of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The optional value portion of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

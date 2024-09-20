@@ -34,15 +34,17 @@ const awsccMediapackageAsset = `{
         "nested_type": {
           "attributes": {
             "packaging_configuration_id": {
+              "computed": true,
               "description": "The ID of the PackagingConfiguration being applied to the Asset.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "url": {
+              "computed": true,
               "description": "The URL of the parent manifest for the repackaged Asset.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -88,13 +90,15 @@ const awsccMediapackageAsset = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

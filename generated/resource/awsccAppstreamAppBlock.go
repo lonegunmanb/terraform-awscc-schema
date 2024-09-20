@@ -60,17 +60,20 @@ const awsccAppstreamAppBlock = `{
               "type": "string"
             },
             "executable_path": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "script_s3_location": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "s3_bucket": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "s3_key": {
@@ -82,11 +85,12 @@ const awsccAppstreamAppBlock = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "timeout_in_seconds": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -106,17 +110,20 @@ const awsccAppstreamAppBlock = `{
               "type": "string"
             },
             "executable_path": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "script_s3_location": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "s3_bucket": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "s3_key": {
@@ -128,11 +135,12 @@ const awsccAppstreamAppBlock = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "timeout_in_seconds": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },

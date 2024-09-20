@@ -41,9 +41,10 @@ const awsccEksIdentityProviderConfig = `{
         "nested_type": {
           "attributes": {
             "client_id": {
+              "computed": true,
               "description": "This is also known as audience. The ID for the client application that makes authentication requests to the OpenID identity provider.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "groups_claim": {
@@ -61,9 +62,10 @@ const awsccEksIdentityProviderConfig = `{
               "type": "string"
             },
             "issuer_url": {
+              "computed": true,
               "description": "The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "required_claims": {
@@ -72,15 +74,17 @@ const awsccEksIdentityProviderConfig = `{
               "nested_type": {
                 "attributes": {
                   "key": {
+                    "computed": true,
                     "description": "The key of the requiredClaims.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "The value for the requiredClaims.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -114,15 +118,17 @@ const awsccEksIdentityProviderConfig = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

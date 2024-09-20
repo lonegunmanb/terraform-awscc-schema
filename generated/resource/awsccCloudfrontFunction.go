@@ -40,8 +40,9 @@ const awsccCloudfrontFunction = `{
               "nested_type": {
                 "attributes": {
                   "key_value_store_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

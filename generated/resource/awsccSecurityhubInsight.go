@@ -21,15 +21,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -44,15 +46,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -67,15 +71,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -90,15 +96,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -113,15 +121,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -136,15 +146,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -159,15 +171,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -182,15 +196,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -243,15 +259,17 @@ const awsccSecurityhubInsight = `{
                     "nested_type": {
                       "attributes": {
                         "unit": {
+                          "computed": true,
                           "description": "A date range unit for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "A date range value for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -317,15 +335,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -404,15 +424,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -427,15 +449,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -450,15 +474,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -473,15 +499,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -496,15 +524,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -525,15 +555,17 @@ const awsccSecurityhubInsight = `{
                     "nested_type": {
                       "attributes": {
                         "unit": {
+                          "computed": true,
                           "description": "A date range unit for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "A date range value for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -567,15 +599,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -590,15 +624,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -613,9 +649,10 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "value": {
+                    "computed": true,
                     "description": "A value for the keyword.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -636,15 +673,17 @@ const awsccSecurityhubInsight = `{
                     "nested_type": {
                       "attributes": {
                         "unit": {
+                          "computed": true,
                           "description": "A date range unit for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "A date range value for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -678,15 +717,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -701,15 +742,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -724,15 +767,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -747,15 +792,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -770,15 +817,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -793,9 +842,10 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "cidr": {
+                    "computed": true,
                     "description": "A finding's CIDR value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -810,9 +860,10 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "cidr": {
+                    "computed": true,
                     "description": "A finding's CIDR value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -859,15 +910,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -882,15 +935,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -905,15 +960,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -928,9 +985,10 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "cidr": {
+                    "computed": true,
                     "description": "A finding's CIDR value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -945,9 +1003,10 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "cidr": {
+                    "computed": true,
                     "description": "A finding's CIDR value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -962,15 +1021,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1017,15 +1078,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1046,15 +1109,17 @@ const awsccSecurityhubInsight = `{
                     "nested_type": {
                       "attributes": {
                         "unit": {
+                          "computed": true,
                           "description": "A date range unit for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "A date range value for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -1088,15 +1153,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1117,15 +1184,17 @@ const awsccSecurityhubInsight = `{
                     "nested_type": {
                       "attributes": {
                         "unit": {
+                          "computed": true,
                           "description": "A date range unit for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "A date range value for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -1159,15 +1228,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1214,15 +1285,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1275,15 +1348,17 @@ const awsccSecurityhubInsight = `{
                     "nested_type": {
                       "attributes": {
                         "unit": {
+                          "computed": true,
                           "description": "A date range unit for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "A date range value for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -1317,15 +1392,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1340,21 +1417,24 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to the key value when filtering Security Hub findings with a map filter.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "key": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1369,15 +1449,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1392,15 +1474,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1415,15 +1499,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1438,15 +1524,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1461,15 +1549,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1484,15 +1574,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1507,15 +1599,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1530,15 +1624,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1553,15 +1649,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1576,15 +1674,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1599,9 +1699,10 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "cidr": {
+                    "computed": true,
                     "description": "A finding's CIDR value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1616,9 +1717,10 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "cidr": {
+                    "computed": true,
                     "description": "A finding's CIDR value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1633,15 +1735,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1662,15 +1766,17 @@ const awsccSecurityhubInsight = `{
                     "nested_type": {
                       "attributes": {
                         "unit": {
+                          "computed": true,
                           "description": "A date range unit for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "A date range value for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -1704,15 +1810,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1727,15 +1835,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1750,15 +1860,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1779,15 +1891,17 @@ const awsccSecurityhubInsight = `{
                     "nested_type": {
                       "attributes": {
                         "unit": {
+                          "computed": true,
                           "description": "A date range unit for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "A date range value for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -1821,15 +1935,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1844,15 +1960,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1867,15 +1985,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1890,15 +2010,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1913,15 +2035,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1936,15 +2060,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1959,15 +2085,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1982,15 +2110,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2011,15 +2141,17 @@ const awsccSecurityhubInsight = `{
                     "nested_type": {
                       "attributes": {
                         "unit": {
+                          "computed": true,
                           "description": "A date range unit for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "A date range value for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -2053,15 +2185,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2076,21 +2210,24 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to the key value when filtering Security Hub findings with a map filter.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "key": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2105,15 +2242,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2128,15 +2267,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2151,15 +2292,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2174,21 +2317,24 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to the key value when filtering Security Hub findings with a map filter.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "key": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2203,15 +2349,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2226,9 +2374,10 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "value": {
+                    "computed": true,
                     "description": "The value of the boolean.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -2243,15 +2392,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2330,15 +2481,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2353,15 +2506,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2382,15 +2537,17 @@ const awsccSecurityhubInsight = `{
                     "nested_type": {
                       "attributes": {
                         "unit": {
+                          "computed": true,
                           "description": "A date range unit for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "A date range value for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -2424,15 +2581,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2447,15 +2606,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2470,15 +2631,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2493,15 +2656,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2516,15 +2681,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2539,15 +2706,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2568,15 +2737,17 @@ const awsccSecurityhubInsight = `{
                     "nested_type": {
                       "attributes": {
                         "unit": {
+                          "computed": true,
                           "description": "A date range unit for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "A date range value for the date filter.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -2610,21 +2781,24 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to the key value when filtering Security Hub findings with a map filter.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "key": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2639,15 +2813,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2662,15 +2838,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2685,15 +2863,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2708,15 +2888,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2731,15 +2913,17 @@ const awsccSecurityhubInsight = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description": "The condition to apply to a string value when filtering Security Hub findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Non-empty string definition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

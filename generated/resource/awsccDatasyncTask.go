@@ -106,6 +106,7 @@ const awsccDatasyncTask = `{
               "type": "string"
             },
             "source": {
+              "computed": true,
               "description": "Specifies the manifest that you want DataSync to use and where it's hosted.",
               "description_kind": "plain",
               "nested_type": {
@@ -152,7 +153,7 @@ const awsccDatasyncTask = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -335,15 +336,17 @@ const awsccDatasyncTask = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key for an AWS resource tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for an AWS resource tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -364,6 +367,7 @@ const awsccDatasyncTask = `{
         "nested_type": {
           "attributes": {
             "destination": {
+              "computed": true,
               "description": "Specifies where DataSync uploads your task report.",
               "description_kind": "plain",
               "nested_type": {
@@ -403,7 +407,7 @@ const awsccDatasyncTask = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "object_version_ids": {
               "computed": true,
@@ -413,9 +417,10 @@ const awsccDatasyncTask = `{
               "type": "string"
             },
             "output_type": {
+              "computed": true,
               "description": "Specifies the type of task report that you want.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "overrides": {

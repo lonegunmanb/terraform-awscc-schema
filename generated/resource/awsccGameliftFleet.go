@@ -16,9 +16,10 @@ const awsccGameliftFleet = `{
         "nested_type": {
           "attributes": {
             "cost": {
+              "computed": true,
               "description": "Cost of compute can be specified on Anywhere Fleets to prioritize placement across Queue destinations based on Cost.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -47,8 +48,9 @@ const awsccGameliftFleet = `{
         "nested_type": {
           "attributes": {
             "certificate_type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -70,31 +72,35 @@ const awsccGameliftFleet = `{
         "nested_type": {
           "attributes": {
             "connection_port_range": {
+              "computed": true,
               "description": "Defines the range of ports on the instance that allow inbound traffic to connect with containers in a fleet.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "from_port": {
+                    "computed": true,
                     "description": "A starting value for a range of allowed port numbers.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "to_port": {
+                    "computed": true,
                     "description": "An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than FromPort.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "container_group_definition_names": {
+              "computed": true,
               "description": "The names of the container group definitions that will be created in an instance. You must specify exactly one REPLICA container group. You have the option to also specify one DAEMON container group.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
@@ -150,27 +156,31 @@ const awsccGameliftFleet = `{
         "nested_type": {
           "attributes": {
             "from_port": {
+              "computed": true,
               "description": "A starting value for a range of allowed port numbers.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "ip_range": {
+              "computed": true,
               "description": "A range of allowed IP addresses. This value must be expressed in CIDR notation. Example: \"000.000.000.000/[subnet mask]\" or optionally the shortened version \"0.0.0.0/[subnet mask]\".",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "protocol": {
+              "computed": true,
               "description": "The network communication protocol used by the fleet.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "to_port": {
+              "computed": true,
               "description": "An ending value for a range of allowed port numbers. Port numbers are end-inclusive. This value must be higher than FromPort.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -224,8 +234,9 @@ const awsccGameliftFleet = `{
         "nested_type": {
           "attributes": {
             "location": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "location_capacity": {
@@ -235,21 +246,24 @@ const awsccGameliftFleet = `{
               "nested_type": {
                 "attributes": {
                   "desired_ec2_instances": {
+                    "computed": true,
                     "description": "The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "max_size": {
+                    "computed": true,
                     "description": "The maximum value that is allowed for the fleet's instance count for a location. When creating a new fleet, GameLift automatically sets this value to \"1\". Once the fleet is active, you can change this value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "min_size": {
+                    "computed": true,
                     "description": "The minimum value allowed for the fleet's instance count for a location. When creating a new fleet, GameLift automatically sets this value to \"0\". After the fleet is active, you can change this value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -375,15 +389,17 @@ const awsccGameliftFleet = `{
               "nested_type": {
                 "attributes": {
                   "concurrent_executions": {
+                    "computed": true,
                     "description": "The number of server processes that use this configuration to run concurrently on an instance.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "launch_path": {
+                    "computed": true,
                     "description": "The location of the server executable in a custom game build or the name of the Realtime script file that contains the Init() function. Game builds and Realtime scripts are installed on instances at the root:\n\nWindows (for custom game builds only): C:\\game. Example: \"C:\\game\\MyGame\\server.exe\"\n\nLinux: /local/game. Examples: \"/local/game/MyGame/server.exe\" or \"/local/game/MyRealtimeScript.js\"",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "parameters": {
@@ -430,15 +446,17 @@ const awsccGameliftFleet = `{
               "type": "string"
             },
             "metric_name": {
+              "computed": true,
               "description": "Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "name": {
+              "computed": true,
               "description": "A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "policy_type": {
@@ -476,9 +494,10 @@ const awsccGameliftFleet = `{
               "nested_type": {
                 "attributes": {
                   "target_value": {
+                    "computed": true,
                     "description": "Desired value to use with a target-based scaling policy. The value must be relevant for whatever metric the scaling policy is using. For example, in a policy using the metric PercentAvailableGameSessions, the target value should be the preferred size of the fleet's buffer (the percent of capacity that should be idle and ready for new game sessions).",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },

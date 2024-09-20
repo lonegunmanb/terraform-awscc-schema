@@ -23,9 +23,10 @@ const awsccSecurityhubStandard = `{
               "type": "string"
             },
             "standards_control_arn": {
+              "computed": true,
               "description": "The Amazon Resource Name (ARN) of the control.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

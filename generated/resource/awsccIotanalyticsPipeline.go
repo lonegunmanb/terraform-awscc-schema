@@ -25,16 +25,18 @@ const awsccIotanalyticsPipeline = `{
               "nested_type": {
                 "attributes": {
                   "attributes": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "map",
                       "string"
                     ]
                   },
                   "name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "next": {
@@ -54,13 +56,15 @@ const awsccIotanalyticsPipeline = `{
               "nested_type": {
                 "attributes": {
                   "channel_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "next": {
@@ -80,13 +84,15 @@ const awsccIotanalyticsPipeline = `{
               "nested_type": {
                 "attributes": {
                   "datastore_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -100,13 +106,15 @@ const awsccIotanalyticsPipeline = `{
               "nested_type": {
                 "attributes": {
                   "attribute": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "next": {
@@ -116,13 +124,15 @@ const awsccIotanalyticsPipeline = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "thing_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -136,13 +146,15 @@ const awsccIotanalyticsPipeline = `{
               "nested_type": {
                 "attributes": {
                   "attribute": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "next": {
@@ -152,13 +164,15 @@ const awsccIotanalyticsPipeline = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "thing_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -172,13 +186,15 @@ const awsccIotanalyticsPipeline = `{
               "nested_type": {
                 "attributes": {
                   "filter": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "next": {
@@ -198,18 +214,21 @@ const awsccIotanalyticsPipeline = `{
               "nested_type": {
                 "attributes": {
                   "batch_size": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "lambda_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "next": {
@@ -229,18 +248,21 @@ const awsccIotanalyticsPipeline = `{
               "nested_type": {
                 "attributes": {
                   "attribute": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "math": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "next": {
@@ -260,16 +282,18 @@ const awsccIotanalyticsPipeline = `{
               "nested_type": {
                 "attributes": {
                   "attributes": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
                     ]
                   },
                   "name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "next": {
@@ -289,16 +313,18 @@ const awsccIotanalyticsPipeline = `{
               "nested_type": {
                 "attributes": {
                   "attributes": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
                     ]
                   },
                   "name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "next": {
@@ -334,13 +360,15 @@ const awsccIotanalyticsPipeline = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

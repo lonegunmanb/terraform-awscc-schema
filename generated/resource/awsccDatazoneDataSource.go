@@ -23,9 +23,10 @@ const awsccDatazoneDataSource = `{
               "type": "string"
             },
             "form_name": {
+              "computed": true,
               "description": "The name of the metadata form.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "type_identifier": {
@@ -73,14 +74,16 @@ const awsccDatazoneDataSource = `{
                     "type": "string"
                   },
                   "relational_filter_configurations": {
+                    "computed": true,
                     "description": "The relational filter configurations included in the configuration details of the AWS Glue data source.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "database_name": {
+                          "computed": true,
                           "description": "The database name specified in the relational filter configuration for the data source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "filter_expressions": {
@@ -90,14 +93,16 @@ const awsccDatazoneDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "expression": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "type": {
+                                "computed": true,
                                 "description": "The search filter expression type.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -115,7 +120,7 @@ const awsccDatazoneDataSource = `{
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -136,22 +141,25 @@ const awsccDatazoneDataSource = `{
                     "type": "string"
                   },
                   "redshift_credential_configuration": {
+                    "computed": true,
                     "description": "The details of the credentials required to access an Amazon Redshift cluster.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "secret_manager_arn": {
+                          "computed": true,
                           "description": "The ARN of a secret manager for an Amazon Redshift cluster.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "redshift_storage": {
+                    "computed": true,
                     "description": "The details of the Amazon Redshift storage as part of the configuration of an Amazon Redshift data source run.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -163,9 +171,10 @@ const awsccDatazoneDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "cluster_name": {
+                                "computed": true,
                                 "description": "The name of an Amazon Redshift cluster.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -180,9 +189,10 @@ const awsccDatazoneDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "workgroup_name": {
+                                "computed": true,
                                 "description": "The name of the Amazon Redshift Serverless workgroup.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -193,17 +203,19 @@ const awsccDatazoneDataSource = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "relational_filter_configurations": {
+                    "computed": true,
                     "description": "The relational filter configurations included in the configuration details of the Amazon Redshift data source.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "database_name": {
+                          "computed": true,
                           "description": "The database name specified in the relational filter configuration for the data source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "filter_expressions": {
@@ -213,14 +225,16 @@ const awsccDatazoneDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "expression": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "type": {
+                                "computed": true,
                                 "description": "The search filter expression type.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -238,7 +252,7 @@ const awsccDatazoneDataSource = `{
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"

@@ -23,9 +23,10 @@ const awsccIotSecurityProfile = `{
               "type": "bool"
             },
             "metric": {
+              "computed": true,
               "description": "What is measured by the behavior.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "metric_dimension": {
@@ -35,9 +36,10 @@ const awsccIotSecurityProfile = `{
               "nested_type": {
                 "attributes": {
                   "dimension_name": {
+                    "computed": true,
                     "description": "A unique identifier for the dimension.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "operator": {
@@ -249,9 +251,10 @@ const awsccIotSecurityProfile = `{
               "nested_type": {
                 "attributes": {
                   "dimension_name": {
+                    "computed": true,
                     "description": "A unique identifier for the dimension.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "operator": {
@@ -267,9 +270,10 @@ const awsccIotSecurityProfile = `{
               "optional": true
             },
             "name": {
+              "computed": true,
               "description": "The name for the behavior.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "suppress_alerts": {
@@ -297,15 +301,17 @@ const awsccIotSecurityProfile = `{
         "nested_type": {
           "attributes": {
             "mqtt_topic": {
+              "computed": true,
               "description": "The topic for metrics export.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "role_arn": {
+              "computed": true,
               "description": "The ARN of the role that grants permission to publish to mqtt topic.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -340,15 +346,17 @@ const awsccIotSecurityProfile = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The tag's key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The tag's value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

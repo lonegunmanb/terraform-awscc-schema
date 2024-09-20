@@ -88,15 +88,17 @@ const awsccEc2NatGateway = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The tag key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The tag value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

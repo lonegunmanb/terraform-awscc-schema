@@ -15,8 +15,9 @@ const awsccResourceexplorer2View = `{
         "nested_type": {
           "attributes": {
             "filter_string": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -36,8 +37,9 @@ const awsccResourceexplorer2View = `{
         "nested_type": {
           "attributes": {
             "name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

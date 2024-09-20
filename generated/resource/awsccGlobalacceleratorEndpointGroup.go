@@ -30,9 +30,10 @@ const awsccGlobalacceleratorEndpointGroup = `{
               "type": "bool"
             },
             "endpoint_id": {
+              "computed": true,
               "description": "Id of the endpoint. For Network/Application Load Balancer this value is the ARN.  For EIP, this value is the allocation ID.  For EC2 instances, this is the EC2 instance ID",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "weight": {
@@ -104,15 +105,17 @@ const awsccGlobalacceleratorEndpointGroup = `{
         "nested_type": {
           "attributes": {
             "endpoint_port": {
+              "computed": true,
               "description": "A network port number",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "listener_port": {
+              "computed": true,
               "description": "A network port number",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },

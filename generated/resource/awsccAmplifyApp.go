@@ -108,13 +108,15 @@ const awsccAmplifyApp = `{
               "nested_type": {
                 "attributes": {
                   "name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -213,8 +215,9 @@ const awsccAmplifyApp = `{
               "type": "string"
             },
             "source": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "status": {
@@ -224,8 +227,9 @@ const awsccAmplifyApp = `{
               "type": "string"
             },
             "target": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -256,13 +260,15 @@ const awsccAmplifyApp = `{
         "nested_type": {
           "attributes": {
             "name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -311,13 +317,15 @@ const awsccAmplifyApp = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

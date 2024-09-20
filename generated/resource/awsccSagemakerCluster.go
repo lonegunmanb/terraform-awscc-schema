@@ -169,20 +169,22 @@ const awsccSagemakerCluster = `{
         "nested_type": {
           "attributes": {
             "eks": {
+              "computed": true,
               "description": "Specifies parameter(s) related to EKS as orchestrator, e.g. the EKS cluster nodes will attach to,",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "cluster_arn": {
+                    "computed": true,
                     "description": "The ARN of the EKS cluster, such as arn:aws:eks:us-west-2:123456789012:cluster/my-eks-cluster",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -196,15 +198,17 @@ const awsccSagemakerCluster = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -219,18 +223,20 @@ const awsccSagemakerCluster = `{
         "nested_type": {
           "attributes": {
             "security_group_ids": {
+              "computed": true,
               "description": "The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security groups for the VPC that is specified in the Subnets field.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
               ]
             },
             "subnets": {
+              "computed": true,
               "description": "The ID of the subnets in the VPC to which you want to connect your training job or model.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"

@@ -107,9 +107,10 @@ const awsccNetworkfirewallFirewallPolicy = `{
                     "type": "number"
                   },
                   "resource_arn": {
+                    "computed": true,
                     "description": "A resource ARN.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -123,6 +124,7 @@ const awsccNetworkfirewallFirewallPolicy = `{
               "nested_type": {
                 "attributes": {
                   "action_definition": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -132,18 +134,20 @@ const awsccNetworkfirewallFirewallPolicy = `{
                           "nested_type": {
                             "attributes": {
                               "dimensions": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "value": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
@@ -153,11 +157,12 @@ const awsccNetworkfirewallFirewallPolicy = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "action_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -187,14 +192,16 @@ const awsccNetworkfirewallFirewallPolicy = `{
               "nested_type": {
                 "attributes": {
                   "priority": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "resource_arn": {
+                    "computed": true,
                     "description": "A resource ARN.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -242,13 +249,15 @@ const awsccNetworkfirewallFirewallPolicy = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

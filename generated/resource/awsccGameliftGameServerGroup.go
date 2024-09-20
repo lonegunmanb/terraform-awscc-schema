@@ -29,20 +29,22 @@ const awsccGameliftGameServerGroup = `{
               "type": "number"
             },
             "target_tracking_configuration": {
+              "computed": true,
               "description": "Settings for a target-based scaling policy applied to Auto Scaling group.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "target_value": {
+                    "computed": true,
                     "description": "Desired value to use with a game server group target-based scaling policy.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"

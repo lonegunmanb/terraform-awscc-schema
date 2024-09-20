@@ -16,37 +16,42 @@ const awsccIotJobTemplate = `{
         "nested_type": {
           "attributes": {
             "criteria_list": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "action": {
+                    "computed": true,
                     "description": "The type of job action to take to initiate the job abort.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "failure_type": {
+                    "computed": true,
                     "description": "The type of job execution failures that can initiate a job abort.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "min_number_of_executed_things": {
+                    "computed": true,
                     "description": "The minimum number of things which must receive job execution notifications before the job can be aborted.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "threshold_percentage": {
+                    "computed": true,
                     "description": "The minimum percentage of job execution failures that must occur to initiate the job abort.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -145,18 +150,21 @@ const awsccIotJobTemplate = `{
               "nested_type": {
                 "attributes": {
                   "base_rate_per_minute": {
+                    "computed": true,
                     "description": "The minimum number of things that will be notified of a pending job, per minute at the start of job rollout. This parameter allows you to define the initial rate of rollout.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "increment_factor": {
+                    "computed": true,
                     "description": "The exponential factor to increase the rate of rollout for a job.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "rate_increase_criteria": {
+                    "computed": true,
                     "description": "The criteria to initiate the increase in rate of rollout for a job.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -176,7 +184,7 @@ const awsccIotJobTemplate = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -236,9 +244,10 @@ const awsccIotJobTemplate = `{
               "type": "number"
             },
             "role_arn": {
+              "computed": true,
               "description": "The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job data/updates are stored. The role must also grant permission for IoT to download the files.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -253,15 +262,17 @@ const awsccIotJobTemplate = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The tag's key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The tag's value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -276,9 +287,10 @@ const awsccIotJobTemplate = `{
         "nested_type": {
           "attributes": {
             "in_progress_timeout_in_minutes": {
+              "computed": true,
               "description": "Specifies the amount of time, in minutes, this device has to finish execution of this job.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },

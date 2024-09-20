@@ -103,8 +103,9 @@ const awsccIotfleetwiseSignalCatalog = `{
                     "type": "string"
                   },
                   "data_type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "description": {
@@ -114,8 +115,9 @@ const awsccIotfleetwiseSignalCatalog = `{
                     "type": "string"
                   },
                   "fully_qualified_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "max": {
@@ -162,8 +164,9 @@ const awsccIotfleetwiseSignalCatalog = `{
                     "type": "string"
                   },
                   "data_type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "default_value": {
@@ -179,8 +182,9 @@ const awsccIotfleetwiseSignalCatalog = `{
                     "type": "string"
                   },
                   "fully_qualified_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "max": {
@@ -218,8 +222,9 @@ const awsccIotfleetwiseSignalCatalog = `{
                     "type": "string"
                   },
                   "fully_qualified_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -242,8 +247,9 @@ const awsccIotfleetwiseSignalCatalog = `{
                     ]
                   },
                   "data_type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "description": {
@@ -253,8 +259,9 @@ const awsccIotfleetwiseSignalCatalog = `{
                     "type": "string"
                   },
                   "fully_qualified_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "max": {
@@ -291,13 +298,15 @@ const awsccIotfleetwiseSignalCatalog = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

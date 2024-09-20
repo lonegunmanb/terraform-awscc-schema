@@ -66,9 +66,10 @@ const awsccSsoApplication = `{
                     "type": "string"
                   },
                   "origin": {
+                    "computed": true,
                     "description": "This determines how IAM Identity Center navigates the user to the target application",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -101,13 +102,15 @@ const awsccSsoApplication = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

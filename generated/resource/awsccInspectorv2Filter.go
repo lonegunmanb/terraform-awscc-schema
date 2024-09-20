@@ -39,13 +39,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -59,13 +61,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -79,13 +83,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -99,13 +105,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -119,13 +127,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -139,13 +149,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -159,13 +171,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -179,13 +193,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -221,13 +237,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -241,13 +259,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -261,13 +281,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -281,13 +303,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -301,13 +325,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -321,13 +347,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -407,13 +435,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -449,13 +479,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -469,13 +501,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -489,8 +523,9 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "key": {
@@ -516,13 +551,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -536,13 +573,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -556,13 +595,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -598,13 +639,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -618,13 +661,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -638,13 +683,15 @@ const awsccInspectorv2Filter = `{
               "nested_type": {
                 "attributes": {
                   "comparison": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -663,13 +710,15 @@ const awsccInspectorv2Filter = `{
                     "nested_type": {
                       "attributes": {
                         "comparison": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -705,13 +754,15 @@ const awsccInspectorv2Filter = `{
                     "nested_type": {
                       "attributes": {
                         "comparison": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -725,13 +776,15 @@ const awsccInspectorv2Filter = `{
                     "nested_type": {
                       "attributes": {
                         "comparison": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -745,13 +798,15 @@ const awsccInspectorv2Filter = `{
                     "nested_type": {
                       "attributes": {
                         "comparison": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -765,13 +820,15 @@ const awsccInspectorv2Filter = `{
                     "nested_type": {
                       "attributes": {
                         "comparison": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },

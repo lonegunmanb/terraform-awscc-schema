@@ -35,9 +35,10 @@ const awsccIotMitigationAction = `{
                     "type": "bool"
                   },
                   "thing_group_names": {
+                    "computed": true,
                     "description": "The list of groups to which you want to add the things that triggered the mitigation action.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "set",
                       "string"
@@ -55,15 +56,17 @@ const awsccIotMitigationAction = `{
               "nested_type": {
                 "attributes": {
                   "log_level": {
+                    "computed": true,
                     "description": " Specifies which types of information are logged.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "role_arn_for_logging": {
+                    "computed": true,
                     "description": " The ARN of the IAM role used for logging.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -78,9 +81,10 @@ const awsccIotMitigationAction = `{
               "nested_type": {
                 "attributes": {
                   "topic_arn": {
+                    "computed": true,
                     "description": "The ARN of the topic to which you want to publish the findings.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -95,8 +99,9 @@ const awsccIotMitigationAction = `{
               "nested_type": {
                 "attributes": {
                   "template_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -111,8 +116,9 @@ const awsccIotMitigationAction = `{
               "nested_type": {
                 "attributes": {
                   "action": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -127,8 +133,9 @@ const awsccIotMitigationAction = `{
               "nested_type": {
                 "attributes": {
                   "action": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -169,15 +176,17 @@ const awsccIotMitigationAction = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The tag's key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The tag's value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

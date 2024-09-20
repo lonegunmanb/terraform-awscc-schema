@@ -32,9 +32,10 @@ const awsccAppsyncResolver = `{
               ]
             },
             "ttl": {
+              "computed": true,
               "description": "The TTL in seconds for a resolver that has caching activated.\n Valid values are 1?3,600 seconds.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -157,15 +158,17 @@ const awsccAppsyncResolver = `{
         "nested_type": {
           "attributes": {
             "name": {
+              "computed": true,
               "description": "The ` + "`" + `` + "`" + `name` + "`" + `` + "`" + ` of the runtime to use. Currently, the only allowed value is ` + "`" + `` + "`" + `APPSYNC_JS` + "`" + `` + "`" + `.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "runtime_version": {
+              "computed": true,
               "description": "The ` + "`" + `` + "`" + `version` + "`" + `` + "`" + ` of the runtime to use. Currently, the only allowed version is ` + "`" + `` + "`" + `1.0.0` + "`" + `` + "`" + `.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -180,9 +183,10 @@ const awsccAppsyncResolver = `{
         "nested_type": {
           "attributes": {
             "conflict_detection": {
+              "computed": true,
               "description": "The Conflict Detection strategy to use.\n  +   *VERSION*: Detect conflicts based on object versions for this resolver.\n  +   *NONE*: Do not detect conflicts when invoking this resolver.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "conflict_handler": {

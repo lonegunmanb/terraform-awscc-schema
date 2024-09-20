@@ -34,6 +34,7 @@ const awsccS3OutpostsBucket = `{
         "nested_type": {
           "attributes": {
             "rules": {
+              "computed": true,
               "description": "A list of lifecycle rules for individual objects in an Amazon S3Outposts bucket.",
               "description_kind": "plain",
               "nested_type": {
@@ -45,9 +46,10 @@ const awsccS3OutpostsBucket = `{
                     "nested_type": {
                       "attributes": {
                         "days_after_initiation": {
+                          "computed": true,
                           "description": "Specifies the number of days after which Amazon S3Outposts aborts an incomplete multipart upload.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -95,13 +97,15 @@ const awsccS3OutpostsBucket = `{
                                 "nested_type": {
                                   "attributes": {
                                     "key": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -128,13 +132,15 @@ const awsccS3OutpostsBucket = `{
                           "nested_type": {
                             "attributes": {
                               "key": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -163,7 +169,7 @@ const awsccS3OutpostsBucket = `{
                 },
                 "nesting_mode": "set"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -183,13 +189,15 @@ const awsccS3OutpostsBucket = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

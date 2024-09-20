@@ -45,9 +45,10 @@ const awsccSsmcontactsPlan = `{
         "nested_type": {
           "attributes": {
             "duration_in_minutes": {
+              "computed": true,
               "description": "The time to wait until beginning the next stage.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "targets": {
@@ -63,15 +64,17 @@ const awsccSsmcontactsPlan = `{
                     "nested_type": {
                       "attributes": {
                         "channel_id": {
+                          "computed": true,
                           "description": "The Amazon Resource Name (ARN) of the contact channel.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "retry_interval_in_minutes": {
+                          "computed": true,
                           "description": "The number of minutes to wait to retry sending engagement in the case the engagement initially fails.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -86,15 +89,17 @@ const awsccSsmcontactsPlan = `{
                     "nested_type": {
                       "attributes": {
                         "contact_id": {
+                          "computed": true,
                           "description": "The Amazon Resource Name (ARN) of the contact.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "is_essential": {
+                          "computed": true,
                           "description": "A Boolean value determining if the contact's acknowledgement stops the progress of stages in the plan.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },

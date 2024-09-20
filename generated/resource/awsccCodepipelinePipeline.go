@@ -22,15 +22,17 @@ const awsccCodepipelinePipeline = `{
               "nested_type": {
                 "attributes": {
                   "id": {
+                    "computed": true,
                     "description": "The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "type": {
+                    "computed": true,
                     "description": "The type of encryption key, such as an AWS KMS key. When creating or updating a pipeline, the value must be set to 'KMS'.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -39,15 +41,17 @@ const awsccCodepipelinePipeline = `{
               "optional": true
             },
             "location": {
+              "computed": true,
               "description": "The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your pipeline artifacts.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "type": {
+              "computed": true,
               "description": "The type of the artifact store, such as S3.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -62,6 +66,7 @@ const awsccCodepipelinePipeline = `{
         "nested_type": {
           "attributes": {
             "artifact_store": {
+              "computed": true,
               "description": "The S3 bucket where artifacts for the pipeline are stored.",
               "description_kind": "plain",
               "nested_type": {
@@ -73,15 +78,17 @@ const awsccCodepipelinePipeline = `{
                     "nested_type": {
                       "attributes": {
                         "id": {
+                          "computed": true,
                           "description": "The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "type": {
+                          "computed": true,
                           "description": "The type of encryption key, such as an AWS KMS key. When creating or updating a pipeline, the value must be set to 'KMS'.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -90,26 +97,29 @@ const awsccCodepipelinePipeline = `{
                     "optional": true
                   },
                   "location": {
+                    "computed": true,
                     "description": "The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your pipeline artifacts.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "type": {
+                    "computed": true,
                     "description": "The type of the artifact store, such as S3.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "region": {
+              "computed": true,
               "description": "The action declaration's AWS Region, such as us-east-1.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -124,15 +134,17 @@ const awsccCodepipelinePipeline = `{
         "nested_type": {
           "attributes": {
             "reason": {
+              "computed": true,
               "description": "The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "stage_name": {
+              "computed": true,
               "description": "The name of the stage where you want to disable the inbound or outbound transition of artifacts.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -236,9 +248,10 @@ const awsccCodepipelinePipeline = `{
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "The name of the artifact to be worked on (for example, \"My App\").",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -265,9 +278,10 @@ const awsccCodepipelinePipeline = `{
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "The name of the output of an artifact, such as \"My App\".",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -344,9 +358,10 @@ const awsccCodepipelinePipeline = `{
                                 "nested_type": {
                                   "attributes": {
                                     "name": {
+                                      "computed": true,
                                       "description": "The name of the artifact to be worked on (for example, \"My App\").",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -435,15 +450,17 @@ const awsccCodepipelinePipeline = `{
               "nested_type": {
                 "attributes": {
                   "name": {
+                    "computed": true,
                     "description": "Reserved for future use.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "type": {
+                    "computed": true,
                     "description": "Reserved for future use.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -493,9 +510,10 @@ const awsccCodepipelinePipeline = `{
                                 "nested_type": {
                                   "attributes": {
                                     "name": {
+                                      "computed": true,
                                       "description": "The name of the artifact to be worked on (for example, \"My App\").",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -621,9 +639,10 @@ const awsccCodepipelinePipeline = `{
                                 "nested_type": {
                                   "attributes": {
                                     "name": {
+                                      "computed": true,
                                       "description": "The name of the artifact to be worked on (for example, \"My App\").",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -718,15 +737,17 @@ const awsccCodepipelinePipeline = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The tag's key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The tag's value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -934,9 +955,10 @@ const awsccCodepipelinePipeline = `{
                     "optional": true
                   },
                   "source_action_name": {
+                    "computed": true,
                     "description": "The name of the pipeline source action where the trigger configuration, such as Git tags, is specified. The trigger configuration will start the pipeline upon the specified change only.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -945,9 +967,10 @@ const awsccCodepipelinePipeline = `{
               "optional": true
             },
             "provider_type": {
+              "computed": true,
               "description": "The source provider for the event, such as connections configured for a repository with Git tags, for the specified trigger configuration.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -976,9 +999,10 @@ const awsccCodepipelinePipeline = `{
               "type": "string"
             },
             "name": {
+              "computed": true,
               "description": "The name of a pipeline-level variable.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

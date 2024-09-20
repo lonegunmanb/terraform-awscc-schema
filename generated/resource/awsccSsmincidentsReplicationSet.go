@@ -40,9 +40,10 @@ const awsccSsmincidentsReplicationSet = `{
               "nested_type": {
                 "attributes": {
                   "sse_kms_key_id": {
+                    "computed": true,
                     "description": "The ARN of the ReplicationSet.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -69,13 +70,15 @@ const awsccSsmincidentsReplicationSet = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

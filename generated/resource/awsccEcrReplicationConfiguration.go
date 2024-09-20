@@ -60,15 +60,17 @@ const awsccEcrReplicationConfiguration = `{
                     "nested_type": {
                       "attributes": {
                         "filter": {
+                          "computed": true,
                           "description": "The repository filter to be applied for replication.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "filter_type": {
+                          "computed": true,
                           "description": "Type of repository filter",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },

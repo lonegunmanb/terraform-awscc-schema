@@ -58,15 +58,17 @@ const awsccSsmcontactsRotation = `{
               "nested_type": {
                 "attributes": {
                   "day_of_month": {
+                    "computed": true,
                     "description": "The day of the month when monthly recurring on-call rotations begin.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "hand_off_time": {
+                    "computed": true,
                     "description": "Details about when an on-call rotation shift begins or ends. Time of the day in format HH:MM",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -95,31 +97,35 @@ const awsccSsmcontactsRotation = `{
               "nested_type": {
                 "attributes": {
                   "coverage_times": {
+                    "computed": true,
                     "description": "Information about when an on-call shift begins and ends.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "end_time": {
+                          "computed": true,
                           "description": "Details about when an on-call rotation shift begins or ends. Time of the day in format HH:MM",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "start_time": {
+                          "computed": true,
                           "description": "Details about when an on-call rotation shift begins or ends. Time of the day in format HH:MM",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "day_of_week": {
+                    "computed": true,
                     "description": "The day of the week when weekly recurring on-call shift rotations begin. ",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -134,15 +140,17 @@ const awsccSsmcontactsRotation = `{
               "nested_type": {
                 "attributes": {
                   "day_of_week": {
+                    "computed": true,
                     "description": "The day of the week when weekly recurring on-call shift rotations begin. ",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "hand_off_time": {
+                    "computed": true,
                     "description": "Details about when an on-call rotation shift begins or ends. Time of the day in format HH:MM",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -167,15 +175,17 @@ const awsccSsmcontactsRotation = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

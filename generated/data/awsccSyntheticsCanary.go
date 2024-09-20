@@ -123,6 +123,15 @@ const awsccSyntheticsCanary = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "resources_to_replicate_tags": {
+        "computed": true,
+        "description": "List of resources which canary tags should be replicated to.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "run_config": {
         "computed": true,
         "description": "Provide canary run configuration",

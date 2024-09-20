@@ -33,9 +33,10 @@ const awsccConnectInstanceStorageConfig = `{
         "nested_type": {
           "attributes": {
             "firehose_arn": {
+              "computed": true,
               "description": "An ARN is a unique AWS resource identifier.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -49,9 +50,10 @@ const awsccConnectInstanceStorageConfig = `{
         "nested_type": {
           "attributes": {
             "stream_arn": {
+              "computed": true,
               "description": "An ARN is a unique AWS resource identifier.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -65,36 +67,41 @@ const awsccConnectInstanceStorageConfig = `{
         "nested_type": {
           "attributes": {
             "encryption_config": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "encryption_type": {
+                    "computed": true,
                     "description": "Specifies default encryption using AWS KMS-Managed Keys",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "key_id": {
+                    "computed": true,
                     "description": "Specifies the encryption key id",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "prefix": {
+              "computed": true,
               "description": "Prefixes are used to infer logical hierarchy",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "retention_period_hours": {
+              "computed": true,
               "description": "Number of hours",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -114,15 +121,17 @@ const awsccConnectInstanceStorageConfig = `{
         "nested_type": {
           "attributes": {
             "bucket_name": {
+              "computed": true,
               "description": "A name for the S3 Bucket",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "bucket_prefix": {
+              "computed": true,
               "description": "Prefixes are used to infer logical hierarchy",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "encryption_config": {
@@ -131,15 +140,17 @@ const awsccConnectInstanceStorageConfig = `{
               "nested_type": {
                 "attributes": {
                   "encryption_type": {
+                    "computed": true,
                     "description": "Specifies default encryption using AWS KMS-Managed Keys",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "key_id": {
+                    "computed": true,
                     "description": "Specifies the encryption key id",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

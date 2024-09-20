@@ -28,15 +28,17 @@ const awsccLexBot = `{
         "nested_type": {
           "attributes": {
             "s3_bucket": {
+              "computed": true,
               "description": "An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_object_key": {
+              "computed": true,
               "description": "The Amazon S3 key of the deployment package.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_object_version": {
@@ -70,13 +72,15 @@ const awsccLexBot = `{
               "nested_type": {
                 "attributes": {
                   "custom_vocabulary_items": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "phrase": {
+                          "computed": true,
                           "description": "Phrase that should be recognized.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "weight": {
@@ -89,7 +93,7 @@ const awsccLexBot = `{
                       },
                       "nesting_mode": "set"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -123,8 +127,9 @@ const awsccLexBot = `{
                     "nested_type": {
                       "attributes": {
                         "enabled": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -139,8 +144,9 @@ const awsccLexBot = `{
                     "nested_type": {
                       "attributes": {
                         "enabled": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         },
                         "fulfillment_updates_specification": {
@@ -150,9 +156,10 @@ const awsccLexBot = `{
                           "nested_type": {
                             "attributes": {
                               "active": {
+                                "computed": true,
                                 "description": "Determines whether fulfillment updates are sent to the user. When this field is true, updates are sent.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "bool"
                               },
                               "start_response": {
@@ -169,17 +176,20 @@ const awsccLexBot = `{
                                       "type": "bool"
                                     },
                                     "delay_in_seconds": {
+                                      "computed": true,
                                       "description": "The delay between when the Lambda fulfillment function starts running and the start message is played. If the Lambda function returns before the delay is over, the start message isn't played.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "number"
                                     },
                                     "message_groups": {
+                                      "computed": true,
                                       "description": "One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "message": {
+                                            "computed": true,
                                             "description": "The primary message that Amazon Lex should send to the user.",
                                             "description_kind": "plain",
                                             "nested_type": {
@@ -191,9 +201,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The string that is sent to your application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -214,15 +225,17 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "text": {
+                                                              "computed": true,
                                                               "description": "The text that appears on the button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             },
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -245,9 +258,10 @@ const awsccLexBot = `{
                                                         "type": "string"
                                                       },
                                                       "title": {
+                                                        "computed": true,
                                                         "description": "The title to display on the response card.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -262,9 +276,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The message to send to the user.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -279,9 +294,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The SSML text that defines the prompt.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -292,7 +308,7 @@ const awsccLexBot = `{
                                               },
                                               "nesting_mode": "single"
                                             },
-                                            "required": true
+                                            "optional": true
                                           },
                                           "variations": {
                                             "computed": true,
@@ -307,9 +323,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The string that is sent to your application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -330,15 +347,17 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "text": {
+                                                              "computed": true,
                                                               "description": "The text that appears on the button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             },
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -361,9 +380,10 @@ const awsccLexBot = `{
                                                         "type": "string"
                                                       },
                                                       "title": {
+                                                        "computed": true,
                                                         "description": "The title to display on the response card.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -378,9 +398,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The message to send to the user.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -395,9 +416,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The SSML text that defines the prompt.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -413,7 +435,7 @@ const awsccLexBot = `{
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -441,17 +463,20 @@ const awsccLexBot = `{
                                       "type": "bool"
                                     },
                                     "frequency_in_seconds": {
+                                      "computed": true,
                                       "description": "The frequency that a message is sent to the user. When the period ends, Amazon Lex chooses a message from the message groups and plays it to the user. If the fulfillment Lambda returns before the first period ends, an update message is not played to the user.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "number"
                                     },
                                     "message_groups": {
+                                      "computed": true,
                                       "description": "One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "message": {
+                                            "computed": true,
                                             "description": "The primary message that Amazon Lex should send to the user.",
                                             "description_kind": "plain",
                                             "nested_type": {
@@ -463,9 +488,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The string that is sent to your application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -486,15 +512,17 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "text": {
+                                                              "computed": true,
                                                               "description": "The text that appears on the button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             },
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -517,9 +545,10 @@ const awsccLexBot = `{
                                                         "type": "string"
                                                       },
                                                       "title": {
+                                                        "computed": true,
                                                         "description": "The title to display on the response card.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -534,9 +563,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The message to send to the user.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -551,9 +581,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The SSML text that defines the prompt.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -564,7 +595,7 @@ const awsccLexBot = `{
                                               },
                                               "nesting_mode": "single"
                                             },
-                                            "required": true
+                                            "optional": true
                                           },
                                           "variations": {
                                             "computed": true,
@@ -579,9 +610,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The string that is sent to your application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -602,15 +634,17 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "text": {
+                                                              "computed": true,
                                                               "description": "The text that appears on the button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             },
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -633,9 +667,10 @@ const awsccLexBot = `{
                                                         "type": "string"
                                                       },
                                                       "title": {
+                                                        "computed": true,
                                                         "description": "The title to display on the response card.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -650,9 +685,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The message to send to the user.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -667,9 +703,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The SSML text that defines the prompt.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -685,7 +722,7 @@ const awsccLexBot = `{
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -717,11 +754,13 @@ const awsccLexBot = `{
                                       "type": "bool"
                                     },
                                     "message_groups_list": {
+                                      "computed": true,
                                       "description": "One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "message": {
+                                            "computed": true,
                                             "description": "The primary message that Amazon Lex should send to the user.",
                                             "description_kind": "plain",
                                             "nested_type": {
@@ -733,9 +772,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The string that is sent to your application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -756,15 +796,17 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "text": {
+                                                              "computed": true,
                                                               "description": "The text that appears on the button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             },
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -787,9 +829,10 @@ const awsccLexBot = `{
                                                         "type": "string"
                                                       },
                                                       "title": {
+                                                        "computed": true,
                                                         "description": "The title to display on the response card.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -804,9 +847,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The message to send to the user.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -821,9 +865,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The SSML text that defines the prompt.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -834,7 +879,7 @@ const awsccLexBot = `{
                                               },
                                               "nesting_mode": "single"
                                             },
-                                            "required": true
+                                            "optional": true
                                           },
                                           "variations": {
                                             "computed": true,
@@ -849,9 +894,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The string that is sent to your application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -872,15 +918,17 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "text": {
+                                                              "computed": true,
                                                               "description": "The text that appears on the button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             },
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -903,9 +951,10 @@ const awsccLexBot = `{
                                                         "type": "string"
                                                       },
                                                       "title": {
+                                                        "computed": true,
                                                         "description": "The title to display on the response card.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -920,9 +969,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The message to send to the user.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -937,9 +987,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The SSML text that defines the prompt.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -955,7 +1006,7 @@ const awsccLexBot = `{
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -976,11 +1027,13 @@ const awsccLexBot = `{
                                       "type": "bool"
                                     },
                                     "message_groups_list": {
+                                      "computed": true,
                                       "description": "One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "message": {
+                                            "computed": true,
                                             "description": "The primary message that Amazon Lex should send to the user.",
                                             "description_kind": "plain",
                                             "nested_type": {
@@ -992,9 +1045,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The string that is sent to your application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1015,15 +1069,17 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "text": {
+                                                              "computed": true,
                                                               "description": "The text that appears on the button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             },
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -1046,9 +1102,10 @@ const awsccLexBot = `{
                                                         "type": "string"
                                                       },
                                                       "title": {
+                                                        "computed": true,
                                                         "description": "The title to display on the response card.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1063,9 +1120,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The message to send to the user.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1080,9 +1138,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The SSML text that defines the prompt.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1093,7 +1152,7 @@ const awsccLexBot = `{
                                               },
                                               "nesting_mode": "single"
                                             },
-                                            "required": true
+                                            "optional": true
                                           },
                                           "variations": {
                                             "computed": true,
@@ -1108,9 +1167,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The string that is sent to your application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1131,15 +1191,17 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "text": {
+                                                              "computed": true,
                                                               "description": "The text that appears on the button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             },
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -1162,9 +1224,10 @@ const awsccLexBot = `{
                                                         "type": "string"
                                                       },
                                                       "title": {
+                                                        "computed": true,
                                                         "description": "The title to display on the response card.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1179,9 +1242,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The message to send to the user.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1196,9 +1260,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The SSML text that defines the prompt.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1214,7 +1279,7 @@ const awsccLexBot = `{
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -1235,11 +1300,13 @@ const awsccLexBot = `{
                                       "type": "bool"
                                     },
                                     "message_groups_list": {
+                                      "computed": true,
                                       "description": "One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "message": {
+                                            "computed": true,
                                             "description": "The primary message that Amazon Lex should send to the user.",
                                             "description_kind": "plain",
                                             "nested_type": {
@@ -1251,9 +1318,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The string that is sent to your application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1274,15 +1342,17 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "text": {
+                                                              "computed": true,
                                                               "description": "The text that appears on the button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             },
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -1305,9 +1375,10 @@ const awsccLexBot = `{
                                                         "type": "string"
                                                       },
                                                       "title": {
+                                                        "computed": true,
                                                         "description": "The title to display on the response card.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1322,9 +1393,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The message to send to the user.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1339,9 +1411,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The SSML text that defines the prompt.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1352,7 +1425,7 @@ const awsccLexBot = `{
                                               },
                                               "nesting_mode": "single"
                                             },
-                                            "required": true
+                                            "optional": true
                                           },
                                           "variations": {
                                             "computed": true,
@@ -1367,9 +1440,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The string that is sent to your application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1390,15 +1464,17 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "text": {
+                                                              "computed": true,
                                                               "description": "The text that appears on the button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             },
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -1421,9 +1497,10 @@ const awsccLexBot = `{
                                                         "type": "string"
                                                       },
                                                       "title": {
+                                                        "computed": true,
                                                         "description": "The title to display on the response card.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1438,9 +1515,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The message to send to the user.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1455,9 +1533,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The SSML text that defines the prompt.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1473,7 +1552,7 @@ const awsccLexBot = `{
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -1497,9 +1576,10 @@ const awsccLexBot = `{
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "The name of the context.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1514,6 +1594,7 @@ const awsccLexBot = `{
                     "nested_type": {
                       "attributes": {
                         "closing_response": {
+                          "computed": true,
                           "description": "A list of message groups that Amazon Lex uses to respond the user input.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -1526,11 +1607,13 @@ const awsccLexBot = `{
                                 "type": "bool"
                               },
                               "message_groups_list": {
+                                "computed": true,
                                 "description": "One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "message": {
+                                      "computed": true,
                                       "description": "The primary message that Amazon Lex should send to the user.",
                                       "description_kind": "plain",
                                       "nested_type": {
@@ -1542,9 +1625,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The string that is sent to your application.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1565,15 +1649,17 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "text": {
+                                                        "computed": true,
                                                         "description": "The text that appears on the button.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       },
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1596,9 +1682,10 @@ const awsccLexBot = `{
                                                   "type": "string"
                                                 },
                                                 "title": {
+                                                  "computed": true,
                                                   "description": "The title to display on the response card.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1613,9 +1700,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The message to send to the user.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1630,9 +1718,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The SSML text that defines the prompt.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1643,7 +1732,7 @@ const awsccLexBot = `{
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "variations": {
                                       "computed": true,
@@ -1658,9 +1747,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The string that is sent to your application.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1681,15 +1771,17 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "text": {
+                                                        "computed": true,
                                                         "description": "The text that appears on the button.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       },
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1712,9 +1804,10 @@ const awsccLexBot = `{
                                                   "type": "string"
                                                 },
                                                 "title": {
+                                                  "computed": true,
                                                   "description": "The title to display on the response card.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1729,9 +1822,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The message to send to the user.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1746,9 +1840,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The SSML text that defines the prompt.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1764,12 +1859,12 @@ const awsccLexBot = `{
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "is_active": {
                           "computed": true,
@@ -1789,6 +1884,7 @@ const awsccLexBot = `{
                     "nested_type": {
                       "attributes": {
                         "declination_response": {
+                          "computed": true,
                           "description": "A list of message groups that Amazon Lex uses to respond the user input.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -1801,11 +1897,13 @@ const awsccLexBot = `{
                                 "type": "bool"
                               },
                               "message_groups_list": {
+                                "computed": true,
                                 "description": "One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "message": {
+                                      "computed": true,
                                       "description": "The primary message that Amazon Lex should send to the user.",
                                       "description_kind": "plain",
                                       "nested_type": {
@@ -1817,9 +1915,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The string that is sent to your application.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1840,15 +1939,17 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "text": {
+                                                        "computed": true,
                                                         "description": "The text that appears on the button.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       },
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1871,9 +1972,10 @@ const awsccLexBot = `{
                                                   "type": "string"
                                                 },
                                                 "title": {
+                                                  "computed": true,
                                                   "description": "The title to display on the response card.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1888,9 +1990,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The message to send to the user.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1905,9 +2008,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The SSML text that defines the prompt.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1918,7 +2022,7 @@ const awsccLexBot = `{
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "variations": {
                                       "computed": true,
@@ -1933,9 +2037,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The string that is sent to your application.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1956,15 +2061,17 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "text": {
+                                                        "computed": true,
                                                         "description": "The text that appears on the button.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       },
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1987,9 +2094,10 @@ const awsccLexBot = `{
                                                   "type": "string"
                                                 },
                                                 "title": {
+                                                  "computed": true,
                                                   "description": "The title to display on the response card.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2004,9 +2112,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The message to send to the user.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2021,9 +2130,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The SSML text that defines the prompt.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2039,12 +2149,12 @@ const awsccLexBot = `{
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "is_active": {
                           "computed": true,
@@ -2053,6 +2163,7 @@ const awsccLexBot = `{
                           "type": "bool"
                         },
                         "prompt_specification": {
+                          "computed": true,
                           "description": "Prompts the user to confirm the intent.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -2065,17 +2176,20 @@ const awsccLexBot = `{
                                 "type": "bool"
                               },
                               "max_retries": {
+                                "computed": true,
                                 "description": "The maximum number of times the bot tries to elicit a resonse from the user using this prompt.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               },
                               "message_groups_list": {
+                                "computed": true,
                                 "description": "One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "message": {
+                                      "computed": true,
                                       "description": "The primary message that Amazon Lex should send to the user.",
                                       "description_kind": "plain",
                                       "nested_type": {
@@ -2087,9 +2201,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The string that is sent to your application.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2110,15 +2225,17 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "text": {
+                                                        "computed": true,
                                                         "description": "The text that appears on the button.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       },
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -2141,9 +2258,10 @@ const awsccLexBot = `{
                                                   "type": "string"
                                                 },
                                                 "title": {
+                                                  "computed": true,
                                                   "description": "The title to display on the response card.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2158,9 +2276,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The message to send to the user.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2175,9 +2294,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The SSML text that defines the prompt.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2188,7 +2308,7 @@ const awsccLexBot = `{
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "variations": {
                                       "computed": true,
@@ -2203,9 +2323,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The string that is sent to your application.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2226,15 +2347,17 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "text": {
+                                                        "computed": true,
                                                         "description": "The text that appears on the button.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       },
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -2257,9 +2380,10 @@ const awsccLexBot = `{
                                                   "type": "string"
                                                 },
                                                 "title": {
+                                                  "computed": true,
                                                   "description": "The title to display on the response card.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2274,9 +2398,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The message to send to the user.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2291,9 +2416,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The SSML text that defines the prompt.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2309,7 +2435,7 @@ const awsccLexBot = `{
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "message_selection_strategy": {
                                 "computed": true,
@@ -2338,15 +2464,17 @@ const awsccLexBot = `{
                                       "nested_type": {
                                         "attributes": {
                                           "allow_audio_input": {
+                                            "computed": true,
                                             "description": "Indicates whether audio input is allowed.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "bool"
                                           },
                                           "allow_dtmf_input": {
+                                            "computed": true,
                                             "description": "Indicates whether DTMF input is allowed.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "bool"
                                           }
                                         },
@@ -2367,15 +2495,17 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "end_timeout_ms": {
+                                                  "computed": true,
                                                   "description": "Time for which a bot waits after the customer stops speaking to assume the utterance is finished.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "number"
                                                 },
                                                 "max_length_ms": {
+                                                  "computed": true,
                                                   "description": "Time for how long Amazon Lex waits before speech input is truncated and the speech is returned to application.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "number"
                                                 }
                                               },
@@ -2390,27 +2520,31 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "deletion_character": {
+                                                  "computed": true,
                                                   "description": "The DTMF character that clears the accumulated DTMF digits and immediately ends the input.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "end_character": {
+                                                  "computed": true,
                                                   "description": "The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "end_timeout_ms": {
+                                                  "computed": true,
                                                   "description": "How long the bot should wait after the last DTMF character input before assuming that the input has concluded.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "number"
                                                 },
                                                 "max_length": {
+                                                  "computed": true,
                                                   "description": "The maximum number of DTMF digits allowed in an utterance.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "number"
                                                 }
                                               },
@@ -2419,9 +2553,10 @@ const awsccLexBot = `{
                                             "optional": true
                                           },
                                           "start_timeout_ms": {
+                                            "computed": true,
                                             "description": "Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "number"
                                           }
                                         },
@@ -2436,9 +2571,10 @@ const awsccLexBot = `{
                                       "nested_type": {
                                         "attributes": {
                                           "start_timeout_ms": {
+                                            "computed": true,
                                             "description": "Time for which a bot waits before re-prompting a customer for text input.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "number"
                                           }
                                         },
@@ -2454,7 +2590,7 @@ const awsccLexBot = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -2468,9 +2604,10 @@ const awsccLexBot = `{
                     "nested_type": {
                       "attributes": {
                         "kendra_index": {
+                          "computed": true,
                           "description": "The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "query_filter_string": {
@@ -2493,9 +2630,10 @@ const awsccLexBot = `{
                     "optional": true
                   },
                   "name": {
+                    "computed": true,
                     "description": "Unique name for a resource.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "output_contexts": {
@@ -2505,21 +2643,24 @@ const awsccLexBot = `{
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "Unique name for a resource.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "time_to_live_in_seconds": {
+                          "computed": true,
                           "description": "The amount of time, in seconds, that the output context should remain active.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "turns_to_live": {
+                          "computed": true,
                           "description": "The number of conversation turns that the output context should remain active.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -2541,9 +2682,10 @@ const awsccLexBot = `{
                     "nested_type": {
                       "attributes": {
                         "utterance": {
+                          "computed": true,
                           "description": "The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents/slots.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -2558,15 +2700,17 @@ const awsccLexBot = `{
                     "nested_type": {
                       "attributes": {
                         "priority": {
+                          "computed": true,
                           "description": "The priority that a slot should be elicited.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "slot_name": {
+                          "computed": true,
                           "description": "The name of the slot.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -2605,9 +2749,10 @@ const awsccLexBot = `{
                           "optional": true
                         },
                         "name": {
+                          "computed": true,
                           "description": "Unique name for a resource.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "obfuscation_setting": {
@@ -2617,9 +2762,10 @@ const awsccLexBot = `{
                           "nested_type": {
                             "attributes": {
                               "obfuscation_setting_type": {
+                                "computed": true,
                                 "description": "Value that determines whether Amazon Lex obscures slot values in conversation logs. The default is to obscure the values.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -2628,12 +2774,14 @@ const awsccLexBot = `{
                           "optional": true
                         },
                         "slot_type_name": {
+                          "computed": true,
                           "description": "The slot type name that is used in the slot. Allows for custom and built-in slot type names",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value_elicitation_setting": {
+                          "computed": true,
                           "description": "Settings that you can use for eliciting a slot value.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -2645,20 +2793,22 @@ const awsccLexBot = `{
                                 "nested_type": {
                                   "attributes": {
                                     "default_value_list": {
+                                      "computed": true,
                                       "description": "A list of slot default values",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "default_value": {
+                                            "computed": true,
                                             "description": "The default value to use when a user doesn't provide a value for a slot.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -2679,17 +2829,20 @@ const awsccLexBot = `{
                                       "type": "bool"
                                     },
                                     "max_retries": {
+                                      "computed": true,
                                       "description": "The maximum number of times the bot tries to elicit a resonse from the user using this prompt.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "number"
                                     },
                                     "message_groups_list": {
+                                      "computed": true,
                                       "description": "One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "message": {
+                                            "computed": true,
                                             "description": "The primary message that Amazon Lex should send to the user.",
                                             "description_kind": "plain",
                                             "nested_type": {
@@ -2701,9 +2854,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The string that is sent to your application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -2724,15 +2878,17 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "text": {
+                                                              "computed": true,
                                                               "description": "The text that appears on the button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             },
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -2755,9 +2911,10 @@ const awsccLexBot = `{
                                                         "type": "string"
                                                       },
                                                       "title": {
+                                                        "computed": true,
                                                         "description": "The title to display on the response card.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -2772,9 +2929,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The message to send to the user.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -2789,9 +2947,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The SSML text that defines the prompt.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -2802,7 +2961,7 @@ const awsccLexBot = `{
                                               },
                                               "nesting_mode": "single"
                                             },
-                                            "required": true
+                                            "optional": true
                                           },
                                           "variations": {
                                             "computed": true,
@@ -2817,9 +2976,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The string that is sent to your application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -2840,15 +3000,17 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "text": {
+                                                              "computed": true,
                                                               "description": "The text that appears on the button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             },
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -2871,9 +3033,10 @@ const awsccLexBot = `{
                                                         "type": "string"
                                                       },
                                                       "title": {
+                                                        "computed": true,
                                                         "description": "The title to display on the response card.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -2888,9 +3051,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The message to send to the user.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -2905,9 +3069,10 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "value": {
+                                                        "computed": true,
                                                         "description": "The SSML text that defines the prompt.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -2923,7 +3088,7 @@ const awsccLexBot = `{
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "message_selection_strategy": {
                                       "computed": true,
@@ -2952,15 +3117,17 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "allow_audio_input": {
+                                                  "computed": true,
                                                   "description": "Indicates whether audio input is allowed.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "bool"
                                                 },
                                                 "allow_dtmf_input": {
+                                                  "computed": true,
                                                   "description": "Indicates whether DTMF input is allowed.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "bool"
                                                 }
                                               },
@@ -2981,15 +3148,17 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "end_timeout_ms": {
+                                                        "computed": true,
                                                         "description": "Time for which a bot waits after the customer stops speaking to assume the utterance is finished.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "number"
                                                       },
                                                       "max_length_ms": {
+                                                        "computed": true,
                                                         "description": "Time for how long Amazon Lex waits before speech input is truncated and the speech is returned to application.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "number"
                                                       }
                                                     },
@@ -3004,27 +3173,31 @@ const awsccLexBot = `{
                                                   "nested_type": {
                                                     "attributes": {
                                                       "deletion_character": {
+                                                        "computed": true,
                                                         "description": "The DTMF character that clears the accumulated DTMF digits and immediately ends the input.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       },
                                                       "end_character": {
+                                                        "computed": true,
                                                         "description": "The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       },
                                                       "end_timeout_ms": {
+                                                        "computed": true,
                                                         "description": "How long the bot should wait after the last DTMF character input before assuming that the input has concluded.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "number"
                                                       },
                                                       "max_length": {
+                                                        "computed": true,
                                                         "description": "The maximum number of DTMF digits allowed in an utterance.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "number"
                                                       }
                                                     },
@@ -3033,9 +3206,10 @@ const awsccLexBot = `{
                                                   "optional": true
                                                 },
                                                 "start_timeout_ms": {
+                                                  "computed": true,
                                                   "description": "Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "number"
                                                 }
                                               },
@@ -3050,9 +3224,10 @@ const awsccLexBot = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "start_timeout_ms": {
+                                                  "computed": true,
                                                   "description": "Time for which a bot waits before re-prompting a customer for text input.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "number"
                                                 }
                                               },
@@ -3077,9 +3252,10 @@ const awsccLexBot = `{
                                 "nested_type": {
                                   "attributes": {
                                     "utterance": {
+                                      "computed": true,
                                       "description": "The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents/slots.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -3088,9 +3264,10 @@ const awsccLexBot = `{
                                 "optional": true
                               },
                               "slot_constraint": {
+                                "computed": true,
                                 "description": "Specifies whether the slot is required or optional.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "wait_and_continue_specification": {
@@ -3100,6 +3277,7 @@ const awsccLexBot = `{
                                 "nested_type": {
                                   "attributes": {
                                     "continue_response": {
+                                      "computed": true,
                                       "description": "The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.",
                                       "description_kind": "plain",
                                       "nested_type": {
@@ -3112,11 +3290,13 @@ const awsccLexBot = `{
                                             "type": "bool"
                                           },
                                           "message_groups_list": {
+                                            "computed": true,
                                             "description": "One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.",
                                             "description_kind": "plain",
                                             "nested_type": {
                                               "attributes": {
                                                 "message": {
+                                                  "computed": true,
                                                   "description": "The primary message that Amazon Lex should send to the user.",
                                                   "description_kind": "plain",
                                                   "nested_type": {
@@ -3128,9 +3308,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The string that is sent to your application.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3151,15 +3332,17 @@ const awsccLexBot = `{
                                                               "nested_type": {
                                                                 "attributes": {
                                                                   "text": {
+                                                                    "computed": true,
                                                                     "description": "The text that appears on the button.",
                                                                     "description_kind": "plain",
-                                                                    "required": true,
+                                                                    "optional": true,
                                                                     "type": "string"
                                                                   },
                                                                   "value": {
+                                                                    "computed": true,
                                                                     "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                                     "description_kind": "plain",
-                                                                    "required": true,
+                                                                    "optional": true,
                                                                     "type": "string"
                                                                   }
                                                                 },
@@ -3182,9 +3365,10 @@ const awsccLexBot = `{
                                                               "type": "string"
                                                             },
                                                             "title": {
+                                                              "computed": true,
                                                               "description": "The title to display on the response card.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3199,9 +3383,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The message to send to the user.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3216,9 +3401,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The SSML text that defines the prompt.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3229,7 +3415,7 @@ const awsccLexBot = `{
                                                     },
                                                     "nesting_mode": "single"
                                                   },
-                                                  "required": true
+                                                  "optional": true
                                                 },
                                                 "variations": {
                                                   "computed": true,
@@ -3244,9 +3430,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The string that is sent to your application.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3267,15 +3454,17 @@ const awsccLexBot = `{
                                                               "nested_type": {
                                                                 "attributes": {
                                                                   "text": {
+                                                                    "computed": true,
                                                                     "description": "The text that appears on the button.",
                                                                     "description_kind": "plain",
-                                                                    "required": true,
+                                                                    "optional": true,
                                                                     "type": "string"
                                                                   },
                                                                   "value": {
+                                                                    "computed": true,
                                                                     "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                                     "description_kind": "plain",
-                                                                    "required": true,
+                                                                    "optional": true,
                                                                     "type": "string"
                                                                   }
                                                                 },
@@ -3298,9 +3487,10 @@ const awsccLexBot = `{
                                                               "type": "string"
                                                             },
                                                             "title": {
+                                                              "computed": true,
                                                               "description": "The title to display on the response card.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3315,9 +3505,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The message to send to the user.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3332,9 +3523,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The SSML text that defines the prompt.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3350,12 +3542,12 @@ const awsccLexBot = `{
                                               },
                                               "nesting_mode": "list"
                                             },
-                                            "required": true
+                                            "optional": true
                                           }
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "is_active": {
                                       "computed": true,
@@ -3378,17 +3570,20 @@ const awsccLexBot = `{
                                             "type": "bool"
                                           },
                                           "frequency_in_seconds": {
+                                            "computed": true,
                                             "description": "How often a message should be sent to the user in seconds.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "number"
                                           },
                                           "message_groups_list": {
+                                            "computed": true,
                                             "description": "One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.",
                                             "description_kind": "plain",
                                             "nested_type": {
                                               "attributes": {
                                                 "message": {
+                                                  "computed": true,
                                                   "description": "The primary message that Amazon Lex should send to the user.",
                                                   "description_kind": "plain",
                                                   "nested_type": {
@@ -3400,9 +3595,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The string that is sent to your application.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3423,15 +3619,17 @@ const awsccLexBot = `{
                                                               "nested_type": {
                                                                 "attributes": {
                                                                   "text": {
+                                                                    "computed": true,
                                                                     "description": "The text that appears on the button.",
                                                                     "description_kind": "plain",
-                                                                    "required": true,
+                                                                    "optional": true,
                                                                     "type": "string"
                                                                   },
                                                                   "value": {
+                                                                    "computed": true,
                                                                     "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                                     "description_kind": "plain",
-                                                                    "required": true,
+                                                                    "optional": true,
                                                                     "type": "string"
                                                                   }
                                                                 },
@@ -3454,9 +3652,10 @@ const awsccLexBot = `{
                                                               "type": "string"
                                                             },
                                                             "title": {
+                                                              "computed": true,
                                                               "description": "The title to display on the response card.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3471,9 +3670,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The message to send to the user.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3488,9 +3688,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The SSML text that defines the prompt.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3501,7 +3702,7 @@ const awsccLexBot = `{
                                                     },
                                                     "nesting_mode": "single"
                                                   },
-                                                  "required": true
+                                                  "optional": true
                                                 },
                                                 "variations": {
                                                   "computed": true,
@@ -3516,9 +3717,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The string that is sent to your application.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3539,15 +3741,17 @@ const awsccLexBot = `{
                                                               "nested_type": {
                                                                 "attributes": {
                                                                   "text": {
+                                                                    "computed": true,
                                                                     "description": "The text that appears on the button.",
                                                                     "description_kind": "plain",
-                                                                    "required": true,
+                                                                    "optional": true,
                                                                     "type": "string"
                                                                   },
                                                                   "value": {
+                                                                    "computed": true,
                                                                     "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                                     "description_kind": "plain",
-                                                                    "required": true,
+                                                                    "optional": true,
                                                                     "type": "string"
                                                                   }
                                                                 },
@@ -3570,9 +3774,10 @@ const awsccLexBot = `{
                                                               "type": "string"
                                                             },
                                                             "title": {
+                                                              "computed": true,
                                                               "description": "The title to display on the response card.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3587,9 +3792,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The message to send to the user.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3604,9 +3810,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The SSML text that defines the prompt.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3622,12 +3829,13 @@ const awsccLexBot = `{
                                               },
                                               "nesting_mode": "list"
                                             },
-                                            "required": true
+                                            "optional": true
                                           },
                                           "timeout_in_seconds": {
+                                            "computed": true,
                                             "description": "If Amazon Lex waits longer than this length of time in seconds for a response, it will stop sending messages.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "number"
                                           }
                                         },
@@ -3636,6 +3844,7 @@ const awsccLexBot = `{
                                       "optional": true
                                     },
                                     "waiting_response": {
+                                      "computed": true,
                                       "description": "The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.",
                                       "description_kind": "plain",
                                       "nested_type": {
@@ -3648,11 +3857,13 @@ const awsccLexBot = `{
                                             "type": "bool"
                                           },
                                           "message_groups_list": {
+                                            "computed": true,
                                             "description": "One to 5 message groups that contain update messages. Amazon Lex chooses one of the messages to play to the user.",
                                             "description_kind": "plain",
                                             "nested_type": {
                                               "attributes": {
                                                 "message": {
+                                                  "computed": true,
                                                   "description": "The primary message that Amazon Lex should send to the user.",
                                                   "description_kind": "plain",
                                                   "nested_type": {
@@ -3664,9 +3875,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The string that is sent to your application.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3687,15 +3899,17 @@ const awsccLexBot = `{
                                                               "nested_type": {
                                                                 "attributes": {
                                                                   "text": {
+                                                                    "computed": true,
                                                                     "description": "The text that appears on the button.",
                                                                     "description_kind": "plain",
-                                                                    "required": true,
+                                                                    "optional": true,
                                                                     "type": "string"
                                                                   },
                                                                   "value": {
+                                                                    "computed": true,
                                                                     "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                                     "description_kind": "plain",
-                                                                    "required": true,
+                                                                    "optional": true,
                                                                     "type": "string"
                                                                   }
                                                                 },
@@ -3718,9 +3932,10 @@ const awsccLexBot = `{
                                                               "type": "string"
                                                             },
                                                             "title": {
+                                                              "computed": true,
                                                               "description": "The title to display on the response card.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3735,9 +3950,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The message to send to the user.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3752,9 +3968,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The SSML text that defines the prompt.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3765,7 +3982,7 @@ const awsccLexBot = `{
                                                     },
                                                     "nesting_mode": "single"
                                                   },
-                                                  "required": true
+                                                  "optional": true
                                                 },
                                                 "variations": {
                                                   "computed": true,
@@ -3780,9 +3997,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The string that is sent to your application.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3803,15 +4021,17 @@ const awsccLexBot = `{
                                                               "nested_type": {
                                                                 "attributes": {
                                                                   "text": {
+                                                                    "computed": true,
                                                                     "description": "The text that appears on the button.",
                                                                     "description_kind": "plain",
-                                                                    "required": true,
+                                                                    "optional": true,
                                                                     "type": "string"
                                                                   },
                                                                   "value": {
+                                                                    "computed": true,
                                                                     "description": "The value returned to Amazon Lex when the user chooses this button.",
                                                                     "description_kind": "plain",
-                                                                    "required": true,
+                                                                    "optional": true,
                                                                     "type": "string"
                                                                   }
                                                                 },
@@ -3834,9 +4054,10 @@ const awsccLexBot = `{
                                                               "type": "string"
                                                             },
                                                             "title": {
+                                                              "computed": true,
                                                               "description": "The title to display on the response card.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3851,9 +4072,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The message to send to the user.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3868,9 +4090,10 @@ const awsccLexBot = `{
                                                         "nested_type": {
                                                           "attributes": {
                                                             "value": {
+                                                              "computed": true,
                                                               "description": "The SSML text that defines the prompt.",
                                                               "description_kind": "plain",
-                                                              "required": true,
+                                                              "optional": true,
                                                               "type": "string"
                                                             }
                                                           },
@@ -3886,12 +4109,12 @@ const awsccLexBot = `{
                                               },
                                               "nesting_mode": "list"
                                             },
-                                            "required": true
+                                            "optional": true
                                           }
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -3901,7 +4124,7 @@ const awsccLexBot = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "set"
@@ -3914,15 +4137,17 @@ const awsccLexBot = `{
               "optional": true
             },
             "locale_id": {
+              "computed": true,
               "description": "The identifier of the language and locale that the bot will be used in.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "nlu_confidence_threshold": {
+              "computed": true,
               "description": "The specified confidence threshold for inserting the AMAZON.FallbackIntent and AMAZON.KendraSearchIntent intents.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "slot_types": {
@@ -3964,15 +4189,17 @@ const awsccLexBot = `{
                                       "type": "string"
                                     },
                                     "s3_bucket_name": {
+                                      "computed": true,
                                       "description": "The name of the S3 bucket that contains the grammar source.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "s3_object_key": {
+                                      "computed": true,
                                       "description": "The path to the grammar in the S3 bucket.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -3991,9 +4218,10 @@ const awsccLexBot = `{
                     "optional": true
                   },
                   "name": {
+                    "computed": true,
                     "description": "Unique name for a resource.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "parent_slot_type_signature": {
@@ -4010,20 +4238,22 @@ const awsccLexBot = `{
                     "nested_type": {
                       "attributes": {
                         "sample_value": {
+                          "computed": true,
                           "description": "Defines one of the values for a slot type.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "value": {
+                                "computed": true,
                                 "description": "The value that can be used for a slot type.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "synonyms": {
                           "computed": true,
@@ -4032,9 +4262,10 @@ const awsccLexBot = `{
                           "nested_type": {
                             "attributes": {
                               "value": {
+                                "computed": true,
                                 "description": "The value that can be used for a slot type.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -4078,9 +4309,10 @@ const awsccLexBot = `{
                           "nested_type": {
                             "attributes": {
                               "pattern": {
+                                "computed": true,
                                 "description": "Regex pattern",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -4089,8 +4321,9 @@ const awsccLexBot = `{
                           "optional": true
                         },
                         "resolution_strategy": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -4117,9 +4350,10 @@ const awsccLexBot = `{
                     "type": "string"
                   },
                   "voice_id": {
+                    "computed": true,
                     "description": "The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -4139,15 +4373,17 @@ const awsccLexBot = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -4214,6 +4450,7 @@ const awsccLexBot = `{
               "nested_type": {
                 "attributes": {
                   "bot_alias_locale_setting": {
+                    "computed": true,
                     "description": "You can use this parameter to specify a specific Lambda function to run different functions in different locales.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -4225,26 +4462,29 @@ const awsccLexBot = `{
                           "nested_type": {
                             "attributes": {
                               "lambda_code_hook": {
+                                "computed": true,
                                 "description": "Contains information about code hooks that Amazon Lex calls during a conversation.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "code_hook_interface_version": {
+                                      "computed": true,
                                       "description": "The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "lambda_arn": {
+                                      "computed": true,
                                       "description": "The Amazon Resource Name (ARN) of the Lambda function.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
@@ -4252,20 +4492,22 @@ const awsccLexBot = `{
                           "optional": true
                         },
                         "enabled": {
+                          "computed": true,
                           "description": "Whether the Lambda code hook is enabled",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "locale_id": {
+                    "computed": true,
                     "description": "A string used to identify the locale",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -4286,11 +4528,13 @@ const awsccLexBot = `{
                     "nested_type": {
                       "attributes": {
                         "destination": {
+                          "computed": true,
                           "description": "The location of audio log files collected when conversation logging is enabled for a bot.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "s3_bucket": {
+                                "computed": true,
                                 "description": "Specifies an Amazon S3 bucket for logging audio conversations",
                                 "description_kind": "plain",
                                 "nested_type": {
@@ -4303,30 +4547,33 @@ const awsccLexBot = `{
                                       "type": "string"
                                     },
                                     "log_prefix": {
+                                      "computed": true,
                                       "description": "The Amazon S3 key of the deployment package.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "s3_bucket_arn": {
+                                      "computed": true,
                                       "description": "The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "enabled": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -4341,39 +4588,44 @@ const awsccLexBot = `{
                     "nested_type": {
                       "attributes": {
                         "destination": {
+                          "computed": true,
                           "description": "Defines the Amazon CloudWatch Logs destination log group for conversation text logs.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "cloudwatch": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "cloudwatch_log_group_arn": {
+                                      "computed": true,
                                       "description": "A string used to identify the groupArn for the Cloudwatch Log Group",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "log_prefix": {
+                                      "computed": true,
                                       "description": "A string containing the value for the Log Prefix",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "enabled": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -4400,9 +4652,10 @@ const awsccLexBot = `{
               "nested_type": {
                 "attributes": {
                   "detect_sentiment": {
+                    "computed": true,
                     "description": "Enable to call Amazon Comprehend for Sentiment natively within Lex",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -4422,15 +4675,17 @@ const awsccLexBot = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

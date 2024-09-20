@@ -38,21 +38,24 @@ const awsccSesConfigurationSetEventDestination = `{
                     "nested_type": {
                       "attributes": {
                         "default_dimension_value": {
+                          "computed": true,
                           "description": "The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the dimension when you send an email.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "dimension_name": {
+                          "computed": true,
                           "description": "The name of an Amazon CloudWatch dimension associated with an email sending metric.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "dimension_value_source": {
+                          "computed": true,
                           "description": "The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, specify messageTag. To use your own email headers, specify emailHeader. To put a custom tag on any link included in your email, specify linkTag.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -79,8 +82,9 @@ const awsccSesConfigurationSetEventDestination = `{
               "nested_type": {
                 "attributes": {
                   "event_bus_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -95,15 +99,17 @@ const awsccSesConfigurationSetEventDestination = `{
               "nested_type": {
                 "attributes": {
                   "delivery_stream_arn": {
+                    "computed": true,
                     "description": "The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "iam_role_arn": {
+                    "computed": true,
                     "description": "The ARN of the IAM role under which Amazon SES publishes email sending events to the Amazon Kinesis Firehose stream.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -134,8 +140,9 @@ const awsccSesConfigurationSetEventDestination = `{
               "nested_type": {
                 "attributes": {
                   "topic_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

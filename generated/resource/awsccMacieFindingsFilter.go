@@ -124,15 +124,17 @@ const awsccMacieFindingsFilter = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The tag's key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The tag's value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

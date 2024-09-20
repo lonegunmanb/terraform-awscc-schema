@@ -43,9 +43,10 @@ const awsccOpensearchserverlessSecurityConfig = `{
               "type": "string"
             },
             "metadata": {
+              "computed": true,
               "description": "The XML saml provider metadata document that you want to use",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "session_timeout": {

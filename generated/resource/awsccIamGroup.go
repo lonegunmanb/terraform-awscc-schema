@@ -51,15 +51,17 @@ const awsccIamGroup = `{
         "nested_type": {
           "attributes": {
             "policy_document": {
+              "computed": true,
               "description": "The policy document.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "policy_name": {
+              "computed": true,
               "description": "The friendly name (not ARN) identifying the policy.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

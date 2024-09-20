@@ -176,33 +176,38 @@ const awsccGreengrassv2Deployment = `{
               "nested_type": {
                 "attributes": {
                   "criteria_list": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "action": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "failure_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "min_number_of_executed_things": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "threshold_percentage": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -220,16 +225,19 @@ const awsccGreengrassv2Deployment = `{
                     "nested_type": {
                       "attributes": {
                         "base_rate_per_minute": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "increment_factor": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "rate_increase_criteria": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -248,7 +256,7 @@ const awsccGreengrassv2Deployment = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"

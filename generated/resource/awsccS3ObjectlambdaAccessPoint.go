@@ -101,8 +101,9 @@ const awsccS3ObjectlambdaAccessPoint = `{
                           "nested_type": {
                             "attributes": {
                               "function_arn": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "function_payload": {

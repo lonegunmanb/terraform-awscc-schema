@@ -38,18 +38,20 @@ const awsccCleanroomsCollaboration = `{
         "nested_type": {
           "attributes": {
             "query_compute": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "is_responsible": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -62,23 +64,27 @@ const awsccCleanroomsCollaboration = `{
         "nested_type": {
           "attributes": {
             "allow_cleartext": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "allow_duplicates": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "allow_joins_on_columns_with_different_names": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "preserve_nulls": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             }
           },
@@ -125,18 +131,20 @@ const awsccCleanroomsCollaboration = `{
               "nested_type": {
                 "attributes": {
                   "query_compute": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "is_responsible": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -165,13 +173,15 @@ const awsccCleanroomsCollaboration = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

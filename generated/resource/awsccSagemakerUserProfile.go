@@ -42,13 +42,15 @@ const awsccSagemakerUserProfile = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -135,15 +137,17 @@ const awsccSagemakerUserProfile = `{
                     "nested_type": {
                       "attributes": {
                         "app_image_config_name": {
+                          "computed": true,
                           "description": "The Name of the AppImageConfig.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "image_name": {
+                          "computed": true,
                           "description": "The name of the CustomImage. Must be unique to your account.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "image_version_number": {
@@ -223,8 +227,9 @@ const awsccSagemakerUserProfile = `{
                     "nested_type": {
                       "attributes": {
                         "file_system_id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "file_system_path": {
@@ -249,13 +254,15 @@ const awsccSagemakerUserProfile = `{
               "nested_type": {
                 "attributes": {
                   "gid": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "uid": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -338,9 +345,10 @@ const awsccSagemakerUserProfile = `{
                     "nested_type": {
                       "attributes": {
                         "repository_url": {
+                          "computed": true,
                           "description": "A CodeRepository (valid URL) to be used within Jupyter's Git extension.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -355,15 +363,17 @@ const awsccSagemakerUserProfile = `{
                     "nested_type": {
                       "attributes": {
                         "app_image_config_name": {
+                          "computed": true,
                           "description": "The Name of the AppImageConfig.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "image_name": {
+                          "computed": true,
                           "description": "The name of the CustomImage. Must be unique to your account.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "image_version_number": {
@@ -504,15 +514,17 @@ const awsccSagemakerUserProfile = `{
                     "nested_type": {
                       "attributes": {
                         "app_image_config_name": {
+                          "computed": true,
                           "description": "The Name of the AppImageConfig.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "image_name": {
+                          "computed": true,
                           "description": "The name of the CustomImage. Must be unique to your account.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "image_version_number": {
@@ -661,15 +673,17 @@ const awsccSagemakerUserProfile = `{
                     "nested_type": {
                       "attributes": {
                         "default_ebs_volume_size_in_gb": {
+                          "computed": true,
                           "description": "Default size of the Amazon EBS volume in Gb",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "maximum_ebs_volume_size_in_gb": {
+                          "computed": true,
                           "description": "Maximum size of the Amazon EBS volume in Gb. Must be greater than or equal to the DefaultEbsVolumeSizeInGb.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },

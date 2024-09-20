@@ -25,8 +25,9 @@ const awsccVerifiedpermissionsPolicy = `{
                     "type": "string"
                   },
                   "statement": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -40,8 +41,9 @@ const awsccVerifiedpermissionsPolicy = `{
               "nested_type": {
                 "attributes": {
                   "policy_template_id": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "principal": {
@@ -50,13 +52,15 @@ const awsccVerifiedpermissionsPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "entity_id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "entity_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -70,13 +74,15 @@ const awsccVerifiedpermissionsPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "entity_id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "entity_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },

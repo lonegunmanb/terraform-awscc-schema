@@ -21,15 +21,17 @@ const awsccLookoutmetricsAlert = `{
               "nested_type": {
                 "attributes": {
                   "lambda_arn": {
+                    "computed": true,
                     "description": "ARN of a Lambda to send alert notifications to.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description": "ARN of an IAM role that LookoutMetrics should assume to access the Lambda function.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -44,15 +46,17 @@ const awsccLookoutmetricsAlert = `{
               "nested_type": {
                 "attributes": {
                   "role_arn": {
+                    "computed": true,
                     "description": "ARN of an IAM role that LookoutMetrics should assume to access the SNS topic.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "sns_topic_arn": {
+                    "computed": true,
                     "description": "ARN of an SNS topic to send alert notifications to.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

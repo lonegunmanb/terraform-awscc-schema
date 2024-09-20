@@ -22,6 +22,7 @@ const awsccKinesisanalyticsv2Application = `{
               "nested_type": {
                 "attributes": {
                   "code_content": {
+                    "computed": true,
                     "description": "The location and type of the application code.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -33,15 +34,17 @@ const awsccKinesisanalyticsv2Application = `{
                           "nested_type": {
                             "attributes": {
                               "bucket_arn": {
+                                "computed": true,
                                 "description": "The Amazon Resource Name (ARN) for the S3 bucket containing the application code.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "file_key": {
+                                "computed": true,
                                 "description": "The file key for the object containing the application code.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "object_version": {
@@ -73,12 +76,13 @@ const awsccKinesisanalyticsv2Application = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "code_content_type": {
+                    "computed": true,
                     "description": "Specifies whether the code content is in text or zip format.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -93,9 +97,10 @@ const awsccKinesisanalyticsv2Application = `{
               "nested_type": {
                 "attributes": {
                   "snapshots_enabled": {
+                    "computed": true,
                     "description": "Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -110,9 +115,10 @@ const awsccKinesisanalyticsv2Application = `{
               "nested_type": {
                 "attributes": {
                   "rollback_enabled": {
+                    "computed": true,
                     "description": "Describes whether system initiated rollbacks are enabled for a Flink-based Kinesis Data Analytics application.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -186,9 +192,10 @@ const awsccKinesisanalyticsv2Application = `{
                           "type": "bool"
                         },
                         "configuration_type": {
+                          "computed": true,
                           "description": "Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must set this property to ` + "`" + `CUSTOM` + "`" + ` in order to set the ` + "`" + `CheckpointingEnabled` + "`" + `, ` + "`" + `CheckpointInterval` + "`" + `, or ` + "`" + `MinPauseBetweenCheckpoints` + "`" + ` parameters.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "min_pause_between_checkpoints": {
@@ -210,9 +217,10 @@ const awsccKinesisanalyticsv2Application = `{
                     "nested_type": {
                       "attributes": {
                         "configuration_type": {
+                          "computed": true,
                           "description": "Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to CUSTOM in order to set the LogLevel or MetricsLevel parameters.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "log_level": {
@@ -248,9 +256,10 @@ const awsccKinesisanalyticsv2Application = `{
                           "type": "bool"
                         },
                         "configuration_type": {
+                          "computed": true,
                           "description": "Describes whether the application uses the default parallelism for the Kinesis Data Analytics service. You must set this property to ` + "`" + `CUSTOM` + "`" + ` in order to change your application's ` + "`" + `AutoScalingEnabled` + "`" + `, ` + "`" + `Parallelism` + "`" + `, or ` + "`" + `ParallelismPerKPU` + "`" + ` properties.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "parallelism": {
@@ -320,9 +329,10 @@ const awsccKinesisanalyticsv2Application = `{
                                 "nested_type": {
                                   "attributes": {
                                     "resource_arn": {
+                                      "computed": true,
                                       "description": "The ARN of the Amazon Lambda function that operates on records in the stream.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -336,11 +346,13 @@ const awsccKinesisanalyticsv2Application = `{
                           "optional": true
                         },
                         "input_schema": {
+                          "computed": true,
                           "description": "Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "record_columns": {
+                                "computed": true,
                                 "description": "A list of ` + "`" + `RecordColumn` + "`" + ` objects.",
                                 "description_kind": "plain",
                                 "nested_type": {
@@ -353,21 +365,23 @@ const awsccKinesisanalyticsv2Application = `{
                                       "type": "string"
                                     },
                                     "name": {
+                                      "computed": true,
                                       "description": "The name of the column that is created in the in-application input stream or reference table.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "sql_type": {
+                                      "computed": true,
                                       "description": "The type of column created in the in-application input stream or reference table.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "record_encoding": {
                                 "computed": true,
@@ -377,6 +391,7 @@ const awsccKinesisanalyticsv2Application = `{
                                 "type": "string"
                               },
                               "record_format": {
+                                "computed": true,
                                 "description": "Specifies the format of the records on the streaming source.",
                                 "description_kind": "plain",
                                 "nested_type": {
@@ -394,15 +409,17 @@ const awsccKinesisanalyticsv2Application = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "record_column_delimiter": {
+                                                  "computed": true,
                                                   "description": "The column delimiter. For example, in a CSV format, a comma (\",\") is the typical column delimiter.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "record_row_delimiter": {
+                                                  "computed": true,
                                                   "description": "The row delimiter. For example, in a CSV format, '\\n' is the typical row delimiter.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -417,9 +434,10 @@ const awsccKinesisanalyticsv2Application = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "record_row_path": {
+                                                  "computed": true,
                                                   "description": "The path to the top-level parent that contains the records.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -433,20 +451,21 @@ const awsccKinesisanalyticsv2Application = `{
                                       "optional": true
                                     },
                                     "record_format_type": {
+                                      "computed": true,
                                       "description": "The type of record format.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "kinesis_firehose_input": {
                           "computed": true,
@@ -455,9 +474,10 @@ const awsccKinesisanalyticsv2Application = `{
                           "nested_type": {
                             "attributes": {
                               "resource_arn": {
+                                "computed": true,
                                 "description": "The Amazon Resource Name (ARN) of the delivery stream.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -472,9 +492,10 @@ const awsccKinesisanalyticsv2Application = `{
                           "nested_type": {
                             "attributes": {
                               "resource_arn": {
+                                "computed": true,
                                 "description": "The ARN of the input Kinesis data stream to read.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -483,9 +504,10 @@ const awsccKinesisanalyticsv2Application = `{
                           "optional": true
                         },
                         "name_prefix": {
+                          "computed": true,
                           "description": "The name prefix to use when creating an in-application stream. Suppose that you specify a prefix ` + "`" + `\"MyInApplicationStream\"` + "`" + `. Kinesis Data Analytics then creates one or more (as per the InputParallelism count you specified) in-application streams with the names ` + "`" + `\"MyInApplicationStream_001\"` + "`" + `, ` + "`" + `\"MyInApplicationStream_002\"` + "`" + `, and so on.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -505,18 +527,20 @@ const awsccKinesisanalyticsv2Application = `{
               "nested_type": {
                 "attributes": {
                   "security_group_ids": {
+                    "computed": true,
                     "description": "The array of SecurityGroup IDs used by the VPC configuration.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
                     ]
                   },
                   "subnet_ids": {
+                    "computed": true,
                     "description": "The array of Subnet IDs used by the VPC configuration.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -569,9 +593,10 @@ const awsccKinesisanalyticsv2Application = `{
                     "nested_type": {
                       "attributes": {
                         "artifact_type": {
+                          "computed": true,
                           "description": "Set this to either ` + "`" + `UDF` + "`" + ` or ` + "`" + `DEPENDENCY_JAR` + "`" + `. ` + "`" + `UDF` + "`" + ` stands for user-defined functions. This type of artifact must be in an S3 bucket. A ` + "`" + `DEPENDENCY_JAR` + "`" + ` can be in either Maven or an S3 bucket.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "maven_reference": {
@@ -581,21 +606,24 @@ const awsccKinesisanalyticsv2Application = `{
                           "nested_type": {
                             "attributes": {
                               "artifact_id": {
+                                "computed": true,
                                 "description": "The artifact ID of the Maven reference.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "group_id": {
+                                "computed": true,
                                 "description": "The group ID of the Maven reference.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "version": {
+                                "computed": true,
                                 "description": "The version of the Maven reference.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -610,15 +638,17 @@ const awsccKinesisanalyticsv2Application = `{
                           "nested_type": {
                             "attributes": {
                               "bucket_arn": {
+                                "computed": true,
                                 "description": "The Amazon Resource Name (ARN) for the S3 bucket containing the application code.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "file_key": {
+                                "computed": true,
                                 "description": "The file key for the object containing the application code.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "object_version": {
@@ -645,6 +675,7 @@ const awsccKinesisanalyticsv2Application = `{
                     "nested_type": {
                       "attributes": {
                         "s3_content_location": {
+                          "computed": true,
                           "description": "The description of an Amazon S3 object that contains the Amazon Data Analytics application, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -657,15 +688,16 @@ const awsccKinesisanalyticsv2Application = `{
                                 "type": "string"
                               },
                               "bucket_arn": {
+                                "computed": true,
                                 "description": "The Amazon Resource Name (ARN) of the S3 bucket.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -714,9 +746,10 @@ const awsccKinesisanalyticsv2Application = `{
         "nested_type": {
           "attributes": {
             "application_maintenance_window_start_time": {
+              "computed": true,
               "description": "The start time for the maintenance window.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -757,9 +790,10 @@ const awsccKinesisanalyticsv2Application = `{
               "nested_type": {
                 "attributes": {
                   "application_restore_type": {
+                    "computed": true,
                     "description": "Specifies how the application should be restored.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "snapshot_name": {
@@ -816,15 +850,17 @@ const awsccKinesisanalyticsv2Application = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that's 1 to 128 Unicode characters in length and can't be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that's 0 to 256 characters in length.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

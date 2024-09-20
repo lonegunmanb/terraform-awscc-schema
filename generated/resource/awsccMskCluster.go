@@ -74,8 +74,9 @@ const awsccMskCluster = `{
                                       "nested_type": {
                                         "attributes": {
                                           "enabled": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "bool"
                                           }
                                         },
@@ -89,8 +90,9 @@ const awsccMskCluster = `{
                                       "nested_type": {
                                         "attributes": {
                                           "enabled": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "bool"
                                           }
                                         },
@@ -109,8 +111,9 @@ const awsccMskCluster = `{
                                 "nested_type": {
                                   "attributes": {
                                     "enabled": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "bool"
                                     }
                                   },
@@ -216,8 +219,9 @@ const awsccMskCluster = `{
                     "nested_type": {
                       "attributes": {
                         "enabled": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -231,8 +235,9 @@ const awsccMskCluster = `{
                     "nested_type": {
                       "attributes": {
                         "enabled": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -276,8 +281,9 @@ const awsccMskCluster = `{
               "nested_type": {
                 "attributes": {
                   "enabled": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -301,13 +307,15 @@ const awsccMskCluster = `{
         "nested_type": {
           "attributes": {
             "arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "revision": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -333,8 +341,9 @@ const awsccMskCluster = `{
               "nested_type": {
                 "attributes": {
                   "data_volume_kms_key_id": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -392,6 +401,7 @@ const awsccMskCluster = `{
         "nested_type": {
           "attributes": {
             "broker_logs": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -401,8 +411,9 @@ const awsccMskCluster = `{
                     "nested_type": {
                       "attributes": {
                         "enabled": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         },
                         "log_group": {
@@ -428,8 +439,9 @@ const awsccMskCluster = `{
                           "type": "string"
                         },
                         "enabled": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -449,8 +461,9 @@ const awsccMskCluster = `{
                           "type": "string"
                         },
                         "enabled": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         },
                         "prefix": {
@@ -467,7 +480,7 @@ const awsccMskCluster = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -485,6 +498,7 @@ const awsccMskCluster = `{
         "nested_type": {
           "attributes": {
             "prometheus": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -494,8 +508,9 @@ const awsccMskCluster = `{
                     "nested_type": {
                       "attributes": {
                         "enabled_in_broker": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -509,8 +524,9 @@ const awsccMskCluster = `{
                     "nested_type": {
                       "attributes": {
                         "enabled_in_broker": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -521,7 +537,7 @@ const awsccMskCluster = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"

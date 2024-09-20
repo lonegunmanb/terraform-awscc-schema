@@ -80,7 +80,6 @@ const awsccEc2Subnet = `{
       },
       "ipv_6_cidr_blocks": {
         "computed": true,
-        "description": "The IPv6 network ranges for the subnet, in CIDR notation.",
         "description_kind": "plain",
         "type": [
           "list",
@@ -168,15 +167,17 @@ const awsccEc2Subnet = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The tag key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The tag value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

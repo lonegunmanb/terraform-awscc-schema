@@ -94,26 +94,29 @@ const awsccTimestreamInfluxDbInstance = `{
         "nested_type": {
           "attributes": {
             "s3_configuration": {
+              "computed": true,
               "description": "S3 configuration for sending logs to customer account from the InfluxDB instance.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "bucket_name": {
+                    "computed": true,
                     "description": "The bucket name for logs to be sent from the InfluxDB instance",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "enabled": {
+                    "computed": true,
                     "description": "Specifies whether logging to customer specified bucket is enabled.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -167,9 +170,10 @@ const awsccTimestreamInfluxDbInstance = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {

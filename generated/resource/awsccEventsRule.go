@@ -82,8 +82,9 @@ const awsccEventsRule = `{
               "nested_type": {
                 "attributes": {
                   "graph_ql_operation": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -92,8 +93,9 @@ const awsccEventsRule = `{
               "optional": true
             },
             "arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "batch_parameters": {
@@ -118,13 +120,15 @@ const awsccEventsRule = `{
                     "optional": true
                   },
                   "job_definition": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "job_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "retry_strategy": {
@@ -181,8 +185,9 @@ const awsccEventsRule = `{
                           "type": "number"
                         },
                         "capacity_provider": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "weight": {
@@ -246,8 +251,9 @@ const awsccEventsRule = `{
                                 ]
                               },
                               "subnets": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
@@ -354,8 +360,9 @@ const awsccEventsRule = `{
                     "type": "number"
                   },
                   "task_definition_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -401,8 +408,9 @@ const awsccEventsRule = `{
               "optional": true
             },
             "id": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "input": {
@@ -432,8 +440,9 @@ const awsccEventsRule = `{
                     ]
                   },
                   "input_template": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -447,8 +456,9 @@ const awsccEventsRule = `{
               "nested_type": {
                 "attributes": {
                   "partition_key_path": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -462,8 +472,9 @@ const awsccEventsRule = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "db_user": {
@@ -544,17 +555,20 @@ const awsccEventsRule = `{
               "nested_type": {
                 "attributes": {
                   "run_command_targets": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "values": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -563,7 +577,7 @@ const awsccEventsRule = `{
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -581,13 +595,15 @@ const awsccEventsRule = `{
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -606,8 +622,9 @@ const awsccEventsRule = `{
               "nested_type": {
                 "attributes": {
                   "message_group_id": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

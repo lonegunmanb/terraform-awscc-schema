@@ -41,9 +41,10 @@ const awsccMedialiveEventBridgeRuleTemplate = `{
         "nested_type": {
           "attributes": {
             "arn": {
+              "computed": true,
               "description": "Target ARNs must be either an SNS topic or CloudWatch log group.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

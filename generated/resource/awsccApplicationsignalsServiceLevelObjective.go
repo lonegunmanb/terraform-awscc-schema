@@ -60,21 +60,24 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                     "nested_type": {
                       "attributes": {
                         "duration": {
+                          "computed": true,
                           "description": "Specifies the duration of each calendar interval. For example, if ` + "`" + `Duration` + "`" + ` is 1 and ` + "`" + `DurationUnit` + "`" + ` is ` + "`" + `MONTH` + "`" + `, each interval is one month, aligned with the calendar.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "duration_unit": {
+                          "computed": true,
                           "description": "Specifies the calendar interval unit.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "start_time": {
+                          "computed": true,
                           "description": "Epoch time in seconds you want the first interval to start. Be sure to choose a time that configures the intervals the way that you want. For example, if you want weekly intervals starting on Mondays at 6 a.m., be sure to specify a start time that is a Monday at 6 a.m.\nAs soon as one calendar interval ends, another automatically begins.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -89,15 +92,17 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                     "nested_type": {
                       "attributes": {
                         "duration": {
+                          "computed": true,
                           "description": "Specifies the duration of each calendar interval. For example, if ` + "`" + `Duration` + "`" + ` is 1 and ` + "`" + `DurationUnit` + "`" + ` is ` + "`" + `MONTH` + "`" + `, each interval is one month, aligned with the calendar.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "duration_unit": {
+                          "computed": true,
                           "description": "Specifies the calendar interval unit.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -161,6 +166,7 @@ const awsccApplicationsignalsServiceLevelObjective = `{
               "type": "number"
             },
             "request_based_sli_metric": {
+              "computed": true,
               "description": "This structure contains the information about the metric that is used for a request-based SLO.",
               "description_kind": "plain",
               "nested_type": {
@@ -209,9 +215,10 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                                 "type": "string"
                               },
                               "id": {
+                                "computed": true,
                                 "description": "A short name used to tie this object to the results in the response.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "metric_stat": {
@@ -221,6 +228,7 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                                 "nested_type": {
                                   "attributes": {
                                     "metric": {
+                                      "computed": true,
                                       "description": "This structure defines the metric used for a service level indicator, including the metric name, namespace, and dimensions.",
                                       "description_kind": "plain",
                                       "nested_type": {
@@ -232,15 +240,17 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "name": {
+                                                  "computed": true,
                                                   "description": "The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (:). ASCII control characters are not supported as part of dimension names.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character. ASCII control characters are not supported as part of dimension values",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -265,18 +275,20 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "period": {
+                                      "computed": true,
                                       "description": "The granularity, in seconds, to be used for the metric.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "number"
                                     },
                                     "stat": {
+                                      "computed": true,
                                       "description": "The statistic to use for comparison to the threshold. It can be any CloudWatch statistic or extended statistic.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "unit": {
@@ -324,9 +336,10 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                                 "type": "string"
                               },
                               "id": {
+                                "computed": true,
                                 "description": "A short name used to tie this object to the results in the response.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "metric_stat": {
@@ -336,6 +349,7 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                                 "nested_type": {
                                   "attributes": {
                                     "metric": {
+                                      "computed": true,
                                       "description": "This structure defines the metric used for a service level indicator, including the metric name, namespace, and dimensions.",
                                       "description_kind": "plain",
                                       "nested_type": {
@@ -347,15 +361,17 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "name": {
+                                                  "computed": true,
                                                   "description": "The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (:). ASCII control characters are not supported as part of dimension names.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character. ASCII control characters are not supported as part of dimension values",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -380,18 +396,20 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "period": {
+                                      "computed": true,
                                       "description": "The granularity, in seconds, to be used for the metric.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "number"
                                     },
                                     "stat": {
+                                      "computed": true,
                                       "description": "The statistic to use for comparison to the threshold. It can be any CloudWatch statistic or extended statistic.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "unit": {
@@ -451,9 +469,10 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                           "type": "string"
                         },
                         "id": {
+                          "computed": true,
                           "description": "A short name used to tie this object to the results in the response.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "metric_stat": {
@@ -463,6 +482,7 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                           "nested_type": {
                             "attributes": {
                               "metric": {
+                                "computed": true,
                                 "description": "This structure defines the metric used for a service level indicator, including the metric name, namespace, and dimensions.",
                                 "description_kind": "plain",
                                 "nested_type": {
@@ -474,15 +494,17 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                                       "nested_type": {
                                         "attributes": {
                                           "name": {
+                                            "computed": true,
                                             "description": "The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (:). ASCII control characters are not supported as part of dimension names.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "value": {
+                                            "computed": true,
                                             "description": "The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character. ASCII control characters are not supported as part of dimension values",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -507,18 +529,20 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "period": {
+                                "computed": true,
                                 "description": "The granularity, in seconds, to be used for the metric.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               },
                               "stat": {
+                                "computed": true,
                                 "description": "The statistic to use for comparison to the threshold. It can be any CloudWatch statistic or extended statistic.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "unit": {
@@ -548,7 +572,7 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -562,18 +586,21 @@ const awsccApplicationsignalsServiceLevelObjective = `{
         "nested_type": {
           "attributes": {
             "comparison_operator": {
+              "computed": true,
               "description": "The arithmetic operation used when comparing the specified metric to the threshold.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "metric_threshold": {
+              "computed": true,
               "description": "The value that the SLI metric is compared to.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "sli_metric": {
+              "computed": true,
               "description": "A structure that contains information about the metric that the SLO monitors.",
               "description_kind": "plain",
               "nested_type": {
@@ -609,9 +636,10 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                           "type": "string"
                         },
                         "id": {
+                          "computed": true,
                           "description": "A short name used to tie this object to the results in the response.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "metric_stat": {
@@ -621,6 +649,7 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                           "nested_type": {
                             "attributes": {
                               "metric": {
+                                "computed": true,
                                 "description": "This structure defines the metric used for a service level indicator, including the metric name, namespace, and dimensions.",
                                 "description_kind": "plain",
                                 "nested_type": {
@@ -632,15 +661,17 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                                       "nested_type": {
                                         "attributes": {
                                           "name": {
+                                            "computed": true,
                                             "description": "The name of the dimension. Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (:). ASCII control characters are not supported as part of dimension names.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "value": {
+                                            "computed": true,
                                             "description": "The value of the dimension. Dimension values must contain only ASCII characters and must include at least one non-whitespace character. ASCII control characters are not supported as part of dimension values",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -665,18 +696,20 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "period": {
+                                "computed": true,
                                 "description": "The granularity, in seconds, to be used for the metric.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               },
                               "stat": {
+                                "computed": true,
                                 "description": "The statistic to use for comparison to the threshold. It can be any CloudWatch statistic or extended statistic.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "unit": {
@@ -734,7 +767,7 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -748,15 +781,17 @@ const awsccApplicationsignalsServiceLevelObjective = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the specified tag key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

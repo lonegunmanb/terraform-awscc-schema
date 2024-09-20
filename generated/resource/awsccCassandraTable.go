@@ -70,8 +70,9 @@ const awsccCassandraTable = `{
                                 "type": "number"
                               },
                               "target_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -144,8 +145,9 @@ const awsccCassandraTable = `{
                                 "type": "number"
                               },
                               "target_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -187,13 +189,15 @@ const awsccCassandraTable = `{
               "nested_type": {
                 "attributes": {
                   "read_capacity_units": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "write_capacity_units": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -220,23 +224,26 @@ const awsccCassandraTable = `{
         "nested_type": {
           "attributes": {
             "column": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "column_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "column_type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "order_by": {
               "computed": true,
@@ -327,13 +334,15 @@ const awsccCassandraTable = `{
         "nested_type": {
           "attributes": {
             "column_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "column_type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -401,8 +410,9 @@ const awsccCassandraTable = `{
                                 "type": "number"
                               },
                               "target_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -427,8 +437,9 @@ const awsccCassandraTable = `{
               "type": "number"
             },
             "region": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -450,13 +461,15 @@ const awsccCassandraTable = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

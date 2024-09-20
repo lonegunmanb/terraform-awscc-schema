@@ -31,23 +31,27 @@ const awsccWafv2LoggingConfiguration = `{
         "nested_type": {
           "attributes": {
             "default_behavior": {
+              "computed": true,
               "description": "Default handling for logs that don't match any of the specified filtering conditions.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "filters": {
+              "computed": true,
               "description": "The filters that you want to apply to the logs.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "behavior": {
+                    "computed": true,
                     "description": "How to handle logs that satisfy the filter's conditions and requirement. ",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "conditions": {
+                    "computed": true,
                     "description": "Match conditions for the filter.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -59,9 +63,10 @@ const awsccWafv2LoggingConfiguration = `{
                           "nested_type": {
                             "attributes": {
                               "action": {
+                                "computed": true,
                                 "description": "Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -76,9 +81,10 @@ const awsccWafv2LoggingConfiguration = `{
                           "nested_type": {
                             "attributes": {
                               "label_name": {
+                                "computed": true,
                                 "description": "The label name that a log record must contain in order to meet the condition. This must be a fully qualified label name. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. ",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -89,18 +95,19 @@ const awsccWafv2LoggingConfiguration = `{
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "requirement": {
+                    "computed": true,
                     "description": "Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -140,9 +147,10 @@ const awsccWafv2LoggingConfiguration = `{
               "nested_type": {
                 "attributes": {
                   "name": {
+                    "computed": true,
                     "description": "The name of the query header to inspect.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

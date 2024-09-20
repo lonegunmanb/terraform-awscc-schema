@@ -34,9 +34,10 @@ const awsccApsScraper = `{
               "nested_type": {
                 "attributes": {
                   "workspace_arn": {
+                    "computed": true,
                     "description": "ARN of an Amazon Managed Prometheus workspace",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -96,9 +97,10 @@ const awsccApsScraper = `{
               "nested_type": {
                 "attributes": {
                   "cluster_arn": {
+                    "computed": true,
                     "description": "ARN of an EKS cluster",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "security_group_ids": {
@@ -112,9 +114,10 @@ const awsccApsScraper = `{
                     ]
                   },
                   "subnet_ids": {
+                    "computed": true,
                     "description": "List of subnet IDs",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -137,15 +140,17 @@ const awsccApsScraper = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

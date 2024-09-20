@@ -115,15 +115,17 @@ const awsccAppsyncFunctionConfiguration = `{
         "nested_type": {
           "attributes": {
             "name": {
+              "computed": true,
               "description": "The name of the runtime to use. Currently, the only allowed value is APPSYNC_JS.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "runtime_version": {
+              "computed": true,
               "description": "The version of the runtime to use. Currently, the only allowed version is 1.0.0.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -138,9 +140,10 @@ const awsccAppsyncFunctionConfiguration = `{
         "nested_type": {
           "attributes": {
             "conflict_detection": {
+              "computed": true,
               "description": "The Conflict Detection strategy to use.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "conflict_handler": {

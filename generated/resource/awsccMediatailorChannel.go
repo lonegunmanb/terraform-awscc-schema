@@ -183,13 +183,15 @@ const awsccMediatailorChannel = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -210,9 +212,10 @@ const awsccMediatailorChannel = `{
         "nested_type": {
           "attributes": {
             "max_time_delay_seconds": {
+              "computed": true,
               "description": "\u003cp\u003eThe maximum time delay for time-shifted viewing. The minimum allowed maximum time delay is 0 seconds, and the maximum allowed maximum time delay is 21600 seconds (6 hours).\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },

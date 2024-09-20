@@ -29,9 +29,10 @@ const awsccSesTemplate = `{
               "type": "string"
             },
             "subject_part": {
+              "computed": true,
               "description": "The subject line of the email.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "template_name": {

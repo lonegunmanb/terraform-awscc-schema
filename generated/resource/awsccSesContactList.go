@@ -36,13 +36,15 @@ const awsccSesContactList = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -57,8 +59,9 @@ const awsccSesContactList = `{
         "nested_type": {
           "attributes": {
             "default_subscription_status": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "description": {
@@ -69,15 +72,17 @@ const awsccSesContactList = `{
               "type": "string"
             },
             "display_name": {
+              "computed": true,
               "description": "The display name of the topic.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "topic_name": {
+              "computed": true,
               "description": "The name of the topic.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

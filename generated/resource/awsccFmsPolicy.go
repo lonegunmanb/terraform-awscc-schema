@@ -126,8 +126,9 @@ const awsccFmsPolicy = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
@@ -188,6 +189,7 @@ const awsccFmsPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "network_acl_entry_set": {
+                          "computed": true,
                           "description": "Network ACL entry set.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -206,9 +208,10 @@ const awsccFmsPolicy = `{
                                       "type": "string"
                                     },
                                     "egress": {
+                                      "computed": true,
                                       "description": "Whether the entry is an egress entry.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "bool"
                                     },
                                     "icmp_type_code": {
@@ -218,15 +221,17 @@ const awsccFmsPolicy = `{
                                       "nested_type": {
                                         "attributes": {
                                           "code": {
+                                            "computed": true,
                                             "description": "Code.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "number"
                                           },
                                           "type": {
+                                            "computed": true,
                                             "description": "Type.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "number"
                                           }
                                         },
@@ -248,15 +253,17 @@ const awsccFmsPolicy = `{
                                       "nested_type": {
                                         "attributes": {
                                           "from": {
+                                            "computed": true,
                                             "description": "From Port.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "number"
                                           },
                                           "to": {
+                                            "computed": true,
                                             "description": "To Port.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "number"
                                           }
                                         },
@@ -265,15 +272,17 @@ const awsccFmsPolicy = `{
                                       "optional": true
                                     },
                                     "protocol": {
+                                      "computed": true,
                                       "description": "Protocol.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "rule_action": {
+                                      "computed": true,
                                       "description": "Rule Action.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -282,13 +291,15 @@ const awsccFmsPolicy = `{
                                 "optional": true
                               },
                               "force_remediate_for_first_entries": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "bool"
                               },
                               "force_remediate_for_last_entries": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "bool"
                               },
                               "last_entries": {
@@ -305,9 +316,10 @@ const awsccFmsPolicy = `{
                                       "type": "string"
                                     },
                                     "egress": {
+                                      "computed": true,
                                       "description": "Whether the entry is an egress entry.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "bool"
                                     },
                                     "icmp_type_code": {
@@ -317,15 +329,17 @@ const awsccFmsPolicy = `{
                                       "nested_type": {
                                         "attributes": {
                                           "code": {
+                                            "computed": true,
                                             "description": "Code.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "number"
                                           },
                                           "type": {
+                                            "computed": true,
                                             "description": "Type.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "number"
                                           }
                                         },
@@ -347,15 +361,17 @@ const awsccFmsPolicy = `{
                                       "nested_type": {
                                         "attributes": {
                                           "from": {
+                                            "computed": true,
                                             "description": "From Port.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "number"
                                           },
                                           "to": {
+                                            "computed": true,
                                             "description": "To Port.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "number"
                                           }
                                         },
@@ -364,15 +380,17 @@ const awsccFmsPolicy = `{
                                       "optional": true
                                     },
                                     "protocol": {
+                                      "computed": true,
                                       "description": "Protocol.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "rule_action": {
+                                      "computed": true,
                                       "description": "Rule Action.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -383,7 +401,7 @@ const awsccFmsPolicy = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -397,9 +415,10 @@ const awsccFmsPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "firewall_deployment_model": {
+                          "computed": true,
                           "description": "Firewall deployment mode.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -414,9 +433,10 @@ const awsccFmsPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "firewall_deployment_model": {
+                          "computed": true,
                           "description": "Firewall deployment mode.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -446,13 +466,15 @@ const awsccFmsPolicy = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

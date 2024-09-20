@@ -96,9 +96,10 @@ const awsccMediapackagev2OriginEndpoint = `{
               "optional": true
             },
             "manifest_name": {
+              "computed": true,
               "description": "\u003cp\u003eA short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. \u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "manifest_window_seconds": {
@@ -280,9 +281,10 @@ const awsccMediapackagev2OriginEndpoint = `{
               "optional": true
             },
             "manifest_name": {
+              "computed": true,
               "description": "\u003cp\u003eA short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "manifest_window_seconds": {
@@ -395,9 +397,10 @@ const awsccMediapackagev2OriginEndpoint = `{
               "optional": true
             },
             "manifest_name": {
+              "computed": true,
               "description": "\u003cp\u003eA short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "manifest_window_seconds": {
@@ -474,6 +477,7 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "type": "string"
                   },
                   "encryption_method": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe encryption type.\u003c/p\u003e",
                     "description_kind": "plain",
                     "nested_type": {
@@ -493,7 +497,7 @@ const awsccMediapackagev2OriginEndpoint = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "key_rotation_interval_seconds": {
                     "computed": true,
@@ -503,61 +507,69 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "type": "number"
                   },
                   "speke_key_provider": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe parameters for the SPEKE key provider.\u003c/p\u003e",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "drm_systems": {
+                          "computed": true,
                           "description": "\u003cp\u003eThe DRM solution provider you're using to protect your content during distribution.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
                           ]
                         },
                         "encryption_contract_configuration": {
+                          "computed": true,
                           "description": "\u003cp\u003eConfigure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "preset_speke_20_audio": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "preset_speke_20_video": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "resource_id": {
+                          "computed": true,
                           "description": "\u003cp\u003eThe unique identifier for the content. The service sends this to the key server to identify the current endpoint. How unique you make this depends on how fine-grained you want access controls to be. The service does not permit you to use the same ID for two simultaneous encryption processes. The resource ID is also known as the content ID.\u003c/p\u003e\n         \u003cp\u003eThe following example shows a resource ID: \u003ccode\u003eMovieNight20171126093045\u003c/code\u003e\n         \u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description": "\u003cp\u003eThe ARN for the IAM role granted by the key provider that provides access to the key provider API. This role must have a trust policy that allows MediaPackage to assume the role, and it must have a sufficient permissions policy to allow access to the specific key retrieval URL. Get this from your DRM solution provider.\u003c/p\u003e\n         \u003cp\u003eValid format: \u003ccode\u003earn:aws:iam::{accountID}:role/{name}\u003c/code\u003e. The following example shows a role ARN: \u003ccode\u003earn:aws:iam::444455556666:role/SpekeAccess\u003c/code\u003e\n         \u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "url": {
+                          "computed": true,
                           "description": "\u003cp\u003eThe URL of the API Gateway proxy that you set up to talk to your key server. The API Gateway proxy must reside in the same AWS Region as MediaPackage and must start with https://.\u003c/p\u003e\n         \u003cp\u003eThe following example shows a URL: \u003ccode\u003ehttps://1wm2dx1f33.execute-api.us-west-2.amazonaws.com/SpekeSample/copyProtection\u003c/code\u003e\n         \u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"

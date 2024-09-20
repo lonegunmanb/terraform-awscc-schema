@@ -94,15 +94,17 @@ const awsccRefactorspacesApplication = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "A string used to identify this tag",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "A string containing the value for the tag",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

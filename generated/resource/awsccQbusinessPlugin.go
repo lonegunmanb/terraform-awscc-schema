@@ -24,13 +24,15 @@ const awsccQbusinessPlugin = `{
               "nested_type": {
                 "attributes": {
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "secret_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -50,13 +52,15 @@ const awsccQbusinessPlugin = `{
               "nested_type": {
                 "attributes": {
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "secret_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -85,6 +89,7 @@ const awsccQbusinessPlugin = `{
         "nested_type": {
           "attributes": {
             "api_schema": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -100,13 +105,15 @@ const awsccQbusinessPlugin = `{
                     "nested_type": {
                       "attributes": {
                         "bucket": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -117,16 +124,18 @@ const awsccQbusinessPlugin = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "api_schema_type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "description": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -173,13 +182,15 @@ const awsccQbusinessPlugin = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

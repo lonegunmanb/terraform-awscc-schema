@@ -28,9 +28,10 @@ const awsccS3AccessGrant = `{
         "nested_type": {
           "attributes": {
             "s3_sub_prefix": {
+              "computed": true,
               "description": "The S3 sub prefix of a registered location in your S3 Access Grants instance",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -104,13 +105,15 @@ const awsccS3AccessGrant = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

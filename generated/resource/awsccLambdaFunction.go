@@ -135,9 +135,10 @@ const awsccLambdaFunction = `{
         "nested_type": {
           "attributes": {
             "size": {
+              "computed": true,
               "description": "The size of the function's ` + "`" + `` + "`" + `/tmp` + "`" + `` + "`" + ` directory.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -152,15 +153,17 @@ const awsccLambdaFunction = `{
         "nested_type": {
           "attributes": {
             "arn": {
+              "computed": true,
               "description": "The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "local_mount_path": {
+              "computed": true,
               "description": "The path where the function can access the file system, starting with ` + "`" + `` + "`" + `/mnt/` + "`" + `` + "`" + `.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -337,9 +340,10 @@ const awsccLambdaFunction = `{
               "type": "string"
             },
             "update_runtime_on": {
+              "computed": true,
               "description": "Specify the runtime update mode.\n  +   *Auto (default)* - Automatically update to the most recent and secure runtime version using a [Two-phase runtime version rollout](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-two-phase). This is the best choice for most customers to ensure they always benefit from runtime updates.\n  +   *FunctionUpdate* - LAM updates the runtime of you function to the most recent and secure runtime version when you update your function. This approach synchronizes runtime updates with function deployments, giving you control over when runtime updates are applied and allowing you to detect and mitigate rare runtime update incompatibilities early. When using this setting, you need to regularly update your functions to keep their runtime up-to-date.\n  +   *Manual* - You specify a runtime version in your function configuration. The function will use this runtime version indefinitely. In the rare case where a new runtime version is incompatible with an existing function, this allows you to roll back your function to an earlier runtime version. For more information, see [Roll back a runtime version](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html#runtime-management-rollback).\n  \n  *Valid Values*: ` + "`" + `` + "`" + `Auto` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `FunctionUpdate` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Manual` + "`" + `` + "`" + `",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -354,9 +358,10 @@ const awsccLambdaFunction = `{
         "nested_type": {
           "attributes": {
             "apply_on": {
+              "computed": true,
               "description": "Set ` + "`" + `` + "`" + `ApplyOn` + "`" + `` + "`" + ` to ` + "`" + `` + "`" + `PublishedVersions` + "`" + `` + "`" + ` to create a snapshot of the initialized execution environment when you publish a function version.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -393,8 +398,9 @@ const awsccLambdaFunction = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {

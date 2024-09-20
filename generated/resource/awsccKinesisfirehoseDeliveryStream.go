@@ -71,8 +71,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "index_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "processing_configuration": {
@@ -97,13 +98,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "parameter_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "parameter_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -112,8 +115,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "optional": true
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -143,8 +147,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true
             },
             "role_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_backup_mode": {
@@ -154,12 +159,14 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "s3_configuration": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "bucket_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "buffering_hints": {
@@ -229,8 +236,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "awskms_key_arn": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -262,14 +270,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "vpc_configuration": {
               "computed": true,
@@ -277,21 +286,24 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "security_group_ids": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
                     ]
                   },
                   "subnet_ids": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -374,8 +386,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "default_document_id_format": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -390,8 +403,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "index_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "index_rotation_period": {
@@ -422,13 +436,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "parameter_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "parameter_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -437,8 +453,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "optional": true
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -468,8 +485,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true
             },
             "role_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_backup_mode": {
@@ -479,12 +497,14 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "s3_configuration": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "bucket_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "buffering_hints": {
@@ -554,8 +574,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "awskms_key_arn": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -587,14 +608,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "type_name": {
               "computed": true,
@@ -608,21 +630,24 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "security_group_ids": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
                     ]
                   },
                   "subnet_ids": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -655,8 +680,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "key_type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -743,8 +769,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "default_document_id_format": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -759,8 +786,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "index_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "index_rotation_period": {
@@ -791,13 +819,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "parameter_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "parameter_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -806,8 +836,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "optional": true
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -837,8 +868,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true
             },
             "role_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_backup_mode": {
@@ -848,12 +880,14 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "s3_configuration": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "bucket_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "buffering_hints": {
@@ -923,8 +957,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "awskms_key_arn": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -956,14 +991,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "type_name": {
               "computed": true,
@@ -977,21 +1013,24 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "security_group_ids": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
                     ]
                   },
                   "subnet_ids": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -1013,8 +1052,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
         "nested_type": {
           "attributes": {
             "bucket_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "buffering_hints": {
@@ -1393,8 +1433,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "nested_type": {
                       "attributes": {
                         "awskms_key_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1453,13 +1494,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "parameter_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "parameter_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1468,8 +1511,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "optional": true
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1483,8 +1527,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true
             },
             "role_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_backup_configuration": {
@@ -1493,8 +1538,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "bucket_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "buffering_hints": {
@@ -1564,8 +1610,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "awskms_key_arn": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1597,8 +1644,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1673,6 +1721,7 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true
             },
             "endpoint_configuration": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1689,14 +1738,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "type": "string"
                   },
                   "url": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "processing_configuration": {
               "computed": true,
@@ -1720,13 +1770,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "parameter_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "parameter_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1735,8 +1787,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "optional": true
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1760,13 +1813,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "nested_type": {
                       "attributes": {
                         "attribute_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "attribute_value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1814,12 +1869,14 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "s3_configuration": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "bucket_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "buffering_hints": {
@@ -1889,8 +1946,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "awskms_key_arn": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1922,14 +1980,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "secrets_manager_configuration": {
               "computed": true,
@@ -1937,8 +1996,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "enabled": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "role_arn": {
@@ -1991,6 +2051,7 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true
             },
             "catalog_configuration": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -2003,7 +2064,7 @@ const awsccKinesisfirehoseDeliveryStream = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "cloudwatch_logging_options": {
               "computed": true,
@@ -2039,13 +2100,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "destination_database_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "destination_table_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "s3_error_output_prefix": {
@@ -2090,13 +2153,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "parameter_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "parameter_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -2105,8 +2170,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "optional": true
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -2136,17 +2202,20 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true
             },
             "role_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_configuration": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "bucket_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "buffering_hints": {
@@ -2216,8 +2285,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "awskms_key_arn": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -2249,14 +2319,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "s_3_backup_mode": {
               "computed": true,
@@ -2281,13 +2352,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
         "nested_type": {
           "attributes": {
             "kinesis_stream_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "role_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -2301,27 +2374,31 @@ const awsccKinesisfirehoseDeliveryStream = `{
         "nested_type": {
           "attributes": {
             "authentication_configuration": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "connectivity": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "msk_cluster_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "read_from_timestamp": {
@@ -2331,8 +2408,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "topic_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -2374,11 +2452,13 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true
             },
             "cluster_jdbcurl": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "copy_command": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -2395,14 +2475,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "type": "string"
                   },
                   "data_table_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "password": {
               "computed": true,
@@ -2432,13 +2513,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "parameter_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "parameter_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -2447,8 +2530,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "optional": true
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -2478,8 +2562,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true
             },
             "role_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_backup_configuration": {
@@ -2488,8 +2573,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "bucket_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "buffering_hints": {
@@ -2559,8 +2645,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "awskms_key_arn": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -2592,8 +2679,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -2608,12 +2696,14 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "s3_configuration": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "bucket_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "buffering_hints": {
@@ -2683,8 +2773,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "awskms_key_arn": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -2716,14 +2807,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "secrets_manager_configuration": {
               "computed": true,
@@ -2731,8 +2823,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "enabled": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "role_arn": {
@@ -2769,8 +2862,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
         "nested_type": {
           "attributes": {
             "bucket_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "buffering_hints": {
@@ -2840,8 +2934,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "nested_type": {
                       "attributes": {
                         "awskms_key_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -2873,8 +2968,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "role_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -2888,8 +2984,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
         "nested_type": {
           "attributes": {
             "account_url": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "buffering_hints": {
@@ -2955,8 +3052,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "database": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "key_passphrase": {
@@ -2999,13 +3097,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "parameter_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "parameter_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -3014,8 +3114,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "optional": true
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -3045,8 +3146,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true
             },
             "role_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_backup_mode": {
@@ -3056,12 +3158,14 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "s3_configuration": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "bucket_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "buffering_hints": {
@@ -3131,8 +3235,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "awskms_key_arn": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -3164,18 +3269,20 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "schema": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "secrets_manager_configuration": {
@@ -3184,8 +3291,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "enabled": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "role_arn": {
@@ -3233,8 +3341,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "private_link_vpce_id": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -3243,8 +3352,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "optional": true
             },
             "table": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "user": {
@@ -3320,13 +3430,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "number"
             },
             "hec_endpoint": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "hec_endpoint_type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "hec_token": {
@@ -3357,13 +3469,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "parameter_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "parameter_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -3372,8 +3486,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "optional": true
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -3409,12 +3524,14 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "type": "string"
             },
             "s3_configuration": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "bucket_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "buffering_hints": {
@@ -3484,8 +3601,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
                           "nested_type": {
                             "attributes": {
                               "awskms_key_arn": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -3517,14 +3635,15 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "secrets_manager_configuration": {
               "computed": true,
@@ -3532,8 +3651,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "nested_type": {
                 "attributes": {
                   "enabled": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "role_arn": {
@@ -3564,8 +3684,9 @@ const awsccKinesisfirehoseDeliveryStream = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {

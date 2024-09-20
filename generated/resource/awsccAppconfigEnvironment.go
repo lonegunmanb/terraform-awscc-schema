@@ -41,9 +41,10 @@ const awsccAppconfigEnvironment = `{
         "nested_type": {
           "attributes": {
             "alarm_arn": {
+              "computed": true,
               "description": "Amazon Resource Name (ARN) of the Amazon CloudWatch alarm.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "alarm_role_arn": {
@@ -71,15 +72,17 @@ const awsccAppconfigEnvironment = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key-value string map. The valid character set is [a-zA-Z1-9+-=._:/]. The tag key can be up to 128 characters and must not start with aws:.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The tag value can be up to 256 characters.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

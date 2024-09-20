@@ -131,13 +131,15 @@ const awsccOpensearchserviceDomain = `{
                     "nested_type": {
                       "attributes": {
                         "entity_id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "metadata_content": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -540,13 +542,15 @@ const awsccOpensearchserviceDomain = `{
                     "nested_type": {
                       "attributes": {
                         "hours": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "minutes": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -658,15 +662,17 @@ const awsccOpensearchserviceDomain = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The value of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The key of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

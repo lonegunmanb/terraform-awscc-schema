@@ -27,9 +27,10 @@ const awsccIvschatLoggingConfiguration = `{
               "nested_type": {
                 "attributes": {
                   "log_group_name": {
+                    "computed": true,
                     "description": "Name of the Amazon CloudWatch Logs log group where chat activity will be logged.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -44,9 +45,10 @@ const awsccIvschatLoggingConfiguration = `{
               "nested_type": {
                 "attributes": {
                   "delivery_stream_name": {
+                    "computed": true,
                     "description": "Name of the Amazon Kinesis Firehose delivery stream where chat activity will be logged.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -61,9 +63,10 @@ const awsccIvschatLoggingConfiguration = `{
               "nested_type": {
                 "attributes": {
                   "bucket_name": {
+                    "computed": true,
                     "description": "Name of the Amazon S3 bucket where chat activity will be logged.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -108,15 +111,17 @@ const awsccIvschatLoggingConfiguration = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

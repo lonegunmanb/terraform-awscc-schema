@@ -61,15 +61,17 @@ const awsccElasticbeanstalkEnvironment = `{
         "nested_type": {
           "attributes": {
             "namespace": {
+              "computed": true,
               "description": "A unique namespace that identifies the option's associated AWS resource.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "option_name": {
+              "computed": true,
               "description": "The name of the configuration option.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "resource_name": {
@@ -112,15 +114,17 @@ const awsccElasticbeanstalkEnvironment = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

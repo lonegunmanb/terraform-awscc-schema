@@ -48,15 +48,17 @@ const awsccResiliencehubApp = `{
         "nested_type": {
           "attributes": {
             "event_type": {
+              "computed": true,
               "description": "The type of event you would like to subscribe and get notification for.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "name": {
+              "computed": true,
               "description": "Unique name to identify an event subscription.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "sns_topic_arn": {
@@ -107,9 +109,10 @@ const awsccResiliencehubApp = `{
               "type": "string"
             },
             "type": {
+              "computed": true,
               "description": "Defines how AWS Resilience Hub scans your resources. It can scan for the resources by using a pre-existing role in your AWS account, or by using the credentials of the current IAM user.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

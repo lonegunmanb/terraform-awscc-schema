@@ -16,15 +16,17 @@ const awsccConfigConformancePack = `{
         "nested_type": {
           "attributes": {
             "parameter_name": {
+              "computed": true,
               "description": "Key part of key-value pair with value being parameter value",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "parameter_value": {
+              "computed": true,
               "description": "Value part of key-value pair with key being parameter Name",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

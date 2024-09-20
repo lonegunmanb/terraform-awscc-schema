@@ -31,8 +31,9 @@ const awsccIotanalyticsChannel = `{
               "nested_type": {
                 "attributes": {
                   "bucket": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "key_prefix": {
@@ -42,8 +43,9 @@ const awsccIotanalyticsChannel = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -96,13 +98,15 @@ const awsccIotanalyticsChannel = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

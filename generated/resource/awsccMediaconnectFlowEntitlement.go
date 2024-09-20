@@ -29,9 +29,10 @@ const awsccMediaconnectFlowEntitlement = `{
         "nested_type": {
           "attributes": {
             "algorithm": {
+              "computed": true,
               "description": "The type of algorithm that is used for the encryption (such as aes128, aes192, or aes256).",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "constant_initialization_vector": {
@@ -70,9 +71,10 @@ const awsccMediaconnectFlowEntitlement = `{
               "type": "string"
             },
             "role_arn": {
+              "computed": true,
               "description": "The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "secret_arn": {

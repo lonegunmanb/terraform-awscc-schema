@@ -33,8 +33,9 @@ const awsccVerifiedpermissionsIdentitySource = `{
                     "nested_type": {
                       "attributes": {
                         "group_entity_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -43,8 +44,9 @@ const awsccVerifiedpermissionsIdentitySource = `{
                     "optional": true
                   },
                   "user_pool_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -69,13 +71,15 @@ const awsccVerifiedpermissionsIdentitySource = `{
                     "nested_type": {
                       "attributes": {
                         "group_claim": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "group_entity_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -84,11 +88,13 @@ const awsccVerifiedpermissionsIdentitySource = `{
                     "optional": true
                   },
                   "issuer": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "token_selection": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -145,7 +151,7 @@ const awsccVerifiedpermissionsIdentitySource = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"

@@ -148,9 +148,10 @@ const awsccAutoscalingAutoScalingGroup = `{
               "type": "string"
             },
             "version": {
+              "computed": true,
               "description": "The version number of the launch template.\n Specifying ` + "`" + `` + "`" + `$Latest` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `$Default` + "`" + `` + "`" + ` for the template version number is not supported. However, you can specify ` + "`" + `` + "`" + `LatestVersionNumber` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DefaultVersionNumber` + "`" + `` + "`" + ` using the ` + "`" + `` + "`" + `Fn::GetAtt` + "`" + `` + "`" + ` intrinsic function. For more information, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).\n  For an example of using the ` + "`" + `` + "`" + `Fn::GetAtt` + "`" + `` + "`" + ` function, see the [Examples](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#aws-resource-autoscaling-autoscalinggroup--examples) section of the ` + "`" + `` + "`" + `AWS::AutoScaling::AutoScalingGroup` + "`" + `` + "`" + ` resource.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -179,15 +180,17 @@ const awsccAutoscalingAutoScalingGroup = `{
               "type": "number"
             },
             "lifecycle_hook_name": {
+              "computed": true,
               "description": "The name of the lifecycle hook.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "lifecycle_transition": {
+              "computed": true,
               "description": "The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.\n  +  To create a lifecycle hook for scale-out events, specify ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_LAUNCHING` + "`" + `` + "`" + `.\n  +  To create a lifecycle hook for scale-in events, specify ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_TERMINATING` + "`" + `` + "`" + `.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "notification_metadata": {
@@ -246,9 +249,10 @@ const awsccAutoscalingAutoScalingGroup = `{
         "nested_type": {
           "attributes": {
             "granularity": {
+              "computed": true,
               "description": "The frequency at which Amazon EC2 Auto Scaling sends aggregated data to CloudWatch. The only valid value is ` + "`" + `` + "`" + `1Minute` + "`" + `` + "`" + `.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "metrics": {
@@ -332,11 +336,13 @@ const awsccAutoscalingAutoScalingGroup = `{
               "optional": true
             },
             "launch_template": {
+              "computed": true,
               "description": "One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "launch_template_specification": {
+                    "computed": true,
                     "description": "The launch template.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -356,15 +362,16 @@ const awsccAutoscalingAutoScalingGroup = `{
                           "type": "string"
                         },
                         "version": {
+                          "computed": true,
                           "description": "The version number of the launch template.\n Specifying ` + "`" + `` + "`" + `$Latest` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `$Default` + "`" + `` + "`" + ` for the template version number is not supported. However, you can specify ` + "`" + `` + "`" + `LatestVersionNumber` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DefaultVersionNumber` + "`" + `` + "`" + ` using the ` + "`" + `` + "`" + `Fn::GetAtt` + "`" + `` + "`" + ` intrinsic function. For more information, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).\n  For an example of using the ` + "`" + `` + "`" + `Fn::GetAtt` + "`" + `` + "`" + ` function, see the [Examples](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#aws-resource-autoscaling-autoscalinggroup--examples) section of the ` + "`" + `` + "`" + `AWS::AutoScaling::AutoScalingGroup` + "`" + `` + "`" + ` resource.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "overrides": {
                     "computed": true,
@@ -587,6 +594,7 @@ const awsccAutoscalingAutoScalingGroup = `{
                                 "optional": true
                               },
                               "memory_mi_b": {
+                                "computed": true,
                                 "description": "The minimum and maximum instance memory size for an instance type, in MiB.",
                                 "description_kind": "plain",
                                 "nested_type": {
@@ -608,7 +616,7 @@ const awsccAutoscalingAutoScalingGroup = `{
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "network_bandwidth_gbps": {
                                 "computed": true,
@@ -707,6 +715,7 @@ const awsccAutoscalingAutoScalingGroup = `{
                                 "optional": true
                               },
                               "v_cpu_count": {
+                                "computed": true,
                                 "description": "The minimum and maximum number of vCPUs for an instance type.",
                                 "description_kind": "plain",
                                 "nested_type": {
@@ -728,7 +737,7 @@ const awsccAutoscalingAutoScalingGroup = `{
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
@@ -763,9 +772,10 @@ const awsccAutoscalingAutoScalingGroup = `{
                                 "type": "string"
                               },
                               "version": {
+                                "computed": true,
                                 "description": "The version number of the launch template.\n Specifying ` + "`" + `` + "`" + `$Latest` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `$Default` + "`" + `` + "`" + ` for the template version number is not supported. However, you can specify ` + "`" + `` + "`" + `LatestVersionNumber` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `DefaultVersionNumber` + "`" + `` + "`" + ` using the ` + "`" + `` + "`" + `Fn::GetAtt` + "`" + `` + "`" + ` intrinsic function. For more information, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).\n  For an example of using the ` + "`" + `` + "`" + `Fn::GetAtt` + "`" + `` + "`" + ` function, see the [Examples](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#aws-resource-autoscaling-autoscalinggroup--examples) section of the ` + "`" + `` + "`" + `AWS::AutoScaling::AutoScalingGroup` + "`" + `` + "`" + ` resource.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -788,7 +798,7 @@ const awsccAutoscalingAutoScalingGroup = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -819,9 +829,10 @@ const awsccAutoscalingAutoScalingGroup = `{
               ]
             },
             "topic_arn": {
+              "computed": true,
               "description": "The Amazon Resource Name (ARN) of the Amazon SNS topic.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -846,9 +857,10 @@ const awsccAutoscalingAutoScalingGroup = `{
               ]
             },
             "topic_arn": {
+              "computed": true,
               "description": "The Amazon Resource Name (ARN) of the Amazon SNS topic.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -877,21 +889,24 @@ const awsccAutoscalingAutoScalingGroup = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The tag key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "propagate_at_launch": {
+              "computed": true,
               "description": "Set to ` + "`" + `` + "`" + `true` + "`" + `` + "`" + ` if you want CloudFormation to copy the tag to EC2 instances that are launched as part of the Auto Scaling group. Set to ` + "`" + `` + "`" + `false` + "`" + `` + "`" + ` if you want the tag attached only to the Auto Scaling group and not copied to any instances launched as part of the Auto Scaling group.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "value": {
+              "computed": true,
               "description": "The tag value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

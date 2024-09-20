@@ -58,9 +58,10 @@ const awsccMediaconnectFlowSource = `{
               "type": "string"
             },
             "role_arn": {
+              "computed": true,
               "description": "The ARN of the role that you created during setup (when you set up AWS Elemental MediaConnect as a trusted entity).",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "secret_arn": {
@@ -109,9 +110,10 @@ const awsccMediaconnectFlowSource = `{
         "nested_type": {
           "attributes": {
             "bridge_arn": {
+              "computed": true,
               "description": "The ARN of the bridge feeding this flow.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "vpc_interface_attachment": {

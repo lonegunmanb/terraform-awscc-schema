@@ -102,23 +102,27 @@ const awsccEmrserverlessApplication = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "Worker type for an analytics framework.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "worker_configuration": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "cpu": {
+                          "computed": true,
                           "description": "Per worker CPU resource. vCPU is the only supported unit and specifying vCPU is optional.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "disk": {
@@ -129,26 +133,28 @@ const awsccEmrserverlessApplication = `{
                           "type": "string"
                         },
                         "memory": {
+                          "computed": true,
                           "description": "Per worker memory resource. GB is the only supported unit and specifying GB is optional.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "worker_count": {
+                    "computed": true,
                     "description": "Initial count of workers to be initialized when an Application is started. This count will be continued to be maintained until the Application is stopped",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "set"
@@ -162,9 +168,10 @@ const awsccEmrserverlessApplication = `{
         "nested_type": {
           "attributes": {
             "cpu": {
+              "computed": true,
               "description": "Per worker CPU resource. vCPU is the only supported unit and specifying vCPU is optional.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "disk": {
@@ -175,9 +182,10 @@ const awsccEmrserverlessApplication = `{
               "type": "string"
             },
             "memory": {
+              "computed": true,
               "description": "Per worker memory resource. GB is the only supported unit and specifying GB is optional.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -236,15 +244,17 @@ const awsccEmrserverlessApplication = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 1 to 128 Unicode characters in length. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

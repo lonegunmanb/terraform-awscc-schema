@@ -56,15 +56,17 @@ const awsccTransferProfile = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The name assigned to the tag that you create.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "Contains one or more values that you assigned to the key name you create.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

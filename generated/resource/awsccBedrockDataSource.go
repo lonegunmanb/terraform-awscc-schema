@@ -52,6 +52,7 @@ const awsccBedrockDataSource = `{
                                 "nested_type": {
                                   "attributes": {
                                     "filters": {
+                                      "computed": true,
                                       "description": "Contains information",
                                       "description_kind": "plain",
                                       "nested_type": {
@@ -77,15 +78,16 @@ const awsccBedrockDataSource = `{
                                             ]
                                           },
                                           "object_type": {
+                                            "computed": true,
                                             "description": "The supported object type or content type of the data source.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -93,9 +95,10 @@ const awsccBedrockDataSource = `{
                                 "optional": true
                               },
                               "type": {
+                                "computed": true,
                                 "description": "The crawl filter type.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -109,38 +112,43 @@ const awsccBedrockDataSource = `{
                     "optional": true
                   },
                   "source_configuration": {
+                    "computed": true,
                     "description": "The endpoint information to connect to your Confluence data source.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "auth_type": {
+                          "computed": true,
                           "description": "The supported authentication type to authenticate and connect to your Confluence instance.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "credentials_secret_arn": {
+                          "computed": true,
                           "description": "The Amazon Resource Name of an AWS Secrets Manager secret that stores your authentication credentials for your Confluence instance URL. For more information on the key-value pairs that must be included in your secret, depending on your authentication type, see Confluence connection configuration.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "host_type": {
+                          "computed": true,
                           "description": "The supported host type, whether online/cloud or server/on-premises.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "host_url": {
+                          "computed": true,
                           "description": "The Confluence host URL or instance URL.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -154,9 +162,10 @@ const awsccBedrockDataSource = `{
               "nested_type": {
                 "attributes": {
                   "bucket_arn": {
+                    "computed": true,
                     "description": "The ARN of the bucket that contains the data source.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "bucket_owner_account_id": {
@@ -206,6 +215,7 @@ const awsccBedrockDataSource = `{
                                 "nested_type": {
                                   "attributes": {
                                     "filters": {
+                                      "computed": true,
                                       "description": "Contains information",
                                       "description_kind": "plain",
                                       "nested_type": {
@@ -231,15 +241,16 @@ const awsccBedrockDataSource = `{
                                             ]
                                           },
                                           "object_type": {
+                                            "computed": true,
                                             "description": "The supported object type or content type of the data source.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -247,9 +258,10 @@ const awsccBedrockDataSource = `{
                                 "optional": true
                               },
                               "type": {
+                                "computed": true,
                                 "description": "The crawl filter type.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -263,32 +275,36 @@ const awsccBedrockDataSource = `{
                     "optional": true
                   },
                   "source_configuration": {
+                    "computed": true,
                     "description": "The endpoint information to connect to your Salesforce data source.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "auth_type": {
+                          "computed": true,
                           "description": "The supported authentication type to authenticate and connect to your Salesforce instance.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "credentials_secret_arn": {
+                          "computed": true,
                           "description": "The Amazon Resource Name of an AWS Secrets Manager secret that stores your authentication credentials for your Salesforce instance URL. For more information on the key-value pairs that must be included in your secret, depending on your authentication type, see Salesforce connection configuration.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "host_url": {
+                          "computed": true,
                           "description": "The Salesforce host URL or instance URL.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -320,6 +336,7 @@ const awsccBedrockDataSource = `{
                                 "nested_type": {
                                   "attributes": {
                                     "filters": {
+                                      "computed": true,
                                       "description": "Contains information",
                                       "description_kind": "plain",
                                       "nested_type": {
@@ -345,15 +362,16 @@ const awsccBedrockDataSource = `{
                                             ]
                                           },
                                           "object_type": {
+                                            "computed": true,
                                             "description": "The supported object type or content type of the data source.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -361,9 +379,10 @@ const awsccBedrockDataSource = `{
                                 "optional": true
                               },
                               "type": {
+                                "computed": true,
                                 "description": "The crawl filter type.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -377,38 +396,44 @@ const awsccBedrockDataSource = `{
                     "optional": true
                   },
                   "source_configuration": {
+                    "computed": true,
                     "description": "The endpoint information to connect to your SharePoint data source.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "auth_type": {
+                          "computed": true,
                           "description": "The supported authentication type to authenticate and connect to your SharePoint site/sites.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "credentials_secret_arn": {
+                          "computed": true,
                           "description": "The Amazon Resource Name of an AWS Secrets Manager secret that stores your authentication credentials for your SharePoint site/sites. For more information on the key-value pairs that must be included in your secret, depending on your authentication type, see SharePoint connection configuration.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "domain": {
+                          "computed": true,
                           "description": "The domain of your SharePoint instance or site URL/URLs.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "host_type": {
+                          "computed": true,
                           "description": "The supported host type, whether online/cloud or server/on-premises.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "site_urls": {
+                          "computed": true,
                           "description": "A list of one or more SharePoint site URLs.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -424,7 +449,7 @@ const awsccBedrockDataSource = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -500,40 +525,44 @@ const awsccBedrockDataSource = `{
                     "optional": true
                   },
                   "source_configuration": {
+                    "computed": true,
                     "description": "A web source configuration.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "url_configuration": {
+                          "computed": true,
                           "description": "A url configuration.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "seed_urls": {
+                                "computed": true,
                                 "description": "A list of web urls.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "url": {
+                                      "computed": true,
                                       "description": "A web url.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -628,9 +657,10 @@ const awsccBedrockDataSource = `{
               "nested_type": {
                 "attributes": {
                   "chunking_strategy": {
+                    "computed": true,
                     "description": "Knowledge base can split your source data into chunks. A chunk refers to an excerpt from a data source that is returned when the knowledge base that it belongs to is queried. You have the following options for chunking your data. If you opt for NONE, then you may want to pre-process your files by splitting them up such that each file corresponds to a chunk.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "fixed_size_chunking_configuration": {
@@ -640,15 +670,17 @@ const awsccBedrockDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "max_tokens": {
+                          "computed": true,
                           "description": "The maximum number of tokens to include in a chunk.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "overlap_percentage": {
+                          "computed": true,
                           "description": "The percentage of overlap between adjacent chunks of a data source.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -663,25 +695,28 @@ const awsccBedrockDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "level_configurations": {
+                          "computed": true,
                           "description": "Token settings for each layer.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "max_tokens": {
+                                "computed": true,
                                 "description": "The maximum number of tokens that a chunk can contain in this layer.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "overlap_tokens": {
+                          "computed": true,
                           "description": "The number of tokens to repeat across chunks in the same layer.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -696,21 +731,24 @@ const awsccBedrockDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "breakpoint_percentile_threshold": {
+                          "computed": true,
                           "description": "The dissimilarity threshold for splitting chunks.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "buffer_size": {
+                          "computed": true,
                           "description": "The buffer size.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "max_tokens": {
+                          "computed": true,
                           "description": "The maximum number of tokens that a chunk can contain.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -730,72 +768,80 @@ const awsccBedrockDataSource = `{
               "nested_type": {
                 "attributes": {
                   "intermediate_storage": {
+                    "computed": true,
                     "description": "A location for storing content from data sources temporarily as it is processed by custom components in the ingestion pipeline.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "s3_location": {
+                          "computed": true,
                           "description": "An Amazon S3 location.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "uri": {
+                                "computed": true,
                                 "description": "The location's URI",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "transformations": {
+                    "computed": true,
                     "description": "A list of Lambda functions that process documents.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "step_to_apply": {
+                          "computed": true,
                           "description": "When the service applies the transformation.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "transformation_function": {
+                          "computed": true,
                           "description": "A Lambda function that processes documents.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "transformation_lambda_configuration": {
+                                "computed": true,
                                 "description": "A Lambda function that processes documents.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "lambda_arn": {
+                                      "computed": true,
                                       "description": "The function's ARN identifier.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -815,9 +861,10 @@ const awsccBedrockDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "model_arn": {
+                          "computed": true,
                           "description": "The model's ARN.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "parsing_prompt": {
@@ -827,9 +874,10 @@ const awsccBedrockDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "parsing_prompt_text": {
+                                "computed": true,
                                 "description": "Instructions for interpreting the contents of a document.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -843,9 +891,10 @@ const awsccBedrockDataSource = `{
                     "optional": true
                   },
                   "parsing_strategy": {
+                    "computed": true,
                     "description": "The parsing strategy for the data source.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

@@ -140,27 +140,31 @@ const awsccBedrockKnowledgeBase = `{
               "nested_type": {
                 "attributes": {
                   "collection_name": {
+                    "computed": true,
                     "description": "Name of the collection within MongoDB Atlas.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "credentials_secret_arn": {
+                    "computed": true,
                     "description": "The ARN of the secret that you created in AWS Secrets Manager that is linked to your Amazon Mongo database.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "database_name": {
+                    "computed": true,
                     "description": "Name of the database within MongoDB Atlas.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "endpoint": {
+                    "computed": true,
                     "description": "MongoDB Atlas endpoint.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "endpoint_service_name": {
@@ -171,37 +175,42 @@ const awsccBedrockKnowledgeBase = `{
                     "type": "string"
                   },
                   "field_mapping": {
+                    "computed": true,
                     "description": "Contains the names of the fields to which to map information about the vector store.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "metadata_field": {
+                          "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores metadata about the vector store.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "text_field": {
+                          "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "vector_field": {
+                          "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores the vector embeddings for your data sources.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "vector_index_name": {
+                    "computed": true,
                     "description": "Name of a MongoDB Atlas index.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -216,43 +225,49 @@ const awsccBedrockKnowledgeBase = `{
               "nested_type": {
                 "attributes": {
                   "collection_arn": {
+                    "computed": true,
                     "description": "The ARN of the OpenSearch Service vector store.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "field_mapping": {
+                    "computed": true,
                     "description": "A mapping of Bedrock Knowledge Base fields to OpenSearch Serverless field names",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "metadata_field": {
+                          "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores metadata about the vector store.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "text_field": {
+                          "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "vector_field": {
+                          "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores the vector embeddings for your data sources.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "vector_index_name": {
+                    "computed": true,
                     "description": "The name of the vector store.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -267,38 +282,43 @@ const awsccBedrockKnowledgeBase = `{
               "nested_type": {
                 "attributes": {
                   "connection_string": {
+                    "computed": true,
                     "description": "The endpoint URL for your index management page.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "credentials_secret_arn": {
+                    "computed": true,
                     "description": "The ARN of the secret that you created in AWS Secrets Manager that is linked to your Pinecone API key.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "field_mapping": {
+                    "computed": true,
                     "description": "Contains the names of the fields to which to map information about the vector store.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "metadata_field": {
+                          "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores metadata about the vector store.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "text_field": {
+                          "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "namespace": {
                     "computed": true,
@@ -319,61 +339,70 @@ const awsccBedrockKnowledgeBase = `{
               "nested_type": {
                 "attributes": {
                   "credentials_secret_arn": {
+                    "computed": true,
                     "description": "The ARN of the secret that you created in AWS Secrets Manager that is linked to your Amazon RDS database.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "database_name": {
+                    "computed": true,
                     "description": "The name of your Amazon RDS database.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "field_mapping": {
+                    "computed": true,
                     "description": "Contains the names of the fields to which to map information about the vector store.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "metadata_field": {
+                          "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores metadata about the vector store.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "primary_key_field": {
+                          "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores the ID for each entry.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "text_field": {
+                          "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "vector_field": {
+                          "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores the vector embeddings for your data sources.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "resource_arn": {
+                    "computed": true,
                     "description": "The ARN of the vector store.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "table_name": {
+                    "computed": true,
                     "description": "The name of the table in the database.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

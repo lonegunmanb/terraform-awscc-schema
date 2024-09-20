@@ -96,9 +96,10 @@ const awsccEcsTaskSet = `{
                     ]
                   },
                   "subnets": {
+                    "computed": true,
                     "description": "The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per AwsVpcConfiguration.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"

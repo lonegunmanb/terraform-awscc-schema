@@ -59,9 +59,10 @@ const awsccSagemakerInferenceExperiment = `{
               "optional": true
             },
             "destination": {
+              "computed": true,
               "description": "The Amazon S3 bucket where the inference request and response data is stored.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "kms_key": {
@@ -247,31 +248,35 @@ const awsccSagemakerInferenceExperiment = `{
         "nested_type": {
           "attributes": {
             "shadow_model_variants": {
+              "computed": true,
               "description": "List of shadow variant configurations.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "sampling_percentage": {
+                    "computed": true,
                     "description": "The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "shadow_model_variant_name": {
+                    "computed": true,
                     "description": "The name of the shadow variant.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "source_model_variant_name": {
+              "computed": true,
               "description": "The name of the production variant, which takes all the inference requests.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -299,15 +304,17 @@ const awsccSagemakerInferenceExperiment = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

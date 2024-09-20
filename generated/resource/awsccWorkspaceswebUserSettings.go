@@ -32,12 +32,14 @@ const awsccWorkspaceswebUserSettings = `{
         "nested_type": {
           "attributes": {
             "allowlist": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "domain": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
@@ -55,7 +57,7 @@ const awsccWorkspaceswebUserSettings = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "blocklist": {
               "computed": true,
@@ -63,8 +65,9 @@ const awsccWorkspaceswebUserSettings = `{
               "nested_type": {
                 "attributes": {
                   "domain": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
@@ -145,13 +148,15 @@ const awsccWorkspaceswebUserSettings = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

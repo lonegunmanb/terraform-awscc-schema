@@ -44,15 +44,17 @@ const awsccGameliftContainerGroupDefinition = `{
               "nested_type": {
                 "attributes": {
                   "condition": {
+                    "computed": true,
                     "description": "The type of dependency.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "container_name": {
+                    "computed": true,
                     "description": "A descriptive label for the container definition. The container being defined depends on this container's condition.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -77,15 +79,17 @@ const awsccGameliftContainerGroupDefinition = `{
               "nested_type": {
                 "attributes": {
                   "name": {
+                    "computed": true,
                     "description": "The environment variable name.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "The environment variable value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -107,9 +111,10 @@ const awsccGameliftContainerGroupDefinition = `{
               "nested_type": {
                 "attributes": {
                   "command": {
+                    "computed": true,
                     "description": "A string array representing the command that the container runs to determine if it is healthy.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -186,32 +191,36 @@ const awsccGameliftContainerGroupDefinition = `{
               "nested_type": {
                 "attributes": {
                   "container_port_ranges": {
+                    "computed": true,
                     "description": "Specifies one or more ranges of ports on a container.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "from_port": {
+                          "computed": true,
                           "description": "A starting value for the range of allowed port numbers.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "protocol": {
+                          "computed": true,
                           "description": "Defines the protocol of these ports.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "to_port": {
+                          "computed": true,
                           "description": "An ending value for the range of allowed port numbers. Port numbers are end-inclusive. This value must be equal to or greater than FromPort.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
                       "nesting_mode": "set"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -281,15 +290,17 @@ const awsccGameliftContainerGroupDefinition = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

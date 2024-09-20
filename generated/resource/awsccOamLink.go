@@ -42,8 +42,9 @@ const awsccOamLink = `{
               "nested_type": {
                 "attributes": {
                   "filter": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -57,8 +58,9 @@ const awsccOamLink = `{
               "nested_type": {
                 "attributes": {
                   "filter": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

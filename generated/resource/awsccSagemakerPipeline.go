@@ -21,9 +21,10 @@ const awsccSagemakerPipeline = `{
         "nested_type": {
           "attributes": {
             "max_parallel_execution_steps": {
+              "computed": true,
               "description": "Maximum parallel execution steps",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -48,9 +49,10 @@ const awsccSagemakerPipeline = `{
               "nested_type": {
                 "attributes": {
                   "bucket": {
+                    "computed": true,
                     "description": "The name of the S3 bucket where the PipelineDefinition file is stored.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "e_tag": {
@@ -61,9 +63,10 @@ const awsccSagemakerPipeline = `{
                     "type": "string"
                   },
                   "key": {
+                    "computed": true,
                     "description": "The file name of the PipelineDefinition file (Amazon S3 object name).",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "version": {
@@ -115,13 +118,15 @@ const awsccSagemakerPipeline = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

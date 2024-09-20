@@ -24,13 +24,15 @@ const awsccCloudfrontContinuousDeploymentPolicy = `{
               "nested_type": {
                 "attributes": {
                   "header": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -49,13 +51,15 @@ const awsccCloudfrontContinuousDeploymentPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "idle_ttl": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "maximum_ttl": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -64,8 +68,9 @@ const awsccCloudfrontContinuousDeploymentPolicy = `{
                     "optional": true
                   },
                   "weight": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -92,13 +97,15 @@ const awsccCloudfrontContinuousDeploymentPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "header": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -117,13 +124,15 @@ const awsccCloudfrontContinuousDeploymentPolicy = `{
                           "nested_type": {
                             "attributes": {
                               "idle_ttl": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               },
                               "maximum_ttl": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -132,8 +141,9 @@ const awsccCloudfrontContinuousDeploymentPolicy = `{
                           "optional": true
                         },
                         "weight": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -142,8 +152,9 @@ const awsccCloudfrontContinuousDeploymentPolicy = `{
                     "optional": true
                   },
                   "type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

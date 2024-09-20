@@ -33,9 +33,10 @@ const awsccTimestreamTable = `{
         "nested_type": {
           "attributes": {
             "enable_magnetic_store_writes": {
+              "computed": true,
               "description": "Boolean flag indicating whether magnetic store writes are enabled.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "magnetic_store_rejected_data_location": {
@@ -51,15 +52,17 @@ const awsccTimestreamTable = `{
                     "nested_type": {
                       "attributes": {
                         "bucket_name": {
+                          "computed": true,
                           "description": "The bucket name used to store the data.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "encryption_option": {
+                          "computed": true,
                           "description": "Either SSE_KMS or SSE_S3.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "kms_key_id": {
@@ -149,9 +152,10 @@ const awsccTimestreamTable = `{
                     "type": "string"
                   },
                   "type": {
+                    "computed": true,
                     "description": "The type of the partition key. Options are DIMENSION (dimension key) and MEASURE (measure key).",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

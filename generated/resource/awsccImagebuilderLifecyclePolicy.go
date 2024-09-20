@@ -119,15 +119,17 @@ const awsccImagebuilderLifecyclePolicy = `{
                           "nested_type": {
                             "attributes": {
                               "unit": {
+                                "computed": true,
                                 "description": "The value's time unit.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description": "The last launched value.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -238,15 +240,17 @@ const awsccImagebuilderLifecyclePolicy = `{
               "nested_type": {
                 "attributes": {
                   "name": {
+                    "computed": true,
                     "description": "The recipe name.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "semantic_version": {
+                    "computed": true,
                     "description": "The recipe version.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

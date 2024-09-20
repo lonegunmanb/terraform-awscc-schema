@@ -200,12 +200,14 @@ const awsccSagemakerModelQualityJobDefinition = `{
               "nested_type": {
                 "attributes": {
                   "data_captured_destination_s3_uri": {
+                    "computed": true,
                     "description": "A URI that identifies the Amazon S3 storage location where Batch Transform Job captures data.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "dataset_format": {
+                    "computed": true,
                     "description": "The dataset format of the data to monitor",
                     "description_kind": "plain",
                     "nested_type": {
@@ -256,7 +258,7 @@ const awsccSagemakerModelQualityJobDefinition = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "end_time_offset": {
                     "computed": true,
@@ -273,9 +275,10 @@ const awsccSagemakerModelQualityJobDefinition = `{
                     "type": "string"
                   },
                   "local_path": {
+                    "computed": true,
                     "description": "Path to the filesystem where the endpoint data is available to the container.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "probability_attribute": {
@@ -331,9 +334,10 @@ const awsccSagemakerModelQualityJobDefinition = `{
                     "type": "string"
                   },
                   "endpoint_name": {
+                    "computed": true,
                     "description": "The name of the endpoint used to run the monitoring job.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "inference_attribute": {
@@ -344,9 +348,10 @@ const awsccSagemakerModelQualityJobDefinition = `{
                     "type": "string"
                   },
                   "local_path": {
+                    "computed": true,
                     "description": "Path to the filesystem where the endpoint data is available to the container.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "probability_attribute": {
@@ -492,18 +497,20 @@ const awsccSagemakerModelQualityJobDefinition = `{
               "nested_type": {
                 "attributes": {
                   "security_group_ids": {
+                    "computed": true,
                     "description": "The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security groups for the VPC that is specified in the Subnets field.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
                     ]
                   },
                   "subnets": {
+                    "computed": true,
                     "description": "The ID of the subnets in the VPC to which you want to connect to your monitoring jobs.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -532,9 +539,10 @@ const awsccSagemakerModelQualityJobDefinition = `{
         "nested_type": {
           "attributes": {
             "max_runtime_in_seconds": {
+              "computed": true,
               "description": "The maximum runtime allowed in seconds.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -549,15 +557,17 @@ const awsccSagemakerModelQualityJobDefinition = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

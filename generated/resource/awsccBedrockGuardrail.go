@@ -28,32 +28,36 @@ const awsccBedrockGuardrail = `{
         "nested_type": {
           "attributes": {
             "filters_config": {
+              "computed": true,
               "description": "List of content filter configs in content policy.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "input_strength": {
+                    "computed": true,
                     "description": "Strength for filters",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "output_strength": {
+                    "computed": true,
                     "description": "Strength for filters",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "type": {
+                    "computed": true,
                     "description": "Type of filter in content policy",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -67,26 +71,29 @@ const awsccBedrockGuardrail = `{
         "nested_type": {
           "attributes": {
             "filters_config": {
+              "computed": true,
               "description": "List of contextual grounding filter configs.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "threshold": {
+                    "computed": true,
                     "description": "The threshold for this filter.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "type": {
+                    "computed": true,
                     "description": "Type of contextual grounding filter",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -159,15 +166,17 @@ const awsccBedrockGuardrail = `{
               "nested_type": {
                 "attributes": {
                   "action": {
+                    "computed": true,
                     "description": "Options for sensitive information action.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "type": {
+                    "computed": true,
                     "description": "The currently supported PII entities",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -182,9 +191,10 @@ const awsccBedrockGuardrail = `{
               "nested_type": {
                 "attributes": {
                   "action": {
+                    "computed": true,
                     "description": "Options for sensitive information action.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "description": {
@@ -195,15 +205,17 @@ const awsccBedrockGuardrail = `{
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description": "The regex name.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "pattern": {
+                    "computed": true,
                     "description": "The regex pattern.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -238,15 +250,17 @@ const awsccBedrockGuardrail = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "Tag Key",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "Tag Value",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -261,14 +275,16 @@ const awsccBedrockGuardrail = `{
         "nested_type": {
           "attributes": {
             "topics_config": {
+              "computed": true,
               "description": "List of topic configs in topic policy.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "definition": {
+                    "computed": true,
                     "description": "Definition of topic in topic policy",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "examples": {
@@ -282,21 +298,23 @@ const awsccBedrockGuardrail = `{
                     ]
                   },
                   "name": {
+                    "computed": true,
                     "description": "Name of topic in topic policy",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "type": {
+                    "computed": true,
                     "description": "Type of topic in a policy",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -328,9 +346,10 @@ const awsccBedrockGuardrail = `{
               "nested_type": {
                 "attributes": {
                   "type": {
+                    "computed": true,
                     "description": "Options for managed words.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -345,9 +364,10 @@ const awsccBedrockGuardrail = `{
               "nested_type": {
                 "attributes": {
                   "text": {
+                    "computed": true,
                     "description": "The custom word text.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

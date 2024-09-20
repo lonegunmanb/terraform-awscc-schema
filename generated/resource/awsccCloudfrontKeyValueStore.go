@@ -32,13 +32,15 @@ const awsccCloudfrontKeyValueStore = `{
         "nested_type": {
           "attributes": {
             "source_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "source_type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

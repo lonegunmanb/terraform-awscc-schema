@@ -40,9 +40,10 @@ const awsccSecuritylakeSubscriberNotification = `{
                     "type": "string"
                   },
                   "endpoint": {
+                    "computed": true,
                     "description": "The subscription endpoint in Security Lake.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "http_method": {
@@ -53,9 +54,10 @@ const awsccSecuritylakeSubscriberNotification = `{
                     "type": "string"
                   },
                   "target_role_arn": {
+                    "computed": true,
                     "description": "The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

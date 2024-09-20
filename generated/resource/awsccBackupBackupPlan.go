@@ -19,13 +19,15 @@ const awsccBackupBackupPlan = `{
               "nested_type": {
                 "attributes": {
                   "backup_options": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "resource_type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -54,8 +56,9 @@ const awsccBackupBackupPlan = `{
                     "nested_type": {
                       "attributes": {
                         "destination_backup_vault_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "lifecycle": {

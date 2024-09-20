@@ -37,9 +37,10 @@ const awsccEc2Instance = `{
         "nested_type": {
           "attributes": {
             "device_name": {
+              "computed": true,
               "description": "The device name (for example, /dev/sdh or xvdh).",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "ebs": {
@@ -180,9 +181,10 @@ const awsccEc2Instance = `{
         "nested_type": {
           "attributes": {
             "type": {
+              "computed": true,
               "description": "The type of Elastic Graphics accelerator.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -204,9 +206,10 @@ const awsccEc2Instance = `{
               "type": "number"
             },
             "type": {
+              "computed": true,
               "description": "The type of elastic inference accelerator.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -318,9 +321,10 @@ const awsccEc2Instance = `{
         "nested_type": {
           "attributes": {
             "ipv_6_address": {
+              "computed": true,
               "description": "The IPv6 address.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -381,9 +385,10 @@ const awsccEc2Instance = `{
         "nested_type": {
           "attributes": {
             "license_configuration_arn": {
+              "computed": true,
               "description": "The Amazon Resource Name (ARN) of the license configuration.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -433,9 +438,10 @@ const awsccEc2Instance = `{
               "type": "string"
             },
             "device_index": {
+              "computed": true,
               "description": "The position of the network interface in the attachment order. A primary network interface has a device index of 0.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "group_set": {
@@ -462,9 +468,10 @@ const awsccEc2Instance = `{
               "nested_type": {
                 "attributes": {
                   "ipv_6_address": {
+                    "computed": true,
                     "description": "The IPv6 address.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -493,15 +500,17 @@ const awsccEc2Instance = `{
               "nested_type": {
                 "attributes": {
                   "primary": {
+                    "computed": true,
                     "description": "Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be designated as primary.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "private_ip_address": {
+                    "computed": true,
                     "description": "The private IPv4 addresses.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -652,15 +661,17 @@ const awsccEc2Instance = `{
               "nested_type": {
                 "attributes": {
                   "key": {
+                    "computed": true,
                     "description": "The name of an input parameter that is in the associated SSM document.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "The value of an input parameter.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -672,9 +683,10 @@ const awsccEc2Instance = `{
               "optional": true
             },
             "document_name": {
+              "computed": true,
               "description": "The name of an SSM document to associate with the instance.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -718,13 +730,15 @@ const awsccEc2Instance = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -753,15 +767,17 @@ const awsccEc2Instance = `{
         "nested_type": {
           "attributes": {
             "device": {
+              "computed": true,
               "description": "The device name (for example, /dev/sdh or xvdh).",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "volume_id": {
+              "computed": true,
               "description": "The ID of the EBS volume. The volume and instance must be within the same Availability Zone.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

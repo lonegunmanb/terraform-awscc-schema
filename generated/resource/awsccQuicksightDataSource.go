@@ -22,9 +22,10 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "domain": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe OpenSearch domain.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -39,9 +40,10 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "domain": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe OpenSearch domain.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -81,15 +83,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -111,15 +115,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe Amazon Aurora PostgreSQL database to connect to.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe Amazon Aurora PostgreSQL-Compatible host to connect to.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -141,9 +147,10 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe host name of the Databricks data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -154,9 +161,10 @@ const awsccQuicksightDataSource = `{
                     "type": "number"
                   },
                   "sql_endpoint_path": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe HTTP path of the Databricks data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -171,15 +179,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -201,15 +211,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -231,15 +243,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe database.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eAn Oracle host.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -261,15 +275,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -291,15 +307,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "catalog": {
+                    "computed": true,
                     "description": "\u003cp\u003eCatalog.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -321,15 +339,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "instance_id": {
+                    "computed": true,
                     "description": "\u003cp\u003eInstance ID.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -351,9 +371,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
@@ -394,9 +415,10 @@ const awsccQuicksightDataSource = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to allow Amazon QuickSight to call \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e on your cluster. The calling principal must have \u003ccode\u003eiam:PassRole\u003c/code\u003e access to pass the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight service principal to assume the role.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -441,26 +463,29 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "manifest_file_location": {
+                    "computed": true,
                     "description": "\u003cp\u003eAmazon S3 manifest file location.\u003c/p\u003e",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "bucket": {
+                          "computed": true,
                           "description": "\u003cp\u003eAmazon S3 bucket.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "key": {
+                          "computed": true,
                           "description": "\u003cp\u003eAmazon S3 key that identifies an object.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "role_arn": {
                     "computed": true,
@@ -481,21 +506,24 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "warehouse": {
+                    "computed": true,
                     "description": "\u003cp\u003eWarehouse.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -510,9 +538,10 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -534,15 +563,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -564,15 +595,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "catalog": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe catalog name for the Starburst data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe host name of the Starburst data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -600,15 +633,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -630,15 +665,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "catalog": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe catalog name for the Trino data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe host name of the Trino data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -708,9 +745,10 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "domain": {
+                                "computed": true,
                                 "description": "\u003cp\u003eThe OpenSearch domain.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -725,9 +763,10 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "domain": {
+                                "computed": true,
                                 "description": "\u003cp\u003eThe OpenSearch domain.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -767,15 +806,17 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "database": {
+                                "computed": true,
                                 "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eHost.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -797,15 +838,17 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "database": {
+                                "computed": true,
                                 "description": "\u003cp\u003eThe Amazon Aurora PostgreSQL database to connect to.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eThe Amazon Aurora PostgreSQL-Compatible host to connect to.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -827,9 +870,10 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eThe host name of the Databricks data source.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -840,9 +884,10 @@ const awsccQuicksightDataSource = `{
                                 "type": "number"
                               },
                               "sql_endpoint_path": {
+                                "computed": true,
                                 "description": "\u003cp\u003eThe HTTP path of the Databricks data source.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -857,15 +902,17 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "database": {
+                                "computed": true,
                                 "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eHost.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -887,15 +934,17 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "database": {
+                                "computed": true,
                                 "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eHost.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -917,15 +966,17 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "database": {
+                                "computed": true,
                                 "description": "\u003cp\u003eThe database.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eAn Oracle host.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -947,15 +998,17 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "database": {
+                                "computed": true,
                                 "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eHost.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -977,15 +1030,17 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "catalog": {
+                                "computed": true,
                                 "description": "\u003cp\u003eCatalog.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eHost.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -1007,15 +1062,17 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "database": {
+                                "computed": true,
                                 "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "instance_id": {
+                                "computed": true,
                                 "description": "\u003cp\u003eInstance ID.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1037,9 +1094,10 @@ const awsccQuicksightDataSource = `{
                                 "type": "string"
                               },
                               "database": {
+                                "computed": true,
                                 "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
@@ -1080,9 +1138,10 @@ const awsccQuicksightDataSource = `{
                                       "type": "string"
                                     },
                                     "role_arn": {
+                                      "computed": true,
                                       "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to allow Amazon QuickSight to call \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e on your cluster. The calling principal must have \u003ccode\u003eiam:PassRole\u003c/code\u003e access to pass the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight service principal to assume the role.\u003c/p\u003e",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -1127,26 +1186,29 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "manifest_file_location": {
+                                "computed": true,
                                 "description": "\u003cp\u003eAmazon S3 manifest file location.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "bucket": {
+                                      "computed": true,
                                       "description": "\u003cp\u003eAmazon S3 bucket.\u003c/p\u003e",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "key": {
+                                      "computed": true,
                                       "description": "\u003cp\u003eAmazon S3 key that identifies an object.\u003c/p\u003e",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "role_arn": {
                                 "computed": true,
@@ -1167,21 +1229,24 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "database": {
+                                "computed": true,
                                 "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eHost.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "warehouse": {
+                                "computed": true,
                                 "description": "\u003cp\u003eWarehouse.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1196,9 +1261,10 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eHost.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -1220,15 +1286,17 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "database": {
+                                "computed": true,
                                 "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eHost.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -1250,15 +1318,17 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "catalog": {
+                                "computed": true,
                                 "description": "\u003cp\u003eThe catalog name for the Starburst data source.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eThe host name of the Starburst data source.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -1286,15 +1356,17 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "database": {
+                                "computed": true,
                                 "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eHost.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -1316,15 +1388,17 @@ const awsccQuicksightDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "catalog": {
+                                "computed": true,
                                 "description": "\u003cp\u003eThe catalog name for the Trino data source.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description": "\u003cp\u003eThe host name of the Trino data source.\u003c/p\u003e",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
@@ -1345,15 +1419,17 @@ const awsccQuicksightDataSource = `{
                     "optional": true
                   },
                   "password": {
+                    "computed": true,
                     "description": "\u003cp\u003ePassword.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "username": {
+                    "computed": true,
                     "description": "\u003cp\u003eUser name.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1392,9 +1468,10 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "domain": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe OpenSearch domain.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1409,9 +1486,10 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "domain": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe OpenSearch domain.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1451,15 +1529,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -1481,15 +1561,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe Amazon Aurora PostgreSQL database to connect to.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe Amazon Aurora PostgreSQL-Compatible host to connect to.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -1511,9 +1593,10 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe host name of the Databricks data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -1524,9 +1607,10 @@ const awsccQuicksightDataSource = `{
                     "type": "number"
                   },
                   "sql_endpoint_path": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe HTTP path of the Databricks data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1541,15 +1625,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -1571,15 +1657,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -1601,15 +1689,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe database.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eAn Oracle host.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -1631,15 +1721,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -1661,15 +1753,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "catalog": {
+                    "computed": true,
                     "description": "\u003cp\u003eCatalog.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -1691,15 +1785,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "instance_id": {
+                    "computed": true,
                     "description": "\u003cp\u003eInstance ID.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1721,9 +1817,10 @@ const awsccQuicksightDataSource = `{
                     "type": "string"
                   },
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
@@ -1764,9 +1861,10 @@ const awsccQuicksightDataSource = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to allow Amazon QuickSight to call \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e on your cluster. The calling principal must have \u003ccode\u003eiam:PassRole\u003c/code\u003e access to pass the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight service principal to assume the role.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1811,26 +1909,29 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "manifest_file_location": {
+                    "computed": true,
                     "description": "\u003cp\u003eAmazon S3 manifest file location.\u003c/p\u003e",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "bucket": {
+                          "computed": true,
                           "description": "\u003cp\u003eAmazon S3 bucket.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "key": {
+                          "computed": true,
                           "description": "\u003cp\u003eAmazon S3 key that identifies an object.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "role_arn": {
                     "computed": true,
@@ -1851,21 +1952,24 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "warehouse": {
+                    "computed": true,
                     "description": "\u003cp\u003eWarehouse.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1880,9 +1984,10 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -1904,15 +2009,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -1934,15 +2041,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "catalog": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe catalog name for the Starburst data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe host name of the Starburst data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -1970,15 +2079,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "\u003cp\u003eDatabase.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eHost.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -2000,15 +2111,17 @@ const awsccQuicksightDataSource = `{
               "nested_type": {
                 "attributes": {
                   "catalog": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe catalog name for the Trino data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "host": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe host name of the Trino data source.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
@@ -2075,18 +2188,20 @@ const awsccQuicksightDataSource = `{
         "nested_type": {
           "attributes": {
             "actions": {
+              "computed": true,
               "description": "\u003cp\u003eThe IAM action to grant or revoke permissions on.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
               ]
             },
             "principal": {
+              "computed": true,
               "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the principal. This can be one of the\n            following:\u003c/p\u003e\n         \u003cul\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight\n                    ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.\n                    (This is less common.) \u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "resource": {
@@ -2129,15 +2244,17 @@ const awsccQuicksightDataSource = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "\u003cp\u003eTag key.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "\u003cp\u003eTag value.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -2157,9 +2274,10 @@ const awsccQuicksightDataSource = `{
         "nested_type": {
           "attributes": {
             "vpc_connection_arn": {
+              "computed": true,
               "description": "\u003cp\u003eThe Amazon Resource Name (ARN) for the VPC connection.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

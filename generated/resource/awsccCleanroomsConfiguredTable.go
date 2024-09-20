@@ -28,10 +28,12 @@ const awsccCleanroomsConfiguredTable = `{
         "nested_type": {
           "attributes": {
             "policy": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "v1": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -47,26 +49,29 @@ const awsccCleanroomsConfiguredTable = `{
                                 "type": "string"
                               },
                               "aggregate_columns": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "column_names": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": [
                                         "list",
                                         "string"
                                       ]
                                     },
                                     "function": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "allowed_join_operators": {
                                 "computed": true,
@@ -78,16 +83,18 @@ const awsccCleanroomsConfiguredTable = `{
                                 ]
                               },
                               "dimension_columns": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
                                 ]
                               },
                               "join_columns": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
@@ -100,32 +107,37 @@ const awsccCleanroomsConfiguredTable = `{
                                 "type": "string"
                               },
                               "output_constraints": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "column_name": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "minimum": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "number"
                                     },
                                     "type": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "scalar_functions": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
@@ -148,8 +160,9 @@ const awsccCleanroomsConfiguredTable = `{
                                 "type": "string"
                               },
                               "allowed_analyses": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
@@ -170,18 +183,20 @@ const awsccCleanroomsConfiguredTable = `{
                                 "nested_type": {
                                   "attributes": {
                                     "columns": {
+                                      "computed": true,
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "name": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -223,16 +238,18 @@ const awsccCleanroomsConfiguredTable = `{
                                 ]
                               },
                               "join_columns": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
                                 ]
                               },
                               "list_columns": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
@@ -246,16 +263,17 @@ const awsccCleanroomsConfiguredTable = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -325,13 +343,15 @@ const awsccCleanroomsConfiguredTable = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

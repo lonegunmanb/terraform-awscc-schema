@@ -54,8 +54,9 @@ const awsccEc2Ec2Fleet = `{
                     "type": "string"
                   },
                   "version": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -657,13 +658,15 @@ const awsccEc2Ec2Fleet = `{
               "nested_type": {
                 "attributes": {
                   "key": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

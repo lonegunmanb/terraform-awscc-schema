@@ -43,9 +43,10 @@ const awsccApplicationinsightsApplication = `{
               "type": "string"
             },
             "component_configuration_mode": {
+              "computed": true,
               "description": "The component monitoring configuration mode.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "component_name": {
@@ -74,9 +75,10 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "alarm_metric_name": {
+                                "computed": true,
                                 "description": "The name of the metric to be monitored for the component.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -91,9 +93,10 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "alarm_name": {
+                                "computed": true,
                                 "description": "The name of the CloudWatch alarm to be monitored for the component.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "severity": {
@@ -133,27 +136,31 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "agree_to_install_hanadb_client": {
+                                "computed": true,
                                 "description": "A flag which indicates agreeing to install SAP HANA DB client.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "bool"
                               },
                               "hana_port": {
+                                "computed": true,
                                 "description": "The HANA DB port.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "hana_secret_name": {
+                                "computed": true,
                                 "description": "The secret name which manages the HANA DB credentials e.g. {\n  \"username\": \"\u003c\u003e\",\n  \"password\": \"\u003c\u003e\"\n}.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "hanasid": {
+                                "computed": true,
                                 "description": "HANA DB SID.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "prometheus_port": {
@@ -228,9 +235,10 @@ const awsccApplicationinsightsApplication = `{
                                 "type": "string"
                               },
                               "log_type": {
+                                "computed": true,
                                 "description": "The log type decides the log patterns against which Application Insights analyzes the log.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "pattern_set": {
@@ -252,9 +260,10 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "instance_numbers": {
+                                "computed": true,
                                 "description": "SAP instance numbers for ASCS, ERS, and App Servers.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
@@ -268,9 +277,10 @@ const awsccApplicationinsightsApplication = `{
                                 "type": "string"
                               },
                               "sapsid": {
+                                "computed": true,
                                 "description": "SAP NetWeaver SID.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -285,25 +295,28 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "alarm_metrics": {
+                                "computed": true,
                                 "description": "A list of metrics to monitor for the component.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "alarm_metric_name": {
+                                      "computed": true,
                                       "description": "The name of the metric to be monitored for the component.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "process_name": {
+                                "computed": true,
                                 "description": "The name of the process to be monitored for the component.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -318,15 +331,17 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "prometheus_port": {
+                                "computed": true,
                                 "description": "Prometheus exporter port.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "sql_secret_name": {
+                                "computed": true,
                                 "description": "Secret name which managers SQL exporter connection. e.g. {\"data_source_name\": \"sqlserver://\u003cUSERNAME\u003e:\u003cPASSWORD\u003e@localhost:1433\"}",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -341,24 +356,27 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "event_levels": {
+                                "computed": true,
                                 "description": "The levels of event to log. ",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
                                 ]
                               },
                               "event_name": {
+                                "computed": true,
                                 "description": "The type of Windows Events to log.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "log_group_name": {
+                                "computed": true,
                                 "description": "The CloudWatch log group name to be associated to the monitored log.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "pattern_set": {
@@ -385,6 +403,7 @@ const awsccApplicationinsightsApplication = `{
                     "nested_type": {
                       "attributes": {
                         "sub_component_configuration_details": {
+                          "computed": true,
                           "description": "The configuration settings of sub components.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -396,9 +415,10 @@ const awsccApplicationinsightsApplication = `{
                                 "nested_type": {
                                   "attributes": {
                                     "alarm_metric_name": {
+                                      "computed": true,
                                       "description": "The name of the metric to be monitored for the component.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -434,9 +454,10 @@ const awsccApplicationinsightsApplication = `{
                                       "type": "string"
                                     },
                                     "log_type": {
+                                      "computed": true,
                                       "description": "The log type decides the log patterns against which Application Insights analyzes the log.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "pattern_set": {
@@ -458,25 +479,28 @@ const awsccApplicationinsightsApplication = `{
                                 "nested_type": {
                                   "attributes": {
                                     "alarm_metrics": {
+                                      "computed": true,
                                       "description": "A list of metrics to monitor for the component.",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "alarm_metric_name": {
+                                            "computed": true,
                                             "description": "The name of the metric to be monitored for the component.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "process_name": {
+                                      "computed": true,
                                       "description": "The name of the process to be monitored for the component.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -491,24 +515,27 @@ const awsccApplicationinsightsApplication = `{
                                 "nested_type": {
                                   "attributes": {
                                     "event_levels": {
+                                      "computed": true,
                                       "description": "The levels of event to log. ",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": [
                                         "list",
                                         "string"
                                       ]
                                     },
                                     "event_name": {
+                                      "computed": true,
                                       "description": "The type of Windows Events to log.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "log_group_name": {
+                                      "computed": true,
                                       "description": "The CloudWatch log group name to be associated to the monitored log.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "pattern_set": {
@@ -526,12 +553,13 @@ const awsccApplicationinsightsApplication = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "sub_component_type": {
+                          "computed": true,
                           "description": "The sub component type.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -563,9 +591,10 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "alarm_metric_name": {
+                                "computed": true,
                                 "description": "The name of the metric to be monitored for the component.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -580,9 +609,10 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "alarm_name": {
+                                "computed": true,
                                 "description": "The name of the CloudWatch alarm to be monitored for the component.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "severity": {
@@ -622,27 +652,31 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "agree_to_install_hanadb_client": {
+                                "computed": true,
                                 "description": "A flag which indicates agreeing to install SAP HANA DB client.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "bool"
                               },
                               "hana_port": {
+                                "computed": true,
                                 "description": "The HANA DB port.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "hana_secret_name": {
+                                "computed": true,
                                 "description": "The secret name which manages the HANA DB credentials e.g. {\n  \"username\": \"\u003c\u003e\",\n  \"password\": \"\u003c\u003e\"\n}.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "hanasid": {
+                                "computed": true,
                                 "description": "HANA DB SID.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "prometheus_port": {
@@ -717,9 +751,10 @@ const awsccApplicationinsightsApplication = `{
                                 "type": "string"
                               },
                               "log_type": {
+                                "computed": true,
                                 "description": "The log type decides the log patterns against which Application Insights analyzes the log.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "pattern_set": {
@@ -741,9 +776,10 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "instance_numbers": {
+                                "computed": true,
                                 "description": "SAP instance numbers for ASCS, ERS, and App Servers.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
@@ -757,9 +793,10 @@ const awsccApplicationinsightsApplication = `{
                                 "type": "string"
                               },
                               "sapsid": {
+                                "computed": true,
                                 "description": "SAP NetWeaver SID.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -774,25 +811,28 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "alarm_metrics": {
+                                "computed": true,
                                 "description": "A list of metrics to monitor for the component.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "alarm_metric_name": {
+                                      "computed": true,
                                       "description": "The name of the metric to be monitored for the component.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "process_name": {
+                                "computed": true,
                                 "description": "The name of the process to be monitored for the component.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -807,15 +847,17 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "prometheus_port": {
+                                "computed": true,
                                 "description": "Prometheus exporter port.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "sql_secret_name": {
+                                "computed": true,
                                 "description": "Secret name which managers SQL exporter connection. e.g. {\"data_source_name\": \"sqlserver://\u003cUSERNAME\u003e:\u003cPASSWORD\u003e@localhost:1433\"}",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -830,24 +872,27 @@ const awsccApplicationinsightsApplication = `{
                           "nested_type": {
                             "attributes": {
                               "event_levels": {
+                                "computed": true,
                                 "description": "The levels of event to log. ",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
                                 ]
                               },
                               "event_name": {
+                                "computed": true,
                                 "description": "The type of Windows Events to log.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "log_group_name": {
+                                "computed": true,
                                 "description": "The CloudWatch log group name to be associated to the monitored log.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "pattern_set": {
@@ -874,6 +919,7 @@ const awsccApplicationinsightsApplication = `{
                     "nested_type": {
                       "attributes": {
                         "sub_component_configuration_details": {
+                          "computed": true,
                           "description": "The configuration settings of sub components.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -885,9 +931,10 @@ const awsccApplicationinsightsApplication = `{
                                 "nested_type": {
                                   "attributes": {
                                     "alarm_metric_name": {
+                                      "computed": true,
                                       "description": "The name of the metric to be monitored for the component.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -923,9 +970,10 @@ const awsccApplicationinsightsApplication = `{
                                       "type": "string"
                                     },
                                     "log_type": {
+                                      "computed": true,
                                       "description": "The log type decides the log patterns against which Application Insights analyzes the log.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "pattern_set": {
@@ -947,25 +995,28 @@ const awsccApplicationinsightsApplication = `{
                                 "nested_type": {
                                   "attributes": {
                                     "alarm_metrics": {
+                                      "computed": true,
                                       "description": "A list of metrics to monitor for the component.",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "alarm_metric_name": {
+                                            "computed": true,
                                             "description": "The name of the metric to be monitored for the component.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "list"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "process_name": {
+                                      "computed": true,
                                       "description": "The name of the process to be monitored for the component.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -980,24 +1031,27 @@ const awsccApplicationinsightsApplication = `{
                                 "nested_type": {
                                   "attributes": {
                                     "event_levels": {
+                                      "computed": true,
                                       "description": "The levels of event to log. ",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": [
                                         "list",
                                         "string"
                                       ]
                                     },
                                     "event_name": {
+                                      "computed": true,
                                       "description": "The type of Windows Events to log.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "log_group_name": {
+                                      "computed": true,
                                       "description": "The CloudWatch log group name to be associated to the monitored log.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "pattern_set": {
@@ -1015,12 +1069,13 @@ const awsccApplicationinsightsApplication = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "sub_component_type": {
+                          "computed": true,
                           "description": "The sub component type.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1034,9 +1089,10 @@ const awsccApplicationinsightsApplication = `{
               "optional": true
             },
             "tier": {
+              "computed": true,
               "description": "The tier of the application component.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -1051,15 +1107,17 @@ const awsccApplicationinsightsApplication = `{
         "nested_type": {
           "attributes": {
             "component_name": {
+              "computed": true,
               "description": "The name of the component.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "resource_list": {
+              "computed": true,
               "description": "The list of resource ARNs that belong to the component.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
@@ -1097,37 +1155,42 @@ const awsccApplicationinsightsApplication = `{
         "nested_type": {
           "attributes": {
             "log_patterns": {
+              "computed": true,
               "description": "The log patterns of a set.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "pattern": {
+                    "computed": true,
                     "description": "The log pattern.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "pattern_name": {
+                    "computed": true,
                     "description": "The name of the log pattern.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "rank": {
+                    "computed": true,
                     "description": "Rank of the log pattern.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "pattern_set_name": {
+              "computed": true,
               "description": "The name of the log pattern set.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -1162,15 +1225,17 @@ const awsccApplicationinsightsApplication = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

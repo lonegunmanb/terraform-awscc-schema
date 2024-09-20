@@ -168,15 +168,17 @@ const awsccLookoutequipmentInferenceScheduler = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key for the specified tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the specified tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

@@ -61,8 +61,9 @@ const awsccBatchComputeEnvironment = `{
                     "type": "string"
                   },
                   "image_type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -126,8 +127,9 @@ const awsccBatchComputeEnvironment = `{
               "optional": true
             },
             "maxv_cpus": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "minv_cpus": {
@@ -158,8 +160,9 @@ const awsccBatchComputeEnvironment = `{
               "type": "string"
             },
             "subnets": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
@@ -176,8 +179,9 @@ const awsccBatchComputeEnvironment = `{
               ]
             },
             "type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "update_to_latest_image_version": {

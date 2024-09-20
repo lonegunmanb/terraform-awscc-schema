@@ -82,15 +82,17 @@ const awsccDatabrewRuleset = `{
               "nested_type": {
                 "attributes": {
                   "value": {
+                    "computed": true,
                     "description": "Value or column name",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value_reference": {
+                    "computed": true,
                     "description": "Variable name",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -118,9 +120,10 @@ const awsccDatabrewRuleset = `{
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "Threshold value for a rule",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -139,13 +142,15 @@ const awsccDatabrewRuleset = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

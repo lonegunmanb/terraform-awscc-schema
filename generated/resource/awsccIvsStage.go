@@ -38,9 +38,10 @@ const awsccIvsStage = `{
               ]
             },
             "storage_configuration_arn": {
+              "computed": true,
               "description": "ARN of the StorageConfiguration resource to use for individual participant recording.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -68,13 +69,15 @@ const awsccIvsStage = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

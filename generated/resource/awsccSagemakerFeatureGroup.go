@@ -77,18 +77,21 @@ const awsccSagemakerFeatureGroup = `{
               "nested_type": {
                 "attributes": {
                   "catalog": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "database": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "table_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -103,6 +106,7 @@ const awsccSagemakerFeatureGroup = `{
               "type": "bool"
             },
             "s3_storage_config": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -113,14 +117,15 @@ const awsccSagemakerFeatureGroup = `{
                     "type": "string"
                   },
                   "s3_uri": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "table_format": {
               "computed": true,
@@ -217,13 +222,15 @@ const awsccSagemakerFeatureGroup = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -251,9 +258,10 @@ const awsccSagemakerFeatureGroup = `{
               "type": "number"
             },
             "throughput_mode": {
+              "computed": true,
               "description": "Throughput mode configuration of the feature group",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

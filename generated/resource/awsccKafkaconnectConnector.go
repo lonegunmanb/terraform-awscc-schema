@@ -21,54 +21,61 @@ const awsccKafkaconnectConnector = `{
               "nested_type": {
                 "attributes": {
                   "max_worker_count": {
+                    "computed": true,
                     "description": "The maximum number of workers for a connector.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "mcu_count": {
+                    "computed": true,
                     "description": "Specifies how many MSK Connect Units (MCU) as the minimum scaling unit.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "min_worker_count": {
+                    "computed": true,
                     "description": "The minimum number of workers for a connector.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "scale_in_policy": {
+                    "computed": true,
                     "description": "Information about the scale in policy of the connector.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "cpu_utilization_percentage": {
+                          "computed": true,
                           "description": "Specifies the CPU utilization percentage threshold at which connector scale in should trigger.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "scale_out_policy": {
+                    "computed": true,
                     "description": "Information about the scale out policy of the connector.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "cpu_utilization_percentage": {
+                          "computed": true,
                           "description": "Specifies the CPU utilization percentage threshold at which connector scale out should trigger.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -89,9 +96,10 @@ const awsccKafkaconnectConnector = `{
                     "type": "number"
                   },
                   "worker_count": {
+                    "computed": true,
                     "description": "Number of workers for a connector.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -237,6 +245,7 @@ const awsccKafkaconnectConnector = `{
         "nested_type": {
           "attributes": {
             "worker_log_delivery": {
+              "computed": true,
               "description": "Specifies where worker logs are delivered.",
               "description_kind": "plain",
               "nested_type": {
@@ -248,9 +257,10 @@ const awsccKafkaconnectConnector = `{
                     "nested_type": {
                       "attributes": {
                         "enabled": {
+                          "computed": true,
                           "description": "Specifies whether the logs get sent to the specified CloudWatch Logs destination.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         },
                         "log_group": {
@@ -279,9 +289,10 @@ const awsccKafkaconnectConnector = `{
                           "type": "string"
                         },
                         "enabled": {
+                          "computed": true,
                           "description": "Specifies whether the logs get sent to the specified Kinesis Data Firehose delivery stream.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -303,9 +314,10 @@ const awsccKafkaconnectConnector = `{
                           "type": "string"
                         },
                         "enabled": {
+                          "computed": true,
                           "description": "Specifies whether the logs get sent to the specified Amazon S3 destination.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         },
                         "prefix": {
@@ -323,7 +335,7 @@ const awsccKafkaconnectConnector = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -375,13 +387,15 @@ const awsccKafkaconnectConnector = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -396,15 +410,17 @@ const awsccKafkaconnectConnector = `{
         "nested_type": {
           "attributes": {
             "revision": {
+              "computed": true,
               "description": "The revision of the worker configuration to use.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "worker_configuration_arn": {
+              "computed": true,
               "description": "The Amazon Resource Name (ARN) of the worker configuration to use.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

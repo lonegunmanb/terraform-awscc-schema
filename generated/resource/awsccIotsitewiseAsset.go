@@ -35,9 +35,10 @@ const awsccIotsitewiseAsset = `{
         "nested_type": {
           "attributes": {
             "child_asset_id": {
+              "computed": true,
               "description": "The ID of the child asset to be associated.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "external_id": {
@@ -149,13 +150,15 @@ const awsccIotsitewiseAsset = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

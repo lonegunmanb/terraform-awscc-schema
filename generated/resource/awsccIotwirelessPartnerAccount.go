@@ -55,8 +55,9 @@ const awsccIotwirelessPartnerAccount = `{
         "nested_type": {
           "attributes": {
             "app_server_private_key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

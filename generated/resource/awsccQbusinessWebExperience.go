@@ -41,13 +41,15 @@ const awsccQbusinessWebExperience = `{
               "nested_type": {
                 "attributes": {
                   "secrets_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "secrets_role": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -61,8 +63,9 @@ const awsccQbusinessWebExperience = `{
               "nested_type": {
                 "attributes": {
                   "authentication_url": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -104,13 +107,15 @@ const awsccQbusinessWebExperience = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

@@ -48,9 +48,10 @@ const awsccSagemakerMonitoringSchedule = `{
         "nested_type": {
           "attributes": {
             "creation_time": {
+              "computed": true,
               "description": "The time at which the monitoring job was created.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "endpoint_name": {
@@ -68,21 +69,24 @@ const awsccSagemakerMonitoringSchedule = `{
               "type": "string"
             },
             "last_modified_time": {
+              "computed": true,
               "description": "A timestamp that indicates the last time the monitoring job was modified.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "monitoring_execution_status": {
+              "computed": true,
               "description": "The status of the monitoring job.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "monitoring_schedule_name": {
+              "computed": true,
               "description": "The name of the monitoring schedule.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "processing_job_arn": {
@@ -93,9 +97,10 @@ const awsccSagemakerMonitoringSchedule = `{
               "type": "string"
             },
             "scheduled_time": {
+              "computed": true,
               "description": "The time the monitoring job was scheduled.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -178,6 +183,7 @@ const awsccSagemakerMonitoringSchedule = `{
                     ]
                   },
                   "monitoring_app_specification": {
+                    "computed": true,
                     "description": "Container image configuration object for the monitoring job.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -203,9 +209,10 @@ const awsccSagemakerMonitoringSchedule = `{
                           ]
                         },
                         "image_uri": {
+                          "computed": true,
                           "description": "The container image to be run by the monitoring job.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "post_analytics_processor_source_uri": {
@@ -225,9 +232,10 @@ const awsccSagemakerMonitoringSchedule = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "monitoring_inputs": {
+                    "computed": true,
                     "description": "The array of inputs for the monitoring job.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -239,12 +247,14 @@ const awsccSagemakerMonitoringSchedule = `{
                           "nested_type": {
                             "attributes": {
                               "data_captured_destination_s3_uri": {
+                                "computed": true,
                                 "description": "A URI that identifies the Amazon S3 storage location where Batch Transform Job captures data.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "dataset_format": {
+                                "computed": true,
                                 "description": "The dataset format of the data to monitor",
                                 "description_kind": "plain",
                                 "nested_type": {
@@ -295,7 +305,7 @@ const awsccSagemakerMonitoringSchedule = `{
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "exclude_features_attribute": {
                                 "computed": true,
@@ -305,9 +315,10 @@ const awsccSagemakerMonitoringSchedule = `{
                                 "type": "string"
                               },
                               "local_path": {
+                                "computed": true,
                                 "description": "Path to the filesystem where the endpoint data is available to the container.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "s3_data_distribution_type": {
@@ -336,9 +347,10 @@ const awsccSagemakerMonitoringSchedule = `{
                           "nested_type": {
                             "attributes": {
                               "endpoint_name": {
+                                "computed": true,
                                 "description": "The name of the endpoint used to run the monitoring job.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "exclude_features_attribute": {
@@ -349,9 +361,10 @@ const awsccSagemakerMonitoringSchedule = `{
                                 "type": "string"
                               },
                               "local_path": {
+                                "computed": true,
                                 "description": "Path to the filesystem where the endpoint data is available to the container.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "s3_data_distribution_type": {
@@ -376,9 +389,10 @@ const awsccSagemakerMonitoringSchedule = `{
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "monitoring_output_config": {
+                    "computed": true,
                     "description": "The output configuration for monitoring jobs.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -391,19 +405,22 @@ const awsccSagemakerMonitoringSchedule = `{
                           "type": "string"
                         },
                         "monitoring_outputs": {
+                          "computed": true,
                           "description": "Monitoring outputs for monitoring jobs. This is where the output of the periodic monitoring jobs is uploaded.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "s3_output": {
+                                "computed": true,
                                 "description": "Information about where and how to store the results of a monitoring job.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "local_path": {
+                                      "computed": true,
                                       "description": "The local path to the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job. LocalPath is an absolute path for the output data.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "s3_upload_mode": {
@@ -414,46 +431,51 @@ const awsccSagemakerMonitoringSchedule = `{
                                       "type": "string"
                                     },
                                     "s3_uri": {
+                                      "computed": true,
                                       "description": "A URI that identifies the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "monitoring_resources": {
+                    "computed": true,
                     "description": "Identifies the resources to deploy for a monitoring job.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "cluster_config": {
+                          "computed": true,
                           "description": "Configuration for the cluster used to run model monitoring jobs.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "instance_count": {
+                                "computed": true,
                                 "description": "The number of ML compute instances to use in the model monitoring job. For distributed processing jobs, specify a value greater than 1. The default value is 1.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               },
                               "instance_type": {
+                                "computed": true,
                                 "description": "The ML compute instance type for the processing job.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "volume_kms_key_id": {
@@ -464,20 +486,21 @@ const awsccSagemakerMonitoringSchedule = `{
                                 "type": "string"
                               },
                               "volume_size_in_gb": {
+                                "computed": true,
                                 "description": "The size of the ML storage volume, in gigabytes, that you want to provision. You must specify sufficient ML storage for your scenario.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "network_config": {
                     "computed": true,
@@ -506,18 +529,20 @@ const awsccSagemakerMonitoringSchedule = `{
                           "nested_type": {
                             "attributes": {
                               "security_group_ids": {
+                                "computed": true,
                                 "description": "The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security groups for the VPC that is specified in the Subnets field.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
                                 ]
                               },
                               "subnets": {
+                                "computed": true,
                                 "description": "The ID of the subnets in the VPC to which you want to connect to your monitoring jobs.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
@@ -534,9 +559,10 @@ const awsccSagemakerMonitoringSchedule = `{
                     "optional": true
                   },
                   "role_arn": {
+                    "computed": true,
                     "description": "The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "stopping_condition": {
@@ -546,9 +572,10 @@ const awsccSagemakerMonitoringSchedule = `{
                     "nested_type": {
                       "attributes": {
                         "max_runtime_in_seconds": {
+                          "computed": true,
                           "description": "The maximum runtime allowed in seconds.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -596,9 +623,10 @@ const awsccSagemakerMonitoringSchedule = `{
                     "type": "string"
                   },
                   "schedule_expression": {
+                    "computed": true,
                     "description": "A cron expression or 'NOW' that describes details about the monitoring schedule.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -631,15 +659,17 @@ const awsccSagemakerMonitoringSchedule = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

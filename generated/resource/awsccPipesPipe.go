@@ -236,6 +236,7 @@ const awsccPipesPipe = `{
                     "type": "number"
                   },
                   "credentials": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -249,7 +250,7 @@ const awsccPipesPipe = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "maximum_batching_window_in_seconds": {
                     "computed": true,
@@ -258,8 +259,9 @@ const awsccPipesPipe = `{
                     "type": "number"
                   },
                   "queue_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -325,8 +327,9 @@ const awsccPipesPipe = `{
                     "type": "number"
                   },
                   "starting_position": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -418,8 +421,9 @@ const awsccPipesPipe = `{
                     "type": "number"
                   },
                   "starting_position": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "starting_position_timestamp": {
@@ -487,8 +491,9 @@ const awsccPipesPipe = `{
                     "type": "string"
                   },
                   "topic_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -508,6 +513,7 @@ const awsccPipesPipe = `{
                     "type": "number"
                   },
                   "credentials": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -521,7 +527,7 @@ const awsccPipesPipe = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "maximum_batching_window_in_seconds": {
                     "computed": true,
@@ -530,8 +536,9 @@ const awsccPipesPipe = `{
                     "type": "number"
                   },
                   "queue_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "virtual_host": {
@@ -629,8 +636,9 @@ const awsccPipesPipe = `{
                     "type": "string"
                   },
                   "topic_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "vpc": {
@@ -788,13 +796,15 @@ const awsccPipesPipe = `{
                           "nested_type": {
                             "attributes": {
                               "type": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -830,13 +840,15 @@ const awsccPipesPipe = `{
                     "optional": true
                   },
                   "job_definition": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "job_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "parameters": {
@@ -908,8 +920,9 @@ const awsccPipesPipe = `{
                           "type": "number"
                         },
                         "capacity_provider": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "weight": {
@@ -973,8 +986,9 @@ const awsccPipesPipe = `{
                                 ]
                               },
                               "subnets": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
@@ -1043,13 +1057,15 @@ const awsccPipesPipe = `{
                                 "nested_type": {
                                   "attributes": {
                                     "type": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -1081,13 +1097,15 @@ const awsccPipesPipe = `{
                                 "nested_type": {
                                   "attributes": {
                                     "type": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -1235,13 +1253,15 @@ const awsccPipesPipe = `{
                     "nested_type": {
                       "attributes": {
                         "key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1256,8 +1276,9 @@ const awsccPipesPipe = `{
                     "type": "number"
                   },
                   "task_definition_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1357,8 +1378,9 @@ const awsccPipesPipe = `{
               "nested_type": {
                 "attributes": {
                   "partition_key": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1388,9 +1410,10 @@ const awsccPipesPipe = `{
               "nested_type": {
                 "attributes": {
                   "database": {
+                    "computed": true,
                     "description": "Redshift Database",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "db_user": {
@@ -1408,9 +1431,10 @@ const awsccPipesPipe = `{
                     "type": "string"
                   },
                   "sqls": {
+                    "computed": true,
                     "description": "A list of SQLs.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -1445,13 +1469,15 @@ const awsccPipesPipe = `{
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1508,28 +1534,32 @@ const awsccPipesPipe = `{
               "nested_type": {
                 "attributes": {
                   "dimension_mappings": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "dimension_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "dimension_value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "dimension_value_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "epoch_time_unit": {
                     "computed": true,
@@ -1543,32 +1573,37 @@ const awsccPipesPipe = `{
                     "nested_type": {
                       "attributes": {
                         "multi_measure_attribute_mappings": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "measure_value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "measure_value_type": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "multi_measure_attribute_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "multi_measure_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1582,18 +1617,21 @@ const awsccPipesPipe = `{
                     "nested_type": {
                       "attributes": {
                         "measure_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "measure_value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "measure_value_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1608,8 +1646,9 @@ const awsccPipesPipe = `{
                     "type": "string"
                   },
                   "time_value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "timestamp_format": {
@@ -1619,8 +1658,9 @@ const awsccPipesPipe = `{
                     "type": "string"
                   },
                   "version_value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

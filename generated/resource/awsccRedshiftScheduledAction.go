@@ -91,8 +91,9 @@ const awsccRedshiftScheduledAction = `{
               "nested_type": {
                 "attributes": {
                   "cluster_identifier": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -113,8 +114,9 @@ const awsccRedshiftScheduledAction = `{
                     "type": "bool"
                   },
                   "cluster_identifier": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "cluster_type": {
@@ -147,8 +149,9 @@ const awsccRedshiftScheduledAction = `{
               "nested_type": {
                 "attributes": {
                   "cluster_identifier": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

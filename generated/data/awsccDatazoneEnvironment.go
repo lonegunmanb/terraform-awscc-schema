@@ -51,6 +51,18 @@ const awsccDatazoneEnvironment = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "environment_account_identifier": {
+        "computed": true,
+        "description": "The AWS account in which the Amazon DataZone environment is created.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "environment_account_region": {
+        "computed": true,
+        "description": "The AWS region in which the Amazon DataZone environment is created.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "environment_blueprint_id": {
         "computed": true,
         "description": "The ID of the blueprint with which the Amazon DataZone environment was created.",
@@ -72,6 +84,12 @@ const awsccDatazoneEnvironment = `{
       "environment_profile_identifier": {
         "computed": true,
         "description": "The ID of the environment profile with which the Amazon DataZone environment would be created.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "environment_role_arn": {
+        "computed": true,
+        "description": "Environment role arn for custom aws environment permissions",
         "description_kind": "plain",
         "type": "string"
       },

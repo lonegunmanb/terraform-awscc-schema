@@ -52,8 +52,9 @@ const awsccQuicksightTopic = `{
                     "type": "string"
                   },
                   "calculated_field_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "calculated_field_synonyms": {
@@ -248,8 +249,9 @@ const awsccQuicksightTopic = `{
                     "type": "bool"
                   },
                   "expression": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "is_included_in_topic": {
@@ -415,8 +417,9 @@ const awsccQuicksightTopic = `{
                     "type": "string"
                   },
                   "column_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "column_synonyms": {
@@ -701,8 +704,9 @@ const awsccQuicksightTopic = `{
               "optional": true
             },
             "dataset_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "dataset_description": {
@@ -858,8 +862,9 @@ const awsccQuicksightTopic = `{
                     "type": "string"
                   },
                   "filter_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "filter_synonyms": {
@@ -976,8 +981,9 @@ const awsccQuicksightTopic = `{
                     "optional": true
                   },
                   "operand_field_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "relative_date_filter": {
@@ -1100,8 +1106,9 @@ const awsccQuicksightTopic = `{
                     "type": "string"
                   },
                   "entity_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "entity_synonyms": {

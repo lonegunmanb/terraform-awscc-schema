@@ -15,6 +15,18 @@ const awsccS3ExpressDirectoryBucket = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "availability_zone_name": {
+        "computed": true,
+        "description": "Returns the code for the Availability Zone where the directory bucket was created.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "bucket_encryption": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "bucket_name": {
         "computed": true,
         "description": "Specifies a name for the bucket. The bucket name must contain only lowercase letters, numbers, and hyphens (-). A directory bucket name must be unique in the chosen Availability Zone. The bucket name must also follow the format 'bucket_base_name--az_id--x-s3' (for example, 'DOC-EXAMPLE-BUCKET--usw2-az1--x-s3'). If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the bucket name.",

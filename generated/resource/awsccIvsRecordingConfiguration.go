@@ -27,8 +27,9 @@ const awsccIvsRecordingConfiguration = `{
               "nested_type": {
                 "attributes": {
                   "bucket_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -102,13 +103,15 @@ const awsccIvsRecordingConfiguration = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

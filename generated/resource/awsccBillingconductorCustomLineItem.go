@@ -78,8 +78,9 @@ const awsccBillingconductorCustomLineItem = `{
               "nested_type": {
                 "attributes": {
                   "charge_value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -93,18 +94,21 @@ const awsccBillingconductorCustomLineItem = `{
               "nested_type": {
                 "attributes": {
                   "attribute": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "match_option": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "values": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "set",
                       "string"
@@ -130,8 +134,9 @@ const awsccBillingconductorCustomLineItem = `{
                     ]
                   },
                   "percentage_value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -140,8 +145,9 @@ const awsccBillingconductorCustomLineItem = `{
               "optional": true
             },
             "type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -183,13 +189,15 @@ const awsccBillingconductorCustomLineItem = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

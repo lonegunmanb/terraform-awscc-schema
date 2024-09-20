@@ -46,9 +46,10 @@ const awsccDatasyncLocationAzureBlob = `{
         "nested_type": {
           "attributes": {
             "azure_blob_sas_token": {
+              "computed": true,
               "description": "Specifies the shared access signature (SAS) token, which indicates the permissions DataSync needs to access your Azure Blob Storage container.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -95,15 +96,17 @@ const awsccDatasyncLocationAzureBlob = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key for an AWS resource tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for an AWS resource tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

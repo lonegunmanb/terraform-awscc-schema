@@ -49,15 +49,17 @@ const awsccGameliftBuild = `{
         "nested_type": {
           "attributes": {
             "bucket": {
+              "computed": true,
               "description": "An Amazon S3 bucket identifier. This is the name of the S3 bucket.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "key": {
+              "computed": true,
               "description": "The name of the zip file that contains the build files or script files.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "object_version": {
@@ -68,9 +70,10 @@ const awsccGameliftBuild = `{
               "type": "string"
             },
             "role_arn": {
+              "computed": true,
               "description": "The Amazon Resource Name (ARN) for an IAM role that allows Amazon GameLift to access the S3 bucket.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

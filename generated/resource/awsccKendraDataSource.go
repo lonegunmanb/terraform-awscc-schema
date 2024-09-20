@@ -31,8 +31,9 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "condition_document_attribute_key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "condition_on_value": {
@@ -73,8 +74,9 @@ const awsccKendraDataSource = `{
                           "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -94,8 +96,9 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "target_document_attribute_key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "target_document_attribute_value": {
@@ -162,8 +165,9 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "condition_document_attribute_key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "condition_on_value": {
@@ -204,8 +208,9 @@ const awsccKendraDataSource = `{
                           "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -214,13 +219,15 @@ const awsccKendraDataSource = `{
                     "optional": true
                   },
                   "lambda_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "s3_bucket": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -239,8 +246,9 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "condition_document_attribute_key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "condition_on_value": {
@@ -281,8 +289,9 @@ const awsccKendraDataSource = `{
                           "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -291,13 +300,15 @@ const awsccKendraDataSource = `{
                     "optional": true
                   },
                   "lambda_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "s3_bucket": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -338,8 +349,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "data_source_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "date_field_format": {
@@ -349,8 +361,9 @@ const awsccKendraDataSource = `{
                                 "type": "string"
                               },
                               "index_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -380,8 +393,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "data_source_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "date_field_format": {
@@ -391,8 +405,9 @@ const awsccKendraDataSource = `{
                                 "type": "string"
                               },
                               "index_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -434,8 +449,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "data_source_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "date_field_format": {
@@ -445,8 +461,9 @@ const awsccKendraDataSource = `{
                                 "type": "string"
                               },
                               "index_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -460,13 +477,15 @@ const awsccKendraDataSource = `{
                     "optional": true
                   },
                   "secret_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "server_url": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "space_configuration": {
@@ -510,8 +529,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "data_source_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "date_field_format": {
@@ -521,8 +541,9 @@ const awsccKendraDataSource = `{
                                 "type": "string"
                               },
                               "index_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -536,8 +557,9 @@ const awsccKendraDataSource = `{
                     "optional": true
                   },
                   "version": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "vpc_configuration": {
@@ -546,16 +568,18 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "security_group_ids": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
                           ]
                         },
                         "subnet_ids": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -582,8 +606,9 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "allowed_groups_column_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -592,25 +617,29 @@ const awsccKendraDataSource = `{
                     "optional": true
                   },
                   "column_configuration": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "change_detecting_columns": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
                           ]
                         },
                         "document_data_column_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "document_id_column_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "document_title_column_name": {
@@ -625,8 +654,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "data_source_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "date_field_format": {
@@ -636,8 +666,9 @@ const awsccKendraDataSource = `{
                                 "type": "string"
                               },
                               "index_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -648,45 +679,52 @@ const awsccKendraDataSource = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "connection_configuration": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "database_host": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "database_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "database_port": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "secret_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "table_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "database_engine_type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "sql_configuration": {
@@ -711,16 +749,18 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "security_group_ids": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
                           ]
                         },
                         "subnet_ids": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -783,8 +823,9 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "data_source_field_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "date_field_format": {
@@ -794,8 +835,9 @@ const awsccKendraDataSource = `{
                           "type": "string"
                         },
                         "index_field_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -813,8 +855,9 @@ const awsccKendraDataSource = `{
                     ]
                   },
                   "secret_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -848,8 +891,9 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "data_source_field_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "date_field_format": {
@@ -859,8 +903,9 @@ const awsccKendraDataSource = `{
                           "type": "string"
                         },
                         "index_field_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -878,6 +923,7 @@ const awsccKendraDataSource = `{
                     ]
                   },
                   "one_drive_users": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -896,13 +942,15 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "bucket": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "key": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -913,16 +961,18 @@ const awsccKendraDataSource = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "secret_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "tenant_domain": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -953,8 +1003,9 @@ const awsccKendraDataSource = `{
                     "optional": true
                   },
                   "bucket_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "documents_metadata_configuration": {
@@ -1016,8 +1067,9 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "document_data_field_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "document_title_field_name": {
@@ -1032,8 +1084,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "data_source_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "date_field_format": {
@@ -1043,8 +1096,9 @@ const awsccKendraDataSource = `{
                                 "type": "string"
                               },
                               "index_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1101,8 +1155,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "document_data_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "document_title_field_name": {
@@ -1117,8 +1172,9 @@ const awsccKendraDataSource = `{
                                 "nested_type": {
                                   "attributes": {
                                     "data_source_field_name": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "date_field_format": {
@@ -1128,8 +1184,9 @@ const awsccKendraDataSource = `{
                                       "type": "string"
                                     },
                                     "index_field_name": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -1138,8 +1195,9 @@ const awsccKendraDataSource = `{
                                 "optional": true
                               },
                               "name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1148,8 +1206,9 @@ const awsccKendraDataSource = `{
                           "optional": true
                         },
                         "included_states": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -1161,8 +1220,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "document_data_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "document_title_field_name": {
@@ -1177,8 +1237,9 @@ const awsccKendraDataSource = `{
                                 "nested_type": {
                                   "attributes": {
                                     "data_source_field_name": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "date_field_format": {
@@ -1188,8 +1249,9 @@ const awsccKendraDataSource = `{
                                       "type": "string"
                                     },
                                     "index_field_name": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -1208,13 +1270,15 @@ const awsccKendraDataSource = `{
                     "optional": true
                   },
                   "secret_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "server_url": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "standard_object_attachment_configuration": {
@@ -1234,8 +1298,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "data_source_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "date_field_format": {
@@ -1245,8 +1310,9 @@ const awsccKendraDataSource = `{
                                 "type": "string"
                               },
                               "index_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1265,8 +1331,9 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "document_data_field_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "document_title_field_name": {
@@ -1281,8 +1348,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "data_source_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "date_field_format": {
@@ -1292,8 +1360,9 @@ const awsccKendraDataSource = `{
                                 "type": "string"
                               },
                               "index_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1302,8 +1371,9 @@ const awsccKendraDataSource = `{
                           "optional": true
                         },
                         "name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1328,8 +1398,9 @@ const awsccKendraDataSource = `{
                     "type": "string"
                   },
                   "host_url": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "knowledge_article_configuration": {
@@ -1344,8 +1415,9 @@ const awsccKendraDataSource = `{
                           "type": "bool"
                         },
                         "document_data_field_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "document_title_field_name": {
@@ -1369,8 +1441,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "data_source_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "date_field_format": {
@@ -1380,8 +1453,9 @@ const awsccKendraDataSource = `{
                                 "type": "string"
                               },
                               "index_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1410,8 +1484,9 @@ const awsccKendraDataSource = `{
                     "optional": true
                   },
                   "secret_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "service_catalog_configuration": {
@@ -1426,8 +1501,9 @@ const awsccKendraDataSource = `{
                           "type": "bool"
                         },
                         "document_data_field_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "document_title_field_name": {
@@ -1451,8 +1527,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "data_source_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "date_field_format": {
@@ -1462,8 +1539,9 @@ const awsccKendraDataSource = `{
                                 "type": "string"
                               },
                               "index_field_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1486,8 +1564,9 @@ const awsccKendraDataSource = `{
                     "optional": true
                   },
                   "service_now_build_version": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1534,8 +1613,9 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "data_source_field_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "date_field_format": {
@@ -1545,8 +1625,9 @@ const awsccKendraDataSource = `{
                           "type": "string"
                         },
                         "index_field_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1564,13 +1645,15 @@ const awsccKendraDataSource = `{
                     ]
                   },
                   "secret_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "share_point_version": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "ssl_certificate_s3_path": {
@@ -1579,13 +1662,15 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "bucket": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1594,8 +1679,9 @@ const awsccKendraDataSource = `{
                     "optional": true
                   },
                   "urls": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -1613,16 +1699,18 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "security_group_ids": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
                           ]
                         },
                         "subnet_ids": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -1654,18 +1742,21 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "credentials": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "host": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "port": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -1714,13 +1805,15 @@ const awsccKendraDataSource = `{
                           "type": "string"
                         },
                         "host": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "port": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -1747,6 +1840,7 @@ const awsccKendraDataSource = `{
                     ]
                   },
                   "urls": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -1756,8 +1850,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "seed_urls": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
@@ -1780,8 +1875,9 @@ const awsccKendraDataSource = `{
                           "nested_type": {
                             "attributes": {
                               "site_maps": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "list",
                                   "string"
@@ -1795,7 +1891,7 @@ const awsccKendraDataSource = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -1828,8 +1924,9 @@ const awsccKendraDataSource = `{
                     "nested_type": {
                       "attributes": {
                         "data_source_field_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "date_field_format": {
@@ -1839,8 +1936,9 @@ const awsccKendraDataSource = `{
                           "type": "string"
                         },
                         "index_field_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1858,8 +1956,9 @@ const awsccKendraDataSource = `{
                     ]
                   },
                   "organization_id": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "use_change_log": {
@@ -1937,15 +2036,17 @@ const awsccKendraDataSource = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "A string used to identify this tag",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "A string containing the value for the tag",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

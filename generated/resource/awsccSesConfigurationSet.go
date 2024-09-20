@@ -134,9 +134,10 @@ const awsccSesConfigurationSet = `{
               "nested_type": {
                 "attributes": {
                   "engagement_metrics": {
+                    "computed": true,
                     "description": "Whether emails sent with this configuration set have engagement tracking enabled.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -151,9 +152,10 @@ const awsccSesConfigurationSet = `{
               "nested_type": {
                 "attributes": {
                   "optimized_shared_delivery": {
+                    "computed": true,
                     "description": "Whether emails sent with this configuration set have optimized delivery algorithm enabled.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

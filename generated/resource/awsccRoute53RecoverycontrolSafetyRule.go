@@ -16,18 +16,20 @@ const awsccRoute53RecoverycontrolSafetyRule = `{
         "nested_type": {
           "attributes": {
             "asserted_controls": {
+              "computed": true,
               "description": "The routing controls that are part of transactions that are evaluated to determine if a request to change a routing control state is allowed. For example, you might include three routing controls, one for each of three AWS Regions.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
               ]
             },
             "wait_period_ms": {
+              "computed": true,
               "description": "An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent \"flapping\" of state. The wait period is 5000 ms by default, but you can choose a custom value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -49,27 +51,30 @@ const awsccRoute53RecoverycontrolSafetyRule = `{
         "nested_type": {
           "attributes": {
             "gating_controls": {
+              "computed": true,
               "description": "The gating controls for the gating rule. That is, routing controls that are evaluated by the rule configuration that you specify.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
               ]
             },
             "target_controls": {
+              "computed": true,
               "description": "Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified GatingControls. For example, say you have three gating controls, one for each of three AWS Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only change (set or unset) the routing controls that you have specified as TargetControls if that rule evaluates to true. \nIn other words, your ability to change the routing controls that you have specified as TargetControls is gated by the rule that you set for the routing controls in GatingControls.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
               ]
             },
             "wait_period_ms": {
+              "computed": true,
               "description": "An evaluation period, in milliseconds (ms), during which any request against the target routing controls will fail. This helps prevent \"flapping\" of state. The wait period is 5000 ms by default, but you can choose a custom value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -97,21 +102,24 @@ const awsccRoute53RecoverycontrolSafetyRule = `{
         "nested_type": {
           "attributes": {
             "inverted": {
+              "computed": true,
               "description": "Logical negation of the rule. If the rule would usually evaluate true, it's evaluated as false, and vice versa.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "threshold": {
+              "computed": true,
               "description": "The value of N, when you specify an ATLEAST rule type. That is, Threshold is the number of controls that must be set when you specify an ATLEAST type.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "type": {
+              "computed": true,
               "description": "A rule can be one of the following: ATLEAST, AND, or OR.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -138,13 +146,15 @@ const awsccRoute53RecoverycontrolSafetyRule = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

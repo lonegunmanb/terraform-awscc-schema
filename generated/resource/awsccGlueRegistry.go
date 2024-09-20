@@ -41,15 +41,17 @@ const awsccGlueRegistry = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "A key to identify the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "Corresponding tag value for the key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

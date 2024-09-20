@@ -74,6 +74,7 @@ const awsccApptestTestCase = `{
                     "nested_type": {
                       "attributes": {
                         "input": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -83,6 +84,7 @@ const awsccApptestTestCase = `{
                                 "nested_type": {
                                   "attributes": {
                                     "file_metadata": {
+                                      "computed": true,
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
@@ -92,28 +94,33 @@ const awsccApptestTestCase = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "ccsid": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "format": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "length": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "number"
                                                 },
                                                 "name": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -127,42 +134,48 @@ const awsccApptestTestCase = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "source_metadata": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
                                                   "nested_type": {
                                                     "attributes": {
                                                       "capture_tool": {
+                                                        "computed": true,
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       },
                                                       "type": {
+                                                        "computed": true,
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
                                                     "nesting_mode": "single"
                                                   },
-                                                  "required": true
+                                                  "optional": true
                                                 },
                                                 "target_metadata": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
                                                   "nested_type": {
                                                     "attributes": {
                                                       "capture_tool": {
+                                                        "computed": true,
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       },
                                                       "type": {
+                                                        "computed": true,
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
                                                     "nesting_mode": "single"
                                                   },
-                                                  "required": true
+                                                  "optional": true
                                                 }
                                               },
                                               "nesting_mode": "single"
@@ -172,16 +185,18 @@ const awsccApptestTestCase = `{
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "source_location": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "target_location": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -192,7 +207,7 @@ const awsccApptestTestCase = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "output": {
                           "computed": true,
@@ -231,6 +246,7 @@ const awsccApptestTestCase = `{
                     "nested_type": {
                       "attributes": {
                         "action_type": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -240,8 +256,9 @@ const awsccApptestTestCase = `{
                                 "nested_type": {
                                   "attributes": {
                                     "batch_job_name": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "batch_job_parameters": {
@@ -282,23 +299,26 @@ const awsccApptestTestCase = `{
                                       ]
                                     },
                                     "script": {
+                                      "computed": true,
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "script_location": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "type": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
@@ -308,7 +328,7 @@ const awsccApptestTestCase = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "properties": {
                           "computed": true,
@@ -327,8 +347,9 @@ const awsccApptestTestCase = `{
                           "optional": true
                         },
                         "resource": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -353,8 +374,9 @@ const awsccApptestTestCase = `{
                                 "type": "string"
                               },
                               "resource": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -368,8 +390,9 @@ const awsccApptestTestCase = `{
                           "nested_type": {
                             "attributes": {
                               "action_type": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "properties": {
@@ -395,8 +418,9 @@ const awsccApptestTestCase = `{
                                 "optional": true
                               },
                               "resource": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -410,13 +434,15 @@ const awsccApptestTestCase = `{
                           "nested_type": {
                             "attributes": {
                               "action_type": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "resource": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },

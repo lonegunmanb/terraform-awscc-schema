@@ -70,9 +70,10 @@ const awsccApprunnerObservabilityConfiguration = `{
         "nested_type": {
           "attributes": {
             "vendor": {
+              "computed": true,
               "description": "The implementation provider chosen for tracing App Runner services.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

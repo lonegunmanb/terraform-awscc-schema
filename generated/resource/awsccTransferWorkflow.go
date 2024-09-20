@@ -148,6 +148,7 @@ const awsccTransferWorkflow = `{
               "nested_type": {
                 "attributes": {
                   "destination_file_location": {
+                    "computed": true,
                     "description": "Specifies the location for the file being decrypted. Only applicable for the Decrypt type of workflow steps.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -205,7 +206,7 @@ const awsccTransferWorkflow = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "name": {
                     "computed": true,
@@ -229,9 +230,10 @@ const awsccTransferWorkflow = `{
                     "type": "string"
                   },
                   "type": {
+                    "computed": true,
                     "description": "Specifies which encryption method to use.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -291,15 +293,17 @@ const awsccTransferWorkflow = `{
                     "nested_type": {
                       "attributes": {
                         "key": {
+                          "computed": true,
                           "description": "The name assigned to the tag that you create.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "The value that corresponds to the key.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -442,6 +446,7 @@ const awsccTransferWorkflow = `{
               "nested_type": {
                 "attributes": {
                   "destination_file_location": {
+                    "computed": true,
                     "description": "Specifies the location for the file being decrypted. Only applicable for the Decrypt type of workflow steps.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -499,7 +504,7 @@ const awsccTransferWorkflow = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "name": {
                     "computed": true,
@@ -523,9 +528,10 @@ const awsccTransferWorkflow = `{
                     "type": "string"
                   },
                   "type": {
+                    "computed": true,
                     "description": "Specifies which encryption method to use.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -585,15 +591,17 @@ const awsccTransferWorkflow = `{
                     "nested_type": {
                       "attributes": {
                         "key": {
+                          "computed": true,
                           "description": "The name assigned to the tag that you create.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "The value that corresponds to the key.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -624,15 +632,17 @@ const awsccTransferWorkflow = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The name assigned to the tag that you create.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "Contains one or more values that you assigned to the key name you create.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

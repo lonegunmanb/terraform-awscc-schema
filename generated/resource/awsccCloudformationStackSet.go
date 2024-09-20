@@ -161,15 +161,17 @@ const awsccCloudformationStackSet = `{
         "nested_type": {
           "attributes": {
             "parameter_key": {
+              "computed": true,
               "description": "The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "parameter_value": {
+              "computed": true,
               "description": "The input value associated with the parameter.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -190,6 +192,7 @@ const awsccCloudformationStackSet = `{
         "nested_type": {
           "attributes": {
             "deployment_targets": {
+              "computed": true,
               "description": " The AWS OrganizationalUnitIds or Accounts for which to create stack instances in the specified Regions.",
               "description_kind": "plain",
               "nested_type": {
@@ -231,7 +234,7 @@ const awsccCloudformationStackSet = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "parameter_overrides": {
               "computed": true,
@@ -240,15 +243,17 @@ const awsccCloudformationStackSet = `{
               "nested_type": {
                 "attributes": {
                   "parameter_key": {
+                    "computed": true,
                     "description": "The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS CloudFormation uses the default value that is specified in your template.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "parameter_value": {
+                    "computed": true,
                     "description": "The input value associated with the parameter.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -257,9 +262,10 @@ const awsccCloudformationStackSet = `{
               "optional": true
             },
             "regions": {
+              "computed": true,
               "description": "The names of one or more Regions where you want to create stack instances using the specified AWS account(s).",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "set",
                 "string"
@@ -289,15 +295,17 @@ const awsccCloudformationStackSet = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "A string used to identify this tag. You can specify a maximum of 127 characters for a tag key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "A string containing the value for this tag. You can specify a maximum of 256 characters for a tag value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

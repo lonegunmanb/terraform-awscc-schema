@@ -62,8 +62,9 @@ const awsccAppflowFlow = `{
                           ]
                         },
                         "entity_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "error_handling_config": {
@@ -149,8 +150,9 @@ const awsccAppflowFlow = `{
                           "optional": true
                         },
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -208,8 +210,9 @@ const awsccAppflowFlow = `{
                           "optional": true
                         },
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -257,13 +260,15 @@ const awsccAppflowFlow = `{
                           "optional": true
                         },
                         "intermediate_bucket_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -277,8 +282,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "bucket_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "bucket_prefix": {
@@ -417,8 +423,9 @@ const awsccAppflowFlow = `{
                           ]
                         },
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "write_operation_type": {
@@ -476,8 +483,9 @@ const awsccAppflowFlow = `{
                           ]
                         },
                         "object_path": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "success_response_handling_config": {
@@ -553,13 +561,15 @@ const awsccAppflowFlow = `{
                           "optional": true
                         },
                         "intermediate_bucket_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -573,8 +583,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "bucket_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "bucket_prefix": {
@@ -584,6 +595,7 @@ const awsccAppflowFlow = `{
                           "type": "string"
                         },
                         "s3_output_format_config": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -616,6 +628,7 @@ const awsccAppflowFlow = `{
                                 "type": "string"
                               },
                               "prefix_config": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
@@ -643,12 +656,12 @@ const awsccAppflowFlow = `{
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -699,8 +712,9 @@ const awsccAppflowFlow = `{
                           ]
                         },
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "write_operation_type": {
@@ -769,21 +783,24 @@ const awsccAppflowFlow = `{
               "nested_type": {
                 "attributes": {
                   "database_name": {
+                    "computed": true,
                     "description": "A string containing the value for the tag",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description": "A string containing the value for the tag",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "table_prefix": {
+                    "computed": true,
                     "description": "A string containing the value for the tag",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -850,8 +867,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -880,13 +898,15 @@ const awsccAppflowFlow = `{
                           "nested_type": {
                             "attributes": {
                               "name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "type": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -895,8 +915,9 @@ const awsccAppflowFlow = `{
                           "optional": true
                         },
                         "entity_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -910,8 +931,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -925,8 +947,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -940,8 +963,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -955,8 +979,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -970,8 +995,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -985,8 +1011,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1000,13 +1027,15 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "bucket_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "bucket_prefix": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_input_format_config": {
@@ -1054,8 +1083,9 @@ const awsccAppflowFlow = `{
                           "type": "bool"
                         },
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1069,8 +1099,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object_path": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "pagination_config": {
@@ -1080,8 +1111,9 @@ const awsccAppflowFlow = `{
                           "nested_type": {
                             "attributes": {
                               "max_page_size": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -1096,8 +1128,9 @@ const awsccAppflowFlow = `{
                           "nested_type": {
                             "attributes": {
                               "max_parallelism": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -1116,8 +1149,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1131,8 +1165,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1146,8 +1181,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1161,8 +1197,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1200,8 +1237,9 @@ const awsccAppflowFlow = `{
                           "type": "bool"
                         },
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1215,8 +1253,9 @@ const awsccAppflowFlow = `{
                     "nested_type": {
                       "attributes": {
                         "object": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1241,15 +1280,17 @@ const awsccAppflowFlow = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "A string used to identify this tag",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "A string containing the value for the tag",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -1398,13 +1439,15 @@ const awsccAppflowFlow = `{
               "nested_type": {
                 "attributes": {
                   "key": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -1459,8 +1502,9 @@ const awsccAppflowFlow = `{
                     "type": "number"
                   },
                   "schedule_expression": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "schedule_offset": {

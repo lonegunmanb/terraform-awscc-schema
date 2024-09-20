@@ -45,6 +45,7 @@ const awsccSesMailManagerTrafficPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -54,13 +55,15 @@ const awsccSesMailManagerTrafficPolicy = `{
                                 "nested_type": {
                                   "attributes": {
                                     "analyzer": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "result_field": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -71,11 +74,12 @@ const awsccSesMailManagerTrafficPolicy = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -89,6 +93,7 @@ const awsccSesMailManagerTrafficPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -101,16 +106,18 @@ const awsccSesMailManagerTrafficPolicy = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "values": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -127,6 +134,7 @@ const awsccSesMailManagerTrafficPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -139,16 +147,18 @@ const awsccSesMailManagerTrafficPolicy = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "values": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -165,6 +175,7 @@ const awsccSesMailManagerTrafficPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -177,16 +188,18 @@ const awsccSesMailManagerTrafficPolicy = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -210,13 +223,15 @@ const awsccSesMailManagerTrafficPolicy = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

@@ -48,8 +48,9 @@ const awsccM2Environment = `{
         "nested_type": {
           "attributes": {
             "desired_capacity": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -119,15 +120,17 @@ const awsccM2Environment = `{
               "nested_type": {
                 "attributes": {
                   "file_system_id": {
+                    "computed": true,
                     "description": "The file system identifier.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "mount_point": {
+                    "computed": true,
                     "description": "The mount point for the file system.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -142,15 +145,17 @@ const awsccM2Environment = `{
               "nested_type": {
                 "attributes": {
                   "file_system_id": {
+                    "computed": true,
                     "description": "The file system identifier.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "mount_point": {
+                    "computed": true,
                     "description": "The mount point for the file system.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

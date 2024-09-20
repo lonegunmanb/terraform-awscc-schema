@@ -19,8 +19,9 @@ const awsccVpclatticeRule = `{
               "nested_type": {
                 "attributes": {
                   "status_code": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -34,12 +35,14 @@ const awsccVpclatticeRule = `{
               "nested_type": {
                 "attributes": {
                   "target_groups": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "target_group_identifier": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "weight": {
@@ -51,7 +54,7 @@ const awsccVpclatticeRule = `{
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -100,6 +103,7 @@ const awsccVpclatticeRule = `{
                           "type": "bool"
                         },
                         "match": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -124,11 +128,12 @@ const awsccVpclatticeRule = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -154,6 +159,7 @@ const awsccVpclatticeRule = `{
                           "type": "bool"
                         },
                         "match": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -172,7 +178,7 @@ const awsccVpclatticeRule = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -217,13 +223,15 @@ const awsccVpclatticeRule = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

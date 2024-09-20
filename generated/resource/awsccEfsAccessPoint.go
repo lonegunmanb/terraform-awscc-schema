@@ -70,9 +70,10 @@ const awsccEfsAccessPoint = `{
         "nested_type": {
           "attributes": {
             "gid": {
+              "computed": true,
               "description": "The POSIX group ID used for all file system operations using this access point.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "secondary_gids": {
@@ -86,9 +87,10 @@ const awsccEfsAccessPoint = `{
               ]
             },
             "uid": {
+              "computed": true,
               "description": "The POSIX user ID used for all file system operations using this access point.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -109,21 +111,24 @@ const awsccEfsAccessPoint = `{
               "nested_type": {
                 "attributes": {
                   "owner_gid": {
+                    "computed": true,
                     "description": "Specifies the POSIX group ID to apply to the ` + "`" + `` + "`" + `RootDirectory` + "`" + `` + "`" + `. Accepts values from 0 to 2^32 (4294967295).",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "owner_uid": {
+                    "computed": true,
                     "description": "Specifies the POSIX user ID to apply to the ` + "`" + `` + "`" + `RootDirectory` + "`" + `` + "`" + `. Accepts values from 0 to 2^32 (4294967295).",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "permissions": {
+                    "computed": true,
                     "description": "Specifies the POSIX permissions to apply to the ` + "`" + `` + "`" + `RootDirectory` + "`" + `` + "`" + `, in the format of an octal number representing the file's mode bits.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

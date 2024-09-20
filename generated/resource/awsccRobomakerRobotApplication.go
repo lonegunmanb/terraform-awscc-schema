@@ -71,21 +71,24 @@ const awsccRobomakerRobotApplication = `{
         "nested_type": {
           "attributes": {
             "architecture": {
+              "computed": true,
               "description": "The architecture of robot application.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_bucket": {
+              "computed": true,
               "description": "The Arn of the S3Bucket that stores the robot application source.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_key": {
+              "computed": true,
               "description": "The s3 key of robot application source.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

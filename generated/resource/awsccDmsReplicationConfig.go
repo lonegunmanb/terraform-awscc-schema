@@ -139,15 +139,17 @@ const awsccDmsReplicationConfig = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "\u003cp\u003eTag key.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "\u003cp\u003eTag value.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

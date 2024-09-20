@@ -53,9 +53,10 @@ const awsccDatabrewProject = `{
               "type": "number"
             },
             "type": {
+              "computed": true,
               "description": "Sample type",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -69,13 +70,15 @@ const awsccDatabrewProject = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

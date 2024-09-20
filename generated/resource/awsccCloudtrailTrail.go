@@ -16,6 +16,7 @@ const awsccCloudtrailTrail = `{
         "nested_type": {
           "attributes": {
             "field_selectors": {
+              "computed": true,
               "description": "Contains all selector statements in an advanced event selector.",
               "description_kind": "plain",
               "nested_type": {
@@ -41,9 +42,10 @@ const awsccCloudtrailTrail = `{
                     ]
                   },
                   "field": {
+                    "computed": true,
                     "description": "A field in an event record on which to filter events to be logged. Supported fields include readOnly, eventCategory, eventSource (for management events), eventName, resources.type, and resources.ARN.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "not_ends_with": {
@@ -89,7 +91,7 @@ const awsccCloudtrailTrail = `{
                 },
                 "nesting_mode": "set"
               },
-              "required": true
+              "optional": true
             },
             "name": {
               "computed": true,
@@ -141,9 +143,10 @@ const awsccCloudtrailTrail = `{
               "nested_type": {
                 "attributes": {
                   "type": {
+                    "computed": true,
                     "description": "The resource type in which you want to log data events. You can specify AWS::S3::Object or AWS::Lambda::Function resources.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "values": {
@@ -279,15 +282,17 @@ const awsccCloudtrailTrail = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

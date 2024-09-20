@@ -115,9 +115,10 @@ const awsccApplicationautoscalingScalingPolicy = `{
                     "type": "number"
                   },
                   "scaling_adjustment": {
+                    "computed": true,
                     "description": "The amount by which to scale. The adjustment is based on the value that you specified in the ` + "`" + `` + "`" + `AdjustmentType` + "`" + `` + "`" + ` property (either an absolute number or a percentage). A positive value adds to the current capacity and a negative number subtracts from the current capacity.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -149,15 +150,17 @@ const awsccApplicationautoscalingScalingPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "The name of the dimension.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "The value of the dimension.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -326,9 +329,10 @@ const awsccApplicationautoscalingScalingPolicy = `{
               "nested_type": {
                 "attributes": {
                   "predefined_metric_type": {
+                    "computed": true,
                     "description": "The metric type. The ` + "`" + `` + "`" + `ALBRequestCountPerTarget` + "`" + `` + "`" + ` metric type applies only to Spot fleet requests and ECS services.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "resource_label": {
@@ -358,9 +362,10 @@ const awsccApplicationautoscalingScalingPolicy = `{
               "type": "number"
             },
             "target_value": {
+              "computed": true,
               "description": "The target value for the metric. Although this property accepts numbers of type Double, it won't accept values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a percent value that represents how much of the CPU can be used before scaling out.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },

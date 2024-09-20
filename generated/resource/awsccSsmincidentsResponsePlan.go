@@ -22,9 +22,10 @@ const awsccSsmincidentsResponsePlan = `{
               "nested_type": {
                 "attributes": {
                   "document_name": {
+                    "computed": true,
                     "description": "The document name to use when starting the SSM automation document.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "document_version": {
@@ -41,11 +42,13 @@ const awsccSsmincidentsResponsePlan = `{
                     "nested_type": {
                       "attributes": {
                         "key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "Value of the dynamic parameter to set when starting the SSM automation document.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -60,7 +63,7 @@ const awsccSsmincidentsResponsePlan = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "set"
@@ -74,13 +77,15 @@ const awsccSsmincidentsResponsePlan = `{
                     "nested_type": {
                       "attributes": {
                         "key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "values": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -92,9 +97,10 @@ const awsccSsmincidentsResponsePlan = `{
                     "optional": true
                   },
                   "role_arn": {
+                    "computed": true,
                     "description": "The role ARN to use when starting the SSM automation document.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "target_account": {
@@ -188,13 +194,15 @@ const awsccSsmincidentsResponsePlan = `{
               "nested_type": {
                 "attributes": {
                   "key": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -251,31 +259,35 @@ const awsccSsmincidentsResponsePlan = `{
               "nested_type": {
                 "attributes": {
                   "name": {
+                    "computed": true,
                     "description": "The name of the pagerDuty configuration.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "pager_duty_incident_configuration": {
+                    "computed": true,
                     "description": "The pagerDuty incident configuration.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "service_id": {
+                          "computed": true,
                           "description": "The pagerDuty serviceId.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "secret_id": {
+                    "computed": true,
                     "description": "The AWS secrets manager secretId storing the pagerDuty token.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -301,13 +313,15 @@ const awsccSsmincidentsResponsePlan = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

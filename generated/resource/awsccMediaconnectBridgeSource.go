@@ -22,9 +22,10 @@ const awsccMediaconnectBridgeSource = `{
         "nested_type": {
           "attributes": {
             "flow_arn": {
+              "computed": true,
               "description": "The ARN of the cloud flow used as a source of this bridge.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "flow_vpc_interface_attachment": {
@@ -69,27 +70,31 @@ const awsccMediaconnectBridgeSource = `{
         "nested_type": {
           "attributes": {
             "multicast_ip": {
+              "computed": true,
               "description": "The network source multicast IP.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "network_name": {
+              "computed": true,
               "description": "The network source's gateway network name.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "port": {
+              "computed": true,
               "description": "The network source port.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "protocol": {
+              "computed": true,
               "description": "The network source protocol.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

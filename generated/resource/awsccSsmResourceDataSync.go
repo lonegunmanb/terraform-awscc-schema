@@ -45,8 +45,9 @@ const awsccSsmResourceDataSync = `{
         "nested_type": {
           "attributes": {
             "bucket_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "bucket_prefix": {
@@ -56,8 +57,9 @@ const awsccSsmResourceDataSync = `{
               "type": "string"
             },
             "bucket_region": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "kms_key_arn": {
@@ -67,8 +69,9 @@ const awsccSsmResourceDataSync = `{
               "type": "string"
             },
             "sync_format": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -98,8 +101,9 @@ const awsccSsmResourceDataSync = `{
               "nested_type": {
                 "attributes": {
                   "organization_source_type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "organizational_units": {
@@ -123,16 +127,18 @@ const awsccSsmResourceDataSync = `{
               "type": "bool"
             },
             "source_regions": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
               ]
             },
             "source_type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

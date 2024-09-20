@@ -16,13 +16,15 @@ const awsccConfigOrganizationConformancePack = `{
         "nested_type": {
           "attributes": {
             "parameter_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "parameter_value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

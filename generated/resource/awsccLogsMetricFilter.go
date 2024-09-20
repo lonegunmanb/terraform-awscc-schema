@@ -53,15 +53,17 @@ const awsccLogsMetricFilter = `{
               "nested_type": {
                 "attributes": {
                   "key": {
+                    "computed": true,
                     "description": "The name for the CW metric dimension that the metric filter creates.\n Dimension names must contain only ASCII characters, must include at least one non-whitespace character, and cannot start with a colon (:).",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description": "The log event field that will contain the value for this dimension. This dimension will only be published for a metric if the value is found in the log event. For example, ` + "`" + `` + "`" + `$.eventType` + "`" + `` + "`" + ` for JSON log events, or ` + "`" + `` + "`" + `$server` + "`" + `` + "`" + ` for space-delimited log events.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

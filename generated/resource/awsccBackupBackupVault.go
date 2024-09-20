@@ -64,8 +64,9 @@ const awsccBackupBackupVault = `{
               "type": "number"
             },
             "min_retention_days": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -79,16 +80,18 @@ const awsccBackupBackupVault = `{
         "nested_type": {
           "attributes": {
             "backup_vault_events": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
               ]
             },
             "sns_topic_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

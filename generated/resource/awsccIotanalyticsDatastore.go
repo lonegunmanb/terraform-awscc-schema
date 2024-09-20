@@ -36,8 +36,9 @@ const awsccIotanalyticsDatastore = `{
                     "nested_type": {
                       "attributes": {
                         "attribute_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -51,8 +52,9 @@ const awsccIotanalyticsDatastore = `{
                     "nested_type": {
                       "attributes": {
                         "attribute_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "timestamp_format": {
@@ -87,8 +89,9 @@ const awsccIotanalyticsDatastore = `{
               "nested_type": {
                 "attributes": {
                   "bucket": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "key_prefix": {
@@ -98,8 +101,9 @@ const awsccIotanalyticsDatastore = `{
                     "type": "string"
                   },
                   "role_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -118,8 +122,9 @@ const awsccIotanalyticsDatastore = `{
                     "nested_type": {
                       "attributes": {
                         "bucket": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "key_prefix": {
@@ -176,13 +181,15 @@ const awsccIotanalyticsDatastore = `{
                           "nested_type": {
                             "attributes": {
                               "name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "type": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -239,13 +246,15 @@ const awsccIotanalyticsDatastore = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

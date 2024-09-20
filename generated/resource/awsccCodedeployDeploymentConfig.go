@@ -36,13 +36,15 @@ const awsccCodedeployDeploymentConfig = `{
         "nested_type": {
           "attributes": {
             "type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -62,13 +64,15 @@ const awsccCodedeployDeploymentConfig = `{
               "nested_type": {
                 "attributes": {
                   "canary_interval": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "canary_percentage": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -82,13 +86,15 @@ const awsccCodedeployDeploymentConfig = `{
               "nested_type": {
                 "attributes": {
                   "linear_interval": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "linear_percentage": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -97,8 +103,9 @@ const awsccCodedeployDeploymentConfig = `{
               "optional": true
             },
             "type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -124,13 +131,15 @@ const awsccCodedeployDeploymentConfig = `{
               "nested_type": {
                 "attributes": {
                   "type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },

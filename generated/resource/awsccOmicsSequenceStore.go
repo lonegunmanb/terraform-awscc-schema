@@ -66,8 +66,9 @@ const awsccOmicsSequenceStore = `{
               "type": "string"
             },
             "type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

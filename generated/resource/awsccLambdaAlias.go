@@ -53,9 +53,10 @@ const awsccLambdaAlias = `{
         "nested_type": {
           "attributes": {
             "provisioned_concurrent_executions": {
+              "computed": true,
               "description": "The amount of provisioned concurrency to allocate for the alias.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -76,15 +77,17 @@ const awsccLambdaAlias = `{
               "nested_type": {
                 "attributes": {
                   "function_version": {
+                    "computed": true,
                     "description": "The qualifier of the second version.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "function_weight": {
+                    "computed": true,
                     "description": "The percentage of traffic that the alias routes to the second version.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },

@@ -42,9 +42,10 @@ const awsccMedialiveMultiplexprogram = `{
               "type": "string"
             },
             "program_number": {
+              "computed": true,
               "description": "Unique program number.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "service_descriptor": {
@@ -54,15 +55,17 @@ const awsccMedialiveMultiplexprogram = `{
               "nested_type": {
                 "attributes": {
                   "provider_name": {
+                    "computed": true,
                     "description": "Name of the provider.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "service_name": {
+                    "computed": true,
                     "description": "Name of the service.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

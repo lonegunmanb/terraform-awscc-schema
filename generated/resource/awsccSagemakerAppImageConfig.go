@@ -60,13 +60,15 @@ const awsccSagemakerAppImageConfig = `{
                     "nested_type": {
                       "attributes": {
                         "key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -129,13 +131,15 @@ const awsccSagemakerAppImageConfig = `{
                     "nested_type": {
                       "attributes": {
                         "key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -192,6 +196,7 @@ const awsccSagemakerAppImageConfig = `{
               "optional": true
             },
             "kernel_specs": {
+              "computed": true,
               "description": "The specification of the Jupyter kernels in the image.",
               "description_kind": "plain",
               "nested_type": {
@@ -204,15 +209,16 @@ const awsccSagemakerAppImageConfig = `{
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description": "The name of the kernel.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -226,13 +232,15 @@ const awsccSagemakerAppImageConfig = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

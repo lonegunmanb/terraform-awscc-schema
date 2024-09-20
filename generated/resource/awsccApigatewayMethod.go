@@ -151,9 +151,10 @@ const awsccApigatewayMethod = `{
                     "type": "string"
                   },
                   "status_code": {
+                    "computed": true,
                     "description": "Specifies the status code that is used to map the integration response to an existing MethodResponse.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -196,9 +197,10 @@ const awsccApigatewayMethod = `{
               "type": "number"
             },
             "type": {
+              "computed": true,
               "description": "Specifies an API method integration type. The valid value is one of the following:\n For the HTTP and HTTP proxy integrations, each integration can specify a protocol (` + "`" + `` + "`" + `http/https` + "`" + `` + "`" + `), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a ` + "`" + `` + "`" + `connectionType` + "`" + `` + "`" + ` of ` + "`" + `` + "`" + `VPC_LINK` + "`" + `` + "`" + ` is referred to as a private integration and uses a VpcLink to connect API Gateway to a network load balancer of a VPC.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "uri": {
@@ -240,9 +242,10 @@ const awsccApigatewayMethod = `{
               ]
             },
             "status_code": {
+              "computed": true,
               "description": "The method response's status code.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

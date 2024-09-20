@@ -21,15 +21,17 @@ const awsccDynamodbTable = `{
         "nested_type": {
           "attributes": {
             "attribute_name": {
+              "computed": true,
               "description": "A name for the attribute.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "attribute_type": {
+              "computed": true,
               "description": "The data type for the attribute, where:\n  +   ` + "`" + `` + "`" + `S` + "`" + `` + "`" + ` - the attribute is of type String\n  +   ` + "`" + `` + "`" + `N` + "`" + `` + "`" + ` - the attribute is of type Number\n  +   ` + "`" + `` + "`" + `B` + "`" + `` + "`" + ` - the attribute is of type Binary",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -51,9 +53,10 @@ const awsccDynamodbTable = `{
         "nested_type": {
           "attributes": {
             "enabled": {
+              "computed": true,
               "description": "Indicates whether CloudWatch Contributor Insights are to be enabled (true) or disabled (false).",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             }
           },
@@ -81,9 +84,10 @@ const awsccDynamodbTable = `{
               "nested_type": {
                 "attributes": {
                   "enabled": {
+                    "computed": true,
                     "description": "Indicates whether CloudWatch Contributor Insights are to be enabled (true) or disabled (false).",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -92,32 +96,36 @@ const awsccDynamodbTable = `{
               "optional": true
             },
             "index_name": {
+              "computed": true,
               "description": "The name of the global secondary index. The name must be unique among all other indexes on this table.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "key_schema": {
+              "computed": true,
               "description": "The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:\n  +   ` + "`" + `` + "`" + `HASH` + "`" + `` + "`" + ` - partition key\n  +   ` + "`" + `` + "`" + `RANGE` + "`" + `` + "`" + ` - sort key\n  \n  The partition key of an item is also known as its *hash attribute*. The term \"hash attribute\" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.\n The sort key of an item is also known as its *range attribute*. The term \"range attribute\" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "attribute_name": {
+                    "computed": true,
                     "description": "The name of a key attribute.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "key_type": {
+                    "computed": true,
                     "description": "The role that this key attribute will assume:\n  +   ` + "`" + `` + "`" + `HASH` + "`" + `` + "`" + ` - partition key\n  +   ` + "`" + `` + "`" + `RANGE` + "`" + `` + "`" + ` - sort key\n  \n  The partition key of an item is also known as its *hash attribute*. The term \"hash attribute\" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.\n The sort key of an item is also known as its *range attribute*. The term \"range attribute\" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "on_demand_throughput": {
               "computed": true,
@@ -145,6 +153,7 @@ const awsccDynamodbTable = `{
               "optional": true
             },
             "projection": {
+              "computed": true,
               "description": "Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.",
               "description_kind": "plain",
               "nested_type": {
@@ -169,7 +178,7 @@ const awsccDynamodbTable = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "provisioned_throughput": {
               "computed": true,
@@ -178,15 +187,17 @@ const awsccDynamodbTable = `{
               "nested_type": {
                 "attributes": {
                   "read_capacity_units": {
+                    "computed": true,
                     "description": "The maximum number of strongly consistent reads consumed per second before DynamoDB returns a ` + "`" + `` + "`" + `ThrottlingException` + "`" + `` + "`" + `. For more information, see [Specifying Read and Write Requirements](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html) in the *Amazon DynamoDB Developer Guide*.\n If read/write capacity mode is ` + "`" + `` + "`" + `PAY_PER_REQUEST` + "`" + `` + "`" + ` the value is set to 0.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "write_capacity_units": {
+                    "computed": true,
                     "description": "The maximum number of writes consumed per second before DynamoDB returns a ` + "`" + `` + "`" + `ThrottlingException` + "`" + `` + "`" + `. For more information, see [Specifying Read and Write Requirements](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html) in the *Amazon DynamoDB Developer Guide*.\n If read/write capacity mode is ` + "`" + `` + "`" + `PAY_PER_REQUEST` + "`" + `` + "`" + ` the value is set to 0.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -219,9 +230,10 @@ const awsccDynamodbTable = `{
               "type": "string"
             },
             "input_format": {
+              "computed": true,
               "description": "The format of the source data. Valid values for ` + "`" + `` + "`" + `ImportFormat` + "`" + `` + "`" + ` are ` + "`" + `` + "`" + `CSV` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `DYNAMODB_JSON` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `ION` + "`" + `` + "`" + `.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "input_format_options": {
@@ -264,14 +276,16 @@ const awsccDynamodbTable = `{
               "optional": true
             },
             "s3_bucket_source": {
+              "computed": true,
               "description": "The S3 bucket that provides the source for the import.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "s3_bucket": {
+                    "computed": true,
                     "description": "The S3 bucket that is being imported from.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "s3_bucket_owner": {
@@ -291,7 +305,7 @@ const awsccDynamodbTable = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -318,9 +332,10 @@ const awsccDynamodbTable = `{
               "type": "string"
             },
             "stream_arn": {
+              "computed": true,
               "description": "The ARN for a specific Kinesis data stream.\n Length Constraints: Minimum length of 37. Maximum length of 1024.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -335,34 +350,39 @@ const awsccDynamodbTable = `{
         "nested_type": {
           "attributes": {
             "index_name": {
+              "computed": true,
               "description": "The name of the local secondary index. The name must be unique among all other indexes on this table.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "key_schema": {
+              "computed": true,
               "description": "The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:\n  +   ` + "`" + `` + "`" + `HASH` + "`" + `` + "`" + ` - partition key\n  +   ` + "`" + `` + "`" + `RANGE` + "`" + `` + "`" + ` - sort key\n  \n  The partition key of an item is also known as its *hash attribute*. The term \"hash attribute\" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.\n The sort key of an item is also known as its *range attribute*. The term \"range attribute\" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "attribute_name": {
+                    "computed": true,
                     "description": "The name of a key attribute.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "key_type": {
+                    "computed": true,
                     "description": "The role that this key attribute will assume:\n  +   ` + "`" + `` + "`" + `HASH` + "`" + `` + "`" + ` - partition key\n  +   ` + "`" + `` + "`" + `RANGE` + "`" + `` + "`" + ` - sort key\n  \n  The partition key of an item is also known as its *hash attribute*. The term \"hash attribute\" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.\n The sort key of an item is also known as its *range attribute*. The term \"range attribute\" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "projection": {
+              "computed": true,
               "description": "Represents attributes that are copied (projected) from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.",
               "description_kind": "plain",
               "nested_type": {
@@ -387,7 +407,7 @@ const awsccDynamodbTable = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "list"
@@ -444,15 +464,17 @@ const awsccDynamodbTable = `{
         "nested_type": {
           "attributes": {
             "read_capacity_units": {
+              "computed": true,
               "description": "The maximum number of strongly consistent reads consumed per second before DynamoDB returns a ` + "`" + `` + "`" + `ThrottlingException` + "`" + `` + "`" + `. For more information, see [Specifying Read and Write Requirements](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html) in the *Amazon DynamoDB Developer Guide*.\n If read/write capacity mode is ` + "`" + `` + "`" + `PAY_PER_REQUEST` + "`" + `` + "`" + ` the value is set to 0.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "write_capacity_units": {
+              "computed": true,
               "description": "The maximum number of writes consumed per second before DynamoDB returns a ` + "`" + `` + "`" + `ThrottlingException` + "`" + `` + "`" + `. For more information, see [Specifying Read and Write Requirements](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html) in the *Amazon DynamoDB Developer Guide*.\n If read/write capacity mode is ` + "`" + `` + "`" + `PAY_PER_REQUEST` + "`" + `` + "`" + ` the value is set to 0.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -467,9 +489,10 @@ const awsccDynamodbTable = `{
         "nested_type": {
           "attributes": {
             "policy_document": {
+              "computed": true,
               "description": "A resource-based policy document that contains permissions to add to the specified DDB table, index, or both. In a CFNshort template, you can provide the policy in JSON or YAML format because CFNshort converts YAML to JSON before submitting it to DDB. For more information about resource-based policies, see [Using resource-based policies for](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/access-control-resource-based.html) and [Resource-based policy examples](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-examples.html).",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -491,9 +514,10 @@ const awsccDynamodbTable = `{
               "type": "string"
             },
             "sse_enabled": {
+              "computed": true,
               "description": "Indicates whether server-side encryption is done using an AWS managed key or an AWS owned key. If enabled (true), server-side encryption type is set to ` + "`" + `` + "`" + `KMS` + "`" + `` + "`" + ` and an AWS managed key is used (KMS charges apply). If disabled (false) or not specified, server-side encryption is set to AWS owned key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             },
             "sse_type": {
@@ -526,9 +550,10 @@ const awsccDynamodbTable = `{
               "nested_type": {
                 "attributes": {
                   "policy_document": {
+                    "computed": true,
                     "description": "A resource-based policy document that contains permissions to add to the specified DDB table, index, or both. In a CFNshort template, you can provide the policy in JSON or YAML format because CFNshort converts YAML to JSON before submitting it to DDB. For more information about resource-based policies, see [Using resource-based policies for](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/access-control-resource-based.html) and [Resource-based policy examples](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-examples.html).",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -537,9 +562,10 @@ const awsccDynamodbTable = `{
               "optional": true
             },
             "stream_view_type": {
+              "computed": true,
               "description": "When an item in the table is modified, ` + "`" + `` + "`" + `StreamViewType` + "`" + `` + "`" + ` determines what information is written to the stream for this table. Valid values for ` + "`" + `` + "`" + `StreamViewType` + "`" + `` + "`" + ` are:\n  +   ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the key attributes of the modified item are written to the stream.\n  +   ` + "`" + `` + "`" + `NEW_IMAGE` + "`" + `` + "`" + ` - The entire item, as it appears after it was modified, is written to the stream.\n  +   ` + "`" + `` + "`" + `OLD_IMAGE` + "`" + `` + "`" + ` - The entire item, as it appeared before it was modified, is written to the stream.\n  +   ` + "`" + `` + "`" + `NEW_AND_OLD_IMAGES` + "`" + `` + "`" + ` - Both the new and the old item images of the item are written to the stream.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -568,15 +594,17 @@ const awsccDynamodbTable = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value of the tag. Tag values are case-sensitive and can be null.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -598,9 +626,10 @@ const awsccDynamodbTable = `{
               "type": "string"
             },
             "enabled": {
+              "computed": true,
               "description": "Indicates whether TTL is to be enabled (true) or disabled (false) on the table.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             }
           },

@@ -212,9 +212,10 @@ const awsccEksCluster = `{
         "nested_type": {
           "attributes": {
             "control_plane_instance_type": {
+              "computed": true,
               "description": "Specify the Instance type of the machines that should be used to create your cluster.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "control_plane_placement": {
@@ -236,9 +237,10 @@ const awsccEksCluster = `{
               "optional": true
             },
             "outpost_arns": {
+              "computed": true,
               "description": "Specify one or more Arn(s) of Outpost(s) on which you would like to create your cluster.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
@@ -315,15 +317,17 @@ const awsccEksCluster = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

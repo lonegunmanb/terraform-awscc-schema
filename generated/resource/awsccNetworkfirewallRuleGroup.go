@@ -107,6 +107,7 @@ const awsccNetworkfirewallRuleGroup = `{
               "optional": true
             },
             "rules_source": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -116,21 +117,24 @@ const awsccNetworkfirewallRuleGroup = `{
                     "nested_type": {
                       "attributes": {
                         "generated_rules_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "target_types": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
                           ]
                         },
                         "targets": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -153,56 +157,66 @@ const awsccNetworkfirewallRuleGroup = `{
                     "nested_type": {
                       "attributes": {
                         "action": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "header": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "destination": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "destination_port": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "direction": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "protocol": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "source": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "source_port": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "rule_options": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "keyword": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "settings": {
@@ -217,7 +231,7 @@ const awsccNetworkfirewallRuleGroup = `{
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "list"
@@ -235,6 +249,7 @@ const awsccNetworkfirewallRuleGroup = `{
                           "nested_type": {
                             "attributes": {
                               "action_definition": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
@@ -244,18 +259,20 @@ const awsccNetworkfirewallRuleGroup = `{
                                       "nested_type": {
                                         "attributes": {
                                           "dimensions": {
+                                            "computed": true,
                                             "description_kind": "plain",
                                             "nested_type": {
                                               "attributes": {
                                                 "value": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
                                               "nesting_mode": "list"
                                             },
-                                            "required": true
+                                            "optional": true
                                           }
                                         },
                                         "nesting_mode": "single"
@@ -265,11 +282,12 @@ const awsccNetworkfirewallRuleGroup = `{
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "action_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -278,27 +296,32 @@ const awsccNetworkfirewallRuleGroup = `{
                           "optional": true
                         },
                         "stateless_rules": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "priority": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               },
                               "rule_definition": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "actions": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": [
                                         "list",
                                         "string"
                                       ]
                                     },
                                     "match_attributes": {
+                                      "computed": true,
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
@@ -308,13 +331,15 @@ const awsccNetworkfirewallRuleGroup = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "from_port": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "number"
                                                 },
                                                 "to_port": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "number"
                                                 }
                                               },
@@ -328,8 +353,9 @@ const awsccNetworkfirewallRuleGroup = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "address_definition": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -352,13 +378,15 @@ const awsccNetworkfirewallRuleGroup = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "from_port": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "number"
                                                 },
                                                 "to_port": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "number"
                                                 }
                                               },
@@ -372,8 +400,9 @@ const awsccNetworkfirewallRuleGroup = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "address_definition": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -387,8 +416,9 @@ const awsccNetworkfirewallRuleGroup = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "flags": {
+                                                  "computed": true,
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": [
                                                     "list",
                                                     "string"
@@ -411,17 +441,17 @@ const awsccNetworkfirewallRuleGroup = `{
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -431,7 +461,7 @@ const awsccNetworkfirewallRuleGroup = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "stateful_rule_options": {
               "computed": true,
@@ -476,13 +506,15 @@ const awsccNetworkfirewallRuleGroup = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

@@ -77,15 +77,17 @@ const awsccResiliencehubResiliencyPolicy = `{
               "nested_type": {
                 "attributes": {
                   "rpo_in_secs": {
+                    "computed": true,
                     "description": "RPO in seconds.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "rto_in_secs": {
+                    "computed": true,
                     "description": "RTO in seconds.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },

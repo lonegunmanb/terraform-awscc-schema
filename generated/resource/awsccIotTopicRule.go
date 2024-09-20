@@ -32,13 +32,15 @@ const awsccIotTopicRule = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -60,23 +62,27 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "alarm_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "state_reason": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "state_value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -96,13 +102,15 @@ const awsccIotTopicRule = `{
                           "type": "bool"
                         },
                         "log_group_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -116,13 +124,15 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "metric_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "metric_namespace": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "metric_timestamp": {
@@ -132,18 +142,21 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "metric_unit": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "metric_value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -162,8 +175,9 @@ const awsccIotTopicRule = `{
                           "nested_type": {
                             "attributes": {
                               "table_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -188,8 +202,9 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "hash_key_field": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "hash_key_type": {
@@ -199,8 +214,9 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "hash_key_value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "payload_field": {
@@ -228,13 +244,15 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "table_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -248,28 +266,33 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "endpoint": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "index": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -289,13 +312,15 @@ const awsccIotTopicRule = `{
                           "type": "bool"
                         },
                         "delivery_stream_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "separator": {
@@ -325,18 +350,21 @@ const awsccIotTopicRule = `{
                                 "nested_type": {
                                   "attributes": {
                                     "role_arn": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "service_name": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "signing_region": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -361,13 +389,15 @@ const awsccIotTopicRule = `{
                           "nested_type": {
                             "attributes": {
                               "key": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -376,8 +406,9 @@ const awsccIotTopicRule = `{
                           "optional": true
                         },
                         "url": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -397,13 +428,15 @@ const awsccIotTopicRule = `{
                           "type": "bool"
                         },
                         "channel_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -423,8 +456,9 @@ const awsccIotTopicRule = `{
                           "type": "bool"
                         },
                         "input_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "message_id": {
@@ -434,8 +468,9 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -449,6 +484,7 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "put_asset_property_value_entries": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -477,6 +513,7 @@ const awsccIotTopicRule = `{
                                 "type": "string"
                               },
                               "property_values": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
@@ -487,6 +524,7 @@ const awsccIotTopicRule = `{
                                       "type": "string"
                                     },
                                     "timestamp": {
+                                      "computed": true,
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
@@ -497,16 +535,18 @@ const awsccIotTopicRule = `{
                                             "type": "string"
                                           },
                                           "time_in_seconds": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
@@ -537,21 +577,22 @@ const awsccIotTopicRule = `{
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -565,16 +606,18 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "client_properties": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "map",
                             "string"
                           ]
                         },
                         "destination_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "headers": {
@@ -583,13 +626,15 @@ const awsccIotTopicRule = `{
                           "nested_type": {
                             "attributes": {
                               "key": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -610,8 +655,9 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "topic": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -631,13 +677,15 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "stream_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -667,23 +715,27 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "device_id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "latitude": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "longitude": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "timestamp": {
@@ -698,8 +750,9 @@ const awsccIotTopicRule = `{
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -708,8 +761,9 @@ const awsccIotTopicRule = `{
                           "optional": true
                         },
                         "tracker_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -723,28 +777,33 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "endpoint": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "index": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -798,13 +857,15 @@ const awsccIotTopicRule = `{
                                 "nested_type": {
                                   "attributes": {
                                     "key": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -824,13 +885,15 @@ const awsccIotTopicRule = `{
                           "type": "number"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "topic": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -844,8 +907,9 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "bucket_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "canned_acl": {
@@ -855,13 +919,15 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -881,13 +947,15 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "target_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -901,13 +969,15 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "queue_url": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "use_base_64": {
@@ -933,13 +1003,15 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "state_machine_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -953,37 +1025,43 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "database_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "dimensions": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "table_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "timestamp": {
@@ -992,13 +1070,15 @@ const awsccIotTopicRule = `{
                           "nested_type": {
                             "attributes": {
                               "unit": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1039,23 +1119,27 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "alarm_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "state_reason": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "state_value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1075,13 +1159,15 @@ const awsccIotTopicRule = `{
                           "type": "bool"
                         },
                         "log_group_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1095,13 +1181,15 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "metric_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "metric_namespace": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "metric_timestamp": {
@@ -1111,18 +1199,21 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "metric_unit": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "metric_value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1141,8 +1232,9 @@ const awsccIotTopicRule = `{
                           "nested_type": {
                             "attributes": {
                               "table_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1167,8 +1259,9 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "hash_key_field": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "hash_key_type": {
@@ -1178,8 +1271,9 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "hash_key_value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "payload_field": {
@@ -1207,13 +1301,15 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "table_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1227,28 +1323,33 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "endpoint": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "index": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1268,13 +1369,15 @@ const awsccIotTopicRule = `{
                           "type": "bool"
                         },
                         "delivery_stream_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "separator": {
@@ -1304,18 +1407,21 @@ const awsccIotTopicRule = `{
                                 "nested_type": {
                                   "attributes": {
                                     "role_arn": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "service_name": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "signing_region": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -1340,13 +1446,15 @@ const awsccIotTopicRule = `{
                           "nested_type": {
                             "attributes": {
                               "key": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1355,8 +1463,9 @@ const awsccIotTopicRule = `{
                           "optional": true
                         },
                         "url": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1376,13 +1485,15 @@ const awsccIotTopicRule = `{
                           "type": "bool"
                         },
                         "channel_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1402,8 +1513,9 @@ const awsccIotTopicRule = `{
                           "type": "bool"
                         },
                         "input_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "message_id": {
@@ -1413,8 +1525,9 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1428,6 +1541,7 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "put_asset_property_value_entries": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -1456,6 +1570,7 @@ const awsccIotTopicRule = `{
                                 "type": "string"
                               },
                               "property_values": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
@@ -1466,6 +1581,7 @@ const awsccIotTopicRule = `{
                                       "type": "string"
                                     },
                                     "timestamp": {
+                                      "computed": true,
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
@@ -1476,16 +1592,18 @@ const awsccIotTopicRule = `{
                                             "type": "string"
                                           },
                                           "time_in_seconds": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
@@ -1516,21 +1634,22 @@ const awsccIotTopicRule = `{
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1544,16 +1663,18 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "client_properties": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "map",
                             "string"
                           ]
                         },
                         "destination_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "headers": {
@@ -1562,13 +1683,15 @@ const awsccIotTopicRule = `{
                           "nested_type": {
                             "attributes": {
                               "key": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1589,8 +1712,9 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "topic": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1610,13 +1734,15 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "stream_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1646,23 +1772,27 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "device_id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "latitude": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "longitude": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "timestamp": {
@@ -1677,8 +1807,9 @@ const awsccIotTopicRule = `{
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1687,8 +1818,9 @@ const awsccIotTopicRule = `{
                           "optional": true
                         },
                         "tracker_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1702,28 +1834,33 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "endpoint": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "index": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1777,13 +1914,15 @@ const awsccIotTopicRule = `{
                                 "nested_type": {
                                   "attributes": {
                                     "key": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -1803,13 +1942,15 @@ const awsccIotTopicRule = `{
                           "type": "number"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "topic": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1823,8 +1964,9 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "bucket_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "canned_acl": {
@@ -1834,13 +1976,15 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1860,13 +2004,15 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "target_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1880,13 +2026,15 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "queue_url": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "use_base_64": {
@@ -1912,13 +2060,15 @@ const awsccIotTopicRule = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "state_machine_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1932,37 +2082,43 @@ const awsccIotTopicRule = `{
                     "nested_type": {
                       "attributes": {
                         "database_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "dimensions": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "table_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "timestamp": {
@@ -1971,13 +2127,15 @@ const awsccIotTopicRule = `{
                           "nested_type": {
                             "attributes": {
                               "unit": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },

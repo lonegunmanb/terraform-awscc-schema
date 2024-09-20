@@ -46,6 +46,7 @@ const awsccDatasyncLocationFsxOntap = `{
               "nested_type": {
                 "attributes": {
                   "mount_options": {
+                    "computed": true,
                     "description": "The NFS mount options that DataSync can use to mount your NFS share.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -60,7 +61,7 @@ const awsccDatasyncLocationFsxOntap = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -81,6 +82,7 @@ const awsccDatasyncLocationFsxOntap = `{
                     "type": "string"
                   },
                   "mount_options": {
+                    "computed": true,
                     "description": "The mount options used by DataSync to access the SMB server.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -95,18 +97,20 @@ const awsccDatasyncLocationFsxOntap = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "password": {
+                    "computed": true,
                     "description": "The password of the user who can mount the share and has the permissions to access files and folders in the SMB share.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "user": {
+                    "computed": true,
                     "description": "The user who can mount the share, has the permissions to access files and folders in the SMB share.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -148,15 +152,17 @@ const awsccDatasyncLocationFsxOntap = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key for an AWS resource tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for an AWS resource tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

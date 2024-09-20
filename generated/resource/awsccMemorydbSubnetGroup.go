@@ -50,15 +50,17 @@ const awsccMemorydbSubnetGroup = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key for the tag. May not be null.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The tag's value. May be null.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

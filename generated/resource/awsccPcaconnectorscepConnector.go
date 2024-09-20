@@ -41,13 +41,15 @@ const awsccPcaconnectorscepConnector = `{
               "nested_type": {
                 "attributes": {
                   "azure_application_id": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "domain": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

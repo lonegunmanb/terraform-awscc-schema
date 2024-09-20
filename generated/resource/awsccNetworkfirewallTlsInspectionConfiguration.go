@@ -27,13 +27,15 @@ const awsccNetworkfirewallTlsInspectionConfiguration = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -90,13 +92,15 @@ const awsccNetworkfirewallTlsInspectionConfiguration = `{
                           "nested_type": {
                             "attributes": {
                               "from_port": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               },
                               "to_port": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -110,8 +114,9 @@ const awsccNetworkfirewallTlsInspectionConfiguration = `{
                           "nested_type": {
                             "attributes": {
                               "address_definition": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -134,13 +139,15 @@ const awsccNetworkfirewallTlsInspectionConfiguration = `{
                           "nested_type": {
                             "attributes": {
                               "from_port": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               },
                               "to_port": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "number"
                               }
                             },
@@ -154,8 +161,9 @@ const awsccNetworkfirewallTlsInspectionConfiguration = `{
                           "nested_type": {
                             "attributes": {
                               "address_definition": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },

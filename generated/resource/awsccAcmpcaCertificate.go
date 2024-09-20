@@ -28,9 +28,10 @@ const awsccAcmpcaCertificate = `{
                     "nested_type": {
                       "attributes": {
                         "cert_policy_id": {
+                          "computed": true,
                           "description": "Specifies the object identifier (OID) of the certificate policy under which the certificate was issued. For more information, see NIST's definition of [Object Identifier (OID)](https://docs.aws.amazon.com/https://csrc.nist.gov/glossary/term/Object_Identifier).",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "policy_qualifiers": {
@@ -40,26 +41,29 @@ const awsccAcmpcaCertificate = `{
                           "nested_type": {
                             "attributes": {
                               "policy_qualifier_id": {
+                                "computed": true,
                                 "description": "Identifies the qualifier modifying a ` + "`" + `` + "`" + `CertPolicyId` + "`" + `` + "`" + `.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "qualifier": {
+                                "computed": true,
                                 "description": "Defines the qualifier type. AWS Private CA supports the use of a URI for a CPS qualifier in this field.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "cps_uri": {
+                                      "computed": true,
                                       "description": "Contains a pointer to a certification practice statement (CPS) published by the CA.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "list"
@@ -85,15 +89,17 @@ const awsccAcmpcaCertificate = `{
                           "type": "bool"
                         },
                         "object_identifier": {
+                          "computed": true,
                           "description": "Specifies the object identifier (OID) of the X.509 extension. For more information, see the [Global OID reference database.](https://docs.aws.amazon.com/https://oidref.com/2.5.29)",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "Specifies the base64-encoded value of the X.509 extension.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -233,15 +239,17 @@ const awsccAcmpcaCertificate = `{
                                 "nested_type": {
                                   "attributes": {
                                     "object_identifier": {
+                                      "computed": true,
                                       "description": "Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description": "Specifies the attribute value of relative distinguished name (RDN).",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -352,15 +360,17 @@ const awsccAcmpcaCertificate = `{
                           "nested_type": {
                             "attributes": {
                               "name_assigner": {
+                                "computed": true,
                                 "description": "Specifies the name assigner.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "party_name": {
+                                "computed": true,
                                 "description": "Specifies the party name.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -382,15 +392,17 @@ const awsccAcmpcaCertificate = `{
                           "nested_type": {
                             "attributes": {
                               "type_id": {
+                                "computed": true,
                                 "description": "Specifies an OID.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description": "Specifies an OID value.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -456,15 +468,17 @@ const awsccAcmpcaCertificate = `{
                     "nested_type": {
                       "attributes": {
                         "object_identifier": {
+                          "computed": true,
                           "description": "Specifies the object identifier (OID) of the attribute type of the relative distinguished name (RDN).",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "Specifies the attribute value of relative distinguished name (RDN).",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -636,15 +650,17 @@ const awsccAcmpcaCertificate = `{
         "nested_type": {
           "attributes": {
             "type": {
+              "computed": true,
               "description": "Specifies whether the ` + "`" + `` + "`" + `Value` + "`" + `` + "`" + ` parameter represents days, months, or years.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "A long integer interpreted according to the value of ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + `, below.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },

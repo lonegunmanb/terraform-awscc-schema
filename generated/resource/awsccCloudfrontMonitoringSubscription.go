@@ -30,8 +30,9 @@ const awsccCloudfrontMonitoringSubscription = `{
               "nested_type": {
                 "attributes": {
                   "realtime_metrics_subscription_status": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

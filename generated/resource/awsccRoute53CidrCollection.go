@@ -34,18 +34,20 @@ const awsccRoute53CidrCollection = `{
         "nested_type": {
           "attributes": {
             "cidr_list": {
+              "computed": true,
               "description": "A list of CIDR blocks.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "set",
                 "string"
               ]
             },
             "location_name": {
+              "computed": true,
               "description": "The name of the location that is associated with the CIDR collection.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

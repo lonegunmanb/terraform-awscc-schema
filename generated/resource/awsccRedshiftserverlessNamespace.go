@@ -212,8 +212,9 @@ const awsccRedshiftserverlessNamespace = `{
               "type": "string"
             },
             "destination_region": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "snapshot_retention_period": {
@@ -234,13 +235,15 @@ const awsccRedshiftserverlessNamespace = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

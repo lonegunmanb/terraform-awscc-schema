@@ -35,9 +35,10 @@ const awsccIotsitewiseAssetModel = `{
               "nested_type": {
                 "attributes": {
                   "data_type": {
+                    "computed": true,
                     "description": "The data type of the asset model property.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "data_type_spec": {
@@ -69,12 +70,14 @@ const awsccIotsitewiseAssetModel = `{
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description": "The name of the asset model property.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "type": {
+                    "computed": true,
                     "description": "The property type",
                     "description_kind": "plain",
                     "nested_type": {
@@ -101,23 +104,27 @@ const awsccIotsitewiseAssetModel = `{
                           "nested_type": {
                             "attributes": {
                               "expression": {
+                                "computed": true,
                                 "description": "The mathematical expression that defines the metric aggregation function. You can specify up to 10 functions per expression.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "variables": {
+                                "computed": true,
                                 "description": "The list of variables used in the expression.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "name": {
+                                      "computed": true,
                                       "description": "The friendly name of the variable to be used in the expression.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description": "The variable that identifies an asset property from which to use values.",
                                       "description_kind": "plain",
                                       "nested_type": {
@@ -169,9 +176,10 @@ const awsccIotsitewiseAssetModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "name": {
+                                                  "computed": true,
                                                   "description": "The name of the property",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -182,14 +190,15 @@ const awsccIotsitewiseAssetModel = `{
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               },
                               "window": {
+                                "computed": true,
                                 "description": "The window (time interval) over which AWS IoT SiteWise computes the metric's aggregation expression",
                                 "description_kind": "plain",
                                 "nested_type": {
@@ -201,9 +210,10 @@ const awsccIotsitewiseAssetModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "interval": {
+                                            "computed": true,
                                             "description": "The time interval for the tumbling window.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "offset": {
@@ -221,7 +231,7 @@ const awsccIotsitewiseAssetModel = `{
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
@@ -234,23 +244,27 @@ const awsccIotsitewiseAssetModel = `{
                           "nested_type": {
                             "attributes": {
                               "expression": {
+                                "computed": true,
                                 "description": "The mathematical expression that defines the transformation function. You can specify up to 10 functions per expression.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "variables": {
+                                "computed": true,
                                 "description": "The list of variables used in the expression.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "name": {
+                                      "computed": true,
                                       "description": "The friendly name of the variable to be used in the expression.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description": "The variable that identifies an asset property from which to use values.",
                                       "description_kind": "plain",
                                       "nested_type": {
@@ -302,9 +316,10 @@ const awsccIotsitewiseAssetModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "name": {
+                                                  "computed": true,
                                                   "description": "The name of the property",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -315,12 +330,12 @@ const awsccIotsitewiseAssetModel = `{
                                         },
                                         "nesting_mode": "single"
                                       },
-                                      "required": true
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
@@ -328,14 +343,15 @@ const awsccIotsitewiseAssetModel = `{
                           "optional": true
                         },
                         "type_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "unit": {
                     "computed": true,
@@ -371,9 +387,10 @@ const awsccIotsitewiseAssetModel = `{
               "type": "string"
             },
             "name": {
+              "computed": true,
               "description": "A unique, friendly name for the asset composite model.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "parent_asset_model_composite_model_external_id": {
@@ -394,9 +411,10 @@ const awsccIotsitewiseAssetModel = `{
               ]
             },
             "type": {
+              "computed": true,
               "description": "The type of the composite model. For alarm composite models, this type is AWS/ALARM",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -425,9 +443,10 @@ const awsccIotsitewiseAssetModel = `{
         "nested_type": {
           "attributes": {
             "child_asset_model_id": {
+              "computed": true,
               "description": "The ID of the asset model. All assets in this hierarchy must be instances of the child AssetModelId asset model.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "external_id": {
@@ -452,9 +471,10 @@ const awsccIotsitewiseAssetModel = `{
               "type": "string"
             },
             "name": {
+              "computed": true,
               "description": "The name of the asset model hierarchy.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -481,9 +501,10 @@ const awsccIotsitewiseAssetModel = `{
         "nested_type": {
           "attributes": {
             "data_type": {
+              "computed": true,
               "description": "The data type of the asset model property.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "data_type_spec": {
@@ -515,12 +536,14 @@ const awsccIotsitewiseAssetModel = `{
               "type": "string"
             },
             "name": {
+              "computed": true,
               "description": "The name of the asset model property.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "type": {
+              "computed": true,
               "description": "The property type",
               "description_kind": "plain",
               "nested_type": {
@@ -547,23 +570,27 @@ const awsccIotsitewiseAssetModel = `{
                     "nested_type": {
                       "attributes": {
                         "expression": {
+                          "computed": true,
                           "description": "The mathematical expression that defines the metric aggregation function. You can specify up to 10 functions per expression.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "variables": {
+                          "computed": true,
                           "description": "The list of variables used in the expression.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "name": {
+                                "computed": true,
                                 "description": "The friendly name of the variable to be used in the expression.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description": "The variable that identifies an asset property from which to use values.",
                                 "description_kind": "plain",
                                 "nested_type": {
@@ -615,9 +642,10 @@ const awsccIotsitewiseAssetModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "name": {
+                                            "computed": true,
                                             "description": "The name of the property",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -628,14 +656,15 @@ const awsccIotsitewiseAssetModel = `{
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "window": {
+                          "computed": true,
                           "description": "The window (time interval) over which AWS IoT SiteWise computes the metric's aggregation expression",
                           "description_kind": "plain",
                           "nested_type": {
@@ -647,9 +676,10 @@ const awsccIotsitewiseAssetModel = `{
                                 "nested_type": {
                                   "attributes": {
                                     "interval": {
+                                      "computed": true,
                                       "description": "The time interval for the tumbling window.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "offset": {
@@ -667,7 +697,7 @@ const awsccIotsitewiseAssetModel = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -680,23 +710,27 @@ const awsccIotsitewiseAssetModel = `{
                     "nested_type": {
                       "attributes": {
                         "expression": {
+                          "computed": true,
                           "description": "The mathematical expression that defines the transformation function. You can specify up to 10 functions per expression.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "variables": {
+                          "computed": true,
                           "description": "The list of variables used in the expression.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "name": {
+                                "computed": true,
                                 "description": "The friendly name of the variable to be used in the expression.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description": "The variable that identifies an asset property from which to use values.",
                                 "description_kind": "plain",
                                 "nested_type": {
@@ -748,9 +782,10 @@ const awsccIotsitewiseAssetModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "name": {
+                                            "computed": true,
                                             "description": "The name of the property",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -761,12 +796,12 @@ const awsccIotsitewiseAssetModel = `{
                                   },
                                   "nesting_mode": "single"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -774,14 +809,15 @@ const awsccIotsitewiseAssetModel = `{
                     "optional": true
                   },
                   "type_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "unit": {
               "computed": true,
@@ -815,13 +851,15 @@ const awsccIotsitewiseAssetModel = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

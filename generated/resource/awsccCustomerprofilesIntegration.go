@@ -33,16 +33,19 @@ const awsccCustomerprofilesIntegration = `{
               "type": "string"
             },
             "flow_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "kms_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "source_flow_config": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -53,8 +56,9 @@ const awsccCustomerprofilesIntegration = `{
                     "type": "string"
                   },
                   "connector_type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "incremental_pull_config": {
@@ -74,6 +78,7 @@ const awsccCustomerprofilesIntegration = `{
                     "optional": true
                   },
                   "source_connector_properties": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -83,8 +88,9 @@ const awsccCustomerprofilesIntegration = `{
                           "nested_type": {
                             "attributes": {
                               "object": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -98,8 +104,9 @@ const awsccCustomerprofilesIntegration = `{
                           "nested_type": {
                             "attributes": {
                               "bucket_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "bucket_prefix": {
@@ -131,8 +138,9 @@ const awsccCustomerprofilesIntegration = `{
                                 "type": "bool"
                               },
                               "object": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -146,8 +154,9 @@ const awsccCustomerprofilesIntegration = `{
                           "nested_type": {
                             "attributes": {
                               "object": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -161,8 +170,9 @@ const awsccCustomerprofilesIntegration = `{
                           "nested_type": {
                             "attributes": {
                               "object": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -173,14 +183,15 @@ const awsccCustomerprofilesIntegration = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "tasks": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -231,8 +242,9 @@ const awsccCustomerprofilesIntegration = `{
                     "type": "string"
                   },
                   "source_fields": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -244,13 +256,15 @@ const awsccCustomerprofilesIntegration = `{
                     "nested_type": {
                       "attributes": {
                         "operator_property_key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "property": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -259,16 +273,18 @@ const awsccCustomerprofilesIntegration = `{
                     "optional": true
                   },
                   "task_type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "trigger_config": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -301,8 +317,9 @@ const awsccCustomerprofilesIntegration = `{
                                 "type": "number"
                               },
                               "schedule_expression": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "schedule_offset": {
@@ -334,14 +351,15 @@ const awsccCustomerprofilesIntegration = `{
                     "optional": true
                   },
                   "trigger_type": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -374,13 +392,15 @@ const awsccCustomerprofilesIntegration = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -395,13 +415,15 @@ const awsccCustomerprofilesIntegration = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

@@ -31,13 +31,15 @@ const awsccCognitoUserPoolResourceServer = `{
         "nested_type": {
           "attributes": {
             "scope_description": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "scope_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

@@ -52,18 +52,20 @@ const awsccQuicksightTemplate = `{
         "nested_type": {
           "attributes": {
             "actions": {
+              "computed": true,
               "description": "\u003cp\u003eThe IAM action to grant or revoke permissions on.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
               ]
             },
             "principal": {
+              "computed": true,
               "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the principal. This can be one of the\n            following:\u003c/p\u003e\n        \u003cul\u003e\n            \u003cli\u003e\n                \u003cp\u003eThe ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n                \u003cp\u003eThe ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n                \u003cp\u003eThe ARN of an AWS account root: This is an IAM ARN rather than a QuickSight\n                    ARN. Use this option only to share resources (templates) across AWS accounts.\n                    (This is less common.) \u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -83,32 +85,36 @@ const awsccQuicksightTemplate = `{
               "nested_type": {
                 "attributes": {
                   "arn": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the resource.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "data_set_references": {
+                    "computed": true,
                     "description": "\u003cp\u003eA structure containing information about the dataset references used as placeholders\n            in the template.\u003c/p\u003e",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "data_set_arn": {
+                          "computed": true,
                           "description": "\u003cp\u003eDataset Amazon Resource Name (ARN).\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "data_set_placeholder": {
+                          "computed": true,
                           "description": "\u003cp\u003eDataset placeholder.\u003c/p\u003e",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -122,9 +128,10 @@ const awsccQuicksightTemplate = `{
               "nested_type": {
                 "attributes": {
                   "arn": {
+                    "computed": true,
                     "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the resource.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -144,15 +151,17 @@ const awsccQuicksightTemplate = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "\u003cp\u003eTag key.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "\u003cp\u003eTag value.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

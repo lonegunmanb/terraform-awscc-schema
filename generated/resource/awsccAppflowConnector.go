@@ -34,9 +34,10 @@ const awsccAppflowConnector = `{
               "nested_type": {
                 "attributes": {
                   "lambda_arn": {
+                    "computed": true,
                     "description": "Lambda ARN of the connector being registered.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

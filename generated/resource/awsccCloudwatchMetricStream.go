@@ -38,9 +38,10 @@ const awsccCloudwatchMetricStream = `{
               ]
             },
             "namespace": {
+              "computed": true,
               "description": "Only metrics with Namespace matching this value will be streamed.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -78,9 +79,10 @@ const awsccCloudwatchMetricStream = `{
               ]
             },
             "namespace": {
+              "computed": true,
               "description": "Only metrics with Namespace matching this value will be streamed.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -135,35 +137,39 @@ const awsccCloudwatchMetricStream = `{
         "nested_type": {
           "attributes": {
             "additional_statistics": {
+              "computed": true,
               "description": "The additional statistics to stream for the metrics listed in IncludeMetrics.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
               ]
             },
             "include_metrics": {
+              "computed": true,
               "description": "An array that defines the metrics that are to have additional statistics streamed.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "metric_name": {
+                    "computed": true,
                     "description": "The name of the metric.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "namespace": {
+                    "computed": true,
                     "description": "The namespace of the metric.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "list"
@@ -177,15 +183,17 @@ const awsccCloudwatchMetricStream = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "A unique identifier for the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "String which you can use to describe or define the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

@@ -28,13 +28,15 @@ const awsccAthenaCapacityReservation = `{
         "nested_type": {
           "attributes": {
             "capacity_assignments": {
+              "computed": true,
               "description": "List of capacity assignments",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "workgroup_names": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -43,7 +45,7 @@ const awsccAthenaCapacityReservation = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -87,13 +89,15 @@ const awsccAthenaCapacityReservation = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

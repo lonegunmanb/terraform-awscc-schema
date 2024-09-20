@@ -21,13 +21,15 @@ const awsccKendraIndex = `{
         "nested_type": {
           "attributes": {
             "query_capacity_units": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "storage_capacity_units": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -49,8 +51,9 @@ const awsccKendraIndex = `{
         "nested_type": {
           "attributes": {
             "name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "relevance": {
@@ -144,8 +147,9 @@ const awsccKendraIndex = `{
               "optional": true
             },
             "type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -207,15 +211,17 @@ const awsccKendraIndex = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "A string used to identify this tag",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "A string containing the value for the tag",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -240,13 +246,15 @@ const awsccKendraIndex = `{
               "nested_type": {
                 "attributes": {
                   "group_attribute_field": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "user_name_attribute_field": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -278,8 +286,9 @@ const awsccKendraIndex = `{
                     "type": "string"
                   },
                   "key_location": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "secret_manager_arn": {

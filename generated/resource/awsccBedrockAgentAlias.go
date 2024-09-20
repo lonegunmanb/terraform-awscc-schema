@@ -103,9 +103,10 @@ const awsccBedrockAgentAlias = `{
         "nested_type": {
           "attributes": {
             "agent_version": {
+              "computed": true,
               "description": "Agent Version.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

@@ -45,13 +45,15 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "header_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "header_value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -71,8 +73,9 @@ const awsccSesMailManagerRuleSet = `{
                           "type": "string"
                         },
                         "target_archive": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -92,13 +95,15 @@ const awsccSesMailManagerRuleSet = `{
                           "type": "string"
                         },
                         "mailbox_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -130,8 +135,9 @@ const awsccSesMailManagerRuleSet = `{
                           "type": "string"
                         },
                         "relay": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -170,8 +176,9 @@ const awsccSesMailManagerRuleSet = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -191,13 +198,15 @@ const awsccSesMailManagerRuleSet = `{
                           "type": "string"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_bucket": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "s3_prefix": {
@@ -233,6 +242,7 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -245,11 +255,12 @@ const awsccSesMailManagerRuleSet = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -263,13 +274,15 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "values": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -286,6 +299,7 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -298,16 +312,18 @@ const awsccSesMailManagerRuleSet = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "values": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -324,6 +340,7 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -336,16 +353,18 @@ const awsccSesMailManagerRuleSet = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -359,6 +378,7 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -371,16 +391,18 @@ const awsccSesMailManagerRuleSet = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "values": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -397,6 +419,7 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -406,13 +429,15 @@ const awsccSesMailManagerRuleSet = `{
                                 "nested_type": {
                                   "attributes": {
                                     "analyzer": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "result_field": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -429,16 +454,18 @@ const awsccSesMailManagerRuleSet = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "values": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -471,6 +498,7 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -483,11 +511,12 @@ const awsccSesMailManagerRuleSet = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -501,13 +530,15 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "values": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -524,6 +555,7 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -536,16 +568,18 @@ const awsccSesMailManagerRuleSet = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "values": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -562,6 +596,7 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -574,16 +609,18 @@ const awsccSesMailManagerRuleSet = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -597,6 +634,7 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -609,16 +647,18 @@ const awsccSesMailManagerRuleSet = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "values": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -635,6 +675,7 @@ const awsccSesMailManagerRuleSet = `{
                     "nested_type": {
                       "attributes": {
                         "evaluate": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -644,13 +685,15 @@ const awsccSesMailManagerRuleSet = `{
                                 "nested_type": {
                                   "attributes": {
                                     "analyzer": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "result_field": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -667,16 +710,18 @@ const awsccSesMailManagerRuleSet = `{
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "operator": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "values": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -703,13 +748,15 @@ const awsccSesMailManagerRuleSet = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

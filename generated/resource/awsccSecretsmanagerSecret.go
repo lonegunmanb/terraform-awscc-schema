@@ -131,9 +131,10 @@ const awsccSecretsmanagerSecret = `{
               "type": "string"
             },
             "region": {
+              "computed": true,
               "description": "A string that represents a ` + "`" + `` + "`" + `Region` + "`" + `` + "`" + `, for example \"us-east-1\".",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -160,15 +161,17 @@ const awsccSecretsmanagerSecret = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key identifier, or name, of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The string value associated with the key of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

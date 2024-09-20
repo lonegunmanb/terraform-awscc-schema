@@ -145,8 +145,9 @@ const awsccDatabrewDataset = `{
                     "nested_type": {
                       "attributes": {
                         "bucket": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "key": {
@@ -178,9 +179,10 @@ const awsccDatabrewDataset = `{
                     "type": "string"
                   },
                   "glue_connection_name": {
+                    "computed": true,
                     "description": "Glue connection name",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "query_string": {
@@ -197,8 +199,9 @@ const awsccDatabrewDataset = `{
                     "nested_type": {
                       "attributes": {
                         "bucket": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "key": {
@@ -241,8 +244,9 @@ const awsccDatabrewDataset = `{
               "nested_type": {
                 "attributes": {
                   "bucket": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "key": {
@@ -279,9 +283,10 @@ const awsccDatabrewDataset = `{
               "nested_type": {
                 "attributes": {
                   "max_files": {
+                    "computed": true,
                     "description": "Maximum number of files",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "order": {
@@ -309,30 +314,34 @@ const awsccDatabrewDataset = `{
               "nested_type": {
                 "attributes": {
                   "expression": {
+                    "computed": true,
                     "description": "Filtering expression for a parameter",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "values_map": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value_reference": {
+                          "computed": true,
                           "description": "Variable name",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -345,6 +354,7 @@ const awsccDatabrewDataset = `{
               "nested_type": {
                 "attributes": {
                   "dataset_parameter": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -361,9 +371,10 @@ const awsccDatabrewDataset = `{
                           "nested_type": {
                             "attributes": {
                               "format": {
+                                "computed": true,
                                 "description": "Date/time format of a date parameter",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "locale_code": {
@@ -391,30 +402,34 @@ const awsccDatabrewDataset = `{
                           "nested_type": {
                             "attributes": {
                               "expression": {
+                                "computed": true,
                                 "description": "Filtering expression for a parameter",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "values_map": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "value": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value_reference": {
+                                      "computed": true,
                                       "description": "Variable name",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
                                   "nesting_mode": "list"
                                 },
-                                "required": true
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
@@ -422,26 +437,29 @@ const awsccDatabrewDataset = `{
                           "optional": true
                         },
                         "name": {
+                          "computed": true,
                           "description": "Parameter name",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "type": {
+                          "computed": true,
                           "description": "Parameter type",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "path_parameter_name": {
+                    "computed": true,
                     "description": "Parameter name",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -460,13 +478,15 @@ const awsccDatabrewDataset = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

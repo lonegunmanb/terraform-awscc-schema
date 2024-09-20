@@ -70,9 +70,10 @@ const awsccFsxDataRepositoryAssociation = `{
               "nested_type": {
                 "attributes": {
                   "events": {
+                    "computed": true,
                     "description": "The ` + "`" + `` + "`" + `AutoExportPolicy` + "`" + `` + "`" + ` can have the following event values:\n  +   ` + "`" + `` + "`" + `NEW` + "`" + `` + "`" + ` - New files and directories are automatically exported to the data repository as they are added to the file system.\n  +   ` + "`" + `` + "`" + `CHANGED` + "`" + `` + "`" + ` - Changes to files and directories on the file system are automatically exported to the data repository.\n  +   ` + "`" + `` + "`" + `DELETED` + "`" + `` + "`" + ` - Files and directories are automatically deleted on the data repository when they are deleted on the file system.\n  \n You can define any combination of event types for your ` + "`" + `` + "`" + `AutoExportPolicy` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "set",
                       "string"
@@ -90,9 +91,10 @@ const awsccFsxDataRepositoryAssociation = `{
               "nested_type": {
                 "attributes": {
                   "events": {
+                    "computed": true,
                     "description": "The ` + "`" + `` + "`" + `AutoImportPolicy` + "`" + `` + "`" + ` can have the following event values:\n  +   ` + "`" + `` + "`" + `NEW` + "`" + `` + "`" + ` - Amazon FSx automatically imports metadata of files added to the linked S3 bucket that do not currently exist in the FSx file system.\n  +   ` + "`" + `` + "`" + `CHANGED` + "`" + `` + "`" + ` - Amazon FSx automatically updates file metadata and invalidates existing file content on the file system as files change in the data repository.\n  +   ` + "`" + `` + "`" + `DELETED` + "`" + `` + "`" + ` - Amazon FSx automatically deletes files on the file system as corresponding files are deleted in the data repository.\n  \n You can define any combination of event types for your ` + "`" + `` + "`" + `AutoImportPolicy` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "set",
                       "string"
@@ -115,15 +117,17 @@ const awsccFsxDataRepositoryAssociation = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "A value that specifies the ` + "`" + `` + "`" + `TagKey` + "`" + `` + "`" + `, the name of the tag. Tag keys must be unique for the resource to which they are attached.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "A value that specifies the ` + "`" + `` + "`" + `TagValue` + "`" + `` + "`" + `, the value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set. For example, you can have a key-value pair in a tag set of ` + "`" + `` + "`" + `finances : April` + "`" + `` + "`" + ` and also of ` + "`" + `` + "`" + `payroll : April` + "`" + `` + "`" + `.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

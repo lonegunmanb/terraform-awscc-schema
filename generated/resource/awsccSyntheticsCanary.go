@@ -133,6 +133,16 @@ const awsccSyntheticsCanary = `{
         "required": true,
         "type": "string"
       },
+      "resources_to_replicate_tags": {
+        "computed": true,
+        "description": "List of resources which canary tags should be replicated to.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "run_config": {
         "computed": true,
         "description": "Provide canary run configuration",
@@ -228,15 +238,17 @@ const awsccSyntheticsCanary = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -251,9 +263,10 @@ const awsccSyntheticsCanary = `{
         "nested_type": {
           "attributes": {
             "base_canary_run_id": {
+              "computed": true,
               "description": "Canary run id to be used as base reference for visual testing",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "base_screenshots": {
@@ -273,9 +286,10 @@ const awsccSyntheticsCanary = `{
                     ]
                   },
                   "screenshot_name": {
+                    "computed": true,
                     "description": "Name of the screenshot to be used as base reference for visual testing",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -295,16 +309,18 @@ const awsccSyntheticsCanary = `{
         "nested_type": {
           "attributes": {
             "security_group_ids": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
               ]
             },
             "subnet_ids": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"

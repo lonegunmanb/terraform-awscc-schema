@@ -70,8 +70,9 @@ const awsccEc2SpotFleet = `{
                     "nested_type": {
                       "attributes": {
                         "device_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "ebs": {
@@ -160,8 +161,9 @@ const awsccEc2SpotFleet = `{
                     "optional": true
                   },
                   "image_id": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "instance_requirements": {
@@ -570,8 +572,9 @@ const awsccEc2SpotFleet = `{
                           "nested_type": {
                             "attributes": {
                               "ipv_6_address": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -597,8 +600,9 @@ const awsccEc2SpotFleet = `{
                                 "type": "bool"
                               },
                               "private_ip_address": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -663,8 +667,9 @@ const awsccEc2SpotFleet = `{
                     "nested_type": {
                       "attributes": {
                         "group_id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -701,13 +706,15 @@ const awsccEc2SpotFleet = `{
                           "nested_type": {
                             "attributes": {
                               "key": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -760,8 +767,9 @@ const awsccEc2SpotFleet = `{
                           "type": "string"
                         },
                         "version": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1153,18 +1161,20 @@ const awsccEc2SpotFleet = `{
                     "nested_type": {
                       "attributes": {
                         "classic_load_balancers": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -1177,18 +1187,20 @@ const awsccEc2SpotFleet = `{
                     "nested_type": {
                       "attributes": {
                         "target_groups": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "arn": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -1285,13 +1297,15 @@ const awsccEc2SpotFleet = `{
                     "nested_type": {
                       "attributes": {
                         "key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },

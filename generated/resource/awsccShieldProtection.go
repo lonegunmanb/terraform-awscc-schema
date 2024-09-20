@@ -16,6 +16,7 @@ const awsccShieldProtection = `{
         "nested_type": {
           "attributes": {
             "action": {
+              "computed": true,
               "description": "Specifies the action setting that Shield Advanced should use in the AWS WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the AWS WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource.",
               "description_kind": "plain",
               "nested_type": {
@@ -37,12 +38,13 @@ const awsccShieldProtection = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "status": {
+              "computed": true,
               "description": "Indicates whether automatic application layer DDoS mitigation is enabled for the protection.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -97,15 +99,17 @@ const awsccShieldProtection = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as \"customer.\" Tag keys are case-sensitive.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as \"companyA\" or \"companyB.\" Tag values are case-sensitive.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

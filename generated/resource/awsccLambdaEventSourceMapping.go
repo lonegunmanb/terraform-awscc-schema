@@ -116,6 +116,11 @@ const awsccLambdaEventSourceMapping = `{
         "optional": true,
         "type": "string"
       },
+      "event_source_mapping_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "event_source_mapping_id": {
         "computed": true,
         "description_kind": "plain",
@@ -158,7 +163,7 @@ const awsccLambdaEventSourceMapping = `{
       },
       "function_response_types": {
         "computed": true,
-        "description": "(Streams and SQS) A list of current response type enums applied to the event source mapping.\n Valid Values: ` + "`" + `` + "`" + `ReportBatchItemFailures` + "`" + `` + "`" + `",
+        "description": "(Kinesis, DynamoDB Streams, and SQS) A list of current response type enums applied to the event source mapping.\n Valid Values: ` + "`" + `` + "`" + `ReportBatchItemFailures` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "optional": true,
         "type": [
@@ -174,6 +179,7 @@ const awsccLambdaEventSourceMapping = `{
       },
       "kms_key_arn": {
         "computed": true,
+        "description": "The ARN of the KMSlong (KMS) customer managed key that Lambda uses to encrypt your function's [filter criteria](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics).",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -322,6 +328,30 @@ const awsccLambdaEventSourceMapping = `{
         "description_kind": "plain",
         "optional": true,
         "type": "number"
+      },
+      "tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
       },
       "topics": {
         "computed": true,

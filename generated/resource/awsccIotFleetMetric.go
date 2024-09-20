@@ -23,15 +23,17 @@ const awsccIotFleetMetric = `{
         "nested_type": {
           "attributes": {
             "name": {
+              "computed": true,
               "description": "Fleet Indexing aggregation type names such as Statistics, Percentiles and Cardinality",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "values": {
+              "computed": true,
               "description": "Fleet Indexing aggregation type values",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
@@ -114,15 +116,17 @@ const awsccIotFleetMetric = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The tag's key",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The tag's value",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

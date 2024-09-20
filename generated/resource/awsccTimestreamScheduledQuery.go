@@ -191,15 +191,17 @@ const awsccTimestreamScheduledQuery = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -214,37 +216,42 @@ const awsccTimestreamScheduledQuery = `{
         "nested_type": {
           "attributes": {
             "timestream_configuration": {
+              "computed": true,
               "description": "Configuration needed to write data into the Timestream database and table.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "database_name": {
+                    "computed": true,
                     "description": "Name of Timestream database to which the query result will be written.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "dimension_mappings": {
+                    "computed": true,
                     "description": "This is to allow mapping column(s) from the query result to the dimension in the destination table.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "dimension_value_type": {
+                          "computed": true,
                           "description": "Type for the dimension.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "name": {
+                          "computed": true,
                           "description": "Column name from query result.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "measure_name_column": {
                     "computed": true,
@@ -267,9 +274,10 @@ const awsccTimestreamScheduledQuery = `{
                           "type": "string"
                         },
                         "measure_value_type": {
+                          "computed": true,
                           "description": "Type of the value that is to be read from SourceColumn. If the mapping is for MULTI, use MeasureValueType.MULTI.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "multi_measure_attribute_mappings": {
@@ -279,15 +287,17 @@ const awsccTimestreamScheduledQuery = `{
                           "nested_type": {
                             "attributes": {
                               "measure_value_type": {
+                                "computed": true,
                                 "description": "Value type of the measure value column to be read from the query result.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "source_column": {
+                                "computed": true,
                                 "description": "Source measure value column in the query result where the attribute value is to be read.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "target_multi_measure_attribute_name": {
@@ -328,20 +338,23 @@ const awsccTimestreamScheduledQuery = `{
                     "nested_type": {
                       "attributes": {
                         "multi_measure_attribute_mappings": {
+                          "computed": true,
                           "description": "Required. Attribute mappings to be used for mapping query results to ingest data for multi-measure attributes.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "measure_value_type": {
+                                "computed": true,
                                 "description": "Value type of the measure value column to be read from the query result.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "source_column": {
+                                "computed": true,
                                 "description": "Source measure value column in the query result where the attribute value is to be read.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "target_multi_measure_attribute_name": {
@@ -354,7 +367,7 @@ const awsccTimestreamScheduledQuery = `{
                             },
                             "nesting_mode": "list"
                           },
-                          "required": true
+                          "optional": true
                         },
                         "target_multi_measure_name": {
                           "computed": true,
@@ -369,21 +382,23 @@ const awsccTimestreamScheduledQuery = `{
                     "optional": true
                   },
                   "table_name": {
+                    "computed": true,
                     "description": "Name of Timestream table that the query result will be written to. The table should be within the same database that is provided in Timestream configuration.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "time_column": {
+                    "computed": true,
                     "description": "Column from query result that should be used as the time column in destination table. Column type for this should be TIMESTAMP.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"

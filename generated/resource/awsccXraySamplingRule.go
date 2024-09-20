@@ -44,39 +44,45 @@ const awsccXraySamplingRule = `{
               ]
             },
             "fixed_rate": {
+              "computed": true,
               "description": "The percentage of matching requests to instrument, after the reservoir is exhausted.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "host": {
+              "computed": true,
               "description": "Matches the hostname from a request URL.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "http_method": {
+              "computed": true,
               "description": "Matches the HTTP method from a request URL.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "priority": {
+              "computed": true,
               "description": "The priority of the sampling rule.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "reservoir_size": {
+              "computed": true,
               "description": "A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "resource_arn": {
+              "computed": true,
               "description": "Matches the ARN of the AWS resource on which the service runs.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "rule_arn": {
@@ -94,21 +100,24 @@ const awsccXraySamplingRule = `{
               "type": "string"
             },
             "service_name": {
+              "computed": true,
               "description": "Matches the name that the service uses to identify itself in segments.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "service_type": {
+              "computed": true,
               "description": "Matches the origin that the service uses to identify its type in segments.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "url_path": {
+              "computed": true,
               "description": "Matches the path from a request URL.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "version": {
@@ -158,39 +167,45 @@ const awsccXraySamplingRule = `{
                     ]
                   },
                   "fixed_rate": {
+                    "computed": true,
                     "description": "The percentage of matching requests to instrument, after the reservoir is exhausted.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "host": {
+                    "computed": true,
                     "description": "Matches the hostname from a request URL.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "http_method": {
+                    "computed": true,
                     "description": "Matches the HTTP method from a request URL.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "priority": {
+                    "computed": true,
                     "description": "The priority of the sampling rule.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "reservoir_size": {
+                    "computed": true,
                     "description": "A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "resource_arn": {
+                    "computed": true,
                     "description": "Matches the ARN of the AWS resource on which the service runs.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "rule_arn": {
@@ -208,21 +223,24 @@ const awsccXraySamplingRule = `{
                     "type": "string"
                   },
                   "service_name": {
+                    "computed": true,
                     "description": "Matches the name that the service uses to identify itself in segments.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "service_type": {
+                    "computed": true,
                     "description": "Matches the origin that the service uses to identify its type in segments.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "url_path": {
+                    "computed": true,
                     "description": "Matches the path from a request URL.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "version": {
@@ -346,15 +364,17 @@ const awsccXraySamplingRule = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

@@ -46,15 +46,17 @@ const awsccSimspaceweaverSimulation = `{
         "nested_type": {
           "attributes": {
             "bucket_name": {
+              "computed": true,
               "description": "The Schema S3 bucket name.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "object_key": {
+              "computed": true,
               "description": "This is the schema S3 object key, which includes the full path of \"folders\" from the bucket root to the schema.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -68,15 +70,17 @@ const awsccSimspaceweaverSimulation = `{
         "nested_type": {
           "attributes": {
             "bucket_name": {
+              "computed": true,
               "description": "The Schema S3 bucket name.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "object_key": {
+              "computed": true,
               "description": "This is the schema S3 object key, which includes the full path of \"folders\" from the bucket root to the schema.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

@@ -81,9 +81,10 @@ const awsccHealthlakeFhirDatastore = `{
         "nested_type": {
           "attributes": {
             "authorization_strategy": {
+              "computed": true,
               "description": "Type of Authorization Strategy. The two types of supported Authorization strategies are SMART_ON_FHIR_V1 and AWS_AUTH.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "fine_grained_authorization_enabled": {
@@ -119,9 +120,10 @@ const awsccHealthlakeFhirDatastore = `{
         "nested_type": {
           "attributes": {
             "preload_data_type": {
+              "computed": true,
               "description": "The type of preloaded data. Only Synthea preloaded data is supported.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -136,14 +138,16 @@ const awsccHealthlakeFhirDatastore = `{
         "nested_type": {
           "attributes": {
             "kms_encryption_config": {
+              "computed": true,
               "description": "The customer-managed-key (CMK) used when creating a Data Store. If a customer owned key is not specified, an AWS owned key will be used for encryption.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "cmk_type": {
+                    "computed": true,
                     "description": "The type of customer-managed-key (CMK) used for encryption. The two types of supported CMKs are customer owned CMKs and AWS owned CMKs.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "kms_key_id": {
@@ -156,7 +160,7 @@ const awsccHealthlakeFhirDatastore = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -169,15 +173,17 @@ const awsccHealthlakeFhirDatastore = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value of the tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

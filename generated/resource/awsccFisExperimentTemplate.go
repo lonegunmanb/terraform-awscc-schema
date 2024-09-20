@@ -116,8 +116,9 @@ const awsccFisExperimentTemplate = `{
               "nested_type": {
                 "attributes": {
                   "log_group_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -126,8 +127,9 @@ const awsccFisExperimentTemplate = `{
               "optional": true
             },
             "log_schema_version": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "s3_configuration": {
@@ -136,8 +138,9 @@ const awsccFisExperimentTemplate = `{
               "nested_type": {
                 "attributes": {
                   "bucket_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "prefix": {
@@ -202,15 +205,17 @@ const awsccFisExperimentTemplate = `{
               "nested_type": {
                 "attributes": {
                   "path": {
+                    "computed": true,
                     "description": "The attribute path for the filter.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "values": {
+                    "computed": true,
                     "description": "The attribute values for the filter.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"

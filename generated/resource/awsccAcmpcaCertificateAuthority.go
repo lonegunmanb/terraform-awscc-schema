@@ -99,6 +99,7 @@ const awsccAcmpcaCertificateAuthority = `{
               "nested_type": {
                 "attributes": {
                   "access_location": {
+                    "computed": true,
                     "description": "Structure that contains X.509 GeneralName information. Assign one and ONLY one field.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -128,14 +129,16 @@ const awsccAcmpcaCertificateAuthority = `{
                                 "nested_type": {
                                   "attributes": {
                                     "object_identifier": {
+                                      "computed": true,
                                       "description": "String that contains X.509 ObjectIdentifier information.",
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     },
                                     "value": {
+                                      "computed": true,
                                       "description_kind": "plain",
-                                      "required": true,
+                                      "optional": true,
                                       "type": "string"
                                     }
                                   },
@@ -240,8 +243,9 @@ const awsccAcmpcaCertificateAuthority = `{
                                 "type": "string"
                               },
                               "party_name": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -263,14 +267,16 @@ const awsccAcmpcaCertificateAuthority = `{
                           "nested_type": {
                             "attributes": {
                               "type_id": {
+                                "computed": true,
                                 "description": "String that contains X.509 ObjectIdentifier information.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "value": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -302,9 +308,10 @@ const awsccAcmpcaCertificateAuthority = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "access_method": {
+                    "computed": true,
                     "description": "Structure that contains X.509 AccessMethod information. Assign one and ONLY one field.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -326,7 +333,7 @@ const awsccAcmpcaCertificateAuthority = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "list"
@@ -376,8 +383,9 @@ const awsccAcmpcaCertificateAuthority = `{
                     "nested_type": {
                       "attributes": {
                         "omit_extension": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -392,8 +400,9 @@ const awsccAcmpcaCertificateAuthority = `{
                     "type": "string"
                   },
                   "enabled": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "expiration_in_days": {
@@ -426,8 +435,9 @@ const awsccAcmpcaCertificateAuthority = `{
               "nested_type": {
                 "attributes": {
                   "enabled": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "ocsp_custom_cname": {
@@ -476,14 +486,16 @@ const awsccAcmpcaCertificateAuthority = `{
               "nested_type": {
                 "attributes": {
                   "object_identifier": {
+                    "computed": true,
                     "description": "String that contains X.509 ObjectIdentifier information.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "value": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -574,8 +586,9 @@ const awsccAcmpcaCertificateAuthority = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {

@@ -21,8 +21,9 @@ const awsccDatabrewJob = `{
               "type": "string"
             },
             "database_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "database_options": {
@@ -31,8 +32,9 @@ const awsccDatabrewJob = `{
               "nested_type": {
                 "attributes": {
                   "table_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "temp_directory": {
@@ -42,8 +44,9 @@ const awsccDatabrewJob = `{
                     "nested_type": {
                       "attributes": {
                         "bucket": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "bucket_owner": {
@@ -80,70 +83,15 @@ const awsccDatabrewJob = `{
               "nested_type": {
                 "attributes": {
                   "location": {
-                    "description": "S3 Output location",
-                    "description_kind": "plain",
-                    "nested_type": {
-                      "attributes": {
-                        "bucket": {
-                          "description_kind": "plain",
-                          "required": true,
-                          "type": "string"
-                        },
-                        "bucket_owner": {
-                          "computed": true,
-                          "description_kind": "plain",
-                          "optional": true,
-                          "type": "string"
-                        },
-                        "key": {
-                          "computed": true,
-                          "description_kind": "plain",
-                          "optional": true,
-                          "type": "string"
-                        }
-                      },
-                      "nesting_mode": "single"
-                    },
-                    "required": true
-                  }
-                },
-                "nesting_mode": "single"
-              },
-              "optional": true
-            },
-            "table_name": {
-              "description_kind": "plain",
-              "required": true,
-              "type": "string"
-            }
-          },
-          "nesting_mode": "list"
-        },
-        "optional": true
-      },
-      "database_outputs": {
-        "computed": true,
-        "description_kind": "plain",
-        "nested_type": {
-          "attributes": {
-            "database_options": {
-              "description_kind": "plain",
-              "nested_type": {
-                "attributes": {
-                  "table_name": {
-                    "description_kind": "plain",
-                    "required": true,
-                    "type": "string"
-                  },
-                  "temp_directory": {
                     "computed": true,
                     "description": "S3 Output location",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "bucket": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "bucket_owner": {
@@ -166,7 +114,68 @@ const awsccDatabrewJob = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
+            },
+            "table_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
+      "database_outputs": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "database_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "table_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "temp_directory": {
+                    "computed": true,
+                    "description": "S3 Output location",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "bucket": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "bucket_owner": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "key": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "database_output_mode": {
               "computed": true,
@@ -176,9 +185,10 @@ const awsccDatabrewJob = `{
               "type": "string"
             },
             "glue_connection_name": {
+              "computed": true,
               "description": "Glue connection name",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -272,8 +282,9 @@ const awsccDatabrewJob = `{
         "nested_type": {
           "attributes": {
             "bucket": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "bucket_owner": {
@@ -339,13 +350,15 @@ const awsccDatabrewJob = `{
               "optional": true
             },
             "location": {
+              "computed": true,
               "description": "S3 Output location",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "bucket": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "bucket_owner": {
@@ -363,7 +376,7 @@ const awsccDatabrewJob = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "max_output_files": {
               "computed": true,
@@ -425,6 +438,7 @@ const awsccDatabrewJob = `{
                     "optional": true
                   },
                   "statistics": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -443,16 +457,18 @@ const awsccDatabrewJob = `{
                           "nested_type": {
                             "attributes": {
                               "parameters": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": [
                                   "map",
                                   "string"
                                 ]
                               },
                               "statistic": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -463,7 +479,7 @@ const awsccDatabrewJob = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "list"
@@ -490,16 +506,18 @@ const awsccDatabrewJob = `{
                     "nested_type": {
                       "attributes": {
                         "parameters": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "map",
                             "string"
                           ]
                         },
                         "statistic": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -523,8 +541,9 @@ const awsccDatabrewJob = `{
                     "nested_type": {
                       "attributes": {
                         "statistics": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -536,8 +555,9 @@ const awsccDatabrewJob = `{
                     "optional": true
                   },
                   "entity_types": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -588,9 +608,10 @@ const awsccDatabrewJob = `{
         "nested_type": {
           "attributes": {
             "name": {
+              "computed": true,
               "description": "Recipe name",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "version": {
@@ -617,13 +638,15 @@ const awsccDatabrewJob = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -651,9 +674,10 @@ const awsccDatabrewJob = `{
         "nested_type": {
           "attributes": {
             "ruleset_arn": {
+              "computed": true,
               "description": "Arn of the Ruleset",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "validation_mode": {

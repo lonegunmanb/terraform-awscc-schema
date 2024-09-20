@@ -25,8 +25,9 @@ const awsccQbusinessApplication = `{
         "nested_type": {
           "attributes": {
             "attachments_control_mode": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -40,8 +41,9 @@ const awsccQbusinessApplication = `{
         "nested_type": {
           "attributes": {
             "auto_subscribe": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "default_subscription_type": {
@@ -131,8 +133,9 @@ const awsccQbusinessApplication = `{
         "nested_type": {
           "attributes": {
             "personalization_control_mode": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -146,8 +149,9 @@ const awsccQbusinessApplication = `{
         "nested_type": {
           "attributes": {
             "q_apps_control_mode": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -172,13 +176,15 @@ const awsccQbusinessApplication = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

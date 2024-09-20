@@ -234,6 +234,7 @@ const awsccGrafanaWorkspace = `{
               "optional": true
             },
             "idp_metadata": {
+              "computed": true,
               "description": "IdP Metadata used to configure SAML authentication in Grafana.",
               "description_kind": "plain",
               "nested_type": {
@@ -255,7 +256,7 @@ const awsccGrafanaWorkspace = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "login_validity_duration": {
               "computed": true,
@@ -332,18 +333,20 @@ const awsccGrafanaWorkspace = `{
         "nested_type": {
           "attributes": {
             "security_group_ids": {
+              "computed": true,
               "description": "The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "set",
                 "string"
               ]
             },
             "subnet_ids": {
+              "computed": true,
               "description": "The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "set",
                 "string"

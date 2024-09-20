@@ -24,8 +24,9 @@ const awsccVpclatticeListener = `{
               "nested_type": {
                 "attributes": {
                   "status_code": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -39,12 +40,14 @@ const awsccVpclatticeListener = `{
               "nested_type": {
                 "attributes": {
                   "target_groups": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "target_group_identifier": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "weight": {
@@ -56,7 +59,7 @@ const awsccVpclatticeListener = `{
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -118,13 +121,15 @@ const awsccVpclatticeListener = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

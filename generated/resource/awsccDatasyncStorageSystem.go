@@ -80,15 +80,17 @@ const awsccDatasyncStorageSystem = `{
         "nested_type": {
           "attributes": {
             "password": {
+              "computed": true,
               "description": "The password for your storage system's management interface",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "username": {
+              "computed": true,
               "description": "The username for your storage system's management interface.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -115,15 +117,17 @@ const awsccDatasyncStorageSystem = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key for an AWS resource tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for an AWS resource tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

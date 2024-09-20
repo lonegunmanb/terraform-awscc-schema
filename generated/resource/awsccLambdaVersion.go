@@ -55,9 +55,10 @@ const awsccLambdaVersion = `{
         "nested_type": {
           "attributes": {
             "provisioned_concurrent_executions": {
+              "computed": true,
               "description": "The amount of provisioned concurrency to allocate for the version.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -79,9 +80,10 @@ const awsccLambdaVersion = `{
               "type": "string"
             },
             "update_runtime_on": {
+              "computed": true,
               "description": "The runtime update mode.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

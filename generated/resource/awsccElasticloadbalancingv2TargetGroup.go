@@ -140,15 +140,17 @@ const awsccElasticloadbalancingv2TargetGroup = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The value for the tag. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The key name of the tag. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -220,9 +222,10 @@ const awsccElasticloadbalancingv2TargetGroup = `{
               "type": "string"
             },
             "id": {
+              "computed": true,
               "description": "The ID of the target. If the target type of the target group is instance, specify an instance ID. If the target type is ip, specify an IP address. If the target type is lambda, specify the ARN of the Lambda function. If the target type is alb, specify the ARN of the Application Load Balancer target. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "port": {

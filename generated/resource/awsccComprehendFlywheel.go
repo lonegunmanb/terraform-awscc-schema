@@ -59,16 +59,18 @@ const awsccComprehendFlywheel = `{
               "nested_type": {
                 "attributes": {
                   "security_group_ids": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "set",
                       "string"
                     ]
                   },
                   "subnets": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "set",
                       "string"
@@ -107,13 +109,15 @@ const awsccComprehendFlywheel = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -141,8 +145,9 @@ const awsccComprehendFlywheel = `{
                     ]
                   },
                   "mode": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -161,8 +166,9 @@ const awsccComprehendFlywheel = `{
                     "nested_type": {
                       "attributes": {
                         "type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -176,8 +182,9 @@ const awsccComprehendFlywheel = `{
               "optional": true
             },
             "language_code": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

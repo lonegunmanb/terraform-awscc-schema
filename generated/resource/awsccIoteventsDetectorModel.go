@@ -50,8 +50,9 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "timer_name": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -72,15 +73,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -89,9 +92,10 @@ const awsccIoteventsDetectorModel = `{
                                             "optional": true
                                           },
                                           "table_name": {
+                                            "computed": true,
                                             "description": "The name of the DynamoDB table.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -106,9 +110,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "hash_key_field": {
+                                            "computed": true,
                                             "description": "The name of the hash key (also called the partition key).",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "hash_key_type": {
@@ -119,9 +124,10 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "string"
                                           },
                                           "hash_key_value": {
+                                            "computed": true,
                                             "description": "The value of the hash key (also called the partition key).",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "operation": {
@@ -138,15 +144,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -183,9 +191,10 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "string"
                                           },
                                           "table_name": {
+                                            "computed": true,
                                             "description": "The name of the DynamoDB table.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -200,9 +209,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "delivery_stream_name": {
+                                            "computed": true,
                                             "description": "The name of the Kinesis Data Firehose delivery stream where the data is written.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -212,15 +222,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -247,9 +259,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "input_name": {
+                                            "computed": true,
                                             "description": "The name of the AWS IoT Events input where the data is sent.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -259,15 +272,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -315,6 +330,7 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "string"
                                           },
                                           "property_value": {
+                                            "computed": true,
                                             "description": "A structure that contains value information. For more information, see [AssetPropertyValue](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html) in the *AWS IoT SiteWise API Reference*.",
                                             "description_kind": "plain",
                                             "nested_type": {
@@ -340,9 +356,10 @@ const awsccIoteventsDetectorModel = `{
                                                         "type": "string"
                                                       },
                                                       "time_in_seconds": {
+                                                        "computed": true,
                                                         "description": "The nanosecond offset converted from ` + "`" + `timeInSeconds` + "`" + `. The valid range is between ` + "`" + `0-999999999` + "`" + `. You can also specify an expression.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -351,6 +368,7 @@ const awsccIoteventsDetectorModel = `{
                                                   "optional": true
                                                 },
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "A structure that contains an asset property value. For more information, see [Variant](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html) in the *AWS IoT SiteWise API Reference*.",
                                                   "description_kind": "plain",
                                                   "nested_type": {
@@ -386,12 +404,12 @@ const awsccIoteventsDetectorModel = `{
                                                     },
                                                     "nesting_mode": "single"
                                                   },
-                                                  "required": true
+                                                  "optional": true
                                                 }
                                               },
                                               "nesting_mode": "single"
                                             },
-                                            "required": true
+                                            "optional": true
                                           }
                                         },
                                         "nesting_mode": "single"
@@ -405,9 +423,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "mqtt_topic": {
+                                            "computed": true,
                                             "description": "The MQTT topic of the message. You can use a string expression that includes variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `) and input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `) as the topic string.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -417,15 +436,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -444,9 +465,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "function_arn": {
+                                            "computed": true,
                                             "description": "The ARN of the Lambda function that is executed.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -456,15 +478,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -484,9 +508,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "timer_name": {
+                                            "computed": true,
                                             "description": "The name of the timer to reset.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -515,9 +540,10 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "number"
                                           },
                                           "timer_name": {
+                                            "computed": true,
                                             "description": "The name of the timer.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -532,15 +558,17 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "value": {
+                                            "computed": true,
                                             "description": "The new value of the variable.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "variable_name": {
+                                            "computed": true,
                                             "description": "The name of the variable.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -561,15 +589,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -578,9 +608,10 @@ const awsccIoteventsDetectorModel = `{
                                             "optional": true
                                           },
                                           "target_arn": {
+                                            "computed": true,
                                             "description": "The ARN of the Amazon SNS target where the message is sent.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -600,15 +631,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -617,9 +650,10 @@ const awsccIoteventsDetectorModel = `{
                                             "optional": true
                                           },
                                           "queue_url": {
+                                            "computed": true,
                                             "description": "The URL of the SQS queue where the data is written.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "use_base_64": {
@@ -647,9 +681,10 @@ const awsccIoteventsDetectorModel = `{
                                 "type": "string"
                               },
                               "event_name": {
+                                "computed": true,
                                 "description": "The name of the event.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -687,8 +722,9 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "timer_name": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -709,15 +745,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -726,9 +764,10 @@ const awsccIoteventsDetectorModel = `{
                                             "optional": true
                                           },
                                           "table_name": {
+                                            "computed": true,
                                             "description": "The name of the DynamoDB table.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -743,9 +782,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "hash_key_field": {
+                                            "computed": true,
                                             "description": "The name of the hash key (also called the partition key).",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "hash_key_type": {
@@ -756,9 +796,10 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "string"
                                           },
                                           "hash_key_value": {
+                                            "computed": true,
                                             "description": "The value of the hash key (also called the partition key).",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "operation": {
@@ -775,15 +816,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -820,9 +863,10 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "string"
                                           },
                                           "table_name": {
+                                            "computed": true,
                                             "description": "The name of the DynamoDB table.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -837,9 +881,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "delivery_stream_name": {
+                                            "computed": true,
                                             "description": "The name of the Kinesis Data Firehose delivery stream where the data is written.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -849,15 +894,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -884,9 +931,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "input_name": {
+                                            "computed": true,
                                             "description": "The name of the AWS IoT Events input where the data is sent.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -896,15 +944,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -952,6 +1002,7 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "string"
                                           },
                                           "property_value": {
+                                            "computed": true,
                                             "description": "A structure that contains value information. For more information, see [AssetPropertyValue](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html) in the *AWS IoT SiteWise API Reference*.",
                                             "description_kind": "plain",
                                             "nested_type": {
@@ -977,9 +1028,10 @@ const awsccIoteventsDetectorModel = `{
                                                         "type": "string"
                                                       },
                                                       "time_in_seconds": {
+                                                        "computed": true,
                                                         "description": "The nanosecond offset converted from ` + "`" + `timeInSeconds` + "`" + `. The valid range is between ` + "`" + `0-999999999` + "`" + `. You can also specify an expression.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -988,6 +1040,7 @@ const awsccIoteventsDetectorModel = `{
                                                   "optional": true
                                                 },
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "A structure that contains an asset property value. For more information, see [Variant](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html) in the *AWS IoT SiteWise API Reference*.",
                                                   "description_kind": "plain",
                                                   "nested_type": {
@@ -1023,12 +1076,12 @@ const awsccIoteventsDetectorModel = `{
                                                     },
                                                     "nesting_mode": "single"
                                                   },
-                                                  "required": true
+                                                  "optional": true
                                                 }
                                               },
                                               "nesting_mode": "single"
                                             },
-                                            "required": true
+                                            "optional": true
                                           }
                                         },
                                         "nesting_mode": "single"
@@ -1042,9 +1095,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "mqtt_topic": {
+                                            "computed": true,
                                             "description": "The MQTT topic of the message. You can use a string expression that includes variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `) and input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `) as the topic string.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -1054,15 +1108,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1081,9 +1137,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "function_arn": {
+                                            "computed": true,
                                             "description": "The ARN of the Lambda function that is executed.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -1093,15 +1150,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1121,9 +1180,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "timer_name": {
+                                            "computed": true,
                                             "description": "The name of the timer to reset.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -1152,9 +1212,10 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "number"
                                           },
                                           "timer_name": {
+                                            "computed": true,
                                             "description": "The name of the timer.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -1169,15 +1230,17 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "value": {
+                                            "computed": true,
                                             "description": "The new value of the variable.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "variable_name": {
+                                            "computed": true,
                                             "description": "The name of the variable.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -1198,15 +1261,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1215,9 +1280,10 @@ const awsccIoteventsDetectorModel = `{
                                             "optional": true
                                           },
                                           "target_arn": {
+                                            "computed": true,
                                             "description": "The ARN of the Amazon SNS target where the message is sent.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -1237,15 +1303,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1254,9 +1322,10 @@ const awsccIoteventsDetectorModel = `{
                                             "optional": true
                                           },
                                           "queue_url": {
+                                            "computed": true,
                                             "description": "The URL of the SQS queue where the data is written.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "use_base_64": {
@@ -1284,9 +1353,10 @@ const awsccIoteventsDetectorModel = `{
                                 "type": "string"
                               },
                               "event_name": {
+                                "computed": true,
                                 "description": "The name of the event.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1324,8 +1394,9 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "timer_name": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -1346,15 +1417,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1363,9 +1436,10 @@ const awsccIoteventsDetectorModel = `{
                                             "optional": true
                                           },
                                           "table_name": {
+                                            "computed": true,
                                             "description": "The name of the DynamoDB table.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -1380,9 +1454,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "hash_key_field": {
+                                            "computed": true,
                                             "description": "The name of the hash key (also called the partition key).",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "hash_key_type": {
@@ -1393,9 +1468,10 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "string"
                                           },
                                           "hash_key_value": {
+                                            "computed": true,
                                             "description": "The value of the hash key (also called the partition key).",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "operation": {
@@ -1412,15 +1488,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1457,9 +1535,10 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "string"
                                           },
                                           "table_name": {
+                                            "computed": true,
                                             "description": "The name of the DynamoDB table.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -1474,9 +1553,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "delivery_stream_name": {
+                                            "computed": true,
                                             "description": "The name of the Kinesis Data Firehose delivery stream where the data is written.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -1486,15 +1566,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1521,9 +1603,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "input_name": {
+                                            "computed": true,
                                             "description": "The name of the AWS IoT Events input where the data is sent.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -1533,15 +1616,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1589,6 +1674,7 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "string"
                                           },
                                           "property_value": {
+                                            "computed": true,
                                             "description": "A structure that contains value information. For more information, see [AssetPropertyValue](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html) in the *AWS IoT SiteWise API Reference*.",
                                             "description_kind": "plain",
                                             "nested_type": {
@@ -1614,9 +1700,10 @@ const awsccIoteventsDetectorModel = `{
                                                         "type": "string"
                                                       },
                                                       "time_in_seconds": {
+                                                        "computed": true,
                                                         "description": "The nanosecond offset converted from ` + "`" + `timeInSeconds` + "`" + `. The valid range is between ` + "`" + `0-999999999` + "`" + `. You can also specify an expression.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -1625,6 +1712,7 @@ const awsccIoteventsDetectorModel = `{
                                                   "optional": true
                                                 },
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "A structure that contains an asset property value. For more information, see [Variant](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html) in the *AWS IoT SiteWise API Reference*.",
                                                   "description_kind": "plain",
                                                   "nested_type": {
@@ -1660,12 +1748,12 @@ const awsccIoteventsDetectorModel = `{
                                                     },
                                                     "nesting_mode": "single"
                                                   },
-                                                  "required": true
+                                                  "optional": true
                                                 }
                                               },
                                               "nesting_mode": "single"
                                             },
-                                            "required": true
+                                            "optional": true
                                           }
                                         },
                                         "nesting_mode": "single"
@@ -1679,9 +1767,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "mqtt_topic": {
+                                            "computed": true,
                                             "description": "The MQTT topic of the message. You can use a string expression that includes variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `) and input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `) as the topic string.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -1691,15 +1780,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1718,9 +1809,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "function_arn": {
+                                            "computed": true,
                                             "description": "The ARN of the Lambda function that is executed.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -1730,15 +1822,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1758,9 +1852,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "timer_name": {
+                                            "computed": true,
                                             "description": "The name of the timer to reset.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -1789,9 +1884,10 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "number"
                                           },
                                           "timer_name": {
+                                            "computed": true,
                                             "description": "The name of the timer.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -1806,15 +1902,17 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "value": {
+                                            "computed": true,
                                             "description": "The new value of the variable.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "variable_name": {
+                                            "computed": true,
                                             "description": "The name of the variable.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -1835,15 +1933,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1852,9 +1952,10 @@ const awsccIoteventsDetectorModel = `{
                                             "optional": true
                                           },
                                           "target_arn": {
+                                            "computed": true,
                                             "description": "The ARN of the Amazon SNS target where the message is sent.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -1874,15 +1975,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1891,9 +1994,10 @@ const awsccIoteventsDetectorModel = `{
                                             "optional": true
                                           },
                                           "queue_url": {
+                                            "computed": true,
                                             "description": "The URL of the SQS queue where the data is written.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "use_base_64": {
@@ -1921,9 +2025,10 @@ const awsccIoteventsDetectorModel = `{
                                 "type": "string"
                               },
                               "event_name": {
+                                "computed": true,
                                 "description": "The name of the event.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -1950,8 +2055,9 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "timer_name": {
+                                            "computed": true,
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -1972,15 +2078,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -1989,9 +2097,10 @@ const awsccIoteventsDetectorModel = `{
                                             "optional": true
                                           },
                                           "table_name": {
+                                            "computed": true,
                                             "description": "The name of the DynamoDB table.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -2006,9 +2115,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "hash_key_field": {
+                                            "computed": true,
                                             "description": "The name of the hash key (also called the partition key).",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "hash_key_type": {
@@ -2019,9 +2129,10 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "string"
                                           },
                                           "hash_key_value": {
+                                            "computed": true,
                                             "description": "The value of the hash key (also called the partition key).",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "operation": {
@@ -2038,15 +2149,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2083,9 +2196,10 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "string"
                                           },
                                           "table_name": {
+                                            "computed": true,
                                             "description": "The name of the DynamoDB table.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -2100,9 +2214,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "delivery_stream_name": {
+                                            "computed": true,
                                             "description": "The name of the Kinesis Data Firehose delivery stream where the data is written.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -2112,15 +2227,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2147,9 +2264,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "input_name": {
+                                            "computed": true,
                                             "description": "The name of the AWS IoT Events input where the data is sent.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -2159,15 +2277,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2215,6 +2335,7 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "string"
                                           },
                                           "property_value": {
+                                            "computed": true,
                                             "description": "A structure that contains value information. For more information, see [AssetPropertyValue](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetPropertyValue.html) in the *AWS IoT SiteWise API Reference*.",
                                             "description_kind": "plain",
                                             "nested_type": {
@@ -2240,9 +2361,10 @@ const awsccIoteventsDetectorModel = `{
                                                         "type": "string"
                                                       },
                                                       "time_in_seconds": {
+                                                        "computed": true,
                                                         "description": "The nanosecond offset converted from ` + "`" + `timeInSeconds` + "`" + `. The valid range is between ` + "`" + `0-999999999` + "`" + `. You can also specify an expression.",
                                                         "description_kind": "plain",
-                                                        "required": true,
+                                                        "optional": true,
                                                         "type": "string"
                                                       }
                                                     },
@@ -2251,6 +2373,7 @@ const awsccIoteventsDetectorModel = `{
                                                   "optional": true
                                                 },
                                                 "value": {
+                                                  "computed": true,
                                                   "description": "A structure that contains an asset property value. For more information, see [Variant](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Variant.html) in the *AWS IoT SiteWise API Reference*.",
                                                   "description_kind": "plain",
                                                   "nested_type": {
@@ -2286,12 +2409,12 @@ const awsccIoteventsDetectorModel = `{
                                                     },
                                                     "nesting_mode": "single"
                                                   },
-                                                  "required": true
+                                                  "optional": true
                                                 }
                                               },
                                               "nesting_mode": "single"
                                             },
-                                            "required": true
+                                            "optional": true
                                           }
                                         },
                                         "nesting_mode": "single"
@@ -2305,9 +2428,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "mqtt_topic": {
+                                            "computed": true,
                                             "description": "The MQTT topic of the message. You can use a string expression that includes variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `) and input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `) as the topic string.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -2317,15 +2441,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2344,9 +2470,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "function_arn": {
+                                            "computed": true,
                                             "description": "The ARN of the Lambda function that is executed.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "payload": {
@@ -2356,15 +2483,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2384,9 +2513,10 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "timer_name": {
+                                            "computed": true,
                                             "description": "The name of the timer to reset.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -2415,9 +2545,10 @@ const awsccIoteventsDetectorModel = `{
                                             "type": "number"
                                           },
                                           "timer_name": {
+                                            "computed": true,
                                             "description": "The name of the timer.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -2432,15 +2563,17 @@ const awsccIoteventsDetectorModel = `{
                                       "nested_type": {
                                         "attributes": {
                                           "value": {
+                                            "computed": true,
                                             "description": "The new value of the variable.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "variable_name": {
+                                            "computed": true,
                                             "description": "The name of the variable.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -2461,15 +2594,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2478,9 +2613,10 @@ const awsccIoteventsDetectorModel = `{
                                             "optional": true
                                           },
                                           "target_arn": {
+                                            "computed": true,
                                             "description": "The ARN of the Amazon SNS target where the message is sent.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           }
                                         },
@@ -2500,15 +2636,17 @@ const awsccIoteventsDetectorModel = `{
                                             "nested_type": {
                                               "attributes": {
                                                 "content_expression": {
+                                                  "computed": true,
                                                   "description": "The content of the payload. You can use a string expression that includes quoted strings (` + "`" + `'\u003cstring\u003e'` + "`" + `), variables (` + "`" + `$variable.\u003cvariable-name\u003e` + "`" + `), input values (` + "`" + `$input.\u003cinput-name\u003e.\u003cpath-to-datum\u003e` + "`" + `), string concatenations, and quoted strings that contain ` + "`" + `${}` + "`" + ` as the content. The recommended maximum size of a content expression is 1 KB.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 },
                                                 "type": {
+                                                  "computed": true,
                                                   "description": "The value of the payload type can be either ` + "`" + `STRING` + "`" + ` or ` + "`" + `JSON` + "`" + `.",
                                                   "description_kind": "plain",
-                                                  "required": true,
+                                                  "optional": true,
                                                   "type": "string"
                                                 }
                                               },
@@ -2517,9 +2655,10 @@ const awsccIoteventsDetectorModel = `{
                                             "optional": true
                                           },
                                           "queue_url": {
+                                            "computed": true,
                                             "description": "The URL of the SQS queue where the data is written.",
                                             "description_kind": "plain",
-                                            "required": true,
+                                            "optional": true,
                                             "type": "string"
                                           },
                                           "use_base_64": {
@@ -2540,21 +2679,24 @@ const awsccIoteventsDetectorModel = `{
                                 "optional": true
                               },
                               "condition": {
+                                "computed": true,
                                 "description": "A Boolean expression that when ` + "`" + `TRUE` + "`" + ` causes the ` + "`" + `actions` + "`" + ` to be performed and the ` + "`" + `nextState` + "`" + ` to be entered.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "event_name": {
+                                "computed": true,
                                 "description": "The name of the event.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "next_state": {
+                                "computed": true,
                                 "description": "The next state to enter.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -2630,15 +2772,17 @@ const awsccIoteventsDetectorModel = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "Key of the Tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "Value of the Tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

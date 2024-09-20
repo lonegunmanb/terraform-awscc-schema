@@ -23,9 +23,10 @@ const awsccIotsitewiseGateway = `{
               "type": "string"
             },
             "capability_namespace": {
+              "computed": true,
               "description": "The namespace of the capability configuration.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -57,9 +58,10 @@ const awsccIotsitewiseGateway = `{
               "nested_type": {
                 "attributes": {
                   "group_arn": {
+                    "computed": true,
                     "description": "The ARN of the Greengrass group.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -74,9 +76,10 @@ const awsccIotsitewiseGateway = `{
               "nested_type": {
                 "attributes": {
                   "core_device_thing_name": {
+                    "computed": true,
                     "description": "The name of the CoreDevice in GreenGrass V2.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -91,9 +94,10 @@ const awsccIotsitewiseGateway = `{
               "nested_type": {
                 "attributes": {
                   "iot_core_thing_name": {
+                    "computed": true,
                     "description": "The name of the IoT Core Thing.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -119,13 +123,15 @@ const awsccIotsitewiseGateway = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

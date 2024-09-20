@@ -41,9 +41,10 @@ const awsccEvidentlyLaunch = `{
               "type": "string"
             },
             "status": {
+              "computed": true,
               "description": "Provide START or STOP action to apply on a launch",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -93,9 +94,10 @@ const awsccEvidentlyLaunch = `{
         "nested_type": {
           "attributes": {
             "entity_id_key": {
+              "computed": true,
               "description": "The JSON path to reference the entity id in the event.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "event_pattern": {
@@ -106,8 +108,9 @@ const awsccEvidentlyLaunch = `{
               "type": "string"
             },
             "metric_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "unit_label": {
@@ -117,9 +120,10 @@ const awsccEvidentlyLaunch = `{
               "type": "string"
             },
             "value_key": {
+              "computed": true,
               "description": "The JSON path to reference the numerical metric value in the event.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -172,33 +176,38 @@ const awsccEvidentlyLaunch = `{
               "nested_type": {
                 "attributes": {
                   "evaluation_order": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "segment": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "weights": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "group_name": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "split_weight": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
                       "nesting_mode": "set"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "set"
@@ -222,15 +231,17 @@ const awsccEvidentlyLaunch = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

@@ -35,20 +35,22 @@ const awsccConnectTaskTemplate = `{
               "nested_type": {
                 "attributes": {
                   "id": {
+                    "computed": true,
                     "description": "the identifier (name) for the task template field",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "The name of the task template field",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "list"
@@ -62,20 +64,22 @@ const awsccConnectTaskTemplate = `{
               "nested_type": {
                 "attributes": {
                   "id": {
+                    "computed": true,
                     "description": "the identifier (name) for the task template field",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "The name of the task template field",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "list"
@@ -89,20 +93,22 @@ const awsccConnectTaskTemplate = `{
               "nested_type": {
                 "attributes": {
                   "id": {
+                    "computed": true,
                     "description": "the identifier (name) for the task template field",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "name": {
+                          "computed": true,
                           "description": "The name of the task template field",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "list"
@@ -127,26 +133,29 @@ const awsccConnectTaskTemplate = `{
         "nested_type": {
           "attributes": {
             "default_value": {
+              "computed": true,
               "description": "the default value for the task template's field",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "id": {
+              "computed": true,
               "description": "the identifier (name) for the task template field",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "name": {
+                    "computed": true,
                     "description": "The name of the task template field",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "list"
@@ -174,20 +183,22 @@ const awsccConnectTaskTemplate = `{
               "type": "string"
             },
             "id": {
+              "computed": true,
               "description": "the identifier (name) for the task template field",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "name": {
+                    "computed": true,
                     "description": "The name of the task template field",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "single_select_options": {
               "computed": true,
@@ -200,9 +211,10 @@ const awsccConnectTaskTemplate = `{
               ]
             },
             "type": {
+              "computed": true,
               "description": "The type of the task template's field",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -243,15 +255,17 @@ const awsccConnectTaskTemplate = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. . You can specify a value that is maximum of 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

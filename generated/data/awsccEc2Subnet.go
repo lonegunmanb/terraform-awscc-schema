@@ -71,7 +71,6 @@ const awsccEc2Subnet = `{
       },
       "ipv_6_cidr_blocks": {
         "computed": true,
-        "description": "The IPv6 network ranges for the subnet, in CIDR notation.",
         "description_kind": "plain",
         "type": [
           "list",

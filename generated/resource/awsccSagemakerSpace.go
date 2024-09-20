@@ -27,8 +27,9 @@ const awsccSagemakerSpace = `{
         "nested_type": {
           "attributes": {
             "owner_user_profile_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -153,8 +154,9 @@ const awsccSagemakerSpace = `{
                     "nested_type": {
                       "attributes": {
                         "file_system_id": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -207,9 +209,10 @@ const awsccSagemakerSpace = `{
                     "nested_type": {
                       "attributes": {
                         "repository_url": {
+                          "computed": true,
                           "description": "A CodeRepository (valid URL) to be used within Jupyter's Git extension.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -332,15 +335,17 @@ const awsccSagemakerSpace = `{
                     "nested_type": {
                       "attributes": {
                         "app_image_config_name": {
+                          "computed": true,
                           "description": "The Name of the AppImageConfig.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "image_name": {
+                          "computed": true,
                           "description": "The name of the CustomImage. Must be unique to your account.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "image_version_number": {
@@ -422,9 +427,10 @@ const awsccSagemakerSpace = `{
                     "nested_type": {
                       "attributes": {
                         "ebs_volume_size_in_gb": {
+                          "computed": true,
                           "description": "Size of the Amazon EBS volume in Gb",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         }
                       },
@@ -448,8 +454,9 @@ const awsccSagemakerSpace = `{
         "nested_type": {
           "attributes": {
             "sharing_type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -464,13 +471,15 @@ const awsccSagemakerSpace = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

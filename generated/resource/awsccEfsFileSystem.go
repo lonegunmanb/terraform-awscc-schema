@@ -28,9 +28,10 @@ const awsccEfsFileSystem = `{
         "nested_type": {
           "attributes": {
             "status": {
+              "computed": true,
               "description": "Set the backup policy status for the file system.\n  +   *ENABLED* - Turns automatic backups on for the file system. \n  +   *DISABLED* - Turns automatic backups off for the file system.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -89,15 +90,17 @@ const awsccEfsFileSystem = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The tag key (String). The key can't start with ` + "`" + `` + "`" + `aws:` + "`" + `` + "`" + `.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value of the tag key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

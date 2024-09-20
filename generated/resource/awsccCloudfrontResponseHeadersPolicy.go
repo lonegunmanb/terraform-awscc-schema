@@ -36,17 +36,20 @@ const awsccCloudfrontResponseHeadersPolicy = `{
               "nested_type": {
                 "attributes": {
                   "access_control_allow_credentials": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "access_control_allow_headers": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "items": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -55,15 +58,17 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "access_control_allow_methods": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "items": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -72,15 +77,17 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "access_control_allow_origins": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "items": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -89,7 +96,7 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "access_control_expose_headers": {
                     "computed": true,
@@ -97,8 +104,9 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "items": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
@@ -116,8 +124,9 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                     "type": "number"
                   },
                   "origin_override": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -131,28 +140,32 @@ const awsccCloudfrontResponseHeadersPolicy = `{
               "nested_type": {
                 "attributes": {
                   "items": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "header": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "override": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         },
                         "value": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -170,18 +183,20 @@ const awsccCloudfrontResponseHeadersPolicy = `{
               "nested_type": {
                 "attributes": {
                   "items": {
+                    "computed": true,
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "header": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "set"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -199,13 +214,15 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "content_security_policy": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "override": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -219,8 +236,9 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "override": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -234,13 +252,15 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "frame_option": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "override": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -254,13 +274,15 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "override": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         },
                         "referrer_policy": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -274,8 +296,9 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                     "nested_type": {
                       "attributes": {
                         "access_control_max_age_sec": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "number"
                         },
                         "include_subdomains": {
@@ -285,8 +308,9 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                           "type": "bool"
                         },
                         "override": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         },
                         "preload": {
@@ -312,13 +336,15 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                           "type": "bool"
                         },
                         "override": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         },
                         "protection": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         },
                         "report_uri": {
@@ -343,8 +369,9 @@ const awsccCloudfrontResponseHeadersPolicy = `{
               "nested_type": {
                 "attributes": {
                   "enabled": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "sampling_rate": {

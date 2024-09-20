@@ -15,6 +15,7 @@ const awsccCognitoUserPoolRiskConfigurationAttachment = `{
         "nested_type": {
           "attributes": {
             "actions": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -24,13 +25,15 @@ const awsccCognitoUserPoolRiskConfigurationAttachment = `{
                     "nested_type": {
                       "attributes": {
                         "event_action": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "notify": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -44,13 +47,15 @@ const awsccCognitoUserPoolRiskConfigurationAttachment = `{
                     "nested_type": {
                       "attributes": {
                         "event_action": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "notify": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -64,13 +69,15 @@ const awsccCognitoUserPoolRiskConfigurationAttachment = `{
                     "nested_type": {
                       "attributes": {
                         "event_action": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "notify": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "bool"
                         }
                       },
@@ -81,7 +88,7 @@ const awsccCognitoUserPoolRiskConfigurationAttachment = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "notify_configuration": {
               "computed": true,
@@ -100,8 +107,9 @@ const awsccCognitoUserPoolRiskConfigurationAttachment = `{
                           "type": "string"
                         },
                         "subject": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "text_body": {
@@ -133,8 +141,9 @@ const awsccCognitoUserPoolRiskConfigurationAttachment = `{
                           "type": "string"
                         },
                         "subject": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "text_body": {
@@ -160,8 +169,9 @@ const awsccCognitoUserPoolRiskConfigurationAttachment = `{
                           "type": "string"
                         },
                         "subject": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "text_body": {
@@ -182,8 +192,9 @@ const awsccCognitoUserPoolRiskConfigurationAttachment = `{
                     "type": "string"
                   },
                   "source_arn": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -207,18 +218,20 @@ const awsccCognitoUserPoolRiskConfigurationAttachment = `{
         "nested_type": {
           "attributes": {
             "actions": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "event_action": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "event_filter": {
               "computed": true,

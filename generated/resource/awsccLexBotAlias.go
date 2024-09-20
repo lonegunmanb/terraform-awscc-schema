@@ -27,6 +27,7 @@ const awsccLexBotAlias = `{
         "nested_type": {
           "attributes": {
             "bot_alias_locale_setting": {
+              "computed": true,
               "description": "You can use this parameter to specify a specific Lambda function to run different functions in different locales.",
               "description_kind": "plain",
               "nested_type": {
@@ -38,26 +39,29 @@ const awsccLexBotAlias = `{
                     "nested_type": {
                       "attributes": {
                         "lambda_code_hook": {
+                          "computed": true,
                           "description": "Contains information about code hooks that Amazon Lex calls during a conversation.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "code_hook_interface_version": {
+                                "computed": true,
                                 "description": "The version of the request-response that you want Amazon Lex to use to invoke your Lambda function.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "lambda_arn": {
+                                "computed": true,
                                 "description": "The Amazon Resource Name (ARN) of the Lambda function.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -65,20 +69,22 @@ const awsccLexBotAlias = `{
                     "optional": true
                   },
                   "enabled": {
+                    "computed": true,
                     "description": "Whether the Lambda code hook is enabled",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "locale_id": {
+              "computed": true,
               "description": "A string used to identify the locale",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -104,15 +110,17 @@ const awsccLexBotAlias = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "A string used to identify this tag",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "A string containing the value for the tag",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -146,11 +154,13 @@ const awsccLexBotAlias = `{
               "nested_type": {
                 "attributes": {
                   "destination": {
+                    "computed": true,
                     "description": "The location of audio log files collected when conversation logging is enabled for a bot.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "s3_bucket": {
+                          "computed": true,
                           "description": "Specifies an Amazon S3 bucket for logging audio conversations",
                           "description_kind": "plain",
                           "nested_type": {
@@ -163,30 +173,33 @@ const awsccLexBotAlias = `{
                                 "type": "string"
                               },
                               "log_prefix": {
+                                "computed": true,
                                 "description": "The Amazon S3 key of the deployment package.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "s3_bucket_arn": {
+                                "computed": true,
                                 "description": "The Amazon Resource Name (ARN) of an Amazon S3 bucket where audio log files are stored.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "enabled": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -201,39 +214,44 @@ const awsccLexBotAlias = `{
               "nested_type": {
                 "attributes": {
                   "destination": {
+                    "computed": true,
                     "description": "Defines the Amazon CloudWatch Logs destination log group for conversation text logs.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "cloudwatch": {
+                          "computed": true,
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "cloudwatch_log_group_arn": {
+                                "computed": true,
                                 "description": "A string used to identify the groupArn for the Cloudwatch Log Group",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "log_prefix": {
+                                "computed": true,
                                 "description": "A string containing the value for the Log Prefix",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "enabled": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -266,9 +284,10 @@ const awsccLexBotAlias = `{
         "nested_type": {
           "attributes": {
             "detect_sentiment": {
+              "computed": true,
               "description": "Enable to call Amazon Comprehend for Sentiment natively within Lex",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             }
           },

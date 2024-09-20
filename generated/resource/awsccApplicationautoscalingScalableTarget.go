@@ -90,15 +90,17 @@ const awsccApplicationautoscalingScalableTarget = `{
               "optional": true
             },
             "schedule": {
+              "computed": true,
               "description": "The schedule for this action. The following formats are supported:\n  +  At expressions - \"` + "`" + `` + "`" + `at(yyyy-mm-ddThh:mm:ss)` + "`" + `` + "`" + `\"\n  +  Rate expressions - \"` + "`" + `` + "`" + `rate(value unit)` + "`" + `` + "`" + `\"\n  +  Cron expressions - \"` + "`" + `` + "`" + `cron(fields)` + "`" + `` + "`" + `\"\n  \n At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a regular interval.\n At and cron expressions use Universal Coordinated Time (UTC) by default.\n The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].\n For rate expressions, *value* is a positive integer and *unit* is ` + "`" + `` + "`" + `minute` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `minutes` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `hour` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `hours` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `day` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `days` + "`" + `` + "`" + `.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "scheduled_action_name": {
+              "computed": true,
               "description": "The name of the scheduled action. This name must be unique among all other scheduled actions on the specified scalable target.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "start_time": {

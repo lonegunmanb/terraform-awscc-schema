@@ -26,9 +26,10 @@ const awsccMediaconnectBridge = `{
         "nested_type": {
           "attributes": {
             "max_bitrate": {
+              "computed": true,
               "description": "The maximum expected bitrate of the egress bridge.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -48,15 +49,17 @@ const awsccMediaconnectBridge = `{
         "nested_type": {
           "attributes": {
             "max_bitrate": {
+              "computed": true,
               "description": "The maximum expected bitrate of the ingress bridge.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "max_outputs": {
+              "computed": true,
               "description": "The maximum number of outputs on the ingress bridge.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
@@ -83,39 +86,45 @@ const awsccMediaconnectBridge = `{
               "nested_type": {
                 "attributes": {
                   "ip_address": {
+                    "computed": true,
                     "description": "The network output IP Address.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description": "The network output name.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "network_name": {
+                    "computed": true,
                     "description": "The network output's gateway network name.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "The network output port.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "protocol": {
+                    "computed": true,
                     "description": "The network output protocol.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "ttl": {
+                    "computed": true,
                     "description": "The network output TTL.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -141,9 +150,10 @@ const awsccMediaconnectBridge = `{
         "nested_type": {
           "attributes": {
             "failover_mode": {
+              "computed": true,
               "description": "The type of failover you choose for this flow. FAILOVER allows switching between different streams.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "source_priority": {
@@ -187,9 +197,10 @@ const awsccMediaconnectBridge = `{
               "nested_type": {
                 "attributes": {
                   "flow_arn": {
+                    "computed": true,
                     "description": "The ARN of the cloud flow used as a source of this bridge.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "flow_vpc_interface_attachment": {
@@ -211,9 +222,10 @@ const awsccMediaconnectBridge = `{
                     "optional": true
                   },
                   "name": {
+                    "computed": true,
                     "description": "The name of the flow source.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -228,33 +240,38 @@ const awsccMediaconnectBridge = `{
               "nested_type": {
                 "attributes": {
                   "multicast_ip": {
+                    "computed": true,
                     "description": "The network source multicast IP.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description": "The name of the network source.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "network_name": {
+                    "computed": true,
                     "description": "The network source's gateway network name.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "port": {
+                    "computed": true,
                     "description": "The network source port.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "protocol": {
+                    "computed": true,
                     "description": "The network source protocol.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

@@ -48,15 +48,17 @@ const awsccRobomakerSimulationApplication = `{
         "nested_type": {
           "attributes": {
             "name": {
+              "computed": true,
               "description": "The name of the rendering engine.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "version": {
+              "computed": true,
               "description": "The version of the rendering engine.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -117,21 +119,24 @@ const awsccRobomakerSimulationApplication = `{
         "nested_type": {
           "attributes": {
             "architecture": {
+              "computed": true,
               "description": "The target processor architecture for the application.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_bucket": {
+              "computed": true,
               "description": "The Amazon S3 bucket name.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_key": {
+              "computed": true,
               "description": "The s3 object key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

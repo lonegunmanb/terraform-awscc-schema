@@ -23,9 +23,10 @@ const awsccAutoscalingLaunchConfiguration = `{
         "nested_type": {
           "attributes": {
             "device_name": {
+              "computed": true,
               "description": "The device name exposed to the EC2 instance (for example, /dev/sdh or xvdh). ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "ebs": {

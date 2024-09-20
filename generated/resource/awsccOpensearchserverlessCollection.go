@@ -66,15 +66,17 @@ const awsccOpensearchserverlessCollection = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key in the key-value pair",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value in the key-value pair",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

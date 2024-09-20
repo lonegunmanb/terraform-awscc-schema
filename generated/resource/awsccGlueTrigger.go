@@ -86,9 +86,10 @@ const awsccGlueTrigger = `{
         "nested_type": {
           "attributes": {
             "batch_size": {
+              "computed": true,
               "description": "Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             },
             "batch_window": {

@@ -28,6 +28,7 @@ const awsccMediapackagePackagingConfiguration = `{
               "nested_type": {
                 "attributes": {
                   "speke_key_provider": {
+                    "computed": true,
                     "description": "A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -39,15 +40,17 @@ const awsccMediapackagePackagingConfiguration = `{
                           "nested_type": {
                             "attributes": {
                               "preset_speke_20_audio": {
+                                "computed": true,
                                 "description": "A collection of audio encryption presets.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "preset_speke_20_video": {
+                                "computed": true,
                                 "description": "A collection of video encryption presets.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -56,30 +59,33 @@ const awsccMediapackagePackagingConfiguration = `{
                           "optional": true
                         },
                         "role_arn": {
+                          "computed": true,
                           "description": "An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "system_ids": {
+                          "computed": true,
                           "description": "The system IDs to include in key requests.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
                           ]
                         },
                         "url": {
+                          "computed": true,
                           "description": "The URL of the external key provider service.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -87,6 +93,7 @@ const awsccMediapackagePackagingConfiguration = `{
               "optional": true
             },
             "hls_manifests": {
+              "computed": true,
               "description": "A list of HLS manifest configurations.",
               "description_kind": "plain",
               "nested_type": {
@@ -161,7 +168,7 @@ const awsccMediapackagePackagingConfiguration = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "include_encoder_configuration_in_segments": {
               "computed": true,
@@ -189,6 +196,7 @@ const awsccMediapackagePackagingConfiguration = `{
         "nested_type": {
           "attributes": {
             "dash_manifests": {
+              "computed": true,
               "description": "A list of DASH manifest configurations.",
               "description_kind": "plain",
               "nested_type": {
@@ -263,7 +271,7 @@ const awsccMediapackagePackagingConfiguration = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "encryption": {
               "computed": true,
@@ -272,6 +280,7 @@ const awsccMediapackagePackagingConfiguration = `{
               "nested_type": {
                 "attributes": {
                   "speke_key_provider": {
+                    "computed": true,
                     "description": "A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -283,15 +292,17 @@ const awsccMediapackagePackagingConfiguration = `{
                           "nested_type": {
                             "attributes": {
                               "preset_speke_20_audio": {
+                                "computed": true,
                                 "description": "A collection of audio encryption presets.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "preset_speke_20_video": {
+                                "computed": true,
                                 "description": "A collection of video encryption presets.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -300,30 +311,33 @@ const awsccMediapackagePackagingConfiguration = `{
                           "optional": true
                         },
                         "role_arn": {
+                          "computed": true,
                           "description": "An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "system_ids": {
+                          "computed": true,
                           "description": "The system IDs to include in key requests.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
                           ]
                         },
                         "url": {
+                          "computed": true,
                           "description": "The URL of the external key provider service.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -400,6 +414,7 @@ const awsccMediapackagePackagingConfiguration = `{
                     "type": "string"
                   },
                   "speke_key_provider": {
+                    "computed": true,
                     "description": "A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -411,15 +426,17 @@ const awsccMediapackagePackagingConfiguration = `{
                           "nested_type": {
                             "attributes": {
                               "preset_speke_20_audio": {
+                                "computed": true,
                                 "description": "A collection of audio encryption presets.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "preset_speke_20_video": {
+                                "computed": true,
                                 "description": "A collection of video encryption presets.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -428,30 +445,33 @@ const awsccMediapackagePackagingConfiguration = `{
                           "optional": true
                         },
                         "role_arn": {
+                          "computed": true,
                           "description": "An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "system_ids": {
+                          "computed": true,
                           "description": "The system IDs to include in key requests.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
                           ]
                         },
                         "url": {
+                          "computed": true,
                           "description": "The URL of the external key provider service.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -459,6 +479,7 @@ const awsccMediapackagePackagingConfiguration = `{
               "optional": true
             },
             "hls_manifests": {
+              "computed": true,
               "description": "A list of HLS manifest configurations.",
               "description_kind": "plain",
               "nested_type": {
@@ -533,7 +554,7 @@ const awsccMediapackagePackagingConfiguration = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "include_dvb_subtitles": {
               "computed": true,
@@ -580,6 +601,7 @@ const awsccMediapackagePackagingConfiguration = `{
               "nested_type": {
                 "attributes": {
                   "speke_key_provider": {
+                    "computed": true,
                     "description": "A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -591,15 +613,17 @@ const awsccMediapackagePackagingConfiguration = `{
                           "nested_type": {
                             "attributes": {
                               "preset_speke_20_audio": {
+                                "computed": true,
                                 "description": "A collection of audio encryption presets.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "preset_speke_20_video": {
+                                "computed": true,
                                 "description": "A collection of video encryption presets.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -608,30 +632,33 @@ const awsccMediapackagePackagingConfiguration = `{
                           "optional": true
                         },
                         "role_arn": {
+                          "computed": true,
                           "description": "An Amazon Resource Name (ARN) of an IAM role that AWS Elemental MediaPackage will assume when accessing the key provider service.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "system_ids": {
+                          "computed": true,
                           "description": "The system IDs to include in key requests.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": [
                             "list",
                             "string"
                           ]
                         },
                         "url": {
+                          "computed": true,
                           "description": "The URL of the external key provider service.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -639,6 +666,7 @@ const awsccMediapackagePackagingConfiguration = `{
               "optional": true
             },
             "mss_manifests": {
+              "computed": true,
               "description": "A list of MSS manifest configurations.",
               "description_kind": "plain",
               "nested_type": {
@@ -685,7 +713,7 @@ const awsccMediapackagePackagingConfiguration = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "segment_duration_seconds": {
               "computed": true,
@@ -718,13 +746,15 @@ const awsccMediapackagePackagingConfiguration = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

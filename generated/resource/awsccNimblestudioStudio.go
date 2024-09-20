@@ -53,9 +53,10 @@ const awsccNimblestudioStudio = `{
               "type": "string"
             },
             "key_type": {
+              "computed": true,
               "description": "\u003cp\u003eThe type of KMS key that is used to encrypt studio data.\u003c/p\u003e",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

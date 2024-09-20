@@ -26,13 +26,15 @@ const awsccLicensemanagerLicense = `{
               "nested_type": {
                 "attributes": {
                   "allow_early_check_in": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   },
                   "max_time_to_live_in_minutes": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -46,8 +48,9 @@ const awsccLicensemanagerLicense = `{
               "nested_type": {
                 "attributes": {
                   "max_time_to_live_in_minutes": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   }
                 },
@@ -153,13 +156,15 @@ const awsccLicensemanagerLicense = `{
         "nested_type": {
           "attributes": {
             "name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

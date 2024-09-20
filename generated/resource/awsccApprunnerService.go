@@ -23,9 +23,10 @@ const awsccApprunnerService = `{
         "nested_type": {
           "attributes": {
             "kms_key": {
+              "computed": true,
               "description": "The KMS Key",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -137,9 +138,10 @@ const awsccApprunnerService = `{
               "nested_type": {
                 "attributes": {
                   "egress_type": {
+                    "computed": true,
                     "description": "Network egress type.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "vpc_connector_arn": {
@@ -161,9 +163,10 @@ const awsccApprunnerService = `{
               "nested_type": {
                 "attributes": {
                   "is_publicly_accessible": {
+                    "computed": true,
                     "description": "It's set to true if the Apprunner service is publicly accessible. It's set to false otherwise.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -197,9 +200,10 @@ const awsccApprunnerService = `{
               "type": "string"
             },
             "observability_enabled": {
+              "computed": true,
               "description": "Observability enabled",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "bool"
             }
           },
@@ -302,9 +306,10 @@ const awsccApprunnerService = `{
                                 "type": "string"
                               },
                               "runtime": {
+                                "computed": true,
                                 "description": "Runtime",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "runtime_environment_secrets": {
@@ -365,9 +370,10 @@ const awsccApprunnerService = `{
                           "optional": true
                         },
                         "configuration_source": {
+                          "computed": true,
                           "description": "Configuration Source",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -376,32 +382,36 @@ const awsccApprunnerService = `{
                     "optional": true
                   },
                   "repository_url": {
+                    "computed": true,
                     "description": "Repository Url",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "source_code_version": {
+                    "computed": true,
                     "description": "Source Code Version",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "type": {
+                          "computed": true,
                           "description": "Source Code Version Type",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "value": {
+                          "computed": true,
                           "description": "Source Code Version Value",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "source_directory": {
                     "computed": true,
@@ -492,15 +502,17 @@ const awsccApprunnerService = `{
                     "optional": true
                   },
                   "image_identifier": {
+                    "computed": true,
                     "description": "Image Identifier",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "image_repository_type": {
+                    "computed": true,
                     "description": "Image Repository Type",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

@@ -127,9 +127,10 @@ const awsccNimblestudioLaunchProfile = `{
               "nested_type": {
                 "attributes": {
                   "mode": {
+                    "computed": true,
                     "description": "\u003cp\u003eAllows artists to upload files to their workstations. The only valid option is\n                \u003ccode\u003eUPLOAD\u003c/code\u003e.\u003c/p\u003e",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"

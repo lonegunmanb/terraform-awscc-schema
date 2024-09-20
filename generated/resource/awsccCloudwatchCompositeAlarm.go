@@ -106,15 +106,17 @@ const awsccCloudwatchCompositeAlarm = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "A unique identifier for the tag. The combination of tag keys and values can help you organize and categorize your resources.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the specified tag key.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

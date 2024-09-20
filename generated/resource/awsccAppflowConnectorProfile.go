@@ -46,14 +46,16 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "api_key": {
+                          "computed": true,
                           "description": "A unique alphanumeric identi?er used to authenticate a user, developer, or calling program to your API.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "secret_key": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -72,8 +74,9 @@ const awsccAppflowConnectorProfile = `{
                           "nested_type": {
                             "attributes": {
                               "api_key": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "api_secret_key": {
@@ -88,8 +91,9 @@ const awsccAppflowConnectorProfile = `{
                           "optional": true
                         },
                         "authentication_type": {
+                          "computed": true,
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "basic": {
@@ -98,13 +102,15 @@ const awsccAppflowConnectorProfile = `{
                           "nested_type": {
                             "attributes": {
                               "password": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "username": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -128,8 +134,9 @@ const awsccAppflowConnectorProfile = `{
                                 ]
                               },
                               "custom_authentication_type": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -206,15 +213,17 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "api_key": {
+                          "computed": true,
                           "description": "A unique alphanumeric identi?er used to authenticate a user, developer, or calling program to your API.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "application_key": {
+                          "computed": true,
                           "description": "Application keys, in conjunction with your API key, give you full access to Datadog?s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -228,9 +237,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "api_token": {
+                          "computed": true,
                           "description": "The API tokens used by Dynatrace API to authenticate various API calls.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -251,15 +261,17 @@ const awsccAppflowConnectorProfile = `{
                           "type": "string"
                         },
                         "client_id": {
+                          "computed": true,
                           "description": "The identi?er for the desired client.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "client_secret": {
+                          "computed": true,
                           "description": "The client secret used by the oauth client to authenticate to the authorization server.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "connector_o_auth_request": {
@@ -305,27 +317,31 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "access_key_id": {
+                          "computed": true,
                           "description": "The Access Key portion of the credentials.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "datakey": {
+                          "computed": true,
                           "description": "The encryption keys used to encrypt data.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "secret_access_key": {
+                          "computed": true,
                           "description": "The secret key used to sign requests.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "user_id": {
+                          "computed": true,
                           "description": "The identi?er for the user.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -346,15 +362,17 @@ const awsccAppflowConnectorProfile = `{
                           "type": "string"
                         },
                         "client_id": {
+                          "computed": true,
                           "description": "The identi?er for the desired client.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "client_secret": {
+                          "computed": true,
                           "description": "The client secret used by the oauth client to authenticate to the authorization server.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "connector_o_auth_request": {
@@ -534,13 +552,15 @@ const awsccAppflowConnectorProfile = `{
                           "nested_type": {
                             "attributes": {
                               "password": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               },
                               "username": {
+                                "computed": true,
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
@@ -617,15 +637,17 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "password": {
+                          "computed": true,
                           "description": "The password that corresponds to the username.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "username": {
+                          "computed": true,
                           "description": "The name of the user.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -639,9 +661,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "api_key": {
+                          "computed": true,
                           "description": "A unique alphanumeric identi?er used to authenticate a user, developer, or calling program to your API.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -662,15 +685,17 @@ const awsccAppflowConnectorProfile = `{
                           "type": "string"
                         },
                         "client_id": {
+                          "computed": true,
                           "description": "The identi?er for the desired client.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "client_secret": {
+                          "computed": true,
                           "description": "The client secret used by the oauth client to authenticate to the authorization server.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "connector_o_auth_request": {
@@ -709,15 +734,17 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "password": {
+                          "computed": true,
                           "description": "The password that corresponds to the username.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "username": {
+                          "computed": true,
                           "description": "The name of the user.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -731,9 +758,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "api_secret_key": {
+                          "computed": true,
                           "description": "The Secret Access Key portion of the credentials.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -747,15 +775,17 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "password": {
+                          "computed": true,
                           "description": "The password that corresponds to the username.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "username": {
+                          "computed": true,
                           "description": "The name of the user.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -776,15 +806,17 @@ const awsccAppflowConnectorProfile = `{
                           "type": "string"
                         },
                         "client_id": {
+                          "computed": true,
                           "description": "The identi?er for the desired client.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "client_secret": {
+                          "computed": true,
                           "description": "The client secret used by the oauth client to authenticate to the authorization server.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "connector_o_auth_request": {
@@ -886,9 +918,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "instance_url": {
+                          "computed": true,
                           "description": "The location of the Datadog resource",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -902,9 +935,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "instance_url": {
+                          "computed": true,
                           "description": "The location of the Dynatrace resource",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -918,9 +952,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "instance_url": {
+                          "computed": true,
                           "description": "The location of the InforNexus resource",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -934,9 +969,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "instance_url": {
+                          "computed": true,
                           "description": "The location of the Marketo resource",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -950,9 +986,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "business_unit_id": {
+                          "computed": true,
                           "description": "The Business unit id of Salesforce Pardot instance to be connected",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "instance_url": {
@@ -980,9 +1017,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "bucket_name": {
+                          "computed": true,
                           "description": "The name of the Amazon S3 bucket associated with Redshift.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "bucket_prefix": {
@@ -1028,9 +1066,10 @@ const awsccAppflowConnectorProfile = `{
                           "type": "bool"
                         },
                         "role_arn": {
+                          "computed": true,
                           "description": "The Amazon Resource Name (ARN) of the IAM role.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "workgroup_name": {
@@ -1152,9 +1191,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "instance_url": {
+                          "computed": true,
                           "description": "The location of the ServiceNow resource",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1168,9 +1208,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "instance_url": {
+                          "computed": true,
                           "description": "The location of the Slack resource",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1191,9 +1232,10 @@ const awsccAppflowConnectorProfile = `{
                           "type": "string"
                         },
                         "bucket_name": {
+                          "computed": true,
                           "description": "The name of the Amazon S3 bucket associated with Snow?ake.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "bucket_prefix": {
@@ -1218,15 +1260,17 @@ const awsccAppflowConnectorProfile = `{
                           "type": "string"
                         },
                         "stage": {
+                          "computed": true,
                           "description": "The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the\nSnow?ake account. This is written in the following format: \u003c Database\u003e\u003c Schema\u003e\u003cStage Name\u003e.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "warehouse": {
+                          "computed": true,
                           "description": "The name of the Snow?ake warehouse.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1240,9 +1284,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "instance_url": {
+                          "computed": true,
                           "description": "The location of the Veeva resource",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },
@@ -1256,9 +1301,10 @@ const awsccAppflowConnectorProfile = `{
                     "nested_type": {
                       "attributes": {
                         "instance_url": {
+                          "computed": true,
                           "description": "The location of the Zendesk resource",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         }
                       },

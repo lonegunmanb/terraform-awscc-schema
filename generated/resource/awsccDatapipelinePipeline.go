@@ -42,31 +42,35 @@ const awsccDatapipelinePipeline = `{
         "nested_type": {
           "attributes": {
             "attributes": {
+              "computed": true,
               "description": "The attributes of the parameter object.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "key": {
+                    "computed": true,
                     "description": "The field identifier.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "string_value": {
+                    "computed": true,
                     "description": "The field value, expressed as a String.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "id": {
+              "computed": true,
               "description": "The ID of the parameter object.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -81,15 +85,17 @@ const awsccDatapipelinePipeline = `{
         "nested_type": {
           "attributes": {
             "id": {
+              "computed": true,
               "description": "The ID of the parameter value.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "string_value": {
+              "computed": true,
               "description": "The field value, expressed as a String.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -109,14 +115,16 @@ const awsccDatapipelinePipeline = `{
         "nested_type": {
           "attributes": {
             "fields": {
+              "computed": true,
               "description": "Key-value pairs that define the properties of the object.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "key": {
+                    "computed": true,
                     "description": "Specifies the name of a field for a particular object. To view valid values for a particular field, see Pipeline Object Reference in the AWS Data Pipeline Developer Guide.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "ref_value": {
@@ -136,18 +144,20 @@ const awsccDatapipelinePipeline = `{
                 },
                 "nesting_mode": "list"
               },
-              "required": true
+              "optional": true
             },
             "id": {
+              "computed": true,
               "description": "The ID of the object.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "name": {
+              "computed": true,
               "description": "The name of the object.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
@@ -162,15 +172,17 @@ const awsccDatapipelinePipeline = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of a tag.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value to associate with the key name.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

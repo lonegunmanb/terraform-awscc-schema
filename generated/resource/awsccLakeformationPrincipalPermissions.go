@@ -81,27 +81,31 @@ const awsccLakeformationPrincipalPermissions = `{
               "nested_type": {
                 "attributes": {
                   "database_name": {
+                    "computed": true,
                     "description": "A database in the GLUDC.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description": "The name given by the user to the data filter cell.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "table_catalog_id": {
+                    "computed": true,
                     "description": "The ID of the catalog to which the table belongs.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "table_name": {
+                    "computed": true,
                     "description": "The name of the table.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -116,15 +120,17 @@ const awsccLakeformationPrincipalPermissions = `{
               "nested_type": {
                 "attributes": {
                   "catalog_id": {
+                    "computed": true,
                     "description": "The identifier for the GLUDC where the location is registered with LFlong.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "resource_arn": {
+                    "computed": true,
                     "description": "The Amazon Resource Name (ARN) that uniquely identifies the data location resource.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -139,15 +145,17 @@ const awsccLakeformationPrincipalPermissions = `{
               "nested_type": {
                 "attributes": {
                   "catalog_id": {
+                    "computed": true,
                     "description": "The identifier for the Data Catalog. By default, it is the account ID of the caller.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description": "The name of the database resource. Unique to the Data Catalog.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -162,21 +170,24 @@ const awsccLakeformationPrincipalPermissions = `{
               "nested_type": {
                 "attributes": {
                   "catalog_id": {
+                    "computed": true,
                     "description": "The identifier for the GLUDC where the location is registered with GLUDC.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "tag_key": {
+                    "computed": true,
                     "description": "The key-name for the LF-tag.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "tag_values": {
+                    "computed": true,
                     "description": "A list of possible values for the corresponding ` + "`" + `` + "`" + `TagKey` + "`" + `` + "`" + ` of an LF-tag key-value pair.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -194,12 +205,14 @@ const awsccLakeformationPrincipalPermissions = `{
               "nested_type": {
                 "attributes": {
                   "catalog_id": {
+                    "computed": true,
                     "description": "The identifier for the GLUDC. The GLUDC is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your LFlong environment.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "expression": {
+                    "computed": true,
                     "description": "A list of LF-tag conditions that apply to the resource's LF-tag policy.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -224,12 +237,13 @@ const awsccLakeformationPrincipalPermissions = `{
                       },
                       "nesting_mode": "list"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "resource_type": {
+                    "computed": true,
                     "description": "The resource type for which the LF-tag policy applies.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
@@ -244,15 +258,17 @@ const awsccLakeformationPrincipalPermissions = `{
               "nested_type": {
                 "attributes": {
                   "catalog_id": {
+                    "computed": true,
                     "description": "The identifier for the Data Catalog. By default, it is the account ID of the caller.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "database_name": {
+                    "computed": true,
                     "description": "The name of the database for the table. Unique to a Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
@@ -281,9 +297,10 @@ const awsccLakeformationPrincipalPermissions = `{
               "nested_type": {
                 "attributes": {
                   "catalog_id": {
+                    "computed": true,
                     "description": "The identifier for the GLUDC where the location is registered with LFlong.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "column_names": {
@@ -318,15 +335,17 @@ const awsccLakeformationPrincipalPermissions = `{
                     "optional": true
                   },
                   "database_name": {
+                    "computed": true,
                     "description": "The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a principal.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "name": {
+                    "computed": true,
                     "description": "The name of the table resource. A table is a metadata definition that represents your data. You can Grant and Revoke table privileges to a principal.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },

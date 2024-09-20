@@ -51,9 +51,10 @@ const awsccConnectcampaignsCampaign = `{
               "nested_type": {
                 "attributes": {
                   "bandwidth_allocation": {
+                    "computed": true,
                     "description": "The bandwidth allocation of a queue resource.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "dialing_capacity": {
@@ -75,9 +76,10 @@ const awsccConnectcampaignsCampaign = `{
               "nested_type": {
                 "attributes": {
                   "bandwidth_allocation": {
+                    "computed": true,
                     "description": "The bandwidth allocation of a queue resource.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "number"
                   },
                   "dialing_capacity": {
@@ -128,9 +130,10 @@ const awsccConnectcampaignsCampaign = `{
                     "type": "bool"
                   },
                   "enable_answer_machine_detection": {
+                    "computed": true,
                     "description": "Flag to decided whether outbound calls should have answering machine detection enabled or not",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "bool"
                   }
                 },
@@ -170,15 +173,17 @@ const awsccConnectcampaignsCampaign = `{
         "nested_type": {
           "attributes": {
             "key": {
+              "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "value": {
+              "computed": true,
               "description": "The value for the tag. You can specify a value that's 1 to 256 characters in length.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
