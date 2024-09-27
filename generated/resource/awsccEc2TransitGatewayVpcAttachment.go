@@ -50,6 +50,13 @@ const awsccEc2TransitGatewayVpcAttachment = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "security_group_referencing_support": {
+              "computed": true,
+              "description": "Indicates whether to enable Security Group referencing support for Vpc Attachment. Valid values: enable | disable",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             }
           },
           "nesting_mode": "single"

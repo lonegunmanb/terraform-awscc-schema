@@ -10,8 +10,9 @@ const awsccIotfleetwiseCampaign = `{
   "block": {
     "attributes": {
       "action": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "arn": {

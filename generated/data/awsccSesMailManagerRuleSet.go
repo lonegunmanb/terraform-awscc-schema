@@ -343,6 +343,11 @@ const awsccSesMailManagerRuleSet = `{
                                 "computed": true,
                                 "description_kind": "plain",
                                 "type": "string"
+                              },
+                              "mime_header_attribute": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
                               }
                             },
                             "nesting_mode": "single"
@@ -564,6 +569,11 @@ const awsccSesMailManagerRuleSet = `{
                           "nested_type": {
                             "attributes": {
                               "attribute": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "mime_header_attribute": {
                                 "computed": true,
                                 "description_kind": "plain",
                                 "type": "string"

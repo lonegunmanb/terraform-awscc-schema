@@ -11,7 +11,7 @@ const awsccRoute53ProfilesProfileAssociation = `{
     "attributes": {
       "arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the  profile association.",
+        "description": "The Amazon Resource Name (ARN) of the profile association.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

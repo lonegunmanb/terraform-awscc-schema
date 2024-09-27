@@ -6,47 +6,50 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccEc2TransitGateway = `{
+const awsccAmazonmqConfiguration = `{
   "block": {
     "attributes": {
-      "amazon_side_asn": {
+      "arn": {
         "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the Amazon MQ configuration.",
         "description_kind": "plain",
-        "optional": true,
-        "type": "number"
+        "type": "string"
       },
-      "association_default_route_table_id": {
+      "authentication_strategy": {
         "computed": true,
+        "description": "The authentication strategy associated with the configuration. The default is SIMPLE.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
-      "auto_accept_shared_attachments": {
+      "configuration_id": {
         "computed": true,
+        "description": "The ID of the Amazon MQ configuration.",
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
-      "default_route_table_association": {
-        "computed": true,
+      "data": {
+        "description": "The base64-encoded XML configuration.",
         "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
-      "default_route_table_propagation": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "description": {
         "computed": true,
+        "description": "The description of the configuration.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
-      "dns_support": {
+      "engine_type": {
+        "description": "The type of broker engine. Note: Currently, Amazon MQ only supports ACTIVEMQ for creating and editing broker configurations.",
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "engine_version": {
         "computed": true,
+        "description": "The version of the broker engine.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -57,26 +60,21 @@ const awsccEc2TransitGateway = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "multicast_support": {
-        "computed": true,
+      "name": {
+        "description": "The name of the configuration.",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
-      "propagation_default_route_table_id": {
+      "revision": {
         "computed": true,
+        "description": "The revision number of the configuration.",
         "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
-      "security_group_referencing_support": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "tags": {
         "computed": true,
+        "description": "Create tags when creating the configuration.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -96,41 +94,16 @@ const awsccEc2TransitGateway = `{
           "nesting_mode": "list"
         },
         "optional": true
-      },
-      "transit_gateway_arn": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "transit_gateway_cidr_blocks": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
-        "type": [
-          "list",
-          "string"
-        ]
-      },
-      "transit_gateway_id": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "vpn_ecmp_support": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
       }
     },
-    "description": "Resource Type definition for AWS::EC2::TransitGateway",
+    "description": "Resource Type definition for AWS::AmazonMQ::Configuration",
     "description_kind": "plain"
   },
   "version": 1
 }`
 
-func AwsccEc2TransitGatewaySchema() *tfjson.Schema {
+func AwsccAmazonmqConfigurationSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccEc2TransitGateway), &result)
+	_ = json.Unmarshal([]byte(awsccAmazonmqConfiguration), &result)
 	return &result
 }

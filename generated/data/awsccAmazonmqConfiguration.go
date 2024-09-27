@@ -6,41 +6,48 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccEc2TransitGateway = `{
+const awsccAmazonmqConfiguration = `{
   "block": {
     "attributes": {
-      "amazon_side_asn": {
+      "arn": {
         "computed": true,
-        "description_kind": "plain",
-        "type": "number"
-      },
-      "association_default_route_table_id": {
-        "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the Amazon MQ configuration.",
         "description_kind": "plain",
         "type": "string"
       },
-      "auto_accept_shared_attachments": {
+      "authentication_strategy": {
         "computed": true,
+        "description": "The authentication strategy associated with the configuration. The default is SIMPLE.",
         "description_kind": "plain",
         "type": "string"
       },
-      "default_route_table_association": {
+      "configuration_id": {
         "computed": true,
+        "description": "The ID of the Amazon MQ configuration.",
         "description_kind": "plain",
         "type": "string"
       },
-      "default_route_table_propagation": {
+      "data": {
         "computed": true,
+        "description": "The base64-encoded XML configuration.",
         "description_kind": "plain",
         "type": "string"
       },
       "description": {
         "computed": true,
+        "description": "The description of the configuration.",
         "description_kind": "plain",
         "type": "string"
       },
-      "dns_support": {
+      "engine_type": {
         "computed": true,
+        "description": "The type of broker engine. Note: Currently, Amazon MQ only supports ACTIVEMQ for creating and editing broker configurations.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "engine_version": {
+        "computed": true,
+        "description": "The version of the broker engine.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -50,23 +57,21 @@ const awsccEc2TransitGateway = `{
         "required": true,
         "type": "string"
       },
-      "multicast_support": {
+      "name": {
         "computed": true,
+        "description": "The name of the configuration.",
         "description_kind": "plain",
         "type": "string"
       },
-      "propagation_default_route_table_id": {
+      "revision": {
         "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "security_group_referencing_support": {
-        "computed": true,
+        "description": "The revision number of the configuration.",
         "description_kind": "plain",
         "type": "string"
       },
       "tags": {
         "computed": true,
+        "description": "Create tags when creating the configuration.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -83,39 +88,16 @@ const awsccEc2TransitGateway = `{
           },
           "nesting_mode": "list"
         }
-      },
-      "transit_gateway_arn": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "transit_gateway_cidr_blocks": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": [
-          "list",
-          "string"
-        ]
-      },
-      "transit_gateway_id": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "vpn_ecmp_support": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
       }
     },
-    "description": "Data Source schema for AWS::EC2::TransitGateway",
+    "description": "Data Source schema for AWS::AmazonMQ::Configuration",
     "description_kind": "plain"
   },
   "version": 0
 }`
 
-func AwsccEc2TransitGatewaySchema() *tfjson.Schema {
+func AwsccAmazonmqConfigurationSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccEc2TransitGateway), &result)
+	_ = json.Unmarshal([]byte(awsccAmazonmqConfiguration), &result)
 	return &result
 }
