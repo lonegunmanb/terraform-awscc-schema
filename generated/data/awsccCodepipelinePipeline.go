@@ -216,6 +216,15 @@ const awsccCodepipelinePipeline = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "commands": {
+                    "computed": true,
+                    "description": "The shell commands to run with your compute action in CodePipeline.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
                   "configuration": {
                     "computed": true,
                     "description": "The action's configuration. These are key-value pairs that specify input values for an action.",
@@ -254,6 +263,15 @@ const awsccCodepipelinePipeline = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "files": {
+                          "computed": true,
+                          "description": "The files that you want to associate with the output artifact that will be exported from the compute action.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
                         "name": {
                           "computed": true,
                           "description": "The name of the output of an artifact, such as \"My App\".",
@@ -263,6 +281,15 @@ const awsccCodepipelinePipeline = `{
                       },
                       "nesting_mode": "list"
                     }
+                  },
+                  "output_variables": {
+                    "computed": true,
+                    "description": "The list of variables that are to be exported from the compute action.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   },
                   "region": {
                     "computed": true,

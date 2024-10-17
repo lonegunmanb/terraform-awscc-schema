@@ -15,6 +15,7 @@ const awsccB2BiTransformer = `{
         "type": "string"
       },
       "edi_type": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -43,11 +44,12 @@ const awsccB2BiTransformer = `{
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
       },
       "file_format": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "id": {
@@ -56,9 +58,81 @@ const awsccB2BiTransformer = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "mapping_template": {
+      "input_conversion": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "nested_type": {
+          "attributes": {
+            "format_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "x12": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "transaction_set": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "version": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "from_format": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "mapping": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "template": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "template_language": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "mapping_template": {
+        "computed": true,
+        "description": "This shape is deprecated: This is a legacy trait. Please use input-conversion or output-conversion.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "modified_at": {
@@ -71,11 +145,98 @@ const awsccB2BiTransformer = `{
         "required": true,
         "type": "string"
       },
+      "output_conversion": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "format_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "x12": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "transaction_set": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "version": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "to_format": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "sample_document": {
         "computed": true,
+        "description": "This shape is deprecated: This is a legacy trait. Please use input-conversion or output-conversion.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "sample_documents": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "bucket_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "keys": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "input": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "output": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "status": {
         "description_kind": "plain",

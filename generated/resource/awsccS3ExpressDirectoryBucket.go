@@ -23,9 +23,56 @@ const awsccS3ExpressDirectoryBucket = `{
       },
       "bucket_encryption": {
         "computed": true,
+        "description": "Specifies default encryption for a bucket using server-side encryption with Amazon S3 managed keys (SSE-S3) or AWS KMS keys (SSE-KMS).",
         "description_kind": "plain",
-        "optional": true,
-        "type": "string"
+        "nested_type": {
+          "attributes": {
+            "server_side_encryption_configuration": {
+              "computed": true,
+              "description": "Specifies the default server-side-encryption configuration.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "bucket_key_enabled": {
+                    "computed": true,
+                    "description": "Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Amazon S3 Express One Zone uses an S3 Bucket Key with SSE-KMS and S3 Bucket Key cannot be disabled. It's only allowed to set the BucketKeyEnabled element to true.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
+                  "server_side_encryption_by_default": {
+                    "computed": true,
+                    "description": "Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "kms_master_key_id": {
+                          "computed": true,
+                          "description": "AWS Key Management Service (KMS) customer managed key ID to use for the default encryption. This parameter is allowed only if SSEAlgorithm is set to aws:kms. You can specify this parameter with the key ID or the Amazon Resource Name (ARN) of the KMS key",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "sse_algorithm": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "bucket_name": {
         "computed": true,

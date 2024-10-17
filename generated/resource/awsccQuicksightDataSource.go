@@ -2165,6 +2165,15 @@ const awsccQuicksightDataSource = `{
         },
         "optional": true
       },
+      "folder_arns": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

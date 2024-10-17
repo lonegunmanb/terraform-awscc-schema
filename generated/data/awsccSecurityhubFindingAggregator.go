@@ -33,7 +33,7 @@ const awsccSecurityhubFindingAggregator = `{
       },
       "regions": {
         "computed": true,
-        "description": "If ` + "`" + `` + "`" + `RegionLinkingMode` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `ALL_REGIONS_EXCEPT_SPECIFIED` + "`" + `` + "`" + `, then this is a space-separated list of Regions that do not aggregate findings to the aggregation Region.\n If ` + "`" + `` + "`" + `RegionLinkingMode` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `SPECIFIED_REGIONS` + "`" + `` + "`" + `, then this is a space-separated list of Regions that do aggregate findings to the aggregation Region. \n An ` + "`" + `` + "`" + `InvalidInputException` + "`" + `` + "`" + ` error results if you populate this field while ` + "`" + `` + "`" + `RegionLinkingMode` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `NO_REGIONS` + "`" + `` + "`" + `.",
+        "description": "If ` + "`" + `` + "`" + `RegionLinkingMode` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `ALL_REGIONS_EXCEPT_SPECIFIED` + "`" + `` + "`" + `, then this is a space-separated list of Regions that don't replicate and send findings to the home Region.\n If ` + "`" + `` + "`" + `RegionLinkingMode` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `SPECIFIED_REGIONS` + "`" + `` + "`" + `, then this is a space-separated list of Regions that do replicate and send findings to the home Region. \n An ` + "`" + `` + "`" + `InvalidInputException` + "`" + `` + "`" + ` error results if you populate this field while ` + "`" + `` + "`" + `RegionLinkingMode` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `NO_REGIONS` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "type": [
           "set",

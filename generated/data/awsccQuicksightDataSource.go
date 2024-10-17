@@ -1902,6 +1902,14 @@ const awsccQuicksightDataSource = `{
           "nesting_mode": "single"
         }
       },
+      "folder_arns": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

@@ -72,6 +72,14 @@ const awsccQbusinessWebExperience = `{
           "nesting_mode": "single"
         }
       },
+      "origins": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "role_arn": {
         "computed": true,
         "description_kind": "plain",

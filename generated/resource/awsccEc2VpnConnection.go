@@ -30,30 +30,35 @@ const awsccEc2VpnConnection = `{
       },
       "local_ipv_4_network_cidr": {
         "computed": true,
+        "description": "The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.\n Default: ` + "`" + `` + "`" + `0.0.0.0/0` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "local_ipv_6_network_cidr": {
         "computed": true,
+        "description": "The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.\n Default: ` + "`" + `` + "`" + `::/0` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "outside_ip_address_type": {
         "computed": true,
+        "description": "The type of IPv4 address assigned to the outside interface of the customer gateway device.\n Valid values: ` + "`" + `` + "`" + `PrivateIpv4` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `PublicIpv4` + "`" + `` + "`" + ` \n Default: ` + "`" + `` + "`" + `PublicIpv4` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "remote_ipv_4_network_cidr": {
         "computed": true,
+        "description": "The IPv4 CIDR on the AWS side of the VPN connection.\n Default: ` + "`" + `` + "`" + `0.0.0.0/0` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "remote_ipv_6_network_cidr": {
         "computed": true,
+        "description": "The IPv6 CIDR on the AWS side of the VPN connection.\n Default: ` + "`" + `` + "`" + `::/0` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -99,12 +104,14 @@ const awsccEc2VpnConnection = `{
       },
       "transport_transit_gateway_attachment_id": {
         "computed": true,
+        "description": "The transit gateway attachment ID to use for the VPN tunnel.\n Required if ` + "`" + `` + "`" + `OutsideIpAddressType` + "`" + `` + "`" + ` is set to ` + "`" + `` + "`" + `PrivateIpv4` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "tunnel_inside_ip_version": {
         "computed": true,
+        "description": "Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.\n Default: ` + "`" + `` + "`" + `ipv4` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -133,6 +140,186 @@ const awsccEc2VpnConnection = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "dpd_timeout_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "dpd_timeout_seconds": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "enable_tunnel_lifecycle_control": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "ike_versions": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "log_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cloudwatch_log_options": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "log_enabled": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        },
+                        "log_group_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "log_output_format": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "phase_1_dh_group_numbers": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "phase_1_encryption_algorithms": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "phase_1_integrity_algorithms": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "phase_1_lifetime_seconds": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "phase_2_dh_group_numbers": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "phase_2_encryption_algorithms": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "phase_2_integrity_algorithms": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "phase_2_lifetime_seconds": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
             "pre_shared_key": {
               "computed": true,
               "description": "The pre-shared key (PSK) to establish initial authentication between the virtual private gateway and customer gateway.\n Constraints: Allowed characters are alphanumeric characters, periods (.), and underscores (_). Must be between 8 and 64 characters in length and cannot start with zero (0).",
@@ -140,9 +327,39 @@ const awsccEc2VpnConnection = `{
               "optional": true,
               "type": "string"
             },
+            "rekey_fuzz_percentage": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "rekey_margin_time_seconds": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "replay_window_size": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "startup_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "tunnel_inside_cidr": {
               "computed": true,
               "description": "The range of inside IP addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway. \n Constraints: A size /30 CIDR block from the ` + "`" + `` + "`" + `169.254.0.0/16` + "`" + `` + "`" + ` range. The following CIDR blocks are reserved and cannot be used:\n  +   ` + "`" + `` + "`" + `169.254.0.0/30` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `169.254.1.0/30` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `169.254.2.0/30` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `169.254.3.0/30` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `169.254.4.0/30` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `169.254.5.0/30` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `169.254.169.252/30` + "`" + `` + "`" + `",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "tunnel_inside_ipv_6_cidr": {
+              "computed": true,
               "description_kind": "plain",
               "optional": true,
               "type": "string"

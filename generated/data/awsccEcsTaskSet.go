@@ -9,6 +9,30 @@ import (
 const awsccEcsTaskSet = `{
   "block": {
     "attributes": {
+      "capacity_provider_strategy": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "capacity_provider": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "weight": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "cluster": {
         "computed": true,
         "description": "The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.",

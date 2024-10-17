@@ -9,7 +9,17 @@ import (
 const awsccIotDomainConfiguration = `{
   "block": {
     "attributes": {
+      "application_protocol": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "authentication_type": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
@@ -25,6 +35,20 @@ const awsccIotDomainConfiguration = `{
               "type": "bool"
             },
             "default_authorizer_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "client_certificate_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "client_certificate_callback_arn": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"

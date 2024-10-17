@@ -21,12 +21,12 @@ const awsccIoteventsInput = `{
         "nested_type": {
           "attributes": {
             "attributes": {
-              "description": "The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using ` + "`" + `BatchPutMessage` + "`" + `. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the ` + "`" + `condition` + "`" + ` expressions used by detectors that monitor this input.",
+              "description": "The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the ITE system using ` + "`" + `` + "`" + `BatchPutMessage` + "`" + `` + "`" + `. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the ` + "`" + `` + "`" + `condition` + "`" + `` + "`" + ` expressions used by detectors that monitor this input.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "json_path": {
-                    "description": "An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (` + "`" + `BatchPutMessage` + "`" + `). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the ` + "`" + `condition` + "`" + ` expressions used by detectors.\n\n_Syntax_: ` + "`" + `\u003cfield-name\u003e.\u003cfield-name\u003e...` + "`" + `",
+                    "description": "An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to ITE (` + "`" + `` + "`" + `BatchPutMessage` + "`" + `` + "`" + `). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the ` + "`" + `` + "`" + `condition` + "`" + `` + "`" + ` expressions used by detectors. \n Syntax: ` + "`" + `` + "`" + `\u003cfield-name\u003e.\u003cfield-name\u003e...` + "`" + `` + "`" + `",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"
@@ -57,20 +57,20 @@ const awsccIoteventsInput = `{
       },
       "tags": {
         "computed": true,
-        "description": "An array of key-value pairs to apply to this resource.\n\nFor more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).",
+        "description": "An array of key-value pairs to apply to this resource.\n For more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
               "computed": true,
-              "description": "Key of the Tag.",
+              "description": "The tag's key.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "Value of the Tag.",
+              "description": "The tag's value.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -81,7 +81,7 @@ const awsccIoteventsInput = `{
         "optional": true
       }
     },
-    "description": "The AWS::IoTEvents::Input resource creates an input. To monitor your devices and processes, they must have a way to get telemetry data into AWS IoT Events. This is done by sending messages as *inputs* to AWS IoT Events. For more information, see [How to Use AWS IoT Events](https://docs.aws.amazon.com/iotevents/latest/developerguide/how-to-use-iotevents.html) in the *AWS IoT Events Developer Guide*.",
+    "description": "The AWS::IoTEvents::Input resource creates an input. To monitor your devices and processes, they must have a way to get telemetry data into ITE. This is done by sending messages as *inputs* to ITE. For more information, see [How to Use](https://docs.aws.amazon.com/iotevents/latest/developerguide/how-to-use-iotevents.html) in the *Developer Guide*.",
     "description_kind": "plain"
   },
   "version": 1

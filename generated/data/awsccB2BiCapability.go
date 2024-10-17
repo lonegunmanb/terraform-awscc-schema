@@ -29,6 +29,11 @@ const awsccB2BiCapability = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "capability_direction": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "input_location": {
                     "computed": true,
                     "description_kind": "plain",

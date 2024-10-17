@@ -42,7 +42,7 @@ const awsccEksCluster = `{
       },
       "bootstrap_self_managed_addons": {
         "computed": true,
-        "description": "Set this value to false to avoid creating the default networking addons when the cluster is created.",
+        "description": "Set this value to false to avoid creating the default networking add-ons when the cluster is created.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
@@ -359,6 +359,24 @@ const awsccEksCluster = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "zonal_shift_config": {
+        "computed": true,
+        "description": "The current zonal shift configuration to use for the cluster.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled": {
+              "computed": true,
+              "description": "Set this value to true to enable zonal shift for the cluster.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       }
     },
     "description": "An object representing an Amazon EKS cluster.",

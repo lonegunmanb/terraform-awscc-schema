@@ -103,9 +103,10 @@ const awsccGlueSchema = `{
         "optional": true
       },
       "schema_definition": {
+        "computed": true,
         "description": "Definition for the initial schema version in plain-text.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "tags": {

@@ -50,7 +50,7 @@ const awsccEc2NatGateway = `{
       },
       "secondary_allocation_ids": {
         "computed": true,
-        "description": "Secondary EIP allocation IDs. For more information, see [Create a NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating) in the *Amazon VPC User Guide*.",
+        "description": "Secondary EIP allocation IDs. For more information, see [Create a NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html) in the *Amazon VPC User Guide*.",
         "description_kind": "plain",
         "optional": true,
         "type": [

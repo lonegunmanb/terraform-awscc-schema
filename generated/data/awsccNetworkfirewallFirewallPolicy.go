@@ -58,6 +58,20 @@ const awsccNetworkfirewallFirewallPolicy = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "flow_timeouts": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "tcp_idle_timeout_seconds": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "rule_order": {
                     "computed": true,
                     "description_kind": "plain",

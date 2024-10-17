@@ -78,6 +78,15 @@ const awsccQbusinessWebExperience = `{
         },
         "optional": true
       },
+      "origins": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "role_arn": {
         "computed": true,
         "description_kind": "plain",

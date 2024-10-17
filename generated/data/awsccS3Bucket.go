@@ -675,6 +675,11 @@ const awsccS3Bucket = `{
                 },
                 "nesting_mode": "list"
               }
+            },
+            "transition_default_minimum_object_size": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             }
           },
           "nesting_mode": "single"

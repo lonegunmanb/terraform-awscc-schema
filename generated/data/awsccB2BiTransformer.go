@@ -53,8 +53,70 @@ const awsccB2BiTransformer = `{
         "required": true,
         "type": "string"
       },
+      "input_conversion": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "format_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "x12": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "transaction_set": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "version": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "from_format": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "mapping": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "template": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "template_language": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "mapping_template": {
         "computed": true,
+        "description": "This shape is deprecated: This is a legacy trait. Please use input-conversion or output-conversion.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -68,10 +130,86 @@ const awsccB2BiTransformer = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "sample_document": {
+      "output_conversion": {
         "computed": true,
         "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "format_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "x12": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "transaction_set": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "version": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "to_format": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "sample_document": {
+        "computed": true,
+        "description": "This shape is deprecated: This is a legacy trait. Please use input-conversion or output-conversion.",
+        "description_kind": "plain",
         "type": "string"
+      },
+      "sample_documents": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "bucket_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "keys": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "input": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "output": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "status": {
         "computed": true,

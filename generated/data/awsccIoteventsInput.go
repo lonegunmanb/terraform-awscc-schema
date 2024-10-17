@@ -23,13 +23,13 @@ const awsccIoteventsInput = `{
           "attributes": {
             "attributes": {
               "computed": true,
-              "description": "The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using ` + "`" + `BatchPutMessage` + "`" + `. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the ` + "`" + `condition` + "`" + ` expressions used by detectors that monitor this input.",
+              "description": "The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the ITE system using ` + "`" + `` + "`" + `BatchPutMessage` + "`" + `` + "`" + `. Each such message contains a JSON payload, and those attributes (and their paired values) specified here are available for use in the ` + "`" + `` + "`" + `condition` + "`" + `` + "`" + ` expressions used by detectors that monitor this input.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "json_path": {
                     "computed": true,
-                    "description": "An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (` + "`" + `BatchPutMessage` + "`" + `). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the ` + "`" + `condition` + "`" + ` expressions used by detectors.\n\n_Syntax_: ` + "`" + `\u003cfield-name\u003e.\u003cfield-name\u003e...` + "`" + `",
+                    "description": "An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to ITE (` + "`" + `` + "`" + `BatchPutMessage` + "`" + `` + "`" + `). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the ` + "`" + `` + "`" + `condition` + "`" + `` + "`" + ` expressions used by detectors. \n Syntax: ` + "`" + `` + "`" + `\u003cfield-name\u003e.\u003cfield-name\u003e...` + "`" + `` + "`" + `",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -55,19 +55,19 @@ const awsccIoteventsInput = `{
       },
       "tags": {
         "computed": true,
-        "description": "An array of key-value pairs to apply to this resource.\n\nFor more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).",
+        "description": "An array of key-value pairs to apply to this resource.\n For more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html).",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
               "computed": true,
-              "description": "Key of the Tag.",
+              "description": "The tag's key.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "Value of the Tag.",
+              "description": "The tag's value.",
               "description_kind": "plain",
               "type": "string"
             }
