@@ -67,6 +67,12 @@ const awsccMemorydbCluster = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "engine": {
+        "computed": true,
+        "description": "The engine type used by the cluster.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "engine_version": {
         "computed": true,
         "description": "The Redis engine version used by the cluster.",

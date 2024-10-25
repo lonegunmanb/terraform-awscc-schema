@@ -32,13 +32,15 @@ const awsccRefactorspacesEnvironment = `{
         "type": "string"
       },
       "name": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "network_fabric_type": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "tags": {

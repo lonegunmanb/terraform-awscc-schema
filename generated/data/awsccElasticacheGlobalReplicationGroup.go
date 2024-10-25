@@ -27,6 +27,12 @@ const awsccElasticacheGlobalReplicationGroup = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "engine": {
+        "computed": true,
+        "description": "The engine of the Global Datastore.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "engine_version": {
         "computed": true,
         "description": "The engine version of the Global Datastore.",

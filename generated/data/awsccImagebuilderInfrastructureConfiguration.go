@@ -108,6 +108,40 @@ const awsccImagebuilderInfrastructureConfiguration = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "placement": {
+        "computed": true,
+        "description": "The placement option settings for the infrastructure configuration.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "availability_zone": {
+              "computed": true,
+              "description": "AvailabilityZone",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "host_id": {
+              "computed": true,
+              "description": "HostId",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "host_resource_group_arn": {
+              "computed": true,
+              "description": "HostResourceGroupArn",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "tenancy": {
+              "computed": true,
+              "description": "Tenancy",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "resource_tags": {
         "computed": true,
         "description": "The tags attached to the resource created by Image Builder.",

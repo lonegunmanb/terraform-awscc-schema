@@ -11,7 +11,7 @@ const awsccApigatewayv2DomainName = `{
     "attributes": {
       "domain_name": {
         "computed": true,
-        "description": "The custom domain name for your API in Amazon API Gateway. Uppercase letters are not supported.",
+        "description": "The custom domain name for your API in Amazon API Gateway. Uppercase letters and the underscore (` + "`" + `` + "`" + `_` + "`" + `` + "`" + `) character are not supported.",
         "description_kind": "plain",
         "type": "string"
       },

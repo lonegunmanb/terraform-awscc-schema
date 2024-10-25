@@ -69,13 +69,13 @@ const awsccIvsEncoderConfiguration = `{
             },
             "height": {
               "computed": true,
-              "description": "Video-resolution height. Note that the maximum value is determined by width times height, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 720.",
+              "description": "Video-resolution height. This must be an even number. Note that the maximum value is determined by width times height, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 720.",
               "description_kind": "plain",
               "type": "number"
             },
             "width": {
               "computed": true,
-              "description": "Video-resolution width. Note that the maximum value is determined by width times height, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 1280.",
+              "description": "Video-resolution width. This must be an even number. Note that the maximum value is determined by width times height, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920). Default: 1280.",
               "description_kind": "plain",
               "type": "number"
             }

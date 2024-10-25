@@ -10,12 +10,14 @@ const awsccEcsCapacityProvider = `{
   "block": {
     "attributes": {
       "auto_scaling_group_provider": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "auto_scaling_group_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "managed_draining": {
@@ -74,7 +76,7 @@ const awsccEcsCapacityProvider = `{
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
       },
       "id": {
         "computed": true,

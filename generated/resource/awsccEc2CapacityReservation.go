@@ -135,6 +135,12 @@ const awsccEc2CapacityReservation = `{
         "computed": true,
         "description_kind": "plain",
         "type": "number"
+      },
+      "unused_reservation_billing_owner_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       }
     },
     "description": "Resource Type definition for AWS::EC2::CapacityReservation",

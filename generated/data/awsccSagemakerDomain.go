@@ -1113,6 +1113,12 @@ const awsccSagemakerDomain = `{
                 "nesting_mode": "single"
               }
             },
+            "execution_role_identity_config": {
+              "computed": true,
+              "description": "The configuration for attaching a SageMaker user profile name to the execution role as a sts:SourceIdentity key.",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "r_studio_server_pro_domain_settings": {
               "computed": true,
               "description": "A collection of settings that update the current configuration for the RStudioServerPro Domain-level app.",
@@ -1231,6 +1237,12 @@ const awsccSagemakerDomain = `{
           "list",
           "string"
         ]
+      },
+      "tag_propagation": {
+        "computed": true,
+        "description": "Indicates whether the tags added to Domain, User Profile and Space entity is propagated to all SageMaker resources.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "tags": {
         "computed": true,

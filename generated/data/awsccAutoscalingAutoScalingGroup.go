@@ -68,7 +68,7 @@ const awsccAutoscalingAutoScalingGroup = `{
       },
       "health_check_type": {
         "computed": true,
-        "description": "A comma-separated value string of one or more health check types.\n The valid values are ` + "`" + `` + "`" + `EC2` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `ELB` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `VPC_LATTICE` + "`" + `` + "`" + `. ` + "`" + `` + "`" + `EC2` + "`" + `` + "`" + ` is the default health check and cannot be disabled. For more information, see [Health checks for instances in an Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html) in the *Amazon EC2 Auto Scaling User Guide*.\n Only specify ` + "`" + `` + "`" + `EC2` + "`" + `` + "`" + ` if you must clear a value that was previously set.",
+        "description": "A comma-separated value string of one or more health check types.\n The valid values are ` + "`" + `` + "`" + `EC2` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `EBS` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `ELB` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `VPC_LATTICE` + "`" + `` + "`" + `. ` + "`" + `` + "`" + `EC2` + "`" + `` + "`" + ` is the default health check and cannot be disabled. For more information, see [Health checks for instances in an Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html) in the *Amazon EC2 Auto Scaling User Guide*.\n Only specify ` + "`" + `` + "`" + `EC2` + "`" + `` + "`" + ` if you must clear a value that was previously set.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -823,6 +823,25 @@ const awsccAutoscalingAutoScalingGroup = `{
           "list",
           "string"
         ]
+      },
+      "traffic_sources": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "identifier": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        }
       },
       "vpc_zone_identifier": {
         "computed": true,

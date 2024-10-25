@@ -142,29 +142,34 @@ const awsccEc2VpnConnection = `{
           "attributes": {
             "dpd_timeout_action": {
               "computed": true,
+              "description": "The action to take after DPD timeout occurs. Specify ` + "`" + `` + "`" + `restart` + "`" + `` + "`" + ` to restart the IKE initiation. Specify ` + "`" + `` + "`" + `clear` + "`" + `` + "`" + ` to end the IKE session.\n Valid Values: ` + "`" + `` + "`" + `clear` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `none` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `restart` + "`" + `` + "`" + ` \n Default: ` + "`" + `` + "`" + `clear` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "dpd_timeout_seconds": {
               "computed": true,
+              "description": "The number of seconds after which a DPD timeout occurs.\n Constraints: A value greater than or equal to 30.\n Default: ` + "`" + `` + "`" + `30` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "enable_tunnel_lifecycle_control": {
               "computed": true,
+              "description": "Turn on or off tunnel endpoint lifecycle control feature.",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
             },
             "ike_versions": {
               "computed": true,
+              "description": "The IKE versions that are permitted for the VPN tunnel.\n Valid values: ` + "`" + `` + "`" + `ikev1` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `ikev2` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "value": {
                     "computed": true,
+                    "description": "The IKE version.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -176,28 +181,33 @@ const awsccEc2VpnConnection = `{
             },
             "log_options": {
               "computed": true,
+              "description": "Options for logging VPN tunnel activity.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "cloudwatch_log_options": {
                     "computed": true,
+                    "description": "Options for sending VPN tunnel logs to CloudWatch.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "log_enabled": {
                           "computed": true,
+                          "description": "Enable or disable VPN tunnel logging feature. Default value is ` + "`" + `` + "`" + `False` + "`" + `` + "`" + `.\n Valid values: ` + "`" + `` + "`" + `True` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `False` + "`" + `` + "`" + `",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "bool"
                         },
                         "log_group_arn": {
                           "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the CloudWatch log group to send logs to.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "log_output_format": {
                           "computed": true,
+                          "description": "Set log format. Default format is ` + "`" + `` + "`" + `json` + "`" + `` + "`" + `.\n Valid values: ` + "`" + `` + "`" + `json` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `text` + "`" + `` + "`" + `",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -214,11 +224,13 @@ const awsccEc2VpnConnection = `{
             },
             "phase_1_dh_group_numbers": {
               "computed": true,
+              "description": "One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations.\n Valid values: ` + "`" + `` + "`" + `2` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `14` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `15` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `16` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `17` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `18` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `19` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `20` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `21` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `22` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `23` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `24` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "value": {
                     "computed": true,
+                    "description": "The Diffie-Hellmann group number.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
@@ -230,11 +242,13 @@ const awsccEc2VpnConnection = `{
             },
             "phase_1_encryption_algorithms": {
               "computed": true,
+              "description": "One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.\n Valid values: ` + "`" + `` + "`" + `AES128` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `AES256` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `AES128-GCM-16` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `AES256-GCM-16` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "value": {
                     "computed": true,
+                    "description": "The value for the encryption algorithm.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -246,11 +260,13 @@ const awsccEc2VpnConnection = `{
             },
             "phase_1_integrity_algorithms": {
               "computed": true,
+              "description": "One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.\n Valid values: ` + "`" + `` + "`" + `SHA1` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `SHA2-256` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `SHA2-384` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `SHA2-512` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "value": {
                     "computed": true,
+                    "description": "The value for the integrity algorithm.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -262,17 +278,20 @@ const awsccEc2VpnConnection = `{
             },
             "phase_1_lifetime_seconds": {
               "computed": true,
+              "description": "The lifetime for phase 1 of the IKE negotiation, in seconds.\n Constraints: A value between 900 and 28,800.\n Default: ` + "`" + `` + "`" + `28800` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "phase_2_dh_group_numbers": {
               "computed": true,
+              "description": "One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.\n Valid values: ` + "`" + `` + "`" + `2` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `5` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `14` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `15` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `16` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `17` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `18` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `19` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `20` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `21` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `22` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `23` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `24` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "value": {
                     "computed": true,
+                    "description": "The Diffie-Hellmann group number.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
@@ -284,11 +303,13 @@ const awsccEc2VpnConnection = `{
             },
             "phase_2_encryption_algorithms": {
               "computed": true,
+              "description": "One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.\n Valid values: ` + "`" + `` + "`" + `AES128` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `AES256` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `AES128-GCM-16` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `AES256-GCM-16` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "value": {
                     "computed": true,
+                    "description": "The encryption algorithm.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -300,11 +321,13 @@ const awsccEc2VpnConnection = `{
             },
             "phase_2_integrity_algorithms": {
               "computed": true,
+              "description": "One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.\n Valid values: ` + "`" + `` + "`" + `SHA1` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `SHA2-256` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `SHA2-384` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `SHA2-512` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "value": {
                     "computed": true,
+                    "description": "The integrity algorithm.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -316,6 +339,7 @@ const awsccEc2VpnConnection = `{
             },
             "phase_2_lifetime_seconds": {
               "computed": true,
+              "description": "The lifetime for phase 2 of the IKE negotiation, in seconds.\n Constraints: A value between 900 and 3,600. The value must be less than the value for ` + "`" + `` + "`" + `Phase1LifetimeSeconds` + "`" + `` + "`" + `.\n Default: ` + "`" + `` + "`" + `3600` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
@@ -329,24 +353,28 @@ const awsccEc2VpnConnection = `{
             },
             "rekey_fuzz_percentage": {
               "computed": true,
+              "description": "The percentage of the rekey window (determined by ` + "`" + `` + "`" + `RekeyMarginTimeSeconds` + "`" + `` + "`" + `) during which the rekey time is randomly selected.\n Constraints: A value between 0 and 100.\n Default: ` + "`" + `` + "`" + `100` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "rekey_margin_time_seconds": {
               "computed": true,
+              "description": "The margin time, in seconds, before the phase 2 lifetime expires, during which the AWS side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for ` + "`" + `` + "`" + `RekeyFuzzPercentage` + "`" + `` + "`" + `.\n Constraints: A value between 60 and half of ` + "`" + `` + "`" + `Phase2LifetimeSeconds` + "`" + `` + "`" + `.\n Default: ` + "`" + `` + "`" + `270` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "replay_window_size": {
               "computed": true,
+              "description": "The number of packets in an IKE replay window.\n Constraints: A value between 64 and 2048.\n Default: ` + "`" + `` + "`" + `1024` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "startup_action": {
               "computed": true,
+              "description": "The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify ` + "`" + `` + "`" + `start` + "`" + `` + "`" + ` for AWS to initiate the IKE negotiation.\n Valid Values: ` + "`" + `` + "`" + `add` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `start` + "`" + `` + "`" + ` \n Default: ` + "`" + `` + "`" + `add` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -360,6 +388,7 @@ const awsccEc2VpnConnection = `{
             },
             "tunnel_inside_ipv_6_cidr": {
               "computed": true,
+              "description": "The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same transit gateway.\n Constraints: A size /126 CIDR block from the local ` + "`" + `` + "`" + `fd00::/8` + "`" + `` + "`" + ` range.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

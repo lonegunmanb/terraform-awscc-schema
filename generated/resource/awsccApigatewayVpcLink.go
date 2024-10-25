@@ -11,7 +11,6 @@ const awsccApigatewayVpcLink = `{
     "attributes": {
       "description": {
         "computed": true,
-        "description": "The description of the VPC link.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -23,7 +22,6 @@ const awsccApigatewayVpcLink = `{
         "type": "string"
       },
       "name": {
-        "description": "The name used to label and identify the VPC link.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -52,7 +50,6 @@ const awsccApigatewayVpcLink = `{
         "optional": true
       },
       "target_arns": {
-        "description": "The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS-account of the API owner.",
         "description_kind": "plain",
         "required": true,
         "type": [
