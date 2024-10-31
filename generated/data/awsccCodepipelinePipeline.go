@@ -561,6 +561,22 @@ const awsccCodepipelinePipeline = `{
                     "description": "The specified result for when the failure conditions are met, such as rolling back the stage",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "retry_configuration": {
+                    "computed": true,
+                    "description": "The configuration that specifies the retry configuration for a stage",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "retry_mode": {
+                          "computed": true,
+                          "description": "The specified retry mode type for the given stage. FAILED_ACTIONS will retry only the failed actions. ALL_ACTIONS will retry both failed and successful",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"

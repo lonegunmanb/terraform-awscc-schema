@@ -414,6 +414,52 @@ const awsccOpensearchserviceDomain = `{
         "required": true,
         "type": "string"
       },
+      "identity_center_options": {
+        "computed": true,
+        "description": "Options for configuring Identity Center",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled_api_access": {
+              "computed": true,
+              "description": "Whether Identity Center is enabled.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "identity_center_application_arn": {
+              "computed": true,
+              "description": "The ARN of the Identity Center application.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "identity_center_instance_arn": {
+              "computed": true,
+              "description": "The ARN of the Identity Center instance.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "identity_store_id": {
+              "computed": true,
+              "description": "The IdentityStoreId for Identity Center options.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "roles_key": {
+              "computed": true,
+              "description": "The roles key for Identity Center options.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "subject_key": {
+              "computed": true,
+              "description": "The subject key for Identity Center options.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "ip_address_type": {
         "computed": true,
         "description_kind": "plain",

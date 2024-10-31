@@ -193,6 +193,28 @@ const awsccBedrockFlowVersion = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "guardrail_configuration": {
+                                "computed": true,
+                                "description": "Configuration for a guardrail",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "guardrail_identifier": {
+                                      "computed": true,
+                                      "description": "Identifier for the guardrail, could be the id or the arn",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "guardrail_version": {
+                                      "computed": true,
+                                      "description": "Version of the guardrail",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
                               "knowledge_base_id": {
                                 "computed": true,
                                 "description": "Identifier of the KnowledgeBase",
@@ -201,7 +223,7 @@ const awsccBedrockFlowVersion = `{
                               },
                               "model_id": {
                                 "computed": true,
-                                "description": "ARN or name of a Bedrock model.",
+                                "description": "ARN or Id of a Bedrock Foundational Model or Inference Profile, or the ARN of a imported model, or a provisioned throughput ARN for custom models.",
                                 "description_kind": "plain",
                                 "type": "string"
                               }
@@ -259,6 +281,28 @@ const awsccBedrockFlowVersion = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "guardrail_configuration": {
+                                "computed": true,
+                                "description": "Configuration for a guardrail",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "guardrail_identifier": {
+                                      "computed": true,
+                                      "description": "Identifier for the guardrail, could be the id or the arn",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "guardrail_version": {
+                                      "computed": true,
+                                      "description": "Version of the guardrail",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
                               "source_configuration": {
                                 "computed": true,
                                 "description": "Prompt source configuration for prompt node",
@@ -304,12 +348,6 @@ const awsccBedrockFlowVersion = `{
                                                         "description_kind": "plain",
                                                         "type": "number"
                                                       },
-                                                      "top_k": {
-                                                        "computed": true,
-                                                        "description": "Sample from the k most likely next tokens",
-                                                        "description_kind": "plain",
-                                                        "type": "number"
-                                                      },
                                                       "top_p": {
                                                         "computed": true,
                                                         "description": "Cumulative probability cutoff for token selection",
@@ -326,7 +364,7 @@ const awsccBedrockFlowVersion = `{
                                           },
                                           "model_id": {
                                             "computed": true,
-                                            "description": "ARN or name of a Bedrock model.",
+                                            "description": "ARN or Id of a Bedrock Foundational Model or Inference Profile, or the ARN of a imported model, or a provisioned throughput ARN for custom models.",
                                             "description_kind": "plain",
                                             "type": "string"
                                           },

@@ -61,6 +61,12 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "clip_start_time": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify the clip start time for all of your manifest egress requests. When you include clip start time, note that you cannot use clip start time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "end": {
                     "computed": true,
                     "description": "\u003cp\u003eOptionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
@@ -224,6 +230,12 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "clip_start_time": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify the clip start time for all of your manifest egress requests. When you include clip start time, note that you cannot use clip start time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "end": {
                     "computed": true,
                     "description": "\u003cp\u003eOptionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
@@ -280,6 +292,28 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "start_tag": {
+              "computed": true,
+              "description": "\u003cp\u003eTo insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.\u003c/p\u003e",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "precise": {
+                    "computed": true,
+                    "description": "\u003cp\u003eSpecify the value for PRECISE within your EXT-X-START tag. Leave blank, or choose false, to use the default value NO. Choose yes to use the value YES.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "time_offset": {
+                    "computed": true,
+                    "description": "\u003cp\u003eSpecify the value for TIME-OFFSET within your EXT-X-START tag. Enter a signed floating point value which, if positive, must be less than the configured manifest duration minus three times the configured segment target duration. If negative, the absolute value must be larger than three times the configured segment target duration, and the absolute value must be smaller than the configured manifest duration.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "number"
                   }
                 },
                 "nesting_mode": "single"
@@ -327,6 +361,12 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "clip_start_time": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify the clip start time for all of your manifest egress requests. When you include clip start time, note that you cannot use clip start time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "end": {
                     "computed": true,
                     "description": "\u003cp\u003eOptionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
@@ -383,6 +423,28 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "start_tag": {
+              "computed": true,
+              "description": "\u003cp\u003eTo insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.\u003c/p\u003e",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "precise": {
+                    "computed": true,
+                    "description": "\u003cp\u003eSpecify the value for PRECISE within your EXT-X-START tag. Leave blank, or choose false, to use the default value NO. Choose yes to use the value YES.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "time_offset": {
+                    "computed": true,
+                    "description": "\u003cp\u003eSpecify the value for TIME-OFFSET within your EXT-X-START tag. Enter a signed floating point value which, if positive, must be less than the configured manifest duration minus three times the configured segment target duration. If negative, the absolute value must be larger than three times the configured segment target duration, and the absolute value must be smaller than the configured manifest duration.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "number"
                   }
                 },
                 "nesting_mode": "single"

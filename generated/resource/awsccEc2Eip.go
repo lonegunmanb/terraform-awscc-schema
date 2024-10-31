@@ -9,6 +9,12 @@ import (
 const awsccEc2Eip = `{
   "block": {
     "attributes": {
+      "address": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "allocation_id": {
         "computed": true,
         "description_kind": "plain",
@@ -30,6 +36,12 @@ const awsccEc2Eip = `{
       "instance_id": {
         "computed": true,
         "description": "The ID of the instance.\n  Updates to the ` + "`" + `` + "`" + `InstanceId` + "`" + `` + "`" + ` property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "ipam_pool_id": {
+        "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "string"

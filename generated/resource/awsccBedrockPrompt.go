@@ -118,13 +118,6 @@ const awsccBedrockPrompt = `{
                           "optional": true,
                           "type": "number"
                         },
-                        "top_k": {
-                          "computed": true,
-                          "description": "Sample from the k most likely next tokens",
-                          "description_kind": "plain",
-                          "optional": true,
-                          "type": "number"
-                        },
                         "top_p": {
                           "computed": true,
                           "description": "Cumulative probability cutoff for token selection",
@@ -144,7 +137,7 @@ const awsccBedrockPrompt = `{
             },
             "model_id": {
               "computed": true,
-              "description": "ARN or name of a Bedrock model.",
+              "description": "ARN or Id of a Bedrock Foundational Model or Inference Profile, or the ARN of a imported model, or a provisioned throughput ARN for custom models.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

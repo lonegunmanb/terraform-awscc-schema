@@ -28,7 +28,7 @@ const awsccSagemakerStudioLifecycleConfig = `{
         "type": "string"
       },
       "studio_lifecycle_config_content": {
-        "description": "The content of your Amazon SageMaker Studio Lifecycle Configuration script.",
+        "description": "The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64 encoded.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -41,7 +41,7 @@ const awsccSagemakerStudioLifecycleConfig = `{
       },
       "tags": {
         "computed": true,
-        "description": "Tags to be associated with the Lifecycle Configuration.",
+        "description": "Tags to be associated with the Lifecycle Configuration. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the Search API.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

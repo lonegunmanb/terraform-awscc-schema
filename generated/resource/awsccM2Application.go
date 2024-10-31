@@ -20,6 +20,7 @@ const awsccM2Application = `{
         "type": "string"
       },
       "definition": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -38,7 +39,7 @@ const awsccM2Application = `{
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
       },
       "description": {
         "computed": true,
