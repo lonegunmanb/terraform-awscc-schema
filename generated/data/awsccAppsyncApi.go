@@ -25,10 +25,21 @@ const awsccAppsyncApi = `{
         "computed": true,
         "description": "A map of DNS names for the AppSync API.",
         "description_kind": "plain",
-        "type": [
-          "map",
-          "string"
-        ]
+        "nested_type": {
+          "attributes": {
+            "http": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "realtime": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "event_config": {
         "computed": true,

@@ -15,6 +15,13 @@ const awsccSesConfigurationSet = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "max_delivery_seconds": {
+              "computed": true,
+              "description": "Specifies the maximum time until which SES will retry sending emails",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
             "sending_pool_name": {
               "computed": true,
               "description": "The name of the dedicated IP pool to associate with the configuration set.",

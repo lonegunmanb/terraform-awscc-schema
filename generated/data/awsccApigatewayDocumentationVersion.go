@@ -11,13 +11,11 @@ const awsccApigatewayDocumentationVersion = `{
     "attributes": {
       "description": {
         "computed": true,
-        "description": "A description about the new documentation snapshot.",
         "description_kind": "plain",
         "type": "string"
       },
       "documentation_version": {
         "computed": true,
-        "description": "The version identifier of the to-be-updated documentation version.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -29,7 +27,6 @@ const awsccApigatewayDocumentationVersion = `{
       },
       "rest_api_id": {
         "computed": true,
-        "description": "The string identifier of the associated RestApi.",
         "description_kind": "plain",
         "type": "string"
       }

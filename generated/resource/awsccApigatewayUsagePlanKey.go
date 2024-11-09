@@ -22,7 +22,6 @@ const awsccApigatewayUsagePlanKey = `{
         "type": "string"
       },
       "key_type": {
-        "description": "The type of a UsagePlanKey resource for a plan customer.",
         "description_kind": "plain",
         "required": true,
         "type": "string"

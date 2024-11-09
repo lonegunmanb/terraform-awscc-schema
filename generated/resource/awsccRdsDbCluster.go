@@ -72,6 +72,12 @@ const awsccRdsDbCluster = `{
         "optional": true,
         "type": "number"
       },
+      "cluster_scalability_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "copy_tags_to_snapshot": {
         "computed": true,
         "description": "A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.\n Valid for: Aurora DB clusters and Multi-AZ DB clusters",
@@ -384,7 +390,7 @@ const awsccRdsDbCluster = `{
       },
       "publicly_accessible": {
         "computed": true,
-        "description": "Specifies whether the DB cluster is publicly accessible.\n When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.\n When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.\n Valid for Cluster Type: Multi-AZ DB clusters only\n Default: The default behavior varies depending on whether ` + "`" + `` + "`" + `DBSubnetGroupName` + "`" + `` + "`" + ` is specified.\n If ` + "`" + `` + "`" + `DBSubnetGroupName` + "`" + `` + "`" + ` isn't specified, and ` + "`" + `` + "`" + `PubliclyAccessible` + "`" + `` + "`" + ` isn't specified, the following applies:\n  +  If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.\n  +  If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.\n  \n If ` + "`" + `` + "`" + `DBSubnetGroupName` + "`" + `` + "`" + ` is specified, and ` + "`" + `` + "`" + `PubliclyAccessible` + "`" + `` + "`" + ` isn't specified, the following applies:\n  +  If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.\n  +  If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.",
+        "description": "Specifies whether the DB cluster is publicly accessible.\n When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.\n When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.\n Valid for Cluster Type: Multi-AZ DB clusters only\n Default: The default behavior varies depending on whether ` + "`" + `` + "`" + `DBSubnetGroupName` + "`" + `` + "`" + ` is specified.\n If ` + "`" + `` + "`" + `DBSubnetGroupName` + "`" + `` + "`" + ` isn't specified, and ` + "`" + `` + "`" + `PubliclyAccessible` + "`" + `` + "`" + ` isn't specified, the following applies:\n  +  If the default VPC in the target Region doesn?t have an internet gateway attached to it, the DB cluster is private.\n  +  If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.\n  \n If ` + "`" + `` + "`" + `DBSubnetGroupName` + "`" + `` + "`" + ` is specified, and ` + "`" + `` + "`" + `PubliclyAccessible` + "`" + `` + "`" + ` isn't specified, the following applies:\n  +  If the subnets are part of a VPC that doesn?t have an internet gateway attached to it, the DB cluster is private.\n  +  If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"

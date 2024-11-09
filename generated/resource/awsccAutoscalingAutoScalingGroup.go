@@ -16,6 +16,22 @@ const awsccAutoscalingAutoScalingGroup = `{
         "optional": true,
         "type": "string"
       },
+      "availability_zone_distribution": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "capacity_distribution_strategy": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "availability_zones": {
         "computed": true,
         "description": "A list of Availability Zones where instances in the Auto Scaling group can be created. Used for launching into the default VPC subnet in each Availability Zone when not using the ` + "`" + `` + "`" + `VPCZoneIdentifier` + "`" + `` + "`" + ` property, or for attaching a network interface when an existing network interface ID is specified in a launch template.",
@@ -936,17 +952,20 @@ const awsccAutoscalingAutoScalingGroup = `{
       },
       "traffic_sources": {
         "computed": true,
+        "description": "The traffic sources associated with this Auto Scaling group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "identifier": {
               "computed": true,
+              "description": "Identifies the traffic source.\n For Application Load Balancers, Gateway Load Balancers, Network Load Balancers, and VPC Lattice, this will be the Amazon Resource Name (ARN) for a target group in this account and Region. For Classic Load Balancers, this will be the name of the Classic Load Balancer in this account and Region.\n For example: \n  +  Application Load Balancer ARN: ` + "`" + `` + "`" + `arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/1234567890123456` + "`" + `` + "`" + ` \n  +  Classic Load Balancer name: ` + "`" + `` + "`" + `my-classic-load-balancer` + "`" + `` + "`" + ` \n  +  VPC Lattice ARN: ` + "`" + `` + "`" + `arn:aws:vpc-lattice:us-west-2:123456789012:targetgroup/tg-1234567890123456` + "`" + `` + "`" + ` \n  \n To get the ARN of a target group for a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer, or the name of a Classic Load Balancer, use the Elastic Load Balancing [DescribeTargetGroups](https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html) and [DescribeLoadBalancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html) API operations.\n To get the ARN of a target group for VPC Lattice, use the VPC Lattice [GetTargetGroup](https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetTargetGroup.html) API operation.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "type": {
               "computed": true,
+              "description": "Provides additional context for the value of ` + "`" + `` + "`" + `Identifier` + "`" + `` + "`" + `.\n The following lists the valid values:\n  +   ` + "`" + `` + "`" + `elb` + "`" + `` + "`" + ` if ` + "`" + `` + "`" + `Identifier` + "`" + `` + "`" + ` is the name of a Classic Load Balancer.\n  +   ` + "`" + `` + "`" + `elbv2` + "`" + `` + "`" + ` if ` + "`" + `` + "`" + `Identifier` + "`" + `` + "`" + ` is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.\n  +   ` + "`" + `` + "`" + `vpc-lattice` + "`" + `` + "`" + ` if ` + "`" + `` + "`" + `Identifier` + "`" + `` + "`" + ` is the ARN of a VPC Lattice target group.\n  \n Required if the identifier is the name of a Classic Load Balancer.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

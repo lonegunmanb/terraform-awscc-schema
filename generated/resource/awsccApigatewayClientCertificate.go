@@ -16,7 +16,6 @@ const awsccApigatewayClientCertificate = `{
       },
       "description": {
         "computed": true,
-        "description": "The description of the client certificate.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -29,7 +28,6 @@ const awsccApigatewayClientCertificate = `{
       },
       "tags": {
         "computed": true,
-        "description": "The collection of tags. Each tag element is associated with a given resource.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

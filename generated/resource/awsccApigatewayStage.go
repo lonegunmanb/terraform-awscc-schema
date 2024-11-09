@@ -11,7 +11,7 @@ const awsccApigatewayStage = `{
     "attributes": {
       "access_log_setting": {
         "computed": true,
-        "description": "Access log settings, including the access log format and access log destination ARN.",
+        "description": "The ` + "`" + `` + "`" + `AccessLogSetting` + "`" + `` + "`" + ` property type specifies settings for logging access in this stage.\n  ` + "`" + `` + "`" + `AccessLogSetting` + "`" + `` + "`" + ` is a property of the [AWS::ApiGateway::Stage](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html) resource.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -36,41 +36,35 @@ const awsccApigatewayStage = `{
       },
       "cache_cluster_enabled": {
         "computed": true,
-        "description": "Specifies whether a cache cluster is enabled for the stage.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
       },
       "cache_cluster_size": {
         "computed": true,
-        "description": "The stage's cache capacity in GB. For more information about choosing a cache size, see [Enabling API caching to enhance responsiveness](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html).",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "canary_setting": {
         "computed": true,
-        "description": "Settings for the canary deployment in this stage.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "deployment_id": {
               "computed": true,
-              "description": "The ID of the canary deployment.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "percent_traffic": {
               "computed": true,
-              "description": "The percent (0-100) of traffic diverted to a canary deployment.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "stage_variable_overrides": {
               "computed": true,
-              "description": "Stage variables overridden for a canary release deployment, including new stage variables introduced in the canary. These stage variables are represented as a string-to-string map between stage variable names and their values.",
               "description_kind": "plain",
               "optional": true,
               "type": [
@@ -80,7 +74,6 @@ const awsccApigatewayStage = `{
             },
             "use_stage_cache": {
               "computed": true,
-              "description": "A Boolean flag to indicate whether the canary deployment uses the stage cache or not.",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
@@ -92,28 +85,24 @@ const awsccApigatewayStage = `{
       },
       "client_certificate_id": {
         "computed": true,
-        "description": "The identifier of a client certificate for an API stage.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "deployment_id": {
         "computed": true,
-        "description": "The identifier of the Deployment that the stage points to.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "description": {
         "computed": true,
-        "description": "The stage's description.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "documentation_version": {
         "computed": true,
-        "description": "The version of the associated API documentation.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -126,34 +115,29 @@ const awsccApigatewayStage = `{
       },
       "method_settings": {
         "computed": true,
-        "description": "A map that defines the method settings for a Stage resource. Keys (designated as ` + "`" + `` + "`" + `/{method_setting_key` + "`" + `` + "`" + ` below) are method paths defined as ` + "`" + `` + "`" + `{resource_path}/{http_method}` + "`" + `` + "`" + ` for an individual method override, or ` + "`" + `` + "`" + `/\\*/\\*` + "`" + `` + "`" + ` for overriding all methods in the stage.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "cache_data_encrypted": {
               "computed": true,
-              "description": "Specifies whether the cached responses are encrypted.",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
             },
             "cache_ttl_in_seconds": {
               "computed": true,
-              "description": "Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response will be cached.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "caching_enabled": {
               "computed": true,
-              "description": "Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on the stage for responses to be cached.",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
             },
             "data_trace_enabled": {
               "computed": true,
-              "description": "Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to troubleshoot APIs, but can result in logging sensitive data. We recommend that you don't enable this option for production APIs.",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
@@ -167,14 +151,12 @@ const awsccApigatewayStage = `{
             },
             "logging_level": {
               "computed": true,
-              "description": "Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. Valid values are ` + "`" + `` + "`" + `OFF` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `ERROR` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `INFO` + "`" + `` + "`" + `. Choose ` + "`" + `` + "`" + `ERROR` + "`" + `` + "`" + ` to write only error-level entries to CloudWatch Logs, or choose ` + "`" + `` + "`" + `INFO` + "`" + `` + "`" + ` to include all ` + "`" + `` + "`" + `ERROR` + "`" + `` + "`" + ` events as well as extra informational events.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "metrics_enabled": {
               "computed": true,
-              "description": "Specifies whether Amazon CloudWatch metrics are enabled for this method.",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
@@ -188,14 +170,12 @@ const awsccApigatewayStage = `{
             },
             "throttling_burst_limit": {
               "computed": true,
-              "description": "Specifies the throttling burst limit.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "throttling_rate_limit": {
               "computed": true,
-              "description": "Specifies the throttling rate limit.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
@@ -206,21 +186,18 @@ const awsccApigatewayStage = `{
         "optional": true
       },
       "rest_api_id": {
-        "description": "The string identifier of the associated RestApi.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
       "stage_name": {
         "computed": true,
-        "description": "The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "tags": {
         "computed": true,
-        "description": "The collection of tags. Each tag element is associated with a given resource.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -245,7 +222,6 @@ const awsccApigatewayStage = `{
       },
       "tracing_enabled": {
         "computed": true,
-        "description": "Specifies whether active tracing with X-ray is enabled for the Stage.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"

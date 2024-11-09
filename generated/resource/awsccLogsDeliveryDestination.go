@@ -47,6 +47,13 @@ const awsccLogsDeliveryDestination = `{
         "required": true,
         "type": "string"
       },
+      "output_format": {
+        "computed": true,
+        "description": "The format of the logs that are sent to this delivery destination.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "The tags that have been assigned to this delivery destination.",

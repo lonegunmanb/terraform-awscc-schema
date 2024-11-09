@@ -11,37 +11,31 @@ const awsccApigatewayUsagePlan = `{
     "attributes": {
       "api_stages": {
         "computed": true,
-        "description": "The associated API stages of a usage plan.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "api_id": {
               "computed": true,
-              "description": "API Id of the associated API stage in a usage plan.",
               "description_kind": "plain",
               "type": "string"
             },
             "stage": {
               "computed": true,
-              "description": "API stage name of the associated API stage in a usage plan.",
               "description_kind": "plain",
               "type": "string"
             },
             "throttle": {
               "computed": true,
-              "description": "Map containing method level throttling information for API stage in a usage plan.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "burst_limit": {
                     "computed": true,
-                    "description": "The API target request burst rate limit. This allows more requests through for a period of time than the target rate limit.",
                     "description_kind": "plain",
                     "type": "number"
                   },
                   "rate_limit": {
                     "computed": true,
-                    "description": "The API target request rate limit.",
                     "description_kind": "plain",
                     "type": "number"
                   }
@@ -55,7 +49,6 @@ const awsccApigatewayUsagePlan = `{
       },
       "description": {
         "computed": true,
-        "description": "The description of a usage plan.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -67,25 +60,22 @@ const awsccApigatewayUsagePlan = `{
       },
       "quota": {
         "computed": true,
-        "description": "The target maximum number of permitted requests per a given unit time interval.",
+        "description": "` + "`" + `` + "`" + `QuotaSettings` + "`" + `` + "`" + ` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies a target for the maximum number of requests users can make to your REST APIs.\n In some cases clients can exceed the targets that you set. Don?t rely on usage plans to control costs. Consider using [](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) to monitor costs and [](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html) to manage API requests.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "limit": {
               "computed": true,
-              "description": "The target maximum number of requests that can be made in a given time period.",
               "description_kind": "plain",
               "type": "number"
             },
             "offset": {
               "computed": true,
-              "description": "The number of requests subtracted from the given limit in the initial time period.",
               "description_kind": "plain",
               "type": "number"
             },
             "period": {
               "computed": true,
-              "description": "The time period in which the limit applies. Valid values are \"DAY\", \"WEEK\" or \"MONTH\".",
               "description_kind": "plain",
               "type": "string"
             }
@@ -95,7 +85,6 @@ const awsccApigatewayUsagePlan = `{
       },
       "tags": {
         "computed": true,
-        "description": "The collection of tags. Each tag element is associated with a given resource.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -117,19 +106,17 @@ const awsccApigatewayUsagePlan = `{
       },
       "throttle": {
         "computed": true,
-        "description": "A map containing method level throttling information for API stage in a usage plan.",
+        "description": "` + "`" + `` + "`" + `ThrottleSettings` + "`" + `` + "`" + ` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies the overall request rate (average requests per second) and burst capacity when users call your REST APIs.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "burst_limit": {
               "computed": true,
-              "description": "The API target request burst rate limit. This allows more requests through for a period of time than the target rate limit.",
               "description_kind": "plain",
               "type": "number"
             },
             "rate_limit": {
               "computed": true,
-              "description": "The API target request rate limit.",
               "description_kind": "plain",
               "type": "number"
             }
@@ -144,7 +131,6 @@ const awsccApigatewayUsagePlan = `{
       },
       "usage_plan_name": {
         "computed": true,
-        "description": "The name of a usage plan.",
         "description_kind": "plain",
         "type": "string"
       }

@@ -9,6 +9,11 @@ import (
 const awsccCleanroomsCollaboration = `{
   "block": {
     "attributes": {
+      "analytics_engine": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "arn": {
         "computed": true,
         "description_kind": "plain",

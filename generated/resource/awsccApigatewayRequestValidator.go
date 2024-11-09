@@ -17,7 +17,6 @@ const awsccApigatewayRequestValidator = `{
       },
       "name": {
         "computed": true,
-        "description": "The name of this RequestValidator",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -28,21 +27,18 @@ const awsccApigatewayRequestValidator = `{
         "type": "string"
       },
       "rest_api_id": {
-        "description": "The string identifier of the associated RestApi.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
       "validate_request_body": {
         "computed": true,
-        "description": "A Boolean flag to indicate whether to validate a request body according to the configured Model schema.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
       },
       "validate_request_parameters": {
         "computed": true,
-        "description": "A Boolean flag to indicate whether to validate request parameters (` + "`" + `` + "`" + `true` + "`" + `` + "`" + `) or not (` + "`" + `` + "`" + `false` + "`" + `` + "`" + `).",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"

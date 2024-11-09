@@ -41,13 +41,6 @@ const awsccLambdaVersion = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "policy": {
-        "computed": true,
-        "description": "The resource policy of your function",
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
       "provisioned_concurrency_config": {
         "computed": true,
         "description": "Specifies a provisioned concurrency configuration for a function's version. Updates are not supported for this property.",

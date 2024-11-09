@@ -16,28 +16,24 @@ const awsccApigatewayApiKey = `{
       },
       "customer_id": {
         "computed": true,
-        "description": "An MKT customer identifier, when integrating with the AWS SaaS Marketplace.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "description": {
         "computed": true,
-        "description": "The description of the ApiKey.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "enabled": {
         "computed": true,
-        "description": "Specifies whether the ApiKey can be used by callers.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
       },
       "generate_distinct_id": {
         "computed": true,
-        "description": "Specifies whether (` + "`" + `` + "`" + `true` + "`" + `` + "`" + `) or not (` + "`" + `` + "`" + `false` + "`" + `` + "`" + `) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
@@ -57,20 +53,17 @@ const awsccApigatewayApiKey = `{
       },
       "stage_keys": {
         "computed": true,
-        "description": "DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "rest_api_id": {
               "computed": true,
-              "description": "The string identifier of the associated RestApi.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "stage_name": {
               "computed": true,
-              "description": "The stage name associated with the stage key.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -82,7 +75,6 @@ const awsccApigatewayApiKey = `{
       },
       "tags": {
         "computed": true,
-        "description": "The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with ` + "`" + `` + "`" + `aws:` + "`" + `` + "`" + `. The tag value can be up to 256 characters.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -107,7 +99,6 @@ const awsccApigatewayApiKey = `{
       },
       "value": {
         "computed": true,
-        "description": "Specifies a value of the API key.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

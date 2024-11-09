@@ -16,13 +16,11 @@ const awsccApigatewayResource = `{
         "type": "string"
       },
       "parent_id": {
-        "description": "The parent resource's identifier.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
       "path_part": {
-        "description": "The last path segment for this resource.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -33,7 +31,6 @@ const awsccApigatewayResource = `{
         "type": "string"
       },
       "rest_api_id": {
-        "description": "The string identifier of the associated RestApi.",
         "description_kind": "plain",
         "required": true,
         "type": "string"

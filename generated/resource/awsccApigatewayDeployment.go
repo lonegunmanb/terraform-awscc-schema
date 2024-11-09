@@ -11,20 +11,18 @@ const awsccApigatewayDeployment = `{
     "attributes": {
       "deployment_canary_settings": {
         "computed": true,
-        "description": "The input configuration for a canary deployment.",
+        "description": "The ` + "`" + `` + "`" + `DeploymentCanarySettings` + "`" + `` + "`" + ` property type specifies settings for the canary deployment.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "percent_traffic": {
               "computed": true,
-              "description": "The percentage (0.0-100.0) of traffic routed to the canary deployment.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "stage_variable_overrides": {
               "computed": true,
-              "description": "A stage variable overrides used for the canary release deployment. They can override existing stage variables or add new stage variables for the canary release deployment. These stage variables are represented as a string-to-string map between stage variable names and their values.",
               "description_kind": "plain",
               "optional": true,
               "type": [
@@ -34,7 +32,6 @@ const awsccApigatewayDeployment = `{
             },
             "use_stage_cache": {
               "computed": true,
-              "description": "A Boolean flag to indicate whether the canary release deployment uses the stage cache or not.",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
@@ -51,7 +48,6 @@ const awsccApigatewayDeployment = `{
       },
       "description": {
         "computed": true,
-        "description": "The description for the Deployment resource to create.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -63,7 +59,6 @@ const awsccApigatewayDeployment = `{
         "type": "string"
       },
       "rest_api_id": {
-        "description": "The string identifier of the associated RestApi.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -82,14 +77,12 @@ const awsccApigatewayDeployment = `{
                 "attributes": {
                   "destination_arn": {
                     "computed": true,
-                    "description": "The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream to receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin with ` + "`" + `` + "`" + `amazon-apigateway-` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "format": {
                     "computed": true,
-                    "description": "A single line format of the access logs of data, as specified by selected $context variables. The format must include at least ` + "`" + `` + "`" + `$context.requestId` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -101,7 +94,6 @@ const awsccApigatewayDeployment = `{
             },
             "cache_cluster_enabled": {
               "computed": true,
-              "description": "Specifies whether a cache cluster is enabled for the stage.",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
@@ -142,14 +134,12 @@ const awsccApigatewayDeployment = `{
                 "attributes": {
                   "percent_traffic": {
                     "computed": true,
-                    "description": "The percent (0-100) of traffic diverted to a canary deployment.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
                   },
                   "stage_variable_overrides": {
                     "computed": true,
-                    "description": "Stage variables overridden for a canary release deployment, including new stage variables introduced in the canary. These stage variables are represented as a string-to-string map between stage variable names and their values.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": [
@@ -159,7 +149,6 @@ const awsccApigatewayDeployment = `{
                   },
                   "use_stage_cache": {
                     "computed": true,
-                    "description": "A Boolean flag to indicate whether the canary deployment uses the stage cache or not.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "bool"
@@ -212,28 +201,24 @@ const awsccApigatewayDeployment = `{
                 "attributes": {
                   "cache_data_encrypted": {
                     "computed": true,
-                    "description": "Specifies whether the cached responses are encrypted.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "bool"
                   },
                   "cache_ttl_in_seconds": {
                     "computed": true,
-                    "description": "Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response will be cached.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
                   },
                   "caching_enabled": {
                     "computed": true,
-                    "description": "Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on the stage for responses to be cached.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "bool"
                   },
                   "data_trace_enabled": {
                     "computed": true,
-                    "description": "Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to troubleshoot APIs, but can result in logging sensitive data. We recommend that you don't enable this option for production APIs.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "bool"
@@ -247,14 +232,12 @@ const awsccApigatewayDeployment = `{
                   },
                   "logging_level": {
                     "computed": true,
-                    "description": "Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. Valid values are ` + "`" + `` + "`" + `OFF` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `ERROR` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `INFO` + "`" + `` + "`" + `. Choose ` + "`" + `` + "`" + `ERROR` + "`" + `` + "`" + ` to write only error-level entries to CloudWatch Logs, or choose ` + "`" + `` + "`" + `INFO` + "`" + `` + "`" + ` to include all ` + "`" + `` + "`" + `ERROR` + "`" + `` + "`" + ` events as well as extra informational events.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "metrics_enabled": {
                     "computed": true,
-                    "description": "Specifies whether Amazon CloudWatch metrics are enabled for this method.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "bool"
@@ -268,14 +251,12 @@ const awsccApigatewayDeployment = `{
                   },
                   "throttling_burst_limit": {
                     "computed": true,
-                    "description": "Specifies the throttling burst limit.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
                   },
                   "throttling_rate_limit": {
                     "computed": true,
-                    "description": "Specifies the throttling rate limit.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
@@ -355,7 +336,6 @@ const awsccApigatewayDeployment = `{
       },
       "stage_name": {
         "computed": true,
-        "description": "The name of the Stage resource for the Deployment resource to create.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

@@ -11,13 +11,11 @@ const awsccApigatewayBasePathMapping = `{
     "attributes": {
       "base_path": {
         "computed": true,
-        "description": "The base path name that callers of the API must provide as part of the URL after the domain name.",
         "description_kind": "plain",
         "type": "string"
       },
       "domain_name": {
         "computed": true,
-        "description": "The domain name of the BasePathMapping resource to be described.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -29,13 +27,11 @@ const awsccApigatewayBasePathMapping = `{
       },
       "rest_api_id": {
         "computed": true,
-        "description": "The string identifier of the associated RestApi.",
         "description_kind": "plain",
         "type": "string"
       },
       "stage": {
         "computed": true,
-        "description": "The name of the associated stage.",
         "description_kind": "plain",
         "type": "string"
       }

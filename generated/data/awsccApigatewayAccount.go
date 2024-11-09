@@ -16,7 +16,6 @@ const awsccApigatewayAccount = `{
       },
       "cloudwatch_role_arn": {
         "computed": true,
-        "description": "The ARN of an Amazon CloudWatch role for the current Account.",
         "description_kind": "plain",
         "type": "string"
       },

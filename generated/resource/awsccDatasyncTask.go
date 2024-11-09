@@ -360,6 +360,13 @@ const awsccDatasyncTask = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "task_mode": {
+        "computed": true,
+        "description": "Specifies the task mode for the task.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "task_report_config": {
         "computed": true,
         "description": "Specifies how you want to configure a task report, which provides detailed information about for your Datasync transfer.",

@@ -45,7 +45,7 @@ const awsccEcsService = `{
       },
       "deployment_configuration": {
         "computed": true,
-        "description": "Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.",
+        "description": "Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -190,7 +190,7 @@ const awsccEcsService = `{
             },
             "load_balancer_name": {
               "computed": true,
-              "description": "The name of the load balancer to associate with the Amazon ECS service or task set.\n If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.",
+              "description": "The name of the load balancer to associate with the service or task set.\n If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.",
               "description_kind": "plain",
               "type": "string"
             },
@@ -593,7 +593,7 @@ const awsccEcsService = `{
                   },
                   "filesystem_type": {
                     "computed": true,
-                    "description": "The Linux filesystem type for the volume. For volumes created from a snapshot, you must specify the same filesystem type that the volume was using when the snapshot was created. If there is a filesystem type mismatch, the task will fail to start.\n The available filesystem types are\u2028 ` + "`" + `` + "`" + `ext3` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `ext4` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `xfs` + "`" + `` + "`" + `. If no value is specified, the ` + "`" + `` + "`" + `xfs` + "`" + `` + "`" + ` filesystem type is used by default.",
+                    "description": "The filesystem type for the volume. For volumes created from a snapshot, you must specify the same filesystem type that the volume was using when the snapshot was created. If there is a filesystem type mismatch, the task will fail to start.\n The available Linux filesystem types are\u2028 ` + "`" + `` + "`" + `ext3` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `ext4` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `xfs` + "`" + `` + "`" + `. If no value is specified, the ` + "`" + `` + "`" + `xfs` + "`" + `` + "`" + ` filesystem type is used by default.\n The available Windows filesystem types are ` + "`" + `` + "`" + `NTFS` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "type": "string"
                   },
