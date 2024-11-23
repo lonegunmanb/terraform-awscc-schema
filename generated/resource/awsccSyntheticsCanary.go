@@ -133,6 +133,13 @@ const awsccSyntheticsCanary = `{
         "required": true,
         "type": "string"
       },
+      "provisioned_resource_cleanup": {
+        "computed": true,
+        "description": "Setting to control if provisioned resources created by Synthetics are deleted alongside the canary. Default is AUTOMATIC.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "resources_to_replicate_tags": {
         "computed": true,
         "description": "List of resources which canary tags should be replicated to.",

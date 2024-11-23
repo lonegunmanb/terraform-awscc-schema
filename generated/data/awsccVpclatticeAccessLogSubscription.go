@@ -45,6 +45,11 @@ const awsccVpclatticeAccessLogSubscription = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "service_network_log_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description_kind": "plain",

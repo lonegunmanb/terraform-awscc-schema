@@ -101,6 +101,38 @@ const awsccBatchComputeEnvironment = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "overrides": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "launch_template_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "launch_template_name": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "target_instance_types": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
+                        "version": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
                   "version": {
                     "computed": true,
                     "description_kind": "plain",

@@ -206,6 +206,24 @@ const awsccEfsFileSystem = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
+                  },
+                  "role_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "status": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "status_message": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "list"

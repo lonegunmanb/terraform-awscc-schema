@@ -19,6 +19,35 @@ const awsccCodebuildFleet = `{
         "description_kind": "plain",
         "type": "number"
       },
+      "compute_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "disk": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "machine_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "memory": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "v_cpu": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "compute_type": {
         "computed": true,
         "description_kind": "plain",
@@ -28,6 +57,47 @@ const awsccCodebuildFleet = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "fleet_proxy_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "default_behavior": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "ordered_proxy_rules": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "effect": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "entities": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "fleet_service_role": {
         "computed": true,
@@ -84,6 +154,44 @@ const awsccCodebuildFleet = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "scaling_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "max_capacity": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "scaling_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "target_tracking_scaling_configs": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "metric_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "target_value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "tags": {
         "computed": true,

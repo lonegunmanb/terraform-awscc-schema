@@ -32,6 +32,430 @@ const awsccApplicationautoscalingScalingPolicy = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "predictive_scaling_policy_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "max_capacity_breach_behavior": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "max_capacity_buffer": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "metric_specifications": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "customized_capacity_metric_specification": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metric_data_queries": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "expression": {
+                                "computed": true,
+                                "description": "The math expression to perform on the returned data, if this object is performing a math expression.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "id": {
+                                "computed": true,
+                                "description": "A short name that identifies the object's results in the response.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "label": {
+                                "computed": true,
+                                "description": "A human-readable label for this metric or expression. This is especially useful if this is a math expression, so that you know what the value represents.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "metric_stat": {
+                                "computed": true,
+                                "description": "Information about the metric data to return.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "metric": {
+                                      "computed": true,
+                                      "description": "The CloudWatch metric to return, including the metric name, namespace, and dimensions. ",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "dimensions": {
+                                            "computed": true,
+                                            "description": "The dimensions for the metric.",
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "name": {
+                                                  "computed": true,
+                                                  "description": "The name of the dimension.",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "value": {
+                                                  "computed": true,
+                                                  "description": "The value of the dimension.",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            }
+                                          },
+                                          "metric_name": {
+                                            "computed": true,
+                                            "description": "The name of the metric.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "namespace": {
+                                            "computed": true,
+                                            "description": "The namespace of the metric.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "stat": {
+                                      "computed": true,
+                                      "description": "The statistic to return. It can include any CloudWatch statistic or extended statistic.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "unit": {
+                                      "computed": true,
+                                      "description": "The unit to use for the returned data points.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "return_data": {
+                                "computed": true,
+                                "description": "Indicates whether to return the timestamps and raw data values of this metric.",
+                                "description_kind": "plain",
+                                "type": "bool"
+                              }
+                            },
+                            "nesting_mode": "set"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "customized_load_metric_specification": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metric_data_queries": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "expression": {
+                                "computed": true,
+                                "description": "The math expression to perform on the returned data, if this object is performing a math expression.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "id": {
+                                "computed": true,
+                                "description": "A short name that identifies the object's results in the response.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "label": {
+                                "computed": true,
+                                "description": "A human-readable label for this metric or expression. This is especially useful if this is a math expression, so that you know what the value represents.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "metric_stat": {
+                                "computed": true,
+                                "description": "Information about the metric data to return.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "metric": {
+                                      "computed": true,
+                                      "description": "The CloudWatch metric to return, including the metric name, namespace, and dimensions. ",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "dimensions": {
+                                            "computed": true,
+                                            "description": "The dimensions for the metric.",
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "name": {
+                                                  "computed": true,
+                                                  "description": "The name of the dimension.",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "value": {
+                                                  "computed": true,
+                                                  "description": "The value of the dimension.",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            }
+                                          },
+                                          "metric_name": {
+                                            "computed": true,
+                                            "description": "The name of the metric.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "namespace": {
+                                            "computed": true,
+                                            "description": "The namespace of the metric.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "stat": {
+                                      "computed": true,
+                                      "description": "The statistic to return. It can include any CloudWatch statistic or extended statistic.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "unit": {
+                                      "computed": true,
+                                      "description": "The unit to use for the returned data points.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "return_data": {
+                                "computed": true,
+                                "description": "Indicates whether to return the timestamps and raw data values of this metric.",
+                                "description_kind": "plain",
+                                "type": "bool"
+                              }
+                            },
+                            "nesting_mode": "set"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "customized_scaling_metric_specification": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metric_data_queries": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "expression": {
+                                "computed": true,
+                                "description": "The math expression to perform on the returned data, if this object is performing a math expression.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "id": {
+                                "computed": true,
+                                "description": "A short name that identifies the object's results in the response.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "label": {
+                                "computed": true,
+                                "description": "A human-readable label for this metric or expression. This is especially useful if this is a math expression, so that you know what the value represents.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "metric_stat": {
+                                "computed": true,
+                                "description": "Information about the metric data to return.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "metric": {
+                                      "computed": true,
+                                      "description": "The CloudWatch metric to return, including the metric name, namespace, and dimensions. ",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "dimensions": {
+                                            "computed": true,
+                                            "description": "The dimensions for the metric.",
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "name": {
+                                                  "computed": true,
+                                                  "description": "The name of the dimension.",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "value": {
+                                                  "computed": true,
+                                                  "description": "The value of the dimension.",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            }
+                                          },
+                                          "metric_name": {
+                                            "computed": true,
+                                            "description": "The name of the metric.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "namespace": {
+                                            "computed": true,
+                                            "description": "The namespace of the metric.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "stat": {
+                                      "computed": true,
+                                      "description": "The statistic to return. It can include any CloudWatch statistic or extended statistic.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "unit": {
+                                      "computed": true,
+                                      "description": "The unit to use for the returned data points.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "return_data": {
+                                "computed": true,
+                                "description": "Indicates whether to return the timestamps and raw data values of this metric.",
+                                "description_kind": "plain",
+                                "type": "bool"
+                              }
+                            },
+                            "nesting_mode": "set"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "predefined_load_metric_specification": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "predefined_metric_type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "resource_label": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "predefined_metric_pair_specification": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "predefined_metric_type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "resource_label": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "predefined_scaling_metric_specification": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "predefined_metric_type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "resource_label": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "target_value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            },
+            "mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "scheduling_buffer_time": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "resource_id": {
         "computed": true,
         "description": "The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.\n  +  ECS service - The resource type is ` + "`" + `` + "`" + `service` + "`" + `` + "`" + ` and the unique identifier is the cluster name and service name. Example: ` + "`" + `` + "`" + `service/my-cluster/my-service` + "`" + `` + "`" + `.\n  +  Spot Fleet - The resource type is ` + "`" + `` + "`" + `spot-fleet-request` + "`" + `` + "`" + ` and the unique identifier is the Spot Fleet request ID. Example: ` + "`" + `` + "`" + `spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE` + "`" + `` + "`" + `.\n  +  EMR cluster - The resource type is ` + "`" + `` + "`" + `instancegroup` + "`" + `` + "`" + ` and the unique identifier is the cluster ID and instance group ID. Example: ` + "`" + `` + "`" + `instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0` + "`" + `` + "`" + `.\n  +  AppStream 2.0 fleet - The resource type is ` + "`" + `` + "`" + `fleet` + "`" + `` + "`" + ` and the unique identifier is the fleet name. Example: ` + "`" + `` + "`" + `fleet/sample-fleet` + "`" + `` + "`" + `.\n  +  DynamoDB table - The resource type is ` + "`" + `` + "`" + `table` + "`" + `` + "`" + ` and the unique identifier is the table name. Example: ` + "`" + `` + "`" + `table/my-table` + "`" + `` + "`" + `.\n  +  DynamoDB global secondary index - The resource type is ` + "`" + `` + "`" + `index` + "`" + `` + "`" + ` and the unique identifier is the index name. Example: ` + "`" + `` + "`" + `table/my-table/index/my-table-index` + "`" + `` + "`" + `.\n  +  Aurora DB cluster - The resource type is ` + "`" + `` + "`" + `cluster` + "`" + `` + "`" + ` and the unique identifier is the cluster name. Example: ` + "`" + `` + "`" + `cluster:my-db-cluster` + "`" + `` + "`" + `.\n  +  SageMaker endpoint variant - The resource type is ` + "`" + `` + "`" + `variant` + "`" + `` + "`" + ` and the unique identifier is the resource ID. Example: ` + "`" + `` + "`" + `endpoint/my-end-point/variant/KMeansClustering` + "`" + `` + "`" + `.\n  +  Custom resources are not supported with a resource type. This parameter must specify the ` + "`" + `` + "`" + `OutputValue` + "`" + `` + "`" + ` from the CloudFormation template stack used to access the resources. The unique identifier is defined by the service provider. More information is available in our [GitHub repository](https://docs.aws.amazon.com/https://github.com/aws/aws-auto-scaling-custom-resource).\n  +  Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified using the endpoint ARN. Example: ` + "`" + `` + "`" + `arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE` + "`" + `` + "`" + `.\n  +  Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the endpoint ARN. Example: ` + "`" + `` + "`" + `arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE` + "`" + `` + "`" + `.\n  +  Lambda provisioned concurrency - The resource type is ` + "`" + `` + "`" + `function` + "`" + `` + "`" + ` and the unique identifier is the function name with a function version or alias name suffix that is not ` + "`" + `` + "`" + `$LATEST` + "`" + `` + "`" + `. Example: ` + "`" + `` + "`" + `function:my-function:prod` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `function:my-function:1` + "`" + `` + "`" + `.\n  +  Amazon Keyspaces table - The resource type is ` + "`" + `` + "`" + `table` + "`" + `` + "`" + ` and the unique identifier is the table name. Example: ` + "`" + `` + "`" + `keyspace/mykeyspace/table/mytable` + "`" + `` + "`" + `.\n  +  Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example: ` + "`" + `` + "`" + `arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5` + "`" + `` + "`" + `.\n  +  Amazon ElastiCache replication group - The resource type is ` + "`" + `` + "`" + `replication-group` + "`" + `` + "`" + ` and the unique identifier is the replication group name. Example: ` + "`" + `` + "`" + `replication-group/mycluster` + "`" + `` + "`" + `.\n  +  Neptune cluster - The resource type is ` + "`" + `` + "`" + `cluster` + "`" + `` + "`" + ` and the unique identifier is the cluster name. Example: ` + "`" + `` + "`" + `cluster:mycluster` + "`" + `` + "`" + `.\n  +  SageMaker serverless endpoint - The resource type is ` + "`" + `` + "`" + `variant` + "`" + `` + "`" + ` and the unique identifier is the resource ID. Example: ` + "`" + `` + "`" + `endpoint/my-end-point/variant/KMeansClustering` + "`" + `` + "`" + `.\n  +  SageMaker inference component - The resource type is ` + "`" + `` + "`" + `inference-component` + "`" + `` + "`" + ` and the unique identifier is the resource ID. Example: ` + "`" + `` + "`" + `inference-component/my-inference-component` + "`" + `` + "`" + `.\n  +  Pool of WorkSpaces - The resource type is ` + "`" + `` + "`" + `workspacespool` + "`" + `` + "`" + ` and the unique identifier is the pool ID. Example: ` + "`" + `` + "`" + `workspacespool/wspool-123456` + "`" + `` + "`" + `.",

@@ -17,16 +17,19 @@ const awsccCloudfrontKeyGroup = `{
       },
       "key_group_config": {
         "computed": true,
+        "description": "The key group configuration.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "comment": {
               "computed": true,
+              "description": "A comment to describe the key group. The comment cannot be longer than 128 characters.",
               "description_kind": "plain",
               "type": "string"
             },
             "items": {
               "computed": true,
+              "description": "A list of the identifiers of the public keys in the key group.",
               "description_kind": "plain",
               "type": [
                 "list",
@@ -35,6 +38,7 @@ const awsccCloudfrontKeyGroup = `{
             },
             "name": {
               "computed": true,
+              "description": "A name to identify the key group.",
               "description_kind": "plain",
               "type": "string"
             }

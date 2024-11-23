@@ -21,6 +21,15 @@ const awsccCustomerprofilesIntegration = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "event_trigger_names": {
+        "computed": true,
+        "description": "A list of unique names for active event triggers associated with the integration.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "flow_definition": {
         "computed": true,
         "description_kind": "plain",

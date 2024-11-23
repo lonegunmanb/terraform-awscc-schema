@@ -86,6 +86,72 @@ const awsccS3ExpressDirectoryBucket = `{
         "required": true,
         "type": "string"
       },
+      "lifecycle_configuration": {
+        "computed": true,
+        "description": "Lifecycle rules that define how Amazon S3 Express manages objects during their lifetime.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "rules": {
+              "computed": true,
+              "description": "A lifecycle rule for individual objects in an Amazon S3 Express bucket.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "abort_incomplete_multipart_upload": {
+                    "computed": true,
+                    "description": "Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "days_after_initiation": {
+                          "computed": true,
+                          "description": "Specifies the number of days after which Amazon S3 aborts an incomplete multipart upload.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "expiration_in_days": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "object_size_greater_than": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "object_size_less_than": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "prefix": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "status": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "location_name": {
         "computed": true,
         "description": "Specifies the AZ ID of the Availability Zone where the directory bucket will be created. An example AZ ID value is 'use1-az5'.",

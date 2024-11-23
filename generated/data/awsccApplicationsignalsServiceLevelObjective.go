@@ -15,6 +15,22 @@ const awsccApplicationsignalsServiceLevelObjective = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "burn_rate_configurations": {
+        "computed": true,
+        "description": "Each object in this array defines the length of the look-back window used to calculate one burn rate metric for this SLO. The burn rate measures how fast the service is consuming the error budget, relative to the attainment goal of the SLO.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "look_back_window_minutes": {
+              "computed": true,
+              "description": "The number of minutes to use as the look-back window.",
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "set"
+        }
+      },
       "created_time": {
         "computed": true,
         "description": "Epoch time in seconds of the time that this SLO was created",

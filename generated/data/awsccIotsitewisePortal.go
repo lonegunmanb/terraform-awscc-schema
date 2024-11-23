@@ -91,6 +91,31 @@ const awsccIotsitewisePortal = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "portal_type": {
+        "computed": true,
+        "description": "The type of portal",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "portal_type_configuration": {
+        "computed": true,
+        "description": "Map to associate detail of configuration related with a PortalType.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "portal_tools": {
+              "computed": true,
+              "description": "List of enabled Tools for a certain portal.",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "map"
+        }
+      },
       "role_arn": {
         "computed": true,
         "description": "The ARN of a service role that allows the portal's users to access your AWS IoT SiteWise resources on your behalf.",

@@ -1076,6 +1076,12 @@ const awsccApplicationinsightsApplication = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "sns_notification_arn": {
+        "computed": true,
+        "description": "Application Insights sends notifications to this SNS topic whenever there is a problem update in the associated application.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "The tags of Application Insights application.",

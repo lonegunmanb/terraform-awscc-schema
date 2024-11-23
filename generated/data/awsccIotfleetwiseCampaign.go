@@ -165,6 +165,91 @@ const awsccIotfleetwiseCampaign = `{
           "string"
         ]
       },
+      "data_partitions": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "storage_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "maximum_size": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "unit": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "value": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "minimum_time_to_live": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "unit": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "value": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "storage_location": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "upload_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "condition_language_version": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "expression": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "description": {
         "computed": true,
         "description_kind": "plain",
@@ -216,6 +301,11 @@ const awsccIotfleetwiseCampaign = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "data_partition_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "max_sample_count": {
               "computed": true,
               "description_kind": "plain",

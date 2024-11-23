@@ -9,6 +9,11 @@ import (
 const awsccEcsService = `{
   "block": {
     "attributes": {
+      "availability_zone_rebalancing": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "capacity_provider_strategy": {
         "computed": true,
         "description": "The capacity provider strategy to use for the service.\n If a ` + "`" + `` + "`" + `capacityProviderStrategy` + "`" + `` + "`" + ` is specified, the ` + "`" + `` + "`" + `launchType` + "`" + `` + "`" + ` parameter must be omitted. If no ` + "`" + `` + "`" + `capacityProviderStrategy` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `launchType` + "`" + `` + "`" + ` is specified, the ` + "`" + `` + "`" + `defaultCapacityProviderStrategy` + "`" + `` + "`" + ` for the cluster is used.\n A capacity provider strategy may contain a maximum of 6 capacity providers.",
@@ -45,7 +50,7 @@ const awsccEcsService = `{
       },
       "deployment_configuration": {
         "computed": true,
-        "description": "Optional deployment parameters that control how many tasks run during the deployment and the failure detection methods.",
+        "description": "Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -190,7 +195,7 @@ const awsccEcsService = `{
             },
             "load_balancer_name": {
               "computed": true,
-              "description": "The name of the load balancer to associate with the service or task set.\n If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.",
+              "description": "The name of the load balancer to associate with the Amazon ECS service or task set.\n If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.",
               "description_kind": "plain",
               "type": "string"
             },
@@ -690,6 +695,30 @@ const awsccEcsService = `{
             "name": {
               "computed": true,
               "description": "The name of the volume. This value must match the volume name from the ` + "`" + `` + "`" + `Volume` + "`" + `` + "`" + ` object in the task definition.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
+      "vpc_lattice_configurations": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "port_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "role_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "target_group_arn": {
+              "computed": true,
               "description_kind": "plain",
               "type": "string"
             }

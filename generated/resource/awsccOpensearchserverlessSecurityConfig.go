@@ -16,6 +16,56 @@ const awsccOpensearchserverlessSecurityConfig = `{
         "optional": true,
         "type": "string"
       },
+      "iam_identity_center_options": {
+        "computed": true,
+        "description": "Describes IAM Identity Center options for an OpenSearch Serverless security configuration in the form of a key-value map",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "application_arn": {
+              "computed": true,
+              "description": "The ARN of the IAM Identity Center application used to integrate with OpenSearch Serverless",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "application_description": {
+              "computed": true,
+              "description": "The description of the IAM Identity Center application used to integrate with OpenSearch Serverless",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "application_name": {
+              "computed": true,
+              "description": "The name of the IAM Identity Center application used to integrate with OpenSearch Serverless",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "group_attribute": {
+              "computed": true,
+              "description": "Group attribute for this IAM Identity Center integration",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "instance_arn": {
+              "computed": true,
+              "description": "The ARN of the IAM Identity Center instance used to integrate with OpenSearch Serverless",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "user_attribute": {
+              "computed": true,
+              "description": "User attribute for this IAM Identity Center integration",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

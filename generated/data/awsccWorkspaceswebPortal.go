@@ -42,6 +42,11 @@ const awsccWorkspaceswebPortal = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "data_protection_settings_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "display_name": {
         "computed": true,
         "description_kind": "plain",

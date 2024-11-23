@@ -16,6 +16,7 @@ const awsccCloudfrontKeyValueStore = `{
       },
       "comment": {
         "computed": true,
+        "description": "A comment for the key value store.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -28,17 +29,20 @@ const awsccCloudfrontKeyValueStore = `{
       },
       "import_source": {
         "computed": true,
+        "description": "The import source for the key value store.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "source_arn": {
               "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the import source for the key value store.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "source_type": {
               "computed": true,
+              "description": "The source type of the import source for the key value store.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -54,6 +58,7 @@ const awsccCloudfrontKeyValueStore = `{
         "type": "string"
       },
       "name": {
+        "description": "The name of the key value store.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -64,7 +69,7 @@ const awsccCloudfrontKeyValueStore = `{
         "type": "string"
       }
     },
-    "description": "Resource Type definition for AWS::CloudFront::KeyValueStore",
+    "description": "The key value store. Use this to separate data from function code, allowing you to update data without having to publish a new version of a function. The key value store holds keys and their corresponding values.",
     "description_kind": "plain"
   },
   "version": 1

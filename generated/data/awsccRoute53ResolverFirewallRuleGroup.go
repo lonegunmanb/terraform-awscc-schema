@@ -69,6 +69,18 @@ const awsccRoute53ResolverFirewallRuleGroup = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "confidence_threshold": {
+              "computed": true,
+              "description": "FirewallDomainRedirectionAction",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "dns_threat_protection": {
+              "computed": true,
+              "description": "FirewallDomainRedirectionAction",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "firewall_domain_list_id": {
               "computed": true,
               "description": "ResourceId",
@@ -78,6 +90,12 @@ const awsccRoute53ResolverFirewallRuleGroup = `{
             "firewall_domain_redirection_action": {
               "computed": true,
               "description": "FirewallDomainRedirectionAction",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "firewall_threat_protection_id": {
+              "computed": true,
+              "description": "ResourceId",
               "description_kind": "plain",
               "type": "string"
             },

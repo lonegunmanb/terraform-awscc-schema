@@ -32,6 +32,28 @@ const awsccAutoscalingAutoScalingGroup = `{
         },
         "optional": true
       },
+      "availability_zone_impairment_policy": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "impaired_zone_health_check_behavior": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "zonal_shift_enabled": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "availability_zones": {
         "computed": true,
         "description": "A list of Availability Zones where instances in the Auto Scaling group can be created. Used for launching into the default VPC subnet in each Availability Zone when not using the ` + "`" + `` + "`" + `VPCZoneIdentifier` + "`" + `` + "`" + ` property, or for attaching a network interface when an existing network interface ID is specified in a launch template.",
@@ -48,6 +70,50 @@ const awsccAutoscalingAutoScalingGroup = `{
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
+      },
+      "capacity_reservation_specification": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "capacity_reservation_preference": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "capacity_reservation_target": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "capacity_reservation_ids": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "capacity_reservation_resource_group_arns": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "context": {
         "computed": true,
@@ -523,6 +589,42 @@ const awsccAutoscalingAutoScalingGroup = `{
                                 },
                                 "optional": true
                               },
+                              "baseline_performance_factors": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "cpu": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "references": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "instance_family": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "optional": true,
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            },
+                                            "optional": true
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
                               "burstable_performance": {
                                 "computed": true,
                                 "description": "Indicates whether burstable performance instance types are included, excluded, or required. For more information, see [Burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html) in the *Amazon EC2 User Guide for Linux Instances*.\n Default: ` + "`" + `` + "`" + `excluded` + "`" + `` + "`" + `",
@@ -897,6 +999,12 @@ const awsccAutoscalingAutoScalingGroup = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "skip_zonal_shift_validation": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
       },
       "tags": {
         "computed": true,

@@ -181,9 +181,8 @@ const awsccInspectorv2CisScanConfiguration = `{
               ]
             },
             "target_resource_tags": {
-              "computed": true,
               "description_kind": "plain",
-              "optional": true,
+              "required": true,
               "type": [
                 "map",
                 [

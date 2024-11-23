@@ -81,6 +81,106 @@ const awsccConnectHoursOfOperation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "hours_of_operation_overrides": {
+        "computed": true,
+        "description": "One or more hours of operation overrides assigned to an hour of operation.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "effective_from": {
+              "computed": true,
+              "description": "The date from which the hours of operation override would be effective.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "effective_till": {
+              "computed": true,
+              "description": "The date till which the hours of operation override would be effective.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "hours_of_operation_override_id": {
+              "computed": true,
+              "description": "The Resource Identifier for the hours of operation override.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "override_config": {
+              "computed": true,
+              "description": "Configuration information for the hours of operation override: day, start time, and end time.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "day": {
+                    "computed": true,
+                    "description": "The day that the hours of operation override applies to.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "end_time": {
+                    "computed": true,
+                    "description": "The new end time that your contact center closes for the overriden days.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "hours": {
+                          "computed": true,
+                          "description": "The hours.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "minutes": {
+                          "computed": true,
+                          "description": "The minutes.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "start_time": {
+                    "computed": true,
+                    "description": "The new start time that your contact center opens for the overriden days.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "hours": {
+                          "computed": true,
+                          "description": "The hours.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "minutes": {
+                          "computed": true,
+                          "description": "The minutes.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            },
+            "override_description": {
+              "computed": true,
+              "description": "The description of the hours of operation override.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "override_name": {
+              "computed": true,
+              "description": "The name of the hours of operation override.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

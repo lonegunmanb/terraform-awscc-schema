@@ -184,6 +184,21 @@ const awsccEfsFileSystem = `{
                     "description": "The AWS-Region in which the destination file system is located.\n  For One Zone file systems, the replication configuration must specify the AWS-Region in which the destination file system is located.",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "role_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "status": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "status_message": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "list"

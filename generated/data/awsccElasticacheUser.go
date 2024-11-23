@@ -47,7 +47,7 @@ const awsccElasticacheUser = `{
       },
       "engine": {
         "computed": true,
-        "description": "Must be redis.",
+        "description": "The target cache engine for the user.",
         "description_kind": "plain",
         "type": "string"
       },

@@ -204,6 +204,31 @@ const awsccDynamodbTable = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            },
+            "warm_throughput": {
+              "computed": true,
+              "description": "Represents the warm throughput value (in read units per second and write units per second) for the specified secondary index. If you use this parameter, you must specify ` + "`" + `` + "`" + `ReadUnitsPerSecond` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `WriteUnitsPerSecond` + "`" + `` + "`" + `, or both.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "read_units_per_second": {
+                    "computed": true,
+                    "description": "Represents the number of read operations your base table can instantaneously support.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "write_units_per_second": {
+                    "computed": true,
+                    "description": "Represents the number of write operations your base table can instantaneously support.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "list"
@@ -636,9 +661,34 @@ const awsccDynamodbTable = `{
           "nesting_mode": "single"
         },
         "optional": true
+      },
+      "warm_throughput": {
+        "computed": true,
+        "description": "Represents the warm throughput (in read units per second and write units per second) for creating a table.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "read_units_per_second": {
+              "computed": true,
+              "description": "Represents the number of read operations your base table can instantaneously support.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "write_units_per_second": {
+              "computed": true,
+              "description": "Represents the number of write operations your base table can instantaneously support.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       }
     },
-    "description": "The ` + "`" + `` + "`" + `AWS::DynamoDB::Table` + "`" + `` + "`" + ` resource creates a DDB table. For more information, see [CreateTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html) in the *API Reference*.\n You should be aware of the following behaviors when working with DDB tables:\n  +   CFNlong typically creates DDB tables in parallel. However, if your template includes multiple DDB tables with indexes, you must declare dependencies so that the tables are created sequentially. DDBlong limits the number of tables with secondary indexes that are in the creating state. If you create multiple tables with indexes at the same time, DDB returns an error and the stack operation fails. For an example, see [DynamoDB Table with a DependsOn Attribute](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#aws-resource-dynamodb-table--examples--DynamoDB_Table_with_a_DependsOn_Attribute).\n  \n   Our guidance is to use the latest schema documented here for your CFNlong templates. This schema supports the provisioning of all table settings below. When using this schema in your CFNlong templates, please ensure that your Identity and Access Management (IAM) policies are updated with appropriate permissions to allow for the authorization of these setting changes.",
+    "description": "The ` + "`" + `` + "`" + `AWS::DynamoDB::Table` + "`" + `` + "`" + ` resource creates a DDB table. For more information, see [CreateTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html) in the *API Reference*.\n You should be aware of the following behaviors when working with DDB tables:\n  +   CFNlong typically creates DDB tables in parallel. However, if your template includes multiple DDB tables with indexes, you must declare dependencies so that the tables are created sequentially. DDBlong limits the number of tables with secondary indexes that are in the creating state. If you create multiple tables with indexes at the same time, DDB returns an error and the stack operation fails. For an example, see [DynamoDB Table with a DependsOn Attribute](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#aws-resource-dynamodb-table--examples--DynamoDB_Table_with_a_DependsOn_Attribute).\n  \n   Our guidance is to use the latest schema documented for your CFNlong templates. This schema supports the provisioning of all table settings below. When using this schema in your CFNlong templates, please ensure that your Identity and Access Management (IAM) policies are updated with appropriate permissions to allow for the authorization of these setting changes.",
     "description_kind": "plain"
   },
   "version": 1

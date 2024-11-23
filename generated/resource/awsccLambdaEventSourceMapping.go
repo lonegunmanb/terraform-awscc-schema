@@ -29,7 +29,7 @@ const awsccLambdaEventSourceMapping = `{
       },
       "batch_size": {
         "computed": true,
-        "description": "The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).\n  +   *Amazon Kinesis* – Default 100. Max 10,000.\n  +   *Amazon DynamoDB Streams* – Default 100. Max 10,000.\n  +   *Amazon Simple Queue Service* – Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.\n  +   *Amazon Managed Streaming for Apache Kafka* – Default 100. Max 10,000.\n  +   *Self-managed Apache Kafka* – Default 100. Max 10,000.\n  +   *Amazon MQ (ActiveMQ and RabbitMQ)* – Default 100. Max 10,000.\n  +   *DocumentDB* – Default 100. Max 10,000.",
+        "description": "The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).\n  +   *Amazon Kinesis* ? Default 100. Max 10,000.\n  +   *Amazon DynamoDB Streams* ? Default 100. Max 10,000.\n  +   *Amazon Simple Queue Service* ? Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.\n  +   *Amazon Managed Streaming for Apache Kafka* ? Default 100. Max 10,000.\n  +   *Self-managed Apache Kafka* ? Default 100. Max 10,000.\n  +   *Amazon MQ (ActiveMQ and RabbitMQ)* ? Default 100. Max 10,000.\n  +   *DocumentDB* ? Default 100. Max 10,000.",
         "description_kind": "plain",
         "optional": true,
         "type": "number"
@@ -111,7 +111,7 @@ const awsccLambdaEventSourceMapping = `{
       },
       "event_source_arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the event source.\n  +   *Amazon Kinesis* – The ARN of the data stream or a stream consumer.\n  +   *Amazon DynamoDB Streams* – The ARN of the stream.\n  +   *Amazon Simple Queue Service* – The ARN of the queue.\n  +   *Amazon Managed Streaming for Apache Kafka* – The ARN of the cluster or the ARN of the VPC connection (for [cross-account event source mappings](https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc)).\n  +   *Amazon MQ* – The ARN of the broker.\n  +   *Amazon DocumentDB* – The ARN of the DocumentDB change stream.",
+        "description": "The Amazon Resource Name (ARN) of the event source.\n  +   *Amazon Kinesis* ? The ARN of the data stream or a stream consumer.\n  +   *Amazon DynamoDB Streams* ? The ARN of the stream.\n  +   *Amazon Simple Queue Service* ? The ARN of the queue.\n  +   *Amazon Managed Streaming for Apache Kafka* ? The ARN of the cluster or the ARN of the VPC connection (for [cross-account event source mappings](https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc)).\n  +   *Amazon MQ* ? The ARN of the broker.\n  +   *Amazon DocumentDB* ? The ARN of the DocumentDB change stream.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -156,7 +156,7 @@ const awsccLambdaEventSourceMapping = `{
         "optional": true
       },
       "function_name": {
-        "description": "The name or ARN of the Lambda function.\n  **Name formats**\n +   *Function name* – ` + "`" + `` + "`" + `MyFunction` + "`" + `` + "`" + `.\n  +   *Function ARN* – ` + "`" + `` + "`" + `arn:aws:lambda:us-west-2:123456789012:function:MyFunction` + "`" + `` + "`" + `.\n  +   *Version or Alias ARN* – ` + "`" + `` + "`" + `arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD` + "`" + `` + "`" + `.\n  +   *Partial ARN* – ` + "`" + `` + "`" + `123456789012:function:MyFunction` + "`" + `` + "`" + `.\n  \n The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.",
+        "description": "The name or ARN of the Lambda function.\n  **Name formats**\n +   *Function name* ? ` + "`" + `` + "`" + `MyFunction` + "`" + `` + "`" + `.\n  +   *Function ARN* ? ` + "`" + `` + "`" + `arn:aws:lambda:us-west-2:123456789012:function:MyFunction` + "`" + `` + "`" + `.\n  +   *Version or Alias ARN* ? ` + "`" + `` + "`" + `arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD` + "`" + `` + "`" + `.\n  +   *Partial ARN* ? ` + "`" + `` + "`" + `123456789012:function:MyFunction` + "`" + `` + "`" + `.\n  \n The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -205,12 +205,56 @@ const awsccLambdaEventSourceMapping = `{
         "optional": true,
         "type": "number"
       },
+      "metrics_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "metrics": {
+              "computed": true,
+              "description": "Metric groups to enable.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "parallelization_factor": {
         "computed": true,
         "description": "(Kinesis and DynamoDB Streams only) The number of batches to process concurrently from each shard. The default value is 1.",
         "description_kind": "plain",
         "optional": true,
         "type": "number"
+      },
+      "provisioned_poller_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "maximum_pollers": {
+              "computed": true,
+              "description": "The maximum number of event pollers this event source can scale up to.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "minimum_pollers": {
+              "computed": true,
+              "description": "The minimum number of event pollers this event source can scale down to.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "queues": {
         "computed": true,
@@ -298,7 +342,7 @@ const awsccLambdaEventSourceMapping = `{
           "attributes": {
             "type": {
               "computed": true,
-              "description": "The type of authentication protocol, VPC components, or virtual host for your event source. For example: ` + "`" + `` + "`" + `\"Type\":\"SASL_SCRAM_512_AUTH\"` + "`" + `` + "`" + `.\n  +   ` + "`" + `` + "`" + `BASIC_AUTH` + "`" + `` + "`" + ` – (Amazon MQ) The ASMlong secret that stores your broker credentials.\n  +   ` + "`" + `` + "`" + `BASIC_AUTH` + "`" + `` + "`" + ` – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.\n  +   ` + "`" + `` + "`" + `VPC_SUBNET` + "`" + `` + "`" + ` – (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.\n  +   ` + "`" + `` + "`" + `VPC_SECURITY_GROUP` + "`" + `` + "`" + ` – (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.\n  +   ` + "`" + `` + "`" + `SASL_SCRAM_256_AUTH` + "`" + `` + "`" + ` – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.\n  +   ` + "`" + `` + "`" + `SASL_SCRAM_512_AUTH` + "`" + `` + "`" + ` – (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.\n  +   ` + "`" + `` + "`" + `VIRTUAL_HOST` + "`" + `` + "`" + ` –- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.\n  +   ` + "`" + `` + "`" + `CLIENT_CERTIFICATE_TLS_AUTH` + "`" + `` + "`" + ` – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.\n  +   ` + "`" + `` + "`" + `SERVER_ROOT_CA_CERTIFICATE` + "`" + `` + "`" + ` – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.",
+              "description": "The type of authentication protocol, VPC components, or virtual host for your event source. For example: ` + "`" + `` + "`" + `\"Type\":\"SASL_SCRAM_512_AUTH\"` + "`" + `` + "`" + `.\n  +   ` + "`" + `` + "`" + `BASIC_AUTH` + "`" + `` + "`" + ` ? (Amazon MQ) The ASMlong secret that stores your broker credentials.\n  +   ` + "`" + `` + "`" + `BASIC_AUTH` + "`" + `` + "`" + ` ? (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL/PLAIN authentication of your Apache Kafka brokers.\n  +   ` + "`" + `` + "`" + `VPC_SUBNET` + "`" + `` + "`" + ` ? (Self-managed Apache Kafka) The subnets associated with your VPC. Lambda connects to these subnets to fetch data from your self-managed Apache Kafka cluster.\n  +   ` + "`" + `` + "`" + `VPC_SECURITY_GROUP` + "`" + `` + "`" + ` ? (Self-managed Apache Kafka) The VPC security group used to manage access to your self-managed Apache Kafka brokers.\n  +   ` + "`" + `` + "`" + `SASL_SCRAM_256_AUTH` + "`" + `` + "`" + ` ? (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-256 authentication of your self-managed Apache Kafka brokers.\n  +   ` + "`" + `` + "`" + `SASL_SCRAM_512_AUTH` + "`" + `` + "`" + ` ? (Amazon MSK, Self-managed Apache Kafka) The Secrets Manager ARN of your secret key used for SASL SCRAM-512 authentication of your self-managed Apache Kafka brokers.\n  +   ` + "`" + `` + "`" + `VIRTUAL_HOST` + "`" + `` + "`" + ` ?- (RabbitMQ) The name of the virtual host in your RabbitMQ broker. Lambda uses this RabbitMQ host as the event source. This property cannot be specified in an UpdateEventSourceMapping API call.\n  +   ` + "`" + `` + "`" + `CLIENT_CERTIFICATE_TLS_AUTH` + "`" + `` + "`" + ` ? (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.\n  +   ` + "`" + `` + "`" + `SERVER_ROOT_CA_CERTIFICATE` + "`" + `` + "`" + ` ? (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

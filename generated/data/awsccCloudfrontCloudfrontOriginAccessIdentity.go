@@ -11,11 +11,13 @@ const awsccCloudfrontCloudfrontOriginAccessIdentity = `{
     "attributes": {
       "cloudfront_origin_access_identity_config": {
         "computed": true,
+        "description": "The current configuration information for the identity.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "comment": {
               "computed": true,
+              "description": "A comment to describe the origin access identity. The comment cannot be longer than 128 characters.",
               "description_kind": "plain",
               "type": "string"
             }

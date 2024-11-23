@@ -45,6 +45,20 @@ const awsccVpclatticeServiceNetwork = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "sharing_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "tags": {
         "computed": true,
         "description_kind": "plain",

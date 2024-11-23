@@ -44,6 +44,23 @@ const awsccRdsGlobalCluster = `{
         "optional": true,
         "type": "string"
       },
+      "global_endpoint": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "address": {
+              "computed": true,
+              "description": "The writer endpoint for the global database cluster. This endpoint always points to the writer DB instance in the current primary cluster.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

@@ -69,7 +69,7 @@ const awsccEc2LaunchTemplate = `{
                         },
                         "kms_key_id": {
                           "computed": true,
-                          "description": "Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.",
+                          "description": "The ARN of the symmetric KMSlong (KMS) CMK used for encryption.",
                           "description_kind": "plain",
                           "type": "string"
                         },
@@ -235,7 +235,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "elastic_inference_accelerators": {
               "computed": true,
-              "description": "Amazon Elastic Inference is no longer available.\n  An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.\n You cannot specify accelerators from different generations in the same request.\n  Starting April 15, 2023, AWS will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.",
+              "description": "An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.\n You cannot specify accelerators from different generations in the same request.\n  Starting April 15, 2023, AWS will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -379,7 +379,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "instance_requirements": {
               "computed": true,
-              "description": "The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes.\n You must specify ` + "`" + `` + "`" + `VCpuCount` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `MemoryMiB` + "`" + `` + "`" + `. All other attributes are optional. Any unspecified optional attribute is set to its default.\n When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you specify multiple values for an attribute, you get instance types that satisfy any of the specified values.\n To limit the list of instance types from which Amazon EC2 can identify matching instance types, you can use one of the following parameters, but not both in the same request:\n  +   ` + "`" + `` + "`" + `AllowedInstanceTypes` + "`" + `` + "`" + ` - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.\n  +   ` + "`" + `` + "`" + `ExcludedInstanceTypes` + "`" + `` + "`" + ` - The instance types to exclude from the list, even if they match your specified attributes.\n  \n  If you specify ` + "`" + `` + "`" + `InstanceRequirements` + "`" + `` + "`" + `, you can't specify ` + "`" + `` + "`" + `InstanceType` + "`" + `` + "`" + `.\n Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch template in the [launch instance wizard](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html), or with the [RunInstances](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html) API or [AWS::EC2::Instance](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html) AWS CloudFormation resource, you can't specify ` + "`" + `` + "`" + `InstanceRequirements` + "`" + `` + "`" + `.\n  For more information, see [Specify attributes for instance type selection for EC2 Fleet or Spot Fleet](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html) and [Spot placement score](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html) in the *Amazon EC2 User Guide*.",
+              "description": "The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes.\n You must specify ` + "`" + `` + "`" + `VCpuCount` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `MemoryMiB` + "`" + `` + "`" + `. All other attributes are optional. Any unspecified optional attribute is set to its default.\n When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you specify multiple values for an attribute, you get instance types that satisfy any of the specified values.\n To limit the list of instance types from which Amazon EC2 can identify matching instance types, you can use one of the following parameters, but not both in the same request:\n  +   ` + "`" + `` + "`" + `AllowedInstanceTypes` + "`" + `` + "`" + ` - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.\n  +   ` + "`" + `` + "`" + `ExcludedInstanceTypes` + "`" + `` + "`" + ` - The instance types to exclude from the list, even if they match your specified attributes.\n  \n  If you specify ` + "`" + `` + "`" + `InstanceRequirements` + "`" + `` + "`" + `, you can't specify ` + "`" + `` + "`" + `InstanceType` + "`" + `` + "`" + `.\n Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet to launch instances. If you plan to use the launch template in the [launch instance wizard](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html), or with the [RunInstances](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html) API or [AWS::EC2::Instance](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html) AWS CloudFormation resource, you can't specify ` + "`" + `` + "`" + `InstanceRequirements` + "`" + `` + "`" + `.\n  For more information, see [Attribute-based instance type selection for EC2 Fleet](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html), [Attribute-based instance type selection for Spot Fleet](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html), and [Spot placement score](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html) in the *Amazon EC2 User Guide*.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -447,7 +447,7 @@ const awsccEc2LaunchTemplate = `{
                   },
                   "accelerator_types": {
                     "computed": true,
-                    "description": "The accelerator types that must be on the instance type.\n  +  For instance types with GPU accelerators, specify ` + "`" + `` + "`" + `gpu` + "`" + `` + "`" + `.\n  +  For instance types with FPGA accelerators, specify ` + "`" + `` + "`" + `fpga` + "`" + `` + "`" + `.\n  \n Default: Any accelerator type",
+                    "description": "The accelerator types that must be on the instance type.\n  +  For instance types with GPU accelerators, specify ` + "`" + `` + "`" + `gpu` + "`" + `` + "`" + `.\n  +  For instance types with FPGA accelerators, specify ` + "`" + `` + "`" + `fpga` + "`" + `` + "`" + `.\n  +  For instance types with inference accelerators, specify ` + "`" + `` + "`" + `inference` + "`" + `` + "`" + `.\n  \n Default: Any accelerator type",
                     "description_kind": "plain",
                     "type": [
                       "list",
@@ -486,6 +486,40 @@ const awsccEc2LaunchTemplate = `{
                           "description": "The minimum baseline bandwidth, in Mbps. To specify no minimum limit, omit this parameter.",
                           "description_kind": "plain",
                           "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "baseline_performance_factors": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "cpu": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "references": {
+                                "computed": true,
+                                "description": "A list of references to be used as baseline for the CPU performance. Currently, you can only specify a single reference across different instance type variations such as CPU manufacturers, architectures etc.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "instance_family": {
+                                      "computed": true,
+                                      "description": "The instance family to refer. Ensure that you specify the correct family name. For example, C6i and C6g are valid values, but C6 is not.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
                         }
                       },
                       "nesting_mode": "single"
@@ -912,7 +946,7 @@ const awsccEc2LaunchTemplate = `{
                   },
                   "interface_type": {
                     "computed": true,
-                    "description": "The type of network interface. To create an Elastic Fabric Adapter (EFA), specify ` + "`" + `` + "`" + `efa` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `efa` + "`" + `` + "`" + `. For more information, see [Elastic Fabric Adapter](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html) in the *Amazon EC2 User Guide*.\n If you are not creating an EFA, specify ` + "`" + `` + "`" + `interface` + "`" + `` + "`" + ` or omit this parameter.\n If you specify ` + "`" + `` + "`" + `efa-only` + "`" + `` + "`" + `, do not assign any IP addresses to the network interface. EFA-only network interfaces do not support IP addresses.\n Valid values: ` + "`" + `` + "`" + `interface` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `efa` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `efa-only` + "`" + `` + "`" + `",
+                    "description": "The type of network interface. To create an Elastic Fabric Adapter (EFA), specify ` + "`" + `` + "`" + `efa` + "`" + `` + "`" + `. For more information, see [Elastic Fabric Adapter](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html) in the *Amazon EC2 User Guide*.\n If you are not creating an EFA, specify ` + "`" + `` + "`" + `interface` + "`" + `` + "`" + ` or omit this parameter.\n Valid values: ` + "`" + `` + "`" + `interface` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `efa` + "`" + `` + "`" + `",
                     "description_kind": "plain",
                     "type": "string"
                   },
@@ -1162,7 +1196,7 @@ const awsccEc2LaunchTemplate = `{
             },
             "tag_specifications": {
               "computed": true,
-              "description": "The tags to apply to resources that are created during instance launch.\n To tag the launch template itself, use [TagSpecifications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-tagspecifications).",
+              "description": "The tags to apply to the resources that are created during instance launch.\n To tag a resource after it has been created, see [CreateTags](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html).\n To tag the launch template itself, use [TagSpecifications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-tagspecifications).",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -1221,7 +1255,7 @@ const awsccEc2LaunchTemplate = `{
       },
       "tag_specifications": {
         "computed": true,
-        "description": "The tags to apply to the launch template on creation. To tag the launch template, the resource type must be ` + "`" + `` + "`" + `launch-template` + "`" + `` + "`" + `.\n To specify the tags for resources that are created during instance launch, use [TagSpecifications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications).",
+        "description": "The tags to apply to the launch template on creation. To tag the launch template, the resource type must be ` + "`" + `` + "`" + `launch-template` + "`" + `` + "`" + `.\n To specify the tags for the resources that are created when an instance is launched, you must use [TagSpecifications](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications).",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

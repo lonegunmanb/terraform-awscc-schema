@@ -16,16 +16,19 @@ const awsccCloudfrontKeyGroup = `{
         "type": "string"
       },
       "key_group_config": {
+        "description": "The key group configuration.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "comment": {
               "computed": true,
+              "description": "A comment to describe the key group. The comment cannot be longer than 128 characters.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "items": {
+              "description": "A list of the identifiers of the public keys in the key group.",
               "description_kind": "plain",
               "required": true,
               "type": [
@@ -34,6 +37,7 @@ const awsccCloudfrontKeyGroup = `{
               ]
             },
             "name": {
+              "description": "A name to identify the key group.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
@@ -54,7 +58,7 @@ const awsccCloudfrontKeyGroup = `{
         "type": "string"
       }
     },
-    "description": "Resource Type definition for AWS::CloudFront::KeyGroup",
+    "description": "A key group.\n A key group contains a list of public keys that you can use with [CloudFront signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html).",
     "description_kind": "plain"
   },
   "version": 1

@@ -16,6 +16,7 @@ const awsccCloudfrontKeyValueStore = `{
       },
       "comment": {
         "computed": true,
+        "description": "A comment for the key value store.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -27,16 +28,19 @@ const awsccCloudfrontKeyValueStore = `{
       },
       "import_source": {
         "computed": true,
+        "description": "The import source for the key value store.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "source_arn": {
               "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the import source for the key value store.",
               "description_kind": "plain",
               "type": "string"
             },
             "source_type": {
               "computed": true,
+              "description": "The source type of the import source for the key value store.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -51,6 +55,7 @@ const awsccCloudfrontKeyValueStore = `{
       },
       "name": {
         "computed": true,
+        "description": "The name of the key value store.",
         "description_kind": "plain",
         "type": "string"
       },

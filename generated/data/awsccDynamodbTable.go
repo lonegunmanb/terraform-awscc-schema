@@ -182,6 +182,28 @@ const awsccDynamodbTable = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "warm_throughput": {
+              "computed": true,
+              "description": "Represents the warm throughput value (in read units per second and write units per second) for the specified secondary index. If you use this parameter, you must specify ` + "`" + `` + "`" + `ReadUnitsPerSecond` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `WriteUnitsPerSecond` + "`" + `` + "`" + `, or both.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "read_units_per_second": {
+                    "computed": true,
+                    "description": "Represents the number of read operations your base table can instantaneously support.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "write_units_per_second": {
+                    "computed": true,
+                    "description": "Represents the number of write operations your base table can instantaneously support.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "list"
@@ -561,6 +583,28 @@ const awsccDynamodbTable = `{
               "description": "Indicates whether TTL is to be enabled (true) or disabled (false) on the table.",
               "description_kind": "plain",
               "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "warm_throughput": {
+        "computed": true,
+        "description": "Represents the warm throughput (in read units per second and write units per second) for creating a table.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "read_units_per_second": {
+              "computed": true,
+              "description": "Represents the number of read operations your base table can instantaneously support.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "write_units_per_second": {
+              "computed": true,
+              "description": "Represents the number of write operations your base table can instantaneously support.",
+              "description_kind": "plain",
+              "type": "number"
             }
           },
           "nesting_mode": "single"

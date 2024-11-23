@@ -11,6 +11,7 @@ const awsccCloudfrontMonitoringSubscription = `{
     "attributes": {
       "distribution_id": {
         "computed": true,
+        "description": "The ID of the distribution that you are enabling metrics for.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -22,16 +23,19 @@ const awsccCloudfrontMonitoringSubscription = `{
       },
       "monitoring_subscription": {
         "computed": true,
+        "description": "A subscription configuration for additional CloudWatch metrics.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "realtime_metrics_subscription_config": {
               "computed": true,
+              "description": "A subscription configuration for additional CloudWatch metrics.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "realtime_metrics_subscription_status": {
                     "computed": true,
+                    "description": "A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.",
                     "description_kind": "plain",
                     "type": "string"
                   }
