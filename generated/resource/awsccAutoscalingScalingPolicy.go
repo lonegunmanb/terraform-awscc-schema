@@ -668,6 +668,12 @@ const awsccAutoscalingScalingPolicy = `{
                                 },
                                 "optional": true
                               },
+                              "period": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              },
                               "stat": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -685,6 +691,12 @@ const awsccAutoscalingScalingPolicy = `{
                           },
                           "optional": true
                         },
+                        "period": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
                         "return_data": {
                           "computed": true,
                           "description_kind": "plain",
@@ -701,6 +713,12 @@ const awsccAutoscalingScalingPolicy = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
+                  },
+                  "period": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
                   },
                   "statistic": {
                     "computed": true,

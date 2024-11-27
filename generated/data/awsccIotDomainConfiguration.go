@@ -100,6 +100,16 @@ const awsccIotDomainConfiguration = `{
               "computed": true,
               "description_kind": "plain",
               "type": "bool"
+            },
+            "ocsp_authorized_responder_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "ocsp_lambda_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             }
           },
           "nesting_mode": "single"

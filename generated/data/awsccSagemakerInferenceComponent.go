@@ -94,6 +94,12 @@ const awsccSagemakerInferenceComponent = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "base_inference_component_name": {
+              "computed": true,
+              "description": "The name of the base inference component",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "compute_resource_requirements": {
               "computed": true,
               "description_kind": "plain",

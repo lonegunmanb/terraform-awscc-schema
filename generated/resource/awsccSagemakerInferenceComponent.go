@@ -63,6 +63,7 @@ const awsccSagemakerInferenceComponent = `{
         "type": "string"
       },
       "runtime_config": {
+        "computed": true,
         "description": "The runtime config for the inference component",
         "description_kind": "plain",
         "nested_type": {
@@ -89,14 +90,22 @@ const awsccSagemakerInferenceComponent = `{
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
       },
       "specification": {
         "description": "The specification for the inference component",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "base_inference_component_name": {
+              "computed": true,
+              "description": "The name of the base inference component",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "compute_resource_requirements": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -127,7 +136,7 @@ const awsccSagemakerInferenceComponent = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             },
             "container": {
               "computed": true,
@@ -248,9 +257,10 @@ const awsccSagemakerInferenceComponent = `{
         "optional": true
       },
       "variant_name": {
+        "computed": true,
         "description": "The name of the endpoint variant the inference component is associated with",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       }
     },

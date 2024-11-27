@@ -61,6 +61,37 @@ const awsccEksCluster = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "compute_config": {
+        "computed": true,
+        "description": "Todo: add description",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled": {
+              "computed": true,
+              "description": "Todo: add description",
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "node_pools": {
+              "computed": true,
+              "description": "Todo: add description",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "node_role_arn": {
+              "computed": true,
+              "description": "Todo: add description",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "encryption_config": {
         "computed": true,
         "description_kind": "plain",
@@ -119,6 +150,22 @@ const awsccEksCluster = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "elastic_load_balancing": {
+              "computed": true,
+              "description": "Todo: add description",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description": "Todo: add description",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "ip_family": {
               "computed": true,
               "description": "Ipv4 or Ipv6. You can only specify ipv6 for 1.21 and later clusters that use version 1.10.1 or later of the Amazon VPC CNI add-on",
@@ -230,6 +277,54 @@ const awsccEksCluster = `{
           "nesting_mode": "single"
         }
       },
+      "remote_network_config": {
+        "computed": true,
+        "description": "Configuration fields for specifying on-premises node and pod CIDRs that are external to the VPC passed during cluster creation.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "remote_node_networks": {
+              "computed": true,
+              "description": "Network configuration of nodes run on-premises with EKS Hybrid Nodes.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cidrs": {
+                    "computed": true,
+                    "description": "Specifies the list of remote node CIDRs.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
+            "remote_pod_networks": {
+              "computed": true,
+              "description": "Network configuration of pods run on-premises with EKS Hybrid Nodes.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cidrs": {
+                    "computed": true,
+                    "description": "Specifies the list of remote pod CIDRs.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "resources_vpc_config": {
         "computed": true,
         "description": "An object representing the VPC configuration to use for an Amazon EKS cluster.",
@@ -284,6 +379,32 @@ const awsccEksCluster = `{
         "description": "The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "storage_config": {
+        "computed": true,
+        "description": "Todo: add description",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "block_storage": {
+              "computed": true,
+              "description": "Todo: add description",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description": "Todo: add description",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "tags": {
         "computed": true,

@@ -65,6 +65,41 @@ const awsccEksCluster = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "compute_config": {
+        "computed": true,
+        "description": "Todo: add description",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled": {
+              "computed": true,
+              "description": "Todo: add description",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "node_pools": {
+              "computed": true,
+              "description": "Todo: add description",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "node_role_arn": {
+              "computed": true,
+              "description": "Todo: add description",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "encryption_config": {
         "computed": true,
         "description_kind": "plain",
@@ -127,6 +162,24 @@ const awsccEksCluster = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "elastic_load_balancing": {
+              "computed": true,
+              "description": "Todo: add description",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description": "Todo: add description",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "ip_family": {
               "computed": true,
               "description": "Ipv4 or Ipv6. You can only specify ipv6 for 1.21 and later clusters that use version 1.10.1 or later of the Amazon VPC CNI add-on",
@@ -251,6 +304,59 @@ const awsccEksCluster = `{
         },
         "optional": true
       },
+      "remote_network_config": {
+        "computed": true,
+        "description": "Configuration fields for specifying on-premises node and pod CIDRs that are external to the VPC passed during cluster creation.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "remote_node_networks": {
+              "computed": true,
+              "description": "Network configuration of nodes run on-premises with EKS Hybrid Nodes.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cidrs": {
+                    "computed": true,
+                    "description": "Specifies the list of remote node CIDRs.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "remote_pod_networks": {
+              "computed": true,
+              "description": "Network configuration of pods run on-premises with EKS Hybrid Nodes.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cidrs": {
+                    "computed": true,
+                    "description": "Specifies the list of remote pod CIDRs.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "resources_vpc_config": {
         "description": "An object representing the VPC configuration to use for an Amazon EKS cluster.",
         "description_kind": "plain",
@@ -309,6 +415,35 @@ const awsccEksCluster = `{
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "storage_config": {
+        "computed": true,
+        "description": "Todo: add description",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "block_storage": {
+              "computed": true,
+              "description": "Todo: add description",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description": "Todo: add description",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "tags": {
         "computed": true,

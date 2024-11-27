@@ -21,6 +21,16 @@ const awsccChatbotSlackChannelConfiguration = `{
         "required": true,
         "type": "string"
       },
+      "customization_resource_arns": {
+        "computed": true,
+        "description": "ARNs of Custom Actions to associate with notifications in the provided chat channel.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "guardrail_policies": {
         "computed": true,
         "description": "The list of IAM policy ARNs that are applied as channel guardrails. The AWS managed 'AdministratorAccess' policy is applied as a default if this is not set.",
