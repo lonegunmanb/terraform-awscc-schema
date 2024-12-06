@@ -6,50 +6,14 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccApigatewayDomainNameV2 = `{
+const awsccInvoicingInvoiceUnit = `{
   "block": {
     "attributes": {
-      "certificate_arn": {
+      "description": {
         "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "string"
-      },
-      "domain_name": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
-      "domain_name_arn": {
-        "computed": true,
-        "description": "The amazon resource name (ARN) of the domain name resource.",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "domain_name_id": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "endpoint_configuration": {
-        "computed": true,
-        "description_kind": "plain",
-        "nested_type": {
-          "attributes": {
-            "types": {
-              "computed": true,
-              "description_kind": "plain",
-              "optional": true,
-              "type": [
-                "list",
-                "string"
-              ]
-            }
-          },
-          "nesting_mode": "single"
-        },
-        "optional": true
       },
       "id": {
         "computed": true,
@@ -57,19 +21,27 @@ const awsccApigatewayDomainNameV2 = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "policy": {
-        "computed": true,
+      "invoice_receiver": {
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
-      "security_policy": {
+      "invoice_unit_arn": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
-      "tags": {
+      "last_modified": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "name": {
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "resource_tags": {
         "computed": true,
         "description_kind": "plain",
         "nested_type": {
@@ -90,16 +62,39 @@ const awsccApigatewayDomainNameV2 = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "rule": {
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "linked_accounts": {
+              "description_kind": "plain",
+              "required": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "required": true
+      },
+      "tax_inheritance_disabled": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
       }
     },
-    "description": "Resource Type definition for AWS::ApiGateway::DomainNameV2.",
+    "description": "An invoice unit is a set of mutually exclusive accounts that correspond to your business entity. Invoice units allow you to separate AWS account costs and configures your invoice for each business entity.",
     "description_kind": "plain"
   },
   "version": 1
 }`
 
-func AwsccApigatewayDomainNameV2Schema() *tfjson.Schema {
+func AwsccInvoicingInvoiceUnitSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccApigatewayDomainNameV2), &result)
+	_ = json.Unmarshal([]byte(awsccInvoicingInvoiceUnit), &result)
 	return &result
 }

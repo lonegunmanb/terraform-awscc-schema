@@ -64,6 +64,37 @@ const awsccEventsConnection = `{
               },
               "optional": true
             },
+            "connectivity_parameters": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "resource_parameters": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "resource_association_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "resource_configuration_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "invocation_http_parameters": {
               "computed": true,
               "description_kind": "plain",
@@ -319,6 +350,38 @@ const awsccEventsConnection = `{
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "invocation_connectivity_parameters": {
+        "computed": true,
+        "description": "The private resource the HTTP request will be sent to.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "resource_parameters": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "resource_association_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "resource_configuration_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "name": {
         "computed": true,

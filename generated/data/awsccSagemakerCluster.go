@@ -138,6 +138,34 @@ const awsccSagemakerCluster = `{
                 "string"
               ]
             },
+            "override_vpc_config": {
+              "computed": true,
+              "description": "Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "security_group_ids": {
+                    "computed": true,
+                    "description": "The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security groups for the VPC that is specified in the Subnets field.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "subnets": {
+                    "computed": true,
+                    "description": "The ID of the subnets in the VPC to which you want to connect your training job or model.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "threads_per_core": {
               "computed": true,
               "description": "The number you specified to TreadsPerCore in CreateCluster for enabling or disabling multithreading. For instance types that support multithreading, you can specify 1 for disabling multithreading and 2 for enabling multithreading.",
