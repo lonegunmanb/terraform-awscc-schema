@@ -9,6 +9,11 @@ import (
 const awsccLogsMetricFilter = `{
   "block": {
     "attributes": {
+      "apply_on_transformed_logs": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "filter_name": {
         "computed": true,
         "description": "The name of the metric filter.",

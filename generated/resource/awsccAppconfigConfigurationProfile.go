@@ -21,6 +21,13 @@ const awsccAppconfigConfigurationProfile = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "deletion_protection_check": {
+        "computed": true,
+        "description": "On resource deletion this controls whether the Deletion Protection check should be applied, bypassed, or (the default) whether the behavior should be controlled by the account-level Deletion Protection setting. See https://docs.aws.amazon.com/appconfig/latest/userguide/deletion-protection.html",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description": "A description of the configuration profile.",

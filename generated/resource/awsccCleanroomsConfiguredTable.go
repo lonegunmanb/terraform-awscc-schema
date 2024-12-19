@@ -312,24 +312,133 @@ const awsccCleanroomsConfiguredTable = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "glue": {
+            "athena": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "database_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "output_location": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
                     "type": "string"
                   },
                   "table_name": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "work_group": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
+            },
+            "glue": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "database_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "table_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "snowflake": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "account_identifier": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "database_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "schema_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "secret_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "table_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "table_schema": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "v1": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "column_name": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "column_type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

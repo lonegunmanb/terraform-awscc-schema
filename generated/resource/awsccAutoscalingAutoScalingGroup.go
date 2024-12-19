@@ -18,11 +18,13 @@ const awsccAutoscalingAutoScalingGroup = `{
       },
       "availability_zone_distribution": {
         "computed": true,
+        "description": "The instance capacity distribution across Availability Zones.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "capacity_distribution_strategy": {
               "computed": true,
+              "description": "If launches fail in an Availability Zone, the following strategies are available. The default is ` + "`" + `` + "`" + `balanced-best-effort` + "`" + `` + "`" + `. \n  +   ` + "`" + `` + "`" + `balanced-only` + "`" + `` + "`" + ` - If launches fail in an Availability Zone, Auto Scaling will continue to attempt to launch in the unhealthy zone to preserve a balanced distribution.\n  +   ` + "`" + `` + "`" + `balanced-best-effort` + "`" + `` + "`" + ` - If launches fail in an Availability Zone, Auto Scaling will attempt to launch in another healthy Availability Zone instead.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -34,17 +36,20 @@ const awsccAutoscalingAutoScalingGroup = `{
       },
       "availability_zone_impairment_policy": {
         "computed": true,
+        "description": "The Availability Zone impairment policy.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "impaired_zone_health_check_behavior": {
               "computed": true,
+              "description": "Specifies the health check behavior for the impaired Availability Zone in an active zonal shift. If you select ` + "`" + `` + "`" + `Replace unhealthy` + "`" + `` + "`" + `, instances that appear unhealthy will be replaced in all Availability Zones. If you select ` + "`" + `` + "`" + `Ignore unhealthy` + "`" + `` + "`" + `, instances will not be replaced in the Availability Zone with the active zonal shift. For more information, see [Auto Scaling group zonal shift](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html) in the *Amazon EC2 Auto Scaling User Guide*.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "zonal_shift_enabled": {
               "computed": true,
+              "description": "If ` + "`" + `` + "`" + `true` + "`" + `` + "`" + `, enable zonal shift for your Auto Scaling group.",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"

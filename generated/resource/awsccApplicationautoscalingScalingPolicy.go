@@ -34,46 +34,52 @@ const awsccApplicationautoscalingScalingPolicy = `{
       },
       "predictive_scaling_policy_configuration": {
         "computed": true,
+        "description": "The predictive scaling policy configuration.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "max_capacity_breach_behavior": {
               "computed": true,
+              "description": "Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity. Defaults to ` + "`" + `` + "`" + `HonorMaxCapacity` + "`" + `` + "`" + ` if not specified.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "max_capacity_buffer": {
               "computed": true,
+              "description": "The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55. \n Required if the ` + "`" + `` + "`" + `MaxCapacityBreachBehavior` + "`" + `` + "`" + ` property is set to ` + "`" + `` + "`" + `IncreaseMaxCapacity` + "`" + `` + "`" + `, and cannot be used otherwise.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "metric_specifications": {
               "computed": true,
+              "description": "This structure includes the metrics and target utilization to use for predictive scaling. \n This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "customized_capacity_metric_specification": {
                     "computed": true,
+                    "description": "The customized capacity metric specification.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "metric_data_queries": {
                           "computed": true,
+                          "description": "One or more metric data queries to provide data points for a metric specification.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "expression": {
                                 "computed": true,
-                                "description": "The math expression to perform on the returned data, if this object is performing a math expression.",
+                                "description": "The math expression to perform on the returned data, if this object is performing a math expression. This expression can use the ` + "`" + `` + "`" + `Id` + "`" + `` + "`" + ` of the other metrics to refer to those metrics, and can also use the ` + "`" + `` + "`" + `Id` + "`" + `` + "`" + ` of other expressions to use the result of those expressions. \n Conditional: Within each ` + "`" + `` + "`" + `MetricDataQuery` + "`" + `` + "`" + ` object, you must specify either ` + "`" + `` + "`" + `Expression` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `MetricStat` + "`" + `` + "`" + `, but not both.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
                               },
                               "id": {
                                 "computed": true,
-                                "description": "A short name that identifies the object's results in the response.",
+                                "description": "A short name that identifies the object's results in the response. This name must be unique among all ` + "`" + `` + "`" + `MetricDataQuery` + "`" + `` + "`" + ` objects specified for a single scaling policy. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscores. The first character must be a lowercase letter.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
@@ -87,19 +93,19 @@ const awsccApplicationautoscalingScalingPolicy = `{
                               },
                               "metric_stat": {
                                 "computed": true,
-                                "description": "Information about the metric data to return.",
+                                "description": "Information about the metric data to return. \n Conditional: Within each ` + "`" + `` + "`" + `MetricDataQuery` + "`" + `` + "`" + ` object, you must specify either ` + "`" + `` + "`" + `Expression` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `MetricStat` + "`" + `` + "`" + `, but not both.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "metric": {
                                       "computed": true,
-                                      "description": "The CloudWatch metric to return, including the metric name, namespace, and dimensions. ",
+                                      "description": "The CloudWatch metric to return, including the metric name, namespace, and dimensions. To get the exact metric name, namespace, and dimensions, inspect the [Metric](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html) object that is returned by a call to [ListMetrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html).",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "dimensions": {
                                             "computed": true,
-                                            "description": "The dimensions for the metric.",
+                                            "description": "Describes the dimensions of the metric.",
                                             "description_kind": "plain",
                                             "nested_type": {
                                               "attributes": {
@@ -143,14 +149,14 @@ const awsccApplicationautoscalingScalingPolicy = `{
                                     },
                                     "stat": {
                                       "computed": true,
-                                      "description": "The statistic to return. It can include any CloudWatch statistic or extended statistic.",
+                                      "description": "The statistic to return. It can include any CloudWatch statistic or extended statistic. For a list of valid values, see the table in [Statistics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic) in the *Amazon CloudWatch User Guide*. \n The most commonly used metrics for predictive scaling are ` + "`" + `` + "`" + `Average` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `Sum` + "`" + `` + "`" + `.",
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": "string"
                                     },
                                     "unit": {
                                       "computed": true,
-                                      "description": "The unit to use for the returned data points.",
+                                      "description": "The unit to use for the returned data points. For a complete list of the units that CloudWatch supports, see the [MetricDatum](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html) data type in the *Amazon CloudWatch API Reference*.",
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": "string"
@@ -162,7 +168,7 @@ const awsccApplicationautoscalingScalingPolicy = `{
                               },
                               "return_data": {
                                 "computed": true,
-                                "description": "Indicates whether to return the timestamps and raw data values of this metric.",
+                                "description": "Indicates whether to return the timestamps and raw data values of this metric. \n If you use any math expressions, specify ` + "`" + `` + "`" + `true` + "`" + `` + "`" + ` for this value for only the final math expression that the metric specification is based on. You must specify ` + "`" + `` + "`" + `false` + "`" + `` + "`" + ` for ` + "`" + `` + "`" + `ReturnData` + "`" + `` + "`" + ` for all the other metrics and expressions used in the metric specification.\n If you are only retrieving metrics and not performing any math expressions, do not specify anything for ` + "`" + `` + "`" + `ReturnData` + "`" + `` + "`" + `. This sets it to its default (` + "`" + `` + "`" + `true` + "`" + `` + "`" + `).",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "bool"
@@ -179,6 +185,7 @@ const awsccApplicationautoscalingScalingPolicy = `{
                   },
                   "customized_load_metric_specification": {
                     "computed": true,
+                    "description": "The customized load metric specification.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -189,14 +196,14 @@ const awsccApplicationautoscalingScalingPolicy = `{
                             "attributes": {
                               "expression": {
                                 "computed": true,
-                                "description": "The math expression to perform on the returned data, if this object is performing a math expression.",
+                                "description": "The math expression to perform on the returned data, if this object is performing a math expression. This expression can use the ` + "`" + `` + "`" + `Id` + "`" + `` + "`" + ` of the other metrics to refer to those metrics, and can also use the ` + "`" + `` + "`" + `Id` + "`" + `` + "`" + ` of other expressions to use the result of those expressions. \n Conditional: Within each ` + "`" + `` + "`" + `MetricDataQuery` + "`" + `` + "`" + ` object, you must specify either ` + "`" + `` + "`" + `Expression` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `MetricStat` + "`" + `` + "`" + `, but not both.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
                               },
                               "id": {
                                 "computed": true,
-                                "description": "A short name that identifies the object's results in the response.",
+                                "description": "A short name that identifies the object's results in the response. This name must be unique among all ` + "`" + `` + "`" + `MetricDataQuery` + "`" + `` + "`" + ` objects specified for a single scaling policy. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscores. The first character must be a lowercase letter.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
@@ -210,19 +217,19 @@ const awsccApplicationautoscalingScalingPolicy = `{
                               },
                               "metric_stat": {
                                 "computed": true,
-                                "description": "Information about the metric data to return.",
+                                "description": "Information about the metric data to return. \n Conditional: Within each ` + "`" + `` + "`" + `MetricDataQuery` + "`" + `` + "`" + ` object, you must specify either ` + "`" + `` + "`" + `Expression` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `MetricStat` + "`" + `` + "`" + `, but not both.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "metric": {
                                       "computed": true,
-                                      "description": "The CloudWatch metric to return, including the metric name, namespace, and dimensions. ",
+                                      "description": "The CloudWatch metric to return, including the metric name, namespace, and dimensions. To get the exact metric name, namespace, and dimensions, inspect the [Metric](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html) object that is returned by a call to [ListMetrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html).",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "dimensions": {
                                             "computed": true,
-                                            "description": "The dimensions for the metric.",
+                                            "description": "Describes the dimensions of the metric.",
                                             "description_kind": "plain",
                                             "nested_type": {
                                               "attributes": {
@@ -266,14 +273,14 @@ const awsccApplicationautoscalingScalingPolicy = `{
                                     },
                                     "stat": {
                                       "computed": true,
-                                      "description": "The statistic to return. It can include any CloudWatch statistic or extended statistic.",
+                                      "description": "The statistic to return. It can include any CloudWatch statistic or extended statistic. For a list of valid values, see the table in [Statistics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic) in the *Amazon CloudWatch User Guide*. \n The most commonly used metrics for predictive scaling are ` + "`" + `` + "`" + `Average` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `Sum` + "`" + `` + "`" + `.",
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": "string"
                                     },
                                     "unit": {
                                       "computed": true,
-                                      "description": "The unit to use for the returned data points.",
+                                      "description": "The unit to use for the returned data points. For a complete list of the units that CloudWatch supports, see the [MetricDatum](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html) data type in the *Amazon CloudWatch API Reference*.",
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": "string"
@@ -285,7 +292,7 @@ const awsccApplicationautoscalingScalingPolicy = `{
                               },
                               "return_data": {
                                 "computed": true,
-                                "description": "Indicates whether to return the timestamps and raw data values of this metric.",
+                                "description": "Indicates whether to return the timestamps and raw data values of this metric. \n If you use any math expressions, specify ` + "`" + `` + "`" + `true` + "`" + `` + "`" + ` for this value for only the final math expression that the metric specification is based on. You must specify ` + "`" + `` + "`" + `false` + "`" + `` + "`" + ` for ` + "`" + `` + "`" + `ReturnData` + "`" + `` + "`" + ` for all the other metrics and expressions used in the metric specification.\n If you are only retrieving metrics and not performing any math expressions, do not specify anything for ` + "`" + `` + "`" + `ReturnData` + "`" + `` + "`" + `. This sets it to its default (` + "`" + `` + "`" + `true` + "`" + `` + "`" + `).",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "bool"
@@ -302,24 +309,26 @@ const awsccApplicationautoscalingScalingPolicy = `{
                   },
                   "customized_scaling_metric_specification": {
                     "computed": true,
+                    "description": "The customized scaling metric specification.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "metric_data_queries": {
                           "computed": true,
+                          "description": "One or more metric data queries to provide data points for a metric specification.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "expression": {
                                 "computed": true,
-                                "description": "The math expression to perform on the returned data, if this object is performing a math expression.",
+                                "description": "The math expression to perform on the returned data, if this object is performing a math expression. This expression can use the ` + "`" + `` + "`" + `Id` + "`" + `` + "`" + ` of the other metrics to refer to those metrics, and can also use the ` + "`" + `` + "`" + `Id` + "`" + `` + "`" + ` of other expressions to use the result of those expressions. \n Conditional: Within each ` + "`" + `` + "`" + `MetricDataQuery` + "`" + `` + "`" + ` object, you must specify either ` + "`" + `` + "`" + `Expression` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `MetricStat` + "`" + `` + "`" + `, but not both.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
                               },
                               "id": {
                                 "computed": true,
-                                "description": "A short name that identifies the object's results in the response.",
+                                "description": "A short name that identifies the object's results in the response. This name must be unique among all ` + "`" + `` + "`" + `MetricDataQuery` + "`" + `` + "`" + ` objects specified for a single scaling policy. If you are performing math expressions on this set of data, this name represents that data and can serve as a variable in the mathematical expression. The valid characters are letters, numbers, and underscores. The first character must be a lowercase letter.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
@@ -333,19 +342,19 @@ const awsccApplicationautoscalingScalingPolicy = `{
                               },
                               "metric_stat": {
                                 "computed": true,
-                                "description": "Information about the metric data to return.",
+                                "description": "Information about the metric data to return. \n Conditional: Within each ` + "`" + `` + "`" + `MetricDataQuery` + "`" + `` + "`" + ` object, you must specify either ` + "`" + `` + "`" + `Expression` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `MetricStat` + "`" + `` + "`" + `, but not both.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "metric": {
                                       "computed": true,
-                                      "description": "The CloudWatch metric to return, including the metric name, namespace, and dimensions. ",
+                                      "description": "The CloudWatch metric to return, including the metric name, namespace, and dimensions. To get the exact metric name, namespace, and dimensions, inspect the [Metric](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html) object that is returned by a call to [ListMetrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html).",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "dimensions": {
                                             "computed": true,
-                                            "description": "The dimensions for the metric.",
+                                            "description": "Describes the dimensions of the metric.",
                                             "description_kind": "plain",
                                             "nested_type": {
                                               "attributes": {
@@ -389,14 +398,14 @@ const awsccApplicationautoscalingScalingPolicy = `{
                                     },
                                     "stat": {
                                       "computed": true,
-                                      "description": "The statistic to return. It can include any CloudWatch statistic or extended statistic.",
+                                      "description": "The statistic to return. It can include any CloudWatch statistic or extended statistic. For a list of valid values, see the table in [Statistics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic) in the *Amazon CloudWatch User Guide*. \n The most commonly used metrics for predictive scaling are ` + "`" + `` + "`" + `Average` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `Sum` + "`" + `` + "`" + `.",
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": "string"
                                     },
                                     "unit": {
                                       "computed": true,
-                                      "description": "The unit to use for the returned data points.",
+                                      "description": "The unit to use for the returned data points. For a complete list of the units that CloudWatch supports, see the [MetricDatum](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html) data type in the *Amazon CloudWatch API Reference*.",
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": "string"
@@ -408,7 +417,7 @@ const awsccApplicationautoscalingScalingPolicy = `{
                               },
                               "return_data": {
                                 "computed": true,
-                                "description": "Indicates whether to return the timestamps and raw data values of this metric.",
+                                "description": "Indicates whether to return the timestamps and raw data values of this metric. \n If you use any math expressions, specify ` + "`" + `` + "`" + `true` + "`" + `` + "`" + ` for this value for only the final math expression that the metric specification is based on. You must specify ` + "`" + `` + "`" + `false` + "`" + `` + "`" + ` for ` + "`" + `` + "`" + `ReturnData` + "`" + `` + "`" + ` for all the other metrics and expressions used in the metric specification.\n If you are only retrieving metrics and not performing any math expressions, do not specify anything for ` + "`" + `` + "`" + `ReturnData` + "`" + `` + "`" + `. This sets it to its default (` + "`" + `` + "`" + `true` + "`" + `` + "`" + `).",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "bool"
@@ -425,17 +434,20 @@ const awsccApplicationautoscalingScalingPolicy = `{
                   },
                   "predefined_load_metric_specification": {
                     "computed": true,
+                    "description": "The predefined load metric specification.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "predefined_metric_type": {
                           "computed": true,
+                          "description": "The metric type.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "resource_label": {
                           "computed": true,
+                          "description": "A label that uniquely identifies a target group.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -447,17 +459,20 @@ const awsccApplicationautoscalingScalingPolicy = `{
                   },
                   "predefined_metric_pair_specification": {
                     "computed": true,
+                    "description": "The predefined metric pair specification that determines the appropriate scaling metric and load metric to use.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "predefined_metric_type": {
                           "computed": true,
+                          "description": "Indicates which metrics to use. There are two different types of metrics for each metric type: one is a load metric and one is a scaling metric.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "resource_label": {
                           "computed": true,
+                          "description": "A label that uniquely identifies a specific target group from which to determine the total and average request count.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -469,17 +484,20 @@ const awsccApplicationautoscalingScalingPolicy = `{
                   },
                   "predefined_scaling_metric_specification": {
                     "computed": true,
+                    "description": "The predefined scaling metric specification.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "predefined_metric_type": {
                           "computed": true,
+                          "description": "The metric type.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "resource_label": {
                           "computed": true,
+                          "description": "A label that uniquely identifies a specific target group from which to determine the average request count.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -491,6 +509,7 @@ const awsccApplicationautoscalingScalingPolicy = `{
                   },
                   "target_value": {
                     "computed": true,
+                    "description": "Specifies the target utilization.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
@@ -502,12 +521,14 @@ const awsccApplicationautoscalingScalingPolicy = `{
             },
             "mode": {
               "computed": true,
+              "description": "The predictive scaling mode. Defaults to ` + "`" + `` + "`" + `ForecastOnly` + "`" + `` + "`" + ` if not specified.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "scheduling_buffer_time": {
               "computed": true,
+              "description": "The amount of time, in seconds, that the start time can be advanced. \n The value must be less than the forecast interval duration of 3600 seconds (60 minutes). Defaults to 300 seconds if not specified.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"

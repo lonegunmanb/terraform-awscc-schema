@@ -243,7 +243,7 @@ const awsccDynamodbTable = `{
       },
       "import_source_specification": {
         "computed": true,
-        "description": "Specifies the properties of data being imported from the S3 bucket source to the table.\n  If you specify the ` + "`" + `` + "`" + `ImportSourceSpecification` + "`" + `` + "`" + ` property, and also specify either the ` + "`" + `` + "`" + `StreamSpecification` + "`" + `` + "`" + `, the ` + "`" + `` + "`" + `TableClass` + "`" + `` + "`" + ` property, or the ` + "`" + `` + "`" + `DeletionProtectionEnabled` + "`" + `` + "`" + ` property, the IAM entity creating/updating stack must have ` + "`" + `` + "`" + `UpdateTable` + "`" + `` + "`" + ` permission.",
+        "description": "Specifies the properties of data being imported from the S3 bucket source to the\" table.\n  If you specify the ` + "`" + `` + "`" + `ImportSourceSpecification` + "`" + `` + "`" + ` property, and also specify either the ` + "`" + `` + "`" + `StreamSpecification` + "`" + `` + "`" + `, the ` + "`" + `` + "`" + `TableClass` + "`" + `` + "`" + ` property, the ` + "`" + `` + "`" + `DeletionProtectionEnabled` + "`" + `` + "`" + ` property, or the ` + "`" + `` + "`" + `WarmThroughput` + "`" + `` + "`" + ` property, the IAM entity creating/updating stack must have ` + "`" + `` + "`" + `UpdateTable` + "`" + `` + "`" + ` permission.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

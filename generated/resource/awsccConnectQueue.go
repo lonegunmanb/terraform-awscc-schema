@@ -79,6 +79,24 @@ const awsccConnectQueue = `{
         },
         "optional": true
       },
+      "outbound_email_config": {
+        "computed": true,
+        "description": "The outbound email address ID.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "outbound_email_address_id": {
+              "computed": true,
+              "description": "The email address connect resource ID.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "queue_arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN) for the queue.",

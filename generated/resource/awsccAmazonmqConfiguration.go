@@ -29,9 +29,10 @@ const awsccAmazonmqConfiguration = `{
         "type": "string"
       },
       "data": {
+        "computed": true,
         "description": "The base64-encoded XML configuration.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "description": {

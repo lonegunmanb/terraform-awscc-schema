@@ -217,6 +217,12 @@ const awsccConnectTaskTemplate = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "self_assign_contact_flow_arn": {
+        "computed": true,
+        "description": "The identifier of the contact flow.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "status": {
         "computed": true,
         "description": "The status of the task template",

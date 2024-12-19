@@ -11,7 +11,7 @@ const awsccRedshiftIntegration = `{
     "attributes": {
       "additional_encryption_context": {
         "computed": true,
-        "description": "An optional set of non-secret key?value pairs that contains additional contextual information about the data.",
+        "description": "An optional set of non-secret key–value pairs that contains additional contextual information about the data.",
         "description_kind": "plain",
         "type": [
           "map",
@@ -50,7 +50,7 @@ const awsccRedshiftIntegration = `{
       },
       "source_arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the database to use as the source for replication, for example, arn:aws:dynamodb:us-east-2:123412341234:table/dynamotable",
+        "description": "The Amazon Resource Name (ARN) of the database to use as the source for replication",
         "description_kind": "plain",
         "type": "string"
       },
@@ -78,7 +78,7 @@ const awsccRedshiftIntegration = `{
       },
       "target_arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the Redshift data warehouse to use as the target for replication, for example, arn:aws:redshift:us-east-2:123412341234:namespace:e43aab3e-10a3-4ec4-83d4-f227ff9bfbcf",
+        "description": "The Amazon Resource Name (ARN) of the Redshift data warehouse to use as the target for replication",
         "description_kind": "plain",
         "type": "string"
       }

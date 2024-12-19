@@ -757,7 +757,7 @@ const awsccConnectcampaignsv2Campaign = `{
       },
       "source": {
         "computed": true,
-        "description": "The possible types of channel config parameters",
+        "description": "The possible source of the campaign",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -767,6 +767,24 @@ const awsccConnectcampaignsv2Campaign = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "event_trigger": {
+              "computed": true,
+              "description": "The event trigger of the campaign",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "customer_profiles_domain_arn": {
+                    "computed": true,
+                    "description": "Arn",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

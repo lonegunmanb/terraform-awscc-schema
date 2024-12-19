@@ -9,6 +9,12 @@ import (
 const awsccCassandraKeyspace = `{
   "block": {
     "attributes": {
+      "client_side_timestamps_enabled": {
+        "computed": true,
+        "description": "Indicates whether client-side timestamps are enabled (true) or disabled (false) for all tables in the keyspace. To add a Region to a single-Region keyspace with at least one table, the value must be set to true. After you enabled client-side timestamps for a table, you can?t disable it again.",
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

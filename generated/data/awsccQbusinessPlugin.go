@@ -48,12 +48,22 @@ const awsccQbusinessPlugin = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "authorization_url": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "role_arn": {
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
                   },
                   "secret_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "token_url": {
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"

@@ -374,6 +374,32 @@ const awsccQbusinessDataSource = `{
         "required": true,
         "type": "string"
       },
+      "media_extraction_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "image_extraction_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "image_extraction_status": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "role_arn": {
         "computed": true,
         "description_kind": "plain",

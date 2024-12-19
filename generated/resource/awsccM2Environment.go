@@ -83,6 +83,12 @@ const awsccM2Environment = `{
         "required": true,
         "type": "string"
       },
+      "network_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "preferred_maintenance_window": {
         "computed": true,
         "description": "Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.",

@@ -10,8 +10,9 @@ const awsccQbusinessPlugin = `{
   "block": {
     "attributes": {
       "application_id": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "auth_configuration": {
@@ -51,6 +52,12 @@ const awsccQbusinessPlugin = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "authorization_url": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "role_arn": {
                     "computed": true,
                     "description_kind": "plain",
@@ -58,6 +65,12 @@ const awsccQbusinessPlugin = `{
                     "type": "string"
                   },
                   "secret_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "token_url": {
                     "computed": true,
                     "description_kind": "plain",
                     "optional": true,

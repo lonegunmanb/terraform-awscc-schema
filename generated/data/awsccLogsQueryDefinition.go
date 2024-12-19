@@ -36,6 +36,12 @@ const awsccLogsQueryDefinition = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "query_language": {
+        "computed": true,
+        "description": "Query language of the query string. Possible values are CWLI, SQL, PPL, with CWLI being the default.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "query_string": {
         "computed": true,
         "description": "The query string to use for this definition",

@@ -17,7 +17,7 @@ const awsccS3ExpressDirectoryBucket = `{
       },
       "availability_zone_name": {
         "computed": true,
-        "description": "Returns the code for the Availability Zone where the directory bucket was created.",
+        "description": "Returns the code for the Availability Zone or Local Zone where the directory bucket was created. An example for the code of an Availability Zone is 'us-east-1f'.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -76,13 +76,13 @@ const awsccS3ExpressDirectoryBucket = `{
       },
       "bucket_name": {
         "computed": true,
-        "description": "Specifies a name for the bucket. The bucket name must contain only lowercase letters, numbers, and hyphens (-). A directory bucket name must be unique in the chosen Availability Zone. The bucket name must also follow the format 'bucket_base_name--az_id--x-s3' (for example, 'DOC-EXAMPLE-BUCKET--usw2-az1--x-s3'). If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the bucket name.",
+        "description": "Specifies a name for the bucket. The bucket name must contain only lowercase letters, numbers, and hyphens (-). A directory bucket name must be unique in the chosen Availability Zone or Local Zone. The bucket name must also follow the format 'bucket_base_name--zone_id--x-s3'. The zone_id can be the ID of an Availability Zone or a Local Zone. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the bucket name.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "data_redundancy": {
-        "description": "Specifies the number of Availability Zone that's used for redundancy for the bucket.",
+        "description": "Specifies the number of Availability Zone or Local Zone that's used for redundancy for the bucket.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -170,7 +170,7 @@ const awsccS3ExpressDirectoryBucket = `{
         "optional": true
       },
       "location_name": {
-        "description": "Specifies the AZ ID of the Availability Zone where the directory bucket will be created. An example AZ ID value is 'use1-az5'.",
+        "description": "Specifies the Zone ID of the Availability Zone or Local Zone where the directory bucket will be created. An example Availability Zone ID value is 'use1-az5'.",
         "description_kind": "plain",
         "required": true,
         "type": "string"

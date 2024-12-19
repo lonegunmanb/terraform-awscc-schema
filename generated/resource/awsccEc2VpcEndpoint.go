@@ -22,10 +22,38 @@ const awsccEc2VpcEndpoint = `{
           "string"
         ]
       },
+      "dns_options": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "dns_record_ip_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "private_dns_only_for_inbound_resolver_endpoint": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
+        "type": "string"
+      },
+      "ip_address_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "network_interface_ids": {
@@ -50,6 +78,12 @@ const awsccEc2VpcEndpoint = `{
         "optional": true,
         "type": "bool"
       },
+      "resource_configuration_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "route_table_ids": {
         "computed": true,
         "description": "The IDs of the route tables. Routing is supported only for gateway endpoints.",
@@ -71,9 +105,16 @@ const awsccEc2VpcEndpoint = `{
         ]
       },
       "service_name": {
+        "computed": true,
         "description": "The name of the endpoint service.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
+        "type": "string"
+      },
+      "service_network_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "subnet_ids": {

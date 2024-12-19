@@ -52,7 +52,7 @@ const awsccEc2NetworkAcl = `{
         "type": "string"
       }
     },
-    "description": "Specifies a network ACL for your VPC.",
+    "description": "Specifies a network ACL for your VPC.\n To add a network ACL entry, see [AWS::EC2::NetworkAclEntry](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html).",
     "description_kind": "plain"
   },
   "version": 1

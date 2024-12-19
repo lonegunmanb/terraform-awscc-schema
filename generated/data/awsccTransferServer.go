@@ -206,6 +206,11 @@ const awsccTransferServer = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "state": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "structured_log_destinations": {
         "computed": true,
         "description_kind": "plain",

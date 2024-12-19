@@ -70,9 +70,10 @@ const awsccDatazoneSubscriptionTarget = `{
         "type": "string"
       },
       "manage_access_role": {
+        "computed": true,
         "description": "The manage access role that is used to create the subscription target.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "name": {

@@ -159,6 +159,22 @@ const awsccQbusinessApplication = `{
         },
         "optional": true
       },
+      "quick_sight_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "client_namespace": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "role_arn": {
         "computed": true,
         "description_kind": "plain",

@@ -22,10 +22,34 @@ const awsccEc2VpcEndpoint = `{
           "string"
         ]
       },
+      "dns_options": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "dns_record_ip_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "private_dns_only_for_inbound_resolver_endpoint": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "ip_address_type": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       },
       "network_interface_ids": {
@@ -48,6 +72,11 @@ const awsccEc2VpcEndpoint = `{
         "description_kind": "plain",
         "type": "bool"
       },
+      "resource_configuration_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "route_table_ids": {
         "computed": true,
         "description": "The IDs of the route tables. Routing is supported only for gateway endpoints.",
@@ -69,6 +98,11 @@ const awsccEc2VpcEndpoint = `{
       "service_name": {
         "computed": true,
         "description": "The name of the endpoint service.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "service_network_arn": {
+        "computed": true,
         "description_kind": "plain",
         "type": "string"
       },

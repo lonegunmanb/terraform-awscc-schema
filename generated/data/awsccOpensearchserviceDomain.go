@@ -216,6 +216,44 @@ const awsccOpensearchserviceDomain = `{
               "description_kind": "plain",
               "type": "bool"
             },
+            "node_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "node_config": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "count": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "enabled": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "node_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
             "warm_count": {
               "computed": true,
               "description_kind": "plain",

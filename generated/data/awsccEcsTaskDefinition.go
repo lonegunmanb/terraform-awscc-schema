@@ -217,7 +217,7 @@ const awsccEcsTaskDefinition = `{
                 "attributes": {
                   "command": {
                     "computed": true,
-                    "description": "A string array representing the command that the container runs to determine if it is healthy. The string array must start with ` + "`" + `` + "`" + `CMD` + "`" + `` + "`" + ` to run the command arguments directly, or ` + "`" + `` + "`" + `CMD-SHELL` + "`" + `` + "`" + ` to run the command with the container's default shell. \n  When you use the AWS Management Console JSON panel, the CLIlong, or the APIs, enclose the list of commands in double quotes and brackets.\n  ` + "`" + `` + "`" + `[ \"CMD-SHELL\", \"curl -f http://localhost/ || exit 1\" ]` + "`" + `` + "`" + ` \n You don't include the double quotes and brackets when you use the AWS Management Console.\n  ` + "`" + `` + "`" + `CMD-SHELL, curl -f http://localhost/ || exit 1` + "`" + `` + "`" + ` \n An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see ` + "`" + `` + "`" + `HealthCheck` + "`" + `` + "`" + ` in the docker container create command",
+                    "description": "A string array representing the command that the container runs to determine if it is healthy. The string array must start with ` + "`" + `` + "`" + `CMD` + "`" + `` + "`" + ` to run the command arguments directly, or ` + "`" + `` + "`" + `CMD-SHELL` + "`" + `` + "`" + ` to run the command with the container's default shell. \n  When you use the AWS Management Console JSON panel, the CLIlong, or the APIs, enclose the list of commands in double quotes and brackets.\n  ` + "`" + `` + "`" + `[ \"CMD-SHELL\", \"curl -f http://localhost/ || exit 1\" ]` + "`" + `` + "`" + ` \n You don't include the double quotes and brackets when you use the AWS Management Console.\n  ` + "`" + `` + "`" + `CMD-SHELL, curl -f http://localhost/ || exit 1` + "`" + `` + "`" + ` \n An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see ` + "`" + `` + "`" + `HealthCheck` + "`" + `` + "`" + ` in the docker container create command.",
                     "description_kind": "plain",
                     "type": [
                       "list",
@@ -528,7 +528,7 @@ const awsccEcsTaskDefinition = `{
                   },
                   "name": {
                     "computed": true,
-                    "description": "The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the name that you use in the ` + "`" + `` + "`" + `serviceConnectConfiguration` + "`" + `` + "`" + ` of a service. The name can include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.\n For more information, see [Service Connect](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html) in the *Amazon Elastic Container Service Developer Guide*.",
+                    "description": "The name that's used for the port mapping. This parameter is the name that you use in the ` + "`" + `` + "`" + `serviceConnectConfiguration` + "`" + `` + "`" + ` and the ` + "`" + `` + "`" + `vpcLatticeConfigurations` + "`" + `` + "`" + ` of a service. The name can include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.",
                     "description_kind": "plain",
                     "type": "string"
                   },
@@ -721,6 +721,7 @@ const awsccEcsTaskDefinition = `{
             },
             "version_consistency": {
               "computed": true,
+              "description": "Specifies whether Amazon ECS will resolve the container image tag provided in the container definition to an image digest. By default, the value is ` + "`" + `` + "`" + `enabled` + "`" + `` + "`" + `. If you set the value for a container as ` + "`" + `` + "`" + `disabled` + "`" + `` + "`" + `, Amazon ECS will not resolve the provided container image tag to a digest and will use the original image URI specified in the container definition for deployment. For more information about container image resolution, see [Container image resolution](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html#deployment-container-image-stability) in the *Amazon ECS Developer Guide*.",
               "description_kind": "plain",
               "type": "string"
             },
@@ -762,6 +763,11 @@ const awsccEcsTaskDefinition = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "enable_fault_injection": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "ephemeral_storage": {
         "computed": true,
         "description": "The ephemeral storage settings to use for tasks run with the task definition.",
@@ -770,7 +776,7 @@ const awsccEcsTaskDefinition = `{
           "attributes": {
             "size_in_gi_b": {
               "computed": true,
-              "description": "The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is ` + "`" + `` + "`" + `20` + "`" + `` + "`" + ` GiB and the maximum supported value is ` + "`" + `` + "`" + `200` + "`" + `` + "`" + ` GiB.",
+              "description": "The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is ` + "`" + `` + "`" + `21` + "`" + `` + "`" + ` GiB and the maximum supported value is ` + "`" + `` + "`" + `200` + "`" + `` + "`" + ` GiB.",
               "description_kind": "plain",
               "type": "number"
             }

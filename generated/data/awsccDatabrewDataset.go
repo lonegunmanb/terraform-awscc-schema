@@ -136,6 +136,12 @@ const awsccDatabrewDataset = `{
                           "description_kind": "plain",
                           "type": "string"
                         },
+                        "bucket_owner": {
+                          "computed": true,
+                          "description": "Bucket owner",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "key": {
                           "computed": true,
                           "description_kind": "plain",
@@ -183,6 +189,12 @@ const awsccDatabrewDataset = `{
                           "description_kind": "plain",
                           "type": "string"
                         },
+                        "bucket_owner": {
+                          "computed": true,
+                          "description": "Bucket owner",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "key": {
                           "computed": true,
                           "description_kind": "plain",
@@ -219,6 +231,12 @@ const awsccDatabrewDataset = `{
                 "attributes": {
                   "bucket": {
                     "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "bucket_owner": {
+                    "computed": true,
+                    "description": "Bucket owner",
                     "description_kind": "plain",
                     "type": "string"
                   },
@@ -416,6 +434,12 @@ const awsccDatabrewDataset = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "source": {
+        "computed": true,
+        "description": "Source type of the dataset",
+        "description_kind": "plain",
+        "type": "string"
       },
       "tags": {
         "computed": true,

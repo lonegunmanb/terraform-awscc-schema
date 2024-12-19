@@ -11,6 +11,7 @@ const awsccEcsService = `{
     "attributes": {
       "availability_zone_rebalancing": {
         "computed": true,
+        "description": "Indicates whether to use Availability Zone rebalancing for the service.\n For more information, see [Balancing an Amazon ECS service across Availability Zones](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html) in the *Amazon Elastic Container Service Developer Guide*.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -159,7 +160,7 @@ const awsccEcsService = `{
       },
       "health_check_grace_period_seconds": {
         "computed": true,
-        "description": "The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started. This is only used when your service is configured to use a load balancer. If your service has a load balancer defined and you don't specify a health check grace period value, the default value of ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` is used.\n If you do not use an Elastic Load Balancing, we recommend that you use the ` + "`" + `` + "`" + `startPeriod` + "`" + `` + "`" + ` in the task definition health check parameters. For more information, see [Health check](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html).\n If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.",
+        "description": "The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you don't specify a health check grace period value, the default value of ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` is used. If you don't use any of the health checks, then ` + "`" + `` + "`" + `healthCheckGracePeriodSeconds` + "`" + `` + "`" + ` is unused.\n If your service's tasks take a while to start and respond to health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.",
         "description_kind": "plain",
         "type": "number"
       },
@@ -228,7 +229,7 @@ const awsccEcsService = `{
                 "attributes": {
                   "assign_public_ip": {
                     "computed": true,
-                    "description": "Whether the task's elastic network interface receives a public IP address. The default value is ` + "`" + `` + "`" + `DISABLED` + "`" + `` + "`" + `.",
+                    "description": "Whether the task's elastic network interface receives a public IP address. The default value is ` + "`" + `` + "`" + `ENABLED` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "type": "string"
                   },
@@ -704,21 +705,25 @@ const awsccEcsService = `{
       },
       "vpc_lattice_configurations": {
         "computed": true,
+        "description": "The VPC Lattice configuration for the service being created.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "port_name": {
               "computed": true,
+              "description": "The name of the port mapping to register in the VPC Lattice target group. This is the name of the ` + "`" + `` + "`" + `portMapping` + "`" + `` + "`" + ` you defined in your task definition.",
               "description_kind": "plain",
               "type": "string"
             },
             "role_arn": {
               "computed": true,
+              "description": "The ARN of the IAM role to associate with this VPC Lattice configuration. This is the Amazon ECS\u2028 infrastructure IAM role that is used to manage your VPC Lattice infrastructure.",
               "description_kind": "plain",
               "type": "string"
             },
             "target_group_arn": {
               "computed": true,
+              "description": "The full Amazon Resource Name (ARN) of the target group or groups associated with the VPC Lattice configuration that the Amazon ECS tasks will be registered to.",
               "description_kind": "plain",
               "type": "string"
             }

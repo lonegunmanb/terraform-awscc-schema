@@ -168,6 +168,38 @@ const awsccEc2Ec2Fleet = `{
                             "nesting_mode": "single"
                           }
                         },
+                        "baseline_performance_factors": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "cpu": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "references": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "instance_family": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "burstable_performance": {
                           "computed": true,
                           "description_kind": "plain",

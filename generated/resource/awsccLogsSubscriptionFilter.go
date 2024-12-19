@@ -9,6 +9,12 @@ import (
 const awsccLogsSubscriptionFilter = `{
   "block": {
     "attributes": {
+      "apply_on_transformed_logs": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "destination_arn": {
         "description": "The Amazon Resource Name (ARN) of the destination.",
         "description_kind": "plain",

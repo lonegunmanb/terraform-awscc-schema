@@ -73,6 +73,29 @@ const awsccRedshiftserverlessWorkgroup = `{
         "optional": true,
         "type": "number"
       },
+      "price_performance_target": {
+        "computed": true,
+        "description": "A property that represents the price performance target settings for the workgroup.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "level": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "status": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "publicly_accessible": {
         "computed": true,
         "description": "A value that specifies whether the workgroup can be accessible from a public network.",
@@ -239,6 +262,25 @@ const awsccRedshiftserverlessWorkgroup = `{
               "computed": true,
               "description_kind": "plain",
               "type": "string"
+            },
+            "price_performance_target": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "level": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "status": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             },
             "publicly_accessible": {
               "computed": true,

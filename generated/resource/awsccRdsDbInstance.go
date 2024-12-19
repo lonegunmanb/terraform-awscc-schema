@@ -216,6 +216,7 @@ const awsccRdsDbInstance = `{
         "computed": true,
         "description": "The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database files. In this context, the term \"Oracle database instance\" refers exclusively to the system global area (SGA) and Oracle background processes. If you don't specify a SID, the value defaults to ` + "`" + `` + "`" + `RDSCDB` + "`" + `` + "`" + `. The Oracle SID is also the name of your CDB.",
         "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "dbi_resource_id": {

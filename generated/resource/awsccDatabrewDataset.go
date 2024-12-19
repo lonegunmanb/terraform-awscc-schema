@@ -150,6 +150,13 @@ const awsccDatabrewDataset = `{
                           "optional": true,
                           "type": "string"
                         },
+                        "bucket_owner": {
+                          "computed": true,
+                          "description": "Bucket owner",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
                         "key": {
                           "computed": true,
                           "description_kind": "plain",
@@ -204,6 +211,13 @@ const awsccDatabrewDataset = `{
                           "optional": true,
                           "type": "string"
                         },
+                        "bucket_owner": {
+                          "computed": true,
+                          "description": "Bucket owner",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
                         "key": {
                           "computed": true,
                           "description_kind": "plain",
@@ -245,6 +259,13 @@ const awsccDatabrewDataset = `{
                 "attributes": {
                   "bucket": {
                     "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "bucket_owner": {
+                    "computed": true,
+                    "description": "Bucket owner",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -471,6 +492,13 @@ const awsccDatabrewDataset = `{
           "nesting_mode": "single"
         },
         "optional": true
+      },
+      "source": {
+        "computed": true,
+        "description": "Source type of the dataset",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       },
       "tags": {
         "computed": true,

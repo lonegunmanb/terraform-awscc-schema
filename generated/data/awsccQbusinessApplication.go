@@ -143,6 +143,20 @@ const awsccQbusinessApplication = `{
           "nesting_mode": "single"
         }
       },
+      "quick_sight_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "client_namespace": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "role_arn": {
         "computed": true,
         "description_kind": "plain",
