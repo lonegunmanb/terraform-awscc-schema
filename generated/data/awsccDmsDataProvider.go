@@ -63,12 +63,127 @@ const awsccDmsDataProvider = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "doc_db_settings": {
+              "computed": true,
+              "description": "DocDbSettings property identifier.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "certificate_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "database_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "port": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "server_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "ssl_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "maria_db_settings": {
+              "computed": true,
+              "description": "MariaDbSettings property identifier.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "certificate_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "port": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "server_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "ssl_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "microsoft_sql_server_settings": {
               "computed": true,
               "description": "MicrosoftSqlServerSettings property identifier.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "certificate_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "database_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "port": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "server_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "ssl_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "mongo_db_settings": {
+              "computed": true,
+              "description": "MongoDbSettings property identifier.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "auth_mechanism": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "auth_source": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "auth_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "certificate_arn": {
                     "computed": true,
                     "description_kind": "plain",
@@ -215,6 +330,31 @@ const awsccDmsDataProvider = `{
                     "type": "string"
                   },
                   "ssl_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "redshift_settings": {
+              "computed": true,
+              "description": "RedshiftSettings property identifier.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "database_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "port": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "server_name": {
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"

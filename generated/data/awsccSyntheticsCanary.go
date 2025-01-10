@@ -287,6 +287,12 @@ const awsccSyntheticsCanary = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "ipv_6_allowed_for_dual_stack": {
+              "computed": true,
+              "description": "Allow outbound IPv6 traffic on VPC canaries that are connected to dual-stack subnets if set to true",
+              "description_kind": "plain",
+              "type": "bool"
+            },
             "security_group_ids": {
               "computed": true,
               "description_kind": "plain",

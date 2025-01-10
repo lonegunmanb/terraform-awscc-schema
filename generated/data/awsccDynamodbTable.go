@@ -424,6 +424,11 @@ const awsccDynamodbTable = `{
               "description": "Indicates whether point in time recovery is enabled (true) or disabled (false) on the table.",
               "description_kind": "plain",
               "type": "bool"
+            },
+            "recovery_period_in_days": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
             }
           },
           "nesting_mode": "single"

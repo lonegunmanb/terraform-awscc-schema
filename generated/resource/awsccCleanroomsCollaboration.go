@@ -38,11 +38,72 @@ const awsccCleanroomsCollaboration = `{
           "string"
         ]
       },
+      "creator_ml_member_abilities": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "custom_ml_member_abilities": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "set",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "creator_payment_configuration": {
         "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "machine_learning": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "model_inference": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "is_responsible": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "model_training": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "is_responsible": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "query_compute": {
               "computed": true,
               "description_kind": "plain",
@@ -131,11 +192,72 @@ const awsccCleanroomsCollaboration = `{
                 "string"
               ]
             },
+            "ml_member_abilities": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "custom_ml_member_abilities": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "payment_configuration": {
               "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "machine_learning": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "model_inference": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "is_responsible": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "bool"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "model_training": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "is_responsible": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "bool"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "query_compute": {
                     "computed": true,
                     "description_kind": "plain",

@@ -86,7 +86,7 @@ const awsccImagebuilderImage = `{
                   },
                   "repository_name": {
                     "computed": true,
-                    "description": "The name of the container repository that Amazon Inspector scans to identify findings for your container images. The name includes the path for the repository location. If you don?t provide this information, Image Builder creates a repository in your account named image-builder-image-scanning-repository to use for vulnerability scans for your output container images.",
+                    "description": "The name of the container repository that Amazon Inspector scans to identify findings for your container images. The name includes the path for the repository location. If you don’t provide this information, Image Builder creates a repository in your account named image-builder-image-scanning-repository to use for vulnerability scans for your output container images.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"

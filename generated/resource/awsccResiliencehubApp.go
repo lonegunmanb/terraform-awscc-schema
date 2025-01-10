@@ -120,6 +120,13 @@ const awsccResiliencehubApp = `{
         },
         "optional": true
       },
+      "regulatory_policy_arn": {
+        "computed": true,
+        "description": "Amazon Resource Name (ARN) of the Regulatory Policy.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "resiliency_policy_arn": {
         "computed": true,
         "description": "Amazon Resource Name (ARN) of the Resiliency Policy.",

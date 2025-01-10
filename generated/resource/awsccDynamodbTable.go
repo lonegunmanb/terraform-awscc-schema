@@ -476,6 +476,12 @@ const awsccDynamodbTable = `{
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
+            },
+            "recovery_period_in_days": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
             }
           },
           "nesting_mode": "single"

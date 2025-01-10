@@ -83,13 +83,11 @@ const awsccBackupLogicallyAirGappedBackupVault = `{
       "vault_state": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "vault_type": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       }
     },

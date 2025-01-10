@@ -246,6 +246,24 @@ const awsccMediaconnectBridge = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "multicast_source_settings": {
+                    "computed": true,
+                    "description": "The settings related to the multicast source.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "multicast_source_ip": {
+                          "computed": true,
+                          "description": "The IP address of the source for source-specific multicast (SSM).",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "name": {
                     "computed": true,
                     "description": "The name of the network source.",

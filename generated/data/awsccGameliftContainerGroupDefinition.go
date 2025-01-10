@@ -9,32 +9,35 @@ import (
 const awsccGameliftContainerGroupDefinition = `{
   "block": {
     "attributes": {
-      "container_definitions": {
+      "container_group_definition_arn": {
         "computed": true,
-        "description": "A collection of container definitions that define the containers in this group.",
+        "description": "The Amazon Resource Name (ARN) that is assigned to a Amazon GameLift container group resource and uniquely identifies it across all AWS Regions.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "container_group_type": {
+        "computed": true,
+        "description": "The scope of the container group",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "creation_time": {
+        "computed": true,
+        "description": "A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example \"1469498468.057\").",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "game_server_container_definition": {
+        "computed": true,
+        "description": "Specifies the information required to run game servers with this container group",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "command": {
-              "computed": true,
-              "description": "The command that's passed to the container.",
-              "description_kind": "plain",
-              "type": [
-                "list",
-                "string"
-              ]
-            },
             "container_name": {
               "computed": true,
               "description": "A descriptive label for the container definition. Container definition names must be unique with a container group definition.",
               "description_kind": "plain",
               "type": "string"
-            },
-            "cpu": {
-              "computed": true,
-              "description": "The maximum number of CPU units reserved for this container. The value is expressed as an integer amount of CPU units. 1 vCPU is equal to 1024 CPU units",
-              "description_kind": "plain",
-              "type": "number"
             },
             "depends_on": {
               "computed": true,
@@ -58,16 +61,187 @@ const awsccGameliftContainerGroupDefinition = `{
                 "nesting_mode": "list"
               }
             },
-            "entry_point": {
+            "environment_override": {
               "computed": true,
-              "description": "The entry point that's passed to the container so that it will run as an executable. If there are multiple arguments, each argument is a string in the array.",
+              "description": "The environment variables to pass to a container.",
               "description_kind": "plain",
-              "type": [
-                "list",
-                "string"
-              ]
+              "nested_type": {
+                "attributes": {
+                  "name": {
+                    "computed": true,
+                    "description": "The environment variable name.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description": "The environment variable value.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              }
             },
-            "environment": {
+            "image_uri": {
+              "computed": true,
+              "description": "Specifies the image URI of this container.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "mount_points": {
+              "computed": true,
+              "description": "A list of mount point configurations to be used in a container.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "access_level": {
+                    "computed": true,
+                    "description": "The access permissions for the mounted path.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "container_path": {
+                    "computed": true,
+                    "description": "The path inside the container where the mount is accessible.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "instance_path": {
+                    "computed": true,
+                    "description": "The path on the host that will be mounted in the container.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            },
+            "port_configuration": {
+              "computed": true,
+              "description": "Defines the ports on the container.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "container_port_ranges": {
+                    "computed": true,
+                    "description": "Specifies one or more ranges of ports on a container.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "from_port": {
+                          "computed": true,
+                          "description": "A starting value for the range of allowed port numbers.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "protocol": {
+                          "computed": true,
+                          "description": "Defines the protocol of these ports.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "to_port": {
+                          "computed": true,
+                          "description": "An ending value for the range of allowed port numbers. Port numbers are end-inclusive. This value must be equal to or greater than FromPort.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "set"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "resolved_image_digest": {
+              "computed": true,
+              "description": "The digest of the container image.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "server_sdk_version": {
+              "computed": true,
+              "description": "The version of the server SDK used in this container group",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "id": {
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "name": {
+        "computed": true,
+        "description": "A descriptive label for the container group definition.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "operating_system": {
+        "computed": true,
+        "description": "The operating system of the container group",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "source_version_number": {
+        "computed": true,
+        "description": "A specific ContainerGroupDefinition version to be updated",
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "status": {
+        "computed": true,
+        "description": "A string indicating ContainerGroupDefinition status.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "status_reason": {
+        "computed": true,
+        "description": "A string indicating the reason for ContainerGroupDefinition status.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "support_container_definitions": {
+        "computed": true,
+        "description": "A collection of support container definitions that define the containers in this group.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "container_name": {
+              "computed": true,
+              "description": "A descriptive label for the container definition.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "depends_on": {
+              "computed": true,
+              "description": "A list of container dependencies that determines when this container starts up and shuts down. For container groups with multiple containers, dependencies let you define a startup/shutdown sequence across the containers.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "condition": {
+                    "computed": true,
+                    "description": "The type of dependency.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "container_name": {
+                    "computed": true,
+                    "description": "A descriptive label for the container definition. The container being defined depends on this container's condition.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
+            "environment_override": {
               "computed": true,
               "description": "The environment variables to pass to a container.",
               "description_kind": "plain",
@@ -144,26 +318,38 @@ const awsccGameliftContainerGroupDefinition = `{
               "description_kind": "plain",
               "type": "string"
             },
-            "memory_limits": {
+            "memory_hard_limit_mebibytes": {
               "computed": true,
-              "description": "Specifies how much memory is available to the container. You must specify at least this parameter or the TotalMemoryLimit parameter of the ContainerGroupDefinition.",
+              "description": "The total memory limit of container groups following this definition in MiB",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "mount_points": {
+              "computed": true,
+              "description": "A list of mount point configurations to be used in a container.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
-                  "hard_limit": {
+                  "access_level": {
                     "computed": true,
-                    "description": "The hard limit of memory to reserve for the container.",
+                    "description": "The access permissions for the mounted path.",
                     "description_kind": "plain",
-                    "type": "number"
+                    "type": "string"
                   },
-                  "soft_limit": {
+                  "container_path": {
                     "computed": true,
-                    "description": "The amount of memory that is reserved for the container.",
+                    "description": "The path inside the container where the mount is accessible.",
                     "description_kind": "plain",
-                    "type": "number"
+                    "type": "string"
+                  },
+                  "instance_path": {
+                    "computed": true,
+                    "description": "The path on the host that will be mounted in the container.",
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
-                "nesting_mode": "single"
+                "nesting_mode": "set"
               }
             },
             "port_configuration": {
@@ -210,51 +396,15 @@ const awsccGameliftContainerGroupDefinition = `{
               "description_kind": "plain",
               "type": "string"
             },
-            "working_directory": {
+            "vcpu": {
               "computed": true,
-              "description": "The working directory to run commands inside the container in.",
+              "description": "The number of virtual CPUs to give to the support group",
               "description_kind": "plain",
-              "type": "string"
+              "type": "number"
             }
           },
           "nesting_mode": "set"
         }
-      },
-      "container_group_definition_arn": {
-        "computed": true,
-        "description": "The Amazon Resource Name (ARN) that is assigned to a Amazon GameLift container group resource and uniquely identifies it across all AWS Regions.",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "creation_time": {
-        "computed": true,
-        "description": "A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example \"1469498468.057\").",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "id": {
-        "description": "Uniquely identifies the resource.",
-        "description_kind": "plain",
-        "required": true,
-        "type": "string"
-      },
-      "name": {
-        "computed": true,
-        "description": "A descriptive label for the container group definition.",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "operating_system": {
-        "computed": true,
-        "description": "The operating system of the container group",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "scheduling_strategy": {
-        "computed": true,
-        "description": "Specifies whether the container group includes replica or daemon containers.",
-        "description_kind": "plain",
-        "type": "string"
       },
       "tags": {
         "computed": true,
@@ -278,15 +428,27 @@ const awsccGameliftContainerGroupDefinition = `{
           "nesting_mode": "set"
         }
       },
-      "total_cpu_limit": {
+      "total_memory_limit_mebibytes": {
         "computed": true,
-        "description": "The maximum number of CPU units reserved for this container group. The value is expressed as an integer amount of CPU units. (1 vCPU is equal to 1024 CPU units.)",
+        "description": "The total memory limit of container groups following this definition in MiB",
         "description_kind": "plain",
         "type": "number"
       },
-      "total_memory_limit": {
+      "total_vcpu_limit": {
         "computed": true,
-        "description": "The maximum amount of memory (in MiB) to allocate for this container group.",
+        "description": "The total amount of virtual CPUs on the container group definition",
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "version_description": {
+        "computed": true,
+        "description": "The description of this version",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "version_number": {
+        "computed": true,
+        "description": "The version of this ContainerGroupDefinition",
         "description_kind": "plain",
         "type": "number"
       }

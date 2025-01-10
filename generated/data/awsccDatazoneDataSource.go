@@ -229,6 +229,28 @@ const awsccDatazoneDataSource = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "sage_maker_run_configuration": {
+              "computed": true,
+              "description": "The configuration details of the Amazon SageMaker data source.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "tracking_assets": {
+                    "computed": true,
+                    "description": "The tracking assets of the Amazon SageMaker run.",
+                    "description_kind": "plain",
+                    "type": [
+                      "map",
+                      [
+                        "list",
+                        "string"
+                      ]
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

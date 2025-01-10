@@ -48,6 +48,22 @@ const awsccBedrockKnowledgeBase = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "kendra_knowledge_base_configuration": {
+              "computed": true,
+              "description": "Configurations for a Kendra knowledge base",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "kendra_index_arn": {
+                    "computed": true,
+                    "description": "Arn of a Kendra index",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "type": {
               "computed": true,
               "description": "The type of a knowledge base.",
@@ -86,6 +102,48 @@ const awsccBedrockKnowledgeBase = `{
                               }
                             },
                             "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "supplemental_data_storage_configuration": {
+                    "computed": true,
+                    "description": "Configurations for supplemental data storage.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "supplemental_data_storage_locations": {
+                          "computed": true,
+                          "description": "List of supplemental data storage locations.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "s3_location": {
+                                "computed": true,
+                                "description": "An Amazon S3 location.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "uri": {
+                                      "computed": true,
+                                      "description": "The location's URI",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "supplemental_data_storage_location_type": {
+                                "computed": true,
+                                "description": "Supplemental data storage location type.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
                           }
                         }
                       },

@@ -161,6 +161,13 @@ const awsccBedrockAgent = `{
                             "nesting_mode": "map"
                           },
                           "optional": true
+                        },
+                        "require_confirmation": {
+                          "computed": true,
+                          "description": "ENUM to check if action requires user confirmation",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
                         }
                       },
                       "nesting_mode": "list"

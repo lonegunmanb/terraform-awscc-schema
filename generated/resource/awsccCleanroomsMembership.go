@@ -105,6 +105,48 @@ const awsccCleanroomsMembership = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "machine_learning": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "model_inference": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "is_responsible": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "model_training": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "is_responsible": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "query_compute": {
               "computed": true,
               "description_kind": "plain",

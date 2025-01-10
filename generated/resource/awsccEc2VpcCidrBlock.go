@@ -62,6 +62,13 @@ const awsccEc2VpcCidrBlock = `{
         "optional": true,
         "type": "string"
       },
+      "ipv_6_cidr_block_network_border_group": {
+        "computed": true,
+        "description": "The name of the location from which we advertise the IPV6 CIDR block.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "ipv_6_ipam_pool_id": {
         "computed": true,
         "description": "The ID of the IPv6 IPAM pool to Associate a CIDR from to a VPC.",

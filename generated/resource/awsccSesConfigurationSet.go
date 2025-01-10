@@ -122,6 +122,13 @@ const awsccSesConfigurationSet = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "https_policy": {
+              "computed": true,
+              "description": "The https policy to use for tracking open and click events.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             }
           },
           "nesting_mode": "single"

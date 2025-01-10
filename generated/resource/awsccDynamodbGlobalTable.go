@@ -300,6 +300,28 @@ const awsccDynamodbGlobalTable = `{
         },
         "optional": true
       },
+      "point_in_time_recovery_specification": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "point_in_time_recovery_enabled": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "recovery_period_in_days": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "replicas": {
         "description_kind": "plain",
         "nested_type": {
@@ -484,6 +506,12 @@ const awsccDynamodbGlobalTable = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "bool"
+                  },
+                  "recovery_period_in_days": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
                   }
                 },
                 "nesting_mode": "single"

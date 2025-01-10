@@ -141,6 +141,11 @@ const awsccRdsDbInstance = `{
         "optional": true,
         "type": "string"
       },
+      "database_insights_mode": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "db_cluster_identifier": {
         "computed": true,
         "description": "The identifier of the DB cluster that this DB instance will belong to.\n This setting doesn't apply to RDS Custom DB instances.",

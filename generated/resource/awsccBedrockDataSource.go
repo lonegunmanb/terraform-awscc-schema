@@ -854,6 +854,24 @@ const awsccBedrockDataSource = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "bedrock_data_automation_configuration": {
+                    "computed": true,
+                    "description": "Settings for a Bedrock Data Automation used to parse documents for a data source.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "parsing_modality": {
+                          "computed": true,
+                          "description": "Determine how will parsed content be stored.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "bedrock_foundation_model_configuration": {
                     "computed": true,
                     "description": "Settings for a foundation model used to parse documents for a data source.",
@@ -863,6 +881,13 @@ const awsccBedrockDataSource = `{
                         "model_arn": {
                           "computed": true,
                           "description": "The model's ARN.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "parsing_modality": {
+                          "computed": true,
+                          "description": "Determine how will parsed content be stored.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"

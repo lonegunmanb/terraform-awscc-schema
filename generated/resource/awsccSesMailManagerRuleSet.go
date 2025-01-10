@@ -111,6 +111,40 @@ const awsccSesMailManagerRuleSet = `{
                     },
                     "optional": true
                   },
+                  "deliver_to_q_business": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "action_failure_policy": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "application_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "index_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "role_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "drop": {
                     "computed": true,
                     "description_kind": "plain",

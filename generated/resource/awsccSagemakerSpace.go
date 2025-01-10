@@ -163,6 +163,22 @@ const awsccSagemakerSpace = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "fsx_lustre_file_system": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "file_system_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
                   }
                 },
                 "nesting_mode": "list"

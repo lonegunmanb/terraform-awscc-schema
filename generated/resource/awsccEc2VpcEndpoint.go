@@ -127,6 +127,28 @@ const awsccEc2VpcEndpoint = `{
           "string"
         ]
       },
+      "tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "vpc_endpoint_id": {
         "computed": true,
         "description_kind": "plain",

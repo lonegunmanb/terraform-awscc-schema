@@ -48,6 +48,24 @@ const awsccBedrockKnowledgeBase = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "kendra_knowledge_base_configuration": {
+              "computed": true,
+              "description": "Configurations for a Kendra knowledge base",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "kendra_index_arn": {
+                    "computed": true,
+                    "description": "Arn of a Kendra index",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "type": {
               "description": "The type of a knowledge base.",
               "description_kind": "plain",
@@ -55,14 +73,16 @@ const awsccBedrockKnowledgeBase = `{
               "type": "string"
             },
             "vector_knowledge_base_configuration": {
+              "computed": true,
               "description": "Contains details about the model used to create vector embeddings for the knowledge base.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "embedding_model_arn": {
+                    "computed": true,
                     "description": "The ARN of the model used to create vector embeddings for the knowledge base.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "embedding_model_configuration": {
@@ -93,11 +113,58 @@ const awsccBedrockKnowledgeBase = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "supplemental_data_storage_configuration": {
+                    "computed": true,
+                    "description": "Configurations for supplemental data storage.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "supplemental_data_storage_locations": {
+                          "computed": true,
+                          "description": "List of supplemental data storage locations.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "s3_location": {
+                                "computed": true,
+                                "description": "An Amazon S3 location.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "uri": {
+                                      "computed": true,
+                                      "description": "The location's URI",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "supplemental_data_storage_location_type": {
+                                "computed": true,
+                                "description": "Supplemental data storage location type.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -129,6 +196,7 @@ const awsccBedrockKnowledgeBase = `{
         "type": "string"
       },
       "storage_configuration": {
+        "computed": true,
         "description": "The vector store service in which the knowledge base is stored.",
         "description_kind": "plain",
         "nested_type": {
@@ -411,15 +479,16 @@ const awsccBedrockKnowledgeBase = `{
               "optional": true
             },
             "type": {
+              "computed": true,
               "description": "The storage type of a knowledge base.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
       },
       "tags": {
         "computed": true,
