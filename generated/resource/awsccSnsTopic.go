@@ -76,6 +76,12 @@ const awsccSnsTopic = `{
         "optional": true,
         "type": "string"
       },
+      "fifo_throughput_scope": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "fifo_topic": {
         "computed": true,
         "description": "Set to true to create a FIFO topic.",

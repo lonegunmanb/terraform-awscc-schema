@@ -341,6 +341,15 @@ const awsccCodepipelinePipeline = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "commands": {
+                                "computed": true,
+                                "description": "The shell commands to run with your compute action in CodePipeline.",
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
                               "configuration": {
                                 "computed": true,
                                 "description": "The rule's configuration. These are key-value pairs that specify input values for a rule.",
@@ -475,6 +484,15 @@ const awsccCodepipelinePipeline = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "commands": {
+                                "computed": true,
+                                "description": "The shell commands to run with your compute action in CodePipeline.",
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
                               "configuration": {
                                 "computed": true,
                                 "description": "The rule's configuration. These are key-value pairs that specify input values for a rule.",
@@ -604,6 +622,15 @@ const awsccCodepipelinePipeline = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "commands": {
+                                "computed": true,
+                                "description": "The shell commands to run with your compute action in CodePipeline.",
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
                               "configuration": {
                                 "computed": true,
                                 "description": "The rule's configuration. These are key-value pairs that specify input values for a rule.",

@@ -17,7 +17,7 @@ const awsccElasticacheUserGroup = `{
       },
       "engine": {
         "computed": true,
-        "description": "Must be redis.",
+        "description": "The target cache engine for the user group.",
         "description_kind": "plain",
         "type": "string"
       },

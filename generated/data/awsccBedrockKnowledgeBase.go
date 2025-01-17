@@ -64,6 +64,285 @@ const awsccBedrockKnowledgeBase = `{
                 "nesting_mode": "single"
               }
             },
+            "sql_knowledge_base_configuration": {
+              "computed": true,
+              "description": "Configurations for a SQL knowledge base",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "redshift_configuration": {
+                    "computed": true,
+                    "description": "Configurations for a Redshift knowledge base",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "query_engine_configuration": {
+                          "computed": true,
+                          "description": "Configurations for Redshift query engine",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "provisioned_configuration": {
+                                "computed": true,
+                                "description": "Configurations for provisioned Redshift query engine",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "auth_configuration": {
+                                      "computed": true,
+                                      "description": "Configurations for Redshift query engine provisioned auth setup",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "database_user": {
+                                            "computed": true,
+                                            "description": "Redshift database user",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "type": {
+                                            "computed": true,
+                                            "description": "Provisioned Redshift auth type",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "username_password_secret_arn": {
+                                            "computed": true,
+                                            "description": "Arn of a SecretsManager Secret",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "cluster_identifier": {
+                                      "computed": true,
+                                      "description": "Redshift cluster identifier",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "serverless_configuration": {
+                                "computed": true,
+                                "description": "Configurations for serverless Redshift query engine",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "auth_configuration": {
+                                      "computed": true,
+                                      "description": "Configurations for Redshift query engine serverless auth setup",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "type": {
+                                            "computed": true,
+                                            "description": "Serverless Redshift auth type",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "username_password_secret_arn": {
+                                            "computed": true,
+                                            "description": "Arn of a SecretsManager Secret",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "workgroup_arn": {
+                                      "computed": true,
+                                      "description": "Workgroup arn",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "type": {
+                                "computed": true,
+                                "description": "Redshift query engine type",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "query_generation_configuration": {
+                          "computed": true,
+                          "description": "Configurations for generating Redshift engine queries",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "execution_timeout_seconds": {
+                                "computed": true,
+                                "description": "Max query execution timeout",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "generation_context": {
+                                "computed": true,
+                                "description": "Context used to improve query generation",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "curated_queries": {
+                                      "computed": true,
+                                      "description": "List of example queries and results",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "natural_language": {
+                                            "computed": true,
+                                            "description": "Question for the curated query",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "sql": {
+                                            "computed": true,
+                                            "description": "Answer for the curated query",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      }
+                                    },
+                                    "tables": {
+                                      "computed": true,
+                                      "description": "List of tables used for Redshift query generation context",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "columns": {
+                                            "computed": true,
+                                            "description": "List of Redshift query generation columns",
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "description": {
+                                                  "computed": true,
+                                                  "description": "Description for the attached entity",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "inclusion": {
+                                                  "computed": true,
+                                                  "description": "Include or Exclude status for an entity",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "name": {
+                                                  "computed": true,
+                                                  "description": "Query generation column name",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            }
+                                          },
+                                          "description": {
+                                            "computed": true,
+                                            "description": "Description for the attached entity",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "inclusion": {
+                                            "computed": true,
+                                            "description": "Include or Exclude status for an entity",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "name": {
+                                            "computed": true,
+                                            "description": "Query generation table name. Must follow three-part notation",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "storage_configurations": {
+                          "computed": true,
+                          "description": "List of configurations for available Redshift query engine storage types",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "aws_data_catalog_configuration": {
+                                "computed": true,
+                                "description": "Configurations for Redshift query engine AWS Data Catalog backed storage",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "table_names": {
+                                      "computed": true,
+                                      "description": "List of table names in AWS Data Catalog. Must follow two part notation",
+                                      "description_kind": "plain",
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "redshift_configuration": {
+                                "computed": true,
+                                "description": "Configurations for Redshift query engine Redshift backed storage",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "database_name": {
+                                      "computed": true,
+                                      "description": "Redshift database name",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "type": {
+                                "computed": true,
+                                "description": "Redshift query engine storage type",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "type": {
+                    "computed": true,
+                    "description": "SQL query engine type",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "type": {
               "computed": true,
               "description": "The type of a knowledge base.",
