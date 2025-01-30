@@ -20,6 +20,23 @@ const awsccQuicksightTopic = `{
         "optional": true,
         "type": "string"
       },
+      "config_options": {
+        "computed": true,
+        "description": "Model for configuration of a Topic",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "q_business_insights_enabled": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "data_sets": {
         "computed": true,
         "description_kind": "plain",
@@ -1166,6 +1183,15 @@ const awsccQuicksightTopic = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "folder_arns": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
       },
       "id": {
         "computed": true,

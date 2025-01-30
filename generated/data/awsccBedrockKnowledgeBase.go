@@ -378,6 +378,12 @@ const awsccBedrockKnowledgeBase = `{
                                 "description": "The dimensions details for the vector configuration used on the Bedrock embeddings model.",
                                 "description_kind": "plain",
                                 "type": "number"
+                              },
+                              "embedding_data_type": {
+                                "computed": true,
+                                "description": "The data type for the vectors when using a model to convert text into vector embeddings.",
+                                "description_kind": "plain",
+                                "type": "string"
                               }
                             },
                             "nesting_mode": "single"

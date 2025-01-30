@@ -60,6 +60,12 @@ const awsccDatazoneDataSource = `{
                     "description_kind": "plain",
                     "type": "bool"
                   },
+                  "catalog_name": {
+                    "computed": true,
+                    "description": "The catalog name in the AWS Glue run configuration.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "data_access_role": {
                     "computed": true,
                     "description": "The data access role included in the configuration details of the AWS Glue data source.",
@@ -255,6 +261,18 @@ const awsccDatazoneDataSource = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "connection_id": {
+        "computed": true,
+        "description": "The unique identifier of a connection used to fetch relevant parameters from connection during Datasource run",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "connection_identifier": {
+        "computed": true,
+        "description": "The unique identifier of a connection used to fetch relevant parameters from connection during Datasource run",
+        "description_kind": "plain",
+        "type": "string"
       },
       "created_at": {
         "computed": true,

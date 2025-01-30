@@ -64,6 +64,11 @@ const awsccIotfleetwiseStateTemplate = `{
         "required": true,
         "type": "string"
       },
+      "state_template_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "state_template_properties": {
         "description_kind": "plain",
         "required": true,

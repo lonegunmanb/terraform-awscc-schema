@@ -575,12 +575,116 @@ const awsccMediaconnectFlow = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "audio_monitoring_settings": {
+              "computed": true,
+              "description": "Contains the settings for audio stream metrics monitoring.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "silent_audio": {
+                    "computed": true,
+                    "description": "Configures settings for the SilentAudio metric.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description": "Indicates whether the SilentAudio metric is enabled or disabled.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "threshold_seconds": {
+                          "computed": true,
+                          "description": "Specifies the number of consecutive seconds of silence that triggers an event or alert.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "content_quality_analysis_state": {
+              "computed": true,
+              "description": "Indicates whether content quality analysis is enabled or disabled.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "thumbnail_state": {
               "computed": true,
               "description": "The state of thumbnail monitoring.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "video_monitoring_settings": {
+              "computed": true,
+              "description": "Contains the settings for video stream metrics monitoring.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "black_frames": {
+                    "computed": true,
+                    "description": "Configures settings for the BlackFrames metric.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description": "Indicates whether the BlackFrames metric is enabled or disabled.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "threshold_seconds": {
+                          "computed": true,
+                          "description": "Specifies the number of consecutive seconds of black frames that triggers an event or alert.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "frozen_frames": {
+                    "computed": true,
+                    "description": "Configures settings for the FrozenFrames metric.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description": "Indicates whether the FrozenFrames metric is enabled or disabled.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "threshold_seconds": {
+                          "computed": true,
+                          "description": "Specifies the number of consecutive seconds of a static image that triggers an event or alert.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

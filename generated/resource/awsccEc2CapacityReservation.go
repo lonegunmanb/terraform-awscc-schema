@@ -10,8 +10,15 @@ const awsccEc2CapacityReservation = `{
   "block": {
     "attributes": {
       "availability_zone": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
+        "type": "string"
+      },
+      "availability_zone_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "available_instance_count": {

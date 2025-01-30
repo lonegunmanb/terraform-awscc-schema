@@ -9,6 +9,22 @@ import (
 const awsccEc2VerifiedAccessInstance = `{
   "block": {
     "attributes": {
+      "cidr_endpoints_custom_sub_domain": {
+        "computed": true,
+        "description": "Introduce CidrEndpointsCustomSubDomain property to represent the domain (say, ava.my-company.com)",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "cidr_endpoints_custom_sub_domain_name_servers": {
+        "computed": true,
+        "description": "Property to represent the name servers assoicated with the domain that AVA manages (say, ['ns1.amazonaws.com', 'ns2.amazonaws.com', 'ns3.amazonaws.com', 'ns4.amazonaws.com']).",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "creation_time": {
         "computed": true,
         "description": "Time this Verified Access Instance was created.",

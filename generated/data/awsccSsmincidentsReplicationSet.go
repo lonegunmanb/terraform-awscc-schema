@@ -41,7 +41,7 @@ const awsccSsmincidentsReplicationSet = `{
                 "attributes": {
                   "sse_kms_key_id": {
                     "computed": true,
-                    "description": "The ARN of the ReplicationSet.",
+                    "description": "The AWS Key Management Service key ID or Key Alias to use to encrypt your replication set.",
                     "description_kind": "plain",
                     "type": "string"
                   }

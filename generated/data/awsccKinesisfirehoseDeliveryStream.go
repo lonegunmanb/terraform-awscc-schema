@@ -782,6 +782,20 @@ const awsccKinesisfirehoseDeliveryStream = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "direct_put_source_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "throughput_hint_in_m_bs": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "elasticsearch_destination_configuration": {
         "computed": true,
         "description_kind": "plain",
@@ -1927,6 +1941,11 @@ const awsccKinesisfirehoseDeliveryStream = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "append_only": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "bool"
+            },
             "buffering_hints": {
               "computed": true,
               "description_kind": "plain",

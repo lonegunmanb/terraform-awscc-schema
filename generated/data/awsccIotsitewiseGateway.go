@@ -53,17 +53,7 @@ const awsccIotsitewiseGateway = `{
               "computed": true,
               "description": "A gateway that runs on AWS IoT Greengrass V1.",
               "description_kind": "plain",
-              "nested_type": {
-                "attributes": {
-                  "group_arn": {
-                    "computed": true,
-                    "description": "The ARN of the Greengrass group.",
-                    "description_kind": "plain",
-                    "type": "string"
-                  }
-                },
-                "nesting_mode": "single"
-              }
+              "type": "string"
             },
             "greengrass_v2": {
               "computed": true,
@@ -71,6 +61,12 @@ const awsccIotsitewiseGateway = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "core_device_operating_system": {
+                    "computed": true,
+                    "description": "The operating system of the core device in AWS IoT Greengrass V2.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "core_device_thing_name": {
                     "computed": true,
                     "description": "The name of the CoreDevice in GreenGrass V2.",
@@ -100,6 +96,12 @@ const awsccIotsitewiseGateway = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "gateway_version": {
+        "computed": true,
+        "description": "The version of the gateway you want to create.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "id": {
         "description": "Uniquely identifies the resource.",

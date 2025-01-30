@@ -120,6 +120,12 @@ const awsccFmsPolicy = `{
           "string"
         ]
       },
+      "resource_tag_logical_operator": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "resource_tags": {
         "computed": true,
         "description_kind": "plain",

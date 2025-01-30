@@ -264,7 +264,7 @@ const awsccEcsService = `{
                   },
                   "security_groups": {
                     "computed": true,
-                    "description": "The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per ` + "`" + `` + "`" + `awsvpcConfiguration` + "`" + `` + "`" + `.\n  All specified security groups must be from the same VPC.",
+                    "description": "The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified.\n  All specified security groups must be from the same VPC.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": [
@@ -274,7 +274,7 @@ const awsccEcsService = `{
                   },
                   "subnets": {
                     "computed": true,
-                    "description": "The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per ` + "`" + `` + "`" + `awsvpcConfiguration` + "`" + `` + "`" + `.\n  All specified subnets must be from the same VPC.",
+                    "description": "The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified.\n  All specified subnets must be from the same VPC.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": [
@@ -770,12 +770,6 @@ const awsccEcsService = `{
                   "throughput": {
                     "computed": true,
                     "description": "The throughput to provision for a volume, in MiB/s, with a maximum of 1,000 MiB/s. This parameter maps 1:1 with the ` + "`" + `` + "`" + `Throughput` + "`" + `` + "`" + ` parameter of the [CreateVolume API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html) in the *Amazon EC2 API Reference*.\n  This parameter is only supported for the ` + "`" + `` + "`" + `gp3` + "`" + `` + "`" + ` volume type.",
-                    "description_kind": "plain",
-                    "optional": true,
-                    "type": "number"
-                  },
-                  "volume_initialization_rate": {
-                    "computed": true,
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"

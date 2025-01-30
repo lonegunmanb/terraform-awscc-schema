@@ -14,6 +14,11 @@ const awsccEc2CapacityReservation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "availability_zone_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "available_instance_count": {
         "computed": true,
         "description_kind": "plain",

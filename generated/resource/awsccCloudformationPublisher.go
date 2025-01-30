@@ -36,7 +36,7 @@ const awsccCloudformationPublisher = `{
       },
       "publisher_id": {
         "computed": true,
-        "description": "The publisher id assigned by CloudFormation for publishing in this region.",
+        "description": "The reserved publisher id for this type, or the publisher id assigned by CloudFormation for publishing in this region.",
         "description_kind": "plain",
         "type": "string"
       },

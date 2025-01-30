@@ -130,6 +130,13 @@ const awsccTimestreamInfluxDbInstance = `{
         "optional": true,
         "type": "string"
       },
+      "network_type": {
+        "computed": true,
+        "description": "Network type of the InfluxDB Instance.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "organization": {
         "computed": true,
         "description": "The organization for the InfluxDB instance.",
@@ -143,6 +150,13 @@ const awsccTimestreamInfluxDbInstance = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "port": {
+        "computed": true,
+        "description": "The port number on which InfluxDB accepts connections.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
       },
       "publicly_accessible": {
         "computed": true,

@@ -14,6 +14,23 @@ const awsccQbusinessWebExperience = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "browser_extension_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled_browser_extensions": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "set",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "created_at": {
         "computed": true,
         "description_kind": "plain",

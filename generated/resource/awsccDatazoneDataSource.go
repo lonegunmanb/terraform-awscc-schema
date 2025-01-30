@@ -66,6 +66,13 @@ const awsccDatazoneDataSource = `{
                     "optional": true,
                     "type": "bool"
                   },
+                  "catalog_name": {
+                    "computed": true,
+                    "description": "The catalog name in the AWS Glue run configuration.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "data_access_role": {
                     "computed": true,
                     "description": "The data access role included in the configuration details of the AWS Glue data source.",
@@ -288,6 +295,19 @@ const awsccDatazoneDataSource = `{
         },
         "optional": true
       },
+      "connection_id": {
+        "computed": true,
+        "description": "The unique identifier of a connection used to fetch relevant parameters from connection during Datasource run",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "connection_identifier": {
+        "computed": true,
+        "description": "The unique identifier of a connection used to fetch relevant parameters from connection during Datasource run",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "created_at": {
         "computed": true,
         "description": "The timestamp of when the data source was created.",
@@ -333,9 +353,10 @@ const awsccDatazoneDataSource = `{
         "type": "string"
       },
       "environment_identifier": {
+        "computed": true,
         "description": "The unique identifier of the Amazon DataZone environment to which the data source publishes assets.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "id": {

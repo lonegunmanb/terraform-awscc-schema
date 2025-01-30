@@ -66,6 +66,73 @@ const awsccEc2VerifiedAccessTrustProvider = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "native_application_oidc_options": {
+        "computed": true,
+        "description": "The OpenID Connect details for an oidc -type, user-identity based trust provider for L4.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "authorization_endpoint": {
+              "computed": true,
+              "description": "The OIDC authorization endpoint.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "client_id": {
+              "computed": true,
+              "description": "The client identifier.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "client_secret": {
+              "computed": true,
+              "description": "The client secret.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "issuer": {
+              "computed": true,
+              "description": "The OIDC issuer.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "public_signing_key_endpoint": {
+              "computed": true,
+              "description": "The public signing key for endpoint",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "scope": {
+              "computed": true,
+              "description": "OpenID Connect (OIDC) scopes are used by an application during authentication to authorize access to details of a user. Each scope returns a specific set of user attributes.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "token_endpoint": {
+              "computed": true,
+              "description": "The OIDC token endpoint.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "user_info_endpoint": {
+              "computed": true,
+              "description": "The OIDC user info endpoint.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "oidc_options": {
         "computed": true,
         "description": "The OpenID Connect details for an oidc -type, user-identity based trust provider.",

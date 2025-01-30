@@ -21,6 +21,59 @@ const awsccEc2VerifiedAccessEndpoint = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "cidr_options": {
+        "computed": true,
+        "description": "The options for cidr type endpoint.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "cidr": {
+              "computed": true,
+              "description": "The IP address range, in CIDR notation.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "port_ranges": {
+              "computed": true,
+              "description": "The list of port range.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "from_port": {
+                    "computed": true,
+                    "description": "The first port in the range.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "to_port": {
+                    "computed": true,
+                    "description": "The last port in the range.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            },
+            "protocol": {
+              "computed": true,
+              "description": "The IP protocol.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "subnet_ids": {
+              "computed": true,
+              "description": "The IDs of the subnets.",
+              "description_kind": "plain",
+              "type": [
+                "set",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "creation_time": {
         "computed": true,
         "description": "The creation time.",
@@ -93,6 +146,28 @@ const awsccEc2VerifiedAccessEndpoint = `{
               "description_kind": "plain",
               "type": "number"
             },
+            "port_ranges": {
+              "computed": true,
+              "description": "The list of port range.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "from_port": {
+                    "computed": true,
+                    "description": "The first port in the range.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "to_port": {
+                    "computed": true,
+                    "description": "The last port in the range.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            },
             "protocol": {
               "computed": true,
               "description": "The IP protocol.",
@@ -130,6 +205,28 @@ const awsccEc2VerifiedAccessEndpoint = `{
               "description_kind": "plain",
               "type": "number"
             },
+            "port_ranges": {
+              "computed": true,
+              "description": "The list of port ranges.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "from_port": {
+                    "computed": true,
+                    "description": "The first port in the range.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "to_port": {
+                    "computed": true,
+                    "description": "The last port in the range.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            },
             "protocol": {
               "computed": true,
               "description": "The IP protocol.",
@@ -151,6 +248,61 @@ const awsccEc2VerifiedAccessEndpoint = `{
         "description": "The status of the Verified Access policy.",
         "description_kind": "plain",
         "type": "bool"
+      },
+      "rds_options": {
+        "computed": true,
+        "description": "The options for rds type endpoint.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "port": {
+              "computed": true,
+              "description": "The IP port number.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "protocol": {
+              "computed": true,
+              "description": "The IP protocol.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "rds_db_cluster_arn": {
+              "computed": true,
+              "description": "The ARN of the RDS DB cluster.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "rds_db_instance_arn": {
+              "computed": true,
+              "description": "The ARN of the RDS DB instance.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "rds_db_proxy_arn": {
+              "computed": true,
+              "description": "The ARN of the RDS DB proxy.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "rds_endpoint": {
+              "computed": true,
+              "description": "The RDS endpoint.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "subnet_ids": {
+              "computed": true,
+              "description": "The IDs of the subnets.",
+              "description_kind": "plain",
+              "type": [
+                "set",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "security_group_ids": {
         "computed": true,

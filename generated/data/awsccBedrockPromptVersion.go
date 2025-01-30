@@ -84,6 +84,32 @@ const awsccBedrockPromptVersion = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "gen_ai_resource": {
+              "computed": true,
+              "description": "Target resource to invoke with Prompt",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "agent": {
+                    "computed": true,
+                    "description": "Target Agent to invoke with Prompt",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "agent_identifier": {
+                          "computed": true,
+                          "description": "Arn representation of the Agent Alias.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "inference_configuration": {
               "computed": true,
               "description": "Model inference configuration",
@@ -149,6 +175,174 @@ const awsccBedrockPromptVersion = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "chat": {
+                    "computed": true,
+                    "description": "Configuration for chat prompt template",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "input_variables": {
+                          "computed": true,
+                          "description": "List of input variables",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "name": {
+                                "computed": true,
+                                "description": "Name for an input variable",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        },
+                        "messages": {
+                          "computed": true,
+                          "description": "List of messages for chat prompt template",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "content": {
+                                "computed": true,
+                                "description": "List of Content Blocks",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "text": {
+                                      "computed": true,
+                                      "description": "Configuration for chat prompt template",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              },
+                              "role": {
+                                "computed": true,
+                                "description": "Conversation roles for the chat prompt",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        },
+                        "system": {
+                          "computed": true,
+                          "description": "Configuration for chat prompt template",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "text": {
+                                "computed": true,
+                                "description": "Configuration for chat prompt template",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        },
+                        "tool_configuration": {
+                          "computed": true,
+                          "description": "Tool configuration",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "tool_choice": {
+                                "computed": true,
+                                "description": "Tool choice",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "any": {
+                                      "computed": true,
+                                      "description": "Any Tool choice",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "auto": {
+                                      "computed": true,
+                                      "description": "Auto Tool choice",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "tool": {
+                                      "computed": true,
+                                      "description": "Specific Tool choice",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "name": {
+                                            "computed": true,
+                                            "description": "Tool name",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "tools": {
+                                "computed": true,
+                                "description": "List of Tools",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "tool_spec": {
+                                      "computed": true,
+                                      "description": "Tool specification",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "description": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "input_schema": {
+                                            "computed": true,
+                                            "description": "Tool input schema",
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "json": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            }
+                                          },
+                                          "name": {
+                                            "computed": true,
+                                            "description": "Tool name",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "text": {
                     "computed": true,
                     "description": "Configuration for text prompt template",

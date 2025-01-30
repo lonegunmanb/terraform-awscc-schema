@@ -62,6 +62,31 @@ const awsccApsScraper = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "role_configuration": {
+        "computed": true,
+        "description": "Role configuration",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "source_role_arn": {
+              "computed": true,
+              "description": "IAM Role in source account",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "target_role_arn": {
+              "computed": true,
+              "description": "IAM Role in the target account",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "scrape_configuration": {
         "description": "Scraper configuration",
         "description_kind": "plain",
