@@ -21,6 +21,12 @@ const awsccIvsChannel = `{
         "description_kind": "plain",
         "type": "bool"
       },
+      "container_format": {
+        "computed": true,
+        "description": "Indicates which content-packaging format is used (MPEG-TS or fMP4). If multitrackInputConfiguration is specified and enabled is true, then containerFormat is required and must be set to FRAGMENTED_MP4. Otherwise, containerFormat may be set to TS or FRAGMENTED_MP4. Default: TS.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -44,6 +50,33 @@ const awsccIvsChannel = `{
         "description": "Channel latency mode.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "multitrack_input_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled": {
+              "computed": true,
+              "description": "Indicates whether multitrack input is enabled. Can be set to true only if channel type is STANDARD. Setting enabled to true with any other channel type will cause an exception. If true, then policy, maximumResolution, and containerFormat are required, and containerFormat must be set to FRAGMENTED_MP4. Default: false.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "maximum_resolution": {
+              "computed": true,
+              "description": "Maximum resolution for multitrack input. Required if enabled is true.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "policy": {
+              "computed": true,
+              "description": "Indicates whether multitrack input is allowed or required. Required if enabled is true.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "name": {
         "computed": true,
@@ -77,11 +110,13 @@ const awsccIvsChannel = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
               "type": "string"
             }

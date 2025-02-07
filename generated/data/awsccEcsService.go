@@ -17,7 +17,7 @@ const awsccEcsService = `{
       },
       "capacity_provider_strategy": {
         "computed": true,
-        "description": "The capacity provider strategy to use for the service.\n If a ` + "`" + `` + "`" + `capacityProviderStrategy` + "`" + `` + "`" + ` is specified, the ` + "`" + `` + "`" + `launchType` + "`" + `` + "`" + ` parameter must be omitted. If no ` + "`" + `` + "`" + `capacityProviderStrategy` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `launchType` + "`" + `` + "`" + ` is specified, the ` + "`" + `` + "`" + `defaultCapacityProviderStrategy` + "`" + `` + "`" + ` for the cluster is used.\n A capacity provider strategy can contain a maximum of 20 capacity providers.",
+        "description": "The capacity provider strategy to use for the service.\n If a ` + "`" + `` + "`" + `capacityProviderStrategy` + "`" + `` + "`" + ` is specified, the ` + "`" + `` + "`" + `launchType` + "`" + `` + "`" + ` parameter must be omitted. If no ` + "`" + `` + "`" + `capacityProviderStrategy` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `launchType` + "`" + `` + "`" + ` is specified, the ` + "`" + `` + "`" + `defaultCapacityProviderStrategy` + "`" + `` + "`" + ` for the cluster is used.\n A capacity provider strategy may contain a maximum of 6 capacity providers.\n  To remove this property from your service resource, specify an empty ` + "`" + `` + "`" + `CapacityProviderStrategyItem` + "`" + `` + "`" + ` array.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -178,7 +178,7 @@ const awsccEcsService = `{
       },
       "load_balancers": {
         "computed": true,
-        "description": "A list of load balancer objects to associate with the service. If you specify the ` + "`" + `` + "`" + `Role` + "`" + `` + "`" + ` property, ` + "`" + `` + "`" + `LoadBalancers` + "`" + `` + "`" + ` must be specified as well. For information about the number of load balancers that you can specify per service, see [Service Load Balancing](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html) in the *Amazon Elastic Container Service Developer Guide*.",
+        "description": "A list of load balancer objects to associate with the service. If you specify the ` + "`" + `` + "`" + `Role` + "`" + `` + "`" + ` property, ` + "`" + `` + "`" + `LoadBalancers` + "`" + `` + "`" + ` must be specified as well. For information about the number of load balancers that you can specify per service, see [Service Load Balancing](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html) in the *Amazon Elastic Container Service Developer Guide*.\n  To remove this property from your service resource, specify an empty ` + "`" + `` + "`" + `LoadBalancer` + "`" + `` + "`" + ` array.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -261,7 +261,7 @@ const awsccEcsService = `{
       },
       "placement_constraints": {
         "computed": true,
-        "description": "An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.",
+        "description": "An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.\n  To remove this property from your service resource, specify an empty ` + "`" + `` + "`" + `PlacementConstraint` + "`" + `` + "`" + ` array.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -283,7 +283,7 @@ const awsccEcsService = `{
       },
       "placement_strategies": {
         "computed": true,
-        "description": "The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service.",
+        "description": "The placement strategy objects to use for tasks in your service. You can specify a maximum of 5 strategy rules for each service.\n  To remove this property from your service resource, specify an empty ` + "`" + `` + "`" + `PlacementStrategy` + "`" + `` + "`" + ` array.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -519,7 +519,7 @@ const awsccEcsService = `{
       },
       "service_registries": {
         "computed": true,
-        "description": "The details of the service discovery registry to associate with this service. For more information, see [Service discovery](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html).\n  Each service may be associated with one service registry. Multiple service registries for each service isn't supported.",
+        "description": "The details of the service discovery registry to associate with this service. For more information, see [Service discovery](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html).\n  Each service may be associated with one service registry. Multiple service registries for each service isn't supported.\n   To remove this property from your service resource, specify an empty ` + "`" + `` + "`" + `ServiceRegistry` + "`" + `` + "`" + ` array.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -581,7 +581,7 @@ const awsccEcsService = `{
       },
       "volume_configurations": {
         "computed": true,
-        "description": "The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.",
+        "description": "The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.\n  To remove this property from your service resource, specify an empty ` + "`" + `` + "`" + `ServiceVolumeConfiguration` + "`" + `` + "`" + ` array.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

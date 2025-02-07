@@ -75,6 +75,12 @@ const awsccTransferConnector = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "preserve_content_type": {
+              "computed": true,
+              "description": "Specifies whether to use the AWS S3 object content-type as the content-type for the AS2 message.",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "signing_algorithm": {
               "computed": true,
               "description": "Signing algorithm for this AS2 connector configuration.",

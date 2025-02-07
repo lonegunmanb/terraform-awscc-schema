@@ -35,7 +35,7 @@ const awsccIvsPlaybackKeyPair = `{
       },
       "public_key_material": {
         "computed": true,
-        "description": "The public portion of a customer-generated key pair.",
+        "description": "The public portion of a customer-generated key pair. This field is required to create the AWS::IVS::PlaybackKeyPair resource.",
         "description_kind": "plain",
         "type": "string"
       },

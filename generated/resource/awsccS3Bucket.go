@@ -214,7 +214,7 @@ const awsccS3Bucket = `{
       },
       "bucket_name": {
         "computed": true,
-        "description": "A name for the bucket. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the bucket name. The bucket name must contain only lowercase letters, numbers, periods (.), and dashes (-) and must follow [Amazon S3 bucket restrictions and limitations](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html). For more information, see [Rules for naming Amazon S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules) in the *Amazon S3 User Guide*. \n  If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you need to replace the resource, specify a new name.",
+        "description": "A name for the bucket. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the bucket name. The bucket name must contain only lowercase letters, numbers, periods (.), and dashes (-) and must follow [Amazon S3 bucket restrictions and limitations](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html). For more information, see [Rules for naming Amazon S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) in the *Amazon S3 User Guide*. \n  If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you need to replace the resource, specify a new name.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -717,7 +717,7 @@ const awsccS3Bucket = `{
                         },
                         "transition_in_days": {
                           "computed": true,
-                          "description": "Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.",
+                          "description": "Indicates the number of days after creation when objects are transitioned to the specified storage class. If the specified storage class is ` + "`" + `` + "`" + `INTELLIGENT_TIERING` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `GLACIER_IR` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `GLACIER` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `DEEP_ARCHIVE` + "`" + `` + "`" + `, valid values are ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` or positive integers. If the specified storage class is ` + "`" + `` + "`" + `STANDARD_IA` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `ONEZONE_IA` + "`" + `` + "`" + `, valid values are positive integers greater than ` + "`" + `` + "`" + `30` + "`" + `` + "`" + `. Be aware that some storage classes have a minimum storage duration and that you're charged for transitioning objects before their minimum storage duration. For more information, see [Constraints and considerations for transitions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html#lifecycle-configuration-constraints) in the *Amazon S3 User Guide*.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "number"
@@ -749,7 +749,7 @@ const awsccS3Bucket = `{
                         },
                         "transition_in_days": {
                           "computed": true,
-                          "description": "Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.",
+                          "description": "Indicates the number of days after creation when objects are transitioned to the specified storage class. If the specified storage class is ` + "`" + `` + "`" + `INTELLIGENT_TIERING` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `GLACIER_IR` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `GLACIER` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `DEEP_ARCHIVE` + "`" + `` + "`" + `, valid values are ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` or positive integers. If the specified storage class is ` + "`" + `` + "`" + `STANDARD_IA` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `ONEZONE_IA` + "`" + `` + "`" + `, valid values are positive integers greater than ` + "`" + `` + "`" + `30` + "`" + `` + "`" + `. Be aware that some storage classes have a minimum storage duration and that you're charged for transitioning objects before their minimum storage duration. For more information, see [Constraints and considerations for transitions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html#lifecycle-configuration-constraints) in the *Amazon S3 User Guide*.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "number"
@@ -766,6 +766,7 @@ const awsccS3Bucket = `{
             },
             "transition_default_minimum_object_size": {
               "computed": true,
+              "description": "Indicates which default minimum object size behavior is applied to the lifecycle configuration.\n  This parameter applies to general purpose buckets only. It isn't supported for directory bucket lifecycle configurations.\n   +   ` + "`" + `` + "`" + `all_storage_classes_128K` + "`" + `` + "`" + ` - Objects smaller than 128 KB will not transition to any storage class by default.\n  +   ` + "`" + `` + "`" + `varies_by_storage_class` + "`" + `` + "`" + ` - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB. \n  \n To customize the minimum object size for any transition you can add a filter that specifies a custom ` + "`" + `` + "`" + `ObjectSizeGreaterThan` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `ObjectSizeLessThan` + "`" + `` + "`" + ` in the body of your transition rule. Custom filters always take precedence over the default transition behavior.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -824,6 +825,52 @@ const awsccS3Bucket = `{
                     "description": "This format defaults the prefix to the given log file prefix for delivering server access log file.",
                     "description_kind": "plain",
                     "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "metadata_table_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "s3_tables_destination": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "table_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) for the metadata table in the metadata table configuration. The specified metadata table name must be unique within the \u003ccode\u003eaws_s3_metadata\u003c/code\u003e namespace in the destination table bucket.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "table_bucket_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) for the table bucket that's specified as the destination in the metadata table configuration. The destination table bucket must be in the same Region and AWS account as the general purpose bucket.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "table_name": {
+                    "computed": true,
+                    "description": "The name for the metadata table in your metadata table configuration. The specified metadata table name must be unique within the \u003ccode\u003eaws_s3_metadata\u003c/code\u003e namespace in the destination table bucket.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "table_namespace": {
+                    "computed": true,
+                    "description": "The table bucket namespace for the metadata table in your metadata table configuration. This value is always \u003ccode\u003eaws_s3_metadata\u003c/code\u003e.",
+                    "description_kind": "plain",
                     "type": "string"
                   }
                 },
@@ -1140,7 +1187,7 @@ const awsccS3Bucket = `{
       },
       "object_lock_configuration": {
         "computed": true,
-        "description": "This operation is not supported by directory buckets.\n  Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket. For more information, see [Locking Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html). \n   +  The ` + "`" + `` + "`" + `DefaultRetention` + "`" + `` + "`" + ` settings require both a mode and a period.\n  +  The ` + "`" + `` + "`" + `DefaultRetention` + "`" + `` + "`" + ` period can be either ` + "`" + `` + "`" + `Days` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `Years` + "`" + `` + "`" + ` but you must select one. You cannot specify ` + "`" + `` + "`" + `Days` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `Years` + "`" + `` + "`" + ` at the same time.\n  +  You can enable Object Lock for new or existing buckets. For more information, see [Configuring Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-configure.html).",
+        "description": "This operation is not supported for directory buckets.\n  Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket. For more information, see [Locking Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html). \n   +  The ` + "`" + `` + "`" + `DefaultRetention` + "`" + `` + "`" + ` settings require both a mode and a period.\n  +  The ` + "`" + `` + "`" + `DefaultRetention` + "`" + `` + "`" + ` period can be either ` + "`" + `` + "`" + `Days` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `Years` + "`" + `` + "`" + ` but you must select one. You cannot specify ` + "`" + `` + "`" + `Days` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `Years` + "`" + `` + "`" + ` at the same time.\n  +  You can enable Object Lock for new or existing buckets. For more information, see [Configuring Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-configure.html).",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

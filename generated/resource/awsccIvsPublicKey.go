@@ -36,7 +36,7 @@ const awsccIvsPublicKey = `{
       },
       "public_key_material": {
         "computed": true,
-        "description": "The public portion of a customer-generated key pair.",
+        "description": "The public portion of a customer-generated key pair. This field is required to create the AWS::IVS::PublicKey resource.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
