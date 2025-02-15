@@ -40,6 +40,13 @@ const awsccTransferAgreement = `{
         "optional": true,
         "type": "string"
       },
+      "enforce_message_signing": {
+        "computed": true,
+        "description": "Specifies whether to enforce an AS2 message is signed for this agreement.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -56,6 +63,13 @@ const awsccTransferAgreement = `{
         "description": "A unique identifier for the partner profile.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "preserve_filename": {
+        "computed": true,
+        "description": "Specifies whether to preserve the filename received for this agreement.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "server_id": {

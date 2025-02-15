@@ -86,6 +86,12 @@ const awsccBedrockPromptVersion = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "additional_model_request_fields": {
+              "computed": true,
+              "description": "Contains model-specific configurations",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "gen_ai_resource": {
               "computed": true,
               "description": "Target resource to invoke with Prompt",
@@ -211,6 +217,22 @@ const awsccBedrockPromptVersion = `{
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
+                                    "cache_point": {
+                                      "computed": true,
+                                      "description": "CachePointBlock",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "type": {
+                                            "computed": true,
+                                            "description": "CachePoint types for CachePointBlock",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
                                     "text": {
                                       "computed": true,
                                       "description": "Configuration for chat prompt template",
@@ -237,6 +259,22 @@ const awsccBedrockPromptVersion = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "cache_point": {
+                                "computed": true,
+                                "description": "CachePointBlock",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "type": {
+                                      "computed": true,
+                                      "description": "CachePoint types for CachePointBlock",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
                               "text": {
                                 "computed": true,
                                 "description": "Configuration for chat prompt template",
@@ -297,6 +335,22 @@ const awsccBedrockPromptVersion = `{
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
+                                    "cache_point": {
+                                      "computed": true,
+                                      "description": "CachePointBlock",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "type": {
+                                            "computed": true,
+                                            "description": "CachePoint types for CachePointBlock",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
                                     "tool_spec": {
                                       "computed": true,
                                       "description": "Tool specification",
@@ -351,6 +405,22 @@ const awsccBedrockPromptVersion = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "cache_point": {
+                          "computed": true,
+                          "description": "CachePointBlock",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "type": {
+                                "computed": true,
+                                "description": "CachePoint types for CachePointBlock",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "input_variables": {
                           "computed": true,
                           "description": "List of input variables",

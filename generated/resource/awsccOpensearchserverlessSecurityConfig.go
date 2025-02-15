@@ -99,6 +99,13 @@ const awsccOpensearchserverlessSecurityConfig = `{
               "optional": true,
               "type": "string"
             },
+            "open_search_serverless_entity_id": {
+              "computed": true,
+              "description": "Custom entity id attribute to override default entity id for this saml integration",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "session_timeout": {
               "computed": true,
               "description": "Defines the session timeout in minutes",

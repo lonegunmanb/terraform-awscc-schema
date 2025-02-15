@@ -27,6 +27,22 @@ const awsccEc2Ipam = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "default_resource_discovery_organizational_unit_exclusions": {
+        "computed": true,
+        "description": "A set of organizational unit (OU) exclusions for the default resource discovery, created with this IPAM.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "organizations_entity_path": {
+              "computed": true,
+              "description": "An AWS Organizations entity path. Build the path for the OU(s) using AWS Organizations IDs separated by a '/'. Include all child OUs by ending the path with '/*'.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        }
+      },
       "description": {
         "computed": true,
         "description_kind": "plain",

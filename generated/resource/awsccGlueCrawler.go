@@ -279,6 +279,51 @@ const awsccGlueCrawler = `{
               },
               "optional": true
             },
+            "hudi_targets": {
+              "computed": true,
+              "description": "Specifies Apache Hudi data store targets.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "connection_name": {
+                    "computed": true,
+                    "description": "The name of the connection to use to connect to the Hudi target.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "exclusions": {
+                    "computed": true,
+                    "description": "A list of global patterns used to exclude from the crawl.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "maximum_traversal_depth": {
+                    "computed": true,
+                    "description": "The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "paths": {
+                    "computed": true,
+                    "description": "One or more Amazon S3 paths that contains Hudi metadata folders as s3://bucket/prefix .",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
             "iceberg_targets": {
               "computed": true,
               "description": "Specifies Apache Iceberg data store targets.",

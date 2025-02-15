@@ -23,6 +23,12 @@ const awsccRdsDbInstance = `{
         "optional": true,
         "type": "bool"
       },
+      "apply_immediately": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "associated_roles": {
         "computed": true,
         "description": "The IAMlong (IAM) roles associated with the DB instance. \n  *Amazon Aurora* \n Not applicable. The associated roles are managed by the DB cluster.",

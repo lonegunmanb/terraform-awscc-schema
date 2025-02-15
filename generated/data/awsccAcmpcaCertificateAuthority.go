@@ -345,7 +345,17 @@ const awsccAcmpcaCertificateAuthority = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "crl_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "custom_cname": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "custom_path": {
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"

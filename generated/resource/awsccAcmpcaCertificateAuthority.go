@@ -393,7 +393,19 @@ const awsccAcmpcaCertificateAuthority = `{
                     },
                     "optional": true
                   },
+                  "crl_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "custom_cname": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "custom_path": {
                     "computed": true,
                     "description_kind": "plain",
                     "optional": true,

@@ -100,6 +100,25 @@ const awsccBackupBackupPlan = `{
                     "optional": true,
                     "type": "bool"
                   },
+                  "index_actions": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "resource_types": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
                   "lifecycle": {
                     "computed": true,
                     "description_kind": "plain",

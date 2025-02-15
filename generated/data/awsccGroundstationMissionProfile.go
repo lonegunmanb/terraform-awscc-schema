@@ -84,6 +84,11 @@ const awsccGroundstationMissionProfile = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "kms_alias_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "kms_key_arn": {
               "computed": true,
               "description_kind": "plain",
