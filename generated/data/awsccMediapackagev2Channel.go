@@ -73,6 +73,22 @@ const awsccMediapackagev2Channel = `{
           "nesting_mode": "list"
         }
       },
+      "input_switch_configuration": {
+        "computed": true,
+        "description": "\u003cp\u003eThe configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive.\u003c/p\u003e",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "mqcs_input_switching": {
+              "computed": true,
+              "description": "\u003cp\u003eWhen true, AWS Elemental MediaPackage performs input switching based on the MQCS. Default is true. This setting is valid only when \u003ccode\u003eInputType\u003c/code\u003e is \u003ccode\u003eCMAF\u003c/code\u003e.\u003c/p\u003e",
+              "description_kind": "plain",
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "input_type": {
         "computed": true,
         "description_kind": "plain",
@@ -83,6 +99,22 @@ const awsccMediapackagev2Channel = `{
         "description": "\u003cp\u003eThe date and time the channel was modified.\u003c/p\u003e",
         "description_kind": "plain",
         "type": "string"
+      },
+      "output_header_configuration": {
+        "computed": true,
+        "description": "\u003cp\u003eThe settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN.\u003c/p\u003e",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "publish_mqcs": {
+              "computed": true,
+              "description": "\u003cp\u003eWhen true, AWS Elemental MediaPackage includes the MQCS in responses to the CDN. This setting is valid only when \u003ccode\u003eInputType\u003c/code\u003e is \u003ccode\u003eCMAF\u003c/code\u003e.\u003c/p\u003e",
+              "description_kind": "plain",
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "tags": {
         "computed": true,

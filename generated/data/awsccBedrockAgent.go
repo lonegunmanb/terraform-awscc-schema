@@ -181,6 +181,56 @@ const awsccBedrockAgent = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "agent_collaboration": {
+        "computed": true,
+        "description": "Agent collaboration state",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "agent_collaborators": {
+        "computed": true,
+        "description": "List of Agent Collaborators",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "agent_descriptor": {
+              "computed": true,
+              "description": "Agent descriptor for agent collaborator",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "alias_arn": {
+                    "computed": true,
+                    "description": "Alias ARN for agent descriptor",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "collaboration_instruction": {
+              "computed": true,
+              "description": "Agent collaborator instruction",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "collaborator_name": {
+              "computed": true,
+              "description": "Agent collaborator name",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "relay_conversation_history": {
+              "computed": true,
+              "description": "Relay conversation history state",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "agent_id": {
         "computed": true,
         "description": "Identifier for a resource.",
@@ -222,6 +272,32 @@ const awsccBedrockAgent = `{
         "description": "Time Stamp.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "custom_orchestration": {
+        "computed": true,
+        "description": "Structure for custom orchestration",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "executor": {
+              "computed": true,
+              "description": "Types of executors for custom orchestration strategy",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "lambda": {
+                    "computed": true,
+                    "description": "ARN of a Lambda.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "customer_encryption_key_arn": {
         "computed": true,
@@ -318,6 +394,53 @@ const awsccBedrockAgent = `{
           "nesting_mode": "list"
         }
       },
+      "memory_configuration": {
+        "computed": true,
+        "description": "Configuration for memory storage",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled_memory_types": {
+              "computed": true,
+              "description": "Types of session storage persisted in memory",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "session_summary_configuration": {
+              "computed": true,
+              "description": "Configuration for Session Summarization",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "max_recent_sessions": {
+                    "computed": true,
+                    "description": "Maximum number of Sessions to Summarize",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "storage_days": {
+              "computed": true,
+              "description": "Maximum number of days to store session details",
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "orchestration_type": {
+        "computed": true,
+        "description": "Types of orchestration strategy for agents",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "prepared_at": {
         "computed": true,
         "description": "Time Stamp.",
@@ -345,6 +468,12 @@ const awsccBedrockAgent = `{
                   "base_prompt_template": {
                     "computed": true,
                     "description": "Base Prompt Template.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "foundation_model": {
+                    "computed": true,
+                    "description": "ARN or name of a Bedrock model.",
                     "description_kind": "plain",
                     "type": "string"
                   },
