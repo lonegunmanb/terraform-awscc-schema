@@ -9,6 +9,35 @@ import (
 const awsccBatchJobDefinition = `{
   "block": {
     "attributes": {
+      "consumable_resource_properties": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "consumable_resource_list": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "consumable_resource": {
+                    "computed": true,
+                    "description": "The ARN of the consumable resource the job definition should consume.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "quantity": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "container_properties": {
         "computed": true,
         "description_kind": "plain",
@@ -1418,6 +1447,35 @@ const awsccBatchJobDefinition = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "consumable_resource_properties": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "consumable_resource_list": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "consumable_resource": {
+                                "computed": true,
+                                "description": "The ARN of the consumable resource the job definition should consume.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "quantity": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "container": {
                     "computed": true,
                     "description_kind": "plain",

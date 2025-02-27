@@ -165,6 +165,28 @@ const awsccBedrockPromptVersion = `{
                 "nesting_mode": "single"
               }
             },
+            "metadata": {
+              "computed": true,
+              "description": "List of metadata to associate with the prompt variant.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description": "The key of a metadata tag for a prompt variant.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description": "The value of a metadata tag for a prompt variant.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
             "model_id": {
               "computed": true,
               "description": "ARN or Id of a Bedrock Foundational Model or Inference Profile, or the ARN of a imported model, or a provisioned throughput ARN for custom models.",

@@ -49,12 +49,6 @@ const awsccIotsitewiseGateway = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "greengrass": {
-              "computed": true,
-              "description": "A gateway that runs on AWS IoT Greengrass V1.",
-              "description_kind": "plain",
-              "type": "string"
-            },
             "greengrass_v2": {
               "computed": true,
               "description": "A gateway that runs on AWS IoT Greengrass V2.",

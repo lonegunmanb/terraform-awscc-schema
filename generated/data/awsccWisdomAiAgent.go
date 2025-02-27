@@ -195,6 +195,11 @@ const awsccWisdomAiAgent = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "locale": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "query_reformulation_ai_prompt_id": {
                     "computed": true,
                     "description_kind": "plain",
@@ -359,6 +364,11 @@ const awsccWisdomAiAgent = `{
                       },
                       "nesting_mode": "list"
                     }
+                  },
+                  "locale": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"

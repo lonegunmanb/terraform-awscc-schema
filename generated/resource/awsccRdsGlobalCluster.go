@@ -53,13 +53,11 @@ const awsccRdsGlobalCluster = `{
               "computed": true,
               "description": "The writer endpoint for the global database cluster. This endpoint always points to the writer DB instance in the current primary cluster.",
               "description_kind": "plain",
-              "optional": true,
               "type": "string"
             }
           },
           "nesting_mode": "single"
-        },
-        "optional": true
+        }
       },
       "id": {
         "computed": true,

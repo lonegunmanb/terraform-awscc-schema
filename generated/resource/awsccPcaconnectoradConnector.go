@@ -43,6 +43,12 @@ const awsccPcaconnectoradConnector = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "ip_address_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "security_group_ids": {
               "description_kind": "plain",
               "required": true,
@@ -57,7 +63,7 @@ const awsccPcaconnectoradConnector = `{
         "required": true
       }
     },
-    "description": "Definition of AWS::PCAConnectorAD::Connector Resource Type",
+    "description": "Represents a Connector that connects AWS PrivateCA and your directory",
     "description_kind": "plain"
   },
   "version": 1

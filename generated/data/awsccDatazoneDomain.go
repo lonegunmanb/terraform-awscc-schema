@@ -39,6 +39,12 @@ const awsccDatazoneDomain = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "domain_version": {
+        "computed": true,
+        "description": "The version of the domain.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -72,6 +78,12 @@ const awsccDatazoneDomain = `{
       "portal_url": {
         "computed": true,
         "description": "The URL of the data portal for this Amazon DataZone domain.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "service_role": {
+        "computed": true,
+        "description": "The service role of the domain that is created.",
         "description_kind": "plain",
         "type": "string"
       },

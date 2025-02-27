@@ -63,7 +63,7 @@ const awsccEc2CarrierGateway = `{
         "type": "string"
       }
     },
-    "description": "An example resource schema demonstrating some basic constructs and validation rules.",
+    "description": "Resource Type definition for Carrier Gateway which describes the Carrier Gateway resource",
     "description_kind": "plain"
   },
   "version": 1

@@ -147,6 +147,38 @@ const awsccWorkspaceswebUserSettings = `{
           "nesting_mode": "list"
         }
       },
+      "toolbar_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "hidden_toolbar_items": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "max_display_resolution": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "toolbar_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "visual_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "upload_allowed": {
         "computed": true,
         "description_kind": "plain",
