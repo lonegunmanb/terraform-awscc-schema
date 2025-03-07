@@ -25,6 +25,7 @@ const awsccRdsDbInstance = `{
       },
       "apply_immediately": {
         "computed": true,
+        "description": "Specifies whether changes to the DB instance and any pending modifications are applied immediately, regardless of the ` + "`" + `` + "`" + `PreferredMaintenanceWindow` + "`" + `` + "`" + ` setting. If set to ` + "`" + `` + "`" + `false` + "`" + `` + "`" + `, changes are applied during the next maintenance window. Until RDS applies the changes, the DB instance remains in a drift state. As a result, the configuration doesn't fully reflect the requested modifications and temporarily diverges from the intended state.\n In addition to the settings described in [Modifying a DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html), this property also determines whether the DB instance reboots when a static parameter is modified in the associated DB parameter group.\n Default: ` + "`" + `` + "`" + `true` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
@@ -635,7 +636,7 @@ const awsccRdsDbInstance = `{
       },
       "storage_type": {
         "computed": true,
-        "description": "The storage type to associate with the DB instance.\n If you specify ` + "`" + `` + "`" + `io1` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `io2` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `gp3` + "`" + `` + "`" + `, you must also include a value for the ` + "`" + `` + "`" + `Iops` + "`" + `` + "`" + ` parameter.\n This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.\n Valid Values: ` + "`" + `` + "`" + `gp2 | gp3 | io1 | io2 | standard` + "`" + `` + "`" + ` \n Default: ` + "`" + `` + "`" + `io1` + "`" + `` + "`" + `, if the ` + "`" + `` + "`" + `Iops` + "`" + `` + "`" + ` parameter is specified. Otherwise, ` + "`" + `` + "`" + `gp2` + "`" + `` + "`" + `.",
+        "description": "The storage type to associate with the DB instance.\n If you specify ` + "`" + `` + "`" + `io1` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `io2` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `gp3` + "`" + `` + "`" + `, you must also include a value for the ` + "`" + `` + "`" + `Iops` + "`" + `` + "`" + ` parameter.\n This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.\n Valid Values: ` + "`" + `` + "`" + `gp2 | gp3 | io1 | io2 | standard` + "`" + `` + "`" + ` \n Default: ` + "`" + `` + "`" + `io1` + "`" + `` + "`" + `, if the ` + "`" + `` + "`" + `Iops` + "`" + `` + "`" + ` parameter is specified. Otherwise, ` + "`" + `` + "`" + `gp3` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

@@ -11,13 +11,13 @@ const awsccEcrPullThroughCacheRule = `{
     "attributes": {
       "credential_arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.",
+        "description": "The ARN of the Secrets Manager secret associated with the pull through cache rule.",
         "description_kind": "plain",
         "type": "string"
       },
       "ecr_repository_prefix": {
         "computed": true,
-        "description": "The ECRRepositoryPrefix is a custom alias for upstream registry url.",
+        "description": "The Amazon ECR repository prefix associated with the pull through cache rule.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -29,13 +29,13 @@ const awsccEcrPullThroughCacheRule = `{
       },
       "upstream_registry": {
         "computed": true,
-        "description": "The name of the upstream registry.",
+        "description": "The name of the upstream source registry associated with the pull through cache rule.",
         "description_kind": "plain",
         "type": "string"
       },
       "upstream_registry_url": {
         "computed": true,
-        "description": "The upstreamRegistryUrl is the endpoint of upstream registry url of the public repository to be cached",
+        "description": "The upstream registry URL associated with the pull through cache rule.",
         "description_kind": "plain",
         "type": "string"
       }

@@ -81,7 +81,7 @@ const awsccEc2LocalGatewayRouteTableVirtualInterfaceGroupAssociation = `{
         "optional": true
       }
     },
-    "description": "Describes a local gateway route table virtual interface group association for a local gateway.",
+    "description": "Resource Type definition for Local Gateway Route Table Virtual Interface Group Association which describes a local gateway route table virtual interface group association for a local gateway.",
     "description_kind": "plain"
   },
   "version": 1

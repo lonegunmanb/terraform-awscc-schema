@@ -22,7 +22,7 @@ const awsccEcrPublicRepository = `{
       },
       "repository_catalog_data": {
         "computed": true,
-        "description": "The CatalogData property type specifies Catalog data for ECR Public Repository. For information about Catalog Data, see \u003clink\u003e",
+        "description": "The details about the repository that are publicly visible in the Amazon ECR Public Gallery. For more information, see [Amazon ECR Public repository catalog data](https://docs.aws.amazon.com/AmazonECR/latest/public/public-repository-catalog-data.html) in the *Amazon ECR Public User Guide*.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -74,14 +74,14 @@ const awsccEcrPublicRepository = `{
       },
       "repository_name": {
         "computed": true,
-        "description": "The name to use for the repository. The repository name may be specified on its own (such as nginx-web-app) or it can be prepended with a namespace to group the repository into a category (such as project-a/nginx-web-app). If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the repository name. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.",
+        "description": "The name to use for the public repository. The repository name may be specified on its own (such as ` + "`" + `` + "`" + `nginx-web-app` + "`" + `` + "`" + `) or it can be prepended with a namespace to group the repository into a category (such as ` + "`" + `` + "`" + `project-a/nginx-web-app` + "`" + `` + "`" + `). If you don't specify a name, CFNlong generates a unique physical ID and uses that ID for the repository name. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html).\n  If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "repository_policy_text": {
         "computed": true,
-        "description": "The JSON repository policy text to apply to the repository. For more information, see https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html in the Amazon Elastic Container Registry User Guide. ",
+        "description": "The JSON repository policy text to apply to the public repository. For more information, see [Amazon ECR Public repository policies](https://docs.aws.amazon.com/AmazonECR/latest/public/public-repository-policies.html) in the *Amazon ECR Public User Guide*.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -94,14 +94,14 @@ const awsccEcrPublicRepository = `{
           "attributes": {
             "key": {
               "computed": true,
-              "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
+              "description": "One part of a key-value pair that make up a tag. A ` + "`" + `` + "`" + `key` + "`" + `` + "`" + ` is a general label that acts like a category for more specific tag values.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
+              "description": "A ` + "`" + `` + "`" + `value` + "`" + `` + "`" + ` acts as a descriptor within a tag category (key).",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -112,7 +112,7 @@ const awsccEcrPublicRepository = `{
         "optional": true
       }
     },
-    "description": "The AWS::ECR::PublicRepository resource specifies an Amazon Elastic Container Public Registry (Amazon Public ECR) repository, where users can push and pull Docker images. For more information, see https://docs.aws.amazon.com/AmazonECR",
+    "description": "The ` + "`" + `` + "`" + `AWS::ECR::PublicRepository` + "`" + `` + "`" + ` resource specifies an Amazon Elastic Container Registry Public (Amazon ECR Public) repository, where users can push and pull Docker images, Open Container Initiative (OCI) images, and OCI compatible artifacts. For more information, see [Amazon ECR public repositories](https://docs.aws.amazon.com/AmazonECR/latest/public/public-repositories.html) in the *Amazon ECR Public User Guide*.",
     "description_kind": "plain"
   },
   "version": 1

@@ -85,12 +85,60 @@ const awsccIotAccountAuditConfiguration = `{
                 "nesting_mode": "single"
               }
             },
-            "device_certificate_expiring_check": {
+            "device_certificate_age_check": {
               "computed": true,
-              "description": "The configuration for a specific audit check.",
+              "description": "A structure containing the configName and corresponding configValue for configuring DeviceCertAgeCheck.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "configuration": {
+                    "computed": true,
+                    "description": "A structure containing the configName and corresponding configValue for configuring audit checks.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "cert_age_threshold_in_days": {
+                          "computed": true,
+                          "description": "The configValue for configuring audit checks.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "enabled": {
+                    "computed": true,
+                    "description": "True if the check is enabled.",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "device_certificate_expiring_check": {
+              "computed": true,
+              "description": "A structure containing the configName and corresponding configValue for configuring DeviceCertExpirationCheck.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "configuration": {
+                    "computed": true,
+                    "description": "A structure containing the configName and corresponding configValue for configuring audit checks.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "cert_expiration_threshold_in_days": {
+                          "computed": true,
+                          "description": "The configValue for configuring audit checks.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "enabled": {
                     "computed": true,
                     "description": "True if the check is enabled.",

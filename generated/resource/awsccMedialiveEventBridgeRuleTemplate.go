@@ -65,9 +65,10 @@ const awsccMedialiveEventBridgeRuleTemplate = `{
         "type": "string"
       },
       "group_identifier": {
+        "computed": true,
         "description": "An eventbridge rule template group's identifier. Can be either be its id or current name.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "id": {

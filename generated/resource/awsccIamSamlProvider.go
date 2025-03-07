@@ -9,10 +9,24 @@ import (
 const awsccIamSamlProvider = `{
   "block": {
     "attributes": {
+      "add_private_key": {
+        "computed": true,
+        "description": "The private key from your external identity provider",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "arn": {
         "computed": true,
         "description": "Amazon Resource Name (ARN) of the SAML provider",
         "description_kind": "plain",
+        "type": "string"
+      },
+      "assertion_encryption_mode": {
+        "computed": true,
+        "description": "The encryption setting for the SAML provider",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "id": {
@@ -27,9 +41,47 @@ const awsccIamSamlProvider = `{
         "optional": true,
         "type": "string"
       },
-      "saml_metadata_document": {
+      "private_key_list": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "nested_type": {
+          "attributes": {
+            "key_id": {
+              "computed": true,
+              "description": "The unique identifier for the SAML private key.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "timestamp": {
+              "computed": true,
+              "description": "The date and time, in \u003ca href=\\\"http://www.iso.org/iso/iso8601\\\"\u003eISO 8601 date-time \u003c/a\u003e format, when the private key was uploaded.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
+      "remove_private_key": {
+        "computed": true,
+        "description": "The Key ID of the private key to remove",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "saml_metadata_document": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "saml_provider_uuid": {
+        "computed": true,
+        "description": "The unique identifier assigned to the SAML provider",
+        "description_kind": "plain",
         "type": "string"
       },
       "tags": {

@@ -33,6 +33,46 @@ const awsccTransferAgreement = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "custom_directories": {
+        "computed": true,
+        "description": "Specifies a separate directory for each type of file to store for an AS2 message.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "failed_files_directory": {
+              "computed": true,
+              "description": "Specifies a location to store the failed files for an AS2 message.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "mdn_files_directory": {
+              "computed": true,
+              "description": "Specifies a location to store the MDN file for an AS2 message.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "payload_files_directory": {
+              "computed": true,
+              "description": "Specifies a location to store the payload file for an AS2 message.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "status_files_directory": {
+              "computed": true,
+              "description": "Specifies a location to store the status file for an AS2 message.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "temporary_files_directory": {
+              "computed": true,
+              "description": "Specifies a location to store the temporary processing file for an AS2 message.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "description": {
         "computed": true,
         "description": "A textual description for the agreement.",

@@ -82,7 +82,7 @@ const awsccEc2LocalGatewayRouteTable = `{
         "optional": true
       }
     },
-    "description": "Describes a route table for a local gateway.",
+    "description": "Resource Type definition for Local Gateway Route Table which describes a route table for a local gateway.",
     "description_kind": "plain"
   },
   "version": 1

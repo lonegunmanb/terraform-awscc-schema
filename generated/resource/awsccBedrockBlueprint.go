@@ -6,25 +6,30 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccCeCostCategory = `{
+const awsccBedrockBlueprint = `{
   "block": {
     "attributes": {
-      "arn": {
+      "blueprint_arn": {
         "computed": true,
-        "description": "Cost category ARN",
+        "description": "ARN of a Blueprint",
         "description_kind": "plain",
         "type": "string"
       },
-      "default_value": {
-        "computed": true,
-        "description": "The default value for the cost category",
+      "blueprint_name": {
+        "description": "Name of the Blueprint",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
-      "effective_start": {
+      "blueprint_stage": {
         "computed": true,
-        "description": "ISO 8601 date time with offset format",
+        "description": "Stage of the Blueprint",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "creation_time": {
+        "computed": true,
+        "description": "Creation timestamp",
         "description_kind": "plain",
         "type": "string"
       },
@@ -34,45 +39,51 @@ const awsccCeCostCategory = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "name": {
-        "description_kind": "plain",
-        "required": true,
-        "type": "string"
-      },
-      "rule_version": {
-        "description_kind": "plain",
-        "required": true,
-        "type": "string"
-      },
-      "rules": {
-        "description": "JSON array format of Expression in Billing and Cost Management API",
-        "description_kind": "plain",
-        "required": true,
-        "type": "string"
-      },
-      "split_charge_rules": {
+      "kms_encryption_context": {
         "computed": true,
-        "description": "Json array format of CostCategorySplitChargeRule in Billing and Cost Management API",
+        "description": "KMS encryption context",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "map",
+          "string"
+        ]
+      },
+      "kms_key_id": {
+        "computed": true,
+        "description": "KMS key identifier",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
+      "last_modified_time": {
+        "computed": true,
+        "description": "Last modified timestamp",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "schema": {
+        "description": "Schema of the blueprint",
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
       "tags": {
         "computed": true,
-        "description": "Tags to assign to the cost category.",
+        "description": "List of Tags",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
               "computed": true,
-              "description": "The key name for the tag.",
+              "description": "Key for the tag",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "The value for the tag.",
+              "description": "Value for the tag",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -81,16 +92,22 @@ const awsccCeCostCategory = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "type": {
+        "description": "Modality Type",
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
       }
     },
-    "description": "Resource Type definition for AWS::CE::CostCategory. Cost Category enables you to map your cost and usage into meaningful categories. You can use Cost Category to organize your costs using a rule-based engine.",
+    "description": "Definition of AWS::Bedrock::Blueprint Resource Type",
     "description_kind": "plain"
   },
   "version": 1
 }`
 
-func AwsccCeCostCategorySchema() *tfjson.Schema {
+func AwsccBedrockBlueprintSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccCeCostCategory), &result)
+	_ = json.Unmarshal([]byte(awsccBedrockBlueprint), &result)
 	return &result
 }

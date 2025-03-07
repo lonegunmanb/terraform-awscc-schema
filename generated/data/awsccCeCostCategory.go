@@ -54,6 +54,28 @@ const awsccCeCostCategory = `{
         "description": "Json array format of CostCategorySplitChargeRule in Billing and Cost Management API",
         "description_kind": "plain",
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "Tags to assign to the cost category.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name for the tag.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the tag.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
       }
     },
     "description": "Data Source schema for AWS::CE::CostCategory",

@@ -56,7 +56,7 @@ const awsccEc2LocalGatewayRoute = `{
         "type": "string"
       }
     },
-    "description": "Describes a route for a local gateway route table.",
+    "description": "Resource Type definition for Local Gateway Route which describes a route for a local gateway route table.",
     "description_kind": "plain"
   },
   "version": 1

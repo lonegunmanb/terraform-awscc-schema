@@ -60,9 +60,10 @@ const awsccMedialiveCloudwatchAlarmTemplate = `{
         "type": "string"
       },
       "group_identifier": {
+        "computed": true,
         "description": "A cloudwatch alarm template group's identifier. Can be either be its id or current name.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "id": {

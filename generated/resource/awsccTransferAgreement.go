@@ -28,10 +28,57 @@ const awsccTransferAgreement = `{
         "type": "string"
       },
       "base_directory": {
+        "computed": true,
         "description": "Specifies the base directory for the agreement.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
+      },
+      "custom_directories": {
+        "computed": true,
+        "description": "Specifies a separate directory for each type of file to store for an AS2 message.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "failed_files_directory": {
+              "computed": true,
+              "description": "Specifies a location to store the failed files for an AS2 message.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "mdn_files_directory": {
+              "computed": true,
+              "description": "Specifies a location to store the MDN file for an AS2 message.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "payload_files_directory": {
+              "computed": true,
+              "description": "Specifies a location to store the payload file for an AS2 message.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "status_files_directory": {
+              "computed": true,
+              "description": "Specifies a location to store the status file for an AS2 message.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "temporary_files_directory": {
+              "computed": true,
+              "description": "Specifies a location to store the temporary processing file for an AS2 message.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "description": {
         "computed": true,

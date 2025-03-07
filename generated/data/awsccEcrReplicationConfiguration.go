@@ -17,37 +17,36 @@ const awsccEcrReplicationConfiguration = `{
       },
       "registry_id": {
         "computed": true,
-        "description": "The RegistryId associated with the aws account.",
         "description_kind": "plain",
         "type": "string"
       },
       "replication_configuration": {
         "computed": true,
-        "description": "An object representing the replication configuration for a registry.",
+        "description": "The replication configuration for a registry.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "rules": {
               "computed": true,
-              "description": "An array of objects representing the replication rules for a replication configuration. A replication configuration may contain a maximum of 10 rules.",
+              "description": "An array of objects representing the replication destinations and repository filters for a replication configuration.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "destinations": {
                     "computed": true,
-                    "description": "An array of objects representing the details of a replication destination.",
+                    "description": "An array of objects representing the destination for a replication rule.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "region": {
                           "computed": true,
-                          "description": "A Region to replicate to.",
+                          "description": "The Region to replicate to.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "registry_id": {
                           "computed": true,
-                          "description": "The account ID of the destination registry to replicate to.",
+                          "description": "The AWS account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -57,19 +56,19 @@ const awsccEcrReplicationConfiguration = `{
                   },
                   "repository_filters": {
                     "computed": true,
-                    "description": "An array of objects representing the details of a repository filter.",
+                    "description": "An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "filter": {
                           "computed": true,
-                          "description": "The repository filter to be applied for replication.",
+                          "description": "The repository filter details. When the ` + "`" + `` + "`" + `PREFIX_MATCH` + "`" + `` + "`" + ` filter type is specified, this value is required and should be the repository name prefix to configure replication for.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "filter_type": {
                           "computed": true,
-                          "description": "Type of repository filter",
+                          "description": "The repository filter type. The only supported value is ` + "`" + `` + "`" + `PREFIX_MATCH` + "`" + `` + "`" + `, which is a repository name prefix specified with the ` + "`" + `` + "`" + `filter` + "`" + `` + "`" + ` parameter.",
                           "description_kind": "plain",
                           "type": "string"
                         }

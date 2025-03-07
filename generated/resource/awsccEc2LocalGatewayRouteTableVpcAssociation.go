@@ -69,7 +69,7 @@ const awsccEc2LocalGatewayRouteTableVpcAssociation = `{
         "type": "string"
       }
     },
-    "description": "Describes an association between a local gateway route table and a VPC.",
+    "description": "Resource Type definition for Local Gateway Route Table VPC Association which describes an association between a local gateway route table and a VPC.",
     "description_kind": "plain"
   },
   "version": 1

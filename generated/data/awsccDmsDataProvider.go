@@ -98,6 +98,76 @@ const awsccDmsDataProvider = `{
                 "nesting_mode": "single"
               }
             },
+            "ibm_db_2_luw_settings": {
+              "computed": true,
+              "description": "IbmDb2LuwSettings property identifier.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "certificate_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "database_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "port": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "server_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "ssl_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "ibm_db_2_z_os_settings": {
+              "computed": true,
+              "description": "IbmDb2zOsSettings property identifier.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "certificate_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "database_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "port": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "server_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "ssl_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "maria_db_settings": {
               "computed": true,
               "description": "MariaDbSettings property identifier.",
