@@ -14,6 +14,114 @@ const awsccSagemakerInferenceComponent = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "deployment_config": {
+        "computed": true,
+        "description": "The deployment config for the inference component",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "auto_rollback_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "alarms": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "alarm_name": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "rolling_update_policy": {
+              "computed": true,
+              "description": "The rolling update policy for the inference component",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "maximum_batch_size": {
+                    "computed": true,
+                    "description": "Capacity size configuration for the inference component",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "value": {
+                          "computed": true,
+                          "description": "The number of copies for the inference component",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "maximum_execution_timeout_in_seconds": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "rollback_maximum_batch_size": {
+                    "computed": true,
+                    "description": "Capacity size configuration for the inference component",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "value": {
+                          "computed": true,
+                          "description": "The number of copies for the inference component",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "wait_interval_in_seconds": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "endpoint_arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN) of the endpoint the inference component is associated with",

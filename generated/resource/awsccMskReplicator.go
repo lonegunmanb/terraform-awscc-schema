@@ -13,7 +13,6 @@ const awsccMskReplicator = `{
         "computed": true,
         "description": "The current version of the MSK replicator.",
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "description": {

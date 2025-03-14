@@ -9,9 +9,23 @@ import (
 const awsccAthenaDataCatalog = `{
   "block": {
     "attributes": {
+      "connection_type": {
+        "computed": true,
+        "description": "The type of connection for a FEDERATED data catalog",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description": "A description of the data catalog to be created. ",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "error": {
+        "computed": true,
+        "description": "Text of the error that occurred during data catalog creation or deletion.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -38,6 +52,13 @@ const awsccAthenaDataCatalog = `{
           "string"
         ]
       },
+      "status": {
+        "computed": true,
+        "description": "The status of the creation or deletion of the data catalog. LAMBDA, GLUE, and HIVE data catalog types are created synchronously. Their status is either CREATE_COMPLETE or CREATE_FAILED. The FEDERATED data catalog type is created asynchronously.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "A list of comma separated tags to add to the data catalog that is created. ",
@@ -62,7 +83,7 @@ const awsccAthenaDataCatalog = `{
         "optional": true
       },
       "type": {
-        "description": "The type of data catalog to create: LAMBDA for a federated catalog, GLUE for AWS Glue Catalog, or HIVE for an external hive metastore. ",
+        "description": "The type of data catalog to create: LAMBDA for a federated catalog, GLUE for AWS Glue Catalog, or HIVE for an external hive metastore. FEDERATED is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass.",
         "description_kind": "plain",
         "required": true,
         "type": "string"

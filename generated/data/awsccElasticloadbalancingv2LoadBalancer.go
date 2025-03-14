@@ -27,7 +27,7 @@ const awsccElasticloadbalancingv2LoadBalancer = `{
       },
       "enforce_security_group_inbound_rules_on_private_link_traffic": {
         "computed": true,
-        "description": "Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through privatelink.",
+        "description": "Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through privatelink. The default is ` + "`" + `` + "`" + `on` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -40,6 +40,11 @@ const awsccElasticloadbalancingv2LoadBalancer = `{
       "ip_address_type": {
         "computed": true,
         "description": "The IP address type. Internal load balancers must use ` + "`" + `` + "`" + `ipv4` + "`" + `` + "`" + `.\n [Application Load Balancers] The possible values are ` + "`" + `` + "`" + `ipv4` + "`" + `` + "`" + ` (IPv4 addresses), ` + "`" + `` + "`" + `dualstack` + "`" + `` + "`" + ` (IPv4 and IPv6 addresses), and ` + "`" + `` + "`" + `dualstack-without-public-ipv4` + "`" + `` + "`" + ` (public IPv6 addresses and private IPv4 and IPv6 addresses).\n Application Load Balancer authentication supports IPv4 addresses only when connecting to an Identity Provider (IdP) or Amazon Cognito endpoint. Without a public IPv4 address the load balancer can't complete the authentication process, resulting in HTTP 500 errors.\n [Network Load Balancers and Gateway Load Balancers] The possible values are ` + "`" + `` + "`" + `ipv4` + "`" + `` + "`" + ` (IPv4 addresses) and ` + "`" + `` + "`" + `dualstack` + "`" + `` + "`" + ` (IPv4 and IPv6 addresses).",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "ipv_4_ipam_pool_id": {
+        "computed": true,
         "description_kind": "plain",
         "type": "string"
       },

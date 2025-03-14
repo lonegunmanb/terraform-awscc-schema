@@ -519,6 +519,13 @@ const awsccBedrockAgent = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "additional_model_request_fields": {
+                    "computed": true,
+                    "description": "Additional Model Request Fields for Prompt Configuration",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "base_prompt_template": {
                     "computed": true,
                     "description": "Base Prompt Template.",

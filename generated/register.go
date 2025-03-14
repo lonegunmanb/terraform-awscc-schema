@@ -68,6 +68,7 @@ func init() {
 	resources["awscc_applicationautoscaling_scalable_target"] = resource.AwsccApplicationautoscalingScalableTargetSchema()  
 	resources["awscc_applicationautoscaling_scaling_policy"] = resource.AwsccApplicationautoscalingScalingPolicySchema()  
 	resources["awscc_applicationinsights_application"] = resource.AwsccApplicationinsightsApplicationSchema()  
+	resources["awscc_applicationsignals_discovery"] = resource.AwsccApplicationsignalsDiscoverySchema()  
 	resources["awscc_applicationsignals_service_level_objective"] = resource.AwsccApplicationsignalsServiceLevelObjectiveSchema()  
 	resources["awscc_apprunner_auto_scaling_configuration"] = resource.AwsccApprunnerAutoScalingConfigurationSchema()  
 	resources["awscc_apprunner_observability_configuration"] = resource.AwsccApprunnerObservabilityConfigurationSchema()  
@@ -1123,6 +1124,7 @@ func init() {
 	resources["awscc_xray_group"] = resource.AwsccXrayGroupSchema()  
 	resources["awscc_xray_resource_policy"] = resource.AwsccXrayResourcePolicySchema()  
 	resources["awscc_xray_sampling_rule"] = resource.AwsccXraySamplingRuleSchema()  
+	resources["awscc_xray_transaction_search_config"] = resource.AwsccXrayTransactionSearchConfigSchema()  
 	dataSources["awscc_accessanalyzer_analyzer"] = data.AwsccAccessanalyzerAnalyzerSchema()  
 	dataSources["awscc_accessanalyzer_analyzers"] = data.AwsccAccessanalyzerAnalyzersSchema()  
 	dataSources["awscc_acmpca_certificate"] = data.AwsccAcmpcaCertificateSchema()  
@@ -1208,6 +1210,8 @@ func init() {
 	dataSources["awscc_applicationautoscaling_scaling_policy"] = data.AwsccApplicationautoscalingScalingPolicySchema()  
 	dataSources["awscc_applicationinsights_application"] = data.AwsccApplicationinsightsApplicationSchema()  
 	dataSources["awscc_applicationinsights_applications"] = data.AwsccApplicationinsightsApplicationsSchema()  
+	dataSources["awscc_applicationsignals_discoveries"] = data.AwsccApplicationsignalsDiscoveriesSchema()  
+	dataSources["awscc_applicationsignals_discovery"] = data.AwsccApplicationsignalsDiscoverySchema()  
 	dataSources["awscc_applicationsignals_service_level_objective"] = data.AwsccApplicationsignalsServiceLevelObjectiveSchema()  
 	dataSources["awscc_applicationsignals_service_level_objectives"] = data.AwsccApplicationsignalsServiceLevelObjectivesSchema()  
 	dataSources["awscc_apprunner_auto_scaling_configuration"] = data.AwsccApprunnerAutoScalingConfigurationSchema()  
@@ -3080,6 +3084,8 @@ func init() {
 	dataSources["awscc_xray_resource_policy"] = data.AwsccXrayResourcePolicySchema()  
 	dataSources["awscc_xray_sampling_rule"] = data.AwsccXraySamplingRuleSchema()  
 	dataSources["awscc_xray_sampling_rules"] = data.AwsccXraySamplingRulesSchema()  
+	dataSources["awscc_xray_transaction_search_config"] = data.AwsccXrayTransactionSearchConfigSchema()  
+	dataSources["awscc_xray_transaction_search_configs"] = data.AwsccXrayTransactionSearchConfigsSchema()  
 	Resources = resources
 	DataSources = dataSources
 }

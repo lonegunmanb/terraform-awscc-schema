@@ -16,6 +16,13 @@ const awsccEcrPullThroughCacheRule = `{
         "optional": true,
         "type": "string"
       },
+      "custom_role_arn": {
+        "computed": true,
+        "description": "The ARN of the IAM role to be assumed by Amazon ECR to authenticate to ECR upstream registry. This role must be in the same account as the registry that you are configuring.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "ecr_repository_prefix": {
         "computed": true,
         "description": "The Amazon ECR repository prefix associated with the pull through cache rule.",
@@ -39,6 +46,13 @@ const awsccEcrPullThroughCacheRule = `{
       "upstream_registry_url": {
         "computed": true,
         "description": "The upstream registry URL associated with the pull through cache rule.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "upstream_repository_prefix": {
+        "computed": true,
+        "description": "The repository name prefix of upstream registry to match with the upstream repository name. When this field isn't specified, Amazon ECR will use the ` + "`" + `ROOT` + "`" + `.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

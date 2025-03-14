@@ -18,7 +18,7 @@ const awsccEcsService = `{
       },
       "capacity_provider_strategy": {
         "computed": true,
-        "description": "The capacity provider strategy to use for the service.\n If a ` + "`" + `` + "`" + `capacityProviderStrategy` + "`" + `` + "`" + ` is specified, the ` + "`" + `` + "`" + `launchType` + "`" + `` + "`" + ` parameter must be omitted. If no ` + "`" + `` + "`" + `capacityProviderStrategy` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `launchType` + "`" + `` + "`" + ` is specified, the ` + "`" + `` + "`" + `defaultCapacityProviderStrategy` + "`" + `` + "`" + ` for the cluster is used.\n A capacity provider strategy may contain a maximum of 6 capacity providers.\n  To remove this property from your service resource, specify an empty ` + "`" + `` + "`" + `CapacityProviderStrategyItem` + "`" + `` + "`" + ` array.",
+        "description": "The capacity provider strategy to use for the service.\n If a ` + "`" + `` + "`" + `capacityProviderStrategy` + "`" + `` + "`" + ` is specified, the ` + "`" + `` + "`" + `launchType` + "`" + `` + "`" + ` parameter must be omitted. If no ` + "`" + `` + "`" + `capacityProviderStrategy` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `launchType` + "`" + `` + "`" + ` is specified, the ` + "`" + `` + "`" + `defaultCapacityProviderStrategy` + "`" + `` + "`" + ` for the cluster is used.\n A capacity provider strategy can contain a maximum of 20 capacity providers.\n  To remove this property from your service resource, specify an empty ` + "`" + `` + "`" + `CapacityProviderStrategyItem` + "`" + `` + "`" + ` array.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -257,7 +257,7 @@ const awsccEcsService = `{
                 "attributes": {
                   "assign_public_ip": {
                     "computed": true,
-                    "description": "Whether the task's elastic network interface receives a public IP address. The default value is ` + "`" + `` + "`" + `ENABLED` + "`" + `` + "`" + `.",
+                    "description": "Whether the task's elastic network interface receives a public IP address. \n Consider the following when you set this value:\n  +  When you use ` + "`" + `` + "`" + `create-service` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `update-service` + "`" + `` + "`" + `, the default is ` + "`" + `` + "`" + `DISABLED` + "`" + `` + "`" + `. \n  +  When the service ` + "`" + `` + "`" + `deploymentController` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `ECS` + "`" + `` + "`" + `, the value must be ` + "`" + `` + "`" + `DISABLED` + "`" + `` + "`" + `. \n  +  When you use ` + "`" + `` + "`" + `create-service` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `update-service` + "`" + `` + "`" + `, the default is ` + "`" + `` + "`" + `ENABLED` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"

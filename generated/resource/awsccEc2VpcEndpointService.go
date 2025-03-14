@@ -56,6 +56,16 @@ const awsccEc2VpcEndpointService = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "supported_ip_address_types": {
+        "computed": true,
+        "description": "Specify which Ip Address types are supported for VPC endpoint service.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "tags": {
         "computed": true,
         "description": "The tags to add to the VPC endpoint service.",

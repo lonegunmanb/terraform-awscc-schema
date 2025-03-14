@@ -98,6 +98,12 @@ const awsccChatbotMicrosoftTeamsChannelConfiguration = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "teams_channel_name": {
+        "computed": true,
+        "description": "The name of the Microsoft Teams channel",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "teams_tenant_id": {
         "computed": true,
         "description": "The id of the Microsoft Teams tenant",

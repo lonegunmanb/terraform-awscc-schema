@@ -9,6 +9,49 @@ import (
 const awsccIotSoftwarePackageVersion = `{
   "block": {
     "attributes": {
+      "artifact": {
+        "computed": true,
+        "description": "The artifact location of the package version",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "s3_location": {
+              "computed": true,
+              "description": "The Amazon S3 location",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "bucket": {
+                    "computed": true,
+                    "description": "The S3 bucket",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "key": {
+                    "computed": true,
+                    "description": "The S3 key",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "version": {
+                    "computed": true,
+                    "description": "The S3 version",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "attributes": {
         "computed": true,
         "description_kind": "plain",
@@ -42,6 +85,62 @@ const awsccIotSoftwarePackageVersion = `{
       },
       "package_version_arn": {
         "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "recipe": {
+        "computed": true,
+        "description": "The inline json job document associated with a software package version",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "sbom": {
+        "computed": true,
+        "description": "The sbom zip archive location of the package version",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "s3_location": {
+              "computed": true,
+              "description": "The Amazon S3 location",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "bucket": {
+                    "computed": true,
+                    "description": "The S3 bucket",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "key": {
+                    "computed": true,
+                    "description": "The S3 key",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "version": {
+                    "computed": true,
+                    "description": "The S3 version",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "sbom_validation_status": {
+        "computed": true,
+        "description": "The validation status of the Sbom file",
         "description_kind": "plain",
         "type": "string"
       },

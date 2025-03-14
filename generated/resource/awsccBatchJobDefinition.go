@@ -1648,6 +1648,11 @@ const awsccBatchJobDefinition = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "job_definition_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "job_definition_name": {
         "computed": true,
         "description_kind": "plain",

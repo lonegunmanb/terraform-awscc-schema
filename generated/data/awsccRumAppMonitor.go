@@ -208,6 +208,28 @@ const awsccRumAppMonitor = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "resource_policy": {
+        "computed": true,
+        "description": "A structure that defines resource policy attached to your app monitor.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "policy_document": {
+              "computed": true,
+              "description": "The JSON to use as the resource policy. The document can be up to 4 KB in size. ",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "policy_revision_id": {
+              "computed": true,
+              "description": "A string value that you can use to conditionally update your policy. You can provide the revision ID of your existing policy to make mutating requests against that policy. \n\n When you assign a policy revision ID, then later requests about that policy will be rejected with an InvalidPolicyRevisionIdException error if they don't provide the correct current revision ID.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "tags": {
         "computed": true,
         "description": "Assigns one or more tags (key-value pairs) to the app monitor. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.You can associate as many as 50 tags with an app monitor.",
