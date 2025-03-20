@@ -129,6 +129,11 @@ const awsccRedshiftserverlessWorkgroup = `{
           "nesting_mode": "list"
         }
       },
+      "track_name": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "workgroup": {
         "computed": true,
         "description": "Definition for workgroup resource",
@@ -290,6 +295,11 @@ const awsccRedshiftserverlessWorkgroup = `{
                 "list",
                 "string"
               ]
+            },
+            "track_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             },
             "workgroup_arn": {
               "computed": true,

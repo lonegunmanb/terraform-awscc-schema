@@ -146,6 +146,12 @@ const awsccRedshiftserverlessWorkgroup = `{
         },
         "optional": true
       },
+      "track_name": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "workgroup": {
         "computed": true,
         "description": "Definition for workgroup resource",
@@ -155,6 +161,7 @@ const awsccRedshiftserverlessWorkgroup = `{
             "base_capacity": {
               "computed": true,
               "description_kind": "plain",
+              "optional": true,
               "type": "number"
             },
             "config_parameters": {
@@ -165,16 +172,19 @@ const awsccRedshiftserverlessWorkgroup = `{
                   "parameter_key": {
                     "computed": true,
                     "description_kind": "plain",
+                    "optional": true,
                     "type": "string"
                   },
                   "parameter_value": {
                     "computed": true,
                     "description_kind": "plain",
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "set"
-              }
+              },
+              "optional": true
             },
             "creation_date": {
               "computed": true,
@@ -209,44 +219,53 @@ const awsccRedshiftserverlessWorkgroup = `{
                               "availability_zone": {
                                 "computed": true,
                                 "description_kind": "plain",
+                                "optional": true,
                                 "type": "string"
                               },
                               "network_interface_id": {
                                 "computed": true,
                                 "description_kind": "plain",
+                                "optional": true,
                                 "type": "string"
                               },
                               "private_ip_address": {
                                 "computed": true,
                                 "description_kind": "plain",
+                                "optional": true,
                                 "type": "string"
                               },
                               "subnet_id": {
                                 "computed": true,
                                 "description_kind": "plain",
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "list"
-                          }
+                          },
+                          "optional": true
                         },
                         "vpc_endpoint_id": {
                           "computed": true,
                           "description_kind": "plain",
+                          "optional": true,
                           "type": "string"
                         },
                         "vpc_id": {
                           "computed": true,
                           "description_kind": "plain",
+                          "optional": true,
                           "type": "string"
                         }
                       },
                       "nesting_mode": "list"
-                    }
+                    },
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
-              }
+              },
+              "optional": true
             },
             "enhanced_vpc_routing": {
               "computed": true,
@@ -256,6 +275,7 @@ const awsccRedshiftserverlessWorkgroup = `{
             "max_capacity": {
               "computed": true,
               "description_kind": "plain",
+              "optional": true,
               "type": "number"
             },
             "namespace_name": {
@@ -271,16 +291,19 @@ const awsccRedshiftserverlessWorkgroup = `{
                   "level": {
                     "computed": true,
                     "description_kind": "plain",
+                    "optional": true,
                     "type": "number"
                   },
                   "status": {
                     "computed": true,
                     "description_kind": "plain",
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
-              }
+              },
+              "optional": true
             },
             "publicly_accessible": {
               "computed": true,
@@ -308,6 +331,11 @@ const awsccRedshiftserverlessWorkgroup = `{
                 "string"
               ]
             },
+            "track_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "workgroup_arn": {
               "computed": true,
               "description_kind": "plain",
@@ -325,7 +353,8 @@ const awsccRedshiftserverlessWorkgroup = `{
             }
           },
           "nesting_mode": "single"
-        }
+        },
+        "optional": true
       },
       "workgroup_name": {
         "description": "The name of the workgroup.",

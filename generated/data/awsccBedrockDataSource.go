@@ -433,6 +433,12 @@ const awsccBedrockDataSource = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "max_pages": {
+                                "computed": true,
+                                "description": "Maximum number of pages the crawler can crawl.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
                               "rate_limit": {
                                 "computed": true,
                                 "description": "Rate of web URLs retrieved per minute.",
@@ -464,6 +470,18 @@ const awsccBedrockDataSource = `{
                         "scope": {
                           "computed": true,
                           "description": "The scope that a web crawl job will be restricted to.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "user_agent": {
+                          "computed": true,
+                          "description": "The suffix that will be included in the user agent header.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "user_agent_header": {
+                          "computed": true,
+                          "description": "The full user agent header, including UUID and suffix.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -681,6 +699,54 @@ const awsccBedrockDataSource = `{
                       },
                       "nesting_mode": "single"
                     }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "context_enrichment_configuration": {
+              "computed": true,
+              "description": "Additional Enrichment Configuration for example when using GraphRag.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "bedrock_foundation_model_configuration": {
+                    "computed": true,
+                    "description": "Bedrock Foundation Model configuration to be used for Context Enrichment.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enrichment_strategy_configuration": {
+                          "computed": true,
+                          "description": "Strategy to be used when using Bedrock Foundation Model for Context Enrichment.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "method": {
+                                "computed": true,
+                                "description": "Enrichment Strategy method.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "model_arn": {
+                          "computed": true,
+                          "description": "The model's ARN.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "type": {
+                    "computed": true,
+                    "description": "Enrichment type to be used for the vector database.",
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"

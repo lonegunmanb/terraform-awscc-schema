@@ -84,6 +84,12 @@ const awsccDatazoneDomain = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "root_domain_unit_id": {
+        "computed": true,
+        "description": "The ID of the root domain in Amazon Datazone.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "service_role": {
         "computed": true,
         "description": "The service role of the domain that is created.",

@@ -66,6 +66,16 @@ const awsccEc2VpcEndpointService = `{
           "string"
         ]
       },
+      "supported_regions": {
+        "computed": true,
+        "description": "The Regions from which service consumers can access the service.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "set",
+          "string"
+        ]
+      },
       "tags": {
         "computed": true,
         "description": "The tags to add to the VPC endpoint service.",

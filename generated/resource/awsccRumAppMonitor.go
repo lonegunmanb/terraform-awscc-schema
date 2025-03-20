@@ -214,11 +214,58 @@ const awsccRumAppMonitor = `{
         "optional": true,
         "type": "bool"
       },
-      "domain": {
-        "description": "The top-level internet domain name for which your application has administrative authority.",
+      "deobfuscation_configuration": {
+        "computed": true,
+        "description": "A structure that contains the configuration for how an app monitor can deobfuscate stack traces.",
         "description_kind": "plain",
-        "required": true,
+        "nested_type": {
+          "attributes": {
+            "java_script_source_maps": {
+              "computed": true,
+              "description": "A structure that contains the configuration for how an app monitor can unminify JavaScript error stack traces using source maps.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "s3_uri": {
+                    "computed": true,
+                    "description": "The S3Uri of the bucket or folder that stores the source map files. It is required if status is ENABLED.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "status": {
+                    "computed": true,
+                    "description": "Specifies whether JavaScript error stack traces should be unminified for this app monitor. The default is for JavaScript error stack trace unminification to be DISABLED",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "domain": {
+        "computed": true,
+        "description": "The top-level internet domain name for which your application has administrative authority. The CreateAppMonitor requires either the domain or the domain list.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
+      },
+      "domain_list": {
+        "computed": true,
+        "description": "The top-level internet domain names for which your application has administrative authority. The CreateAppMonitor requires either the domain or the domain list.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
       },
       "id": {
         "computed": true,

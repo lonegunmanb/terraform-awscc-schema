@@ -26,7 +26,65 @@ const awsccEc2CapacityReservation = `{
         "description_kind": "plain",
         "type": "number"
       },
+      "capacity_allocation_set": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "allocation_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "count": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
+      "capacity_reservation_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "capacity_reservation_fleet_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "capacity_reservation_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "commitment_info": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "commitment_end_date": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "committed_instance_count": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "create_date": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "delivery_preference": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
@@ -88,10 +146,30 @@ const awsccEc2CapacityReservation = `{
         "optional": true,
         "type": "string"
       },
+      "owner_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "placement_group_arn": {
         "computed": true,
         "description_kind": "plain",
         "optional": true,
+        "type": "string"
+      },
+      "reservation_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "start_date": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "state": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       },
       "tag_specifications": {

@@ -547,6 +547,44 @@ const awsccBedrockKnowledgeBase = `{
                 "nesting_mode": "single"
               }
             },
+            "neptune_analytics_configuration": {
+              "computed": true,
+              "description": "Contains the configurations to use Neptune Analytics as Vector Store.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "field_mapping": {
+                    "computed": true,
+                    "description": "A mapping of Bedrock Knowledge Base fields to Neptune Analytics fields.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metadata_field": {
+                          "computed": true,
+                          "description": "The name of the field in which Amazon Bedrock stores metadata about the vector store.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "text_field": {
+                          "computed": true,
+                          "description": "The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "graph_arn": {
+                    "computed": true,
+                    "description": "ARN for Neptune Analytics graph database.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "opensearch_serverless_configuration": {
               "computed": true,
               "description": "Contains the storage configuration of the knowledge base in Amazon OpenSearch Service.",

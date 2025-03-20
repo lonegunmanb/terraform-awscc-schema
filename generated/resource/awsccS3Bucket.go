@@ -839,37 +839,39 @@ const awsccS3Bucket = `{
       },
       "metadata_table_configuration": {
         "computed": true,
+        "description": "The metadata table configuration of an S3 general purpose bucket. For more information, see [Accelerating data discovery with S3 Metadata](https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html) and [Setting up permissions for configuring metadata tables](https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html).",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "s3_tables_destination": {
               "computed": true,
+              "description": "The destination information for the metadata table configuration. The destination table bucket must be in the same Region and AWS-account as the general purpose bucket. The specified metadata table name must be unique within the ` + "`" + `` + "`" + `aws_s3_metadata` + "`" + `` + "`" + ` namespace in the destination table bucket.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "table_arn": {
                     "computed": true,
-                    "description": "The Amazon Resource Name (ARN) for the metadata table in the metadata table configuration. The specified metadata table name must be unique within the \u003ccode\u003eaws_s3_metadata\u003c/code\u003e namespace in the destination table bucket.",
+                    "description": "The Amazon Resource Name (ARN) for the metadata table in the metadata table configuration. The specified metadata table name must be unique within the ` + "`" + `` + "`" + `aws_s3_metadata` + "`" + `` + "`" + ` namespace in the destination table bucket.",
                     "description_kind": "plain",
                     "type": "string"
                   },
                   "table_bucket_arn": {
                     "computed": true,
-                    "description": "The Amazon Resource Name (ARN) for the table bucket that's specified as the destination in the metadata table configuration. The destination table bucket must be in the same Region and AWS account as the general purpose bucket.",
+                    "description": "The Amazon Resource Name (ARN) for the table bucket that's specified as the destination in the metadata table configuration. The destination table bucket must be in the same Region and AWS-account as the general purpose bucket.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "table_name": {
                     "computed": true,
-                    "description": "The name for the metadata table in your metadata table configuration. The specified metadata table name must be unique within the \u003ccode\u003eaws_s3_metadata\u003c/code\u003e namespace in the destination table bucket.",
+                    "description": "The name for the metadata table in your metadata table configuration. The specified metadata table name must be unique within the ` + "`" + `` + "`" + `aws_s3_metadata` + "`" + `` + "`" + ` namespace in the destination table bucket.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "table_namespace": {
                     "computed": true,
-                    "description": "The table bucket namespace for the metadata table in your metadata table configuration. This value is always \u003ccode\u003eaws_s3_metadata\u003c/code\u003e.",
+                    "description": "The table bucket namespace for the metadata table in your metadata table configuration. This value is always ` + "`" + `` + "`" + `aws_s3_metadata` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "type": "string"
                   }

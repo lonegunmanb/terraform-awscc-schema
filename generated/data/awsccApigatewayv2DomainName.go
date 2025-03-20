@@ -15,6 +15,11 @@ const awsccApigatewayv2DomainName = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "domain_name_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "domain_name_configurations": {
         "computed": true,
         "description": "The domain name configurations.",

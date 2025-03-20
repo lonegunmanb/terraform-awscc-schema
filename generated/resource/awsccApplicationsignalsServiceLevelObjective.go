@@ -52,6 +52,74 @@ const awsccApplicationsignalsServiceLevelObjective = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "exclusion_windows": {
+        "computed": true,
+        "description": "Each object in this array defines a time exclusion window for this SLO. The time exclusion window is used to exclude breaching data points from affecting attainment rate, error budget, and burn rate metrics.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "reason": {
+              "computed": true,
+              "description": "An optional reason for scheduling this time exclusion window. Default is 'No reason'.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "recurrence_rule": {
+              "computed": true,
+              "description": "This object defines how often to repeat a time exclusion window.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "expression": {
+                    "computed": true,
+                    "description": "A cron or rate expression denoting how often to repeat this exclusion window.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "start_time": {
+              "computed": true,
+              "description": "The time you want the exclusion window to start at. Note that time exclusion windows can only be scheduled in the future, not the past.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "window": {
+              "computed": true,
+              "description": "This object defines the length of time an exclusion window should span.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "duration": {
+                    "computed": true,
+                    "description": "Specifies the duration of each interval. For example, if ` + "`" + `Duration` + "`" + ` is 1 and ` + "`" + `DurationUnit` + "`" + ` is ` + "`" + `MONTH` + "`" + `, each interval is one month, aligned with the calendar.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "duration_unit": {
+                    "computed": true,
+                    "description": "Specifies the interval unit.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
       "goal": {
         "computed": true,
         "description": "A structure that contains the attributes that determine the goal of the SLO. This includes the time period for evaluation and the attainment threshold.",
@@ -79,14 +147,14 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                       "attributes": {
                         "duration": {
                           "computed": true,
-                          "description": "Specifies the duration of each calendar interval. For example, if ` + "`" + `Duration` + "`" + ` is 1 and ` + "`" + `DurationUnit` + "`" + ` is ` + "`" + `MONTH` + "`" + `, each interval is one month, aligned with the calendar.",
+                          "description": "Specifies the duration of each interval. For example, if ` + "`" + `Duration` + "`" + ` is 1 and ` + "`" + `DurationUnit` + "`" + ` is ` + "`" + `MONTH` + "`" + `, each interval is one month, aligned with the calendar.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "number"
                         },
                         "duration_unit": {
                           "computed": true,
-                          "description": "Specifies the calendar interval unit.",
+                          "description": "Specifies the interval unit.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -111,14 +179,14 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                       "attributes": {
                         "duration": {
                           "computed": true,
-                          "description": "Specifies the duration of each calendar interval. For example, if ` + "`" + `Duration` + "`" + ` is 1 and ` + "`" + `DurationUnit` + "`" + ` is ` + "`" + `MONTH` + "`" + `, each interval is one month, aligned with the calendar.",
+                          "description": "Specifies the duration of each interval. For example, if ` + "`" + `Duration` + "`" + ` is 1 and ` + "`" + `DurationUnit` + "`" + ` is ` + "`" + `MONTH` + "`" + `, each interval is one month, aligned with the calendar.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "number"
                         },
                         "duration_unit": {
                           "computed": true,
-                          "description": "Specifies the calendar interval unit.",
+                          "description": "Specifies the interval unit.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
