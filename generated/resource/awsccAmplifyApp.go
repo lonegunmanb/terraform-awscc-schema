@@ -197,6 +197,12 @@ const awsccAmplifyApp = `{
         },
         "optional": true
       },
+      "compute_role_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "custom_headers": {
         "computed": true,
         "description_kind": "plain",

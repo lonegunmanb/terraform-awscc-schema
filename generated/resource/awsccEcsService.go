@@ -257,7 +257,7 @@ const awsccEcsService = `{
                 "attributes": {
                   "assign_public_ip": {
                     "computed": true,
-                    "description": "Whether the task's elastic network interface receives a public IP address. \n Consider the following when you set this value:\n  +  When you use ` + "`" + `` + "`" + `create-service` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `update-service` + "`" + `` + "`" + `, the default is ` + "`" + `` + "`" + `DISABLED` + "`" + `` + "`" + `. \n  +  When the service ` + "`" + `` + "`" + `deploymentController` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `ECS` + "`" + `` + "`" + `, the value must be ` + "`" + `` + "`" + `DISABLED` + "`" + `` + "`" + `. \n  +  When you use ` + "`" + `` + "`" + `create-service` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `update-service` + "`" + `` + "`" + `, the default is ` + "`" + `` + "`" + `ENABLED` + "`" + `` + "`" + `.",
+                    "description": "Whether the task's elastic network interface receives a public IP address. \n Consider the following when you set this value:\n  +  When you use ` + "`" + `` + "`" + `create-service` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `update-service` + "`" + `` + "`" + `, the default is ` + "`" + `` + "`" + `DISABLED` + "`" + `` + "`" + `. \n  +  When the service ` + "`" + `` + "`" + `deploymentController` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `ECS` + "`" + `` + "`" + `, the value must be ` + "`" + `` + "`" + `DISABLED` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"

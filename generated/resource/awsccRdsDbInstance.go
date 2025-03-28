@@ -76,6 +76,12 @@ const awsccRdsDbInstance = `{
         "optional": true,
         "type": "string"
       },
+      "automatic_backup_replication_retention_period": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "availability_zone": {
         "computed": true,
         "description": "The Availability Zone (AZ) where the database will be created. For information on AWS-Regions and Availability Zones, see [Regions and Availability Zones](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html).\n For Amazon Aurora, each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.\n Default: A random, system-chosen Availability Zone in the endpoint's AWS-Region.\n Constraints:\n  +  The ` + "`" + `` + "`" + `AvailabilityZone` + "`" + `` + "`" + ` parameter can't be specified if the DB instance is a Multi-AZ deployment.\n  +  The specified Availability Zone must be in the same AWS-Region as the current endpoint.\n  \n Example: ` + "`" + `` + "`" + `us-east-1d` + "`" + `` + "`" + `",
@@ -117,8 +123,7 @@ const awsccRdsDbInstance = `{
             }
           },
           "nesting_mode": "single"
-        },
-        "optional": true
+        }
       },
       "certificate_rotation_restart": {
         "computed": true,
@@ -352,8 +357,7 @@ const awsccRdsDbInstance = `{
             }
           },
           "nesting_mode": "single"
-        },
-        "optional": true
+        }
       },
       "engine": {
         "computed": true,
@@ -506,7 +510,7 @@ const awsccRdsDbInstance = `{
       },
       "performance_insights_retention_period": {
         "computed": true,
-        "description": "The number of days to retain Performance Insights data.\n This setting doesn't apply to RDS Custom DB instances.\n Valid Values:\n  +   ` + "`" + `` + "`" + `7` + "`" + `` + "`" + ` \n  +   *month* * 31, where *month* is a number of months from 1-23. Examples: ` + "`" + `` + "`" + `93` + "`" + `` + "`" + ` (3 months * 31), ` + "`" + `` + "`" + `341` + "`" + `` + "`" + ` (11 months * 31), ` + "`" + `` + "`" + `589` + "`" + `` + "`" + ` (19 months * 31)\n  +   ` + "`" + `` + "`" + `731` + "`" + `` + "`" + ` \n  \n Default: ` + "`" + `` + "`" + `7` + "`" + `` + "`" + ` days\n If you specify a retention period that isn't valid, such as ` + "`" + `` + "`" + `94` + "`" + `` + "`" + `, Amazon RDS returns an error.",
+        "description": "The number of days to retain Performance Insights data. When creating a DB instance without enabling Performance Insights, you can't specify the parameter ` + "`" + `` + "`" + `PerformanceInsightsRetentionPeriod` + "`" + `` + "`" + `.\n This setting doesn't apply to RDS Custom DB instances.\n Valid Values:\n  +   ` + "`" + `` + "`" + `7` + "`" + `` + "`" + ` \n  +   *month* * 31, where *month* is a number of months from 1-23. Examples: ` + "`" + `` + "`" + `93` + "`" + `` + "`" + ` (3 months * 31), ` + "`" + `` + "`" + `341` + "`" + `` + "`" + ` (11 months * 31), ` + "`" + `` + "`" + `589` + "`" + `` + "`" + ` (19 months * 31)\n  +   ` + "`" + `` + "`" + `731` + "`" + `` + "`" + ` \n  \n Default: ` + "`" + `` + "`" + `7` + "`" + `` + "`" + ` days\n If you specify a retention period that isn't valid, such as ` + "`" + `` + "`" + `94` + "`" + `` + "`" + `, Amazon RDS returns an error.",
         "description_kind": "plain",
         "optional": true,
         "type": "number"

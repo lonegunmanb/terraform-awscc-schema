@@ -19,6 +19,15 @@ const awsccNetworkfirewallFirewall = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "enabled_analysis_types": {
+        "computed": true,
+        "description": "The types of analysis to enable for the firewall. Can be TLS_SNI, HTTP_HOST, or both.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "endpoint_ids": {
         "computed": true,
         "description_kind": "plain",

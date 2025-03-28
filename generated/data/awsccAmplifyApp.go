@@ -172,6 +172,11 @@ const awsccAmplifyApp = `{
           "nesting_mode": "single"
         }
       },
+      "compute_role_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "custom_headers": {
         "computed": true,
         "description_kind": "plain",

@@ -25,6 +25,31 @@ const awsccSystemsmanagersapApplication = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "components_info": {
+        "computed": true,
+        "description": "This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "component_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "ec_2_instance_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "sid": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "credentials": {
         "computed": true,
         "description_kind": "plain",

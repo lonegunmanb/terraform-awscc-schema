@@ -150,6 +150,13 @@ const awsccEksCluster = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "force": {
+        "computed": true,
+        "description": "Force cluster version update",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

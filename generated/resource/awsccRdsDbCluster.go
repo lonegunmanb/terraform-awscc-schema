@@ -370,7 +370,7 @@ const awsccRdsDbCluster = `{
       },
       "performance_insights_retention_period": {
         "computed": true,
-        "description": "The number of days to retain Performance Insights data.\n Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters\n Valid Values:\n  +   ` + "`" + `` + "`" + `7` + "`" + `` + "`" + ` \n  +   *month* * 31, where *month* is a number of months from 1-23. Examples: ` + "`" + `` + "`" + `93` + "`" + `` + "`" + ` (3 months * 31), ` + "`" + `` + "`" + `341` + "`" + `` + "`" + ` (11 months * 31), ` + "`" + `` + "`" + `589` + "`" + `` + "`" + ` (19 months * 31)\n  +   ` + "`" + `` + "`" + `731` + "`" + `` + "`" + ` \n  \n Default: ` + "`" + `` + "`" + `7` + "`" + `` + "`" + ` days\n If you specify a retention period that isn't valid, such as ` + "`" + `` + "`" + `94` + "`" + `` + "`" + `, Amazon RDS issues an error.",
+        "description": "The number of days to retain Performance Insights data. When creating a DB cluster without enabling Performance Insights, you can't specify the parameter ` + "`" + `` + "`" + `PerformanceInsightsRetentionPeriod` + "`" + `` + "`" + `.\n Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters\n Valid Values:\n  +   ` + "`" + `` + "`" + `7` + "`" + `` + "`" + ` \n  +   *month* * 31, where *month* is a number of months from 1-23. Examples: ` + "`" + `` + "`" + `93` + "`" + `` + "`" + ` (3 months * 31), ` + "`" + `` + "`" + `341` + "`" + `` + "`" + ` (11 months * 31), ` + "`" + `` + "`" + `589` + "`" + `` + "`" + ` (19 months * 31)\n  +   ` + "`" + `` + "`" + `731` + "`" + `` + "`" + ` \n  \n Default: ` + "`" + `` + "`" + `7` + "`" + `` + "`" + ` days\n If you specify a retention period that isn't valid, such as ` + "`" + `` + "`" + `94` + "`" + `` + "`" + `, Amazon RDS issues an error.",
         "description_kind": "plain",
         "optional": true,
         "type": "number"
@@ -417,8 +417,7 @@ const awsccRdsDbCluster = `{
             }
           },
           "nesting_mode": "single"
-        },
-        "optional": true
+        }
       },
       "replication_source_identifier": {
         "computed": true,

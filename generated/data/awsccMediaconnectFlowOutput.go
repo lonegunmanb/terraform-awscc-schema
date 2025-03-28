@@ -176,6 +176,18 @@ const awsccMediaconnectFlowOutput = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "ndi_program_name": {
+        "computed": true,
+        "description": "A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "ndi_speed_hq_quality": {
+        "computed": true,
+        "description": "A quality setting for the NDI Speed HQ encoder.",
+        "description_kind": "plain",
+        "type": "number"
+      },
       "output_arn": {
         "computed": true,
         "description": "The ARN of the output.",

@@ -47,6 +47,12 @@ const awsccRoute53RecoverycontrolCluster = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "network_type": {
+        "computed": true,
+        "description": "Cluster supports IPv4 endpoints and Dual-stack IPv4 and IPv6 endpoints. NetworkType can be IPV4 or DUALSTACK.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "status": {
         "computed": true,
         "description": "Deployment status of a resource. Status can be one of the following: PENDING, DEPLOYED, PENDING_DELETION.",

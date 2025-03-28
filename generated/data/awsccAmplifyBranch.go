@@ -67,6 +67,11 @@ const awsccAmplifyBranch = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "compute_role_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description_kind": "plain",
@@ -83,6 +88,11 @@ const awsccAmplifyBranch = `{
         "type": "bool"
       },
       "enable_pull_request_preview": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
+      },
+      "enable_skew_protection": {
         "computed": true,
         "description_kind": "plain",
         "type": "bool"

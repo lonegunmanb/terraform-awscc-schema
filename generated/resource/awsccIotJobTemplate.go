@@ -299,7 +299,7 @@ const awsccIotJobTemplate = `{
         "optional": true
       }
     },
-    "description": "Job templates enable you to preconfigure jobs so that you can deploy them to multiple sets of target devices.",
+    "description": "Resource Type definition for AWS::IoT::JobTemplate. Job templates enable you to preconfigure jobs so that you can deploy them to multiple sets of target devices.",
     "description_kind": "plain"
   },
   "version": 1

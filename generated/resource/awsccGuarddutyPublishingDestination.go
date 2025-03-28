@@ -91,7 +91,7 @@ const awsccGuarddutyPublishingDestination = `{
         "optional": true
       }
     },
-    "description": "Resource Type definition for AWS::GuardDuty::PublishingDestination",
+    "description": "Resource Type definition for AWS::GuardDuty::PublishingDestination.",
     "description_kind": "plain"
   },
   "version": 1

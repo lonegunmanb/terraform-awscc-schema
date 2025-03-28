@@ -9,6 +9,12 @@ import (
 const awsccOmicsSequenceStore = `{
   "block": {
     "attributes": {
+      "access_log_location": {
+        "computed": true,
+        "description": "Location of the access logs.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "arn": {
         "computed": true,
         "description": "The store's ARN.",
@@ -27,9 +33,14 @@ const awsccOmicsSequenceStore = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "e_tag_algorithm_family": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "fallback_location": {
         "computed": true,
-        "description": "An S3 URI representing the bucket and folder to store failed read set uploads.",
+        "description": "An S3 location that is used to store files that have failed a direct upload.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -42,6 +53,33 @@ const awsccOmicsSequenceStore = `{
       "name": {
         "computed": true,
         "description": "A name for the store.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "propagated_set_level_tags": {
+        "computed": true,
+        "description": "The tags keys to propagate to the S3 objects associated with read sets in the sequence store.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
+      "s3_access_point_arn": {
+        "computed": true,
+        "description": "This is ARN of the access point associated with the S3 bucket storing read sets.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "s3_access_policy": {
+        "computed": true,
+        "description": "The resource policy that controls S3 access on the store",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "s3_uri": {
+        "computed": true,
+        "description": "The S3 URI of the sequence store.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -71,6 +109,17 @@ const awsccOmicsSequenceStore = `{
           "nesting_mode": "single"
         }
       },
+      "status": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "status_message": {
+        "computed": true,
+        "description": "The status message of the sequence store.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description_kind": "plain",
@@ -78,6 +127,12 @@ const awsccOmicsSequenceStore = `{
           "map",
           "string"
         ]
+      },
+      "update_time": {
+        "computed": true,
+        "description": "The last-updated time of the sequence store.",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::Omics::SequenceStore",
