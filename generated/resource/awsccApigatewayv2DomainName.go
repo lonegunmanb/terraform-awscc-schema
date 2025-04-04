@@ -47,6 +47,12 @@ const awsccApigatewayv2DomainName = `{
               "optional": true,
               "type": "string"
             },
+            "ip_address_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "ownership_verification_certificate_arn": {
               "computed": true,
               "description": "The Amazon resource name (ARN) for the public certificate issued by ACMlong. This ARN is used to validate custom domain ownership. It's required only if you configure mutual TLS and use either an ACM-imported or a private CA certificate ARN as the regionalCertificateArn.",

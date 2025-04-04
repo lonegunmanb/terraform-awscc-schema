@@ -84,6 +84,13 @@ const awsccSagemakerPartnerApp = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "kms_key_id": {
+        "computed": true,
+        "description": "The AWS KMS customer managed key used to encrypt the data associated with the PartnerApp.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "maintenance_config": {
         "computed": true,
         "description": "A collection of settings that specify the maintenance schedule for the PartnerApp.",

@@ -233,6 +233,31 @@ const awsccApplicationsignalsServiceLevelObjective = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "dependency_config": {
+                    "computed": true,
+                    "description": "Configuration for identifying a dependency and its operation",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "dependency_key_attributes": {
+                          "computed": true,
+                          "description": "If this SLO is related to a metric collected by Application Signals, you must use this field to specify which dependency the SLO metric is related to.",
+                          "description_kind": "plain",
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        },
+                        "dependency_operation_name": {
+                          "computed": true,
+                          "description": "When the SLO monitors a specific operation of the dependency, this field specifies the name of that operation in the dependency.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "key_attributes": {
                     "computed": true,
                     "description": "This is a string-to-string map that contains information about the type of object that this SLO is related to.",
@@ -614,6 +639,31 @@ const awsccApplicationsignalsServiceLevelObjective = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "dependency_config": {
+                    "computed": true,
+                    "description": "Configuration for identifying a dependency and its operation",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "dependency_key_attributes": {
+                          "computed": true,
+                          "description": "If this SLO is related to a metric collected by Application Signals, you must use this field to specify which dependency the SLO metric is related to.",
+                          "description_kind": "plain",
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        },
+                        "dependency_operation_name": {
+                          "computed": true,
+                          "description": "When the SLO monitors a specific operation of the dependency, this field specifies the name of that operation in the dependency.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "key_attributes": {
                     "computed": true,
                     "description": "This is a string-to-string map that contains information about the type of object that this SLO is related to.",

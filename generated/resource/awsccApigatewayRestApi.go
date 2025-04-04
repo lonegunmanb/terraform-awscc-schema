@@ -94,6 +94,12 @@ const awsccApigatewayRestApi = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "ip_address_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "types": {
               "computed": true,
               "description_kind": "plain",

@@ -165,6 +165,11 @@ const awsccApigatewayv2Api = `{
         "required": true,
         "type": "string"
       },
+      "ip_address_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "name": {
         "computed": true,
         "description": "The name of the API. Required unless you specify an OpenAPI definition for ` + "`" + `` + "`" + `Body` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `S3BodyLocation` + "`" + `` + "`" + `.",

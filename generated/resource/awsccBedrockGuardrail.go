@@ -33,12 +33,32 @@ const awsccBedrockGuardrail = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "input_modalities": {
+                    "computed": true,
+                    "description": "List of modalities",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
                   "input_strength": {
                     "computed": true,
                     "description": "Strength for filters",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
+                  },
+                  "output_modalities": {
+                    "computed": true,
+                    "description": "List of modalities",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   },
                   "output_strength": {
                     "computed": true,

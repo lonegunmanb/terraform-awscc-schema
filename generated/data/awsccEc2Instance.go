@@ -390,6 +390,38 @@ const awsccEc2Instance = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "ena_srd_specification": {
+              "computed": true,
+              "description": "Specifies the ENA Express settings for the network interface that's attached to the instance.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "ena_srd_enabled": {
+                    "computed": true,
+                    "description": "Specifies whether ENA Express is enabled for the network interface when you launch an instance.",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "ena_srd_udp_specification": {
+                    "computed": true,
+                    "description": "Contains ENA Express settings for UDP network traffic for the network interface that's attached to the instance.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "ena_srd_udp_enabled": {
+                          "computed": true,
+                          "description": "Indicates whether UDP traffic uses ENA Express for your instance.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "group_set": {
               "computed": true,
               "description": "The IDs of the security groups for the network interface.",

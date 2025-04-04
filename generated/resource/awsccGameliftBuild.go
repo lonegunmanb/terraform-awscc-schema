@@ -9,6 +9,12 @@ import (
 const awsccGameliftBuild = `{
   "block": {
     "attributes": {
+      "build_arn": {
+        "computed": true,
+        "description": "The Amazon Resource Name (ARN) that is assigned to a Amazon GameLift build resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift build ARN, the resource ID matches the BuildId value.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "build_id": {
         "computed": true,
         "description": "A unique identifier for a build to be deployed on the new fleet. If you are deploying the fleet with a custom game build, you must specify this property. The build must have been successfully uploaded to Amazon GameLift and be in a READY status. This fleet setting cannot be changed once the fleet is created.",
@@ -78,6 +84,31 @@ const awsccGameliftBuild = `{
             }
           },
           "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "tags": {
+        "computed": true,
+        "description": "An array of key-value pairs to apply to this resource.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
         },
         "optional": true
       },

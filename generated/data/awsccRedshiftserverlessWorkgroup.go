@@ -91,6 +91,12 @@ const awsccRedshiftserverlessWorkgroup = `{
         "description_kind": "plain",
         "type": "bool"
       },
+      "recovery_point_id": {
+        "computed": true,
+        "description": "The recovery point id to restore from.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "security_group_ids": {
         "computed": true,
         "description": "A list of security group IDs to associate with the workgroup.",
@@ -99,6 +105,24 @@ const awsccRedshiftserverlessWorkgroup = `{
           "list",
           "string"
         ]
+      },
+      "snapshot_arn": {
+        "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the snapshot to restore from.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "snapshot_name": {
+        "computed": true,
+        "description": "The snapshot name to restore from.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "snapshot_owner_account": {
+        "computed": true,
+        "description": "The Amazon Web Services account that owns the snapshot.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "subnet_ids": {
         "computed": true,

@@ -9,6 +9,12 @@ import (
 const awsccGameliftAlias = `{
   "block": {
     "attributes": {
+      "alias_arn": {
+        "computed": true,
+        "description": "The Amazon Resource Name (ARN) that is assigned to a Amazon GameLift Alias resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift Alias ARN, the resource ID matches the AliasId value.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "alias_id": {
         "computed": true,
         "description": "Unique alias ID",
@@ -59,6 +65,28 @@ const awsccGameliftAlias = `{
             }
           },
           "nesting_mode": "single"
+        }
+      },
+      "tags": {
+        "computed": true,
+        "description": "An array of key-value pairs to apply to this resource.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
         }
       }
     },
