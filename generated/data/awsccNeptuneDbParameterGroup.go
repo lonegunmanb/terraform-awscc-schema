@@ -6,36 +6,18 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccRoute53ResolverResolverQueryLoggingConfig = `{
+const awsccNeptuneDbParameterGroup = `{
   "block": {
     "attributes": {
-      "arn": {
+      "description": {
         "computed": true,
-        "description": "Arn",
+        "description": "Provides the customer-specified description for this DB parameter group.",
         "description_kind": "plain",
         "type": "string"
       },
-      "association_count": {
+      "family": {
         "computed": true,
-        "description": "Count",
-        "description_kind": "plain",
-        "type": "number"
-      },
-      "creation_time": {
-        "computed": true,
-        "description": "Rfc3339TimeString",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "creator_request_id": {
-        "computed": true,
-        "description": "The id of the creator request.",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "destination_arn": {
-        "computed": true,
-        "description": "destination arn",
+        "description": "Must be ` + "`" + `neptune1` + "`" + ` for engine versions prior to 1.2.0.0, or ` + "`" + `neptune1.2` + "`" + ` for engine version ` + "`" + `1.2.0.0` + "`" + ` and higher.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -47,37 +29,19 @@ const awsccRoute53ResolverResolverQueryLoggingConfig = `{
       },
       "name": {
         "computed": true,
-        "description": "ResolverQueryLogConfigName",
+        "description": "Provides the name of the DB parameter group.",
         "description_kind": "plain",
         "type": "string"
       },
-      "owner_id": {
+      "parameters": {
         "computed": true,
-        "description": "AccountId",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "resolver_query_logging_config_id": {
-        "computed": true,
-        "description": "ResourceId",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "share_status": {
-        "computed": true,
-        "description": "ShareStatus, possible values are NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME.",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "status": {
-        "computed": true,
-        "description": "ResolverQueryLogConfigStatus, possible values are CREATING, CREATED, DELETED AND FAILED.",
+        "description": "The parameters to set for this DB parameter group.\n\nThe parameters are expressed as a JSON object consisting of key-value pairs.\n\nChanges to dynamic parameters are applied immediately. During an update, if you have static parameters (whether they were changed or not), it triggers AWS CloudFormation to reboot the associated DB instance without failover.",
         "description_kind": "plain",
         "type": "string"
       },
       "tags": {
         "computed": true,
-        "description": "An array of key-value pairs to apply to this resource.",
+        "description": "An optional array of key-value pairs to apply to this DB parameter group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -94,18 +58,18 @@ const awsccRoute53ResolverResolverQueryLoggingConfig = `{
               "type": "string"
             }
           },
-          "nesting_mode": "set"
+          "nesting_mode": "list"
         }
       }
     },
-    "description": "Data Source schema for AWS::Route53Resolver::ResolverQueryLoggingConfig",
+    "description": "Data Source schema for AWS::Neptune::DBParameterGroup",
     "description_kind": "plain"
   },
   "version": 0
 }`
 
-func AwsccRoute53ResolverResolverQueryLoggingConfigSchema() *tfjson.Schema {
+func AwsccNeptuneDbParameterGroupSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccRoute53ResolverResolverQueryLoggingConfig), &result)
+	_ = json.Unmarshal([]byte(awsccNeptuneDbParameterGroup), &result)
 	return &result
 }

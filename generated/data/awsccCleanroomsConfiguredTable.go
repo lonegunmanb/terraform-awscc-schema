@@ -276,6 +276,14 @@ const awsccCleanroomsConfiguredTable = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "selected_analysis_methods": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "table_reference": {
         "computed": true,
         "description_kind": "plain",

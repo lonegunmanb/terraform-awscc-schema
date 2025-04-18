@@ -9,6 +9,12 @@ import (
 const awsccMacieSession = `{
   "block": {
     "attributes": {
+      "automated_discovery_status": {
+        "computed": true,
+        "description": "The status of automated sensitive data discovery for the Macie session.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "aws_account_id": {
         "computed": true,
         "description": "AWS account ID of customer",

@@ -33,6 +33,16 @@ const awsccBedrockGuardrail = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "input_action": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "input_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
                   "input_modalities": {
                     "computed": true,
                     "description": "List of modalities",
@@ -47,6 +57,16 @@ const awsccBedrockGuardrail = `{
                     "description": "Strength for filters",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "output_action": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "output_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
                   },
                   "output_modalities": {
                     "computed": true,
@@ -89,6 +109,16 @@ const awsccBedrockGuardrail = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "action": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
                   "threshold": {
                     "computed": true,
                     "description": "The threshold for this filter.",
@@ -178,6 +208,28 @@ const awsccBedrockGuardrail = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "input_action": {
+                    "computed": true,
+                    "description": "Options for sensitive information action.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "input_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "output_action": {
+                    "computed": true,
+                    "description": "Options for sensitive information action.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "output_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
                   "type": {
                     "computed": true,
                     "description": "The currently supported PII entities",
@@ -206,11 +258,33 @@ const awsccBedrockGuardrail = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "input_action": {
+                    "computed": true,
+                    "description": "Options for sensitive information action.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "input_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
                   "name": {
                     "computed": true,
                     "description": "The regex name.",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "output_action": {
+                    "computed": true,
+                    "description": "Options for sensitive information action.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "output_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
                   },
                   "pattern": {
                     "computed": true,
@@ -290,11 +364,31 @@ const awsccBedrockGuardrail = `{
                       "string"
                     ]
                   },
+                  "input_action": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "input_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
                   "name": {
                     "computed": true,
                     "description": "Name of topic in topic policy",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "output_action": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "output_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
                   },
                   "type": {
                     "computed": true,
@@ -334,6 +428,26 @@ const awsccBedrockGuardrail = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "input_action": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "input_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "output_action": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "output_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
                   "type": {
                     "computed": true,
                     "description": "Options for managed words.",
@@ -350,6 +464,26 @@ const awsccBedrockGuardrail = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "input_action": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "input_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "output_action": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "output_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
                   "text": {
                     "computed": true,
                     "description": "The custom word text.",

@@ -29,6 +29,48 @@ const awsccCleanroomsMembership = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "default_job_result_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "output_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "s3": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "bucket": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "key_prefix": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "role_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "default_result_configuration": {
         "computed": true,
         "description_kind": "plain",
@@ -87,6 +129,11 @@ const awsccCleanroomsMembership = `{
         "required": true,
         "type": "string"
       },
+      "job_log_status": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "membership_identifier": {
         "computed": true,
         "description_kind": "plain",
@@ -97,6 +144,20 @@ const awsccCleanroomsMembership = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "job_compute": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "is_responsible": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "machine_learning": {
               "computed": true,
               "description_kind": "plain",

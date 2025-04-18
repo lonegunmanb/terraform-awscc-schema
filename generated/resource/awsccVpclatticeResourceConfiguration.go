@@ -27,9 +27,8 @@ const awsccVpclatticeResourceConfiguration = `{
         "type": "string"
       },
       "name": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "port_ranges": {
@@ -109,9 +108,8 @@ const awsccVpclatticeResourceConfiguration = `{
         "type": "string"
       },
       "resource_configuration_type": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "resource_gateway_id": {

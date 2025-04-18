@@ -1,4 +1,4 @@
-package data
+package resource
 
 import (
 	"encoding/json"
@@ -6,61 +6,43 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccAppconfigExtensionAssociation = `{
+const awsccNeptuneDbParameterGroup = `{
   "block": {
     "attributes": {
-      "arn": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "extension_arn": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "extension_association_id": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "extension_identifier": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "extension_version_number": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "number"
-      },
-      "id": {
-        "description": "Uniquely identifies the resource.",
+      "description": {
+        "description": "Provides the customer-specified description for this DB parameter group.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
-      "parameters": {
-        "computed": true,
+      "family": {
+        "description": "Must be ` + "`" + `neptune1` + "`" + ` for engine versions prior to 1.2.0.0, or ` + "`" + `neptune1.2` + "`" + ` for engine version ` + "`" + `1.2.0.0` + "`" + ` and higher.",
         "description_kind": "plain",
-        "type": [
-          "map",
-          "string"
-        ]
+        "required": true,
+        "type": "string"
       },
-      "resource_arn": {
+      "id": {
         "computed": true,
+        "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
       },
-      "resource_identifier": {
+      "name": {
         "computed": true,
+        "description": "Provides the name of the DB parameter group.",
         "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "parameters": {
+        "description": "The parameters to set for this DB parameter group.\n\nThe parameters are expressed as a JSON object consisting of key-value pairs.\n\nChanges to dynamic parameters are applied immediately. During an update, if you have static parameters (whether they were changed or not), it triggers AWS CloudFormation to reboot the associated DB instance without failover.",
+        "description_kind": "plain",
+        "required": true,
         "type": "string"
       },
       "tags": {
         "computed": true,
-        "description": "An array of key-value pairs to apply to this resource.",
+        "description": "An optional array of key-value pairs to apply to this DB parameter group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -68,27 +50,30 @@ const awsccAppconfigExtensionAssociation = `{
               "computed": true,
               "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
+              "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
               "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
+              "optional": true,
               "type": "string"
             }
           },
-          "nesting_mode": "set"
-        }
+          "nesting_mode": "list"
+        },
+        "optional": true
       }
     },
-    "description": "Data Source schema for AWS::AppConfig::ExtensionAssociation",
+    "description": "AWS::Neptune::DBParameterGroup creates a new DB parameter group. This type can be declared in a template and referenced in the DBParameterGroupName parameter of AWS::Neptune::DBInstance",
     "description_kind": "plain"
   },
-  "version": 0
+  "version": 1
 }`
 
-func AwsccAppconfigExtensionAssociationSchema() *tfjson.Schema {
+func AwsccNeptuneDbParameterGroupSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccAppconfigExtensionAssociation), &result)
+	_ = json.Unmarshal([]byte(awsccNeptuneDbParameterGroup), &result)
 	return &result
 }

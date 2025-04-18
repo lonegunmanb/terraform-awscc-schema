@@ -38,6 +38,12 @@ const awsccEventsArchive = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "kms_key_identifier": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "retention_days": {
         "computed": true,
         "description_kind": "plain",

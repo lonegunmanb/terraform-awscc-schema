@@ -29,6 +29,54 @@ const awsccCleanroomsMembership = `{
         "required": true,
         "type": "string"
       },
+      "default_job_result_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "output_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "s3": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "bucket": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "key_prefix": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "role_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "default_result_configuration": {
         "computed": true,
         "description_kind": "plain",
@@ -95,6 +143,12 @@ const awsccCleanroomsMembership = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "job_log_status": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "membership_identifier": {
         "computed": true,
         "description_kind": "plain",
@@ -105,6 +159,22 @@ const awsccCleanroomsMembership = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "job_compute": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "is_responsible": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "machine_learning": {
               "computed": true,
               "description_kind": "plain",

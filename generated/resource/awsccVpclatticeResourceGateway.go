@@ -27,9 +27,8 @@ const awsccVpclatticeResourceGateway = `{
         "type": "string"
       },
       "name": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "resource_gateway_id": {
@@ -48,10 +47,9 @@ const awsccVpclatticeResourceGateway = `{
         ]
       },
       "subnet_ids": {
-        "computed": true,
         "description": "The ID of one or more subnets in which to create an endpoint network interface.",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": [
           "set",
           "string"
@@ -80,9 +78,8 @@ const awsccVpclatticeResourceGateway = `{
         "optional": true
       },
       "vpc_identifier": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       }
     },

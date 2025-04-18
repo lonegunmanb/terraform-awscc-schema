@@ -111,6 +111,12 @@ const awsccTransferWebApp = `{
         },
         "optional": true
       },
+      "web_app_endpoint_policy": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "web_app_id": {
         "computed": true,
         "description": "A unique identifier for the web app.",

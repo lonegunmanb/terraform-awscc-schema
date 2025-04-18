@@ -59,6 +59,20 @@ const awsccCleanroomsCollaboration = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "job_compute": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "is_responsible": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "machine_learning": {
               "computed": true,
               "description_kind": "plain",
@@ -154,6 +168,11 @@ const awsccCleanroomsCollaboration = `{
         "required": true,
         "type": "string"
       },
+      "job_log_status": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "members": {
         "computed": true,
         "description_kind": "plain",
@@ -199,6 +218,20 @@ const awsccCleanroomsCollaboration = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "job_compute": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "is_responsible": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "machine_learning": {
                     "computed": true,
                     "description_kind": "plain",

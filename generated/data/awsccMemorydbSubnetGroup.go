@@ -42,6 +42,15 @@ const awsccMemorydbSubnetGroup = `{
           "string"
         ]
       },
+      "supported_network_types": {
+        "computed": true,
+        "description": "Supported network types would be a list of network types supported by subnet group and can be either [ipv4] or [ipv4, dual_stack] or [ipv6].",
+        "description_kind": "plain",
+        "type": [
+          "set",
+          "string"
+        ]
+      },
       "tags": {
         "computed": true,
         "description": "An array of key-value pairs to apply to this subnet group.",

@@ -15,6 +15,16 @@ const awsccKinesisStream = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "desired_shard_level_metrics": {
+        "computed": true,
+        "description": "The final list of shard-level metrics",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "set",
+          "string"
+        ]
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

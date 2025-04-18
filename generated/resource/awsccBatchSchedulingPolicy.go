@@ -85,7 +85,7 @@ const awsccBatchSchedulingPolicy = `{
         ]
       }
     },
-    "description": "Resource Type schema for AWS::Batch::SchedulingPolicy",
+    "description": "Resource Type definition for AWS::Batch::SchedulingPolicy",
     "description_kind": "plain"
   },
   "version": 1

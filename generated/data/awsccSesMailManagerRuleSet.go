@@ -249,6 +249,25 @@ const awsccSesMailManagerRuleSet = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "analysis": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "analyzer": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "result_field": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
                               "attribute": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -368,6 +387,25 @@ const awsccSesMailManagerRuleSet = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "analysis": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "analyzer": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "result_field": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
                               "attribute": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -478,6 +516,25 @@ const awsccSesMailManagerRuleSet = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "analysis": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "analyzer": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "result_field": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
                               "attribute": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -597,6 +654,25 @@ const awsccSesMailManagerRuleSet = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "analysis": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "analyzer": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "result_field": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
                               "attribute": {
                                 "computed": true,
                                 "description_kind": "plain",

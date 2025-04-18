@@ -68,7 +68,7 @@ const awsccBatchConsumableResource = `{
         "type": "number"
       }
     },
-    "description": "Resource Type schema for AWS::Batch::ConsumableResource",
+    "description": "Resource Type definition for AWS::Batch::ConsumableResource",
     "description_kind": "plain"
   },
   "version": 1

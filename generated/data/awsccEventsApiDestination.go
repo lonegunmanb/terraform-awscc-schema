@@ -15,6 +15,12 @@ const awsccEventsApiDestination = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "arn_for_policy": {
+        "computed": true,
+        "description": "The arn of the api destination to be used in IAM policies.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "connection_arn": {
         "computed": true,
         "description": "The arn of the connection.",

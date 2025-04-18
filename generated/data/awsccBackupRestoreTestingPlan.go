@@ -78,11 +78,6 @@ const awsccBackupRestoreTestingPlan = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "schedule_status": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
       "start_window_hours": {
         "computed": true,
         "description_kind": "plain",

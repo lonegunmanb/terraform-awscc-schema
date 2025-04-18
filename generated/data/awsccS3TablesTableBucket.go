@@ -9,6 +9,28 @@ import (
 const awsccS3TablesTableBucket = `{
   "block": {
     "attributes": {
+      "encryption_configuration": {
+        "computed": true,
+        "description": "Specifies encryption settings for the table bucket",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "kms_key_arn": {
+              "computed": true,
+              "description": "ARN of the KMS key to use for encryption",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "sse_algorithm": {
+              "computed": true,
+              "description": "Server-side encryption algorithm",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

@@ -58,9 +58,10 @@ const awsccLaunchwizardDeployment = `{
         "type": "string"
       },
       "specifications": {
+        "computed": true,
         "description": "LaunchWizard deployment specifications",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": [
           "map",
           "string"

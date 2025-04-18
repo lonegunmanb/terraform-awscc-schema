@@ -51,6 +51,11 @@ const awsccBatchJobDefinition = `{
                 "string"
               ]
             },
+            "enable_execute_command": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "bool"
+            },
             "environment": {
               "computed": true,
               "description_kind": "plain",
@@ -541,6 +546,28 @@ const awsccBatchJobDefinition = `{
                           "description_kind": "plain",
                           "type": "bool"
                         },
+                        "firelens_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "options": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": [
+                                  "map",
+                                  "string"
+                                ]
+                              },
+                              "type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "image": {
                           "computed": true,
                           "description_kind": "plain",
@@ -793,6 +820,11 @@ const awsccBatchJobDefinition = `{
                       },
                       "nesting_mode": "list"
                     }
+                  },
+                  "enable_execute_command": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
                   },
                   "ephemeral_storage": {
                     "computed": true,
@@ -1494,6 +1526,11 @@ const awsccBatchJobDefinition = `{
                             "string"
                           ]
                         },
+                        "enable_execute_command": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
                         "environment": {
                           "computed": true,
                           "description_kind": "plain",
@@ -1961,6 +1998,28 @@ const awsccBatchJobDefinition = `{
                                       "description_kind": "plain",
                                       "type": "bool"
                                     },
+                                    "firelens_configuration": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "options": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": [
+                                              "map",
+                                              "string"
+                                            ]
+                                          },
+                                          "type": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
                                     "image": {
                                       "computed": true,
                                       "description_kind": "plain",
@@ -2213,6 +2272,11 @@ const awsccBatchJobDefinition = `{
                                   },
                                   "nesting_mode": "list"
                                 }
+                              },
+                              "enable_execute_command": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
                               },
                               "execution_role_arn": {
                                 "computed": true,

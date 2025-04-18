@@ -596,6 +596,13 @@ const awsccBedrockKnowledgeBase = `{
                     },
                     "optional": true
                   },
+                  "text_index_name": {
+                    "computed": true,
+                    "description": "Name of a MongoDB Atlas text index.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "vector_index_name": {
                     "computed": true,
                     "description": "Name of a MongoDB Atlas index.",
@@ -642,6 +649,70 @@ const awsccBedrockKnowledgeBase = `{
                   "graph_arn": {
                     "computed": true,
                     "description": "ARN for Neptune Analytics graph database.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "opensearch_managed_cluster_configuration": {
+              "computed": true,
+              "description": "Contains the storage configuration of the knowledge base in Amazon OpenSearch Service.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "domain_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the OpenSearch domain.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "domain_endpoint": {
+                    "computed": true,
+                    "description": "The endpoint URL the OpenSearch domain.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "field_mapping": {
+                    "computed": true,
+                    "description": "A mapping of Bedrock Knowledge Base fields to OpenSearch Managed Cluster field names",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metadata_field": {
+                          "computed": true,
+                          "description": "The name of the field in which Amazon Bedrock stores metadata about the vector store.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "text_field": {
+                          "computed": true,
+                          "description": "The name of the field in which Amazon Bedrock stores the raw text from your data. The text is split according to the chunking strategy you choose.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "vector_field": {
+                          "computed": true,
+                          "description": "The name of the field in which Amazon Bedrock stores the vector embeddings for your data sources.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "vector_index_name": {
+                    "computed": true,
+                    "description": "The name of the vector store.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -791,6 +862,13 @@ const awsccBedrockKnowledgeBase = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "custom_metadata_field": {
+                          "computed": true,
+                          "description": "The name of the field in which Amazon Bedrock stores custom metadata about the vector store.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
                         "metadata_field": {
                           "computed": true,
                           "description": "The name of the field in which Amazon Bedrock stores metadata about the vector store.",

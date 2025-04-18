@@ -9,6 +9,11 @@ import (
 const awsccPaymentcryptographyKey = `{
   "block": {
     "attributes": {
+      "derive_key_usage": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "enabled": {
         "computed": true,
         "description_kind": "plain",

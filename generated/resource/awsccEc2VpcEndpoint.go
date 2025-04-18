@@ -24,17 +24,20 @@ const awsccEc2VpcEndpoint = `{
       },
       "dns_options": {
         "computed": true,
+        "description": "Describes the DNS options for an endpoint.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "dns_record_ip_type": {
               "computed": true,
+              "description": "The DNS records created for the endpoint.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "private_dns_only_for_inbound_resolver_endpoint": {
               "computed": true,
+              "description": "Indicates whether to enable private DNS only for inbound endpoints. This option is available only for services that support both gateway and interface endpoints. It routes traffic that originates from the VPC to the gateway endpoint and traffic that originates from on-premises to the interface endpoint.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -52,6 +55,7 @@ const awsccEc2VpcEndpoint = `{
       },
       "ip_address_type": {
         "computed": true,
+        "description": "The supported IP address types.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -80,6 +84,7 @@ const awsccEc2VpcEndpoint = `{
       },
       "resource_configuration_arn": {
         "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the resource configuration.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -113,6 +118,13 @@ const awsccEc2VpcEndpoint = `{
       },
       "service_network_arn": {
         "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the service network.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "service_region": {
+        "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -129,17 +141,20 @@ const awsccEc2VpcEndpoint = `{
       },
       "tags": {
         "computed": true,
+        "description": "The tags to associate with the endpoint.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
               "computed": true,
+              "description": "The key of the tag.\n Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with ` + "`" + `` + "`" + `aws:` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The value of the tag.\n Constraints: Tag values are case-sensitive and accept a maximum of 256 Unicode characters.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

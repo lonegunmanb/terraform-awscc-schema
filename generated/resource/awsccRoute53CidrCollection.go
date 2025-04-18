@@ -62,7 +62,7 @@ const awsccRoute53CidrCollection = `{
         "type": "string"
       }
     },
-    "description": "Resource schema for AWS::Route53::CidrCollection.",
+    "description": "Resource Type definition for AWS::Route53::CidrCollection.",
     "description_kind": "plain"
   },
   "version": 1

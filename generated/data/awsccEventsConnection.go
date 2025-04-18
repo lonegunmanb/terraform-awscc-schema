@@ -15,6 +15,12 @@ const awsccEventsConnection = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "arn_for_policy": {
+        "computed": true,
+        "description": "The arn of the connection resource to be used in IAM policies.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "auth_parameters": {
         "computed": true,
         "description_kind": "plain",
@@ -335,6 +341,11 @@ const awsccEventsConnection = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "kms_key_identifier": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "name": {
         "computed": true,
