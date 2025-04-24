@@ -83,6 +83,70 @@ const awsccApsWorkspace = `{
           "nesting_mode": "set"
         }
       },
+      "workspace_configuration": {
+        "computed": true,
+        "description": "Workspace configuration",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "limits_per_label_sets": {
+              "computed": true,
+              "description": "An array of label set and associated limits",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "label_set": {
+                    "computed": true,
+                    "description": "An array of series labels",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "name": {
+                          "computed": true,
+                          "description": "Name of the label",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "value": {
+                          "computed": true,
+                          "description": "Value of the label",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "set"
+                    }
+                  },
+                  "limits": {
+                    "computed": true,
+                    "description": "Limits that can be applied to a label set",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "max_series": {
+                          "computed": true,
+                          "description": "The maximum number of active series that can be ingested for this label set",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            },
+            "retention_period_in_days": {
+              "computed": true,
+              "description": "How many days that metrics are retained in the workspace",
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "workspace_id": {
         "computed": true,
         "description": "Required to identify a specific APS Workspace.",

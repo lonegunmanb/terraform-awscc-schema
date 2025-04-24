@@ -15,6 +15,12 @@ const awsccRoute53ResolverResolverRule = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "delegation_record": {
+        "computed": true,
+        "description": "The name server domain for queries to be delegated to if a query matches the delegation record.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "domain_name": {
         "computed": true,
         "description": "DNS queries for this domain name are forwarded to the IP addresses that are specified in TargetIps",

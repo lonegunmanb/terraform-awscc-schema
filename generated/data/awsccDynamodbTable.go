@@ -28,7 +28,7 @@ const awsccDynamodbTable = `{
             },
             "attribute_type": {
               "computed": true,
-              "description": "The data type for the attribute, where:\n  +   ` + "`" + `` + "`" + `S` + "`" + `` + "`" + ` - the attribute is of type String\n  +   ` + "`" + `` + "`" + `N` + "`" + `` + "`" + ` - the attribute is of type Number\n  +   ` + "`" + `` + "`" + `B` + "`" + `` + "`" + ` - the attribute is of type Binary",
+              "description": "The data type for the attribute, where:\n  +  ` + "`" + `` + "`" + `S` + "`" + `` + "`" + ` - the attribute is of type String\n  +  ` + "`" + `` + "`" + `N` + "`" + `` + "`" + ` - the attribute is of type Number\n  +  ` + "`" + `` + "`" + `B` + "`" + `` + "`" + ` - the attribute is of type Binary",
               "description_kind": "plain",
               "type": "string"
             }
@@ -38,7 +38,7 @@ const awsccDynamodbTable = `{
       },
       "billing_mode": {
         "computed": true,
-        "description": "Specify how you are charged for read and write throughput and how you manage capacity.\n Valid values include:\n  +   ` + "`" + `` + "`" + `PAY_PER_REQUEST` + "`" + `` + "`" + ` - We recommend using ` + "`" + `` + "`" + `PAY_PER_REQUEST` + "`" + `` + "`" + ` for most DynamoDB workloads. ` + "`" + `` + "`" + `PAY_PER_REQUEST` + "`" + `` + "`" + ` sets the billing mode to [On-demand capacity mode](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html). \n  +   ` + "`" + `` + "`" + `PROVISIONED` + "`" + `` + "`" + ` - We recommend using ` + "`" + `` + "`" + `PROVISIONED` + "`" + `` + "`" + ` for steady workloads with predictable growth where capacity requirements can be reliably forecasted. ` + "`" + `` + "`" + `PROVISIONED` + "`" + `` + "`" + ` sets the billing mode to [Provisioned capacity mode](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html).\n  \n If not specified, the default is ` + "`" + `` + "`" + `PROVISIONED` + "`" + `` + "`" + `.",
+        "description": "Specify how you are charged for read and write throughput and how you manage capacity.\n Valid values include:\n  +  ` + "`" + `` + "`" + `PAY_PER_REQUEST` + "`" + `` + "`" + ` - We recommend using ` + "`" + `` + "`" + `PAY_PER_REQUEST` + "`" + `` + "`" + ` for most DynamoDB workloads. ` + "`" + `` + "`" + `PAY_PER_REQUEST` + "`" + `` + "`" + ` sets the billing mode to [On-demand capacity mode](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html). \n  +  ` + "`" + `` + "`" + `PROVISIONED` + "`" + `` + "`" + ` - We recommend using ` + "`" + `` + "`" + `PROVISIONED` + "`" + `` + "`" + ` for steady workloads with predictable growth where capacity requirements can be reliably forecasted. ` + "`" + `` + "`" + `PROVISIONED` + "`" + `` + "`" + ` sets the billing mode to [Provisioned capacity mode](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html).\n  \n If not specified, the default is ` + "`" + `` + "`" + `PROVISIONED` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -94,7 +94,7 @@ const awsccDynamodbTable = `{
             },
             "key_schema": {
               "computed": true,
-              "description": "The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:\n  +   ` + "`" + `` + "`" + `HASH` + "`" + `` + "`" + ` - partition key\n  +   ` + "`" + `` + "`" + `RANGE` + "`" + `` + "`" + ` - sort key\n  \n  The partition key of an item is also known as its *hash attribute*. The term \"hash attribute\" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.\n The sort key of an item is also known as its *range attribute*. The term \"range attribute\" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.",
+              "description": "The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types:\n  +  ` + "`" + `` + "`" + `HASH` + "`" + `` + "`" + ` - partition key\n  +  ` + "`" + `` + "`" + `RANGE` + "`" + `` + "`" + ` - sort key\n  \n  The partition key of an item is also known as its *hash attribute*. The term \"hash attribute\" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.\n The sort key of an item is also known as its *range attribute*. The term \"range attribute\" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -106,7 +106,7 @@ const awsccDynamodbTable = `{
                   },
                   "key_type": {
                     "computed": true,
-                    "description": "The role that this key attribute will assume:\n  +   ` + "`" + `` + "`" + `HASH` + "`" + `` + "`" + ` - partition key\n  +   ` + "`" + `` + "`" + `RANGE` + "`" + `` + "`" + ` - sort key\n  \n  The partition key of an item is also known as its *hash attribute*. The term \"hash attribute\" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.\n The sort key of an item is also known as its *range attribute*. The term \"range attribute\" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.",
+                    "description": "The role that this key attribute will assume:\n  +  ` + "`" + `` + "`" + `HASH` + "`" + `` + "`" + ` - partition key\n  +  ` + "`" + `` + "`" + `RANGE` + "`" + `` + "`" + ` - sort key\n  \n  The partition key of an item is also known as its *hash attribute*. The term \"hash attribute\" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.\n The sort key of an item is also known as its *range attribute*. The term \"range attribute\" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -153,7 +153,7 @@ const awsccDynamodbTable = `{
                   },
                   "projection_type": {
                     "computed": true,
-                    "description": "The set of attributes that are projected into the index:\n  +   ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the index and primary keys are projected into the index.\n  +   ` + "`" + `` + "`" + `INCLUDE` + "`" + `` + "`" + ` - In addition to the attributes described in ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + `, the secondary index will include other non-key attributes that you specify.\n  +   ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` - All of the table attributes are projected into the index.\n  \n When using the DynamoDB console, ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` is selected by default.",
+                    "description": "The set of attributes that are projected into the index:\n  +  ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the index and primary keys are projected into the index.\n  +  ` + "`" + `` + "`" + `INCLUDE` + "`" + `` + "`" + ` - In addition to the attributes described in ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + `, the secondary index will include other non-key attributes that you specify.\n  +  ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` - All of the table attributes are projected into the index.\n  \n When using the DynamoDB console, ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` is selected by default.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -342,7 +342,7 @@ const awsccDynamodbTable = `{
             },
             "key_schema": {
               "computed": true,
-              "description": "The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:\n  +   ` + "`" + `` + "`" + `HASH` + "`" + `` + "`" + ` - partition key\n  +   ` + "`" + `` + "`" + `RANGE` + "`" + `` + "`" + ` - sort key\n  \n  The partition key of an item is also known as its *hash attribute*. The term \"hash attribute\" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.\n The sort key of an item is also known as its *range attribute*. The term \"range attribute\" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.",
+              "description": "The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:\n  +  ` + "`" + `` + "`" + `HASH` + "`" + `` + "`" + ` - partition key\n  +  ` + "`" + `` + "`" + `RANGE` + "`" + `` + "`" + ` - sort key\n  \n  The partition key of an item is also known as its *hash attribute*. The term \"hash attribute\" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.\n The sort key of an item is also known as its *range attribute*. The term \"range attribute\" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -354,7 +354,7 @@ const awsccDynamodbTable = `{
                   },
                   "key_type": {
                     "computed": true,
-                    "description": "The role that this key attribute will assume:\n  +   ` + "`" + `` + "`" + `HASH` + "`" + `` + "`" + ` - partition key\n  +   ` + "`" + `` + "`" + `RANGE` + "`" + `` + "`" + ` - sort key\n  \n  The partition key of an item is also known as its *hash attribute*. The term \"hash attribute\" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.\n The sort key of an item is also known as its *range attribute*. The term \"range attribute\" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.",
+                    "description": "The role that this key attribute will assume:\n  +  ` + "`" + `` + "`" + `HASH` + "`" + `` + "`" + ` - partition key\n  +  ` + "`" + `` + "`" + `RANGE` + "`" + `` + "`" + ` - sort key\n  \n  The partition key of an item is also known as its *hash attribute*. The term \"hash attribute\" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.\n The sort key of an item is also known as its *range attribute*. The term \"range attribute\" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -379,7 +379,7 @@ const awsccDynamodbTable = `{
                   },
                   "projection_type": {
                     "computed": true,
-                    "description": "The set of attributes that are projected into the index:\n  +   ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the index and primary keys are projected into the index.\n  +   ` + "`" + `` + "`" + `INCLUDE` + "`" + `` + "`" + ` - In addition to the attributes described in ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + `, the secondary index will include other non-key attributes that you specify.\n  +   ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` - All of the table attributes are projected into the index.\n  \n When using the DynamoDB console, ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` is selected by default.",
+                    "description": "The set of attributes that are projected into the index:\n  +  ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the index and primary keys are projected into the index.\n  +  ` + "`" + `` + "`" + `INCLUDE` + "`" + `` + "`" + ` - In addition to the attributes described in ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + `, the secondary index will include other non-key attributes that you specify.\n  +  ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` - All of the table attributes are projected into the index.\n  \n When using the DynamoDB console, ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` is selected by default.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -493,7 +493,7 @@ const awsccDynamodbTable = `{
             },
             "sse_type": {
               "computed": true,
-              "description": "Server-side encryption type. The only supported value is:\n  +   ` + "`" + `` + "`" + `KMS` + "`" + `` + "`" + ` - Server-side encryption that uses KMSlong. The key is stored in your account and is managed by KMS (KMS charges apply).",
+              "description": "Server-side encryption type. The only supported value is:\n  +  ` + "`" + `` + "`" + `KMS` + "`" + `` + "`" + ` - Server-side encryption that uses KMSlong. The key is stored in your account and is managed by KMS (KMS charges apply).",
               "description_kind": "plain",
               "type": "string"
             }
@@ -530,7 +530,7 @@ const awsccDynamodbTable = `{
             },
             "stream_view_type": {
               "computed": true,
-              "description": "When an item in the table is modified, ` + "`" + `` + "`" + `StreamViewType` + "`" + `` + "`" + ` determines what information is written to the stream for this table. Valid values for ` + "`" + `` + "`" + `StreamViewType` + "`" + `` + "`" + ` are:\n  +   ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the key attributes of the modified item are written to the stream.\n  +   ` + "`" + `` + "`" + `NEW_IMAGE` + "`" + `` + "`" + ` - The entire item, as it appears after it was modified, is written to the stream.\n  +   ` + "`" + `` + "`" + `OLD_IMAGE` + "`" + `` + "`" + ` - The entire item, as it appeared before it was modified, is written to the stream.\n  +   ` + "`" + `` + "`" + `NEW_AND_OLD_IMAGES` + "`" + `` + "`" + ` - Both the new and the old item images of the item are written to the stream.",
+              "description": "When an item in the table is modified, ` + "`" + `` + "`" + `StreamViewType` + "`" + `` + "`" + ` determines what information is written to the stream for this table. Valid values for ` + "`" + `` + "`" + `StreamViewType` + "`" + `` + "`" + ` are:\n  +  ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the key attributes of the modified item are written to the stream.\n  +  ` + "`" + `` + "`" + `NEW_IMAGE` + "`" + `` + "`" + ` - The entire item, as it appears after it was modified, is written to the stream.\n  +  ` + "`" + `` + "`" + `OLD_IMAGE` + "`" + `` + "`" + ` - The entire item, as it appeared before it was modified, is written to the stream.\n  +  ` + "`" + `` + "`" + `NEW_AND_OLD_IMAGES` + "`" + `` + "`" + ` - Both the new and the old item images of the item are written to the stream.",
               "description_kind": "plain",
               "type": "string"
             }

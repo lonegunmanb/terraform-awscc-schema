@@ -103,6 +103,13 @@ const awsccDatazoneDomain = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "idc_instance_arn": {
+              "computed": true,
+              "description": "The ARN of the AWS Identity Center instance.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "type": {
               "computed": true,
               "description": "The type of single sign-on in Amazon DataZone.",

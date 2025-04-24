@@ -214,7 +214,7 @@ const awsccMediapackagev2OriginEndpoint = `{
           "attributes": {
             "endpoint_error_conditions": {
               "computed": true,
-              "description": "\u003cp\u003eThe failover settings for the endpoint. The options are:\u003c/p\u003e\n         \u003cul\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eSTALE_MANIFEST\u003c/code\u003e - The manifest stalled and there a no new segments or parts.\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eINCOMPLETE_MANIFEST\u003c/code\u003e - There is a gap in the manifest.\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eMISSING_DRM_KEY\u003c/code\u003e - Key rotation is enabled but we're unable to fetch the key for the current key period.\u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
+              "description": "\u003cp\u003eThe failover conditions for the endpoint. The options are:\u003c/p\u003e\n         \u003cul\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eSTALE_MANIFEST\u003c/code\u003e - The manifest stalled and there are no new segments or parts.\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eINCOMPLETE_MANIFEST\u003c/code\u003e - There is a gap in the manifest.\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eMISSING_DRM_KEY\u003c/code\u003e - Key rotation is enabled but we're unable to fetch the key for the current key period.\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eSLATE_INPUT\u003c/code\u003e - The segments which contain slate content are considered to be missing content.\u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
               "description_kind": "plain",
               "optional": true,
               "type": [
@@ -310,7 +310,7 @@ const awsccMediapackagev2OriginEndpoint = `{
             },
             "program_date_time_interval_seconds": {
               "computed": true,
-              "description": "\u003cp\u003eInserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, \n         EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. \n         The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. \n         ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.\u003c/p\u003e\n         \u003cp\u003eIrrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.\u003c/p\u003e",
+              "description": "\u003cp\u003eInserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval,\n         EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest.\n         The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.\u003c/p\u003e\n         \u003cp\u003eIrrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.\u003c/p\u003e",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
@@ -363,6 +363,13 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "url_encode_child_manifest": {
+              "computed": true,
+              "description": "\u003cp\u003eWhen enabled, MediaPackage URL-encodes the query string for API requests for HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol.\n         For more information, see \u003ca href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html\"\u003eAmazon Web Services Signature Version 4 for API requests\u003c/a\u003e in \u003ci\u003eIdentity and Access Management User Guide\u003c/i\u003e.\u003c/p\u003e",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
             }
           },
           "nesting_mode": "list"
@@ -458,7 +465,7 @@ const awsccMediapackagev2OriginEndpoint = `{
             },
             "program_date_time_interval_seconds": {
               "computed": true,
-              "description": "\u003cp\u003eInserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, \n         EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. \n         The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player. \n         ID3Timed metadata messages generate every 5 seconds whenever the content is ingested.\u003c/p\u003e\n         \u003cp\u003eIrrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.\u003c/p\u003e",
+              "description": "\u003cp\u003eInserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval,\n         EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest.\n         The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.\u003c/p\u003e\n         \u003cp\u003eIrrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.\u003c/p\u003e",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
@@ -511,6 +518,13 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "url_encode_child_manifest": {
+              "computed": true,
+              "description": "\u003cp\u003eWhen enabled, MediaPackage URL-encodes the query string for API requests for LL-HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol.\n         For more information, see \u003ca href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html\"\u003eAmazon Web Services Signature Version 4 for API requests\u003c/a\u003e in \u003ci\u003eIdentity and Access Management User Guide\u003c/i\u003e.\u003c/p\u003e",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
             }
           },
           "nesting_mode": "list"

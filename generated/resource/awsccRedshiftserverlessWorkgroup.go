@@ -189,7 +189,6 @@ const awsccRedshiftserverlessWorkgroup = `{
             "base_capacity": {
               "computed": true,
               "description_kind": "plain",
-              "optional": true,
               "type": "number"
             },
             "config_parameters": {
@@ -303,7 +302,6 @@ const awsccRedshiftserverlessWorkgroup = `{
             "max_capacity": {
               "computed": true,
               "description_kind": "plain",
-              "optional": true,
               "type": "number"
             },
             "namespace_name": {
