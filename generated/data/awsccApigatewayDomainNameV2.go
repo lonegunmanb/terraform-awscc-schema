@@ -35,6 +35,11 @@ const awsccApigatewayDomainNameV2 = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "ip_address_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "types": {
               "computed": true,
               "description_kind": "plain",

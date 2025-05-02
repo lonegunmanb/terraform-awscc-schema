@@ -118,11 +118,6 @@ const awsccCloudfrontDistributionTenant = `{
               "description_kind": "plain",
               "type": "string"
             },
-            "reason": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": "string"
-            },
             "status": {
               "computed": true,
               "description_kind": "plain",

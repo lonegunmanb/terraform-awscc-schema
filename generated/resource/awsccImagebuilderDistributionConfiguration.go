@@ -312,6 +312,38 @@ const awsccImagebuilderDistributionConfiguration = `{
               "description_kind": "plain",
               "required": true,
               "type": "string"
+            },
+            "ssm_parameter_configurations": {
+              "computed": true,
+              "description": "The SSM parameter configurations to use for AMI distribution.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "ami_account_id": {
+                    "computed": true,
+                    "description": "The account ID for the AMI to update the parameter with.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "data_type": {
+                    "computed": true,
+                    "description": "The data type of the SSM parameter.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "parameter_name": {
+                    "computed": true,
+                    "description": "The name of the SSM parameter.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "list"

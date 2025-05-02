@@ -252,6 +252,31 @@ const awsccCodepipelinePipeline = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "environment_variables": {
+                    "computed": true,
+                    "description": "The list of environment variables that are input to a compute based action.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "name": {
+                          "computed": true,
+                          "description": "The name of the environment variable.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "value": {
+                          "computed": true,
+                          "description": "The value of the environment variable.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
                   "input_artifacts": {
                     "computed": true,
                     "description_kind": "plain",

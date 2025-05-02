@@ -33,6 +33,105 @@ const awsccAppsyncChannelNamespace = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "handler_configs": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "on_publish": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "behavior": {
+                    "computed": true,
+                    "description": "Integration behavior for a handler configuration.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "integration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "data_source_name": {
+                          "computed": true,
+                          "description": "Data source to invoke for this integration.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "lambda_config": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "invoke_type": {
+                                "computed": true,
+                                "description": "Invocation type for direct lambda integrations.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "on_subscribe": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "behavior": {
+                    "computed": true,
+                    "description": "Integration behavior for a handler configuration.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "integration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "data_source_name": {
+                          "computed": true,
+                          "description": "Data source to invoke for this integration.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "lambda_config": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "invoke_type": {
+                                "computed": true,
+                                "description": "Invocation type for direct lambda integrations.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

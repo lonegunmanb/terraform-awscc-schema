@@ -184,6 +184,28 @@ const awsccCognitoUserPoolClient = `{
           "string"
         ]
       },
+      "refresh_token_rotation": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "feature": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "retry_grace_period_seconds": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "refresh_token_validity": {
         "computed": true,
         "description_kind": "plain",
