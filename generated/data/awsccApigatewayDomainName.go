@@ -29,8 +29,14 @@ const awsccApigatewayDomainName = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "domain_name_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "endpoint_configuration": {
         "computed": true,
+        "description": "The ` + "`" + `` + "`" + `EndpointConfiguration` + "`" + `` + "`" + ` property type specifies the endpoint types of an Amazon API Gateway domain name.\n ` + "`" + `` + "`" + `EndpointConfiguration` + "`" + `` + "`" + ` is a property of the [AWS::ApiGateway::DomainName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html) resource.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -78,6 +84,7 @@ const awsccApigatewayDomainName = `{
       },
       "ownership_verification_certificate_arn": {
         "computed": true,
+        "description": "The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the RegionalCertificateArn.",
         "description_kind": "plain",
         "type": "string"
       },

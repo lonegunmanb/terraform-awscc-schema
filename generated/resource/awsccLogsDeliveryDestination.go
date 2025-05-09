@@ -19,8 +19,26 @@ const awsccLogsDeliveryDestination = `{
         "computed": true,
         "description": "IAM policy that grants permissions to CloudWatch Logs to deliver logs cross-account to a specified destination in this account.\n\nThe policy must be in JSON string format.\n\nLength Constraints: Maximum length of 51200",
         "description_kind": "plain",
-        "optional": true,
-        "type": "string"
+        "nested_type": {
+          "attributes": {
+            "delivery_destination_name": {
+              "computed": true,
+              "description": "The name of the delivery destination to assign this policy to",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "delivery_destination_policy": {
+              "computed": true,
+              "description": "The contents of the policy attached to the delivery destination",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "delivery_destination_type": {
         "computed": true,

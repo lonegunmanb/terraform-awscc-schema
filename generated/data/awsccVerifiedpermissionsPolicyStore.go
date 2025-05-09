@@ -14,6 +14,20 @@ const awsccVerifiedpermissionsPolicyStore = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "deletion_protection": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "description": {
         "computed": true,
         "description_kind": "plain",
@@ -42,6 +56,26 @@ const awsccVerifiedpermissionsPolicyStore = `{
             }
           },
           "nesting_mode": "single"
+        }
+      },
+      "tags": {
+        "computed": true,
+        "description": "The tags to add to the policy store",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
         }
       },
       "validation_settings": {

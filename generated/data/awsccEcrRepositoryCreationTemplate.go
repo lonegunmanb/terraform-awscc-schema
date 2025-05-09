@@ -83,7 +83,7 @@ const awsccEcrRepositoryCreationTemplate = `{
       },
       "repository_policy": {
         "computed": true,
-        "description": "he repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.",
+        "description": "The repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.",
         "description_kind": "plain",
         "type": "string"
       },
