@@ -41,7 +41,7 @@ const awsccEc2VpnConnection = `{
       },
       "outside_ip_address_type": {
         "computed": true,
-        "description": "The type of IPv4 address assigned to the outside interface of the customer gateway device.\n Valid values: ` + "`" + `` + "`" + `PrivateIpv4` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `PublicIpv4` + "`" + `` + "`" + ` \n Default: ` + "`" + `` + "`" + `PublicIpv4` + "`" + `` + "`" + `",
+        "description": "The type of IPv4 address assigned to the outside interface of the customer gateway device.\n Valid values: ` + "`" + `` + "`" + `PrivateIpv4` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `PublicIpv4` + "`" + `` + "`" + `\n Default: ` + "`" + `` + "`" + `PublicIpv4` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "type": "string"
       },
@@ -128,7 +128,7 @@ const awsccEc2VpnConnection = `{
           "attributes": {
             "dpd_timeout_action": {
               "computed": true,
-              "description": "The action to take after DPD timeout occurs. Specify ` + "`" + `` + "`" + `restart` + "`" + `` + "`" + ` to restart the IKE initiation. Specify ` + "`" + `` + "`" + `clear` + "`" + `` + "`" + ` to end the IKE session.\n Valid Values: ` + "`" + `` + "`" + `clear` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `none` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `restart` + "`" + `` + "`" + ` \n Default: ` + "`" + `` + "`" + `clear` + "`" + `` + "`" + `",
+              "description": "The action to take after DPD timeout occurs. Specify ` + "`" + `` + "`" + `restart` + "`" + `` + "`" + ` to restart the IKE initiation. Specify ` + "`" + `` + "`" + `clear` + "`" + `` + "`" + ` to end the IKE session.\n Valid Values: ` + "`" + `` + "`" + `clear` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `none` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `restart` + "`" + `` + "`" + `\n Default: ` + "`" + `` + "`" + `clear` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "type": "string"
             },
@@ -332,7 +332,7 @@ const awsccEc2VpnConnection = `{
             },
             "startup_action": {
               "computed": true,
-              "description": "The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify ` + "`" + `` + "`" + `start` + "`" + `` + "`" + ` for AWS to initiate the IKE negotiation.\n Valid Values: ` + "`" + `` + "`" + `add` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `start` + "`" + `` + "`" + ` \n Default: ` + "`" + `` + "`" + `add` + "`" + `` + "`" + `",
+              "description": "The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway device must initiate the IKE negotiation and bring up the tunnel. Specify ` + "`" + `` + "`" + `start` + "`" + `` + "`" + ` for AWS to initiate the IKE negotiation.\n Valid Values: ` + "`" + `` + "`" + `add` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `start` + "`" + `` + "`" + `\n Default: ` + "`" + `` + "`" + `add` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "type": "string"
             },

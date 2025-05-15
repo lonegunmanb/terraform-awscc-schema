@@ -29,6 +29,11 @@ const awsccCodebuildFleet = `{
               "description_kind": "plain",
               "type": "number"
             },
+            "instance_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "machine_type": {
               "computed": true,
               "description_kind": "plain",

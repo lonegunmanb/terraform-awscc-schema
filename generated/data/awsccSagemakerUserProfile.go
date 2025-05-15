@@ -71,6 +71,12 @@ const awsccSagemakerUserProfile = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "auto_mount_home_efs": {
+              "computed": true,
+              "description": "Indicates whether auto-mounting of an EFS volume is supported for the user profile. ",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "code_editor_app_settings": {
               "computed": true,
               "description": "The CodeEditor app settings.",
@@ -118,6 +124,12 @@ const awsccSagemakerUserProfile = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "built_in_lifecycle_config_arn": {
+                    "computed": true,
+                    "description": "The lifecycle configuration that runs before the default lifecycle configuration.",
+                    "description_kind": "plain",
+                    "type": "string"
                   },
                   "custom_images": {
                     "computed": true,
@@ -319,6 +331,12 @@ const awsccSagemakerUserProfile = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "built_in_lifecycle_config_arn": {
+                    "computed": true,
+                    "description": "The lifecycle configuration that runs before the default lifecycle configuration.",
+                    "description_kind": "plain",
+                    "type": "string"
                   },
                   "code_repositories": {
                     "computed": true,
@@ -656,6 +674,15 @@ const awsccSagemakerUserProfile = `{
                       "string"
                     ]
                   },
+                  "hidden_instance_types": {
+                    "computed": true,
+                    "description": "The instance types you are hiding from the Studio user interface.",
+                    "description_kind": "plain",
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
                   "hidden_ml_tools": {
                     "computed": true,
                     "description": "The machine learning tools that are hidden from the Studio left navigation pane.",
@@ -664,6 +691,30 @@ const awsccSagemakerUserProfile = `{
                       "set",
                       "string"
                     ]
+                  },
+                  "hidden_sage_maker_image_version_aliases": {
+                    "computed": true,
+                    "description": "The version aliases you are hiding from the Studio user interface.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "sage_maker_image_name": {
+                          "computed": true,
+                          "description": "The SageMaker image name that you are hiding from the Studio user interface.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "version_aliases": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "set"
+                    }
                   }
                 },
                 "nesting_mode": "single"

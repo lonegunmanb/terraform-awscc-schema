@@ -87,6 +87,12 @@ const awsccWorkspacesWorkspacesPool = `{
         "required": true,
         "type": "string"
       },
+      "running_mode": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description_kind": "plain",

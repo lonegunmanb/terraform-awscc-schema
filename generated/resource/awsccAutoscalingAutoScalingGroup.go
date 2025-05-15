@@ -9,6 +9,11 @@ import (
 const awsccAutoscalingAutoScalingGroup = `{
   "block": {
     "attributes": {
+      "auto_scaling_group_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "auto_scaling_group_name": {
         "computed": true,
         "description": "The name of the Auto Scaling group. This name must be unique per Region per account.\n The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and upper and lowercased letters.\n  You cannot use a colon (:) in the name.",
@@ -78,22 +83,26 @@ const awsccAutoscalingAutoScalingGroup = `{
       },
       "capacity_reservation_specification": {
         "computed": true,
+        "description": "The capacity reservation specification.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "capacity_reservation_preference": {
               "computed": true,
+              "description": "The capacity reservation preference. The following options are available: \n  +   ` + "`" + `` + "`" + `capacity-reservations-only` + "`" + `` + "`" + ` - Auto Scaling will only launch instances into a Capacity Reservation or Capacity Reservation resource group. If capacity isn't available, instances will fail to launch.\n  +   ` + "`" + `` + "`" + `capacity-reservations-first` + "`" + `` + "`" + ` - Auto Scaling will try to launch instances into a Capacity Reservation or Capacity Reservation resource group first. If capacity isn't available, instances will run in On-Demand capacity.\n  +   ` + "`" + `` + "`" + `none` + "`" + `` + "`" + ` - Auto Scaling will not launch instances into a Capacity Reservation. Instances will run in On-Demand capacity. \n  +   ` + "`" + `` + "`" + `default` + "`" + `` + "`" + ` - Auto Scaling uses the Capacity Reservation preference from your launch template or an open Capacity Reservation.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "capacity_reservation_target": {
               "computed": true,
+              "description": "Describes a target Capacity Reservation or Capacity Reservation resource group.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "capacity_reservation_ids": {
                     "computed": true,
+                    "description": "The Capacity Reservation IDs to launch instances into.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": [
@@ -103,6 +112,7 @@ const awsccAutoscalingAutoScalingGroup = `{
                   },
                   "capacity_reservation_resource_group_arns": {
                     "computed": true,
+                    "description": "The resource group ARNs of the Capacity Reservation to launch instances into.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": [
@@ -596,21 +606,25 @@ const awsccAutoscalingAutoScalingGroup = `{
                               },
                               "baseline_performance_factors": {
                                 "computed": true,
+                                "description": "The baseline performance factors for the instance requirements.",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "cpu": {
                                       "computed": true,
+                                      "description": "The CPU performance to consider, using an instance family as the baseline reference.",
                                       "description_kind": "plain",
                                       "nested_type": {
                                         "attributes": {
                                           "references": {
                                             "computed": true,
+                                            "description": "Specify an instance family to use as the baseline reference for CPU performance. All instance types that match your specified attributes will be compared against the CPU performance of the referenced instance family, regardless of CPU manufacturer or architecture differences. \n  Currently only one instance family can be specified in the list.",
                                             "description_kind": "plain",
                                             "nested_type": {
                                               "attributes": {
                                                 "instance_family": {
                                                   "computed": true,
+                                                  "description": "The instance family to use as a baseline reference. \n  Make sure that you specify the correct value for the instance family. The instance family is everything before the period (.) in the instance type name. For example, in the instance ` + "`" + `` + "`" + `c6i.large` + "`" + `` + "`" + `, the instance family is ` + "`" + `` + "`" + `c6i` + "`" + `` + "`" + `, not ` + "`" + `` + "`" + `c6` + "`" + `` + "`" + `. For more information, see [Amazon EC2 instance type naming conventions](https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-type-names.html) in *Amazon EC2 Instance Types*.\n  The following instance types are *not supported* for performance protection.\n  +   ` + "`" + `` + "`" + `c1` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `g3| g3s` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `hpc7g` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `m1| m2` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `mac1 | mac2 | mac2-m1ultra | mac2-m2 | mac2-m2pro` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `p3dn | p4d | p5` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `t1` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `u-12tb1 | u-18tb1 | u-24tb1 | u-3tb1 | u-6tb1 | u-9tb1 | u7i-12tb | u7in-16tb | u7in-24tb | u7in-32tb` + "`" + `` + "`" + ` \n  \n If you performance protection by specifying a supported instance family, the returned instance types will exclude the preceding unsupported instance families.\n If you specify an unsupported instance family as a value for baseline performance, the API returns an empty response.",
                                                   "description_kind": "plain",
                                                   "optional": true,
                                                   "type": "string"

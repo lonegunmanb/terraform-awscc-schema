@@ -23,13 +23,13 @@ const awsccEcrRegistryScanningConfiguration = `{
       },
       "rules": {
         "computed": true,
-        "description": "The scanning rules associated with the registry. A registry scanning configuration may contain a maximum of 2 rules.",
+        "description": "The scanning rules associated with the registry.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "repository_filters": {
               "computed": true,
-              "description": "The repository filters associated with the scanning configuration for a private registry.",
+              "description": "The details of a scanning repository filter. For more information on how to use filters, see [Using filters](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html#image-scanning-filters) in the *Amazon Elastic Container Registry User Guide*.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -51,7 +51,7 @@ const awsccEcrRegistryScanningConfiguration = `{
             },
             "scan_frequency": {
               "computed": true,
-              "description": "The frequency that scans are performed.",
+              "description": "The frequency that scans are performed at for a private registry. When the ` + "`" + `` + "`" + `ENHANCED` + "`" + `` + "`" + ` scan type is specified, the supported scan frequencies are ` + "`" + `` + "`" + `CONTINUOUS_SCAN` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `SCAN_ON_PUSH` + "`" + `` + "`" + `. When the ` + "`" + `` + "`" + `BASIC` + "`" + `` + "`" + ` scan type is specified, the ` + "`" + `` + "`" + `SCAN_ON_PUSH` + "`" + `` + "`" + ` scan frequency is supported. If scan on push is not specified, then the ` + "`" + `` + "`" + `MANUAL` + "`" + `` + "`" + ` scan frequency is set by default.",
               "description_kind": "plain",
               "type": "string"
             }

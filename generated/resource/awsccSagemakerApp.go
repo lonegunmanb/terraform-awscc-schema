@@ -27,6 +27,12 @@ const awsccSagemakerApp = `{
         "required": true,
         "type": "string"
       },
+      "built_in_lifecycle_config_arn": {
+        "computed": true,
+        "description": "The lifecycle configuration that runs before the default lifecycle configuration.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "domain_id": {
         "description": "The domain ID.",
         "description_kind": "plain",
@@ -38,6 +44,13 @@ const awsccSagemakerApp = `{
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "recovery_mode": {
+        "computed": true,
+        "description": "Indicates whether the application is launched in recovery mode.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
       },
       "resource_spec": {
         "computed": true,

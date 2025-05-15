@@ -1,4 +1,4 @@
-package resource
+package data
 
 import (
 	"encoding/json"
@@ -6,13 +6,12 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccOmicsWorkflow = `{
+const awsccOmicsWorkflowVersion = `{
   "block": {
     "attributes": {
       "accelerators": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "arn": {
@@ -28,37 +27,27 @@ const awsccOmicsWorkflow = `{
       "definition_uri": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "description": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "engine": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "id": {
-        "computed": true,
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
+        "required": true,
         "type": "string"
       },
       "main": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
-      "name": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "parameter_template": {
@@ -69,19 +58,16 @@ const awsccOmicsWorkflow = `{
             "description": {
               "computed": true,
               "description_kind": "plain",
-              "optional": true,
               "type": "string"
             },
             "optional": {
               "computed": true,
               "description_kind": "plain",
-              "optional": true,
               "type": "bool"
             }
           },
           "nesting_mode": "map"
-        },
-        "optional": true
+        }
       },
       "status": {
         "computed": true,
@@ -91,20 +77,17 @@ const awsccOmicsWorkflow = `{
       "storage_capacity": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "number"
       },
       "storage_type": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "tags": {
         "computed": true,
         "description": "A map of resource tags",
         "description_kind": "plain",
-        "optional": true,
         "type": [
           "map",
           "string"
@@ -120,20 +103,30 @@ const awsccOmicsWorkflow = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "version_name": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "workflow_bucket_owner_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "workflow_id": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
       }
     },
-    "description": "Definition of AWS::Omics::Workflow Resource Type",
+    "description": "Data Source schema for AWS::Omics::WorkflowVersion",
     "description_kind": "plain"
   },
-  "version": 1
+  "version": 0
 }`
 
-func AwsccOmicsWorkflowSchema() *tfjson.Schema {
+func AwsccOmicsWorkflowVersionSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccOmicsWorkflow), &result)
+	_ = json.Unmarshal([]byte(awsccOmicsWorkflowVersion), &result)
 	return &result
 }

@@ -84,6 +84,11 @@ const awsccOmicsWorkflow = `{
         "description_kind": "plain",
         "type": "number"
       },
+      "storage_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "A map of resource tags",
@@ -94,6 +99,11 @@ const awsccOmicsWorkflow = `{
         ]
       },
       "type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "uuid": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"

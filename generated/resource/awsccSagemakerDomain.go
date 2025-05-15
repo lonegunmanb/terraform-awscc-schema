@@ -173,6 +173,13 @@ const awsccSagemakerDomain = `{
                     },
                     "optional": true
                   },
+                  "built_in_lifecycle_config_arn": {
+                    "computed": true,
+                    "description": "The lifecycle configuration that runs before the default lifecycle configuration.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "code_repositories": {
                     "computed": true,
                     "description": "A list of CodeRepositories available for use with JupyterLab apps.",
@@ -484,6 +491,13 @@ const awsccSagemakerDomain = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "auto_mount_home_efs": {
+              "computed": true,
+              "description": "Indicates whether auto-mounting of an EFS volume is supported for the user profile. ",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "code_editor_app_settings": {
               "computed": true,
               "description": "The CodeEditor app settings.",
@@ -537,6 +551,13 @@ const awsccSagemakerDomain = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "built_in_lifecycle_config_arn": {
+                    "computed": true,
+                    "description": "The lifecycle configuration that runs before the default lifecycle configuration.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
                   },
                   "custom_images": {
                     "computed": true,
@@ -766,6 +787,13 @@ const awsccSagemakerDomain = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "built_in_lifecycle_config_arn": {
+                    "computed": true,
+                    "description": "The lifecycle configuration that runs before the default lifecycle configuration.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
                   },
                   "code_repositories": {
                     "computed": true,
@@ -1229,6 +1257,16 @@ const awsccSagemakerDomain = `{
                       "string"
                     ]
                   },
+                  "hidden_instance_types": {
+                    "computed": true,
+                    "description": "The instance types you are hiding from the Studio user interface.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
                   "hidden_ml_tools": {
                     "computed": true,
                     "description": "The machine learning tools that are hidden from the Studio left navigation pane.",
@@ -1238,6 +1276,33 @@ const awsccSagemakerDomain = `{
                       "set",
                       "string"
                     ]
+                  },
+                  "hidden_sage_maker_image_version_aliases": {
+                    "computed": true,
+                    "description": "The version aliases you are hiding from the Studio user interface.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "sage_maker_image_name": {
+                          "computed": true,
+                          "description": "The SageMaker image name that you are hiding from the Studio user interface.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "version_aliases": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "set"
+                    },
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"

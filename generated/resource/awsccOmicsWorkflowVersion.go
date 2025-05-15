@@ -6,7 +6,7 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccOmicsWorkflow = `{
+const awsccOmicsWorkflowVersion = `{
   "block": {
     "attributes": {
       "accelerators": {
@@ -50,12 +50,6 @@ const awsccOmicsWorkflow = `{
         "type": "string"
       },
       "main": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
-      "name": {
         "computed": true,
         "description_kind": "plain",
         "optional": true,
@@ -120,20 +114,31 @@ const awsccOmicsWorkflow = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "workflow_id": {
+      "version_name": {
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "workflow_bucket_owner_id": {
         "computed": true,
         "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "workflow_id": {
+        "description_kind": "plain",
+        "required": true,
         "type": "string"
       }
     },
-    "description": "Definition of AWS::Omics::Workflow Resource Type",
+    "description": "Definition of AWS::Omics::WorkflowVersion Resource Type.",
     "description_kind": "plain"
   },
   "version": 1
 }`
 
-func AwsccOmicsWorkflowSchema() *tfjson.Schema {
+func AwsccOmicsWorkflowVersionSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccOmicsWorkflow), &result)
+	_ = json.Unmarshal([]byte(awsccOmicsWorkflowVersion), &result)
 	return &result
 }

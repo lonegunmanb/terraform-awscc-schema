@@ -11,7 +11,7 @@ const awsccSecurityhubStandard = `{
     "attributes": {
       "disabled_standards_controls": {
         "computed": true,
-        "description": "Specifies which controls are to be disabled in a standard. \n  *Maximum*: ` + "`" + `` + "`" + `100` + "`" + `` + "`" + `",
+        "description": "Specifies which controls are to be disabled in a standard. \n *Maximum*: ` + "`" + `` + "`" + `100` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
