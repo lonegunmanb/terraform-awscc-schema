@@ -243,6 +243,12 @@ const awsccCodepipelinePipeline = `{
                           "description_kind": "plain",
                           "type": "string"
                         },
+                        "type": {
+                          "computed": true,
+                          "description": "The type of the environment variable.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "value": {
                           "computed": true,
                           "description": "The value of the environment variable.",

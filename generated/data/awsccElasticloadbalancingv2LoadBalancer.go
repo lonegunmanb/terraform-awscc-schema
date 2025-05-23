@@ -27,7 +27,7 @@ const awsccElasticloadbalancingv2LoadBalancer = `{
       },
       "enforce_security_group_inbound_rules_on_private_link_traffic": {
         "computed": true,
-        "description": "Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through privatelink. The default is ` + "`" + `` + "`" + `on` + "`" + `` + "`" + `.",
+        "description": "Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through privatelink. The default is ` + "`" + `` + "`" + `on` + "`" + `` + "`" + `.\n You can't configure this property on a Network Load Balancer unless you associated a security group with the load balancer when you created it.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -45,6 +45,7 @@ const awsccElasticloadbalancingv2LoadBalancer = `{
       },
       "ipv_4_ipam_pool_id": {
         "computed": true,
+        "description": "The ID of the IPv4 IPAM pool.",
         "description_kind": "plain",
         "type": "string"
       },

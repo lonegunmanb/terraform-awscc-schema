@@ -11,6 +11,7 @@ const awsccCloudfrontConnectionGroup = `{
     "attributes": {
       "anycast_ip_list_id": {
         "computed": true,
+        "description": "The ID of the Anycast static IP list.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -37,6 +38,7 @@ const awsccCloudfrontConnectionGroup = `{
       },
       "enabled": {
         "computed": true,
+        "description": "Whether the connection group is enabled.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
@@ -49,6 +51,7 @@ const awsccCloudfrontConnectionGroup = `{
       },
       "ipv_6_enabled": {
         "computed": true,
+        "description": "IPv6 is enabled for the connection group.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
@@ -64,6 +67,7 @@ const awsccCloudfrontConnectionGroup = `{
         "type": "string"
       },
       "name": {
+        "description": "The name of the connection group.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -80,17 +84,20 @@ const awsccCloudfrontConnectionGroup = `{
       },
       "tags": {
         "computed": true,
+        "description": "A complex type that contains zero or more ` + "`" + `` + "`" + `Tag` + "`" + `` + "`" + ` elements.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
               "computed": true,
+              "description": "A string that contains ` + "`" + `` + "`" + `Tag` + "`" + `` + "`" + ` key.\n The string length should be between 1 and 128 characters. Valid characters include ` + "`" + `` + "`" + `a-z` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `A-Z` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `0-9` + "`" + `` + "`" + `, space, and the special characters ` + "`" + `` + "`" + `_ - . : / = + @` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "A string that contains an optional ` + "`" + `` + "`" + `Tag` + "`" + `` + "`" + ` value.\n The string length should be between 0 and 256 characters. Valid characters include ` + "`" + `` + "`" + `a-z` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `A-Z` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `0-9` + "`" + `` + "`" + `, space, and the special characters ` + "`" + `` + "`" + `_ - . : / = + @` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -101,7 +108,7 @@ const awsccCloudfrontConnectionGroup = `{
         "optional": true
       }
     },
-    "description": "Resource Type definition for AWS::CloudFront::ConnectionGroup",
+    "description": "The connection group for your distribution tenants. When you first create a distribution tenant and you don't specify a connection group, CloudFront will automatically create a default connection group for you. When you create a new distribution tenant and don't specify a connection group, the default one will be associated with your distribution tenant.",
     "description_kind": "plain"
   },
   "version": 1

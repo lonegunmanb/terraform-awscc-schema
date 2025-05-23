@@ -39,6 +39,12 @@ const awsccDatazoneProject = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "domain_unit_id": {
+        "computed": true,
+        "description": "The ID of the domain unit.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "glossary_terms": {
         "computed": true,
         "description": "The glossary terms that can be used in this Amazon DataZone project.",
@@ -71,6 +77,63 @@ const awsccDatazoneProject = `{
         "description": "The ID of the Amazon DataZone project.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "project_profile_id": {
+        "computed": true,
+        "description": "The project profile ID.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "project_profile_version": {
+        "computed": true,
+        "description": "The project profile version to which the project should be updated. You can only specify the following string for this parameter: latest.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "project_status": {
+        "computed": true,
+        "description": "The status of the project.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "user_parameters": {
+        "computed": true,
+        "description": "The user parameters of the project.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "environment_configuration_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "environment_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "environment_parameters": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "list"
+        }
       }
     },
     "description": "Data Source schema for AWS::DataZone::Project",

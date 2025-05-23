@@ -396,6 +396,52 @@ const awsccEc2Instance = `{
         },
         "optional": true
       },
+      "metadata_options": {
+        "computed": true,
+        "description": "The metadata options for the instance",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "http_endpoint": {
+              "computed": true,
+              "description": "Enables or disables the HTTP metadata endpoint on your instances. If you specify a value of disabled, you cannot access your instance metadata.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "http_protocol_ipv_6": {
+              "computed": true,
+              "description": "Enables or disables the IPv6 endpoint for the instance metadata service. To use this option, the instance must be a Nitro-based instance launched in a subnet that supports IPv6.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "http_put_response_hop_limit": {
+              "computed": true,
+              "description": "The number of network hops that the metadata token can travel. Maximum is 64.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "http_tokens": {
+              "computed": true,
+              "description": "Indicates whether IMDSv2 is required.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "instance_metadata_tags": {
+              "computed": true,
+              "description": "Indicates whether tags from the instance are propagated to the EBS volumes.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "monitoring": {
         "computed": true,
         "description": "Specifies whether detailed monitoring is enabled for the instance.",

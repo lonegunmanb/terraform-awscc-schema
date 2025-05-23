@@ -22,7 +22,7 @@ const awsccCloudfrontRealtimeLogConfig = `{
           "attributes": {
             "kinesis_stream_config": {
               "computed": true,
-              "description": "Contains information about the Amazon Kinesis data stream where you are sending real-time log data.",
+              "description": "Contains information about the Amazon Kinesis data stream where you are sending real-time log data in a real-time log configuration.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {

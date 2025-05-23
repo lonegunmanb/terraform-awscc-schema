@@ -110,6 +110,12 @@ const awsccGameliftFleet = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "fleet_arn": {
+        "computed": true,
+        "description": "The Amazon Resource Name (ARN) that is assigned to a Amazon GameLift Servers Fleet resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift Fleet ARN, the resource ID matches the FleetId value.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "fleet_id": {
         "computed": true,
         "description": "Unique fleet ID",
@@ -416,6 +422,28 @@ const awsccGameliftFleet = `{
         "description": "This parameter is no longer used. Instead, specify a server launch path using the RuntimeConfiguration parameter. Requests that specify a server launch path and launch parameters instead of a runtime configuration will continue to work.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "An array of key-value pairs to apply to this resource.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        }
       }
     },
     "description": "Data Source schema for AWS::GameLift::Fleet",

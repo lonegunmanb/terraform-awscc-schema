@@ -108,6 +108,13 @@ const awsccSyntheticsCanary = `{
         "optional": true,
         "type": "bool"
       },
+      "dry_run_and_update": {
+        "computed": true,
+        "description": "Setting to control if UpdateCanary will perform a DryRun and validate it is PASSING before performing the Update. Default is FALSE.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "execution_role_arn": {
         "description": "Lambda Execution role used to run your canaries",
         "description_kind": "plain",
@@ -213,6 +220,24 @@ const awsccSyntheticsCanary = `{
               "description_kind": "plain",
               "required": true,
               "type": "string"
+            },
+            "retry_config": {
+              "computed": true,
+              "description": "Provide canary auto retry configuration",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "max_retries": {
+                    "computed": true,
+                    "description": "maximum times the canary will be retried upon the scheduled run failure",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

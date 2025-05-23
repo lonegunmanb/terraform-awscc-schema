@@ -74,7 +74,7 @@ const awsccCloudfrontResponseHeadersPolicy = `{
                       "attributes": {
                         "items": {
                           "computed": true,
-                          "description": "The list of HTTP methods. Valid values are:\n  +   ` + "`" + `` + "`" + `GET` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `DELETE` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `HEAD` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `OPTIONS` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `PATCH` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `POST` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `PUT` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` \n  \n  ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` is a special value that includes all of the listed HTTP methods.",
+                          "description": "The list of HTTP methods. Valid values are:\n  +   ` + "`" + `` + "`" + `GET` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `DELETE` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `HEAD` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `OPTIONS` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `PATCH` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `POST` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `PUT` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` \n  \n ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` is a special value that includes all of the listed HTTP methods.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": [

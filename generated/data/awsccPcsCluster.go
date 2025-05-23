@@ -151,6 +151,28 @@ const awsccPcsCluster = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "accounting": {
+              "computed": true,
+              "description": "The accounting configuration includes configurable settings for Slurm accounting.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "default_purge_time_in_days": {
+                    "computed": true,
+                    "description": "The default value for all purge settings for ` + "`" + `slurmdbd.conf` + "`" + `. For more information, see the [slurmdbd.conf documentation at SchedMD](https://slurm.schedmd.com/slurmdbd.conf.html). The default value is ` + "`" + `-1` + "`" + `. A value of ` + "`" + `-1` + "`" + ` means there is no purge time and records persist as long as the cluster exists.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "mode": {
+                    "computed": true,
+                    "description": "The default value is ` + "`" + `STANDARD` + "`" + `. A value of ` + "`" + `STANDARD` + "`" + ` means that Slurm accounting is enabled.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "auth_key": {
               "computed": true,
               "description": "The shared Slurm key for authentication, also known as the cluster secret.",

@@ -65,7 +65,6 @@ const awsccRolesanywhereTrustAnchor = `{
         "nested_type": {
           "attributes": {
             "source_data": {
-              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -84,12 +83,11 @@ const awsccRolesanywhereTrustAnchor = `{
                 },
                 "nesting_mode": "single"
               },
-              "optional": true
+              "required": true
             },
             "source_type": {
-              "computed": true,
               "description_kind": "plain",
-              "optional": true,
+              "required": true,
               "type": "string"
             }
           },

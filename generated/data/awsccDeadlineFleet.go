@@ -89,6 +89,11 @@ const awsccDeadlineFleet = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "tag_propagation_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "worker_capabilities": {
                     "computed": true,
                     "description_kind": "plain",
@@ -478,6 +483,25 @@ const awsccDeadlineFleet = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "host_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "script_body": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "script_timeout_seconds": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "id": {
         "description": "Uniquely identifies the resource.",

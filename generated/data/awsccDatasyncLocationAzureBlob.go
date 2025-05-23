@@ -11,7 +11,7 @@ const awsccDatasyncLocationAzureBlob = `{
     "attributes": {
       "agent_arns": {
         "computed": true,
-        "description": "The Amazon Resource Names (ARNs) of agents to use for an Azure Blob Location.",
+        "description": "Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. If you are setting up an agentless cross-cloud transfer, you do not need to specify a value for this parameter.",
         "description_kind": "plain",
         "type": [
           "list",
@@ -58,6 +58,50 @@ const awsccDatasyncLocationAzureBlob = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "cmk_secret_config": {
+        "computed": true,
+        "description": "Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed AWS KMS key.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "kms_key_arn": {
+              "computed": true,
+              "description": "Specifies the ARN for the customer-managed AWS KMS key used to encrypt the secret specified for SecretArn. DataSync provides this key to AWS Secrets Manager.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "secret_arn": {
+              "computed": true,
+              "description": "Specifies the ARN for an AWS Secrets Manager secret, managed by DataSync.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "custom_secret_config": {
+        "computed": true,
+        "description": "Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and an IAM role that DataSync can assume and access the customer-managed secret.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "secret_access_role_arn": {
+              "computed": true,
+              "description": "Specifies the ARN for the AWS Identity and Access Management role that DataSync uses to access the secret specified for SecretArn.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "secret_arn": {
+              "computed": true,
+              "description": "Specifies the ARN for a customer created AWS Secrets Manager secret.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -75,6 +119,22 @@ const awsccDatasyncLocationAzureBlob = `{
         "description": "The URL of the Azure Blob Location that was described.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "managed_secret_config": {
+        "computed": true,
+        "description": "Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location. DataSync uses the default AWS-managed KMS key to encrypt this secret in AWS Secrets Manager.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "secret_arn": {
+              "computed": true,
+              "description": "Specifies the ARN for an AWS Secrets Manager secret.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "subdirectory": {
         "computed": true,

@@ -42,6 +42,12 @@ const awsccDatazoneEnvironmentBlueprintConfiguration = `{
         "required": true,
         "type": "string"
       },
+      "environment_role_permission_boundary": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -53,6 +59,41 @@ const awsccDatazoneEnvironmentBlueprintConfiguration = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "provisioning_configurations": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "lake_formation_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "location_registration_exclude_s3_locations": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "location_registration_role": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       },
       "provisioning_role_arn": {
         "computed": true,

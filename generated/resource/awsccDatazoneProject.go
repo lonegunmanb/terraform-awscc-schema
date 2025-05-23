@@ -40,6 +40,13 @@ const awsccDatazoneProject = `{
         "required": true,
         "type": "string"
       },
+      "domain_unit_id": {
+        "computed": true,
+        "description": "The ID of the domain unit.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "glossary_terms": {
         "computed": true,
         "description": "The glossary terms that can be used in this Amazon DataZone project.",
@@ -73,6 +80,71 @@ const awsccDatazoneProject = `{
         "description": "The ID of the Amazon DataZone project.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "project_profile_id": {
+        "computed": true,
+        "description": "The project profile ID.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "project_profile_version": {
+        "computed": true,
+        "description": "The project profile version to which the project should be updated. You can only specify the following string for this parameter: latest.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "project_status": {
+        "computed": true,
+        "description": "The status of the project.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "user_parameters": {
+        "computed": true,
+        "description": "The user parameters of the project.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "environment_configuration_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "environment_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "environment_parameters": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       }
     },
     "description": "Amazon DataZone projects are business use case?based groupings of people, assets (data), and tools used to simplify access to the AWS analytics.",
