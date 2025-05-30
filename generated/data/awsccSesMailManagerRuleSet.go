@@ -306,6 +306,28 @@ const awsccSesMailManagerRuleSet = `{
                                 "computed": true,
                                 "description_kind": "plain",
                                 "type": "string"
+                              },
+                              "is_in_address_list": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "address_lists": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "attribute": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
                               }
                             },
                             "nesting_mode": "single"
@@ -573,6 +595,28 @@ const awsccSesMailManagerRuleSet = `{
                                 "computed": true,
                                 "description_kind": "plain",
                                 "type": "string"
+                              },
+                              "is_in_address_list": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "address_lists": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "attribute": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
                               }
                             },
                             "nesting_mode": "single"

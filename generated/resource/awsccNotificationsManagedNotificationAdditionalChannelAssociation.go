@@ -28,7 +28,7 @@ const awsccNotificationsManagedNotificationAdditionalChannelAssociation = `{
         "type": "string"
       }
     },
-    "description": "Definition of AWS::Notifications::ManagedNotificationAdditionalChannelAssociation Resource Type",
+    "description": "Resource Type definition for AWS::Notifications::ManagedNotificationAdditionalChannelAssociation",
     "description_kind": "plain"
   },
   "version": 1

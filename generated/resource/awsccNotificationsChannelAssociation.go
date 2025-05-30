@@ -28,7 +28,7 @@ const awsccNotificationsChannelAssociation = `{
         "type": "string"
       }
     },
-    "description": "Definition of AWS::Notifications::ChannelAssociation Resource Type",
+    "description": "Resource Type definition for AWS::Notifications::ChannelAssociation",
     "description_kind": "plain"
   },
   "version": 1

@@ -28,7 +28,7 @@ const awsccNotificationsManagedNotificationAccountContactAssociation = `{
         "type": "string"
       }
     },
-    "description": "This resource schema represents the ManagedNotificationAccountContactAssociation resource in the AWS User Notifications.",
+    "description": "Resource Type definition for ManagedNotificationAccountContactAssociation",
     "description_kind": "plain"
   },
   "version": 1

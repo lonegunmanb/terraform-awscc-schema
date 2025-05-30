@@ -66,6 +66,64 @@ const awsccApsWorkspace = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "query_logging_configuration": {
+        "computed": true,
+        "description": "Query logging configuration",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "destinations": {
+              "computed": true,
+              "description": "The destinations configuration for query logging",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cloudwatch_logs": {
+                    "computed": true,
+                    "description": "Represents a cloudwatch logs destination for query logging",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "log_group_arn": {
+                          "computed": true,
+                          "description": "The ARN of the CloudWatch Logs log group",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "filters": {
+                    "computed": true,
+                    "description": "Filters for logging",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "qsp_threshold": {
+                          "computed": true,
+                          "description": "Query logs with QSP above this limit are vended",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "tags": {
         "computed": true,
         "description": "An array of key-value pairs to apply to this resource.",

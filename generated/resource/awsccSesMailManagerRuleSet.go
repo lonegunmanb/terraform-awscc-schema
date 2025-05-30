@@ -347,6 +347,31 @@ const awsccSesMailManagerRuleSet = `{
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
+                              },
+                              "is_in_address_list": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "address_lists": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "attribute": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
@@ -653,6 +678,31 @@ const awsccSesMailManagerRuleSet = `{
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
+                              },
+                              "is_in_address_list": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "address_lists": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "attribute": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"

@@ -46,7 +46,7 @@ const awsccNotificationsNotificationHub = `{
         "type": "string"
       }
     },
-    "description": "Definition of AWS::Notifications::NotificationHub Resource Type",
+    "description": "Resource Type definition for AWS::Notifications::NotificationHub",
     "description_kind": "plain"
   },
   "version": 1

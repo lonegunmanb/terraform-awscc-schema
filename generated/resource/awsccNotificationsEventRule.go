@@ -82,7 +82,7 @@ const awsccNotificationsEventRule = `{
         }
       }
     },
-    "description": "Definition of AWS::Notifications::EventRule Resource Type",
+    "description": "Resource Type definition for AWS::Notifications::EventRule",
     "description_kind": "plain"
   },
   "version": 1

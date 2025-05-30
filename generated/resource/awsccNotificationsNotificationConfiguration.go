@@ -70,7 +70,7 @@ const awsccNotificationsNotificationConfiguration = `{
         "optional": true
       }
     },
-    "description": "Definition of AWS::Notifications::NotificationConfiguration Resource Type",
+    "description": "Resource Type definition for AWS::Notifications::NotificationConfiguration",
     "description_kind": "plain"
   },
   "version": 1

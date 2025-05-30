@@ -175,6 +175,28 @@ const awsccBedrockFlowVersion = `{
                             "nesting_mode": "single"
                           }
                         },
+                        "inline_code": {
+                          "computed": true,
+                          "description": "Inline code config strucuture, contains code configs",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "code": {
+                                "computed": true,
+                                "description": "The inline code entered by customers. max size is 5MB.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "language": {
+                                "computed": true,
+                                "description": "Enum encodes the supported language type",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "input": {
                           "computed": true,
                           "description": "Input flow node configuration",

@@ -66,6 +66,12 @@ const awsccEc2Ipam = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "metered_account": {
+        "computed": true,
+        "description": "A metered account is an account that is charged for active IP addresses managed in IPAM",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "operating_regions": {
         "computed": true,
         "description": "The regions IPAM is enabled for. Allows pools to be created in these regions, as well as enabling monitoring",

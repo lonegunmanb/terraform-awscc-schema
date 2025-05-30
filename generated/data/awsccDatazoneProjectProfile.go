@@ -6,62 +6,60 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccBedrockFlowAlias = `{
+const awsccDatazoneProjectProfile = `{
   "block": {
     "attributes": {
-      "arn": {
-        "computed": true,
-        "description": "Arn of the Flow Alias",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "concurrency_configuration": {
+      "allowed_designations": {
         "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "max_concurrency": {
-              "computed": true,
-              "description": "Number of nodes executed concurrently at a time",
-              "description_kind": "plain",
-              "type": "number"
-            },
-            "type": {
+            "designation_id": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             }
           },
-          "nesting_mode": "single"
+          "nesting_mode": "list"
         }
+      },
+      "change_log": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "created_at": {
         "computed": true,
-        "description": "Time Stamp.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "created_by": {
+        "computed": true,
         "description_kind": "plain",
         "type": "string"
       },
       "description": {
         "computed": true,
-        "description": "Description of the Resource.",
         "description_kind": "plain",
         "type": "string"
       },
-      "flow_alias_id": {
+      "domain_id": {
         "computed": true,
-        "description": "Id for a Flow Alias generated at the server side.",
         "description_kind": "plain",
         "type": "string"
       },
-      "flow_arn": {
+      "domain_identifier": {
         "computed": true,
-        "description": "Arn representation of the Flow",
         "description_kind": "plain",
         "type": "string"
       },
-      "flow_id": {
+      "domain_unit_id": {
         "computed": true,
-        "description": "Identifier for a flow resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "domain_unit_identifier": {
+        "computed": true,
         "description_kind": "plain",
         "type": "string"
       },
@@ -71,21 +69,38 @@ const awsccBedrockFlowAlias = `{
         "required": true,
         "type": "string"
       },
-      "name": {
+      "identifier": {
         "computed": true,
-        "description": "Name for a resource.",
         "description_kind": "plain",
         "type": "string"
       },
-      "routing_configuration": {
+      "last_updated_at": {
         "computed": true,
-        "description": "Routing configuration for a Flow alias.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "name": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "project_profile_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "project_scopes": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "flow_version": {
+            "name": {
               "computed": true,
-              "description": "Version.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "policy": {
+              "computed": true,
               "description_kind": "plain",
               "type": "string"
             }
@@ -93,30 +108,20 @@ const awsccBedrockFlowAlias = `{
           "nesting_mode": "list"
         }
       },
-      "tags": {
+      "status": {
         "computed": true,
-        "description": "A map of tag keys and values",
-        "description_kind": "plain",
-        "type": [
-          "map",
-          "string"
-        ]
-      },
-      "updated_at": {
-        "computed": true,
-        "description": "Time Stamp.",
         "description_kind": "plain",
         "type": "string"
       }
     },
-    "description": "Data Source schema for AWS::Bedrock::FlowAlias",
+    "description": "Data Source schema for AWS::DataZone::ProjectProfile",
     "description_kind": "plain"
   },
   "version": 0
 }`
 
-func AwsccBedrockFlowAliasSchema() *tfjson.Schema {
+func AwsccDatazoneProjectProfileSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccBedrockFlowAlias), &result)
+	_ = json.Unmarshal([]byte(awsccDatazoneProjectProfile), &result)
 	return &result
 }
