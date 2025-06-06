@@ -455,6 +455,11 @@ const awsccDeadlineFleet = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "storage_profile_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"

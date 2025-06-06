@@ -6,51 +6,25 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccApigatewayDomainNameV2 = `{
+const awsccNetworkfirewallVpcEndpointAssociation = `{
   "block": {
     "attributes": {
-      "certificate_arn": {
+      "description": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
       },
-      "domain_name": {
+      "endpoint_id": {
         "computed": true,
+        "description": "An endpoint Id.",
         "description_kind": "plain",
         "type": "string"
       },
-      "domain_name_arn": {
+      "firewall_arn": {
         "computed": true,
-        "description": "The amazon resource name (ARN) of the domain name resource.",
+        "description": "A resource ARN.",
         "description_kind": "plain",
         "type": "string"
-      },
-      "domain_name_id": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "endpoint_configuration": {
-        "computed": true,
-        "description_kind": "plain",
-        "nested_type": {
-          "attributes": {
-            "ip_address_type": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": "string"
-            },
-            "types": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": [
-                "list",
-                "string"
-              ]
-            }
-          },
-          "nesting_mode": "single"
-        }
       },
       "id": {
         "description": "Uniquely identifies the resource.",
@@ -58,21 +32,26 @@ const awsccApigatewayDomainNameV2 = `{
         "required": true,
         "type": "string"
       },
-      "policy": {
+      "subnet_mapping": {
         "computed": true,
         "description_kind": "plain",
-        "type": "string"
-      },
-      "routing_mode": {
-        "computed": true,
-        "description": "The valid routing modes are [BASE_PATH_MAPPING_ONLY], [ROUTING_RULE_THEN_BASE_PATH_MAPPING] and [ROUTING_RULE_ONLY]. All other inputs are invalid.",
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "security_policy": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
+        "nested_type": {
+          "attributes": {
+            "ip_address_type": {
+              "computed": true,
+              "description": "A IPAddressType",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "subnet_id": {
+              "computed": true,
+              "description": "A SubnetId.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "tags": {
         "computed": true,
@@ -90,18 +69,34 @@ const awsccApigatewayDomainNameV2 = `{
               "type": "string"
             }
           },
-          "nesting_mode": "list"
+          "nesting_mode": "set"
         }
+      },
+      "vpc_endpoint_association_arn": {
+        "computed": true,
+        "description": "A resource ARN.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "vpc_endpoint_association_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "vpc_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
-    "description": "Data Source schema for AWS::ApiGateway::DomainNameV2",
+    "description": "Data Source schema for AWS::NetworkFirewall::VpcEndpointAssociation",
     "description_kind": "plain"
   },
   "version": 0
 }`
 
-func AwsccApigatewayDomainNameV2Schema() *tfjson.Schema {
+func AwsccNetworkfirewallVpcEndpointAssociationSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccApigatewayDomainNameV2), &result)
+	_ = json.Unmarshal([]byte(awsccNetworkfirewallVpcEndpointAssociation), &result)
 	return &result
 }

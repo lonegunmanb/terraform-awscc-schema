@@ -103,6 +103,11 @@ const awsccApigatewayv2DomainName = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "routing_mode": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "The collection of tags associated with a domain name.",

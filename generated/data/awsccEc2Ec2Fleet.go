@@ -69,6 +69,74 @@ const awsccEc2Ec2Fleet = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "block_device_mappings": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "device_name": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "ebs": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "delete_on_termination": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
+                              },
+                              "encrypted": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
+                              },
+                              "iops": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "kms_key_id": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "snapshot_id": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "volume_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "volume_type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "no_device": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "virtual_name": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
                   "instance_requirements": {
                     "computed": true,
                     "description_kind": "plain",

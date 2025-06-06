@@ -112,6 +112,34 @@ const awsccCloudtrailEventDataStore = `{
         "optional": true,
         "type": "string"
       },
+      "context_key_selectors": {
+        "computed": true,
+        "description": "An array that enriches event records in an existing event data store by including additional information specified in individual ContexKeySelector entries. If you add ContextKeySelectors, you must set MaxEventSize to Large.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "equals": {
+              "computed": true,
+              "description": "An operator that includes events that match the exact value of the event record field specified in Type.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "set",
+                "string"
+              ]
+            },
+            "type": {
+              "computed": true,
+              "description": "Specifies the type of the event record field in ContextKeySelector. Valid values include RequestContext, TagContext.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
       "created_timestamp": {
         "computed": true,
         "description": "The timestamp of the event data store's creation.",
@@ -179,6 +207,13 @@ const awsccCloudtrailEventDataStore = `{
       "kms_key_id": {
         "computed": true,
         "description": "Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name prefixed by 'alias/', a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "max_event_size": {
+        "computed": true,
+        "description": "Specifies the maximum size allowed for the event. Valid values are Standard and Large. If you add ContextKeySelectors, this value must be set to Large.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

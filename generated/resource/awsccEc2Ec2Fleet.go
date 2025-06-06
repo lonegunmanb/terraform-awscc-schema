@@ -75,6 +75,86 @@ const awsccEc2Ec2Fleet = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "block_device_mappings": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "device_name": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "ebs": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "delete_on_termination": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "bool"
+                              },
+                              "encrypted": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "bool"
+                              },
+                              "iops": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              },
+                              "kms_key_id": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "snapshot_id": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "volume_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              },
+                              "volume_type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "no_device": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "virtual_name": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
                   "instance_requirements": {
                     "computed": true,
                     "description_kind": "plain",

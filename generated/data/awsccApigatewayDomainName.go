@@ -103,6 +103,11 @@ const awsccApigatewayDomainName = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "routing_mode": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "security_policy": {
         "computed": true,
         "description_kind": "plain",

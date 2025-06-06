@@ -9,28 +9,6 @@ import (
 const awsccDatazoneProjectProfile = `{
   "block": {
     "attributes": {
-      "allowed_designations": {
-        "computed": true,
-        "description_kind": "plain",
-        "nested_type": {
-          "attributes": {
-            "designation_id": {
-              "computed": true,
-              "description_kind": "plain",
-              "optional": true,
-              "type": "string"
-            }
-          },
-          "nesting_mode": "list"
-        },
-        "optional": true
-      },
-      "change_log": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
       "created_at": {
         "computed": true,
         "description_kind": "plain",
@@ -94,28 +72,6 @@ const awsccDatazoneProjectProfile = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
-      },
-      "project_scopes": {
-        "computed": true,
-        "description_kind": "plain",
-        "nested_type": {
-          "attributes": {
-            "name": {
-              "computed": true,
-              "description_kind": "plain",
-              "optional": true,
-              "type": "string"
-            },
-            "policy": {
-              "computed": true,
-              "description_kind": "plain",
-              "optional": true,
-              "type": "string"
-            }
-          },
-          "nesting_mode": "list"
-        },
-        "optional": true
       },
       "status": {
         "computed": true,

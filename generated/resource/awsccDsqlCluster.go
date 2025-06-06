@@ -34,6 +34,33 @@ const awsccDsqlCluster = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "multi_region_properties": {
+        "computed": true,
+        "description": "The Multi-region properties associated to this cluster.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "clusters": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "set",
+                "string"
+              ]
+            },
+            "witness_region": {
+              "computed": true,
+              "description": "The witness region in a multi-region cluster.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "resource_arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN) for the cluster.",

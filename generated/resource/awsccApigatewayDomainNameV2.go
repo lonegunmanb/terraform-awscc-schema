@@ -69,6 +69,13 @@ const awsccApigatewayDomainNameV2 = `{
         "optional": true,
         "type": "string"
       },
+      "routing_mode": {
+        "computed": true,
+        "description": "The valid routing modes are [BASE_PATH_MAPPING_ONLY], [ROUTING_RULE_THEN_BASE_PATH_MAPPING] and [ROUTING_RULE_ONLY]. All other inputs are invalid.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "security_policy": {
         "computed": true,
         "description_kind": "plain",
