@@ -156,6 +156,19 @@ const awsccCustomerprofilesObjectType = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "max_available_profile_object_count": {
+        "computed": true,
+        "description": "The maximum available number of profile objects",
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "max_profile_object_count": {
+        "computed": true,
+        "description": "The maximum number of profile objects for this object type",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "object_type_name": {
         "description": "The name of the profile object type.",
         "description_kind": "plain",

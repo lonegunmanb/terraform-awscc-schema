@@ -27,6 +27,16 @@ const awsccEfsMountTarget = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "ip_address_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "ipv_6_address": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "mount_target_id": {
         "computed": true,
         "description_kind": "plain",

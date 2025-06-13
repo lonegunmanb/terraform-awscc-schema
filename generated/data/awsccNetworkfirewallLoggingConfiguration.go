@@ -9,6 +9,11 @@ import (
 const awsccNetworkfirewallLoggingConfiguration = `{
   "block": {
     "attributes": {
+      "enable_monitoring_dashboard": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "firewall_arn": {
         "computed": true,
         "description": "A resource ARN.",

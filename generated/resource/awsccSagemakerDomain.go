@@ -1452,6 +1452,66 @@ const awsccSagemakerDomain = `{
                 "list",
                 "string"
               ]
+            },
+            "unified_studio_settings": {
+              "computed": true,
+              "description": "A collection of settings that apply to an Amazon SageMaker AI domain when you use it in Amazon SageMaker Unified Studio.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "domain_account_id": {
+                    "computed": true,
+                    "description": "The ID of the AWS account that has the Amazon SageMaker Unified Studio domain. The default value, if you don't specify an ID, is the ID of the account that has the Amazon SageMaker AI domain.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "domain_id": {
+                    "computed": true,
+                    "description": "The ID of the Amazon SageMaker Unified Studio domain associated with this domain.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "domain_region": {
+                    "computed": true,
+                    "description": "The AWS Region where the domain is located in Amazon SageMaker Unified Studio. The default value, if you don't specify a Region, is the Region where the Amazon SageMaker AI domain is located.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "environment_id": {
+                    "computed": true,
+                    "description": "The ID of the environment that Amazon SageMaker Unified Studio associates with the domain.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "project_id": {
+                    "computed": true,
+                    "description": "The ID of the Amazon SageMaker Unified Studio project that corresponds to the domain.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "project_s3_path": {
+                    "computed": true,
+                    "description": "The location where Amazon S3 stores temporary execution data and other artifacts for the project that corresponds to the domain.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "studio_web_portal_access": {
+                    "computed": true,
+                    "description": "Sets whether you can access the domain in Amazon SageMaker Studio:\n\nENABLED\nYou can access the domain in Amazon SageMaker Studio. If you migrate the domain to Amazon SageMaker Unified Studio, you can access it in both studio interfaces.\nDISABLED\nYou can't access the domain in Amazon SageMaker Studio. If you migrate the domain to Amazon SageMaker Unified Studio, you can access it only in that studio interface.\n",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

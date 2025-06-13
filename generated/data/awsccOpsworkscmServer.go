@@ -127,6 +127,11 @@ const awsccOpsworkscmServer = `{
           "string"
         ]
       },
+      "server_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "server_name": {
         "computed": true,
         "description_kind": "plain",

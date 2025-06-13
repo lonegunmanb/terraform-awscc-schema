@@ -147,6 +147,41 @@ const awsccAthenaWorkGroup = `{
               "optional": true,
               "type": "string"
             },
+            "managed_query_results_configuration": {
+              "computed": true,
+              "description": "The configuration for the managed query results and encryption option. ResultConfiguration and ManagedQueryResultsConfiguration cannot be set at the same time",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
+                  "encryption_configuration": {
+                    "computed": true,
+                    "description": "Indicates the encryption configuration for Athena Managed Storage. If not setting this field, Managed Storage will encrypt the query results with Athena's encryption key",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "kms_key": {
+                          "computed": true,
+                          "description": "For SSE-KMS and CSE-KMS, this is the KMS key ARN or ID. ",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "publish_cloudwatch_metrics_enabled": {
               "computed": true,
               "description": "Indicates that the Amazon CloudWatch metrics are enabled for the workgroup.",
@@ -309,6 +344,41 @@ const awsccAthenaWorkGroup = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "managed_query_results_configuration": {
+              "computed": true,
+              "description": "The configuration for the managed query results and encryption option. ResultConfiguration and ManagedQueryResultsConfiguration cannot be set at the same time",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
+                  "encryption_configuration": {
+                    "computed": true,
+                    "description": "Indicates the encryption configuration for Athena Managed Storage. If not setting this field, Managed Storage will encrypt the query results with Athena's encryption key",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "kms_key": {
+                          "computed": true,
+                          "description": "For SSE-KMS and CSE-KMS, this is the KMS key ARN or ID. ",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "publish_cloudwatch_metrics_enabled": {
               "computed": true,

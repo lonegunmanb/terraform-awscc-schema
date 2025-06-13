@@ -27,6 +27,19 @@ const awsccEksPodIdentityAssociation = `{
         "required": true,
         "type": "string"
       },
+      "disable_session_tags": {
+        "computed": true,
+        "description": "The Disable Session Tags of the pod identity association.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
+      "external_id": {
+        "computed": true,
+        "description": "The External Id of the pod identity association.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -75,6 +88,13 @@ const awsccEksPodIdentityAssociation = `{
           "nesting_mode": "set"
         },
         "optional": true
+      },
+      "target_role_arn": {
+        "computed": true,
+        "description": "The Target Role Arn of the pod identity association.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       }
     },
     "description": "An object representing an Amazon EKS PodIdentityAssociation.",

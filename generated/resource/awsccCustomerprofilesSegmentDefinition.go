@@ -87,14 +87,14 @@ const awsccCustomerprofilesSegmentDefinition = `{
                                         "attributes": {
                                           "end": {
                                             "computed": true,
-                                            "description": "The ending point for this overridden range.",
+                                            "description": "The ending point for this overridden range. Positive numbers indicate how many days in the past data should be included, and negative numbers indicate how many days in the future.",
                                             "description_kind": "plain",
                                             "optional": true,
                                             "type": "number"
                                           },
                                           "start": {
                                             "computed": true,
-                                            "description": "The starting point for this overridden range.",
+                                            "description": "The starting point for this overridden range. Positive numbers indicate how many days in the past data should be included, and negative numbers indicate how many days in the future.",
                                             "description_kind": "plain",
                                             "optional": true,
                                             "type": "number"

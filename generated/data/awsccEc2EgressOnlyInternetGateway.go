@@ -21,6 +21,26 @@ const awsccEc2EgressOnlyInternetGateway = `{
         "required": true,
         "type": "string"
       },
+      "tags": {
+        "computed": true,
+        "description": "Any tags assigned to the egress only internet gateway.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "vpc_id": {
         "computed": true,
         "description": "The ID of the VPC for which to create the egress-only internet gateway.",
