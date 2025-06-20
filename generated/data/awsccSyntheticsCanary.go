@@ -165,6 +165,12 @@ const awsccSyntheticsCanary = `{
                 "string"
               ]
             },
+            "ephemeral_storage": {
+              "computed": true,
+              "description": "Provide ephemeralStorage available for canary in MB",
+              "description_kind": "plain",
+              "type": "number"
+            },
             "memory_in_mb": {
               "computed": true,
               "description": "Provide maximum memory available for canary in MB",

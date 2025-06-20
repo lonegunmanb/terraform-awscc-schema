@@ -152,6 +152,7 @@ const awsccOpsworkscmServer = `{
       "server_name": {
         "computed": true,
         "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "service_role_arn": {

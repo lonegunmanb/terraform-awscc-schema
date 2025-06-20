@@ -256,6 +256,20 @@ const awsccAmplifyApp = `{
         "required": true,
         "type": "string"
       },
+      "job_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "build_compute_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "name": {
         "computed": true,
         "description_kind": "plain",

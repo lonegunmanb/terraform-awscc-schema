@@ -31,8 +31,9 @@ const awsccCleanroomsCollaboration = `{
         "type": "string"
       },
       "creator_member_abilities": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": [
           "set",
           "string"
@@ -193,22 +194,26 @@ const awsccCleanroomsCollaboration = `{
         "type": "string"
       },
       "members": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "account_id": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "display_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "member_abilities": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "set",
                 "string"
@@ -320,7 +325,7 @@ const awsccCleanroomsCollaboration = `{
           },
           "nesting_mode": "list"
         },
-        "required": true
+        "optional": true
       },
       "name": {
         "description_kind": "plain",

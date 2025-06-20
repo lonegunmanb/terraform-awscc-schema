@@ -30,6 +30,21 @@ const awsccEc2Subnet = `{
         "optional": true,
         "type": "string"
       },
+      "block_public_access_states": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "internet_gateway_block_mode": {
+              "computed": true,
+              "description": "The mode of VPC BPA. Options here are off, block-bidirectional, block-ingress ",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "cidr_block": {
         "computed": true,
         "description": "The IPv4 CIDR block assigned to the subnet.\n If you update this property, we create a new subnet, and then delete the existing one.",
@@ -109,7 +124,7 @@ const awsccEc2Subnet = `{
       },
       "map_public_ip_on_launch": {
         "computed": true,
-        "description": "Indicates whether instances launched in this subnet receive a public IPv4 address. The default value is ` + "`" + `` + "`" + `false` + "`" + `` + "`" + `.\n  AWS charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the *Public IPv4 Address* tab on the [VPC pricing page](https://docs.aws.amazon.com/vpc/pricing/).",
+        "description": "Indicates whether instances launched in this subnet receive a public IPv4 address. The default value is ` + "`" + `` + "`" + `false` + "`" + `` + "`" + `.\n AWS charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the *Public IPv4 Address* tab on the [VPC pricing page](https://docs.aws.amazon.com/vpc/pricing/).",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"

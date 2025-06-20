@@ -129,7 +129,7 @@ const awsccDynamodbTable = `{
             },
             "on_demand_throughput": {
               "computed": true,
-              "description": "The maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify ` + "`" + `` + "`" + `MaxReadRequestUnits` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `MaxWriteRequestUnits` + "`" + `` + "`" + `, or both.",
+              "description": "The maximum number of read and write units for the specified global secondary index. If you use this parameter, you must specify ` + "`" + `` + "`" + `MaxReadRequestUnits` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `MaxWriteRequestUnits` + "`" + `` + "`" + `, or both. You must use either ` + "`" + `` + "`" + `OnDemandThroughput` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `ProvisionedThroughput` + "`" + `` + "`" + ` based on your table's capacity mode.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -182,7 +182,7 @@ const awsccDynamodbTable = `{
             },
             "provisioned_throughput": {
               "computed": true,
-              "description": "Represents the provisioned throughput settings for the specified global secondary index.\n For current minimum and maximum provisioned throughput values, see [Service, Account, and Table Quotas](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html) in the *Amazon DynamoDB Developer Guide*.",
+              "description": "Represents the provisioned throughput settings for the specified global secondary index. You must use either ` + "`" + `` + "`" + `OnDemandThroughput` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `ProvisionedThroughput` + "`" + `` + "`" + ` based on your table's capacity mode.\n For current minimum and maximum provisioned throughput values, see [Service, Account, and Table Quotas](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html) in the *Amazon DynamoDB Developer Guide*.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {

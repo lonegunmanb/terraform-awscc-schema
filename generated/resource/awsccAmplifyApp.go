@@ -294,6 +294,22 @@ const awsccAmplifyApp = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "job_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "build_compute_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "name": {
         "description_kind": "plain",
         "required": true,

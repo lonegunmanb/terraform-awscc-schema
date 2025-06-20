@@ -29,20 +29,17 @@ const awsccLambdaEventSourceMapping = `{
                 "attributes": {
                   "access_configs": {
                     "computed": true,
-                    "description": "An array of access configuration objects that tell Lambda how to authenticate with your schema registry.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "type": {
                           "computed": true,
-                          "description": "The type of authentication Lambda uses to access your schema registry.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "uri": {
                           "computed": true,
-                          "description": "The URI of the secret (Secrets Manager secret ARN) to authenticate with your schema registry.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -54,27 +51,23 @@ const awsccLambdaEventSourceMapping = `{
                   },
                   "event_record_format": {
                     "computed": true,
-                    "description": "The record format that Lambda delivers to your function after schema validation.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "schema_registry_uri": {
                     "computed": true,
-                    "description": "The URI for your schema registry. The correct URI format depends on the type of schema registry you're using.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "schema_validation_configs": {
                     "computed": true,
-                    "description": "An array of schema validation configuration objects, which tell Lambda the message attributes you want to validate and filter using your schema registry.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "attribute": {
                           "computed": true,
-                          "description": "The attribute you want your schema registry to validate and filter for.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -405,20 +398,17 @@ const awsccLambdaEventSourceMapping = `{
                 "attributes": {
                   "access_configs": {
                     "computed": true,
-                    "description": "An array of access configuration objects that tell Lambda how to authenticate with your schema registry.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "type": {
                           "computed": true,
-                          "description": "The type of authentication Lambda uses to access your schema registry.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "uri": {
                           "computed": true,
-                          "description": "The URI of the secret (Secrets Manager secret ARN) to authenticate with your schema registry.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -430,27 +420,23 @@ const awsccLambdaEventSourceMapping = `{
                   },
                   "event_record_format": {
                     "computed": true,
-                    "description": "The record format that Lambda delivers to your function after schema validation.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "schema_registry_uri": {
                     "computed": true,
-                    "description": "The URI for your schema registry. The correct URI format depends on the type of schema registry you're using.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "schema_validation_configs": {
                     "computed": true,
-                    "description": "An array of schema validation configuration objects, which tell Lambda the message attributes you want to validate and filter using your schema registry.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "attribute": {
                           "computed": true,
-                          "description": "The attribute you want your schema registry to validate and filter for.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
