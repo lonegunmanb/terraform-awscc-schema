@@ -76,9 +76,23 @@ const awsccNetworkmanagerVpcAttachment = `{
               "optional": true,
               "type": "bool"
             },
+            "dns_support": {
+              "computed": true,
+              "description": "Indicates whether to enable private DNS Support for Vpc Attachment. Valid Values: true | false",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
             "ipv_6_support": {
               "computed": true,
               "description": "Indicates whether to enable Ipv6 Support for Vpc Attachment. Valid Values: enable | disable",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "security_group_referencing_support": {
+              "computed": true,
+              "description": "Indicates whether to enable Security Group Referencing Support for Vpc Attachment. Valid Values: true | false",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"

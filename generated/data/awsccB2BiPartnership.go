@@ -22,6 +22,43 @@ const awsccB2BiPartnership = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "inbound_edi": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "x12": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "acknowledgment_options": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "functional_acknowledgment": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "technical_acknowledgment": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "outbound_edi": {
               "computed": true,
               "description_kind": "plain",
@@ -37,6 +74,30 @@ const awsccB2BiPartnership = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "control_numbers": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "starting_functional_group_control_number": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    },
+                                    "starting_interchange_control_number": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    },
+                                    "starting_transaction_set_control_number": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
                               "delimiters": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -84,6 +145,11 @@ const awsccB2BiPartnership = `{
                                   },
                                   "nesting_mode": "single"
                                 }
+                              },
+                              "gs_05_time_format": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
                               },
                               "interchange_control_headers": {
                                 "computed": true,
@@ -133,6 +199,30 @@ const awsccB2BiPartnership = `{
                                 "computed": true,
                                 "description_kind": "plain",
                                 "type": "bool"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "wrap_options": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "line_length": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "line_terminator": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "wrap_by": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
                               }
                             },
                             "nesting_mode": "single"

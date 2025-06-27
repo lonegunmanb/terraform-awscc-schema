@@ -1,16 +1,16 @@
-package resource_test
+package data_test
 
 import (
 	"testing"
 
 	tfjson "github.com/hashicorp/terraform-json"
-	"github.com/lonegunmanb/terraform-awscc-schema/generated/resource"
+	"github.com/lonegunmanb/terraform-awscc-schema/generated/data"
 	"github.com/stretchr/testify/assert"
 )
 
-func TestAwsccDatazoneProjectProfileSchema(t *testing.T) {
+func TestAwsccAiopsInvestigationGroupSchema(t *testing.T) {
 	defaultSchema := &tfjson.Schema{}
-	s := resource.AwsccDatazoneProjectProfileSchema()
+	s := data.AwsccAiopsInvestigationGroupSchema()
 	assert.NotNil(t, s)
 	assert.NotEqual(t, defaultSchema, s)
 }

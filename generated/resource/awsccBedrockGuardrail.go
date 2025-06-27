@@ -162,6 +162,24 @@ const awsccBedrockGuardrail = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "cross_region_config": {
+        "computed": true,
+        "description": "The system-defined guardrail profile that you?re using with your guardrail",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "guardrail_profile_arn": {
+              "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the guardrail profile",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "description": {
         "computed": true,
         "description": "Description of the guardrail or its version",

@@ -329,6 +329,13 @@ const awsccConnectcampaignsv2Campaign = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            },
+            "instance_limits_handling": {
+              "computed": true,
+              "description": "Enumeration of Instance Limits handling in a Campaign",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             }
           },
           "nesting_mode": "single"

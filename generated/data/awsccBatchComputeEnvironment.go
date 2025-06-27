@@ -124,6 +124,11 @@ const awsccBatchComputeEnvironment = `{
                             "string"
                           ]
                         },
+                        "userdata_type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "version": {
                           "computed": true,
                           "description_kind": "plain",
@@ -132,6 +137,11 @@ const awsccBatchComputeEnvironment = `{
                       },
                       "nesting_mode": "list"
                     }
+                  },
+                  "userdata_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   },
                   "version": {
                     "computed": true,

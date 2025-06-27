@@ -21,6 +21,34 @@ const awsccDsqlCluster = `{
         "description_kind": "plain",
         "type": "bool"
       },
+      "encryption_details": {
+        "computed": true,
+        "description": "The encryption configuration details for the cluster.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "encryption_status": {
+              "computed": true,
+              "description": "The status of encryption for the cluster.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "encryption_type": {
+              "computed": true,
+              "description": "The type of encryption that protects data in the cluster.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "kms_key_arn": {
+              "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the KMS key that encrypts data in the cluster.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -30,6 +58,12 @@ const awsccDsqlCluster = `{
       "identifier": {
         "computed": true,
         "description": "The ID of the created cluster.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "kms_encryption_key": {
+        "computed": true,
+        "description": "The KMS key that encrypts data on the cluster.",
         "description_kind": "plain",
         "type": "string"
       },

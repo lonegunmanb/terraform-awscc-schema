@@ -1500,6 +1500,20 @@ const awsccKendraDataSource = `{
                 "nesting_mode": "single"
               }
             },
+            "template_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "template": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "web_crawler_configuration": {
               "computed": true,
               "description_kind": "plain",

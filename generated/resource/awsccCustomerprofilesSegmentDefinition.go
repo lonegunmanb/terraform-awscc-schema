@@ -1121,6 +1121,33 @@ const awsccCustomerprofilesSegmentDefinition = `{
                                 },
                                 "optional": true
                               },
+                              "profile_type": {
+                                "computed": true,
+                                "description": "Specifies profile type based criteria for a segment.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "dimension_type": {
+                                      "computed": true,
+                                      "description": "The type of segment dimension to use for a profile type dimension.",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "values": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
                               "shipping_address": {
                                 "computed": true,
                                 "description": "The address based criteria for the segment.",

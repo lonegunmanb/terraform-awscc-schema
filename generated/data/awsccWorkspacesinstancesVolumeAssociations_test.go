@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestAwsccDatazoneProjectProfileSchema(t *testing.T) {
+func TestAwsccWorkspacesinstancesVolumeAssociationsSchema(t *testing.T) {
 	defaultSchema := &tfjson.Schema{}
-	s := data.AwsccDatazoneProjectProfileSchema()
+	s := data.AwsccWorkspacesinstancesVolumeAssociationsSchema()
 	assert.NotNil(t, s)
 	assert.NotEqual(t, defaultSchema, s)
 }
