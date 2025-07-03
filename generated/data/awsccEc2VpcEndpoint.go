@@ -114,6 +114,7 @@ const awsccEc2VpcEndpoint = `{
       },
       "service_region": {
         "computed": true,
+        "description": "Describes a Region.",
         "description_kind": "plain",
         "type": "string"
       },

@@ -184,6 +184,28 @@ const awsccCassandraTable = `{
           "nesting_mode": "single"
         }
       },
+      "cdc_specification": {
+        "computed": true,
+        "description": "Represents the CDC configuration for the table",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "status": {
+              "computed": true,
+              "description": "Indicates whether CDC is enabled or disabled for the table",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "view_type": {
+              "computed": true,
+              "description": "Specifies what data should be captured in the change data stream",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "client_side_timestamps_enabled": {
         "computed": true,
         "description": "Indicates whether client side timestamps are enabled (true) or disabled (false) on the table. False by default, once it is enabled it cannot be disabled again.",

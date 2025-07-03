@@ -212,6 +212,22 @@ const awsccDynamodbGlobalTable = `{
         },
         "optional": true
       },
+      "global_table_witnesses": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "region": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -299,6 +315,12 @@ const awsccDynamodbGlobalTable = `{
           "nesting_mode": "set"
         },
         "optional": true
+      },
+      "multi_region_consistency": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       },
       "replicas": {
         "description_kind": "plain",

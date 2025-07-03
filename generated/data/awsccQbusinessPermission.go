@@ -22,6 +22,33 @@ const awsccQbusinessPermission = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "conditions": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "condition_key": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "condition_operator": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "condition_values": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

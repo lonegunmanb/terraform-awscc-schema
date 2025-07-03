@@ -288,6 +288,13 @@ const awsccGameliftContainerFleet = `{
               "optional": true,
               "type": "string"
             },
+            "log_group_arn": {
+              "computed": true,
+              "description": "If log destination is CLOUDWATCH, logs are sent to the specified log group in Amazon CloudWatch.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "s3_bucket_name": {
               "computed": true,
               "description": "The name of the S3 bucket to pull logs from if S3 is the LogDestination",
