@@ -85,6 +85,11 @@ const awsccRdsDbInstance = `{
         "description_kind": "plain",
         "type": "number"
       },
+      "backup_target": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "ca_certificate_identifier": {
         "computed": true,
         "description": "The identifier of the CA certificate for this DB instance.\n For more information, see [Using SSL/TLS to encrypt a connection to a DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html) in the *Amazon RDS User Guide* and [Using SSL/TLS to encrypt a connection to a DB cluster](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html) in the *Amazon Aurora User Guide*.",
@@ -93,7 +98,7 @@ const awsccRdsDbInstance = `{
       },
       "certificate_details": {
         "computed": true,
-        "description": "The details of the DB instance’s server certificate.\n For more information, see [Using SSL/TLS to encrypt a connection to a DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html) in the *Amazon RDS User Guide* and [Using SSL/TLS to encrypt a connection to a DB cluster](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html) in the *Amazon Aurora User Guide*.",
+        "description": "The details of the DB instance?s server certificate.\n For more information, see [Using SSL/TLS to encrypt a connection to a DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html) in the *Amazon RDS User Guide* and [Using SSL/TLS to encrypt a connection to a DB cluster](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html) in the *Amazon Aurora User Guide*.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -105,7 +110,7 @@ const awsccRdsDbInstance = `{
             },
             "valid_till": {
               "computed": true,
-              "description": "The expiration date of the DB instance’s server certificate.",
+              "description": "The expiration date of the DB instance?s server certificate.",
               "description_kind": "plain",
               "type": "string"
             }

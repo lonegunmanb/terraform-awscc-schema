@@ -27,6 +27,24 @@ const awsccBedrockGuardrail = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "content_filters_tier_config": {
+              "computed": true,
+              "description": "Guardrail tier config for content policy",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "tier_name": {
+                    "computed": true,
+                    "description": "Tier name for tier configuration in content filters policy",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "filters_config": {
               "computed": true,
               "description": "List of content filter configs in content policy.",
@@ -463,6 +481,24 @@ const awsccBedrockGuardrail = `{
                   }
                 },
                 "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "topics_tier_config": {
+              "computed": true,
+              "description": "Guardrail tier config for topic policy",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "tier_name": {
+                    "computed": true,
+                    "description": "Tier name for tier configuration in topic policy",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
               },
               "optional": true
             }

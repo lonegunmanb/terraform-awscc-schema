@@ -1,0 +1,497 @@
+package resource
+
+import (
+	"encoding/json"
+
+	tfjson "github.com/hashicorp/terraform-json"
+)
+
+const awsccElasticloadbalancingv2Listener = `{
+  "block": {
+    "attributes": {
+      "alpn_policy": {
+        "computed": true,
+        "description": "[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
+      "certificates": {
+        "computed": true,
+        "description": "The default SSL server certificate for a secure listener. You must provide exactly one certificate if the listener protocol is HTTPS or TLS.\n To create a certificate list for a secure listener, use [AWS::ElasticLoadBalancingV2::ListenerCertificate](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html).",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "certificate_arn": {
+              "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the certificate.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
+      "default_actions": {
+        "description": "The actions for the default rule. You cannot define a condition for a default rule.\n To create additional rules for an Application Load Balancer, use [AWS::ElasticLoadBalancingV2::ListenerRule](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html).",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "authenticate_cognito_config": {
+              "computed": true,
+              "description": "[HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `authenticate-cognito` + "`" + `` + "`" + `.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "authentication_request_extra_params": {
+                    "computed": true,
+                    "description": "The query parameters (up to 10) to include in the redirect request to the authorization endpoint.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  },
+                  "on_unauthenticated_request": {
+                    "computed": true,
+                    "description": "The behavior if the user is not authenticated. The following are possible values:\n  +  deny` + "`" + `` + "`" + `` + "`" + `` + "`" + ` - Return an HTTP 401 Unauthorized error.\n  +  allow` + "`" + `` + "`" + `` + "`" + `` + "`" + ` - Allow the request to be forwarded to the target.\n  +  authenticate` + "`" + `` + "`" + `` + "`" + `` + "`" + ` - Redirect the request to the IdP authorization endpoint. This is the default value.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "scope": {
+                    "computed": true,
+                    "description": "The set of user claims to be requested from the IdP. The default is ` + "`" + `` + "`" + `openid` + "`" + `` + "`" + `.\n To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "session_cookie_name": {
+                    "computed": true,
+                    "description": "The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "session_timeout": {
+                    "computed": true,
+                    "description": "The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "user_pool_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the Amazon Cognito user pool.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "user_pool_client_id": {
+                    "computed": true,
+                    "description": "The ID of the Amazon Cognito user pool client.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "user_pool_domain": {
+                    "computed": true,
+                    "description": "The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "authenticate_oidc_config": {
+              "computed": true,
+              "description": "[HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `authenticate-oidc` + "`" + `` + "`" + `.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "authentication_request_extra_params": {
+                    "computed": true,
+                    "description": "The query parameters (up to 10) to include in the redirect request to the authorization endpoint.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  },
+                  "authorization_endpoint": {
+                    "computed": true,
+                    "description": "The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "client_id": {
+                    "computed": true,
+                    "description": "The OAuth 2.0 client identifier.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "client_secret": {
+                    "computed": true,
+                    "description": "The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule, you can omit this parameter if you set ` + "`" + `` + "`" + `UseExistingClientSecret` + "`" + `` + "`" + ` to true.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "issuer": {
+                    "computed": true,
+                    "description": "The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "on_unauthenticated_request": {
+                    "computed": true,
+                    "description": "The behavior if the user is not authenticated. The following are possible values:\n  +  deny` + "`" + `` + "`" + `` + "`" + `` + "`" + ` - Return an HTTP 401 Unauthorized error.\n  +  allow` + "`" + `` + "`" + `` + "`" + `` + "`" + ` - Allow the request to be forwarded to the target.\n  +  authenticate` + "`" + `` + "`" + `` + "`" + `` + "`" + ` - Redirect the request to the IdP authorization endpoint. This is the default value.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "scope": {
+                    "computed": true,
+                    "description": "The set of user claims to be requested from the IdP. The default is ` + "`" + `` + "`" + `openid` + "`" + `` + "`" + `.\n To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "session_cookie_name": {
+                    "computed": true,
+                    "description": "The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "session_timeout": {
+                    "computed": true,
+                    "description": "The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "token_endpoint": {
+                    "computed": true,
+                    "description": "The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "use_existing_client_secret": {
+                    "computed": true,
+                    "description": "Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can omit this parameter or set it to false.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
+                  "user_info_endpoint": {
+                    "computed": true,
+                    "description": "The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "fixed_response_config": {
+              "computed": true,
+              "description": "[Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `fixed-response` + "`" + `` + "`" + `.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "content_type": {
+                    "computed": true,
+                    "description": "The content type.\n Valid Values: text/plain | text/css | text/html | application/javascript | application/json",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "message_body": {
+                    "computed": true,
+                    "description": "The message.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "status_code": {
+                    "computed": true,
+                    "description": "The HTTP response code (2XX, 4XX, or 5XX).",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "forward_config": {
+              "computed": true,
+              "description": "Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `forward` + "`" + `` + "`" + `. If you specify both ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `TargetGroupArn` + "`" + `` + "`" + `, you can specify only one target group using ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` and it must be the same target group specified in ` + "`" + `` + "`" + `TargetGroupArn` + "`" + `` + "`" + `.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "target_group_stickiness_config": {
+                    "computed": true,
+                    "description": "Information about the target group stickiness for a rule.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "duration_seconds": {
+                          "computed": true,
+                          "description": "The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "enabled": {
+                          "computed": true,
+                          "description": "Indicates whether target group stickiness is enabled.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "target_groups": {
+                    "computed": true,
+                    "description": "Information about how traffic will be distributed between multiple target groups in a forward rule.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "target_group_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the target group.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "weight": {
+                          "computed": true,
+                          "description": "The weight. The range is 0 to 999.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "order": {
+              "computed": true,
+              "description": "The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "redirect_config": {
+              "computed": true,
+              "description": "[Application Load Balancer] Information for creating a redirect action. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `redirect` + "`" + `` + "`" + `.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "host": {
+                    "computed": true,
+                    "description": "The hostname. This component is not percent-encoded. The hostname can contain #{host}.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "path": {
+                    "computed": true,
+                    "description": "The absolute path, starting with the leading \"/\". This component is not percent-encoded. The path can contain #{host}, #{path}, and #{port}.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "port": {
+                    "computed": true,
+                    "description": "The port. You can specify a value from 1 to 65535 or #{port}.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "protocol": {
+                    "computed": true,
+                    "description": "The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You can't redirect HTTPS to HTTP.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "query": {
+                    "computed": true,
+                    "description": "The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the leading \"?\", as it is automatically added. You can specify any of the reserved keywords.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "status_code": {
+                    "computed": true,
+                    "description": "The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "target_group_arn": {
+              "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the target group. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `forward` + "`" + `` + "`" + ` and you want to route to a single target group. To route to one or more target groups, use ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` instead.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "type": {
+              "description": "The type of action.",
+              "description_kind": "plain",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "required": true
+      },
+      "id": {
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "listener_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "listener_attributes": {
+        "computed": true,
+        "description": "The listener attributes.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The name of the attribute.\n The following attribute is supported by Network Load Balancers, and Gateway Load Balancers.\n  +  ` + "`" + `` + "`" + `tcp.idle_timeout.seconds` + "`" + `` + "`" + ` - The tcp idle timeout value, in seconds. The valid range is 60-6000 seconds. The default is 350 seconds.\n  \n The following attributes are only supported by Application Load Balancers.\n  +  ` + "`" + `` + "`" + `routing.http.request.x_amzn_mtls_clientcert_serial_number.header_name` + "`" + `` + "`" + ` - Enables you to modify the header name of the *X-Amzn-Mtls-Clientcert-Serial-Number* HTTP request header.\n  +  ` + "`" + `` + "`" + `routing.http.request.x_amzn_mtls_clientcert_issuer.header_name` + "`" + `` + "`" + ` - Enables you to modify the header name of the *X-Amzn-Mtls-Clientcert-Issuer* HTTP request header.\n  +  ` + "`" + `` + "`" + `routing.http.request.x_amzn_mtls_clientcert_subject.header_name` + "`" + `` + "`" + ` - Enables you to modify the header name of the *X-Amzn-Mtls-Clientcert-Subject* HTTP request header.\n  +  ` + "`" + `` + "`" + `routing.http.request.x_amzn_mtls_clientcert_validity.header_name` + "`" + `` + "`" + ` - Enables you to modify the header name of the *X-Amzn-Mtls-Clientcert-Validity* HTTP request header.\n  +  ` + "`" + `` + "`" + `routing.http.request.x_amzn_mtls_clientcert_leaf.header_name` + "`" + `` + "`" + ` - Enables you to modify the header name of the *X-Amzn-Mtls-Clientcert-Leaf* HTTP request header.\n  +  ` + "`" + `` + "`" + `routing.http.request.x_amzn_mtls_clientcert.header_name` + "`" + `` + "`" + ` - Enables you to modify the header name of the *X-Amzn-Mtls-Clientcert* HTTP request header.\n  +  ` + "`" + `` + "`" + `routing.http.request.x_amzn_tls_version.header_name` + "`" + `` + "`" + ` - Enables you to modify the header name of the *X-Amzn-Tls-Version* HTTP request header.\n  +  ` + "`" + `` + "`" + `routing.http.request.x_amzn_tls_cipher_suite.header_name` + "`" + `` + "`" + ` - Enables you to modify the header name of the *X-Amzn-Tls-Cipher-Suite* HTTP request header.\n  +  ` + "`" + `` + "`" + `routing.http.response.server.enabled` + "`" + `` + "`" + ` - Enables you to allow or remove the HTTP response server header.\n  +  ` + "`" + `` + "`" + `routing.http.response.strict_transport_security.header_value` + "`" + `` + "`" + ` - Informs browsers that the site should only be accessed using HTTPS, and that any future attempts to access it using HTTP should automatically be converted to HTTPS.\n  +  ` + "`" + `` + "`" + `routing.http.response.access_control_allow_origin.header_value` + "`" + `` + "`" + ` - Specifies which origins are allowed to access the server.\n  +  ` + "`" + `` + "`" + `routing.http.response.access_control_allow_methods.header_value` + "`" + `` + "`" + ` - Returns which HTTP methods are allowed when accessing the server from a different origin.\n  +  ` + "`" + `` + "`" + `routing.http.response.access_control_allow_headers.header_value` + "`" + `` + "`" + ` - Specifies which headers can be used during the request.\n  +  ` + "`" + `` + "`" + `routing.http.response.access_control_allow_credentials.header_value` + "`" + `` + "`" + ` - Indicates whether the browser should include credentials such as cookies or authentication when making requests.\n  +  ` + "`" + `` + "`" + `routing.http.response.access_control_expose_headers.header_value` + "`" + `` + "`" + ` - Returns which headers the browser can expose to the requesting client.\n  +  ` + "`" + `` + "`" + `routing.http.response.access_control_max_age.header_value` + "`" + `` + "`" + ` - Specifies how long the results of a preflight request can be cached, in seconds.\n  +  ` + "`" + `` + "`" + `routing.http.response.content_security_policy.header_value` + "`" + `` + "`" + ` - Specifies restrictions enforced by the browser to help minimize the risk of certain types of security threats.\n  +  ` + "`" + `` + "`" + `routing.http.response.x_content_type_options.header_value` + "`" + `` + "`" + ` - Indicates whether the MIME types advertised in the *Content-Type* headers should be followed and not be changed.\n  +  ` + "`" + `` + "`" + `routing.http.response.x_frame_options.header_value` + "`" + `` + "`" + ` - Indicates whether the browser is allowed to render a page in a *frame*, *iframe*, *embed* or *object*.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value of the attribute.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
+      "load_balancer_arn": {
+        "description": "The Amazon Resource Name (ARN) of the load balancer.",
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "mutual_authentication": {
+        "computed": true,
+        "description": "The mutual authentication configuration information.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "advertise_trust_store_ca_names": {
+              "computed": true,
+              "description": "Indicates whether trust store CA certificate names are advertised.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "ignore_client_certificate_expiry": {
+              "computed": true,
+              "description": "Indicates whether expired client certificates are ignored.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "mode": {
+              "computed": true,
+              "description": "The client certificate handling method. Options are ` + "`" + `` + "`" + `off` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `passthrough` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `verify` + "`" + `` + "`" + `. The default value is ` + "`" + `` + "`" + `off` + "`" + `` + "`" + `.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "trust_store_arn": {
+              "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the trust store.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "port": {
+        "computed": true,
+        "description": "The port on which the load balancer is listening. You can't specify a port for a Gateway Load Balancer.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
+      "protocol": {
+        "computed": true,
+        "description": "The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You can't specify a protocol for a Gateway Load Balancer.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "ssl_policy": {
+        "computed": true,
+        "description": "[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For more information, see [Security policies](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html) in the *Application Load Balancers Guide* and [Security policies](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/describe-ssl-policies.html) in the *Network Load Balancers Guide*.\n Updating the security policy can result in interruptions if the load balancer is handling a high volume of traffic. To decrease the possibility of an interruption if your load balancer is handling a high volume of traffic, create an additional load balancer or request an LCU reservation.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      }
+    },
+    "description": "Specifies a listener for an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.",
+    "description_kind": "plain"
+  },
+  "version": 1
+}`
+
+func AwsccElasticloadbalancingv2ListenerSchema() *tfjson.Schema {
+	var result tfjson.Schema
+	_ = json.Unmarshal([]byte(awsccElasticloadbalancingv2Listener), &result)
+	return &result
+}

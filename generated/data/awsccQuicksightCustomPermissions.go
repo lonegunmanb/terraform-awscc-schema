@@ -69,7 +69,37 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "export_to_csv_in_scheduled_reports": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "export_to_excel": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "export_to_excel_in_scheduled_reports": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "export_to_pdf": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "export_to_pdf_in_scheduled_reports": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "include_content_in_scheduled_reports_email": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "print_reports": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
