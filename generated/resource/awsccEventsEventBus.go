@@ -59,6 +59,31 @@ const awsccEventsEventBus = `{
         "optional": true,
         "type": "string"
       },
+      "log_config": {
+        "computed": true,
+        "description": "The logging configuration settings for vended logs.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "include_detail": {
+              "computed": true,
+              "description": "Configures whether or not to include event detail, input transformer details, target properties, and target input in the applicable log messages.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "level": {
+              "computed": true,
+              "description": "Configures the log level of the EventBus and determines which log messages are sent to Ingestion Hub for delivery.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "name": {
         "description": "The name of the event bus.",
         "description_kind": "plain",

@@ -83,6 +83,28 @@ const awsccSagemakerDomain = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "s3_file_system_config": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "mount_path": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "s3_uri": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
                   }
                 },
                 "nesting_mode": "list"
@@ -684,6 +706,28 @@ const awsccSagemakerDomain = `{
                           "type": "string"
                         },
                         "file_system_path": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "s3_file_system_config": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "mount_path": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "s3_uri": {
                           "computed": true,
                           "description_kind": "plain",
                           "optional": true,
@@ -1501,6 +1545,13 @@ const awsccSagemakerDomain = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "single_sign_on_application_arn": {
+                    "computed": true,
+                    "description": "The ARN of the DataZone application managed by SageMaker Unified Studio in the AWS IAM Identity Center.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "studio_web_portal_access": {
                     "computed": true,
                     "description": "Sets whether you can access the domain in Amazon SageMaker Studio:\n\nENABLED\nYou can access the domain in Amazon SageMaker Studio. If you migrate the domain to Amazon SageMaker Unified Studio, you can access it in both studio interfaces.\nDISABLED\nYou can't access the domain in Amazon SageMaker Studio. If you migrate the domain to Amazon SageMaker Unified Studio, you can access it only in that studio interface.\n",
@@ -1556,9 +1607,10 @@ const awsccSagemakerDomain = `{
         "type": "string"
       },
       "subnet_ids": {
+        "computed": true,
         "description": "The VPC subnets that Studio uses for communication.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": [
           "list",
           "string"
@@ -1601,9 +1653,10 @@ const awsccSagemakerDomain = `{
         "type": "string"
       },
       "vpc_id": {
+        "computed": true,
         "description": "The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       }
     },

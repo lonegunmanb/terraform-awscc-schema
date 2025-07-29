@@ -99,6 +99,26 @@ const awsccSesConfigurationSet = `{
           "nesting_mode": "single"
         }
       },
+      "tags": {
+        "computed": true,
+        "description": "The tags (keys and values) associated with the contact list.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "tracking_options": {
         "computed": true,
         "description": "An object that defines the open and click tracking options for emails that you send using the configuration set.",

@@ -53,6 +53,22 @@ const awsccQuicksightDataSource = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "identity_center_configuration": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe parameters for an IAM Identity Center configuration.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enable_identity_propagation": {
+                          "computed": true,
+                          "description": "\u003cp\u003eA Boolean option that controls whether Trusted Identity Propagation should be used.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "role_arn": {
                     "computed": true,
                     "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to override an account-wide role for a specific Athena data source. For example, say an account administrator has turned off all Athena access with an account-wide role. The administrator can then use \u003ccode\u003eRoleArn\u003c/code\u003e to bypass the account-wide role and allow Athena access for the single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena access is still active.\u003c/p\u003e",
@@ -232,6 +248,11 @@ const awsccQuicksightDataSource = `{
                     "description": "\u003cp\u003eThe port.\u003c/p\u003e",
                     "description_kind": "plain",
                     "type": "number"
+                  },
+                  "use_service_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
                   }
                 },
                 "nesting_mode": "single"
@@ -790,6 +811,22 @@ const awsccQuicksightDataSource = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "identity_center_configuration": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe parameters for an IAM Identity Center configuration.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "enable_identity_propagation": {
+                                      "computed": true,
+                                      "description": "\u003cp\u003eA Boolean option that controls whether Trusted Identity Propagation should be used.\u003c/p\u003e",
+                                      "description_kind": "plain",
+                                      "type": "bool"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
                               "role_arn": {
                                 "computed": true,
                                 "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to override an account-wide role for a specific Athena data source. For example, say an account administrator has turned off all Athena access with an account-wide role. The administrator can then use \u003ccode\u003eRoleArn\u003c/code\u003e to bypass the account-wide role and allow Athena access for the single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena access is still active.\u003c/p\u003e",
@@ -969,6 +1006,11 @@ const awsccQuicksightDataSource = `{
                                 "description": "\u003cp\u003eThe port.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "type": "number"
+                              },
+                              "use_service_name": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
                               }
                             },
                             "nesting_mode": "single"
@@ -1523,6 +1565,22 @@ const awsccQuicksightDataSource = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "identity_center_configuration": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe parameters for an IAM Identity Center configuration.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enable_identity_propagation": {
+                          "computed": true,
+                          "description": "\u003cp\u003eA Boolean option that controls whether Trusted Identity Propagation should be used.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "role_arn": {
                     "computed": true,
                     "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to override an account-wide role for a specific Athena data source. For example, say an account administrator has turned off all Athena access with an account-wide role. The administrator can then use \u003ccode\u003eRoleArn\u003c/code\u003e to bypass the account-wide role and allow Athena access for the single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena access is still active.\u003c/p\u003e",
@@ -1702,6 +1760,11 @@ const awsccQuicksightDataSource = `{
                     "description": "\u003cp\u003eThe port.\u003c/p\u003e",
                     "description_kind": "plain",
                     "type": "number"
+                  },
+                  "use_service_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
                   }
                 },
                 "nesting_mode": "single"

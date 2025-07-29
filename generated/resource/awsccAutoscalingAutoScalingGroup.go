@@ -29,7 +29,7 @@ const awsccAutoscalingAutoScalingGroup = `{
           "attributes": {
             "capacity_distribution_strategy": {
               "computed": true,
-              "description": "If launches fail in an Availability Zone, the following strategies are available. The default is ` + "`" + `` + "`" + `balanced-best-effort` + "`" + `` + "`" + `. \n  +   ` + "`" + `` + "`" + `balanced-only` + "`" + `` + "`" + ` - If launches fail in an Availability Zone, Auto Scaling will continue to attempt to launch in the unhealthy zone to preserve a balanced distribution.\n  +   ` + "`" + `` + "`" + `balanced-best-effort` + "`" + `` + "`" + ` - If launches fail in an Availability Zone, Auto Scaling will attempt to launch in another healthy Availability Zone instead.",
+              "description": "If launches fail in an Availability Zone, the following strategies are available. The default is ` + "`" + `` + "`" + `balanced-best-effort` + "`" + `` + "`" + `. \n  +  ` + "`" + `` + "`" + `balanced-only` + "`" + `` + "`" + ` - If launches fail in an Availability Zone, Auto Scaling will continue to attempt to launch in the unhealthy zone to preserve a balanced distribution.\n  +  ` + "`" + `` + "`" + `balanced-best-effort` + "`" + `` + "`" + ` - If launches fail in an Availability Zone, Auto Scaling will attempt to launch in another healthy Availability Zone instead.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -89,7 +89,7 @@ const awsccAutoscalingAutoScalingGroup = `{
           "attributes": {
             "capacity_reservation_preference": {
               "computed": true,
-              "description": "The capacity reservation preference. The following options are available: \n  +   ` + "`" + `` + "`" + `capacity-reservations-only` + "`" + `` + "`" + ` - Auto Scaling will only launch instances into a Capacity Reservation or Capacity Reservation resource group. If capacity isn't available, instances will fail to launch.\n  +   ` + "`" + `` + "`" + `capacity-reservations-first` + "`" + `` + "`" + ` - Auto Scaling will try to launch instances into a Capacity Reservation or Capacity Reservation resource group first. If capacity isn't available, instances will run in On-Demand capacity.\n  +   ` + "`" + `` + "`" + `none` + "`" + `` + "`" + ` - Auto Scaling will not launch instances into a Capacity Reservation. Instances will run in On-Demand capacity. \n  +   ` + "`" + `` + "`" + `default` + "`" + `` + "`" + ` - Auto Scaling uses the Capacity Reservation preference from your launch template or an open Capacity Reservation.",
+              "description": "The capacity reservation preference. The following options are available: \n  +  ` + "`" + `` + "`" + `capacity-reservations-only` + "`" + `` + "`" + ` - Auto Scaling will only launch instances into a Capacity Reservation or Capacity Reservation resource group. If capacity isn't available, instances will fail to launch.\n  +  ` + "`" + `` + "`" + `capacity-reservations-first` + "`" + `` + "`" + ` - Auto Scaling will try to launch instances into a Capacity Reservation or Capacity Reservation resource group first. If capacity isn't available, instances will run in On-Demand capacity.\n  +  ` + "`" + `` + "`" + `none` + "`" + `` + "`" + ` - Auto Scaling will not launch instances into a Capacity Reservation. Instances will run in On-Demand capacity. \n  +  ` + "`" + `` + "`" + `default` + "`" + `` + "`" + ` - Auto Scaling uses the Capacity Reservation preference from your launch template or an open Capacity Reservation.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -581,7 +581,7 @@ const awsccAutoscalingAutoScalingGroup = `{
                               },
                               "baseline_ebs_bandwidth_mbps": {
                                 "computed": true,
-                                "description": "The minimum and maximum baseline bandwidth performance for an instance type, in Mbps. For more information, see [Amazon EBS–optimized instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) in the *Amazon EC2 User Guide for Linux Instances*.\n Default: No minimum or maximum limits",
+                                "description": "The minimum and maximum baseline bandwidth performance for an instance type, in Mbps. For more information, see [Amazon EBS–optimized instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html) in the *Amazon EC2 User Guide*.\n Default: No minimum or maximum limits",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
@@ -646,14 +646,14 @@ const awsccAutoscalingAutoScalingGroup = `{
                               },
                               "burstable_performance": {
                                 "computed": true,
-                                "description": "Indicates whether burstable performance instance types are included, excluded, or required. For more information, see [Burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html) in the *Amazon EC2 User Guide for Linux Instances*.\n Default: ` + "`" + `` + "`" + `excluded` + "`" + `` + "`" + `",
+                                "description": "Indicates whether burstable performance instance types are included, excluded, or required. For more information, see [Burstable performance instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html) in the *Amazon EC2 User Guide*.\n Default: ` + "`" + `` + "`" + `excluded` + "`" + `` + "`" + `",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
                               },
                               "cpu_manufacturers": {
                                 "computed": true,
-                                "description": "Lists which specific CPU manufacturers to include.\n  +  For instance types with Intel CPUs, specify ` + "`" + `` + "`" + `intel` + "`" + `` + "`" + `.\n  +  For instance types with AMD CPUs, specify ` + "`" + `` + "`" + `amd` + "`" + `` + "`" + `.\n  +  For instance types with AWS CPUs, specify ` + "`" + `` + "`" + `amazon-web-services` + "`" + `` + "`" + `.\n  \n  Don't confuse the CPU hardware manufacturer with the CPU hardware architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template. \n  Default: Any manufacturer",
+                                "description": "Lists which specific CPU manufacturers to include.\n  +  For instance types with Intel CPUs, specify ` + "`" + `` + "`" + `intel` + "`" + `` + "`" + `.\n  +  For instance types with AMD CPUs, specify ` + "`" + `` + "`" + `amd` + "`" + `` + "`" + `.\n  +  For instance types with AWS CPUs, specify ` + "`" + `` + "`" + `amazon-web-services` + "`" + `` + "`" + `.\n  +  For instance types with Apple CPUs, specify ` + "`" + `` + "`" + `apple` + "`" + `` + "`" + `.\n  \n  Don't confuse the CPU hardware manufacturer with the CPU hardware architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template. \n  Default: Any manufacturer",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": [
@@ -673,7 +673,7 @@ const awsccAutoscalingAutoScalingGroup = `{
                               },
                               "instance_generations": {
                                 "computed": true,
-                                "description": "Indicates whether current or previous generation instance types are included.\n  +  For current generation instance types, specify ` + "`" + `` + "`" + `current` + "`" + `` + "`" + `. The current generation includes EC2 instance types currently recommended for use. This typically includes the latest two to three generations in each instance family. For more information, see [Instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide for Linux Instances*.\n  +  For previous generation instance types, specify ` + "`" + `` + "`" + `previous` + "`" + `` + "`" + `.\n  \n Default: Any current or previous generation",
+                                "description": "Indicates whether current or previous generation instance types are included.\n  +  For current generation instance types, specify ` + "`" + `` + "`" + `current` + "`" + `` + "`" + `. The current generation includes EC2 instance types currently recommended for use. This typically includes the latest two to three generations in each instance family. For more information, see [Instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide*.\n  +  For previous generation instance types, specify ` + "`" + `` + "`" + `previous` + "`" + `` + "`" + `.\n  \n Default: Any current or previous generation",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": [
@@ -683,7 +683,7 @@ const awsccAutoscalingAutoScalingGroup = `{
                               },
                               "local_storage": {
                                 "computed": true,
-                                "description": "Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, see [Amazon EC2 instance store](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html) in the *Amazon EC2 User Guide for Linux Instances*.\n Default: ` + "`" + `` + "`" + `included` + "`" + `` + "`" + `",
+                                "description": "Indicates whether instance types with instance store volumes are included, excluded, or required. For more information, see [Amazon EC2 instance store](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html) in the *Amazon EC2 User Guide*.\n Default: ` + "`" + `` + "`" + `included` + "`" + `` + "`" + `",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
@@ -883,7 +883,7 @@ const awsccAutoscalingAutoScalingGroup = `{
                         },
                         "instance_type": {
                           "computed": true,
-                          "description": "The instance type, such as ` + "`" + `` + "`" + `m3.xlarge` + "`" + `` + "`" + `. You must specify an instance type that is supported in your requested Region and Availability Zones. For more information, see [Instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide for Linux Instances*.\n You can specify up to 40 instance types per Auto Scaling group.",
+                          "description": "The instance type, such as ` + "`" + `` + "`" + `m3.xlarge` + "`" + `` + "`" + `. You must specify an instance type that is supported in your requested Region and Availability Zones. For more information, see [Instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide*.\n You can specify up to 40 instance types per Auto Scaling group.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -957,7 +957,7 @@ const awsccAutoscalingAutoScalingGroup = `{
           "attributes": {
             "notification_types": {
               "computed": true,
-              "description": "A list of event types that send a notification. Event types can include any of the following types. \n  *Allowed values*:\n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_LAUNCH` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_LAUNCH_ERROR` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_TERMINATE` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_TERMINATE_ERROR` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:TEST_NOTIFICATION` + "`" + `` + "`" + `",
+              "description": "A list of event types that send a notification. Event types can include any of the following types. \n *Allowed values*:\n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_LAUNCH` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_LAUNCH_ERROR` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_TERMINATE` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_TERMINATE_ERROR` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:TEST_NOTIFICATION` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "optional": true,
               "type": [
@@ -985,7 +985,7 @@ const awsccAutoscalingAutoScalingGroup = `{
           "attributes": {
             "notification_types": {
               "computed": true,
-              "description": "A list of event types that send a notification. Event types can include any of the following types. \n  *Allowed values*:\n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_LAUNCH` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_LAUNCH_ERROR` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_TERMINATE` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_TERMINATE_ERROR` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:TEST_NOTIFICATION` + "`" + `` + "`" + `",
+              "description": "A list of event types that send a notification. Event types can include any of the following types. \n *Allowed values*:\n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_LAUNCH` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_LAUNCH_ERROR` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_TERMINATE` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:EC2_INSTANCE_TERMINATE_ERROR` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `autoscaling:TEST_NOTIFICATION` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "optional": true,
               "type": [
@@ -1007,7 +1007,7 @@ const awsccAutoscalingAutoScalingGroup = `{
       },
       "placement_group": {
         "computed": true,
-        "description": "The name of the placement group into which to launch your instances. For more information, see [Placement groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html) in the *Amazon EC2 User Guide for Linux Instances*.\n  A *cluster* placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group.",
+        "description": "The name of the placement group into which to launch your instances. For more information, see [Placement groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html) in the *Amazon EC2 User Guide*.\n  A *cluster* placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a cluster placement group.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -1085,14 +1085,14 @@ const awsccAutoscalingAutoScalingGroup = `{
           "attributes": {
             "identifier": {
               "computed": true,
-              "description": "Identifies the traffic source.\n For Application Load Balancers, Gateway Load Balancers, Network Load Balancers, and VPC Lattice, this will be the Amazon Resource Name (ARN) for a target group in this account and Region. For Classic Load Balancers, this will be the name of the Classic Load Balancer in this account and Region.\n For example: \n  +  Application Load Balancer ARN: ` + "`" + `` + "`" + `arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/1234567890123456` + "`" + `` + "`" + ` \n  +  Classic Load Balancer name: ` + "`" + `` + "`" + `my-classic-load-balancer` + "`" + `` + "`" + ` \n  +  VPC Lattice ARN: ` + "`" + `` + "`" + `arn:aws:vpc-lattice:us-west-2:123456789012:targetgroup/tg-1234567890123456` + "`" + `` + "`" + ` \n  \n To get the ARN of a target group for a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer, or the name of a Classic Load Balancer, use the Elastic Load Balancing [DescribeTargetGroups](https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html) and [DescribeLoadBalancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html) API operations.\n To get the ARN of a target group for VPC Lattice, use the VPC Lattice [GetTargetGroup](https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetTargetGroup.html) API operation.",
+              "description": "Identifies the traffic source.\n For Application Load Balancers, Gateway Load Balancers, Network Load Balancers, and VPC Lattice, this will be the Amazon Resource Name (ARN) for a target group in this account and Region. For Classic Load Balancers, this will be the name of the Classic Load Balancer in this account and Region.\n For example: \n  +  Application Load Balancer ARN: ` + "`" + `` + "`" + `arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/1234567890123456` + "`" + `` + "`" + `\n  +  Classic Load Balancer name: ` + "`" + `` + "`" + `my-classic-load-balancer` + "`" + `` + "`" + `\n  +  VPC Lattice ARN: ` + "`" + `` + "`" + `arn:aws:vpc-lattice:us-west-2:123456789012:targetgroup/tg-1234567890123456` + "`" + `` + "`" + `\n  \n To get the ARN of a target group for a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer, or the name of a Classic Load Balancer, use the Elastic Load Balancing [DescribeTargetGroups](https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html) and [DescribeLoadBalancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html) API operations.\n To get the ARN of a target group for VPC Lattice, use the VPC Lattice [GetTargetGroup](https://docs.aws.amazon.com/vpc-lattice/latest/APIReference/API_GetTargetGroup.html) API operation.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "type": {
               "computed": true,
-              "description": "Provides additional context for the value of ` + "`" + `` + "`" + `Identifier` + "`" + `` + "`" + `.\n The following lists the valid values:\n  +   ` + "`" + `` + "`" + `elb` + "`" + `` + "`" + ` if ` + "`" + `` + "`" + `Identifier` + "`" + `` + "`" + ` is the name of a Classic Load Balancer.\n  +   ` + "`" + `` + "`" + `elbv2` + "`" + `` + "`" + ` if ` + "`" + `` + "`" + `Identifier` + "`" + `` + "`" + ` is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.\n  +   ` + "`" + `` + "`" + `vpc-lattice` + "`" + `` + "`" + ` if ` + "`" + `` + "`" + `Identifier` + "`" + `` + "`" + ` is the ARN of a VPC Lattice target group.\n  \n Required if the identifier is the name of a Classic Load Balancer.",
+              "description": "Provides additional context for the value of ` + "`" + `` + "`" + `Identifier` + "`" + `` + "`" + `.\n The following lists the valid values:\n  +  ` + "`" + `` + "`" + `elb` + "`" + `` + "`" + ` if ` + "`" + `` + "`" + `Identifier` + "`" + `` + "`" + ` is the name of a Classic Load Balancer.\n  +  ` + "`" + `` + "`" + `elbv2` + "`" + `` + "`" + ` if ` + "`" + `` + "`" + `Identifier` + "`" + `` + "`" + ` is the ARN of an Application Load Balancer, Gateway Load Balancer, or Network Load Balancer target group.\n  +  ` + "`" + `` + "`" + `vpc-lattice` + "`" + `` + "`" + ` if ` + "`" + `` + "`" + `Identifier` + "`" + `` + "`" + ` is the ARN of a VPC Lattice target group.\n  \n Required if the identifier is the name of a Classic Load Balancer.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

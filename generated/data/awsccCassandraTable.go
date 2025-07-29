@@ -196,6 +196,26 @@ const awsccCassandraTable = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "tags": {
+              "computed": true,
+              "description": "An array of key-value pairs to apply to the CDC stream resource",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
             "view_type": {
               "computed": true,
               "description": "Specifies what data should be captured in the change data stream",

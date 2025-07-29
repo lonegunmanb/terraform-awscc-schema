@@ -179,6 +179,22 @@ const awsccSagemakerSpace = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "s3_file_system": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "s3_uri": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
                   }
                 },
                 "nesting_mode": "list"
@@ -429,6 +445,20 @@ const awsccSagemakerSpace = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            },
+            "remote_access": {
+              "computed": true,
+              "description": "This is a flag used to indicate if remote access is enabled.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "space_managed_resources": {
+              "computed": true,
+              "description": "This is a flag used to indicate if space managed resources needs to be created.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             },
             "space_storage_settings": {
               "computed": true,

@@ -1251,7 +1251,7 @@ const awsccApplicationinsightsApplication = `{
         "optional": true
       }
     },
-    "description": "Resource schema for AWS::ApplicationInsights::Application",
+    "description": "Resource Type definition for AWS::ApplicationInsights::Application",
     "description_kind": "plain"
   },
   "version": 1

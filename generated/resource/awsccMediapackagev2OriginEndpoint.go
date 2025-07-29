@@ -50,11 +50,124 @@ const awsccMediapackagev2OriginEndpoint = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "base_urls": {
+              "computed": true,
+              "description": "\u003cp\u003eThe base URL to use for retrieving segments.\u003c/p\u003e",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "dvb_priority": {
+                    "computed": true,
+                    "description": "\u003cp\u003eFor use with DVB-DASH profiles only. The priority of this location for servings segments. The lower the number, the higher the priority.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "dvb_weight": {
+                    "computed": true,
+                    "description": "\u003cp\u003eFor use with DVB-DASH profiles only. The weighting for source locations that have the same priority. \u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "service_location": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe name of the source location.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "url": {
+                    "computed": true,
+                    "description": "\u003cp\u003eA source location for segments.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "compactness": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "drm_signaling": {
               "computed": true,
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "dvb_settings": {
+              "computed": true,
+              "description": "\u003cp\u003eFor endpoints that use the DVB-DASH profile only. The font download and error reporting information that you want MediaPackage to pass through to the manifest.\u003c/p\u003e",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "error_metrics": {
+                    "computed": true,
+                    "description": "\u003cp\u003ePlayback device error reporting settings.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "probability": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe number of playback devices per 1000 that will send error reports to the reporting URL. This represents the probability that a playback device will be a reporting player for this session.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "reporting_url": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe URL where playback devices send error reports.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
+                  "font_download": {
+                    "computed": true,
+                    "description": "\u003cp\u003eFor use with DVB-DASH profiles only. The settings for font downloads that you want Elemental MediaPackage to pass through to the manifest.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "font_family": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe \u003ccode\u003efontFamily\u003c/code\u003e name for subtitles, as described in \u003ca href=\"https://tech.ebu.ch/publications/tech3380\"\u003eEBU-TT-D Subtitling Distribution Format\u003c/a\u003e. \u003c/p\u003e",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "mime_type": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe \u003ccode\u003emimeType\u003c/code\u003e of the resource that's at the font download URL.\u003c/p\u003e \u003cp\u003eFor information about font MIME types, see the \u003ca href=\"https://dvb.org/wp-content/uploads/2021/06/A168r4_MPEG-DASH-Profile-for-Transport-of-ISO-BMFF-Based-DVB-Services_Draft-ts_103-285-v140_November_2021.pdf\"\u003eMPEG-DASH Profile for Transport of ISO BMFF Based DVB Services over IP Based Networks\u003c/a\u003e document. \u003c/p\u003e",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "url": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe URL for downloading fonts for subtitles.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "filter_configuration": {
               "computed": true,
@@ -132,13 +245,69 @@ const awsccMediapackagev2OriginEndpoint = `{
             },
             "period_triggers": {
               "computed": true,
-              "description": "\u003cp\u003eA list of triggers that controls when AWS Elemental MediaPackage separates the MPEG-DASH manifest into multiple periods. Leave this value empty to indicate that the manifest is contained all in one period.\n         For more information about periods in the DASH manifest, see \u003ca href=\"https://docs.aws.amazon.com/mediapackage/latest/userguide/multi-period.html\"\u003eMulti-period DASH in AWS Elemental MediaPackage\u003c/a\u003e.\u003c/p\u003e",
+              "description": "\u003cp\u003eA list of triggers that controls when AWS Elemental MediaPackage separates the MPEG-DASH manifest into multiple periods. Leave this value empty to indicate that the manifest is contained all in one period. For more information about periods in the DASH manifest, see \u003ca href=\"https://docs.aws.amazon.com/mediapackage/latest/userguide/multi-period.html\"\u003eMulti-period DASH in AWS Elemental MediaPackage\u003c/a\u003e.\u003c/p\u003e",
               "description_kind": "plain",
               "optional": true,
               "type": [
                 "list",
                 "string"
               ]
+            },
+            "profiles": {
+              "computed": true,
+              "description": "\u003cp\u003eThe profile that the output is compliant with.\u003c/p\u003e",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "program_information": {
+              "computed": true,
+              "description": "\u003cp\u003eDetails about the content that you want MediaPackage to pass through in the manifest to the playback device.\u003c/p\u003e",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "copyright": {
+                    "computed": true,
+                    "description": "\u003cp\u003eA copyright statement about the content.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "language_code": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe language code for this manifest.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "more_information_url": {
+                    "computed": true,
+                    "description": "\u003cp\u003eAn absolute URL that contains more information about this content.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "source": {
+                    "computed": true,
+                    "description": "\u003cp\u003eInformation about the content provider.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "title": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe title for the manifest.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "scte_dash": {
               "computed": true,
@@ -162,6 +331,34 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "subtitle_configuration": {
+              "computed": true,
+              "description": "\u003cp\u003eThe configuration for DASH subtitles.\u003c/p\u003e",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "ttml_configuration": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe settings for TTML subtitles.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "ttml_profile": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "suggested_presentation_delay_seconds": {
               "computed": true,
@@ -214,7 +411,7 @@ const awsccMediapackagev2OriginEndpoint = `{
           "attributes": {
             "endpoint_error_conditions": {
               "computed": true,
-              "description": "\u003cp\u003eThe failover conditions for the endpoint. The options are:\u003c/p\u003e\n         \u003cul\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eSTALE_MANIFEST\u003c/code\u003e - The manifest stalled and there are no new segments or parts.\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eINCOMPLETE_MANIFEST\u003c/code\u003e - There is a gap in the manifest.\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eMISSING_DRM_KEY\u003c/code\u003e - Key rotation is enabled but we're unable to fetch the key for the current key period.\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003e\n                  \u003ccode\u003eSLATE_INPUT\u003c/code\u003e - The segments which contain slate content are considered to be missing content.\u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
+              "description": "\u003cp\u003eThe failover conditions for the endpoint. The options are:\u003c/p\u003e \u003cul\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eSTALE_MANIFEST\u003c/code\u003e - The manifest stalled and there are no new segments or parts.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eINCOMPLETE_MANIFEST\u003c/code\u003e - There is a gap in the manifest.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eMISSING_DRM_KEY\u003c/code\u003e - Key rotation is enabled but we're unable to fetch the key for the current key period.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eSLATE_INPUT\u003c/code\u003e - The segments which contain slate content are considered to be missing content.\u003c/p\u003e \u003c/li\u003e \u003c/ul\u003e",
               "description_kind": "plain",
               "optional": true,
               "type": [
@@ -310,7 +507,7 @@ const awsccMediapackagev2OriginEndpoint = `{
             },
             "program_date_time_interval_seconds": {
               "computed": true,
-              "description": "\u003cp\u003eInserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval,\n         EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest.\n         The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.\u003c/p\u003e\n         \u003cp\u003eIrrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.\u003c/p\u003e",
+              "description": "\u003cp\u003eInserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.\u003c/p\u003e \u003cp\u003eIrrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.\u003c/p\u003e",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
@@ -366,7 +563,7 @@ const awsccMediapackagev2OriginEndpoint = `{
             },
             "url_encode_child_manifest": {
               "computed": true,
-              "description": "\u003cp\u003eWhen enabled, MediaPackage URL-encodes the query string for API requests for HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol.\n         For more information, see \u003ca href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html\"\u003eAmazon Web Services Signature Version 4 for API requests\u003c/a\u003e in \u003ci\u003eIdentity and Access Management User Guide\u003c/i\u003e.\u003c/p\u003e",
+              "description": "\u003cp\u003eWhen enabled, MediaPackage URL-encodes the query string for API requests for HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol. For more information, see \u003ca href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html\"\u003eAmazon Web Services Signature Version 4 for API requests\u003c/a\u003e in \u003ci\u003eIdentity and Access Management User Guide\u003c/i\u003e.\u003c/p\u003e",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
@@ -465,7 +662,7 @@ const awsccMediapackagev2OriginEndpoint = `{
             },
             "program_date_time_interval_seconds": {
               "computed": true,
-              "description": "\u003cp\u003eInserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval,\n         EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest.\n         The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.\u003c/p\u003e\n         \u003cp\u003eIrrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.\u003c/p\u003e",
+              "description": "\u003cp\u003eInserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included in the manifest. The tags sync the stream to the wall clock so that viewers can seek to a specific time in the playback timeline on the player.\u003c/p\u003e \u003cp\u003eIrrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is passed through to the HLS output.\u003c/p\u003e",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
@@ -521,7 +718,7 @@ const awsccMediapackagev2OriginEndpoint = `{
             },
             "url_encode_child_manifest": {
               "computed": true,
-              "description": "\u003cp\u003eWhen enabled, MediaPackage URL-encodes the query string for API requests for LL-HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol.\n         For more information, see \u003ca href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html\"\u003eAmazon Web Services Signature Version 4 for API requests\u003c/a\u003e in \u003ci\u003eIdentity and Access Management User Guide\u003c/i\u003e.\u003c/p\u003e",
+              "description": "\u003cp\u003eWhen enabled, MediaPackage URL-encodes the query string for API requests for LL-HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol. For more information, see \u003ca href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html\"\u003eAmazon Web Services Signature Version 4 for API requests\u003c/a\u003e in \u003ci\u003eIdentity and Access Management User Guide\u003c/i\u003e.\u003c/p\u003e",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
@@ -586,7 +783,7 @@ const awsccMediapackagev2OriginEndpoint = `{
                   },
                   "key_rotation_interval_seconds": {
                     "computed": true,
-                    "description": "\u003cp\u003eThe frequency (in seconds) of key changes for live workflows, in which content is streamed real time. The service retrieves content keys before the live content begins streaming, and then retrieves them as needed over the lifetime of the workflow. By default, key rotation is set to 300 seconds (5 minutes), the minimum rotation interval, which is equivalent to setting it to 300. If you don't enter an interval, content keys aren't rotated.\u003c/p\u003e\n         \u003cp\u003eThe following example setting causes the service to rotate keys every thirty minutes: \u003ccode\u003e1800\u003c/code\u003e\n         \u003c/p\u003e",
+                    "description": "\u003cp\u003eThe frequency (in seconds) of key changes for live workflows, in which content is streamed real time. The service retrieves content keys before the live content begins streaming, and then retrieves them as needed over the lifetime of the workflow. By default, key rotation is set to 300 seconds (5 minutes), the minimum rotation interval, which is equivalent to setting it to 300. If you don't enter an interval, content keys aren't rotated.\u003c/p\u003e \u003cp\u003eThe following example setting causes the service to rotate keys every thirty minutes: \u003ccode\u003e1800\u003c/code\u003e \u003c/p\u003e",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
@@ -632,21 +829,21 @@ const awsccMediapackagev2OriginEndpoint = `{
                         },
                         "resource_id": {
                           "computed": true,
-                          "description": "\u003cp\u003eThe unique identifier for the content. The service sends this to the key server to identify the current endpoint. How unique you make this depends on how fine-grained you want access controls to be. The service does not permit you to use the same ID for two simultaneous encryption processes. The resource ID is also known as the content ID.\u003c/p\u003e\n         \u003cp\u003eThe following example shows a resource ID: \u003ccode\u003eMovieNight20171126093045\u003c/code\u003e\n         \u003c/p\u003e",
+                          "description": "\u003cp\u003eThe unique identifier for the content. The service sends this to the key server to identify the current endpoint. How unique you make this depends on how fine-grained you want access controls to be. The service does not permit you to use the same ID for two simultaneous encryption processes. The resource ID is also known as the content ID.\u003c/p\u003e \u003cp\u003eThe following example shows a resource ID: \u003ccode\u003eMovieNight20171126093045\u003c/code\u003e \u003c/p\u003e",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
                           "computed": true,
-                          "description": "\u003cp\u003eThe ARN for the IAM role granted by the key provider that provides access to the key provider API. This role must have a trust policy that allows MediaPackage to assume the role, and it must have a sufficient permissions policy to allow access to the specific key retrieval URL. Get this from your DRM solution provider.\u003c/p\u003e\n         \u003cp\u003eValid format: \u003ccode\u003earn:aws:iam::{accountID}:role/{name}\u003c/code\u003e. The following example shows a role ARN: \u003ccode\u003earn:aws:iam::444455556666:role/SpekeAccess\u003c/code\u003e\n         \u003c/p\u003e",
+                          "description": "\u003cp\u003eThe ARN for the IAM role granted by the key provider that provides access to the key provider API. This role must have a trust policy that allows MediaPackage to assume the role, and it must have a sufficient permissions policy to allow access to the specific key retrieval URL. Get this from your DRM solution provider.\u003c/p\u003e \u003cp\u003eValid format: \u003ccode\u003earn:aws:iam::{accountID}:role/{name}\u003c/code\u003e. The following example shows a role ARN: \u003ccode\u003earn:aws:iam::444455556666:role/SpekeAccess\u003c/code\u003e \u003c/p\u003e",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "url": {
                           "computed": true,
-                          "description": "\u003cp\u003eThe URL of the API Gateway proxy that you set up to talk to your key server. The API Gateway proxy must reside in the same AWS Region as MediaPackage and must start with https://.\u003c/p\u003e\n         \u003cp\u003eThe following example shows a URL: \u003ccode\u003ehttps://1wm2dx1f33.execute-api.us-west-2.amazonaws.com/SpekeSample/copyProtection\u003c/code\u003e\n         \u003c/p\u003e",
+                          "description": "\u003cp\u003eThe URL of the API Gateway proxy that you set up to talk to your key server. The API Gateway proxy must reside in the same AWS Region as MediaPackage and must start with https://.\u003c/p\u003e \u003cp\u003eThe following example shows a URL: \u003ccode\u003ehttps://1wm2dx1f33.execute-api.us-west-2.amazonaws.com/SpekeSample/copyProtection\u003c/code\u003e \u003c/p\u003e",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"

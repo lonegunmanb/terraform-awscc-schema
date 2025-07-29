@@ -1974,6 +1974,11 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "warehouse_location": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -2017,6 +2022,29 @@ const awsccKinesisfirehoseDeliveryStream = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "partition_spec": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "identity": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "source_name": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   },
                   "s3_error_output_prefix": {
                     "computed": true,
@@ -2210,6 +2238,34 @@ const awsccKinesisfirehoseDeliveryStream = `{
               "computed": true,
               "description_kind": "plain",
               "type": "string"
+            },
+            "schema_evolution_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "table_creation_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

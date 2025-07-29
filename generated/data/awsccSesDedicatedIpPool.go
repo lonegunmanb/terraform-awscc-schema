@@ -26,6 +26,26 @@ const awsccSesDedicatedIpPool = `{
         "description": "Specifies whether the dedicated IP pool is managed or not. The default value is STANDARD.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "The tags (keys and values) associated with the dedicated IP pool.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
       }
     },
     "description": "Data Source schema for AWS::SES::DedicatedIpPool",

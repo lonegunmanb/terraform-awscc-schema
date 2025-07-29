@@ -66,7 +66,7 @@ const awsccRdsDbCluster = `{
       },
       "cluster_scalability_type": {
         "computed": true,
-        "description": "Specifies the scalability mode of the Aurora DB cluster. When set to ` + "`" + `` + "`" + `limitless` + "`" + `` + "`" + `, the cluster operates as an Aurora Limitless Database, allowing you to create a DB shard group for horizontal scaling (sharding) capabilities. When set to ` + "`" + `` + "`" + `standard` + "`" + `` + "`" + ` (the default), the cluster uses normal DB instance creation.",
+        "description": "Specifies the scalability mode of the Aurora DB cluster. When set to ` + "`" + `` + "`" + `limitless` + "`" + `` + "`" + `, the cluster operates as an Aurora Limitless Database, allowing you to create a DB shard group for horizontal scaling (sharding) capabilities. When set to ` + "`" + `` + "`" + `standard` + "`" + `` + "`" + ` (the default), the cluster uses normal DB instance creation.\n *Important:* Automated backup retention isn't supported with Aurora Limitless Database clusters. If you set this property to ` + "`" + `` + "`" + `limitless` + "`" + `` + "`" + `, you cannot set ` + "`" + `` + "`" + `DeleteAutomatedBackups` + "`" + `` + "`" + ` to ` + "`" + `` + "`" + `false` + "`" + `` + "`" + `. To create a backup, use manual snapshots instead.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -133,6 +133,12 @@ const awsccRdsDbCluster = `{
         "description": "Reserved for future use.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "delete_automated_backups": {
+        "computed": true,
+        "description": "Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted, unless the AWS Backup policy specifies a point-in-time restore rule.",
+        "description_kind": "plain",
+        "type": "bool"
       },
       "deletion_protection": {
         "computed": true,
@@ -471,7 +477,7 @@ const awsccRdsDbCluster = `{
       },
       "source_db_cluster_identifier": {
         "computed": true,
-        "description": "When restoring a DB cluster to a point in time, the identifier of the source DB cluster from which to restore.\n Constraints:\n  +  Must match the identifier of an existing DBCluster.\n  \n Valid for: Aurora DB clusters and Multi-AZ DB clusters",
+        "description": "When restoring a DB cluster to a point in time, the identifier of the source DB cluster from which to restore.\n Constraints:\n  +  Must match the identifier of an existing DBCluster.\n  +  Cannot be specified if ` + "`" + `` + "`" + `SourceDbClusterResourceId` + "`" + `` + "`" + ` is specified. You must specify either ` + "`" + `` + "`" + `SourceDBClusterIdentifier` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `SourceDbClusterResourceId` + "`" + `` + "`" + `, but not both.\n  \n Valid for: Aurora DB clusters and Multi-AZ DB clusters",
         "description_kind": "plain",
         "type": "string"
       },

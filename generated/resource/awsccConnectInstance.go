@@ -48,10 +48,45 @@ const awsccConnectInstance = `{
               "optional": true,
               "type": "bool"
             },
+            "enhanced_chat_monitoring": {
+              "computed": true,
+              "description": "Boolean flag which enables ENHANCED_CHAT_MONITORING on an instance.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "enhanced_contact_monitoring": {
+              "computed": true,
+              "description": "Boolean flag which enables ENHANCED_CONTACT_MONITORING on an instance.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "high_volume_out_bound": {
+              "computed": true,
+              "description": "Boolean flag which enables HIGH_VOLUME_OUTBOUND on an instance.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
             "inbound_calls": {
               "description": "Mandatory element which enables inbound calls on new instance.",
               "description_kind": "plain",
               "required": true,
+              "type": "bool"
+            },
+            "multi_party_chat_conference": {
+              "computed": true,
+              "description": "Boolean flag which enables MULTI_PARTY_CHAT_CONFERENCE on an instance.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "multi_party_conference": {
+              "computed": true,
+              "description": "Boolean flag which enables MULTI_PARTY_CONFERENCE on an instance.",
+              "description_kind": "plain",
+              "optional": true,
               "type": "bool"
             },
             "outbound_calls": {

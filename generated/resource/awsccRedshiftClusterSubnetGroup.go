@@ -62,7 +62,7 @@ const awsccRedshiftClusterSubnetGroup = `{
         "optional": true
       }
     },
-    "description": "Specifies an Amazon Redshift subnet group.",
+    "description": "Resource Type definition for AWS::Redshift::ClusterSubnetGroup. Specifies an Amazon Redshift subnet group.",
     "description_kind": "plain"
   },
   "version": 1

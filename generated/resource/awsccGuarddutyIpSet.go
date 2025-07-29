@@ -21,6 +21,12 @@ const awsccGuarddutyIpSet = `{
         "optional": true,
         "type": "string"
       },
+      "expected_bucket_owner": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "format": {
         "description_kind": "plain",
         "required": true,

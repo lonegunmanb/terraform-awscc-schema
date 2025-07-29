@@ -248,6 +248,25 @@ const awsccSagemakerUserProfile = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "s3_file_system_config": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "mount_path": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "s3_uri": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "list"

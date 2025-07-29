@@ -114,6 +114,13 @@ const awsccSsmPatchBaseline = `{
         "optional": true,
         "type": "bool"
       },
+      "available_security_updates_compliance_status": {
+        "computed": true,
+        "description": "The compliance status for vendor recommended security updates that are not approved by this patch baseline.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "default_baseline": {
         "computed": true,
         "description": "Set the baseline as default baseline. Only registering to default patch baseline is allowed.",

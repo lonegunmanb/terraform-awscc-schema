@@ -1205,6 +1205,30 @@ const awsccQuicksightTopic = `{
         "optional": true,
         "type": "string"
       },
+      "tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "\u003cp\u003eTag key.\u003c/p\u003e",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "\u003cp\u003eTag value.\u003c/p\u003e",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "topic_id": {
         "computed": true,
         "description_kind": "plain",

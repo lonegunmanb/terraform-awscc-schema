@@ -75,6 +75,25 @@ const awsccSagemakerDomain = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "s3_file_system_config": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "mount_path": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "s3_uri": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "list"
@@ -605,6 +624,25 @@ const awsccSagemakerDomain = `{
                           "type": "string"
                         },
                         "file_system_path": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "s3_file_system_config": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "mount_path": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "s3_uri": {
                           "computed": true,
                           "description_kind": "plain",
                           "type": "string"
@@ -1323,6 +1361,12 @@ const awsccSagemakerDomain = `{
                   "project_s3_path": {
                     "computed": true,
                     "description": "The location where Amazon S3 stores temporary execution data and other artifacts for the project that corresponds to the domain.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "single_sign_on_application_arn": {
+                    "computed": true,
+                    "description": "The ARN of the DataZone application managed by SageMaker Unified Studio in the AWS IAM Identity Center.",
                     "description_kind": "plain",
                     "type": "string"
                   },

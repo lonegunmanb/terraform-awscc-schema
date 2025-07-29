@@ -144,6 +144,66 @@ const awsccSagemakerProject = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "template_provider_details": {
+        "computed": true,
+        "description": "An array of template providers associated with the project.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "cfn_template_provider_detail": {
+              "computed": true,
+              "description": "CloudFormation template provider details for a SageMaker project.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "parameters": {
+                    "computed": true,
+                    "description": "A list of parameters used in the CloudFormation template.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "key": {
+                          "computed": true,
+                          "description": "The key of the parameter.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "value": {
+                          "computed": true,
+                          "description": "The value of the parameter.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
+                  "role_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the IAM role used by the template provider.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "template_name": {
+                    "computed": true,
+                    "description": "The name of the template used for the project.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "template_url": {
+                    "computed": true,
+                    "description": "The URL of the CloudFormation template.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "list"
+        }
       }
     },
     "description": "Data Source schema for AWS::SageMaker::Project",

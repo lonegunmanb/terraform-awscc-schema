@@ -732,6 +732,37 @@ const awsccWisdomMessageTemplate = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "message_template_attachments": {
+        "computed": true,
+        "description": "List of message template attachments",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "attachment_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "attachment_name": {
+              "computed": true,
+              "description": "The name of the attachment file being uploaded. The name should include the file extension.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "s3_presigned_url": {
+              "computed": true,
+              "description": "The S3 Presigned URL for the attachment file. When generating the PreSignedUrl, please ensure that the expires-in time is set to 30 minutes. The URL can be generated through the AWS Console or through the AWS CLI (https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html). ",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "message_template_content_sha_256": {
         "computed": true,
         "description": "The content SHA256 of the message template.",

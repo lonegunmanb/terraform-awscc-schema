@@ -143,6 +143,13 @@ const awsccTransferConnector = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "max_concurrent_connections": {
+              "computed": true,
+              "description": "Specifies the number of active connections that your connector can establish with the remote server at the same time.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
             "trusted_host_keys": {
               "computed": true,
               "description": "List of public host keys, for the external server to which you are connecting.",

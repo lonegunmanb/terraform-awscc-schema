@@ -99,6 +99,7 @@ const awsccRdsDbInstance = `{
       },
       "backup_target": {
         "computed": true,
+        "description": "The location for storing automated backups and manual snapshots.\n Valid Values:\n  +  ` + "`" + `` + "`" + `local` + "`" + `` + "`" + ` (Dedicated Local Zone)\n  +  ` + "`" + `` + "`" + `outposts` + "`" + `` + "`" + ` (AWS Outposts)\n  +  ` + "`" + `` + "`" + `region` + "`" + `` + "`" + ` (AWS-Region)\n  \n Default: ` + "`" + `` + "`" + `region` + "`" + `` + "`" + `\n For more information, see [Working with Amazon RDS on Outposts](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html) in the *Amazon RDS User Guide*.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -198,6 +199,11 @@ const awsccRdsDbInstance = `{
         "description": "A name for the DB instance. If you specify a name, AWS CloudFormation converts it to lowercase. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the DB instance. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html).\n For information about constraints that apply to DB instance identifiers, see [Naming constraints in Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html#RDS_Limits.Constraints) in the *Amazon RDS User Guide*.\n  If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.",
         "description_kind": "plain",
         "optional": true,
+        "type": "string"
+      },
+      "db_instance_status": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       },
       "db_name": {
@@ -395,12 +401,22 @@ const awsccRdsDbInstance = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "instance_create_time": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "iops": {
         "computed": true,
         "description": "The number of I/O operations per second (IOPS) that the database provisions. The value must be equal to or greater than 1000. \n If you specify this property, you must follow the range of allowed ratios of your requested IOPS rate to the amount of storage that you allocate (IOPS to allocated storage). For example, you can provision an Oracle database instance with 1000 IOPS and 200 GiB of storage (a ratio of 5:1), or specify 2000 IOPS with 200 GiB of storage (a ratio of 10:1). For more information, see [Amazon RDS Provisioned IOPS Storage to Improve Performance](https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/CHAP_Storage.html#USER_PIOPS) in the *Amazon RDS User Guide*.\n  If you specify ` + "`" + `` + "`" + `io1` + "`" + `` + "`" + ` for the ` + "`" + `` + "`" + `StorageType` + "`" + `` + "`" + ` property, then you must also specify the ` + "`" + `` + "`" + `Iops` + "`" + `` + "`" + ` property.\n  Constraints:\n  +  For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance.\n  +  For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.",
         "description_kind": "plain",
         "optional": true,
         "type": "number"
+      },
+      "is_storage_config_upgrade_available": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
       },
       "kms_key_id": {
         "computed": true,
@@ -409,12 +425,45 @@ const awsccRdsDbInstance = `{
         "optional": true,
         "type": "string"
       },
+      "latest_restorable_time": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "license_model": {
         "computed": true,
         "description": "License model information for this DB instance.\n  Valid Values:\n  +  Aurora MySQL - ` + "`" + `` + "`" + `general-public-license` + "`" + `` + "`" + `\n  +  Aurora PostgreSQL - ` + "`" + `` + "`" + `postgresql-license` + "`" + `` + "`" + `\n  +  RDS for Db2 - ` + "`" + `` + "`" + `bring-your-own-license` + "`" + `` + "`" + `. For more information about RDS for Db2 licensing, see [](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html) in the *Amazon RDS User Guide.*\n  +  RDS for MariaDB - ` + "`" + `` + "`" + `general-public-license` + "`" + `` + "`" + `\n  +  RDS for Microsoft SQL Server - ` + "`" + `` + "`" + `license-included` + "`" + `` + "`" + `\n  +  RDS for MySQL - ` + "`" + `` + "`" + `general-public-license` + "`" + `` + "`" + `\n  +  RDS for Oracle - ` + "`" + `` + "`" + `bring-your-own-license` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `license-included` + "`" + `` + "`" + `\n  +  RDS for PostgreSQL - ` + "`" + `` + "`" + `postgresql-license` + "`" + `` + "`" + `\n  \n  If you've specified ` + "`" + `` + "`" + `DBSecurityGroups` + "`" + `` + "`" + ` and then you update the license model, AWS CloudFormation replaces the underlying DB instance. This will incur some interruptions to database availability.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "listener_endpoint": {
+        "computed": true,
+        "description": "This data type represents the information you need to connect to an Amazon RDS DB instance. This data type is used as a response element in the following actions:\n  +   ` + "`" + `` + "`" + `CreateDBInstance` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `DescribeDBInstances` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `DeleteDBInstance` + "`" + `` + "`" + ` \n  \n For the data structure that represents Amazon Aurora DB cluster endpoints, see ` + "`" + `` + "`" + `DBClusterEndpoint` + "`" + `` + "`" + `.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "address": {
+              "computed": true,
+              "description": "Specifies the DNS address of the DB instance.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "hosted_zone_id": {
+              "computed": true,
+              "description": "Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "port": {
+              "computed": true,
+              "description": "Specifies the port that the database engine is listening on.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "manage_master_user_password": {
         "computed": true,
@@ -484,7 +533,7 @@ const awsccRdsDbInstance = `{
       },
       "multi_az": {
         "computed": true,
-        "description": "Specifies whether the DB instance is a Multi-AZ deployment. You can't set the ` + "`" + `` + "`" + `AvailabilityZone` + "`" + `` + "`" + ` parameter if the DB instance is a Multi-AZ deployment.\n This setting doesn't apply to the following DB instances:\n  +  Amazon Aurora (DB instance Availability Zones (AZs) are managed by the DB cluster.)\n  +  RDS Custom",
+        "description": "Specifies whether the DB instance is a Multi-AZ deployment. You can't set the ` + "`" + `` + "`" + `AvailabilityZone` + "`" + `` + "`" + ` parameter if the DB instance is a Multi-AZ deployment.\n This setting doesn't apply to Amazon Aurora because the DB instance Availability Zones (AZs) are managed by the DB cluster.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
@@ -583,6 +632,22 @@ const awsccRdsDbInstance = `{
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
+      },
+      "read_replica_db_cluster_identifiers": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
+      "read_replica_db_instance_identifiers": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
       },
       "replica_mode": {
         "computed": true,

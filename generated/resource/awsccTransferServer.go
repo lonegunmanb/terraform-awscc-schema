@@ -142,6 +142,12 @@ const awsccTransferServer = `{
         "optional": true,
         "type": "string"
       },
+      "ip_address_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "logging_role": {
         "computed": true,
         "description_kind": "plain",

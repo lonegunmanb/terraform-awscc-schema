@@ -19,6 +19,11 @@ const awsccGuarddutyThreatIntelSet = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "expected_bucket_owner": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "format": {
         "computed": true,
         "description_kind": "plain",
