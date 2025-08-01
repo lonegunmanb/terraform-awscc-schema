@@ -6,40 +6,27 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccMediapackagev2OriginEndpointPolicy = `{
+const awsccBatchServiceEnvironment = `{
   "block": {
     "attributes": {
-      "cdn_auth_configuration": {
+      "capacity_limits": {
         "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "cdn_identifier_secret_arns": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": [
-                "list",
-                "string"
-              ]
-            },
-            "secrets_role_arn": {
+            "capacity_unit": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
+            },
+            "max_capacity": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
             }
           },
-          "nesting_mode": "single"
+          "nesting_mode": "list"
         }
-      },
-      "channel_group_name": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "channel_name": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
       },
       "id": {
         "description": "Uniquely identifies the resource.",
@@ -47,25 +34,44 @@ const awsccMediapackagev2OriginEndpointPolicy = `{
         "required": true,
         "type": "string"
       },
-      "origin_endpoint_name": {
+      "service_environment_arn": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
       },
-      "policy": {
+      "service_environment_name": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "service_environment_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "state": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "A key-value pair to associate with a resource.",
+        "description_kind": "plain",
+        "type": [
+          "map",
+          "string"
+        ]
       }
     },
-    "description": "Data Source schema for AWS::MediaPackageV2::OriginEndpointPolicy",
+    "description": "Data Source schema for AWS::Batch::ServiceEnvironment",
     "description_kind": "plain"
   },
   "version": 0
 }`
 
-func AwsccMediapackagev2OriginEndpointPolicySchema() *tfjson.Schema {
+func AwsccBatchServiceEnvironmentSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccMediapackagev2OriginEndpointPolicy), &result)
+	_ = json.Unmarshal([]byte(awsccBatchServiceEnvironment), &result)
 	return &result
 }

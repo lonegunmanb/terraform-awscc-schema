@@ -83,6 +83,11 @@ const awsccRdsDbInstance = `{
         "optional": true,
         "type": "number"
       },
+      "automatic_restart_time": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "availability_zone": {
         "computed": true,
         "description": "The Availability Zone (AZ) where the database will be created. For information on AWS-Regions and Availability Zones, see [Regions and Availability Zones](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html).\n For Amazon Aurora, each Aurora DB cluster hosts copies of its storage in three separate Availability Zones. Specify one of these Availability Zones. Aurora automatically chooses an appropriate Availability Zone if you don't specify one.\n Default: A random, system-chosen Availability Zone in the endpoint's AWS-Region.\n Constraints:\n  +  The ` + "`" + `` + "`" + `AvailabilityZone` + "`" + `` + "`" + ` parameter can't be specified if the DB instance is a Multi-AZ deployment.\n  +  The specified Availability Zone must be in the same AWS-Region as the current endpoint.\n  \n Example: ` + "`" + `` + "`" + `us-east-1d` + "`" + `` + "`" + `",
@@ -559,6 +564,11 @@ const awsccRdsDbInstance = `{
         "optional": true,
         "type": "string"
       },
+      "percent_progress": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "performance_insights_kms_key_id": {
         "computed": true,
         "description": "The AWS KMS key identifier for encryption of Performance Insights data.\n The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.\n If you do not specify a value for ` + "`" + `` + "`" + `PerformanceInsightsKMSKeyId` + "`" + `` + "`" + `, then Amazon RDS uses your default KMS key. There is a default KMS key for your AWS account. Your AWS account has a different default KMS key for each AWS Region.\n For information about enabling Performance Insights, see [EnablePerformanceInsights](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-enableperformanceinsights).",
@@ -663,6 +673,16 @@ const awsccRdsDbInstance = `{
         "optional": true,
         "type": "string"
       },
+      "resume_full_automation_mode_time": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "secondary_availability_zone": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "source_db_cluster_identifier": {
         "computed": true,
         "description": "The identifier of the Multi-AZ DB cluster that will act as the source for the read replica. Each DB cluster can have up to 15 read replicas.\n Constraints:\n  +  Must be the identifier of an existing Multi-AZ DB cluster.\n  +  Can't be specified if the ` + "`" + `` + "`" + `SourceDBInstanceIdentifier` + "`" + `` + "`" + ` parameter is also specified.\n  +  The specified DB cluster must have automatic backups enabled, that is, its backup retention period must be greater than 0.\n  +  The source DB cluster must be in the same AWS-Region as the read replica. Cross-Region replication isn't supported.",
@@ -697,6 +717,44 @@ const awsccRdsDbInstance = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "status_infos": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "message": {
+              "computed": true,
+              "description": "Details of the error if there is an error for the instance. If the instance isn't in an error state, this value is blank.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "normal": {
+              "computed": true,
+              "description": "Indicates whether the instance is operating normally (TRUE) or is in an error state (FALSE).",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "status": {
+              "computed": true,
+              "description": "The status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "status_type": {
+              "computed": true,
+              "description": "The status type of the DB instance.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       },
       "storage_encrypted": {
         "computed": true,

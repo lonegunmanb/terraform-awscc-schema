@@ -84,6 +84,11 @@ const awsccMediapackagev2Channel = `{
               "description": "\u003cp\u003eWhen true, AWS Elemental MediaPackage performs input switching based on the MQCS. Default is true. This setting is valid only when \u003ccode\u003eInputType\u003c/code\u003e is \u003ccode\u003eCMAF\u003c/code\u003e.\u003c/p\u003e",
               "description_kind": "plain",
               "type": "bool"
+            },
+            "preferred_input": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
             }
           },
           "nesting_mode": "single"

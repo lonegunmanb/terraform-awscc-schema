@@ -9,6 +9,31 @@ import (
 const awsccMediapackagev2OriginEndpointPolicy = `{
   "block": {
     "attributes": {
+      "cdn_auth_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "cdn_identifier_secret_arns": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "secrets_role_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "channel_group_name": {
         "description_kind": "plain",
         "required": true,

@@ -116,6 +116,7 @@ const awsccEc2Volume = `{
       },
       "volume_initialization_rate": {
         "computed": true,
+        "description": "Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as *volume initialization*. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.\n This parameter is supported only for volumes created from snapshots. Omit this parameter if:\n  +  You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.\n  If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.\n   +  You want to create a volume that is initialized at the default rate.\n  \n For more information, see [Initialize Amazon EBS volumes](https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html) in the *Amazon EC2 User Guide*.\n Valid range: 100 - 300 MiB/s",
         "description_kind": "plain",
         "optional": true,
         "type": "number"

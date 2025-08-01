@@ -34,6 +34,20 @@ const awsccQuicksightTopic = `{
           "nesting_mode": "single"
         }
       },
+      "custom_instructions": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "custom_instructions_string": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "data_sets": {
         "computed": true,
         "description_kind": "plain",

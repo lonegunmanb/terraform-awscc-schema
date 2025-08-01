@@ -86,6 +86,12 @@ const awsccMediapackagev2Channel = `{
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
+            },
+            "preferred_input": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
             }
           },
           "nesting_mode": "single"

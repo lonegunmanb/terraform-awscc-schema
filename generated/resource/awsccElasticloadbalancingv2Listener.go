@@ -21,7 +21,7 @@ const awsccElasticloadbalancingv2Listener = `{
       },
       "certificates": {
         "computed": true,
-        "description": "The default SSL server certificate for a secure listener. You must provide exactly one certificate if the listener protocol is HTTPS or TLS.\n To create a certificate list for a secure listener, use [AWS::ElasticLoadBalancingV2::ListenerCertificate](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html).",
+        "description": "The default SSL server certificate for a secure listener. You must provide exactly one certificate if the listener protocol is HTTPS or TLS.\n For an HTTPS listener, update requires some interruptions. For a TLS listener, update requires no interruption.\n To create a certificate list for a secure listener, use [AWS::ElasticLoadBalancingV2::ListenerCertificate](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html).",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -256,7 +256,7 @@ const awsccElasticloadbalancingv2Listener = `{
                       "attributes": {
                         "duration_seconds": {
                           "computed": true,
-                          "description": "The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).",
+                          "description": "The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days). You must specify this value when enabling target group stickiness.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "number"
@@ -394,7 +394,7 @@ const awsccElasticloadbalancingv2Listener = `{
       },
       "listener_attributes": {
         "computed": true,
-        "description": "The listener attributes.",
+        "description": "The listener attributes. Attributes that you do not modify retain their current values.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -478,7 +478,7 @@ const awsccElasticloadbalancingv2Listener = `{
       },
       "ssl_policy": {
         "computed": true,
-        "description": "[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For more information, see [Security policies](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html) in the *Application Load Balancers Guide* and [Security policies](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/describe-ssl-policies.html) in the *Network Load Balancers Guide*.\n Updating the security policy can result in interruptions if the load balancer is handling a high volume of traffic. To decrease the possibility of an interruption if your load balancer is handling a high volume of traffic, create an additional load balancer or request an LCU reservation.",
+        "description": "[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For more information, see [Security policies](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html) in the *Application Load Balancers Guide* and [Security policies](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/describe-ssl-policies.html) in the *Network Load Balancers Guide*.\n [HTTPS listeners] Updating the security policy can result in interruptions if the load balancer is handling a high volume of traffic. To decrease the possibility of an interruption if your load balancer is handling a high volume of traffic, create an additional load balancer or request an LCU reservation.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

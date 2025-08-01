@@ -56,7 +56,7 @@ const awsccElasticloadbalancingv2LoadBalancer = `{
       },
       "load_balancer_attributes": {
         "computed": true,
-        "description": "The load balancer attributes.",
+        "description": "The load balancer attributes. Attributes that you do not modify retain their current values.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
