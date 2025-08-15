@@ -44,6 +44,11 @@ const awsccBatchJobQueue = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "job_queue_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "job_state_time_limit_actions": {
         "computed": true,
         "description_kind": "plain",
@@ -82,6 +87,25 @@ const awsccBatchJobQueue = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "service_environment_order": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "order": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "service_environment": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
       },
       "state": {
         "computed": true,

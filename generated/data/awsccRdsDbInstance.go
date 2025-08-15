@@ -667,7 +667,7 @@ const awsccRdsDbInstance = `{
             },
             "status_type": {
               "computed": true,
-              "description": "The status type of the DB instance.",
+              "description": "This value is currently \"read replication.\"",
               "description_kind": "plain",
               "type": "string"
             }

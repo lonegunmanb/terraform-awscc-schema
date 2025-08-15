@@ -49,6 +49,11 @@ const awsccVerifiedpermissionsPolicyStore = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "cedar_format": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "cedar_json": {
               "computed": true,
               "description_kind": "plain",

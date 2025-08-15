@@ -546,6 +546,13 @@ const awsccRdsDbCluster = `{
         "optional": true,
         "type": "string"
       },
+      "source_db_cluster_resource_id": {
+        "computed": true,
+        "description": "The resource ID of the source DB cluster from which to restore.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "source_region": {
         "computed": true,
         "description": "The AWS Region which contains the source DB cluster when replicating a DB cluster. For example, ` + "`" + `` + "`" + `us-east-1` + "`" + `` + "`" + `. \n Valid for: Aurora DB clusters only",

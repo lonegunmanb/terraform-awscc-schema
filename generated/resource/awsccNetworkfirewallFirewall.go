@@ -9,6 +9,29 @@ import (
 const awsccNetworkfirewallFirewall = `{
   "block": {
     "attributes": {
+      "availability_zone_change_protection": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
+      "availability_zone_mappings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "availability_zone": {
+              "computed": true,
+              "description": "A AvailabilityZone",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
       "delete_protection": {
         "computed": true,
         "description_kind": "plain",
@@ -80,6 +103,7 @@ const awsccNetworkfirewallFirewall = `{
         "type": "bool"
       },
       "subnet_mappings": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -91,15 +115,16 @@ const awsccNetworkfirewallFirewall = `{
               "type": "string"
             },
             "subnet_id": {
+              "computed": true,
               "description": "A SubnetId.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
           "nesting_mode": "set"
         },
-        "required": true
+        "optional": true
       },
       "tags": {
         "computed": true,
@@ -123,9 +148,16 @@ const awsccNetworkfirewallFirewall = `{
         },
         "optional": true
       },
-      "vpc_id": {
+      "transit_gateway_id": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
+        "type": "string"
+      },
+      "vpc_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       }
     },

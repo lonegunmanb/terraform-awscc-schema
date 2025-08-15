@@ -6,7 +6,7 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccOpsworkscmServers = `{
+const awsccEc2IpPoolRouteTableAssociations = `{
   "block": {
     "attributes": {
       "id": {
@@ -25,14 +25,14 @@ const awsccOpsworkscmServers = `{
         ]
       }
     },
-    "description": "Plural Data Source schema for AWS::OpsWorksCM::Server",
+    "description": "Plural Data Source schema for AWS::EC2::IpPoolRouteTableAssociation",
     "description_kind": "plain"
   },
   "version": 0
 }`
 
-func AwsccOpsworkscmServersSchema() *tfjson.Schema {
+func AwsccEc2IpPoolRouteTableAssociationsSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccOpsworkscmServers), &result)
+	_ = json.Unmarshal([]byte(awsccEc2IpPoolRouteTableAssociations), &result)
 	return &result
 }

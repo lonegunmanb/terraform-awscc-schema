@@ -46,6 +46,34 @@ const awsccOpensearchserviceDomain = `{
               "optional": true,
               "type": "bool"
             },
+            "iam_federation_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
+                  "roles_key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "subject_key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "internal_user_database_enabled": {
               "computed": true,
               "description_kind": "plain",

@@ -10,23 +10,26 @@ const awsccBatchJobQueue = `{
   "block": {
     "attributes": {
       "compute_environment_order": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "compute_environment": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "order": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "number"
             }
           },
           "nesting_mode": "list"
         },
-        "required": true
+        "optional": true
       },
       "id": {
         "computed": true,
@@ -40,6 +43,12 @@ const awsccBatchJobQueue = `{
         "type": "string"
       },
       "job_queue_name": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "job_queue_type": {
         "computed": true,
         "description_kind": "plain",
         "optional": true,
@@ -89,6 +98,28 @@ const awsccBatchJobQueue = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "service_environment_order": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "order": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "service_environment": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       },
       "state": {
         "computed": true,

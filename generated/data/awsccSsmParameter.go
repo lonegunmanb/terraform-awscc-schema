@@ -35,13 +35,13 @@ const awsccSsmParameter = `{
       },
       "name": {
         "computed": true,
-        "description": "The name of the parameter.\n  The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter Amazon Resource Name (ARN), is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters: ` + "`" + `` + "`" + `arn:aws:ssm:us-east-2:111222333444:parameter/ExampleParameterName` + "`" + `` + "`" + `",
+        "description": "The name of the parameter.\n  The reported maximum length of 2048 characters for a parameter name includes 1037 characters that are reserved for internal use by SYS. The maximum length for a parameter name that you specify is 1011 characters.\n This count of 1011 characters includes the characters in the ARN that precede the name you specify. This ARN length will vary depending on your partition and Region. For example, the following 45 characters count toward the 1011 character maximum for a parameter created in the US East (Ohio) Region: ` + "`" + `` + "`" + `arn:aws:ssm:us-east-2:111122223333:parameter/` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "type": "string"
       },
       "policies": {
         "computed": true,
-        "description": "Information about the policies assigned to a parameter.\n  [Assigning parameter policies](https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html) in the *User Guide*.",
+        "description": "Information about the policies assigned to a parameter.\n [Assigning parameter policies](https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html) in the *User Guide*.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -62,7 +62,7 @@ const awsccSsmParameter = `{
       },
       "type": {
         "computed": true,
-        "description": "The type of parameter.",
+        "description": "The type of parameter.\n  Parameters of type ` + "`" + `` + "`" + `SecureString` + "`" + `` + "`" + ` are not supported by CFNlong.",
         "description_kind": "plain",
         "type": "string"
       },

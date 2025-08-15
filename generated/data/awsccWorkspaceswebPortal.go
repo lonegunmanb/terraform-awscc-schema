@@ -103,6 +103,11 @@ const awsccWorkspaceswebPortal = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "session_logger_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "status_reason": {
         "computed": true,
         "description_kind": "plain",

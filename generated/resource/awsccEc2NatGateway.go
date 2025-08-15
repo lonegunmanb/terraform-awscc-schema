@@ -76,9 +76,10 @@ const awsccEc2NatGateway = `{
         ]
       },
       "subnet_id": {
+        "computed": true,
         "description": "The ID of the subnet in which the NAT gateway is located.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "tags": {

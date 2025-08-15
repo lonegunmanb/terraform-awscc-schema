@@ -833,10 +833,60 @@ const awsccIotsitewiseAssetModel = `{
       },
       "asset_model_type": {
         "computed": true,
-        "description": "The type of the asset model (ASSET_MODEL OR COMPONENT_MODEL)",
+        "description": "The type of the asset model (ASSET_MODEL OR COMPONENT_MODEL or INTERFACE)",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "enforced_asset_model_interface_relationships": {
+        "computed": true,
+        "description": "a list of asset model and interface relationships",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "interface_asset_model_id": {
+              "computed": true,
+              "description": "The ID of the interface that is enforced to the asset model",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "property_mappings": {
+              "computed": true,
+              "description": "Contains information about enforced interface property and asset model property",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "asset_model_property_external_id": {
+                    "computed": true,
+                    "description": "The external ID of the enforced asset model property",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "asset_model_property_logical_id": {
+                    "computed": true,
+                    "description": "The logical ID of the enforced asset model property",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "interface_asset_model_property_external_id": {
+                    "computed": true,
+                    "description": "The external ID of the enforced interface property",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       },
       "id": {
         "computed": true,

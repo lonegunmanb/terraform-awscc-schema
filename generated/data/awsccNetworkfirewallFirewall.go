@@ -9,6 +9,26 @@ import (
 const awsccNetworkfirewallFirewall = `{
   "block": {
     "attributes": {
+      "availability_zone_change_protection": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
+      },
+      "availability_zone_mappings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "availability_zone": {
+              "computed": true,
+              "description": "A AvailabilityZone",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        }
+      },
       "delete_protection": {
         "computed": true,
         "description_kind": "plain",
@@ -113,6 +133,11 @@ const awsccNetworkfirewallFirewall = `{
           },
           "nesting_mode": "set"
         }
+      },
+      "transit_gateway_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "vpc_id": {
         "computed": true,

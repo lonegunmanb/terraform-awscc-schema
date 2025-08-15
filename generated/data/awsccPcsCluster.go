@@ -27,6 +27,12 @@ const awsccPcsCluster = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "ipv_6_address": {
+              "computed": true,
+              "description": "The endpoint's IPv6 address.",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "port": {
               "computed": true,
               "description": "The endpoint's connection port number.",
@@ -95,6 +101,12 @@ const awsccPcsCluster = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "network_type": {
+              "computed": true,
+              "description": "The IP of the cluster (IPV4 or IPV6)",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "security_group_ids": {
               "computed": true,
               "description": "The list of security group IDs associated with the Elastic Network Interface (ENI) created in subnets.",

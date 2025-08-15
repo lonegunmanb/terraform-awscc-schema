@@ -460,6 +460,23 @@ const awsccDeadlineFleet = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "vpc_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "resource_configuration_arns": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"

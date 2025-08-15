@@ -103,6 +103,12 @@ const awsccConnectUser = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "persistent_connection": {
+              "computed": true,
+              "description": "The Persistent Connection setting.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
             "phone_type": {
               "computed": true,
               "description": "The phone type.",

@@ -15,6 +15,30 @@ const awsccAppintegrationsApplication = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "application_config": {
+        "computed": true,
+        "description": "The application configuration. Cannot be used when IsService is true.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "contact_handling": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "scope": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "application_id": {
         "computed": true,
         "description": "The id of the application.",
@@ -64,6 +88,44 @@ const awsccAppintegrationsApplication = `{
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "iframe_config": {
+        "computed": true,
+        "description": "The iframe configuration",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "allow": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "sandbox": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "initialization_timeout": {
+        "computed": true,
+        "description": "The initialization timeout in milliseconds. Required when IsService is true.",
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "is_service": {
+        "computed": true,
+        "description": "Indicates if the application is a service",
+        "description_kind": "plain",
+        "type": "bool"
       },
       "name": {
         "computed": true,

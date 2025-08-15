@@ -500,6 +500,25 @@ const awsccNetworkfirewallRuleGroup = `{
         "required": true,
         "type": "string"
       },
+      "summary_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "rule_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "tags": {
         "computed": true,
         "description_kind": "plain",

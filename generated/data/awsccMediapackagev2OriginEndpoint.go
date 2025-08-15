@@ -668,6 +668,12 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "cmaf_exclude_segment_drm_metadata": {
+                    "computed": true,
+                    "description": "\u003cp\u003eExcludes SEIG and SGPD boxes from segment metadata in CMAF containers.\u003c/p\u003e \u003cp\u003eWhen set to \u003ccode\u003etrue\u003c/code\u003e, MediaPackage omits these DRM metadata boxes from CMAF segments, which can improve compatibility with certain devices and players that don't support these boxes.\u003c/p\u003e \u003cp\u003eImportant considerations:\u003c/p\u003e \u003cul\u003e \u003cli\u003e \u003cp\u003eThis setting only affects CMAF container formats\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003eKey rotation can still be handled through media playlist signaling\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003ePSSH and TENC boxes remain unaffected\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003eDefault behavior is preserved when this setting is disabled\u003c/p\u003e \u003c/li\u003e \u003c/ul\u003e \u003cp\u003eValid values: \u003ccode\u003etrue\u003c/code\u003e | \u003ccode\u003efalse\u003c/code\u003e \u003c/p\u003e \u003cp\u003eDefault: \u003ccode\u003efalse\u003c/code\u003e \u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
                   "constant_initialization_vector": {
                     "computed": true,
                     "description": "\u003cp\u003eA 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting content. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).\u003c/p\u003e",

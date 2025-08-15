@@ -1,0 +1,163 @@
+package resource
+
+import (
+	"encoding/json"
+
+	tfjson "github.com/hashicorp/terraform-json"
+)
+
+const awsccWorkspaceswebSessionLogger = `{
+  "block": {
+    "attributes": {
+      "additional_encryption_context": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "map",
+          "string"
+        ]
+      },
+      "associated_portal_arns": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
+      "creation_date": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "customer_managed_key": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "display_name": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "event_filter": {
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "all": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "include": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "required": true
+      },
+      "id": {
+        "computed": true,
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "log_configuration": {
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "s3": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "bucket": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "bucket_owner": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "folder_structure": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "key_prefix": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "log_file_format": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "required": true
+      },
+      "session_logger_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      }
+    },
+    "description": "Definition of AWS::WorkSpacesWeb::SessionLogger Resource Type",
+    "description_kind": "plain"
+  },
+  "version": 1
+}`
+
+func AwsccWorkspaceswebSessionLoggerSchema() *tfjson.Schema {
+	var result tfjson.Schema
+	_ = json.Unmarshal([]byte(awsccWorkspaceswebSessionLogger), &result)
+	return &result
+}

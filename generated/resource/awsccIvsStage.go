@@ -27,6 +27,35 @@ const awsccIvsStage = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "hls_configuration": {
+              "computed": true,
+              "description": "HLS configuration object for individual participant recording.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "participant_recording_hls_configuration": {
+                    "computed": true,
+                    "description": "An object representing a configuration of participant HLS recordings for individual participant recording.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "target_segment_duration_seconds": {
+                          "computed": true,
+                          "description": "Defines the target duration for recorded segments generated when recording a stage participant. Segments may have durations longer than the specified value when needed to ensure each segment begins with a keyframe. Default: 6.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "media_types": {
               "computed": true,
               "description": "Types of media to be recorded. Default: AUDIO_VIDEO.",
@@ -37,12 +66,65 @@ const awsccIvsStage = `{
                 "string"
               ]
             },
+            "recording_reconnect_window_seconds": {
+              "computed": true,
+              "description": "If a stage publisher disconnects and then reconnects within the specified interval, the multiple recordings will be considered a single recording and merged together. The default value is 0, which disables merging.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
             "storage_configuration_arn": {
               "computed": true,
               "description": "ARN of the StorageConfiguration resource to use for individual participant recording.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "thumbnail_configuration": {
+              "computed": true,
+              "description": "A complex type that allows you to enable/disable the recording of thumbnails for individual participant recording and modify the interval at which thumbnails are generated for the live session.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "participant_thumbnail_configuration": {
+                    "computed": true,
+                    "description": "An object representing a configuration of thumbnails for recorded video from an individual participant.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "recording_mode": {
+                          "computed": true,
+                          "description": "Thumbnail recording mode. Default: DISABLED.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "storage": {
+                          "computed": true,
+                          "description": "Indicates the format in which thumbnails are recorded. SEQUENTIAL records all generated thumbnails in a serial manner, to the media/thumbnails/high directory. LATEST saves the latest thumbnail in media/latest_thumbnail/high/thumb.jpg and overwrites it at the interval specified by targetIntervalSeconds. You can enable both SEQUENTIAL and LATEST. Default: SEQUENTIAL.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "set",
+                            "string"
+                          ]
+                        },
+                        "target_interval_seconds": {
+                          "computed": true,
+                          "description": "The targeted thumbnail-generation interval in seconds. This is configurable only if recordingMode is INTERVAL. Default: 60.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

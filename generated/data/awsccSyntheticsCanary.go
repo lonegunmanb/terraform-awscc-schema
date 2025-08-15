@@ -59,6 +59,28 @@ const awsccSyntheticsCanary = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "dependencies": {
+              "computed": true,
+              "description": "List of Lambda layers to attach to the canary",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "reference": {
+                    "computed": true,
+                    "description": "ARN of the Lambda layer",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "type": {
+                    "computed": true,
+                    "description": "Type of dependency",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
             "handler": {
               "computed": true,
               "description_kind": "plain",

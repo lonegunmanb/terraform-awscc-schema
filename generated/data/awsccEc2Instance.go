@@ -160,7 +160,7 @@ const awsccEc2Instance = `{
           "attributes": {
             "type": {
               "computed": true,
-              "description": "The type of Elastic Graphics accelerator.",
+              "description": "The type of Elastic Graphics accelerator. Amazon Elastic Graphics is no longer available.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -176,13 +176,13 @@ const awsccEc2Instance = `{
           "attributes": {
             "count": {
               "computed": true,
-              "description": "The number of elastic inference accelerators to attach to the instance.",
+              "description": "The number of elastic inference accelerators to attach to the instance. Amazon Elastic Inference is no longer available.",
               "description_kind": "plain",
               "type": "number"
             },
             "type": {
               "computed": true,
-              "description": "The type of elastic inference accelerator.",
+              "description": "The type of elastic inference accelerator. Amazon Elastic Inference is no longer available.",
               "description_kind": "plain",
               "type": "string"
             }

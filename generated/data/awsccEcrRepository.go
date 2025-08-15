@@ -70,6 +70,28 @@ const awsccEcrRepository = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "image_tag_mutability_exclusion_filters": {
+        "computed": true,
+        "description": "The image tag mutability exclusion filters associated with the repository. These filters specify which image tags can override the repository's default image tag mutability setting.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "image_tag_mutability_exclusion_filter_type": {
+              "computed": true,
+              "description": "Specifies the type of filter to use for excluding image tags from the repository's mutability setting.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "image_tag_mutability_exclusion_filter_value": {
+              "computed": true,
+              "description": "The value to use when filtering image tags.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "lifecycle_policy": {
         "computed": true,
         "description": "Creates or updates a lifecycle policy. For information about lifecycle policy syntax, see [Lifecycle policy template](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html).",

@@ -92,6 +92,12 @@ const awsccEksCluster = `{
           "nesting_mode": "single"
         }
       },
+      "deletion_protection": {
+        "computed": true,
+        "description": "Set this value to true to enable deletion protection for the cluster.",
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "encryption_config": {
         "computed": true,
         "description_kind": "plain",

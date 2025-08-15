@@ -727,34 +727,29 @@ const awsccRdsDbInstance = `{
               "computed": true,
               "description": "Details of the error if there is an error for the instance. If the instance isn't in an error state, this value is blank.",
               "description_kind": "plain",
-              "optional": true,
               "type": "string"
             },
             "normal": {
               "computed": true,
               "description": "Indicates whether the instance is operating normally (TRUE) or is in an error state (FALSE).",
               "description_kind": "plain",
-              "optional": true,
               "type": "bool"
             },
             "status": {
               "computed": true,
               "description": "The status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.",
               "description_kind": "plain",
-              "optional": true,
               "type": "string"
             },
             "status_type": {
               "computed": true,
-              "description": "The status type of the DB instance.",
+              "description": "This value is currently \"read replication.\"",
               "description_kind": "plain",
-              "optional": true,
               "type": "string"
             }
           },
           "nesting_mode": "list"
-        },
-        "optional": true
+        }
       },
       "storage_encrypted": {
         "computed": true,

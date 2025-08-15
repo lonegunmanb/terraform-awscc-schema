@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestAwsccOpsworkscmServersSchema(t *testing.T) {
+func TestAwsccOmicsAnnotationStoresSchema(t *testing.T) {
 	defaultSchema := &tfjson.Schema{}
-	s := data.AwsccOpsworkscmServersSchema()
+	s := data.AwsccOmicsAnnotationStoresSchema()
 	assert.NotNil(t, s)
 	assert.NotEqual(t, defaultSchema, s)
 }

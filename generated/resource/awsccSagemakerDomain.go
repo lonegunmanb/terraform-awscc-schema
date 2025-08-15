@@ -1545,13 +1545,6 @@ const awsccSagemakerDomain = `{
                     "optional": true,
                     "type": "string"
                   },
-                  "single_sign_on_application_arn": {
-                    "computed": true,
-                    "description": "The ARN of the DataZone application managed by SageMaker Unified Studio in the AWS IAM Identity Center.",
-                    "description_kind": "plain",
-                    "optional": true,
-                    "type": "string"
-                  },
                   "studio_web_portal_access": {
                     "computed": true,
                     "description": "Sets whether you can access the domain in Amazon SageMaker Studio:\n\nENABLED\nYou can access the domain in Amazon SageMaker Studio. If you migrate the domain to Amazon SageMaker Unified Studio, you can access it in both studio interfaces.\nDISABLED\nYou can't access the domain in Amazon SageMaker Studio. If you migrate the domain to Amazon SageMaker Unified Studio, you can access it only in that studio interface.\n",

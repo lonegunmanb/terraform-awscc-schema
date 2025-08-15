@@ -91,6 +91,11 @@ const awsccNetworkfirewallFirewallPolicy = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "deep_threat_inspection": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
                   "override": {
                     "computed": true,
                     "description_kind": "plain",
