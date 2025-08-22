@@ -90,6 +90,31 @@ const awsccKinesisanalyticsv2Application = `{
               },
               "optional": true
             },
+            "application_encryption_configuration": {
+              "computed": true,
+              "description": "Describes whether customer managed key is enabled and key details for customer data encryption",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key_id": {
+                    "computed": true,
+                    "description": "KMS KeyId. Can be either key uuid or full key arn or key alias arn or short key alias",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "key_type": {
+                    "computed": true,
+                    "description": "Specifies whether application data is encrypted using service key: AWS_OWNED_KEY or customer key: CUSTOMER_MANAGED_KEY",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "application_snapshot_configuration": {
               "computed": true,
               "description": "Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.",

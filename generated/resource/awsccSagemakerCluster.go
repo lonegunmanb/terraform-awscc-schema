@@ -189,6 +189,121 @@ const awsccSagemakerCluster = `{
               },
               "optional": true
             },
+            "scheduled_update_config": {
+              "computed": true,
+              "description": "The configuration object of the schedule that SageMaker follows when updating the AMI.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "deployment_config": {
+                    "computed": true,
+                    "description": "The configuration to use when updating the AMI versions.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "auto_rollback_configuration": {
+                          "computed": true,
+                          "description": "An array that contains the alarms that SageMaker monitors to know whether to roll back the AMI update.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "alarm_name": {
+                                "computed": true,
+                                "description": "The name of the alarm.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          },
+                          "optional": true
+                        },
+                        "rolling_update_policy": {
+                          "computed": true,
+                          "description": "The policy that SageMaker uses when updating the AMI versions of the cluster.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "maximum_batch_size": {
+                                "computed": true,
+                                "description": "The configuration of the size measurements of the AMI update. Using this configuration, you can specify whether SageMaker should update your instance group by an amount or percentage of instances.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "type": {
+                                      "computed": true,
+                                      "description": "Specifies whether SageMaker should process the update by amount or percentage of instances.",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "value": {
+                                      "computed": true,
+                                      "description": "Specifies the amount or percentage of instances SageMaker updates at a time.",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "number"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "rollback_maximum_batch_size": {
+                                "computed": true,
+                                "description": "The configuration of the size measurements of the AMI update. Using this configuration, you can specify whether SageMaker should update your instance group by an amount or percentage of instances.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "type": {
+                                      "computed": true,
+                                      "description": "Specifies whether SageMaker should process the update by amount or percentage of instances.",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "value": {
+                                      "computed": true,
+                                      "description": "Specifies the amount or percentage of instances SageMaker updates at a time.",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "number"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "wait_interval_in_seconds": {
+                          "computed": true,
+                          "description": "The duration in seconds that SageMaker waits before updating more instances in the cluster.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "schedule_expression": {
+                    "computed": true,
+                    "description": "A cron expression that specifies the schedule that SageMaker follows when updating the AMI.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "threads_per_core": {
               "computed": true,
               "description": "The number you specified to TreadsPerCore in CreateCluster for enabling or disabling multithreading. For instance types that support multithreading, you can specify 1 for disabling multithreading and 2 for enabling multithreading.",

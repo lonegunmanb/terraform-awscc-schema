@@ -81,6 +81,97 @@ const awsccB2BiTransformer = `{
                             },
                             "nesting_mode": "single"
                           }
+                        },
+                        "validation_options": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "validation_rules": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "code_list_validation_rule": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "codes_to_add": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          },
+                                          "codes_to_remove": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          },
+                                          "element_id": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "element_length_validation_rule": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "element_id": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "max_length": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "number"
+                                          },
+                                          "min_length": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "number"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "element_requirement_validation_rule": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "element_position": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "requirement": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
                         }
                       },
                       "nesting_mode": "single"
@@ -167,6 +258,129 @@ const awsccB2BiTransformer = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "advanced_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "x12": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "split_options": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "split_by": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "validation_options": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "validation_rules": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "code_list_validation_rule": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "codes_to_add": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          },
+                                          "codes_to_remove": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          },
+                                          "element_id": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "element_length_validation_rule": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "element_id": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "max_length": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "number"
+                                          },
+                                          "min_length": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "number"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "element_requirement_validation_rule": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "element_position": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "requirement": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "format_options": {
               "computed": true,
               "description_kind": "plain",

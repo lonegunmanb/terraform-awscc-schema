@@ -336,6 +336,12 @@ const awsccDynamodbGlobalTable = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "bool"
+                  },
+                  "mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -363,6 +369,12 @@ const awsccDynamodbGlobalTable = `{
                           "description_kind": "plain",
                           "optional": true,
                           "type": "bool"
+                        },
+                        "mode": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
                         }
                       },
                       "nesting_mode": "single"

@@ -551,6 +551,11 @@ const awsccDeadlineFleet = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "status_message": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "An array of key-value pairs to apply to this resource.",

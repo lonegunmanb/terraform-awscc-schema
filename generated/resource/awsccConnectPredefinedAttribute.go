@@ -40,6 +40,7 @@ const awsccConnectPredefinedAttribute = `{
         "type": "string"
       },
       "values": {
+        "computed": true,
         "description": "The values of a predefined attribute.",
         "description_kind": "plain",
         "nested_type": {
@@ -57,7 +58,7 @@ const awsccConnectPredefinedAttribute = `{
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
       }
     },
     "description": "Resource Type definition for AWS::Connect::PredefinedAttribute",

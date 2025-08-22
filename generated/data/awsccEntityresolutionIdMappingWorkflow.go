@@ -27,6 +27,20 @@ const awsccEntityresolutionIdMappingWorkflow = `{
         "required": true,
         "type": "string"
       },
+      "id_mapping_incremental_run_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "incremental_run_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id_mapping_techniques": {
         "computed": true,
         "description_kind": "plain",

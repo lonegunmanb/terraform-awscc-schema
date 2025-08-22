@@ -100,7 +100,7 @@ const awsccCloudfrontVpcOrigin = `{
             },
             "origin_ssl_protocols": {
               "computed": true,
-              "description": "Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include ` + "`" + `` + "`" + `SSLv3` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `TLSv1` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `TLSv1.1` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `TLSv1.2` + "`" + `` + "`" + `.\n For more information, see [Minimum Origin SSL Protocol](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols) in the *Amazon CloudFront Developer Guide*.",
+              "description": "Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include ` + "`" + `` + "`" + `SSLv3` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `TLSv1` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `TLSv1.1` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `TLSv1.2` + "`" + `` + "`" + `.\n For more information, see [Minimum Origin SSL Protocol](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginSSLProtocols) in the *Amazon CloudFront Developer Guide*.",
               "description_kind": "plain",
               "optional": true,
               "type": [

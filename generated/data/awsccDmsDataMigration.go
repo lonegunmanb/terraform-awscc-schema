@@ -41,7 +41,7 @@ const awsccDmsDataMigration = `{
           "attributes": {
             "cloudwatch_logs_enabled": {
               "computed": true,
-              "description": "The property specifies whether to enable the Cloudwatch log.",
+              "description": "The property specifies whether to enable the CloudWatch log.",
               "description_kind": "plain",
               "type": "bool"
             },

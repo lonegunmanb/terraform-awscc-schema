@@ -170,7 +170,7 @@ const awsccIvsStage = `{
         "optional": true
       }
     },
-    "description": "Resource Definition for type AWS::IVS::Stage.",
+    "description": "Resource Type definition for AWS::IVS::Stage.",
     "description_kind": "plain"
   },
   "version": 1

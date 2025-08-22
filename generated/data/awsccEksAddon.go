@@ -45,6 +45,22 @@ const awsccEksAddon = `{
         "required": true,
         "type": "string"
       },
+      "namespace_config": {
+        "computed": true,
+        "description": "The custom namespace configuration to use with the add-on",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "namespace": {
+              "computed": true,
+              "description": "The custom namespace for creating the add-on",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "pod_identity_associations": {
         "computed": true,
         "description": "An array of pod identities to apply to this add-on.",

@@ -53,6 +53,11 @@ const awsccDynamodbTable = `{
               "description": "Indicates whether CloudWatch Contributor Insights are to be enabled (true) or disabled (false).",
               "description_kind": "plain",
               "type": "bool"
+            },
+            "mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             }
           },
           "nesting_mode": "single"
@@ -81,6 +86,11 @@ const awsccDynamodbTable = `{
                     "description": "Indicates whether CloudWatch Contributor Insights are to be enabled (true) or disabled (false).",
                     "description_kind": "plain",
                     "type": "bool"
+                  },
+                  "mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
