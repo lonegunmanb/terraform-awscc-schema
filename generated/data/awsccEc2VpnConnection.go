@@ -45,6 +45,11 @@ const awsccEc2VpnConnection = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "pre_shared_key_storage": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "remote_ipv_4_network_cidr": {
         "computed": true,
         "description": "The IPv4 CIDR on the AWS side of the VPN connection.\n Default: ` + "`" + `` + "`" + `0.0.0.0/0` + "`" + `` + "`" + `",

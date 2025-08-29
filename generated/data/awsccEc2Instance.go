@@ -154,7 +154,7 @@ const awsccEc2Instance = `{
       },
       "elastic_gpu_specifications": {
         "computed": true,
-        "description": "An elastic GPU to associate with the instance.",
+        "description": "An elastic GPU to associate with the instance. Amazon Elastic Graphics is no longer available.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -170,7 +170,7 @@ const awsccEc2Instance = `{
       },
       "elastic_inference_accelerators": {
         "computed": true,
-        "description": "An elastic inference accelerator to associate with the instance.",
+        "description": "An elastic inference accelerator to associate with the instance. Amazon Elastic Inference is no longer available.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
