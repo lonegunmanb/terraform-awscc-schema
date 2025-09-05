@@ -17,7 +17,7 @@ const awsccEc2Volume = `{
       },
       "availability_zone": {
         "computed": true,
-        "description": "The ID of the Availability Zone in which to create the volume. For example, ` + "`" + `` + "`" + `us-east-1a` + "`" + `` + "`" + `.",
+        "description": "The ID of the Availability Zone in which to create the volume. For example, ` + "`" + `` + "`" + `us-east-1a` + "`" + `` + "`" + `.\n Either ` + "`" + `` + "`" + `AvailabilityZone` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `AvailabilityZoneId` + "`" + `` + "`" + ` must be specified, but not both.",
         "description_kind": "plain",
         "type": "string"
       },

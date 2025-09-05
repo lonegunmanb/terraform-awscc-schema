@@ -51,6 +51,23 @@ const awsccSyntheticsCanary = `{
         "required": true,
         "type": "string"
       },
+      "browser_configs": {
+        "computed": true,
+        "description": "List of browser configurations for the canary",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "browser_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "canary_id": {
         "computed": true,
         "description": "Id of the canary",
@@ -360,9 +377,67 @@ const awsccSyntheticsCanary = `{
                 "nesting_mode": "list"
               },
               "optional": true
+            },
+            "browser_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             }
           },
           "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "visual_references": {
+        "computed": true,
+        "description": "List of visual references for the canary",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "base_canary_run_id": {
+              "computed": true,
+              "description": "Canary run id to be used as base reference for visual testing",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "base_screenshots": {
+              "computed": true,
+              "description": "List of screenshots used as base reference for visual testing",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "ignore_coordinates": {
+                    "computed": true,
+                    "description": "List of coordinates of rectangles to be ignored during visual testing",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "screenshot_name": {
+                    "computed": true,
+                    "description": "Name of the screenshot to be used as base reference for visual testing",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "browser_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
         },
         "optional": true
       },
