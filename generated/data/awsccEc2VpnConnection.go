@@ -47,6 +47,7 @@ const awsccEc2VpnConnection = `{
       },
       "pre_shared_key_storage": {
         "computed": true,
+        "description": "Describes the storage location for an instance store-backed AMI.",
         "description_kind": "plain",
         "type": "string"
       },

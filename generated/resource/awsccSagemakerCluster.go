@@ -9,6 +9,31 @@ import (
 const awsccSagemakerCluster = `{
   "block": {
     "attributes": {
+      "auto_scaling": {
+        "computed": true,
+        "description": "Configuration for cluster auto-scaling",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "auto_scaler_type": {
+              "computed": true,
+              "description": "The type of auto-scaler to use",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "mode": {
+              "computed": true,
+              "description": "The auto-scaling mode for the cluster",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "cluster_arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN) of the HyperPod Cluster.",
@@ -18,6 +43,13 @@ const awsccSagemakerCluster = `{
       "cluster_name": {
         "computed": true,
         "description": "The name of the HyperPod Cluster.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "cluster_role": {
+        "computed": true,
+        "description": "The cluster role for the autoscaler to assume.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -99,6 +131,18 @@ const awsccSagemakerCluster = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "root_volume": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        },
+                        "volume_kms_key_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
                         "volume_size_in_gb": {
                           "computed": true,
                           "description": "The size in gigabytes (GB) of the additional EBS volume to be attached to the instances in the SageMaker HyperPod cluster instance group. The additional EBS volume is attached to each instance within the SageMaker HyperPod cluster instance group and mounted to /opt/sagemaker.",
@@ -448,6 +492,18 @@ const awsccSagemakerCluster = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "root_volume": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        },
+                        "volume_kms_key_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
                         "volume_size_in_gb": {
                           "computed": true,
                           "description": "The size in gigabytes (GB) of the additional EBS volume to be attached to the instances in the SageMaker HyperPod cluster instance group. The additional EBS volume is attached to each instance within the SageMaker HyperPod cluster instance group and mounted to /opt/sagemaker.",

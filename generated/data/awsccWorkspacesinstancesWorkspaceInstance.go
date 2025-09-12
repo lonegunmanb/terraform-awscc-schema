@@ -97,6 +97,39 @@ const awsccWorkspacesinstancesWorkspaceInstance = `{
                 "nesting_mode": "list"
               }
             },
+            "capacity_reservation_specification": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "capacity_reservation_preference": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "capacity_reservation_target": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "capacity_reservation_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "capacity_reservation_resource_group_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "cpu_options": {
               "computed": true,
               "description_kind": "plain",
@@ -140,6 +173,11 @@ const awsccWorkspacesinstancesWorkspaceInstance = `{
               "description_kind": "plain",
               "type": "bool"
             },
+            "enable_primary_ipv_6": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "bool"
+            },
             "enclave_options": {
               "computed": true,
               "description_kind": "plain",
@@ -173,6 +211,11 @@ const awsccWorkspacesinstancesWorkspaceInstance = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "name": {
                     "computed": true,
                     "description_kind": "plain",
@@ -187,15 +230,77 @@ const awsccWorkspacesinstancesWorkspaceInstance = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "instance_market_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "market_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "spot_options": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "instance_interruption_behavior": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "max_price": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "spot_instance_type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "valid_until_utc": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "instance_type": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
+            "ipv_6_address_count": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
             "key_name": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
+            },
+            "license_specifications": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "license_configuration_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
             },
             "maintenance_options": {
               "computed": true,
@@ -315,10 +420,20 @@ const awsccWorkspacesinstancesWorkspaceInstance = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "group_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "group_name": {
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "partition_number": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
                   },
                   "tenancy": {
                     "computed": true,
@@ -352,6 +467,11 @@ const awsccWorkspacesinstancesWorkspaceInstance = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "subnet_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             },
             "tag_specifications": {
               "computed": true,
