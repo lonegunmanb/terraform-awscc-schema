@@ -15,6 +15,28 @@ const awsccOpensearchserverlessSecurityConfig = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "iam_federation_options": {
+        "computed": true,
+        "description": "Describe IAM federation options in form of key value map",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "group_attribute": {
+              "computed": true,
+              "description": "Group attribute for this IAM federation integration",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "user_attribute": {
+              "computed": true,
+              "description": "User attribute for this IAM federation integration",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "iam_identity_center_options": {
         "computed": true,
         "description": "Describes IAM Identity Center options for an OpenSearch Serverless security configuration in the form of a key-value map",

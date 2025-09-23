@@ -429,6 +429,11 @@ const awsccRdsDbInstance = `{
         "description_kind": "plain",
         "type": "bool"
       },
+      "master_user_authentication_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "master_user_password": {
         "computed": true,
         "description": "The password for the master user. The password can include any printable ASCII character except \"/\", \"\"\", or \"@\".\n  *Amazon Aurora* \n Not applicable. The password for the master user is managed by the DB cluster.\n  *RDS for Db2* \n Must contain from 8 to 255 characters.\n  *RDS for MariaDB* \n Constraints: Must contain from 8 to 41 characters.\n  *RDS for Microsoft SQL Server* \n Constraints: Must contain from 8 to 128 characters.\n  *RDS for MySQL* \n Constraints: Must contain from 8 to 41 characters.\n  *RDS for Oracle* \n Constraints: Must contain from 8 to 30 characters.\n  *RDS for PostgreSQL* \n Constraints: Must contain from 8 to 128 characters.",

@@ -193,6 +193,16 @@ const awsccEvsEnvironment = `{
                 "nesting_mode": "single"
               }
             },
+            "hcx_network_acl_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "is_hcx_public": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "bool"
+            },
             "nsx_up_link": {
               "computed": true,
               "description_kind": "plain",

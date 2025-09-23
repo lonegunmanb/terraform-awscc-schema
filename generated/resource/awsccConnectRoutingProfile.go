@@ -40,6 +40,42 @@ const awsccConnectRoutingProfile = `{
         "required": true,
         "type": "string"
       },
+      "manual_assignment_queue_configs": {
+        "computed": true,
+        "description": "The manual assignment queues to associate with this routing profile.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "queue_reference": {
+              "computed": true,
+              "description": "Contains the channel and queue identifier for a routing profile.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "channel": {
+                    "computed": true,
+                    "description": "The channels that agents can handle in the Contact Control Panel (CCP).",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "queue_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) for the queue.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "media_concurrencies": {
         "description": "The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.",
         "description_kind": "plain",

@@ -9,6 +9,31 @@ import (
 const awsccBedrockGuardrail = `{
   "block": {
     "attributes": {
+      "automated_reasoning_policy_config": {
+        "computed": true,
+        "description": "Optional configuration for integrating Automated Reasoning policies with the guardrail.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "confidence_threshold": {
+              "computed": true,
+              "description": "The confidence threshold for triggering guardrail actions based on Automated Reasoning policy violations.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "policies": {
+              "computed": true,
+              "description": "The list of Automated Reasoning policy ARNs to include in the guardrail configuration",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "blocked_input_messaging": {
         "computed": true,
         "description": "Messaging for when violations are detected in text",

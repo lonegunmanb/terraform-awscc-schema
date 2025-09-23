@@ -103,6 +103,74 @@ const awsccApsScraper = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "scraper_logging_configuration": {
+        "computed": true,
+        "description": "Configuration for scraper logging",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "logging_destination": {
+              "computed": true,
+              "description": "Destination for scraper logging",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cloudwatch_logs": {
+                    "computed": true,
+                    "description": "Represents a cloudwatch logs destination for scraper logging",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "log_group_arn": {
+                          "computed": true,
+                          "description": "ARN of the CloudWatch log group",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "scraper_components": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "config": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "options": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "type": {
+                    "computed": true,
+                    "description": "Type of scraper component",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "source": {
         "computed": true,
         "description": "Scraper metrics source",

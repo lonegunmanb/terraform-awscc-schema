@@ -64,6 +64,22 @@ const awsccCleanroomsAnalysisTemplate = `{
         "optional": true,
         "type": "string"
       },
+      "error_message_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "format": {
         "description_kind": "plain",
         "required": true,

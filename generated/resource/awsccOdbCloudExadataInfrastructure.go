@@ -137,6 +137,92 @@ const awsccOdbCloudExadataInfrastructure = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "maintenance_window": {
+        "computed": true,
+        "description": "The scheduling details for the maintenance window. Patching and system updates take place during the maintenance window.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "custom_action_timeout_in_mins": {
+              "computed": true,
+              "description": "The timeout duration for custom actions in minutes.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "days_of_week": {
+              "computed": true,
+              "description": "The days of the week when maintenance can be performed.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "hours_of_day": {
+              "computed": true,
+              "description": "The hours of the day when maintenance can be performed.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "number"
+              ]
+            },
+            "is_custom_action_timeout_enabled": {
+              "computed": true,
+              "description": "Indicates whether custom action timeout is enabled.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "lead_time_in_weeks": {
+              "computed": true,
+              "description": "The lead time in weeks before the maintenance window.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "months": {
+              "computed": true,
+              "description": "The months when maintenance can be performed.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "patching_mode": {
+              "computed": true,
+              "description": "The patching mode for the maintenance window.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "preference": {
+              "computed": true,
+              "description": "The preference for the maintenance window scheduling.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "weeks_of_month": {
+              "computed": true,
+              "description": "The weeks of the month when maintenance can be performed.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "number"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "max_cpu_count": {
         "computed": true,
         "description": "The total number of CPU cores available on the Exadata infrastructure.",

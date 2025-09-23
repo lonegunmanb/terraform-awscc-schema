@@ -20,6 +20,15 @@ const awsccCleanroomsCollaboration = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "auto_approved_change_types": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "set",
+          "string"
+        ]
+      },
       "collaboration_identifier": {
         "computed": true,
         "description_kind": "plain",

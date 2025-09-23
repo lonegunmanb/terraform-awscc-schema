@@ -11,38 +11,43 @@ const awsccEc2NetworkInterfaceAttachment = `{
     "attributes": {
       "attachment_id": {
         "computed": true,
+        "description": "The ID of the network interface attachment.",
         "description_kind": "plain",
         "type": "string"
       },
       "delete_on_termination": {
         "computed": true,
-        "description": "Whether to delete the network interface when the instance terminates. By default, this value is set to ` + "`" + `` + "`" + `true` + "`" + `` + "`" + `.",
+        "description": "Whether to delete the network interface when the instance terminates. By default, this value is set to true.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
       },
       "device_index": {
-        "description": "The network interface's position in the attachment order. For example, the first attached network interface has a ` + "`" + `` + "`" + `DeviceIndex` + "`" + `` + "`" + ` of 0.",
+        "description": "The network interface's position in the attachment order. For example, the first attached network interface has a DeviceIndex of 0.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
+      "ena_queue_count": {
+        "computed": true,
+        "description": "The number of ENA queues to be created with the instance.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "ena_srd_specification": {
         "computed": true,
-        "description": "Configures ENA Express for the network interface that this action attaches to the instance.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "ena_srd_enabled": {
               "computed": true,
-              "description": "Indicates whether ENA Express is enabled for the network interface.",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
             },
             "ena_srd_udp_specification": {
               "computed": true,
-              "description": "Configures ENA Express for UDP network traffic.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -81,7 +86,7 @@ const awsccEc2NetworkInterfaceAttachment = `{
         "type": "string"
       }
     },
-    "description": "Attaches an elastic network interface (ENI) to an Amazon EC2 instance. You can use this resource type to attach additional network interfaces to an instance without interruption.",
+    "description": "Resource Type definition for AWS::EC2::NetworkInterfaceAttachment",
     "description_kind": "plain"
   },
   "version": 1

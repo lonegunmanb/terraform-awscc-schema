@@ -44,7 +44,7 @@ const awsccDynamodbTable = `{
       },
       "contributor_insights_specification": {
         "computed": true,
-        "description": "The settings used to enable or disable CloudWatch Contributor Insights for the specified table.",
+        "description": "The settings used to specify whether to enable CloudWatch Contributor Insights for the table and define which events to monitor.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -56,6 +56,7 @@ const awsccDynamodbTable = `{
             },
             "mode": {
               "computed": true,
+              "description": "Specifies the CloudWatch Contributor Insights mode for a table. Valid values are ` + "`" + `` + "`" + `ACCESSED_AND_THROTTLED_KEYS` + "`" + `` + "`" + ` (tracks all access and throttled events) or ` + "`" + `` + "`" + `THROTTLED_KEYS` + "`" + `` + "`" + ` (tracks only throttled events). This setting determines what type of contributor insights data is collected for the table.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -77,7 +78,7 @@ const awsccDynamodbTable = `{
           "attributes": {
             "contributor_insights_specification": {
               "computed": true,
-              "description": "The settings used to enable or disable CloudWatch Contributor Insights for the specified global secondary index.",
+              "description": "The settings used to specify whether to enable CloudWatch Contributor Insights for the global table and define which events to monitor.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -89,6 +90,7 @@ const awsccDynamodbTable = `{
                   },
                   "mode": {
                     "computed": true,
+                    "description": "Specifies the CloudWatch Contributor Insights mode for a table. Valid values are ` + "`" + `` + "`" + `ACCESSED_AND_THROTTLED_KEYS` + "`" + `` + "`" + ` (tracks all access and throttled events) or ` + "`" + `` + "`" + `THROTTLED_KEYS` + "`" + `` + "`" + ` (tracks only throttled events). This setting determines what type of contributor insights data is collected for the table.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -218,6 +220,11 @@ const awsccDynamodbTable = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "global_table_settings_replication_mode": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "id": {
         "description": "Uniquely identifies the resource.",
@@ -518,13 +525,13 @@ const awsccDynamodbTable = `{
       },
       "stream_specification": {
         "computed": true,
-        "description": "The settings for the DDB table stream, which capture changes to items stored in the table.",
+        "description": "The settings for the DDB table stream, which captures changes to items stored in the table. Including this property in your CFNlong template automatically enables streaming.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "resource_policy": {
               "computed": true,
-              "description": "Creates or updates a resource-based policy document that contains the permissions for DDB resources, such as a table's streams. Resource-based policies let you define access permissions by specifying who has access to each resource, and the actions they are allowed to perform on each resource.\n In a CFNshort template, you can provide the policy in JSON or YAML format because CFNshort converts YAML to JSON before submitting it to DDB. For more information about resource-based policies, see [Using resource-based policies for](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/access-control-resource-based.html) and [Resource-based policy examples](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-examples.html).",
+              "description": "Creates or updates a resource-based policy document that contains the permissions for DDB resources, such as a table's streams. Resource-based policies let you define access permissions by specifying who has access to each resource, and the actions they are allowed to perform on each resource.\n  When you remove the ` + "`" + `` + "`" + `StreamSpecification` + "`" + `` + "`" + ` property from the template, DynamoDB disables the stream but retains any attached resource policy until the stream is deleted after 24 hours. When you modify the ` + "`" + `` + "`" + `StreamViewType` + "`" + `` + "`" + ` property, DynamoDB creates a new stream and retains the old stream's resource policy. The old stream and its resource policy are deleted after the 24-hour retention period.\n  In a CFNshort template, you can provide the policy in JSON or YAML format because CFNshort converts YAML to JSON before submitting it to DDB. For more information about resource-based policies, see [Using resource-based policies for](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/access-control-resource-based.html) and [Resource-based policy examples](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-examples.html).",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {

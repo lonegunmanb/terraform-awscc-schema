@@ -302,6 +302,12 @@ const awsccRdsDbCluster = `{
         "optional": true,
         "type": "bool"
       },
+      "master_user_authentication_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "master_user_password": {
         "computed": true,
         "description": "The master password for the DB instance.\n  If you specify the ` + "`" + `` + "`" + `SourceDBClusterIdentifier` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `SnapshotIdentifier` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `GlobalClusterIdentifier` + "`" + `` + "`" + ` property, don't specify this property. The value is inherited from the source DB cluster, the snapshot, or the primary DB cluster for the global database cluster, respectively.\n  Valid for: Aurora DB clusters and Multi-AZ DB clusters",

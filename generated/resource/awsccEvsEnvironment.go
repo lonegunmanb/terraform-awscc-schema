@@ -208,6 +208,18 @@ const awsccEvsEnvironment = `{
               },
               "optional": true
             },
+            "hcx_network_acl_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "is_hcx_public": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
             "nsx_up_link": {
               "computed": true,
               "description_kind": "plain",

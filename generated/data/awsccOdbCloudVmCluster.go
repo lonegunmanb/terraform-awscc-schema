@@ -85,6 +85,127 @@ const awsccOdbCloudVmCluster = `{
         "description_kind": "plain",
         "type": "number"
       },
+      "db_nodes": {
+        "computed": true,
+        "description": "The DB nodes that are implicitly created and managed as part of this VM Cluster.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "backup_ip_id": {
+              "computed": true,
+              "description": "The Oracle Cloud ID (OCID) of the backup IP address that's associated with the DB node.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "backup_vnic_2_id": {
+              "computed": true,
+              "description": "The OCID of the second backup virtual network interface card (VNIC) for the DB node.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "cpu_core_count": {
+              "computed": true,
+              "description": "The number of CPU cores enabled on the DB node.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "db_node_arn": {
+              "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the DB node.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "db_node_id": {
+              "computed": true,
+              "description": "The unique identifier of the DB node.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "db_node_storage_size_in_g_bs": {
+              "computed": true,
+              "description": "The amount of local node storage, in gigabytes (GB), that's allocated on the DB node.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "db_server_id": {
+              "computed": true,
+              "description": "The unique identifier of the database server that's associated with the DB node.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "db_system_id": {
+              "computed": true,
+              "description": "The OCID of the DB system.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "host_ip_id": {
+              "computed": true,
+              "description": "The OCID of the host IP address that's associated with the DB node.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "hostname": {
+              "computed": true,
+              "description": "The host name for the DB node.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "memory_size_in_g_bs": {
+              "computed": true,
+              "description": "The amount of memory, in gigabytes (GB), that allocated on the DB node.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "ocid": {
+              "computed": true,
+              "description": "The OCID of the DB node.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "status": {
+              "computed": true,
+              "description": "The current status of the DB node.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "tags": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description": "The key name of the tag. You can specify a value that's 1 to 128 Unicode characters in length and can't be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., :, /, =, +, @, -, and \".",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description": "The value for the tag. You can specify a value that's 1 to 256 characters in length. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
+            "vnic_2_id": {
+              "computed": true,
+              "description": "The OCID of the second VNIC.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "vnic_id": {
+              "computed": true,
+              "description": "The OCID of the VNIC.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "db_servers": {
         "computed": true,
         "description": "The list of database servers for the VM cluster.",

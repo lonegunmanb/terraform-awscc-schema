@@ -212,6 +212,18 @@ const awsccDynamodbGlobalTable = `{
         },
         "optional": true
       },
+      "global_table_settings_replication_mode": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "global_table_source_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "global_table_witnesses": {
         "computed": true,
         "description_kind": "plain",

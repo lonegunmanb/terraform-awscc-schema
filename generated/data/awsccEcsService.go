@@ -120,6 +120,11 @@ const awsccEcsService = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "hook_details": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "hook_target_arn": {
                     "computed": true,
                     "description": "The Amazon Resource Name (ARN) of the hook target. Currently, only Lambda function ARNs are supported.\n You must provide this parameter when configuring a deployment lifecycle hook.",
@@ -209,11 +214,13 @@ const awsccEcsService = `{
           "attributes": {
             "enable_force_new_deployment": {
               "computed": true,
+              "description": "Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use this option to start a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (` + "`" + `` + "`" + `my_image:latest` + "`" + `` + "`" + `) or to roll Fargate tasks onto a newer platform version.",
               "description_kind": "plain",
               "type": "bool"
             },
             "force_new_deployment_nonce": {
               "computed": true,
+              "description": "When you change the` + "`" + `` + "`" + `ForceNewDeploymentNonce` + "`" + `` + "`" + ` value in your template, it signals ECS to start a new deployment even though no other service parameters have changed. The value must be a unique, time- varying value like a timestamp, random string, or sequence number. Use this property when you want to ensure your tasks pick up the latest version of a Docker image that uses the same tag but has been updated in the registry.",
               "description_kind": "plain",
               "type": "string"
             }
