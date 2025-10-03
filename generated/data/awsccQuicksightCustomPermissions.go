@@ -29,6 +29,11 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "analysis": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "create_and_update_dashboard_email_reports": {
               "computed": true,
               "description_kind": "plain",
@@ -60,6 +65,11 @@ const awsccQuicksightCustomPermissions = `{
               "type": "string"
             },
             "create_spice_dataset": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "dashboard": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"

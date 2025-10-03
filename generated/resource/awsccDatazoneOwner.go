@@ -78,6 +78,16 @@ const awsccDatazoneOwner = `{
           "nesting_mode": "single"
         },
         "required": true
+      },
+      "owner_identifier": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "owner_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "A owner can set up authorization permissions on their resources.",

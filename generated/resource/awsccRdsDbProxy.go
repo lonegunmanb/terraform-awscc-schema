@@ -10,6 +10,7 @@ const awsccRdsDbProxy = `{
   "block": {
     "attributes": {
       "auth": {
+        "computed": true,
         "description": "The authorization mechanism that the proxy uses.",
         "description_kind": "plain",
         "nested_type": {
@@ -52,7 +53,7 @@ const awsccRdsDbProxy = `{
           },
           "nesting_mode": "list"
         },
-        "required": true
+        "optional": true
       },
       "db_proxy_arn": {
         "computed": true,
@@ -73,10 +74,24 @@ const awsccRdsDbProxy = `{
         "optional": true,
         "type": "bool"
       },
+      "default_auth_scheme": {
+        "computed": true,
+        "description": "The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "endpoint": {
         "computed": true,
         "description": "The endpoint that you can use to connect to the proxy. You include the endpoint value in the connection string for a database client application.",
         "description_kind": "plain",
+        "type": "string"
+      },
+      "endpoint_network_type": {
+        "computed": true,
+        "description": "The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "engine_family": {
@@ -133,6 +148,13 @@ const awsccRdsDbProxy = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "target_connection_network_type": {
+        "computed": true,
+        "description": "The network type that the proxy uses to connect to the target database. The network type determines the IP version that the proxy uses for connections to the database.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       },
       "vpc_id": {
         "computed": true,

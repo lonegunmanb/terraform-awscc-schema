@@ -275,6 +275,52 @@ const awsccBedrockDataAutomationProject = `{
                                 "description_kind": "plain",
                                 "type": "string"
                               },
+                              "type_configuration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "transcript": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "channel_labeling": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "state": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            }
+                                          },
+                                          "speaker_labeling": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "state": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            }
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
                               "types": {
                                 "computed": true,
                                 "description_kind": "plain",

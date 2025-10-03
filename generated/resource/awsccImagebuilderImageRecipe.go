@@ -45,6 +45,16 @@ const awsccImagebuilderImageRecipe = `{
         },
         "optional": true
       },
+      "ami_tags": {
+        "computed": true,
+        "description": "The tags to apply to the AMI created by this image recipe.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "map",
+          "string"
+        ]
+      },
       "arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN) of the image recipe.",

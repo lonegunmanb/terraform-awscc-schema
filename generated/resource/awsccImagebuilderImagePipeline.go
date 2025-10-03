@@ -141,6 +141,31 @@ const awsccImagebuilderImagePipeline = `{
         "optional": true,
         "type": "string"
       },
+      "logging_configuration": {
+        "computed": true,
+        "description": "The logging configuration settings for the image pipeline.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "image_log_group_name": {
+              "computed": true,
+              "description": "The name of the log group for image build logs.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "pipeline_log_group_name": {
+              "computed": true,
+              "description": "The name of the log group for pipeline execution logs.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "name": {
         "computed": true,
         "description": "The name of the image pipeline.",
@@ -154,6 +179,24 @@ const awsccImagebuilderImagePipeline = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "auto_disable_policy": {
+              "computed": true,
+              "description": "The auto-disable policy for the image pipeline.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "failure_count": {
+                    "computed": true,
+                    "description": "The number of consecutive failures after which the pipeline should be automatically disabled.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "pipeline_execution_start_condition": {
               "computed": true,
               "description": "The condition configures when the pipeline should trigger a new image build.",

@@ -44,6 +44,16 @@ const awsccDatazoneProjectMembership = `{
           "nesting_mode": "single"
         }
       },
+      "member_identifier": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "member_identifier_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "project_identifier": {
         "computed": true,
         "description_kind": "plain",

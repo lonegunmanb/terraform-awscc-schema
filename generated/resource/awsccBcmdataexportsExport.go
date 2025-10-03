@@ -110,7 +110,6 @@ const awsccBcmdataexportsExport = `{
             "export_arn": {
               "computed": true,
               "description_kind": "plain",
-              "optional": true,
               "type": "string"
             },
             "name": {

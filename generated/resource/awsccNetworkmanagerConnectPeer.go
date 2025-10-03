@@ -149,6 +149,15 @@ const awsccNetworkmanagerConnectPeer = `{
           "string"
         ]
       },
+      "last_modification_errors": {
+        "computed": true,
+        "description": "Errors from the last modification of the connect peer.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "peer_address": {
         "description": "The IP address of the Connect peer.",
         "description_kind": "plain",

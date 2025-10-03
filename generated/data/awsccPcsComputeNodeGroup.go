@@ -113,7 +113,7 @@ const awsccPcsComputeNodeGroup = `{
       },
       "purchase_option": {
         "computed": true,
-        "description": "Specifies how EC2 instances are purchased on your behalf. AWS PCS supports On-Demand and Spot instances. For more information, see Instance purchasing options in the Amazon Elastic Compute Cloud User Guide. If you don't provide this option, it defaults to On-Demand.",
+        "description": "Specifies how EC2 instances are purchased on your behalf. AWS PCS supports On-Demand, Spot and Capacity Block instances. For more information, see Instance purchasing options in the Amazon Elastic Compute Cloud User Guide. If you don't provide this option, it defaults to On-Demand.",
         "description_kind": "plain",
         "type": "string"
       },

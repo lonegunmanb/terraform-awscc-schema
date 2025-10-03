@@ -51,6 +51,11 @@ const awsccEntityresolutionIdMappingWorkflow = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "normalization_version": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "provider_properties": {
               "computed": true,
               "description_kind": "plain",

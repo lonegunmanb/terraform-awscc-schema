@@ -479,6 +479,7 @@ const awsccRdsDbInstance = `{
       },
       "master_user_authentication_type": {
         "computed": true,
+        "description": "Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB instance.\n You can specify one of the following values:\n  +  ` + "`" + `` + "`" + `password` + "`" + `` + "`" + ` - Use standard database authentication with a password.\n  +  ` + "`" + `` + "`" + `iam-db-auth` + "`" + `` + "`" + ` - Use IAM database authentication for the master user.\n  \n This option is only valid for RDS for MySQL, RDS for MariaDB, RDS for PostgreSQL, Aurora MySQL, and Aurora PostgreSQL engines.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

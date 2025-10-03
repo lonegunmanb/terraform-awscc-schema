@@ -90,6 +90,28 @@ const awsccCurReportDefinition = `{
         "required": true,
         "type": "string"
       },
+      "tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "time_unit": {
         "description": "The granularity of the line items in the report.",
         "description_kind": "plain",

@@ -183,7 +183,7 @@ const awsccGameliftFleet = `{
                 "attributes": {
                   "desired_ec2_instances": {
                     "computed": true,
-                    "description": "The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.",
+                    "description": "Defaults to MinSize if not defined. The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between the minimum and maximum size limits.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"

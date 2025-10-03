@@ -74,6 +74,16 @@ const awsccDatazoneOwner = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "owner_identifier": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "owner_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::DataZone::Owner",

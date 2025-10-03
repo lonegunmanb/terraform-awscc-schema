@@ -33,6 +33,13 @@ const awsccRdsDbProxyEndpoint = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "endpoint_network_type": {
+        "computed": true,
+        "description": "The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
