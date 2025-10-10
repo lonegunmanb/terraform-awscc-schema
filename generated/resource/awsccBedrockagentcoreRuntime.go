@@ -154,6 +154,37 @@ const awsccBedrockagentcoreRuntime = `{
               "description_kind": "plain",
               "required": true,
               "type": "string"
+            },
+            "network_mode_config": {
+              "computed": true,
+              "description": "Network mode configuration for VPC",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "security_groups": {
+                    "computed": true,
+                    "description": "Security groups for VPC",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "subnets": {
+                    "computed": true,
+                    "description": "Subnets for VPC",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

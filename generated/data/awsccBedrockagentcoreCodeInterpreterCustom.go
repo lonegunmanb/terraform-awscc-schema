@@ -39,6 +39,12 @@ const awsccBedrockagentcoreCodeInterpreterCustom = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "failure_reason": {
+        "computed": true,
+        "description": "The reason for failure if the code interpreter creation or operation failed.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -68,6 +74,34 @@ const awsccBedrockagentcoreCodeInterpreterCustom = `{
               "description": "Network modes supported by code interpreter",
               "description_kind": "plain",
               "type": "string"
+            },
+            "vpc_config": {
+              "computed": true,
+              "description": "Network mode configuration for VPC",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "security_groups": {
+                    "computed": true,
+                    "description": "Security groups for VPC",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "subnets": {
+                    "computed": true,
+                    "description": "Subnets for VPC",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

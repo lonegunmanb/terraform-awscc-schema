@@ -39,7 +39,7 @@ const awsccLogsDeliveryDestination = `{
       },
       "delivery_destination_type": {
         "computed": true,
-        "description": "Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.",
+        "description": "Displays whether this delivery destination is CloudWatch Logs, Amazon S3, Kinesis Data Firehose, or XRay.",
         "description_kind": "plain",
         "type": "string"
       },

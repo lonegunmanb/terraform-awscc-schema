@@ -41,6 +41,12 @@ const awsccBedrockagentcoreBrowserCustom = `{
         "optional": true,
         "type": "string"
       },
+      "failure_reason": {
+        "computed": true,
+        "description": "The reason for failure if the browser creation or operation failed.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -70,6 +76,37 @@ const awsccBedrockagentcoreBrowserCustom = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "vpc_config": {
+              "computed": true,
+              "description": "Network mode configuration for VPC",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "security_groups": {
+                    "computed": true,
+                    "description": "Security groups for VPC",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "subnets": {
+                    "computed": true,
+                    "description": "Subnets for VPC",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

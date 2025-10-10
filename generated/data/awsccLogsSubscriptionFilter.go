@@ -27,6 +27,19 @@ const awsccLogsSubscriptionFilter = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "emit_system_fields": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
+      "field_selection_criteria": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "filter_name": {
         "computed": true,
         "description": "The name of the subscription filter.",

@@ -146,6 +146,24 @@ const awsccImagebuilderImage = `{
         "optional": true,
         "type": "string"
       },
+      "logging_configuration": {
+        "computed": true,
+        "description": "The logging configuration settings for the image.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "log_group_name": {
+              "computed": true,
+              "description": "The name of the log group for image build logs.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "name": {
         "computed": true,
         "description": "The name of the image.",

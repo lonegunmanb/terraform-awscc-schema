@@ -77,6 +77,38 @@ const awsccPcsQueue = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "slurm_configuration": {
+        "computed": true,
+        "description": "The Slurm configuration for the queue.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "slurm_custom_settings": {
+              "computed": true,
+              "description": "Custom Slurm parameters that directly map to Slurm configuration settings.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "parameter_name": {
+                    "computed": true,
+                    "description": "AWS PCS supports configuration of the Slurm parameters for queues:.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "parameter_value": {
+                    "computed": true,
+                    "description": "The value for the configured Slurm setting.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "status": {
         "computed": true,
         "description": "The provisioning status of the queue. The provisioning status doesn't indicate the overall health of the queue.",

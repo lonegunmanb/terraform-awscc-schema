@@ -15,6 +15,19 @@ const awsccLogsMetricFilter = `{
         "description_kind": "plain",
         "type": "bool"
       },
+      "emit_system_field_dimensions": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
+      "field_selection_criteria": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "filter_name": {
         "computed": true,
         "description": "The name of the metric filter.",
