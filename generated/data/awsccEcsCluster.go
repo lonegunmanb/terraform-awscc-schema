@@ -37,7 +37,7 @@ const awsccEcsCluster = `{
           "attributes": {
             "name": {
               "computed": true,
-              "description": "The name of the cluster setting. The value is ` + "`" + `` + "`" + `containerInsights` + "`" + `` + "`" + ` .",
+              "description": "The name of the cluster setting. The value is ` + "`" + `` + "`" + `containerInsights` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "type": "string"
             },

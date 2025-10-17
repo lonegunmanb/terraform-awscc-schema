@@ -249,12 +249,6 @@ const awsccDynamodbTable = `{
         },
         "optional": true
       },
-      "global_table_settings_replication_mode": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

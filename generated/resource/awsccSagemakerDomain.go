@@ -1417,6 +1417,13 @@ const awsccSagemakerDomain = `{
               "optional": true,
               "type": "string"
             },
+            "ip_address_type": {
+              "computed": true,
+              "description": "A setting to indicate if IPv6 routing should be enabled along with IPv4 or not",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "r_studio_server_pro_domain_settings": {
               "computed": true,
               "description": "A collection of settings that update the current configuration for the RStudioServerPro Domain-level app.",

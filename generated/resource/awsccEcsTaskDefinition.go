@@ -1038,7 +1038,7 @@ const awsccEcsTaskDefinition = `{
       },
       "requires_compatibilities": {
         "computed": true,
-        "description": "The task launch types the task definition was validated against. The valid values are ` + "`" + `` + "`" + `EC2` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `FARGATE` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `EXTERNAL` + "`" + `` + "`" + `. For more information, see [Amazon ECS launch types](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) in the *Amazon Elastic Container Service Developer Guide*.",
+        "description": "The task launch types the task definition was validated against. The valid values are ` + "`" + `` + "`" + `MANAGED_INSTANCES` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `EC2` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `FARGATE` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `EXTERNAL` + "`" + `` + "`" + `. For more information, see [Amazon ECS launch types](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html) in the *Amazon Elastic Container Service Developer Guide*.",
         "description_kind": "plain",
         "optional": true,
         "type": [

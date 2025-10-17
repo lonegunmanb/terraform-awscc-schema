@@ -55,6 +55,40 @@ const awsccImagebuilderComponent = `{
         "optional": true,
         "type": "string"
       },
+      "latest_version": {
+        "computed": true,
+        "description": "The latest version references of the component.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "arn": {
+              "computed": true,
+              "description": "The latest version ARN of the created component.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "major": {
+              "computed": true,
+              "description": "The latest version ARN of the created component, with the same major version.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "minor": {
+              "computed": true,
+              "description": "The latest version ARN of the created component, with the same minor version.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "patch": {
+              "computed": true,
+              "description": "The latest version ARN of the created component, with the same patch version.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "name": {
         "description": "The name of the component.",
         "description_kind": "plain",

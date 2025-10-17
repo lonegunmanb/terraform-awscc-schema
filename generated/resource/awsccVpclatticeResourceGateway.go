@@ -26,6 +26,13 @@ const awsccVpclatticeResourceGateway = `{
         "optional": true,
         "type": "string"
       },
+      "ipv_4_addresses_per_eni": {
+        "computed": true,
+        "description": "The number of IPv4 addresses to allocate per ENI for the resource gateway",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "name": {
         "description_kind": "plain",
         "required": true,
@@ -83,7 +90,7 @@ const awsccVpclatticeResourceGateway = `{
         "type": "string"
       }
     },
-    "description": "Creates a resource gateway for a service. ",
+    "description": "Creates a resource gateway for a service.",
     "description_kind": "plain"
   },
   "version": 1

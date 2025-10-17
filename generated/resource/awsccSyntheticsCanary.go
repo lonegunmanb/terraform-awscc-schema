@@ -79,6 +79,15 @@ const awsccSyntheticsCanary = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "blueprint_types": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            },
             "dependencies": {
               "computed": true,
               "description": "List of Lambda layers to attach to the canary",
@@ -105,8 +114,9 @@ const awsccSyntheticsCanary = `{
               "optional": true
             },
             "handler": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "s3_bucket": {

@@ -188,16 +188,6 @@ const awsccDynamodbGlobalTable = `{
           "nesting_mode": "set"
         }
       },
-      "global_table_settings_replication_mode": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "global_table_source_arn": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
       "global_table_witnesses": {
         "computed": true,
         "description_kind": "plain",

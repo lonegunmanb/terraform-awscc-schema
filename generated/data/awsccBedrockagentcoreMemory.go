@@ -77,6 +77,91 @@ const awsccBedrockagentcoreMemory = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "self_managed_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "historical_context_window_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "invocation_configuration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "payload_delivery_bucket_name": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "topic_arn": {
+                                      "computed": true,
+                                      "description": "ARN format",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "trigger_conditions": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "message_based_trigger": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "message_count": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "number"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "time_based_trigger": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "idle_session_timeout": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "number"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "token_based_trigger": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "token_count": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "number"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "semantic_override": {
                           "computed": true,
                           "description_kind": "plain",

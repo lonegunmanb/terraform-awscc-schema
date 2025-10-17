@@ -10,9 +10,10 @@ const awsccEcsClusterCapacityProviderAssociations = `{
   "block": {
     "attributes": {
       "capacity_providers": {
+        "computed": true,
         "description": "List of capacity providers to associate with the cluster",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": [
           "list",
           "string"

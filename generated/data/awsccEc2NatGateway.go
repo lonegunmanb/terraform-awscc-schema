@@ -21,6 +21,11 @@ const awsccEc2NatGateway = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "eni_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -95,6 +100,11 @@ const awsccEc2NatGateway = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "vpc_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::EC2::NatGateway",

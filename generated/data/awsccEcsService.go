@@ -92,6 +92,11 @@ const awsccEcsService = `{
               "description_kind": "plain",
               "type": "number"
             },
+            "canary_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "deployment_circuit_breaker": {
               "computed": true,
               "description": "The deployment circuit breaker can only be used for services using the rolling update (` + "`" + `` + "`" + `ECS` + "`" + `` + "`" + `) deployment type.\n  The *deployment circuit breaker* determines whether a service deployment will fail if the service can't reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service is rolled back to the last deployment that completed successfully. For more information, see [Rolling update](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html) in the *Amazon Elastic Container Service Developer Guide*",
@@ -150,6 +155,11 @@ const awsccEcsService = `{
                 },
                 "nesting_mode": "list"
               }
+            },
+            "linear_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             },
             "maximum_percent": {
               "computed": true,
@@ -231,7 +241,7 @@ const awsccEcsService = `{
       },
       "health_check_grace_period_seconds": {
         "computed": true,
-        "description": "The period of time, in seconds, that the Amazon Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you do not specify a health check grace period value, the default value of 0 is used. If you do not use any of the health checks, then ` + "`" + `` + "`" + `healthCheckGracePeriodSeconds` + "`" + `` + "`" + ` is unused.\n If your service has more running tasks than desired, unhealthy tasks in the grace period might be stopped to reach the desired count.",
+        "description": "The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you do not specify a health check grace period value, the default value of 0 is used. If you do not use any of the health checks, then ` + "`" + `` + "`" + `healthCheckGracePeriodSeconds` + "`" + `` + "`" + ` is unused.\n If your service has more running tasks than desired, unhealthy tasks in the grace period might be stopped to reach the desired count.",
         "description_kind": "plain",
         "type": "number"
       },
