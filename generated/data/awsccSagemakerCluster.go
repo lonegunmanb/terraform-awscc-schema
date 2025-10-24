@@ -545,6 +545,28 @@ const awsccSagemakerCluster = `{
           "nesting_mode": "set"
         }
       },
+      "tiered_storage_config": {
+        "computed": true,
+        "description": "Configuration for tiered storage in the SageMaker HyperPod cluster.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "instance_memory_allocation_percentage": {
+              "computed": true,
+              "description": "The percentage of instance memory to allocate for tiered storage.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "mode": {
+              "computed": true,
+              "description": "The mode of tiered storage.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "vpc_config": {
         "computed": true,
         "description": "Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC.",

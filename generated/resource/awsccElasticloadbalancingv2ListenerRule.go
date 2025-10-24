@@ -216,7 +216,7 @@ const awsccElasticloadbalancingv2ListenerRule = `{
             },
             "forward_config": {
               "computed": true,
-              "description": "Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `forward` + "`" + `` + "`" + `. If you specify both ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `TargetGroupArn` + "`" + `` + "`" + `, you can specify only one target group using ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` and it must be the same target group specified in ` + "`" + `` + "`" + `TargetGroupArn` + "`" + `` + "`" + `.",
+              "description": "Information for creating an action that distributes requests among multiple target groups. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `forward` + "`" + `` + "`" + `.\n If you specify both ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `TargetGroupArn` + "`" + `` + "`" + `, you can specify only one target group using ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` and it must be the same target group specified in ` + "`" + `` + "`" + `TargetGroupArn` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -228,7 +228,7 @@ const awsccElasticloadbalancingv2ListenerRule = `{
                       "attributes": {
                         "duration_seconds": {
                           "computed": true,
-                          "description": "The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days). You must specify this value when enabling target group stickiness.",
+                          "description": "[Application Load Balancers] The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days). You must specify this value when enabling target group stickiness.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "number"
@@ -337,7 +337,7 @@ const awsccElasticloadbalancingv2ListenerRule = `{
             },
             "target_group_arn": {
               "computed": true,
-              "description": "The Amazon Resource Name (ARN) of the target group. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `forward` + "`" + `` + "`" + ` and you want to route to a single target group. To route to one or more target groups, use ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` instead.",
+              "description": "The Amazon Resource Name (ARN) of the target group. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `forward` + "`" + `` + "`" + ` and you want to route to a single target group. To route to multiple target groups, you must use ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` instead.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -371,6 +371,15 @@ const awsccElasticloadbalancingv2ListenerRule = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "regex_values": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
                   "values": {
                     "computed": true,
                     "description": "The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one \".\" character. You can include only alphabetical characters after the final \".\" character.\n If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.",
@@ -398,6 +407,15 @@ const awsccElasticloadbalancingv2ListenerRule = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
+                  },
+                  "regex_values": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
                   },
                   "values": {
                     "computed": true,
@@ -441,6 +459,15 @@ const awsccElasticloadbalancingv2ListenerRule = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "regex_values": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
                   "values": {
                     "computed": true,
                     "description": "The path patterns to compare against the request URL. The maximum size of each string is 128 characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).\n If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path pattern is compared only to the path of the URL, not to its query string.",
@@ -491,6 +518,15 @@ const awsccElasticloadbalancingv2ListenerRule = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            },
+            "regex_values": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "set",
+                "string"
+              ]
             },
             "source_ip_config": {
               "computed": true,
@@ -556,6 +592,86 @@ const awsccElasticloadbalancingv2ListenerRule = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "transforms": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "host_header_rewrite_config": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "rewrites": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "regex": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "replace": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "set"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "url_rewrite_config": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "rewrites": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "regex": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "replace": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "set"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
       }
     },
     "description": "Specifies a listener rule. The listener must be associated with an Application Load Balancer. Each rule consists of a priority, one or more actions, and one or more conditions.\n For more information, see [Quotas for your Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html) in the *User Guide for Application Load Balancers*.",

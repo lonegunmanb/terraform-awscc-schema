@@ -117,6 +117,26 @@ const awsccOsisPipeline = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "pipeline_role_arn": {
+        "computed": true,
+        "description": "The Pipeline Role (ARN) for the pipeline.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "resource_policy": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "policy": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "tags": {
         "computed": true,
         "description": "An array of key-value pairs to apply to this resource.",

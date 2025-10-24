@@ -96,6 +96,13 @@ const awsccNeptuneDbInstance = `{
         "optional": true,
         "type": "string"
       },
+      "publicly_accessible": {
+        "computed": true,
+        "description": "Indicates that public accessibility is enabled. This should be enabled in combination with IAM Auth enabled on the DBCluster",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "tags": {
         "computed": true,
         "description": "An arbitrary set of tags (key-value pairs) for this DB instance.",

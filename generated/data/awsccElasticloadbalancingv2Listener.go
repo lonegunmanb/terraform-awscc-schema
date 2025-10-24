@@ -216,7 +216,7 @@ const awsccElasticloadbalancingv2Listener = `{
             },
             "forward_config": {
               "computed": true,
-              "description": "Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `forward` + "`" + `` + "`" + `. If you specify both ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `TargetGroupArn` + "`" + `` + "`" + `, you can specify only one target group using ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` and it must be the same target group specified in ` + "`" + `` + "`" + `TargetGroupArn` + "`" + `` + "`" + `.",
+              "description": "Information for creating an action that distributes requests among multiple target groups. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `forward` + "`" + `` + "`" + `.\n If you specify both ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `TargetGroupArn` + "`" + `` + "`" + `, you can specify only one target group using ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` and it must be the same target group specified in ` + "`" + `` + "`" + `TargetGroupArn` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -228,7 +228,7 @@ const awsccElasticloadbalancingv2Listener = `{
                       "attributes": {
                         "duration_seconds": {
                           "computed": true,
-                          "description": "The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days). You must specify this value when enabling target group stickiness.",
+                          "description": "[Application Load Balancers] The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days). You must specify this value when enabling target group stickiness.",
                           "description_kind": "plain",
                           "type": "number"
                         },
@@ -322,7 +322,7 @@ const awsccElasticloadbalancingv2Listener = `{
             },
             "target_group_arn": {
               "computed": true,
-              "description": "The Amazon Resource Name (ARN) of the target group. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `forward` + "`" + `` + "`" + ` and you want to route to a single target group. To route to one or more target groups, use ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` instead.",
+              "description": "The Amazon Resource Name (ARN) of the target group. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `forward` + "`" + `` + "`" + ` and you want to route to a single target group. To route to multiple target groups, you must use ` + "`" + `` + "`" + `ForwardConfig` + "`" + `` + "`" + ` instead.",
               "description_kind": "plain",
               "type": "string"
             },

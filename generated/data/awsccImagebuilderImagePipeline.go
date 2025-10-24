@@ -21,6 +21,12 @@ const awsccImagebuilderImagePipeline = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "deployment_id": {
+        "computed": true,
+        "description": "The deployment ID of the pipeline, used for resource create/update triggers.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description": "The description of the image pipeline.",

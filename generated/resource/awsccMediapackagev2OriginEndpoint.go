@@ -734,6 +734,91 @@ const awsccMediapackagev2OriginEndpoint = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "mss_manifest_urls": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
+      "mss_manifests": {
+        "computed": true,
+        "description": "\u003cp\u003eThe Microsoft Smooth Streaming (MSS) manifest configurations associated with this origin endpoint.\u003c/p\u003e",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "filter_configuration": {
+              "computed": true,
+              "description": "\u003cp\u003eFilter configuration includes settings for manifest filtering, start and end times, and time delay that apply to all of your egress requests for this manifest. \u003c/p\u003e",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "clip_start_time": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify the clip start time for all of your manifest egress requests. When you include clip start time, note that you cannot use clip start time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "end": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "manifest_filter": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify one or more manifest filters for all of your manifest egress requests. When you include a manifest filter, note that you cannot use an identical manifest filter query parameter for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "start": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify the start time for all of your manifest egress requests. When you include start time, note that you cannot use start time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "time_delay_seconds": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify the time delay for all of your manifest egress requests. Enter a value that is smaller than your endpoint's startover window. When you include time delay, note that you cannot use time delay query parameters for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "manifest_layout": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "manifest_name": {
+              "computed": true,
+              "description": "\u003cp\u003eThe name of the MSS manifest. This name is appended to the origin endpoint URL to create the unique path for accessing this specific MSS manifest.\u003c/p\u003e",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "manifest_window_seconds": {
+              "computed": true,
+              "description": "\u003cp\u003eThe duration (in seconds) of the manifest window. This represents the total amount of content available in the manifest at any given time.\u003c/p\u003e",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "origin_endpoint_name": {
         "description_kind": "plain",
         "required": true,
@@ -772,6 +857,12 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "nested_type": {
                       "attributes": {
                         "cmaf_encryption_method": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "ism_encryption_method": {
                           "computed": true,
                           "description_kind": "plain",
                           "optional": true,

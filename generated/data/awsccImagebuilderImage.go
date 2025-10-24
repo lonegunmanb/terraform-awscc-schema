@@ -51,6 +51,28 @@ const awsccImagebuilderImage = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "image_pipeline_execution_settings": {
+        "computed": true,
+        "description": "The image pipeline execution settings of the image.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "deployment_id": {
+              "computed": true,
+              "description": "The deployment ID of the pipeline, used to trigger new image pipeline executions.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "on_update": {
+              "computed": true,
+              "description": "Whether to trigger the image pipeline when the pipeline is updated. False by default.",
+              "description_kind": "plain",
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "image_recipe_arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.",

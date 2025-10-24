@@ -54,7 +54,7 @@ const awsccEcrRepository = `{
       },
       "image_scanning_configuration": {
         "computed": true,
-        "description": "The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.",
+        "description": "The ` + "`" + `` + "`" + `imageScanningConfiguration` + "`" + `` + "`" + ` parameter is being deprecated, in favor of specifying the image scanning configuration at the registry level. For more information, see ` + "`" + `` + "`" + `PutRegistryScanningConfiguration` + "`" + `` + "`" + `.\n  The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -79,7 +79,7 @@ const awsccEcrRepository = `{
       },
       "image_tag_mutability_exclusion_filters": {
         "computed": true,
-        "description": "The image tag mutability exclusion filters associated with the repository. These filters specify which image tags can override the repository's default image tag mutability setting.",
+        "description": "A list of filters that specify which image tags are excluded from the repository's image tag mutability setting.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
