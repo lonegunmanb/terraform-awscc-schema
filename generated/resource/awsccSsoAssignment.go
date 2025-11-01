@@ -22,7 +22,7 @@ const awsccSsoAssignment = `{
         "type": "string"
       },
       "permission_set_arn": {
-        "description": "The permission set that the assignemt will be assigned",
+        "description": "The permission set that the assignment will be assigned",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -46,7 +46,7 @@ const awsccSsoAssignment = `{
         "type": "string"
       },
       "target_type": {
-        "description": "The type of resource to be provsioned to, only aws account now",
+        "description": "The type of resource to be provisioned to, only aws account now",
         "description_kind": "plain",
         "required": true,
         "type": "string"

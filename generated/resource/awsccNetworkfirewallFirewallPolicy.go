@@ -19,6 +19,12 @@ const awsccNetworkfirewallFirewallPolicy = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "enable_tls_session_holding": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
             "policy_variables": {
               "computed": true,
               "description_kind": "plain",

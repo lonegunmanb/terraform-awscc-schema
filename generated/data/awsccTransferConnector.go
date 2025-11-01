@@ -97,6 +97,43 @@ const awsccTransferConnector = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "egress_config": {
+        "computed": true,
+        "description": "Egress configuration for the connector.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "vpc_lattice": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "port_number": {
+                    "computed": true,
+                    "description": "Port to connect to on the target VPC Lattice resource",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "resource_configuration_arn": {
+                    "computed": true,
+                    "description": "ARN of the VPC Lattice resource configuration",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "egress_type": {
+        "computed": true,
+        "description": "Specifies the egress type for the connector.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -154,6 +191,11 @@ const awsccTransferConnector = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "status": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "tags": {
         "computed": true,

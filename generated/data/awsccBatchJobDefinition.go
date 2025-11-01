@@ -2900,6 +2900,20 @@ const awsccBatchJobDefinition = `{
         "description_kind": "plain",
         "type": "bool"
       },
+      "resource_retention_policy": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "skip_deregister_on_update": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "retry_strategy": {
         "computed": true,
         "description_kind": "plain",

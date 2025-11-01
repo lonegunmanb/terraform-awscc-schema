@@ -22,6 +22,24 @@ const awsccImagebuilderImage = `{
         "optional": true,
         "type": "string"
       },
+      "deletion_settings": {
+        "computed": true,
+        "description": "The deletion settings of the image, indicating whether to delete the underlying resources in addition to the image.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "execution_role": {
+              "computed": true,
+              "description": "The execution role to use for deleting the image, as well as underlying resources.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "distribution_configuration_arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN) of the distribution configuration.",

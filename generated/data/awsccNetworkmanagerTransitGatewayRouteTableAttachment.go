@@ -57,6 +57,15 @@ const awsccNetworkmanagerTransitGatewayRouteTableAttachment = `{
         "required": true,
         "type": "string"
       },
+      "last_modification_errors": {
+        "computed": true,
+        "description": "Errors from the last modification of the attachment.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "network_function_group_name": {
         "computed": true,
         "description": "The name of the network function group attachment.",

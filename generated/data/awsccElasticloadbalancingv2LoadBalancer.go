@@ -21,6 +21,7 @@ const awsccElasticloadbalancingv2LoadBalancer = `{
       },
       "enable_capacity_reservation_provision_stabilize": {
         "computed": true,
+        "description": "Indicates whether to enable stabilization when creating or updating an LCU reservation. This ensures that the final stack status reflects the status of the LCU reservation. The default is ` + "`" + `` + "`" + `false` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "type": "bool"
       },

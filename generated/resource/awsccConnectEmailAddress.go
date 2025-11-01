@@ -9,6 +9,24 @@ import (
 const awsccConnectEmailAddress = `{
   "block": {
     "attributes": {
+      "alias_configurations": {
+        "computed": true,
+        "description": "List of alias configurations for the email address",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "email_address_arn": {
+              "computed": true,
+              "description": "The identifier of the email address alias",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "description": {
         "computed": true,
         "description": "A description for the email address.",

@@ -52,6 +52,12 @@ const awsccBillingconductorCustomLineItem = `{
           "nesting_mode": "single"
         }
       },
+      "computation_rule": {
+        "computed": true,
+        "description": "The display settings of the Custom Line Item.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "creation_time": {
         "computed": true,
         "description": "Creation timestamp in UNIX epoch time format",
@@ -161,6 +167,20 @@ const awsccBillingconductorCustomLineItem = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "presentation_details": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "service": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "product_code": {
         "computed": true,

@@ -106,8 +106,24 @@ const awsccEcsService = `{
             "canary_configuration": {
               "computed": true,
               "description_kind": "plain",
-              "optional": true,
-              "type": "string"
+              "nested_type": {
+                "attributes": {
+                  "canary_bake_time_in_minutes": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "canary_percent": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "deployment_circuit_breaker": {
               "computed": true,
@@ -179,8 +195,24 @@ const awsccEcsService = `{
             "linear_configuration": {
               "computed": true,
               "description_kind": "plain",
-              "optional": true,
-              "type": "string"
+              "nested_type": {
+                "attributes": {
+                  "step_bake_time_in_minutes": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "step_percent": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "maximum_percent": {
               "computed": true,
@@ -513,6 +545,28 @@ const awsccEcsService = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "access_log_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "format": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "include_query_parameters": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "enabled": {
               "computed": true,
               "description": "Specifies whether to use Service Connect with this service.",

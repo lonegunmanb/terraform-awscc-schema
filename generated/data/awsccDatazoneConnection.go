@@ -69,6 +69,12 @@ const awsccDatazoneConnection = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "enable_trusted_identity_propagation": {
+        "computed": true,
+        "description": "Specifies whether the trusted identity propagation is enabled",
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "environment_id": {
         "computed": true,
         "description": "The ID of the environment in which the connection is created.",
@@ -102,6 +108,12 @@ const awsccDatazoneConnection = `{
       "project_id": {
         "computed": true,
         "description": "The ID of the project in which the connection is created.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "project_identifier": {
+        "computed": true,
+        "description": "The identifier of the project in which the connection should be created. If ",
         "description_kind": "plain",
         "type": "string"
       },
@@ -539,6 +551,28 @@ const awsccDatazoneConnection = `{
                       },
                       "nesting_mode": "single"
                     }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "s3_properties": {
+              "computed": true,
+              "description": "S3 Properties Input",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "s3_access_grant_location_id": {
+                    "computed": true,
+                    "description": "The Amazon S3 Access Grant location ID that's part of the Amazon S3 properties of a connection.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "s3_uri": {
+                    "computed": true,
+                    "description": "The Amazon S3 URI that's part of the Amazon S3 properties of a connection.",
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"

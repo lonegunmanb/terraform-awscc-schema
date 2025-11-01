@@ -382,7 +382,7 @@ const awsccElasticloadbalancingv2ListenerRule = `{
                   },
                   "values": {
                     "computed": true,
-                    "description": "The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one \".\" character. You can include only alphabetical characters after the final \".\" character.\n If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.",
+                    "description": "The host names. The maximum length of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). You must include at least one \".\" character. You can include only alphabetical characters after the final \".\" character.\n If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": [
@@ -419,7 +419,7 @@ const awsccElasticloadbalancingv2ListenerRule = `{
                   },
                   "values": {
                     "computed": true,
-                    "description": "The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).\n If the same header appears multiple times in the request, we search them in order until a match is found.\n If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.",
+                    "description": "The strings to compare against the value of the HTTP header. The maximum length of each string is 128 characters. The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character).\n If the same header appears multiple times in the request, we search them in order until a match is found.\n If you specify multiple strings, the condition is satisfied if one of the strings matches the value of the HTTP header. To require that all of the strings are a match, create one condition per string.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": [
@@ -440,7 +440,7 @@ const awsccElasticloadbalancingv2ListenerRule = `{
                 "attributes": {
                   "values": {
                     "computed": true,
-                    "description": "The name of the request method. The maximum size is 40 characters. The allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name must be an exact match.\n If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request may be cached.",
+                    "description": "The name of the request method. The maximum length is 40 characters. The allowed characters are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards are not supported; therefore, the method name must be an exact match.\n If you specify multiple strings, the condition is satisfied if one of the strings matches the HTTP request method. We recommend that you route GET and HEAD requests in the same way, because the response to a HEAD request may be cached.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": [
@@ -491,7 +491,7 @@ const awsccElasticloadbalancingv2ListenerRule = `{
                 "attributes": {
                   "values": {
                     "computed": true,
-                    "description": "The key/value pairs or values to find in the query string. The maximum size of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in ` + "`" + `` + "`" + `Values` + "`" + `` + "`" + ` using a '\\' character.\n If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.",
+                    "description": "The key/value pairs or values to find in the query string. The maximum length of each string is 128 characters. The comparison is case insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1 character). To search for a literal '*' or '?' character in a query string, you must escape these characters in ` + "`" + `` + "`" + `Values` + "`" + `` + "`" + ` using a '\\' character.\n If you specify multiple key/value pairs or values, the condition is satisfied if one of them is found in the query string.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -521,6 +521,7 @@ const awsccElasticloadbalancingv2ListenerRule = `{
             },
             "regex_values": {
               "computed": true,
+              "description": "The regular expressions to match against the condition field. The maximum length of each string is 128 characters. Specify only when ` + "`" + `` + "`" + `Field` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `http-header` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `host-header` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `path-pattern` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "optional": true,
               "type": [
@@ -610,12 +611,14 @@ const awsccElasticloadbalancingv2ListenerRule = `{
                       "attributes": {
                         "regex": {
                           "computed": true,
+                          "description": "The regular expression to match in the input string. The maximum length of the string is 1,024 characters.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "replace": {
                           "computed": true,
+                          "description": "The replacement string to use when rewriting the matched input. The maximum length of the string is 1,024 characters. You can specify capture groups in the regular expression (for example, $1 and $2).",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -648,12 +651,14 @@ const awsccElasticloadbalancingv2ListenerRule = `{
                       "attributes": {
                         "regex": {
                           "computed": true,
+                          "description": "The regular expression to match in the input string. The maximum length of the string is 1,024 characters.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "replace": {
                           "computed": true,
+                          "description": "The replacement string to use when rewriting the matched input. The maximum length of the string is 1,024 characters. You can specify capture groups in the regular expression (for example, $1 and $2).",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"

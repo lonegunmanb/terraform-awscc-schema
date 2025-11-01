@@ -9,6 +9,11 @@ import (
 const awsccCloudfrontVpcOrigin = `{
   "block": {
     "attributes": {
+      "account_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "arn": {
         "computed": true,
         "description_kind": "plain",

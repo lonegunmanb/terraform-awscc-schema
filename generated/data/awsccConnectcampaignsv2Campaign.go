@@ -225,6 +225,47 @@ const awsccConnectcampaignsv2Campaign = `{
                             "nesting_mode": "single"
                           }
                         },
+                        "preview_config": {
+                          "computed": true,
+                          "description": "Preview config",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "agent_actions": {
+                                "computed": true,
+                                "description": "Actions that can be performed by agent during preview phase",
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "bandwidth_allocation": {
+                                "computed": true,
+                                "description": "The bandwidth allocation of a queue resource.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "timeout_config": {
+                                "computed": true,
+                                "description": "Timeout Config for preview contacts",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "duration_in_seconds": {
+                                      "computed": true,
+                                      "description": "Timeout duration for a preview contact in seconds",
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "progressive_config": {
                           "computed": true,
                           "description": "Progressive config",

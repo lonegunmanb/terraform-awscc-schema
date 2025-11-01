@@ -108,6 +108,48 @@ const awsccTransferConnector = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "egress_config": {
+        "computed": true,
+        "description": "Egress configuration for the connector.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "vpc_lattice": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "port_number": {
+                    "computed": true,
+                    "description": "Port to connect to on the target VPC Lattice resource",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "resource_configuration_arn": {
+                    "computed": true,
+                    "description": "ARN of the VPC Lattice resource configuration",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "egress_type": {
+        "computed": true,
+        "description": "Specifies the egress type for the connector.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -172,6 +214,11 @@ const awsccTransferConnector = `{
         },
         "optional": true
       },
+      "status": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.",
@@ -198,9 +245,10 @@ const awsccTransferConnector = `{
         "optional": true
       },
       "url": {
+        "computed": true,
         "description": "URL for Connector",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       }
     },

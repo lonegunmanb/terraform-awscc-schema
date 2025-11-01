@@ -134,6 +134,11 @@ const awsccNetworkfirewallFirewall = `{
           "nesting_mode": "set"
         }
       },
+      "transit_gateway_attachment_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "transit_gateway_id": {
         "computed": true,
         "description_kind": "plain",

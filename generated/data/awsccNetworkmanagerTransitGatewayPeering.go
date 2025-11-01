@@ -39,6 +39,15 @@ const awsccNetworkmanagerTransitGatewayPeering = `{
         "required": true,
         "type": "string"
       },
+      "last_modification_errors": {
+        "computed": true,
+        "description": "Errors from the last modification of the transit gateway peering.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "owner_account_id": {
         "computed": true,
         "description": "Peering owner account Id",

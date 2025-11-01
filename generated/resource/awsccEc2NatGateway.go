@@ -114,6 +114,7 @@ const awsccEc2NatGateway = `{
       },
       "vpc_id": {
         "computed": true,
+        "description": "The ID of the VPC in which the NAT gateway is located.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

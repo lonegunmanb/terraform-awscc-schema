@@ -95,7 +95,21 @@ const awsccEcsService = `{
             "canary_configuration": {
               "computed": true,
               "description_kind": "plain",
-              "type": "string"
+              "nested_type": {
+                "attributes": {
+                  "canary_bake_time_in_minutes": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "canary_percent": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             },
             "deployment_circuit_breaker": {
               "computed": true,
@@ -159,7 +173,21 @@ const awsccEcsService = `{
             "linear_configuration": {
               "computed": true,
               "description_kind": "plain",
-              "type": "string"
+              "nested_type": {
+                "attributes": {
+                  "step_bake_time_in_minutes": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "step_percent": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             },
             "maximum_percent": {
               "computed": true,
@@ -453,6 +481,25 @@ const awsccEcsService = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "access_log_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "format": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "include_query_parameters": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "enabled": {
               "computed": true,
               "description": "Specifies whether to use Service Connect with this service.",

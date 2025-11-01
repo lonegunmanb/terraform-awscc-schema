@@ -66,6 +66,12 @@ const awsccOrganizationsAccount = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "state": {
+        "computed": true,
+        "description": "The state of the account in the organization.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "status": {
         "computed": true,
         "description": "The status of the account in the organization.",
