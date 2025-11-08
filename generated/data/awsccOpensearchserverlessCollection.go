@@ -45,6 +45,12 @@ const awsccOpensearchserverlessCollection = `{
         "required": true,
         "type": "string"
       },
+      "kms_key_arn": {
+        "computed": true,
+        "description": "The ARN of the AWS KMS key used to encrypt the collection.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "name": {
         "computed": true,
         "description": "The name of the collection.\n\nThe name must meet the following criteria:\nUnique to your account and AWS Region\nStarts with a lowercase letter\nContains only lowercase letters a-z, the numbers 0-9 and the hyphen (-)\nContains between 3 and 32 characters\n",

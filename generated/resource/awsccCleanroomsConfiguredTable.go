@@ -338,6 +338,12 @@ const awsccCleanroomsConfiguredTable = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "region": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "table_name": {
                     "computed": true,
                     "description_kind": "plain",
@@ -361,6 +367,12 @@ const awsccCleanroomsConfiguredTable = `{
               "nested_type": {
                 "attributes": {
                   "database_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "region": {
                     "computed": true,
                     "description_kind": "plain",
                     "optional": true,

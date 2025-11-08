@@ -161,6 +161,7 @@ const awsccImagebuilderImageRecipe = `{
         "optional": true
       },
       "components": {
+        "computed": true,
         "description": "The components of the image recipe.",
         "description_kind": "plain",
         "nested_type": {
@@ -203,7 +204,7 @@ const awsccImagebuilderImageRecipe = `{
           },
           "nesting_mode": "list"
         },
-        "required": true
+        "optional": true
       },
       "description": {
         "computed": true,

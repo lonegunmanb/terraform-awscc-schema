@@ -71,7 +71,7 @@ const awsccEcrRepositoryCreationTemplate = `{
       },
       "image_tag_mutability_exclusion_filters": {
         "computed": true,
-        "description": "Defines the image tag mutability exclusion filters to apply when creating repositories from this template. These filters specify which image tags can override the repository's default image tag mutability setting.",
+        "description": "A list of filters that specify which image tags are excluded from the repository creation template's image tag mutability setting.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

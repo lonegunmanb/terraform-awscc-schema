@@ -122,6 +122,33 @@ const awsccDatazoneConnection = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "amazon_q_properties": {
+              "computed": true,
+              "description": "Amazon Q properties of the connection.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "auth_mode": {
+                    "computed": true,
+                    "description": "The authentication mode of the connection's AmazonQ properties",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "is_enabled": {
+                    "computed": true,
+                    "description": "Specifies whether Amazon Q is enabled for the connection",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "profile_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "athena_properties": {
               "computed": true,
               "description": "Athena Properties Input",
@@ -686,6 +713,12 @@ const awsccDatazoneConnection = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "scope": {
+        "computed": true,
+        "description": "The scope of the connection.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "type": {
         "computed": true,

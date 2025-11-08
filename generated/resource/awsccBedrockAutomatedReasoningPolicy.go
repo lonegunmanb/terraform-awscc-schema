@@ -27,10 +27,30 @@ const awsccBedrockAutomatedReasoningPolicy = `{
         "optional": true,
         "type": "string"
       },
+      "force_delete": {
+        "computed": true,
+        "description": "Specifies whether to force delete the automated reasoning policy even if it has active resources. When false , Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When true , Amazon Bedrock will delete the policy and all its artifacts without validation. Default is false",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
+        "type": "string"
+      },
+      "kms_key_arn": {
+        "computed": true,
+        "description": "The KMS key with which the Policy's assets will be encrypted at rest.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "kms_key_id": {
+        "computed": true,
+        "description": "The KMS key with which the Policy's assets will be encrypted at rest.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "name": {

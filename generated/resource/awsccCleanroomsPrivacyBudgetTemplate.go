@@ -49,14 +49,50 @@ const awsccCleanroomsPrivacyBudgetTemplate = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "epsilon": {
+            "budget_parameters": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "nested_type": {
+                "attributes": {
+                  "auto_refresh": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "budget": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "epsilon": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
               "type": "number"
             },
-            "users_noise_per_query": {
+            "resource_arn": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
+              "type": "string"
+            },
+            "users_noise_per_query": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
               "type": "number"
             }
           },
