@@ -90,7 +90,7 @@ const awsccApigatewayRestApi = `{
       },
       "endpoint_configuration": {
         "computed": true,
-        "description": "A list of the endpoint types of the API. Use this property when creating an API. When importing an existing API, specify the endpoint configuration types using the ` + "`" + `` + "`" + `Parameters` + "`" + `` + "`" + ` property.",
+        "description": "A list of the endpoint types and IP address types of the API. Use this property when creating an API. When importing an existing API, specify the endpoint configuration types using the ` + "`" + `` + "`" + `Parameters` + "`" + `` + "`" + ` property.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -185,12 +185,14 @@ const awsccApigatewayRestApi = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The value for the specified tag key.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -201,7 +203,7 @@ const awsccApigatewayRestApi = `{
         "optional": true
       }
     },
-    "description": "The ` + "`" + `` + "`" + `AWS::ApiGateway::RestApi` + "`" + `` + "`" + ` resource creates a REST API. For more information, see [restapi:create](https://docs.aws.amazon.com/apigateway/latest/api/API_CreateRestApi.html) in the *Amazon API Gateway REST API Reference*.\n On January 1, 2016, the Swagger Specification was donated to the [OpenAPI initiative](https://docs.aws.amazon.com/https://www.openapis.org/), becoming the foundation of the OpenAPI Specification.",
+    "description": "The ` + "`" + `` + "`" + `AWS::ApiGateway::RestApi` + "`" + `` + "`" + ` resource creates a REST API. For more information, see [restapi:create](https://docs.aws.amazon.com/apigateway/latest/api/API_CreateRestApi.html) in the *Amazon API Gateway REST API Reference*.\n  On January 1, 2016, the Swagger Specification was donated to the [OpenAPI initiative](https://docs.aws.amazon.com/https://www.openapis.org/), becoming the foundation of the OpenAPI Specification.",
     "description_kind": "plain"
   },
   "version": 1

@@ -40,6 +40,15 @@ const awsccControltowerLandingZone = `{
         "required": true,
         "type": "string"
       },
+      "remediation_types": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "status": {
         "computed": true,
         "description_kind": "plain",

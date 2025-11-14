@@ -91,6 +91,18 @@ const awsccDsqlCluster = `{
           "nesting_mode": "single"
         }
       },
+      "policy_document": {
+        "computed": true,
+        "description": "The IAM policy applied to the cluster resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "policy_version": {
+        "computed": true,
+        "description": "The version number of the cluster's resource based policy",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "resource_arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN) for the cluster.",

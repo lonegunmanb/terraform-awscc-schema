@@ -53,6 +53,11 @@ const awsccBackupLogicallyAirGappedBackupVault = `{
         "description_kind": "plain",
         "type": "number"
       },
+      "mpa_approval_team_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "notifications": {
         "computed": true,
         "description_kind": "plain",

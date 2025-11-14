@@ -68,6 +68,66 @@ const awsccConnectSecurityProfile = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "granular_access_control_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "data_table_access_control_configuration": {
+              "computed": true,
+              "description": "Defines the access control configuration for data tables.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "primary_attribute_access_control_configuration": {
+                    "computed": true,
+                    "description": "Contains the configuration for record-based access control.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "primary_attribute_values": {
+                          "computed": true,
+                          "description": "An array of PrimaryAttributeValue objects.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "access_type": {
+                                "computed": true,
+                                "description": "Specifies the type of access granted. Currently, only \"ALLOW\" is supported",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "attribute_name": {
+                                "computed": true,
+                                "description": "The name of the primary attribute.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "values": {
+                                "computed": true,
+                                "description": "An array of allowed primary values for the specified primary attribute.",
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "hierarchy_restricted_resources": {
         "computed": true,
         "description": "The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect.",

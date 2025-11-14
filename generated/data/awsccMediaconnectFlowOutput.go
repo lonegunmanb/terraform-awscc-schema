@@ -218,6 +218,64 @@ const awsccMediaconnectFlowOutput = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "router_integration_state": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "router_integration_transit_encryption": {
+        "computed": true,
+        "description": "The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "encryption_key_configuration": {
+              "computed": true,
+              "description": "Configuration settings for flow transit encryption keys.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "automatic": {
+                    "computed": true,
+                    "description": "Configuration settings for automatic encryption key management, where MediaConnect handles key creation and rotation.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "secrets_manager": {
+                    "computed": true,
+                    "description": "The configuration settings for transit encryption of a flow output using AWS Secrets Manager, including the secret ARN and role ARN.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "role_arn": {
+                          "computed": true,
+                          "description": "The ARN of the IAM role used for transit encryption to the router input using AWS Secrets Manager.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "The ARN of the AWS Secrets Manager secret used for transit encryption to the router input.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "encryption_key_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "smoothing_latency": {
         "computed": true,
         "description": "The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.",

@@ -234,6 +234,13 @@ const awsccElasticloadbalancingv2TargetGroup = `{
               "description_kind": "plain",
               "optional": true,
               "type": "number"
+            },
+            "quic_server_id": {
+              "computed": true,
+              "description": "The Server ID used by targets when using QUIC or TCP_QUIC protocols.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             }
           },
           "nesting_mode": "set"

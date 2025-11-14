@@ -64,6 +64,39 @@ const awsccWorkspaceswebBrowserSettings = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "web_content_filtering_policy": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "allowed_urls": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "blocked_categories": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "blocked_urls": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
       }
     },
     "description": "Data Source schema for AWS::WorkSpacesWeb::BrowserSettings",

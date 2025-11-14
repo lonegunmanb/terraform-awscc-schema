@@ -20,6 +20,28 @@ const awsccEc2IpamScope = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "external_authority_configuration": {
+        "computed": true,
+        "description": "External service configuration to connect your AWS IPAM scope.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "external_resource_identifier": {
+              "computed": true,
+              "description": "Resource identifier of the scope in the external service connecting to your AWS IPAM scope.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "ipam_scope_external_authority_type": {
+              "computed": true,
+              "description": "An external service connecting to your AWS IPAM scope.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

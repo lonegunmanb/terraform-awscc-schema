@@ -21,6 +21,69 @@ const awsccBedrockagentcoreRuntime = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "code_configuration": {
+              "computed": true,
+              "description": "Representation of a code configuration",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "code": {
+                    "computed": true,
+                    "description": "Object represents source code from zip file",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "s3": {
+                          "computed": true,
+                          "description": "S3 Location Configuration",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "bucket": {
+                                "computed": true,
+                                "description": "S3 bucket name",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "prefix": {
+                                "computed": true,
+                                "description": "S3 object key prefix",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "version_id": {
+                                "computed": true,
+                                "description": "S3 object version ID",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "entry_point": {
+                    "computed": true,
+                    "description": "List of entry points",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "runtime": {
+                    "computed": true,
+                    "description": "Managed runtime types",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "container_configuration": {
               "computed": true,
               "description_kind": "plain",
@@ -135,6 +198,28 @@ const awsccBedrockagentcoreRuntime = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "lifecycle_configuration": {
+        "computed": true,
+        "description": "Lifecycle configuration for managing runtime sessions",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "idle_runtime_session_timeout": {
+              "computed": true,
+              "description": "Timeout in seconds for idle runtime sessions",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "max_lifetime": {
+              "computed": true,
+              "description": "Maximum lifetime in seconds for runtime sessions",
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "network_configuration": {
         "computed": true,
         "description": "Network access configuration for the Agent",
@@ -184,6 +269,25 @@ const awsccBedrockagentcoreRuntime = `{
         "description": "Protocol configuration for the agent runtime",
         "description_kind": "plain",
         "type": "string"
+      },
+      "request_header_configuration": {
+        "computed": true,
+        "description": "Configuration for HTTP request headers",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "request_header_allowlist": {
+              "computed": true,
+              "description": "List of allowed HTTP headers for agent runtime requests",
+              "description_kind": "plain",
+              "type": [
+                "set",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "role_arn": {
         "computed": true,

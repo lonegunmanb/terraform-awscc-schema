@@ -33,12 +33,14 @@ const awsccApigatewayClientCertificate = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The value for the specified tag key.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

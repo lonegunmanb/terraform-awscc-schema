@@ -11,7 +11,7 @@ const awsccApigatewayStage = `{
     "attributes": {
       "access_log_setting": {
         "computed": true,
-        "description": "The ` + "`" + `` + "`" + `AccessLogSetting` + "`" + `` + "`" + ` property type specifies settings for logging access in this stage.\n  ` + "`" + `` + "`" + `AccessLogSetting` + "`" + `` + "`" + ` is a property of the [AWS::ApiGateway::Stage](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html) resource.",
+        "description": "The ` + "`" + `` + "`" + `AccessLogSetting` + "`" + `` + "`" + ` property type specifies settings for logging access in this stage.\n ` + "`" + `` + "`" + `AccessLogSetting` + "`" + `` + "`" + ` is a property of the [AWS::ApiGateway::Stage](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html) resource.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -203,14 +203,14 @@ const awsccApigatewayStage = `{
           "attributes": {
             "key": {
               "computed": true,
-              "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:.",
+              "description": "A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:.",
+              "description": "The value for the specified tag key.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

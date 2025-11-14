@@ -209,6 +209,12 @@ const awsccElasticloadbalancingv2TargetGroup = `{
               "description": "The port on which the target is listening. If the target group protocol is GENEVE, the supported port is 6081. If the target type is alb, the targeted Application Load Balancer must have at least one listener whose port matches the target group port. Not used if the target is a Lambda function.",
               "description_kind": "plain",
               "type": "number"
+            },
+            "quic_server_id": {
+              "computed": true,
+              "description": "The Server ID used by targets when using QUIC or TCP_QUIC protocols.",
+              "description_kind": "plain",
+              "type": "string"
             }
           },
           "nesting_mode": "set"

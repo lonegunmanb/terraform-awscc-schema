@@ -31,6 +31,13 @@ const awsccKinesisStream = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "max_record_size_in_ki_b": {
+        "computed": true,
+        "description": "Maximum size of a data record in KiB allowed to be put into Kinesis stream.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "name": {
         "computed": true,
         "description": "The name of the Kinesis stream.",
@@ -97,7 +104,7 @@ const awsccKinesisStream = `{
       },
       "tags": {
         "computed": true,
-        "description": "An arbitrary set of tags (key–value pairs) to associate with the Kinesis stream.",
+        "description": "An arbitrary set of tags (key-value pairs) to associate with the Kinesis stream.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -119,6 +126,35 @@ const awsccKinesisStream = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "warm_throughput_mi_bps": {
+        "computed": true,
+        "description": "Target warm throughput in MiB/s for the stream. This property can ONLY be set when StreamMode is ON_DEMAND.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
+      "warm_throughput_object": {
+        "computed": true,
+        "description": "Warm throughput configuration details for the stream. Only present for ON_DEMAND streams.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "current_mi_bps": {
+              "computed": true,
+              "description": "Current warm throughput in MiB/s",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "target_mi_bps": {
+              "computed": true,
+              "description": "Target warm throughput in MiB/s that a customer can write to a stream at any given time",
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
       }
     },
     "description": "Resource Type definition for AWS::Kinesis::Stream",

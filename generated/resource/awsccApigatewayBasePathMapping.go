@@ -39,7 +39,7 @@ const awsccApigatewayBasePathMapping = `{
         "type": "string"
       }
     },
-    "description": "The ` + "`" + `` + "`" + `AWS::ApiGateway::BasePathMapping` + "`" + `` + "`" + ` resource creates a base path that clients who call your API must use in the invocation URL.",
+    "description": "The ` + "`" + `` + "`" + `AWS::ApiGateway::BasePathMapping` + "`" + `` + "`" + ` resource creates a base path that clients who call your API must use in the invocation URL. Supported only for public custom domain names.",
     "description_kind": "plain"
   },
   "version": 1

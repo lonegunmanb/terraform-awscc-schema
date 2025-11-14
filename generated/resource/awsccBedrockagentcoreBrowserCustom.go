@@ -21,6 +21,23 @@ const awsccBedrockagentcoreBrowserCustom = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "browser_signing": {
+        "computed": true,
+        "description": "Browser signing configuration.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "created_at": {
         "computed": true,
         "description": "Timestamp when the browser was created.",

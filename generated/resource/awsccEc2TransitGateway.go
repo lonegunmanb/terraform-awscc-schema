@@ -51,6 +51,17 @@ const awsccEc2TransitGateway = `{
         "optional": true,
         "type": "string"
       },
+      "encryption_support": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "encryption_support_state": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

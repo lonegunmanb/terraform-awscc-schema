@@ -36,7 +36,7 @@ const awsccApigatewayDomainName = `{
       },
       "endpoint_configuration": {
         "computed": true,
-        "description": "The ` + "`" + `` + "`" + `EndpointConfiguration` + "`" + `` + "`" + ` property type specifies the endpoint types of an Amazon API Gateway domain name.\n ` + "`" + `` + "`" + `EndpointConfiguration` + "`" + `` + "`" + ` is a property of the [AWS::ApiGateway::DomainName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html) resource.",
+        "description": "The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -120,11 +120,13 @@ const awsccApigatewayDomainName = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The value for the specified tag key.",
               "description_kind": "plain",
               "type": "string"
             }

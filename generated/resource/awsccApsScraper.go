@@ -228,6 +228,37 @@ const awsccApsScraper = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            },
+            "vpc_configuration": {
+              "computed": true,
+              "description": "Configuration for VPC metrics source",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "security_group_ids": {
+                    "computed": true,
+                    "description": "List of security group IDs",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "subnet_ids": {
+                    "computed": true,
+                    "description": "List of subnet IDs",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

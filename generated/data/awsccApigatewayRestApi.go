@@ -79,7 +79,7 @@ const awsccApigatewayRestApi = `{
       },
       "endpoint_configuration": {
         "computed": true,
-        "description": "A list of the endpoint types of the API. Use this property when creating an API. When importing an existing API, specify the endpoint configuration types using the ` + "`" + `` + "`" + `Parameters` + "`" + `` + "`" + ` property.",
+        "description": "A list of the endpoint types and IP address types of the API. Use this property when creating an API. When importing an existing API, specify the endpoint configuration types using the ` + "`" + `` + "`" + `Parameters` + "`" + `` + "`" + ` property.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -164,11 +164,13 @@ const awsccApigatewayRestApi = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The value for the specified tag key.",
               "description_kind": "plain",
               "type": "string"
             }

@@ -29,7 +29,7 @@ const awsccLambdaPermission = `{
       },
       "function_url_auth_type": {
         "computed": true,
-        "description": "The type of authentication that your function URL uses. Set to ` + "`" + `` + "`" + `AWS_IAM` + "`" + `` + "`" + ` if you want to restrict access to authenticated users only. Set to ` + "`" + `` + "`" + `NONE` + "`" + `` + "`" + ` if you want to bypass IAM authentication to create a public endpoint. For more information, see [Security and auth model for Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html).",
+        "description": "The type of authentication that your function URL uses. Set to ` + "`" + `` + "`" + `AWS_IAM` + "`" + `` + "`" + ` if you want to restrict access to authenticated users only. Set to ` + "`" + `` + "`" + `NONE` + "`" + `` + "`" + ` if you want to bypass IAM authentication to create a public endpoint. For more information, see [Control access to Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html).",
         "description_kind": "plain",
         "type": "string"
       },
@@ -41,6 +41,7 @@ const awsccLambdaPermission = `{
       },
       "invoked_via_function_url": {
         "computed": true,
+        "description": "Restricts the ` + "`" + `` + "`" + `lambda:InvokeFunction` + "`" + `` + "`" + ` action to function URL calls. When specified, this option prevents the principal from invoking the function by any means other than the function URL. For more information, see [Control access to Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html).",
         "description_kind": "plain",
         "type": "bool"
       },
