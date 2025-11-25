@@ -105,6 +105,77 @@ const awsccAthenaWorkGroup = `{
               "description_kind": "plain",
               "type": "bool"
             },
+            "engine_configuration": {
+              "computed": true,
+              "description": "The engine configuration for running queries.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "additional_configs": {
+                    "computed": true,
+                    "description": "Contains additional notebook engine MAP\u003cstring, string\u003e parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the StartSessionRequest$NotebookVersion field, and then add a key named NotebookId to AdditionalConfigs that has the value of the Athena notebook ID.",
+                    "description_kind": "plain",
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  },
+                  "classifications": {
+                    "computed": true,
+                    "description": "The configuration classifications that can be specified for the engine.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "name": {
+                          "computed": true,
+                          "description": "The name of the configuration classification.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "properties": {
+                          "computed": true,
+                          "description": "A set of properties specified within a configuration classification.",
+                          "description_kind": "plain",
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
+                  "coordinator_dpu_size": {
+                    "computed": true,
+                    "description": "The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "default_executor_dpu_size": {
+                    "computed": true,
+                    "description": "The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "max_concurrent_dpus": {
+                    "computed": true,
+                    "description": "The maximum number of DPUs that can run concurrently.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "spark_properties": {
+                    "computed": true,
+                    "description": "Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general Spark tuning.",
+                    "description_kind": "plain",
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "engine_version": {
               "computed": true,
               "description": "The Athena engine version for running queries.",
@@ -129,7 +200,7 @@ const awsccAthenaWorkGroup = `{
             },
             "execution_role": {
               "computed": true,
-              "description": "Execution Role ARN required to run Athena Spark Calculations",
+              "description": "The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.",
               "description_kind": "plain",
               "type": "string"
             },
@@ -153,6 +224,106 @@ const awsccAthenaWorkGroup = `{
                         "kms_key": {
                           "computed": true,
                           "description": "For SSE-KMS and CSE-KMS, this is the KMS key ARN or ID. ",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "monitoring_configuration": {
+              "computed": true,
+              "description": "Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cloudwatch_logging_configuration": {
+                    "computed": true,
+                    "description": "Configuration settings for delivering logs to Amazon CloudWatch log groups.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enabled": {
+                          "computed": true,
+                          "description": "Enables CloudWatch logging.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "log_group": {
+                          "computed": true,
+                          "description": "The name of the log group in Amazon CloudWatch Logs where you want to publish your logs.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "log_stream_name_prefix": {
+                          "computed": true,
+                          "description": "Prefix for the CloudWatch log stream name.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "log_types": {
+                          "computed": true,
+                          "description": "The types of logs that you want to publish to CloudWatch.",
+                          "description_kind": "plain",
+                          "type": [
+                            "map",
+                            [
+                              "list",
+                              "string"
+                            ]
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "managed_logging_configuration": {
+                    "computed": true,
+                    "description": "Configuration settings for managed log persistence.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enabled": {
+                          "computed": true,
+                          "description": "Enables managed log persistence.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "kms_key": {
+                          "computed": true,
+                          "description": "The KMS key ARN to encrypt the logs stored in managed log persistence.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "s3_logging_configuration": {
+                    "computed": true,
+                    "description": "Configuration settings for delivering logs to Amazon S3 buckets.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enabled": {
+                          "computed": true,
+                          "description": "Enables S3 log delivery.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "kms_key": {
+                          "computed": true,
+                          "description": "The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "log_location": {
+                          "computed": true,
+                          "description": "The Amazon S3 destination URI for log publishing.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -280,6 +451,77 @@ const awsccAthenaWorkGroup = `{
               "description_kind": "plain",
               "type": "bool"
             },
+            "engine_configuration": {
+              "computed": true,
+              "description": "The engine configuration for running queries.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "additional_configs": {
+                    "computed": true,
+                    "description": "Contains additional notebook engine MAP\u003cstring, string\u003e parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the StartSessionRequest$NotebookVersion field, and then add a key named NotebookId to AdditionalConfigs that has the value of the Athena notebook ID.",
+                    "description_kind": "plain",
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  },
+                  "classifications": {
+                    "computed": true,
+                    "description": "The configuration classifications that can be specified for the engine.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "name": {
+                          "computed": true,
+                          "description": "The name of the configuration classification.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "properties": {
+                          "computed": true,
+                          "description": "A set of properties specified within a configuration classification.",
+                          "description_kind": "plain",
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
+                  "coordinator_dpu_size": {
+                    "computed": true,
+                    "description": "The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session. The default is 1.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "default_executor_dpu_size": {
+                    "computed": true,
+                    "description": "The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena. The default is 1.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "max_concurrent_dpus": {
+                    "computed": true,
+                    "description": "The maximum number of DPUs that can run concurrently.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "spark_properties": {
+                    "computed": true,
+                    "description": "Specifies custom jar files and Spark properties for use cases like cluster encryption, table formats, and general Spark tuning.",
+                    "description_kind": "plain",
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "engine_version": {
               "computed": true,
               "description": "The Athena engine version for running queries.",
@@ -304,7 +546,7 @@ const awsccAthenaWorkGroup = `{
             },
             "execution_role": {
               "computed": true,
-              "description": "Execution Role ARN required to run Athena Spark Calculations",
+              "description": "The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.",
               "description_kind": "plain",
               "type": "string"
             },
@@ -328,6 +570,106 @@ const awsccAthenaWorkGroup = `{
                         "kms_key": {
                           "computed": true,
                           "description": "For SSE-KMS and CSE-KMS, this is the KMS key ARN or ID. ",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "monitoring_configuration": {
+              "computed": true,
+              "description": "Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cloudwatch_logging_configuration": {
+                    "computed": true,
+                    "description": "Configuration settings for delivering logs to Amazon CloudWatch log groups.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enabled": {
+                          "computed": true,
+                          "description": "Enables CloudWatch logging.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "log_group": {
+                          "computed": true,
+                          "description": "The name of the log group in Amazon CloudWatch Logs where you want to publish your logs.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "log_stream_name_prefix": {
+                          "computed": true,
+                          "description": "Prefix for the CloudWatch log stream name.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "log_types": {
+                          "computed": true,
+                          "description": "The types of logs that you want to publish to CloudWatch.",
+                          "description_kind": "plain",
+                          "type": [
+                            "map",
+                            [
+                              "list",
+                              "string"
+                            ]
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "managed_logging_configuration": {
+                    "computed": true,
+                    "description": "Configuration settings for managed log persistence.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enabled": {
+                          "computed": true,
+                          "description": "Enables managed log persistence.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "kms_key": {
+                          "computed": true,
+                          "description": "The KMS key ARN to encrypt the logs stored in managed log persistence.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "s3_logging_configuration": {
+                    "computed": true,
+                    "description": "Configuration settings for delivering logs to Amazon S3 buckets.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enabled": {
+                          "computed": true,
+                          "description": "Enables S3 log delivery.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "kms_key": {
+                          "computed": true,
+                          "description": "The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "log_location": {
+                          "computed": true,
+                          "description": "The Amazon S3 destination URI for log publishing.",
                           "description_kind": "plain",
                           "type": "string"
                         }

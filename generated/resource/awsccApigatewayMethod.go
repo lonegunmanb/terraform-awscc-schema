@@ -145,6 +145,12 @@ const awsccApigatewayMethod = `{
               },
               "optional": true
             },
+            "integration_target": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "passthrough_behavior": {
               "computed": true,
               "description_kind": "plain",
@@ -168,6 +174,12 @@ const awsccApigatewayMethod = `{
                 "map",
                 "string"
               ]
+            },
+            "response_transfer_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             },
             "timeout_in_millis": {
               "computed": true,

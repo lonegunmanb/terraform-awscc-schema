@@ -24,21 +24,21 @@ const awsccEcsService = `{
           "attributes": {
             "base": {
               "computed": true,
-              "description": "The *base* value designates how many tasks, at a minimum, to run on the specified capacity provider for each service. Only one capacity provider in a capacity provider strategy can have a *base* defined. If no value is specified, the default value of ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` is used.\n Base value characteristics:\n  +  Only one capacity provider in a strategy can have a base defined\n  +  Default value is ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` if not specified\n  +  Valid range: 0 to 100,000\n  +  Base requirements are satisfied first before weight distribution",
+              "description": "The *base* value designates how many tasks, at a minimum, to run on the specified capacity provider for each service. Only one capacity provider in a capacity provider strategy can have a *base* defined. If no value is specified, the default value of ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` is used.\n Base value characteristics:\n  +  Only one capacity provider in a strategy can have a base defined\n  +  The default value is ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` if not specified\n  +  The valid range is 0 to 100,000\n  +  Base requirements are satisfied first before weight distribution",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "capacity_provider": {
               "computed": true,
-              "description": "The short name of the capacity provider.",
+              "description": "The short name of the capacity provider. This can be either an AWS managed capacity provider (` + "`" + `` + "`" + `FARGATE` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `FARGATE_SPOT` + "`" + `` + "`" + `) or the name of a custom capacity provider that you created.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "weight": {
               "computed": true,
-              "description": "The *weight* value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The ` + "`" + `` + "`" + `weight` + "`" + `` + "`" + ` value is taken into consideration after the ` + "`" + `` + "`" + `base` + "`" + `` + "`" + ` value, if defined, is satisfied.\n If no ` + "`" + `` + "`" + `weight` + "`" + `` + "`" + ` value is specified, the default value of ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` is used. When multiple capacity providers are specified within a capacity provider strategy, at least one of the capacity providers must have a weight value greater than zero and any capacity providers with a weight of ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` can't be used to place tasks. If you specify multiple capacity providers in a strategy that all have a weight of ` + "`" + `` + "`" + `0` + "`" + `` + "`" + `, any ` + "`" + `` + "`" + `RunTask` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `CreateService` + "`" + `` + "`" + ` actions using the capacity provider strategy will fail.\n Weight value characteristics:\n  +  Weight is considered after the base value is satisfied\n  +  Default value is ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` if not specified\n  +  Valid range: 0 to 1,000\n  +  At least one capacity provider must have a weight greater than zero\n  +  Capacity providers with weight of ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` cannot place tasks\n  \n Task distribution logic:\n  1.  Base satisfaction: The minimum number of tasks specified by the base value are placed on that capacity provider\n  1.  Weight distribution: After base requirements are met, additional tasks are distributed according to weight ratios\n  \n Examples:\n Equal Distribution: Two capacity providers both with weight ` + "`" + `` + "`" + `1` + "`" + `` + "`" + ` will split tasks evenly after base requirements are met.\n Weighted Distribution: If capacityProviderA has weight ` + "`" + `` + "`" + `1` + "`" + `` + "`" + ` and capacityProviderB has weight ` + "`" + `` + "`" + `4` + "`" + `` + "`" + `, then for every 1 task on A, 4 tasks will run on B.",
+              "description": "The *weight* value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The ` + "`" + `` + "`" + `weight` + "`" + `` + "`" + ` value is taken into consideration after the ` + "`" + `` + "`" + `base` + "`" + `` + "`" + ` value, if defined, is satisfied.\n If no ` + "`" + `` + "`" + `weight` + "`" + `` + "`" + ` value is specified, the default value of ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` is used. When multiple capacity providers are specified within a capacity provider strategy, at least one of the capacity providers must have a weight value greater than zero and any capacity providers with a weight of ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` can't be used to place tasks. If you specify multiple capacity providers in a strategy that all have a weight of ` + "`" + `` + "`" + `0` + "`" + `` + "`" + `, any ` + "`" + `` + "`" + `RunTask` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `CreateService` + "`" + `` + "`" + ` actions using the capacity provider strategy will fail.\n Weight value characteristics:\n  +  Weight is considered after the base value is satisfied\n  +  The default value is ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` if not specified\n  +  The valid range is 0 to 1,000\n  +  At least one capacity provider must have a weight greater than zero\n  +  Capacity providers with weight of ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` cannot place tasks\n  \n Task distribution logic:\n  1.  Base satisfaction: The minimum number of tasks specified by the base value are placed on that capacity provider\n  1.  Weight distribution: After base requirements are met, additional tasks are distributed according to weight ratios\n  \n Examples:\n Equal Distribution: Two capacity providers both with weight ` + "`" + `` + "`" + `1` + "`" + `` + "`" + ` will split tasks evenly after base requirements are met.\n Weighted Distribution: If capacityProviderA has weight ` + "`" + `` + "`" + `1` + "`" + `` + "`" + ` and capacityProviderB has weight ` + "`" + `` + "`" + `4` + "`" + `` + "`" + `, then for every 1 task on A, 4 tasks will run on B.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
@@ -105,17 +105,20 @@ const awsccEcsService = `{
             },
             "canary_configuration": {
               "computed": true,
+              "description": "Configuration for canary deployment strategy. Only valid when the deployment strategy is ` + "`" + `` + "`" + `CANARY` + "`" + `` + "`" + `. This configuration enables shifting a fixed percentage of traffic for testing, followed by shifting the remaining traffic after a bake period.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "canary_bake_time_in_minutes": {
                     "computed": true,
+                    "description": "The amount of time in minutes to wait during the canary phase before shifting the remaining production traffic to the new service revision. Valid values are 0 to 1440 minutes (24 hours). The default value is 10.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
                   },
                   "canary_percent": {
                     "computed": true,
+                    "description": "The percentage of production traffic to shift to the new service revision during the canary phase. Valid values are multiples of 0.1 from 0.1 to 100.0. The default value is 5.0.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
@@ -194,17 +197,20 @@ const awsccEcsService = `{
             },
             "linear_configuration": {
               "computed": true,
+              "description": "Configuration for linear deployment strategy. Only valid when the deployment strategy is ` + "`" + `` + "`" + `LINEAR` + "`" + `` + "`" + `. This configuration enables progressive traffic shifting in equal percentage increments with configurable bake times between each step.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "step_bake_time_in_minutes": {
                     "computed": true,
+                    "description": "The amount of time in minutes to wait between each traffic shifting step during a linear deployment. Valid values are 0 to 1440 minutes (24 hours). The default value is 6. This bake time is not applied after reaching 100 percent traffic.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
                   },
                   "step_percent": {
                     "computed": true,
+                    "description": "The percentage of production traffic to shift in each step during a linear deployment. Valid values are multiples of 0.1 from 3.0 to 100.0. The default value is 10.0.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
@@ -547,17 +553,20 @@ const awsccEcsService = `{
           "attributes": {
             "access_log_configuration": {
               "computed": true,
+              "description": "The configuration for Service Connect access logging. Access logs capture detailed information about requests made to your service, including request patterns, response codes, and timing data. They can be useful for debugging connectivity issues, monitoring service performance, and auditing service-to-service communication for security and compliance purposes.\n  To enable access logs, you must also specify a ` + "`" + `` + "`" + `logConfiguration` + "`" + `` + "`" + ` in the ` + "`" + `` + "`" + `serviceConnectConfiguration` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "format": {
                     "computed": true,
+                    "description": "The format for Service Connect access log output. Choose TEXT for human-readable logs or JSON for structured data that integrates well with log analysis tools.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "include_query_parameters": {
                     "computed": true,
+                    "description": "Specifies whether to include query parameters in Service Connect access logs.\n When enabled, query parameters from HTTP requests are included in the access logs. Consider security and privacy implications when enabling this feature, as query parameters may contain sensitive information such as request IDs and tokens. By default, this parameter is ` + "`" + `` + "`" + `DISABLED` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"

@@ -56,6 +56,24 @@ const awsccKinesisvideoStream = `{
         "optional": true,
         "type": "string"
       },
+      "stream_storage_configuration": {
+        "computed": true,
+        "description": "Configuration for the storage tier of the Kinesis Video Stream.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "default_storage_tier": {
+              "computed": true,
+              "description": "The storage tier for the Kinesis Video Stream. Determines the storage class used for stream data.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "tags": {
         "computed": true,
         "description": "An array of key-value pairs associated with the Kinesis Video Stream.",

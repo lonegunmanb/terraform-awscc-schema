@@ -125,7 +125,7 @@ const awsccRumAppMonitor = `{
                         },
                         "name": {
                           "computed": true,
-                          "description": "The name for the metric that is defined in this structure. For extended metrics, valid values are the following:\n\nPerformanceNavigationDuration\n\nPerformanceResourceDuration\n\nNavigationSatisfiedTransaction\n\nNavigationToleratedTransaction\n\nNavigationFrustratedTransaction\n\nWebVitalsCumulativeLayoutShift\n\nWebVitalsFirstInputDelay\n\nWebVitalsLargestContentfulPaint\n\nJsErrorCount\n\nHttpErrorCount\n\nSessionCount",
+                          "description": "The name for the metric that is defined in this structure. For extended metrics, valid values are the following:\n\nPerformanceNavigationDuration\n\nPerformanceResourceDuration\n\nNavigationSatisfiedTransaction\n\nNavigationToleratedTransaction\n\nNavigationFrustratedTransaction\n\nWebVitalsCumulativeLayoutShift\n\nWebVitalsFirstInputDelay\n\nWebVitalsLargestContentfulPaint\n\nWebVitalsInteractionToNextPaint\n\nJsErrorCount\n\nHttpErrorCount\n\nSessionCount\n\nPageViewCount\n\nHttp4xxCount\n\nHttp5xxCount\n\nSessionDuration\n\nPageViewCountPerSession\n\nJsErrorCountPerSession\n\nHttp4xxCountPerSession\n\nHttp5xxCountPerSession\n\nJsErrorCountPerPageView\n\nHttp4xxCountPerPageView\n\nHttp5xxCountPerPageView\n\nTimeOnPage\n\nColdLaunchTime\n\nWarmLaunchTime\n\nCrashCount\n\nANRCount\n\nAppHangCount\n\nScreenLoadCount\n\nScreenLoadTime\n\nNetworkLatency\n\nSpanPayloadSize\n\nLogEventPayloadSize",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -277,6 +277,12 @@ const awsccRumAppMonitor = `{
         "description": "A name for the app monitor",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "platform": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "resource_policy": {

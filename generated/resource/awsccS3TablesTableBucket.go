@@ -40,6 +40,24 @@ const awsccS3TablesTableBucket = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "metrics_configuration": {
+        "computed": true,
+        "description": "Settings governing the Metric configuration for the table bucket.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "status": {
+              "computed": true,
+              "description": "Indicates whether Metrics are enabled.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "table_bucket_arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN) of the specified table bucket.",

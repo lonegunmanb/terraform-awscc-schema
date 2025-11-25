@@ -40,7 +40,7 @@ const awsccLexResourcePolicy = `{
         "type": "string"
       }
     },
-    "description": "A resource policy with specified policy statements that attaches to a Lex bot or bot alias.",
+    "description": "Resource Type definition for a resource policy with specified policy statements that attaches to a Lex bot or bot alias.",
     "description_kind": "plain"
   },
   "version": 1

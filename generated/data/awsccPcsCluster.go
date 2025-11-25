@@ -207,6 +207,38 @@ const awsccPcsCluster = `{
                 "nesting_mode": "single"
               }
             },
+            "jwt_auth": {
+              "computed": true,
+              "description": "JWT authentication configuration for Slurm.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "jwt_key": {
+                    "computed": true,
+                    "description": "JWT key configuration.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the JWT key secret.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "secret_version": {
+                          "computed": true,
+                          "description": "The version of the JWT key secret.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "scale_down_idle_time_in_seconds": {
               "computed": true,
               "description": "The time before an idle node is scaled down.",
@@ -233,6 +265,22 @@ const awsccPcsCluster = `{
                   }
                 },
                 "nesting_mode": "list"
+              }
+            },
+            "slurm_rest": {
+              "computed": true,
+              "description": "The SlurmRest configuration includes configurable settings for Slurm Rest.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "mode": {
+                    "computed": true,
+                    "description": "The default value is ` + "`" + `STANDARD` + "`" + `. A value of ` + "`" + `STANDARD` + "`" + ` means that Slurm Rest is enabled.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
               }
             }
           },

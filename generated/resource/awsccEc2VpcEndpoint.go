@@ -41,6 +41,21 @@ const awsccEc2VpcEndpoint = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "private_dns_preference": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "private_dns_specified_domains": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
             }
           },
           "nesting_mode": "single"

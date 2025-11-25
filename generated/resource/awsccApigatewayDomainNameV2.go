@@ -32,6 +32,12 @@ const awsccApigatewayDomainNameV2 = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "endpoint_access_mode": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "endpoint_configuration": {
         "computed": true,
         "description_kind": "plain",

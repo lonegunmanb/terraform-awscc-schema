@@ -19,6 +19,21 @@ const awsccVpclatticeResourceConfiguration = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "custom_domain_name": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "domain_verification_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "group_domain": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

@@ -84,6 +84,31 @@ const awsccSagemakerCluster = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "capacity_requirements": {
+              "computed": true,
+              "description": "Specifies the capacity requirements configuration for an instance group",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "on_demand": {
+                    "computed": true,
+                    "description": "Options for OnDemand capacity",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "spot": {
+                    "computed": true,
+                    "description": "Options for Spot capacity",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "current_count": {
               "computed": true,
               "description": "The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.",
@@ -166,6 +191,59 @@ const awsccSagemakerCluster = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "kubernetes_config": {
+              "computed": true,
+              "description": "Kubernetes configuration for cluster nodes including labels and taints.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "labels": {
+                    "computed": true,
+                    "description": "A map of Kubernetes labels to apply to cluster nodes.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  },
+                  "taints": {
+                    "computed": true,
+                    "description": "A list of Kubernetes taints to apply to cluster nodes. Maximum of 50 taints.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "effect": {
+                          "computed": true,
+                          "description": "The effect of the taint.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "key": {
+                          "computed": true,
+                          "description": "The key of the taint.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "value": {
+                          "computed": true,
+                          "description": "The value of the taint.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "life_cycle_config": {
               "computed": true,

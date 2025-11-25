@@ -9,6 +9,13 @@ import (
 const awsccSagemakerPartnerApp = `{
   "block": {
     "attributes": {
+      "app_version": {
+        "computed": true,
+        "description": "The version of the PartnerApp.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "application_config": {
         "computed": true,
         "description": "A collection of settings that specify the maintenance schedule for the PartnerApp.",
@@ -64,6 +71,19 @@ const awsccSagemakerPartnerApp = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "current_version_eol_date": {
+        "computed": true,
+        "description": "The end-of-life date for the current version of the PartnerApp.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "enable_auto_minor_version_upgrade": {
+        "computed": true,
+        "description": "Enables automatic minor version upgrades for the PartnerApp.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
       },
       "enable_iam_session_based_identity": {
         "computed": true,

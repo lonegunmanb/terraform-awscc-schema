@@ -19,11 +19,38 @@ const awsccVpclatticeServiceNetworkVpcAssociation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "dns_options": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "private_dns_preference": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "private_dns_specified_domains": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "set",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "private_dns_enabled": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
       },
       "security_group_ids": {
         "computed": true,

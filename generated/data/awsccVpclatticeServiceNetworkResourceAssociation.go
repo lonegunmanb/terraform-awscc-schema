@@ -20,6 +20,11 @@ const awsccVpclatticeServiceNetworkResourceAssociation = `{
         "required": true,
         "type": "string"
       },
+      "private_dns_enabled": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "resource_configuration_id": {
         "computed": true,
         "description_kind": "plain",

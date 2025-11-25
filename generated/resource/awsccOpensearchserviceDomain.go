@@ -215,6 +215,33 @@ const awsccOpensearchserviceDomain = `{
         },
         "optional": true
       },
+      "aiml_options": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "s3_vectors_engine": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description": "Whether to enable S3 vectors engine.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "arn": {
         "computed": true,
         "description_kind": "plain",

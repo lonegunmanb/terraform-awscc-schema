@@ -128,6 +128,11 @@ const awsccApigatewayMethod = `{
                 "nesting_mode": "list"
               }
             },
+            "integration_target": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "passthrough_behavior": {
               "computed": true,
               "description_kind": "plain",
@@ -148,6 +153,11 @@ const awsccApigatewayMethod = `{
                 "map",
                 "string"
               ]
+            },
+            "response_transfer_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             },
             "timeout_in_millis": {
               "computed": true,

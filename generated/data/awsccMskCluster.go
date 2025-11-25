@@ -484,6 +484,20 @@ const awsccMskCluster = `{
           "nesting_mode": "single"
         }
       },
+      "rebalancing": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "status": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "storage_mode": {
         "computed": true,
         "description_kind": "plain",

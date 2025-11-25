@@ -461,6 +461,26 @@ const awsccCassandraTable = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "warm_throughput": {
+        "computed": true,
+        "description": "Warm throughput configuration for the table",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "read_units_per_second": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "write_units_per_second": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
       }
     },
     "description": "Data Source schema for AWS::Cassandra::Table",

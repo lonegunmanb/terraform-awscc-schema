@@ -92,6 +92,22 @@ const awsccEksCluster = `{
           "nesting_mode": "single"
         }
       },
+      "control_plane_scaling_config": {
+        "computed": true,
+        "description": "Configuration for provisioned control plane scaling.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "tier": {
+              "computed": true,
+              "description": "The scaling tier for the provisioned control plane.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "deletion_protection": {
         "computed": true,
         "description": "Set this value to true to enable deletion protection for the cluster.",

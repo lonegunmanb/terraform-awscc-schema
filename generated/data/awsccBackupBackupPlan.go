@@ -164,6 +164,11 @@ const awsccBackupBackupPlan = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "target_logically_air_gapped_backup_vault_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "list"

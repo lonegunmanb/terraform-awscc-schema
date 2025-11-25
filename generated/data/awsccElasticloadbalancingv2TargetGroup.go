@@ -140,6 +140,12 @@ const awsccElasticloadbalancingv2TargetGroup = `{
           "nesting_mode": "list"
         }
       },
+      "target_control_port": {
+        "computed": true,
+        "description": "The port that the target control agent uses to communicate the available capacity of targets to the load balancer.",
+        "description_kind": "plain",
+        "type": "number"
+      },
       "target_group_arn": {
         "computed": true,
         "description": "The ARN of the Target Group",

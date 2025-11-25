@@ -26,6 +26,11 @@ const awsccBillingconductorBillingGroup = `{
                 "set",
                 "string"
               ]
+            },
+            "responsibility_transfer_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             }
           },
           "nesting_mode": "single"

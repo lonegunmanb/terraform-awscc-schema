@@ -209,6 +209,355 @@ const awsccWisdomAiAgent = `{
                 "nesting_mode": "single"
               }
             },
+            "email_generative_answer_ai_agent_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "association_configurations": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "association_configuration_data": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "knowledge_base_association_configuration_data": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "content_tag_filter": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "and_conditions": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "key": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "value": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            }
+                                          },
+                                          "or_conditions": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "and_conditions": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "key": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "string"
+                                                      },
+                                                      "value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "string"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "list"
+                                                  }
+                                                },
+                                                "tag_condition": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "key": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "string"
+                                                      },
+                                                      "value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "string"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            }
+                                          },
+                                          "tag_condition": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "key": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "value": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            }
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "max_results": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    },
+                                    "override_knowledge_base_search_type": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "association_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "association_type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
+                  "email_generative_answer_ai_prompt_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "email_query_reformulation_ai_prompt_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "locale": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "email_overview_ai_agent_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "email_overview_ai_prompt_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "locale": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "email_response_ai_agent_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "association_configurations": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "association_configuration_data": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "knowledge_base_association_configuration_data": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "content_tag_filter": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "and_conditions": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "key": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "value": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            }
+                                          },
+                                          "or_conditions": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "and_conditions": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "key": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "string"
+                                                      },
+                                                      "value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "string"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "list"
+                                                  }
+                                                },
+                                                "tag_condition": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "key": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "string"
+                                                      },
+                                                      "value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "string"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            }
+                                          },
+                                          "tag_condition": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "key": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "value": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            }
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "max_results": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    },
+                                    "override_knowledge_base_search_type": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "association_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "association_type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
+                  "email_query_reformulation_ai_prompt_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "email_response_ai_prompt_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "locale": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "manual_search_ai_agent_configuration": {
               "computed": true,
               "description_kind": "plain",

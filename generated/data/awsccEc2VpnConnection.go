@@ -103,6 +103,11 @@ const awsccEc2VpnConnection = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "tunnel_bandwidth": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tunnel_inside_ip_version": {
         "computed": true,
         "description": "Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.\n Default: ` + "`" + `` + "`" + `ipv4` + "`" + `` + "`" + `",
@@ -112,6 +117,11 @@ const awsccEc2VpnConnection = `{
       "type": {
         "computed": true,
         "description": "The type of VPN connection.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "vpn_concentrator_id": {
+        "computed": true,
         "description_kind": "plain",
         "type": "string"
       },
@@ -178,6 +188,21 @@ const awsccEc2VpnConnection = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "bgp_log_enabled": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "bgp_log_group_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "bgp_log_output_format": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "log_enabled": {
                           "computed": true,
                           "description": "Enable or disable VPN tunnel logging feature. Default value is ` + "`" + `` + "`" + `False` + "`" + `` + "`" + `.\n Valid values: ` + "`" + `` + "`" + `True` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `False` + "`" + `` + "`" + `",

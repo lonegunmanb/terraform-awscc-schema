@@ -327,7 +327,6 @@ const awsccMskCluster = `{
         "computed": true,
         "description": "The current version of the MSK cluster",
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "encryption_info": {
@@ -538,6 +537,22 @@ const awsccMskCluster = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "rebalancing": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "status": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             }
           },
           "nesting_mode": "single"

@@ -417,6 +417,23 @@ const awsccLambdaFunction = `{
         },
         "optional": true
       },
+      "tenancy_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "tenant_isolation_mode": {
+              "computed": true,
+              "description": "Determines how your Lambda function isolates execution environments between tenants.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "timeout": {
         "computed": true,
         "description": "The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For more information, see [Lambda execution environment](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html).",

@@ -821,6 +821,34 @@ const awsccBedrockKnowledgeBase = `{
                 "nesting_mode": "single"
               }
             },
+            "s3_vectors_configuration": {
+              "computed": true,
+              "description": "Contains the storage configuration of the knowledge base for S3 vectors.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "index_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the vector index used for the knowledge base. This ARN identifies the specific vector index resource within Amazon Bedrock.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "index_name": {
+                    "computed": true,
+                    "description": "The name of the vector index used for the knowledge base. This name identifies the vector index within the Amazon Bedrock service.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "vector_bucket_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the S3 bucket where vector embeddings are stored. This bucket contains the vector data used by the knowledge base.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "type": {
               "computed": true,
               "description": "The storage type of a knowledge base.",

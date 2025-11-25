@@ -157,6 +157,11 @@ const awsccSecretsmanagerSecret = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::SecretsManager::Secret",

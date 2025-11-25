@@ -9,6 +9,38 @@ import (
 const awsccSecretsmanagerRotationSchedule = `{
   "block": {
     "attributes": {
+      "external_secret_rotation_metadata": {
+        "computed": true,
+        "description": "The list of metadata needed to successfully rotate a managed external secret.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name of the metadata item. You can specify a value that's 1 to 256 characters in length.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the metadata item. You can specify a value that's 1 to 2048 characters in length.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
+      "external_secret_rotation_role_arn": {
+        "computed": true,
+        "description": "The ARN of the IAM role that is used by Secrets Manager to rotate a managed external secret.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "hosted_rotation_lambda": {
         "computed": true,
         "description": "Creates a new Lambda rotation function based on one of the Secrets Manager rotation function templates. To use a rotation function that already exists, specify RotationLambdaARN instead.",

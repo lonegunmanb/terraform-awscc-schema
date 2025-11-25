@@ -123,7 +123,7 @@ const awsccLambdaEventSourceMapping = `{
                 "attributes": {
                   "destination": {
                     "computed": true,
-                    "description": "The Amazon Resource Name (ARN) of the destination resource.\n To retain records of unsuccessful [asynchronous invocations](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations), you can configure an Amazon SNS topic, Amazon SQS queue, Amazon S3 bucket, Lambda function, or Amazon EventBridge event bus as the destination.\n To retain records of failed invocations from [Kinesis](https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html), [DynamoDB](https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html), [self-managed Kafka](https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination) or [Amazon MSK](https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination), you can configure an Amazon SNS topic, Amazon SQS queue, or Amazon S3 bucket as the destination.",
+                    "description": "The Amazon Resource Name (ARN) of the destination resource.\n To retain records of unsuccessful [asynchronous invocations](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations), you can configure an Amazon SNS topic, Amazon SQS queue, Amazon S3 bucket, Lambda function, or Amazon EventBridge event bus as the destination.\n  Amazon SNS destinations have a message size limit of 256 KB. If the combined size of the function request and response payload exceeds the limit, Lambda will drop the payload when sending ` + "`" + `` + "`" + `OnFailure` + "`" + `` + "`" + ` event to the destination. For details on this behavior, refer to [Retaining records of asynchronous invocations](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html).\n  To retain records of failed invocations from [Kinesis](https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html), [DynamoDB](https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html), [self-managed Kafka](https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-smaa-onfailure-destination) or [Amazon MSK](https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-onfailure-destination), you can configure an Amazon SNS topic, Amazon SQS queue, or Amazon S3 bucket as the destination.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -252,6 +252,24 @@ const awsccLambdaEventSourceMapping = `{
         "optional": true,
         "type": "string"
       },
+      "logging_config": {
+        "computed": true,
+        "description": "The function's Amazon CloudWatch Logs configuration settings.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "system_log_level": {
+              "computed": true,
+              "description": "Set this property to filter the system logs for your function that Lambda sends to CloudWatch. Lambda only sends system logs at the selected level of detail and lower, where ` + "`" + `` + "`" + `DEBUG` + "`" + `` + "`" + ` is the highest level and ` + "`" + `` + "`" + `WARN` + "`" + `` + "`" + ` is the lowest.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "maximum_batching_window_in_seconds": {
         "computed": true,
         "description": "The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.\n *Default (, , event sources)*: 0\n *Default (, Kafka, , event sources)*: 500 ms\n *Related setting:* For SQS event sources, when you set ` + "`" + `` + "`" + `BatchSize` + "`" + `` + "`" + ` to a value greater than 10, you must set ` + "`" + `` + "`" + `MaximumBatchingWindowInSeconds` + "`" + `` + "`" + ` to at least 1.",
@@ -303,23 +321,29 @@ const awsccLambdaEventSourceMapping = `{
       },
       "provisioned_poller_config": {
         "computed": true,
-        "description": "(Amazon MSK and self-managed Apache Kafka only) The provisioned mode configuration for the event source. For more information, see [provisioned mode](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode).",
+        "description": "(Amazon SQS, Amazon MSK, and self-managed Apache Kafka only) The provisioned mode configuration for the event source. For more information, see [provisioned mode](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode).",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "maximum_pollers": {
               "computed": true,
-              "description": "The maximum number of event pollers this event source can scale up to.",
+              "description": "The maximum number of event pollers this event source can scale up to. For Amazon SQS events source mappings, default is 200, and minimum value allowed is 2. For Amazon MSK and self-managed Apache Kafka event source mappings, default is 200, and minimum value allowed is 1.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "minimum_pollers": {
               "computed": true,
-              "description": "The minimum number of event pollers this event source can scale down to.",
+              "description": "The minimum number of event pollers this event source can scale down to. For Amazon SQS events source mappings, default is 2, and minimum 2 required. For Amazon MSK and self-managed Apache Kafka event source mappings, default is 1.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
+            },
+            "poller_group_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             }
           },
           "nesting_mode": "single"
@@ -338,7 +362,7 @@ const awsccLambdaEventSourceMapping = `{
       },
       "scaling_config": {
         "computed": true,
-        "description": "(Amazon SQS only) The scaling configuration for the event source. For more information, see [Configuring maximum concurrency for Amazon SQS event sources](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency).",
+        "description": "This property is for Amazon SQS event sources only. You cannot use ` + "`" + `` + "`" + `ProvisionedPollerConfig` + "`" + `` + "`" + ` while using ` + "`" + `` + "`" + `ScalingConfig` + "`" + `` + "`" + `. These options are mutually exclusive. To remove the scaling configuration, pass an empty value.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

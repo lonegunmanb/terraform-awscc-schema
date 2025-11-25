@@ -95,6 +95,31 @@ const awsccCloudtrailTrail = `{
           "nesting_mode": "set"
         }
       },
+      "aggregation_configurations": {
+        "computed": true,
+        "description": "Specifies the aggregation configuration to aggregate CloudTrail Events. A maximum of 1 aggregation configuration is allowed.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "event_category": {
+              "computed": true,
+              "description": "The category of events to be aggregated.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "templates": {
+              "computed": true,
+              "description": "Contains all templates in an aggregation configuration.",
+              "description_kind": "plain",
+              "type": [
+                "set",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "set"
+        }
+      },
       "arn": {
         "computed": true,
         "description_kind": "plain",
@@ -191,6 +216,15 @@ const awsccCloudtrailTrail = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "event_categories": {
+              "computed": true,
+              "description": "The categories of events for which to log insights. By default, insights are logged for management events only.",
+              "description_kind": "plain",
+              "type": [
+                "set",
+                "string"
+              ]
+            },
             "insight_type": {
               "computed": true,
               "description": "The type of insight to log on a trail.",

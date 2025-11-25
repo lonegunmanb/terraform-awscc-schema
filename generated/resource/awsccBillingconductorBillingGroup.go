@@ -20,12 +20,19 @@ const awsccBillingconductorBillingGroup = `{
               "type": "bool"
             },
             "linked_account_ids": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "set",
                 "string"
               ]
+            },
+            "responsibility_transfer_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             }
           },
           "nesting_mode": "single"
@@ -83,9 +90,10 @@ const awsccBillingconductorBillingGroup = `{
         "type": "string"
       },
       "primary_account_id": {
+        "computed": true,
         "description": "This account will act as a virtual payer account of the billing group",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "size": {

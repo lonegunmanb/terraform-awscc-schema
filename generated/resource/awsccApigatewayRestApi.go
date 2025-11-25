@@ -88,6 +88,12 @@ const awsccApigatewayRestApi = `{
         "optional": true,
         "type": "bool"
       },
+      "endpoint_access_mode": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "endpoint_configuration": {
         "computed": true,
         "description": "A list of the endpoint types and IP address types of the API. Use this property when creating an API. When importing an existing API, specify the endpoint configuration types using the ` + "`" + `` + "`" + `Parameters` + "`" + `` + "`" + ` property.",
@@ -176,6 +182,12 @@ const awsccApigatewayRestApi = `{
       "root_resource_id": {
         "computed": true,
         "description_kind": "plain",
+        "type": "string"
+      },
+      "security_policy": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "tags": {

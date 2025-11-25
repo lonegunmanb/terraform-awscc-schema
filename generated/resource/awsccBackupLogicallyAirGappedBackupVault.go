@@ -37,6 +37,7 @@ const awsccBackupLogicallyAirGappedBackupVault = `{
       "encryption_key_arn": {
         "computed": true,
         "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "id": {

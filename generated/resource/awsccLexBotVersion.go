@@ -67,7 +67,7 @@ const awsccLexBotVersion = `{
         "type": "string"
       }
     },
-    "description": "A version is a numbered snapshot of your work that you can publish for use in different parts of your workflow, such as development, beta deployment, and production.",
+    "description": "Resource Type definition for bot versions, a numbered snapshot of your work that you can publish for use in different parts of your workflow, such as development, beta deployment, and production.",
     "description_kind": "plain"
   },
   "version": 1

@@ -49,6 +49,12 @@ const awsccDsqlCluster = `{
           "nesting_mode": "single"
         }
       },
+      "endpoint": {
+        "computed": true,
+        "description": "The DSQL cluster endpoint.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

@@ -192,6 +192,12 @@ const awsccConnectcampaignsv2Campaign = `{
                           "description": "The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.",
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "ring_timeout": {
+                          "computed": true,
+                          "description": "Maximum ring time for outbound calls in seconds",
+                          "description_kind": "plain",
+                          "type": "number"
                         }
                       },
                       "nesting_mode": "single"
