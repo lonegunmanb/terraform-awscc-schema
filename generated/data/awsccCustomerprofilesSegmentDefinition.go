@@ -1231,6 +1231,18 @@ const awsccCustomerprofilesSegmentDefinition = `{
           "nesting_mode": "single"
         }
       },
+      "segment_sql_query": {
+        "computed": true,
+        "description": "The SQL query that defines the segment criteria.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "segment_type": {
+        "computed": true,
+        "description": "The SQL query that defines the segment criteria.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "The tags used to organize, track, or control access for this resource.",

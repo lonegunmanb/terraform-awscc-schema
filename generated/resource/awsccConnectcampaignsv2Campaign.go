@@ -213,13 +213,6 @@ const awsccConnectcampaignsv2Campaign = `{
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
-                        },
-                        "ring_timeout": {
-                          "computed": true,
-                          "description": "Maximum ring time for outbound calls in seconds",
-                          "description_kind": "plain",
-                          "optional": true,
-                          "type": "number"
                         }
                       },
                       "nesting_mode": "single"

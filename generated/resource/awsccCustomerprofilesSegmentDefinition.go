@@ -53,6 +53,7 @@ const awsccCustomerprofilesSegmentDefinition = `{
         "type": "string"
       },
       "segment_groups": {
+        "computed": true,
         "description": "An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.",
         "description_kind": "plain",
         "nested_type": {
@@ -1376,7 +1377,20 @@ const awsccCustomerprofilesSegmentDefinition = `{
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
+      },
+      "segment_sql_query": {
+        "computed": true,
+        "description": "The SQL query that defines the segment criteria.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "segment_type": {
+        "computed": true,
+        "description": "The SQL query that defines the segment criteria.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "tags": {
         "computed": true,

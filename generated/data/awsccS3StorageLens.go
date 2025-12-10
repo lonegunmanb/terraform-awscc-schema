@@ -75,6 +75,22 @@ const awsccS3StorageLens = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "advanced_performance_metrics": {
+                    "computed": true,
+                    "description": "Advanced Performance Metrics.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "is_enabled": {
+                          "computed": true,
+                          "description": "Specifies whether the Advanced Performance Metrics is enabled or disabled.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "bucket_level": {
                     "computed": true,
                     "description": "Bucket-level metrics configurations.",
@@ -122,6 +138,22 @@ const awsccS3StorageLens = `{
                               "is_enabled": {
                                 "computed": true,
                                 "description": "Specifies whether advanced data protection metrics are enabled or disabled.",
+                                "description_kind": "plain",
+                                "type": "bool"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "advanced_performance_metrics": {
+                          "computed": true,
+                          "description": "Advanced Performance Metrics.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "is_enabled": {
+                                "computed": true,
+                                "description": "Specifies whether the Advanced Performance Metrics is enabled or disabled.",
                                 "description_kind": "plain",
                                 "type": "bool"
                               }
@@ -367,6 +399,54 @@ const awsccS3StorageLens = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "storage_lens_table_destination": {
+                    "computed": true,
+                    "description": "S3 Tables destination settings for the Amazon S3 Storage Lens metrics export.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "encryption": {
+                          "computed": true,
+                          "description": "Configures the server-side encryption for Amazon S3 Storage Lens report files with either S3-managed keys (SSE-S3) or KMS-managed keys (SSE-KMS).",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "ssekms": {
+                                "computed": true,
+                                "description": "AWS KMS server-side encryption.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "key_id": {
+                                      "computed": true,
+                                      "description": "The ARN of the KMS key to use for encryption.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "sses3": {
+                                "computed": true,
+                                "description": "S3 default server-side encryption.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "is_enabled": {
+                          "computed": true,
+                          "description": "Specifies whether the export to S3 Tables is enabled or disabled.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"
@@ -393,6 +473,136 @@ const awsccS3StorageLens = `{
                       "set",
                       "string"
                     ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "expanded_prefixes_data_export": {
+              "computed": true,
+              "description": "Expanded Prefixes Data Export.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "s3_bucket_destination": {
+                    "computed": true,
+                    "description": "S3 bucket destination settings for the Amazon S3 Storage Lens metrics export.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "account_id": {
+                          "computed": true,
+                          "description": "The AWS account ID that owns the destination S3 bucket.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "arn": {
+                          "computed": true,
+                          "description": "The ARN of the bucket to which Amazon S3 Storage Lens exports will be placed.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "encryption": {
+                          "computed": true,
+                          "description": "Configures the server-side encryption for Amazon S3 Storage Lens report files with either S3-managed keys (SSE-S3) or KMS-managed keys (SSE-KMS).",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "ssekms": {
+                                "computed": true,
+                                "description": "AWS KMS server-side encryption.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "key_id": {
+                                      "computed": true,
+                                      "description": "The ARN of the KMS key to use for encryption.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "sses3": {
+                                "computed": true,
+                                "description": "S3 default server-side encryption.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "format": {
+                          "computed": true,
+                          "description": "Specifies the file format to use when exporting Amazon S3 Storage Lens metrics export.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "output_schema_version": {
+                          "computed": true,
+                          "description": "The version of the output schema to use when exporting Amazon S3 Storage Lens metrics.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "prefix": {
+                          "computed": true,
+                          "description": "The prefix to use for Amazon S3 Storage Lens export.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "storage_lens_table_destination": {
+                    "computed": true,
+                    "description": "S3 Tables destination settings for the Amazon S3 Storage Lens metrics export.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "encryption": {
+                          "computed": true,
+                          "description": "Configures the server-side encryption for Amazon S3 Storage Lens report files with either S3-managed keys (SSE-S3) or KMS-managed keys (SSE-KMS).",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "ssekms": {
+                                "computed": true,
+                                "description": "AWS KMS server-side encryption.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "key_id": {
+                                      "computed": true,
+                                      "description": "The ARN of the KMS key to use for encryption.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "sses3": {
+                                "computed": true,
+                                "description": "S3 default server-side encryption.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "is_enabled": {
+                          "computed": true,
+                          "description": "Specifies whether the export to S3 Tables is enabled or disabled.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"
@@ -435,6 +645,12 @@ const awsccS3StorageLens = `{
               "description": "Specifies whether the Amazon S3 Storage Lens configuration is enabled or disabled.",
               "description_kind": "plain",
               "type": "bool"
+            },
+            "prefix_delimiter": {
+              "computed": true,
+              "description": "The delimiter to divide S3 key into hierarchy of prefixes.",
+              "description_kind": "plain",
+              "type": "string"
             },
             "storage_lens_arn": {
               "computed": true,

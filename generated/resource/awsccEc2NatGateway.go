@@ -16,6 +16,53 @@ const awsccEc2NatGateway = `{
         "optional": true,
         "type": "string"
       },
+      "auto_provision_zones": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "auto_scaling_ips": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "availability_mode": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "availability_zone_addresses": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "allocation_ids": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "set",
+                "string"
+              ]
+            },
+            "availability_zone": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "availability_zone_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
       "connectivity_type": {
         "computed": true,
         "description": "Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.",
@@ -51,6 +98,11 @@ const awsccEc2NatGateway = `{
         "description": "The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address will be automatically assigned.",
         "description_kind": "plain",
         "optional": true,
+        "type": "string"
+      },
+      "route_table_id": {
+        "computed": true,
+        "description_kind": "plain",
         "type": "string"
       },
       "secondary_allocation_ids": {

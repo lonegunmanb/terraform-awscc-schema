@@ -23,6 +23,42 @@ const awsccLambdaFunction = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "capacity_provider_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "lambda_managed_instances_capacity_provider_config": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "capacity_provider_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the capacity provider.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "execution_environment_memory_gi_b_per_v_cpu": {
+                    "computed": true,
+                    "description": "The amount of memory in GiB allocated per vCPU for execution environments.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "per_execution_environment_max_concurrency": {
+                    "computed": true,
+                    "description": "The maximum number of concurrent execution environments that can run on each compute instance.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "code": {
         "computed": true,
         "description": "The code for the function. You can define your function code in multiple ways:\n  +  For .zip deployment packages, you can specify the S3 location of the .zip file in the ` + "`" + `` + "`" + `S3Bucket` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `S3Key` + "`" + `` + "`" + `, and ` + "`" + `` + "`" + `S3ObjectVersion` + "`" + `` + "`" + ` properties.\n  +  For .zip deployment packages, you can alternatively define the function code inline in the ` + "`" + `` + "`" + `ZipFile` + "`" + `` + "`" + ` property. This method works only for Node.js and Python functions.\n  +  For container images, specify the URI of your container image in the ECR registry in the ` + "`" + `` + "`" + `ImageUri` + "`" + `` + "`" + ` property.",
@@ -97,6 +133,27 @@ const awsccLambdaFunction = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "durable_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "execution_timeout": {
+              "computed": true,
+              "description": "The amount of time (in seconds) that Lambda allows a durable function to run before stopping it. The maximum is one 366-day year or 31,622,400 seconds.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "retention_period_in_days": {
+              "computed": true,
+              "description": "The number of days after a durable execution is closed that Lambda retains its history, from one to 90 days. The default is 14 days.",
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "environment": {
         "computed": true,
         "description": "Environment variables that are accessible from function code during execution.",
@@ -159,6 +216,27 @@ const awsccLambdaFunction = `{
         "description": "The name of the Lambda function, up to 64 characters in length. If you don't specify a name, CFN generates one.\n If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "function_scaling_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "max_execution_environments": {
+              "computed": true,
+              "description": "The maximum number of execution environments that can be provisioned for the function.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "min_execution_environments": {
+              "computed": true,
+              "description": "The minimum number of execution environments to maintain for the function.",
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "handler": {
         "computed": true,
@@ -266,6 +344,11 @@ const awsccLambdaFunction = `{
         "description": "The type of deployment package. Set to ` + "`" + `` + "`" + `Image` + "`" + `` + "`" + ` for container image and set ` + "`" + `` + "`" + `Zip` + "`" + `` + "`" + ` for .zip file archive.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "publish_to_latest_published": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
       },
       "recursive_loop": {
         "computed": true,

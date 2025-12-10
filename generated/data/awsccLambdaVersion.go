@@ -33,6 +33,28 @@ const awsccLambdaVersion = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "function_scaling_config": {
+        "computed": true,
+        "description": "The scaling configuration to apply to the function, including minimum and maximum execution environment limits.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "max_execution_environments": {
+              "computed": true,
+              "description": "The maximum number of execution environments that can be provisioned for the function.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "min_execution_environments": {
+              "computed": true,
+              "description": "The minimum number of execution environments to maintain for the function.",
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
