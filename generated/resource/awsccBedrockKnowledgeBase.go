@@ -412,6 +412,35 @@ const awsccBedrockKnowledgeBase = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "audio": {
+                                "computed": true,
+                                "description": "List of audio configurations for multi modal ingestion.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "segmentation_configuration": {
+                                      "computed": true,
+                                      "description": "Configure the audio segmentation configuration for multi modal ingestion.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "fixed_length_duration": {
+                                            "computed": true,
+                                            "description": "Duration in seconds to segment the multi modal media",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "number"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                },
+                                "optional": true
+                              },
                               "dimensions": {
                                 "computed": true,
                                 "description": "The dimensions details for the vector configuration used on the Bedrock embeddings model.",
@@ -425,6 +454,35 @@ const awsccBedrockKnowledgeBase = `{
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
+                              },
+                              "video": {
+                                "computed": true,
+                                "description": "List of video configurations for multi modal ingestion.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "segmentation_configuration": {
+                                      "computed": true,
+                                      "description": "Configure the video segmentation configuration for multi modal ingestion.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "fixed_length_duration": {
+                                            "computed": true,
+                                            "description": "Duration in seconds to segment the multi modal media",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "number"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                },
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"

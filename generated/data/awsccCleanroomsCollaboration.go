@@ -121,6 +121,20 @@ const awsccCleanroomsCollaboration = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "synthetic_data_generation": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "is_responsible": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"
@@ -268,6 +282,20 @@ const awsccCleanroomsCollaboration = `{
                           }
                         },
                         "model_training": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "is_responsible": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "synthetic_data_generation": {
                           "computed": true,
                           "description_kind": "plain",
                           "nested_type": {

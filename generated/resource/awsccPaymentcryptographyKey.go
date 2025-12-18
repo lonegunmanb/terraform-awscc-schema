@@ -142,6 +142,35 @@ const awsccPaymentcryptographyKey = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "replication_regions": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
+      "replication_status": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "status": {
+              "computed": true,
+              "description": "Defines the replication state of a key",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "status_message": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "map"
+        }
+      },
       "tags": {
         "computed": true,
         "description_kind": "plain",

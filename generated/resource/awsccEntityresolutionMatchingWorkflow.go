@@ -81,6 +81,28 @@ const awsccEntityresolutionMatchingWorkflow = `{
               "optional": true,
               "type": "bool"
             },
+            "customer_profiles_integration_config": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "domain_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "object_type_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "kms_arn": {
               "computed": true,
               "description_kind": "plain",
@@ -108,9 +130,10 @@ const awsccEntityresolutionMatchingWorkflow = `{
               "required": true
             },
             "output_s3_path": {
+              "computed": true,
               "description": "The S3 path to which Entity Resolution will write the output table",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },

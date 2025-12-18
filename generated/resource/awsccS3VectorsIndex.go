@@ -33,6 +33,31 @@ const awsccS3VectorsIndex = `{
         "required": true,
         "type": "string"
       },
+      "encryption_configuration": {
+        "computed": true,
+        "description": "The encryption configuration for the index.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "kms_key_arn": {
+              "computed": true,
+              "description": "AWS Key Management Service (KMS) customer managed key ID to use for the encryption configuration. This parameter is allowed if and only if sseType is set to aws:kms",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "sse_type": {
+              "computed": true,
+              "description": "Defines the server-side encryption type for index encryption configuration. Defaults to the parent vector bucket's encryption settings when unspecified.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

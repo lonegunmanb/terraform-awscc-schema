@@ -181,6 +181,7 @@ const awsccSecretsmanagerSecret = `{
       },
       "type": {
         "computed": true,
+        "description": "The exact string that identifies the third-party partner that holds the external secret. For more information, see [Managed external secret partners](https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html).",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

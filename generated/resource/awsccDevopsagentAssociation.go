@@ -586,6 +586,16 @@ const awsccDevopsagentAssociation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "linked_association_ids": {
+        "computed": true,
+        "description": "Set of linked association IDs for parent-child relationships",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "service_id": {
         "description": "The identifier for the associated service",
         "description_kind": "plain",

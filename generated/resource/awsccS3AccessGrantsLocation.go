@@ -22,10 +22,9 @@ const awsccS3AccessGrantsLocation = `{
         "type": "string"
       },
       "iam_role_arn": {
-        "computed": true,
         "description": "The Amazon Resource Name (ARN) of the access grant location's associated IAM role.",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "id": {
@@ -35,10 +34,9 @@ const awsccS3AccessGrantsLocation = `{
         "type": "string"
       },
       "location_scope": {
-        "computed": true,
         "description": "Descriptor for where the location actually points",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "tags": {

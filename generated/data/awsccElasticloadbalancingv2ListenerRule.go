@@ -245,6 +245,7 @@ const awsccElasticloadbalancingv2ListenerRule = `{
             },
             "jwt_validation_config": {
               "computed": true,
+              "description": "[HTTPS listeners] Information for validating JWT access tokens in client requests. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `jwt-validation` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -255,16 +256,19 @@ const awsccElasticloadbalancingv2ListenerRule = `{
                       "attributes": {
                         "format": {
                           "computed": true,
+                          "description": "The format of the claim value.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "name": {
                           "computed": true,
+                          "description": "The name of the claim. You can't specify ` + "`" + `` + "`" + `exp` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `iss` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `nbf` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `iat` + "`" + `` + "`" + ` because we validate them by default.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "values": {
                           "computed": true,
+                          "description": "The claim value. The maximum size of the list is 10. Each value can be up to 256 characters in length. If the format is ` + "`" + `` + "`" + `space-separated-values` + "`" + `` + "`" + `, the values can't include spaces.",
                           "description_kind": "plain",
                           "type": [
                             "list",

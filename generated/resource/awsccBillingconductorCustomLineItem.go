@@ -106,6 +106,15 @@ const awsccBillingconductorCustomLineItem = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "attribute_values": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
                   "match_option": {
                     "computed": true,
                     "description_kind": "plain",

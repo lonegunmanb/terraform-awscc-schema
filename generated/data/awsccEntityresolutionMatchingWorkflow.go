@@ -77,6 +77,25 @@ const awsccEntityresolutionMatchingWorkflow = `{
               "description_kind": "plain",
               "type": "bool"
             },
+            "customer_profiles_integration_config": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "domain_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "object_type_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "kms_arn": {
               "computed": true,
               "description_kind": "plain",

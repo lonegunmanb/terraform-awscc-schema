@@ -206,6 +206,12 @@ const awsccNetworkmanagerVpcAttachment = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "routing_policy_label": {
+        "computed": true,
+        "description": "Routing policy label",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "segment_name": {
         "computed": true,
         "description": "The name of the segment attachment..",

@@ -194,6 +194,43 @@ const awsccEc2NetworkInterface = `{
         },
         "optional": true
       },
+      "public_ip_dns_hostname_type_specification": {
+        "computed": true,
+        "description": "Public IP DNS hostname type",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "public_ip_dns_name_options": {
+        "computed": true,
+        "description": "Describes the public hostname type options, including public hostname type, IPv4-enabled public hostname, IPv6-enabled public hostname, and dual-stack public hostname.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "dns_hostname_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "public_dual_stack_dns_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "public_ipv_4_dns_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "public_ipv_6_dns_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "secondary_private_ip_address_count": {
         "computed": true,
         "description": "The number of secondary private IPv4 addresses to assign to a network interface. When you specify a number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses within the subnet's IPv4 CIDR range. You can't specify this option and specify more than one private IP address using privateIpAddresses",

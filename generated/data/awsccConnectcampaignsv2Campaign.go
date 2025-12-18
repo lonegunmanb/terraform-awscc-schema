@@ -35,7 +35,7 @@ const awsccConnectcampaignsv2Campaign = `{
                   },
                   "default_outbound_config": {
                     "computed": true,
-                    "description": "Default SMS outbound config",
+                    "description": "Default Email outbound config",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -192,6 +192,12 @@ const awsccConnectcampaignsv2Campaign = `{
                           "description": "The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.",
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "ring_timeout": {
+                          "computed": true,
+                          "description": "Maximum ring time for outbound calls in seconds",
+                          "description_kind": "plain",
+                          "type": "number"
                         }
                       },
                       "nesting_mode": "single"
@@ -281,6 +287,60 @@ const awsccConnectcampaignsv2Campaign = `{
                             },
                             "nesting_mode": "single"
                           }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "whats_app": {
+              "computed": true,
+              "description": "WhatsApp Channel Subtype config",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "capacity": {
+                    "computed": true,
+                    "description": "Allocates outbound capacity for the specific channel of this campaign between multiple active campaigns",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "default_outbound_config": {
+                    "computed": true,
+                    "description": "Default WhatsApp outbound config",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "connect_source_phone_number_arn": {
+                          "computed": true,
+                          "description": "Arn",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "wisdom_template_arn": {
+                          "computed": true,
+                          "description": "Arn",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "outbound_mode": {
+                    "computed": true,
+                    "description": "WhatsApp Outbound Mode",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "agentless_config": {
+                          "computed": true,
+                          "description": "Agentless config",
+                          "description_kind": "plain",
+                          "type": "string"
                         }
                       },
                       "nesting_mode": "single"
@@ -664,6 +724,102 @@ const awsccConnectcampaignsv2Campaign = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "whats_app": {
+              "computed": true,
+              "description": "Time window config",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "open_hours": {
+                    "computed": true,
+                    "description": "Open Hours config",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "daily_hours": {
+                          "computed": true,
+                          "description": "Daily Hours map",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "key": {
+                                "computed": true,
+                                "description": "Day of week",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "value": {
+                                "computed": true,
+                                "description": "List of time range",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "end_time": {
+                                      "computed": true,
+                                      "description": "Time in ISO 8601 format, e.g. T23:11",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "start_time": {
+                                      "computed": true,
+                                      "description": "Time in ISO 8601 format, e.g. T23:11",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              }
+                            },
+                            "nesting_mode": "set"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "restricted_periods": {
+                    "computed": true,
+                    "description": "Restricted period config",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "restricted_period_list": {
+                          "computed": true,
+                          "description": "List of restricted period",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "end_date": {
+                                "computed": true,
+                                "description": "Date in ISO 8601 format, e.g. 2024-01-01",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "name": {
+                                "computed": true,
+                                "description": "The name of a restricted period",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "start_date": {
+                                "computed": true,
+                                "description": "Date in ISO 8601 format, e.g. 2024-01-01",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"
@@ -774,6 +930,12 @@ const awsccConnectcampaignsv2Campaign = `{
           },
           "nesting_mode": "set"
         }
+      },
+      "type": {
+        "computed": true,
+        "description": "Campaign type",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::ConnectCampaignsV2::Campaign",

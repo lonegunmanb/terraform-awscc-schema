@@ -396,6 +396,11 @@ const awsccEc2Ec2Fleet = `{
                           "description_kind": "plain",
                           "type": "number"
                         },
+                        "require_encryption_in_transit": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
                         "require_hibernate_support": {
                           "computed": true,
                           "description_kind": "plain",

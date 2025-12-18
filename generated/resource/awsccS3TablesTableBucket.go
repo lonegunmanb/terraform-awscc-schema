@@ -58,6 +58,24 @@ const awsccS3TablesTableBucket = `{
         },
         "optional": true
       },
+      "storage_class_configuration": {
+        "computed": true,
+        "description": "Specifies storage class settings for the table bucket",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "storage_class": {
+              "computed": true,
+              "description": "The storage class for the table bucket",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "table_bucket_arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN) of the specified table bucket.",

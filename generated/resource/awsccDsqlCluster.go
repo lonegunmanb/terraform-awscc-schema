@@ -151,6 +151,12 @@ const awsccDsqlCluster = `{
         },
         "optional": true
       },
+      "vpc_endpoint": {
+        "computed": true,
+        "description": "The DSQL cluster VPC endpoint.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "vpc_endpoint_service_name": {
         "computed": true,
         "description": "The VPC endpoint service name.",

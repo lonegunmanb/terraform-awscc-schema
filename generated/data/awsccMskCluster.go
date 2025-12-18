@@ -37,6 +37,11 @@ const awsccMskCluster = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "network_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "public_access": {
                     "computed": true,
                     "description_kind": "plain",

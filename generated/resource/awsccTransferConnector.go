@@ -150,6 +150,12 @@ const awsccTransferConnector = `{
         "optional": true,
         "type": "string"
       },
+      "error_message": {
+        "computed": true,
+        "description": "Detailed error message when Connector in ERRORED status",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

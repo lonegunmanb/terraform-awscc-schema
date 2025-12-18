@@ -270,6 +270,7 @@ const awsccElasticloadbalancingv2Listener = `{
             },
             "jwt_validation_config": {
               "computed": true,
+              "description": "[HTTPS listeners] Information for validating JWT access tokens in client requests. Specify only when ` + "`" + `` + "`" + `Type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `jwt-validation` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -280,16 +281,19 @@ const awsccElasticloadbalancingv2Listener = `{
                       "attributes": {
                         "format": {
                           "computed": true,
+                          "description": "The format of the claim value.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "name": {
                           "computed": true,
+                          "description": "The name of the claim. You can't specify ` + "`" + `` + "`" + `exp` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `iss` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `nbf` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `iat` + "`" + `` + "`" + ` because we validate them by default.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "values": {
                           "computed": true,
+                          "description": "The claim value. The maximum size of the list is 10. Each value can be up to 256 characters in length. If the format is ` + "`" + `` + "`" + `space-separated-values` + "`" + `` + "`" + `, the values can't include spaces.",
                           "description_kind": "plain",
                           "type": [
                             "list",
@@ -463,7 +467,7 @@ const awsccElasticloadbalancingv2Listener = `{
       },
       "protocol": {
         "computed": true,
-        "description": "The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You can't specify a protocol for a Gateway Load Balancer.",
+        "description": "The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, TCP_UDP, QUIC, and TCP_QUIC. You can’t specify the UDP, TCP_UDP, QUIC, or TCP_QUIC protocol if dual-stack mode is enabled. You can't specify a protocol for a Gateway Load Balancer.",
         "description_kind": "plain",
         "type": "string"
       },

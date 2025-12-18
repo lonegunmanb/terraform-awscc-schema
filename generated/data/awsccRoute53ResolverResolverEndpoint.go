@@ -106,6 +106,12 @@ const awsccRoute53ResolverResolverEndpoint = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "rni_enhanced_metrics_enabled": {
+        "computed": true,
+        "description": "Specifies whether RNI enhanced metrics are enabled for the Resolver Endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each RNI associated with this endpoint. When set to false, metrics are not published. Default is false.",
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "security_group_ids": {
         "computed": true,
         "description": "The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules (for inbound endpoints) or outbound rules (for outbound endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.",
@@ -136,6 +142,12 @@ const awsccRoute53ResolverResolverEndpoint = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "target_name_server_metrics_enabled": {
+        "computed": true,
+        "description": "Specifies whether target name server metrics are enabled for the Outbound Resolver Endpoint. When set to true, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When set to false, metrics are not published. Default is false.",
+        "description_kind": "plain",
+        "type": "bool"
       }
     },
     "description": "Data Source schema for AWS::Route53Resolver::ResolverEndpoint",

@@ -122,7 +122,7 @@ const awsccS3AccessGrant = `{
         "optional": true
       }
     },
-    "description": "The AWS::S3::AccessGrant resource is an Amazon S3 resource type representing permissions to a specific S3 bucket or prefix hosted in an S3 Access Grants instance.",
+    "description": "The AWS::S3::AccessGrant resource is an Amazon S3 resource type representing permissions to a specific S3 bucket or prefix hosted in an S3 Access Grants instance. ",
     "description_kind": "plain"
   },
   "version": 1

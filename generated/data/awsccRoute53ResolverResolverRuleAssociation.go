@@ -17,7 +17,7 @@ const awsccRoute53ResolverResolverRuleAssociation = `{
       },
       "name": {
         "computed": true,
-        "description": "The name of an association between a Resolver rule and a VPC.",
+        "description": "The name of an association between a Resolver rule and a VPC.\n The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.",
         "description_kind": "plain",
         "type": "string"
       },

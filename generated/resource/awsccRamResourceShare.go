@@ -21,9 +21,27 @@ const awsccRamResourceShare = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "creation_time": {
+        "computed": true,
+        "description": "The date and time when the resource share was created.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "feature_set": {
+        "computed": true,
+        "description": "The feature set of the resource share.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "last_updated_time": {
+        "computed": true,
+        "description": "The date and time when the resource share was last updated.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -31,6 +49,12 @@ const awsccRamResourceShare = `{
         "description": "Specifies the name of the resource share.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "owning_account_id": {
+        "computed": true,
+        "description": "The ID of the AWS account that owns the resource share.",
+        "description_kind": "plain",
         "type": "string"
       },
       "permission_arns": {
@@ -72,6 +96,12 @@ const awsccRamResourceShare = `{
           "list",
           "string"
         ]
+      },
+      "status": {
+        "computed": true,
+        "description": "The current status of the resource share.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "tags": {
         "computed": true,

@@ -342,6 +342,13 @@ const awsccKafkaconnectConnector = `{
         },
         "optional": true
       },
+      "network_type": {
+        "computed": true,
+        "description": "The network type of the Connector.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "plugins": {
         "description": "List of plugins to use with the connector.",
         "description_kind": "plain",

@@ -318,6 +318,12 @@ const awsccKafkaconnectConnector = `{
           "nesting_mode": "single"
         }
       },
+      "network_type": {
+        "computed": true,
+        "description": "The network type of the Connector.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "plugins": {
         "computed": true,
         "description": "List of plugins to use with the connector.",

@@ -475,6 +475,22 @@ const awsccDatazoneConnection = `{
                 "nesting_mode": "single"
               }
             },
+            "mlflow_properties": {
+              "computed": true,
+              "description": "MLflow Properties Input",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "tracking_server_arn": {
+                    "computed": true,
+                    "description": "The ARN of the MLflow tracking server",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "redshift_properties": {
               "computed": true,
               "description": "Redshift Properties Input",
@@ -627,6 +643,11 @@ const awsccDatazoneConnection = `{
                     "type": "string"
                   },
                   "log_uri": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "managed_endpoint_arn": {
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"

@@ -463,6 +463,12 @@ const awsccEc2SpotFleet = `{
                           "optional": true,
                           "type": "number"
                         },
+                        "require_encryption_in_transit": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        },
                         "require_hibernate_support": {
                           "computed": true,
                           "description_kind": "plain",
@@ -1121,6 +1127,12 @@ const awsccEc2SpotFleet = `{
                                 "optional": true,
                                 "type": "number"
                               },
+                              "require_encryption_in_transit": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "bool"
+                              },
                               "require_hibernate_support": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -1429,6 +1441,29 @@ const awsccEc2SpotFleet = `{
           "nesting_mode": "single"
         },
         "required": true
+      },
+      "tags": {
+        "computed": true,
+        "description": "The tags to specify in SpotFleetRequestConfigData",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       }
     },
     "description": "Resource Type definition for AWS::EC2::SpotFleet",

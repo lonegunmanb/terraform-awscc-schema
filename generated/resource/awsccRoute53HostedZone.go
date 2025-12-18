@@ -27,6 +27,23 @@ const awsccRoute53HostedZone = `{
         },
         "optional": true
       },
+      "hosted_zone_features": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enable_accelerated_recovery": {
+              "computed": true,
+              "description": "Enable accelerated recovery on your public hosted zone to gain the ability to make changes to DNS records in the event of us-east-1 unavailability.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "hosted_zone_id": {
         "computed": true,
         "description_kind": "plain",
