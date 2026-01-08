@@ -189,7 +189,7 @@ const awsccApigatewayv2Integration = `{
         "optional": true
       }
     },
-    "description": "An example resource schema demonstrating some basic constructs and validation rules.",
+    "description": "Resource Type definition for AWS::ApiGatewayV2::Integration",
     "description_kind": "plain"
   },
   "version": 1

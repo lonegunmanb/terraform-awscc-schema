@@ -680,6 +680,12 @@ const awsccEc2SpotFleet = `{
                           "optional": true,
                           "type": "string"
                         },
+                        "availability_zone_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
                         "group_name": {
                           "computed": true,
                           "description_kind": "plain",
@@ -825,6 +831,12 @@ const awsccEc2SpotFleet = `{
                     "nested_type": {
                       "attributes": {
                         "availability_zone": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "availability_zone_id": {
                           "computed": true,
                           "description_kind": "plain",
                           "optional": true,

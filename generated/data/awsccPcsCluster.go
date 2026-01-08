@@ -177,7 +177,7 @@ const awsccPcsCluster = `{
                   },
                   "mode": {
                     "computed": true,
-                    "description": "The default value is ` + "`" + `STANDARD` + "`" + `. A value of ` + "`" + `STANDARD` + "`" + ` means that Slurm accounting is enabled.",
+                    "description": "The default value is ` + "`" + `NONE` + "`" + `. A value of ` + "`" + `STANDARD` + "`" + ` means that Slurm accounting is enabled.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -275,7 +275,7 @@ const awsccPcsCluster = `{
                 "attributes": {
                   "mode": {
                     "computed": true,
-                    "description": "The default value is ` + "`" + `STANDARD` + "`" + `. A value of ` + "`" + `STANDARD` + "`" + ` means that Slurm Rest is enabled.",
+                    "description": "The default value is ` + "`" + `NONE` + "`" + `. A value of ` + "`" + `STANDARD` + "`" + ` means that Slurm Rest is enabled.",
                     "description_kind": "plain",
                     "type": "string"
                   }

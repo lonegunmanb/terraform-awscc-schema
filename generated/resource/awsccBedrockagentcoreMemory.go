@@ -80,6 +80,95 @@ const awsccBedrockagentcoreMemory = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "episodic_override": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "consolidation": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "append_to_prompt": {
+                                      "computed": true,
+                                      "description": "Text prompt for model instructions",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "model_id": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "extraction": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "append_to_prompt": {
+                                      "computed": true,
+                                      "description": "Text prompt for model instructions",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "model_id": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "reflection": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "append_to_prompt": {
+                                      "computed": true,
+                                      "description": "Text prompt for model instructions",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "model_id": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "namespaces": {
+                                      "computed": true,
+                                      "description": "List of namespaces for memory strategy",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
                         "self_managed_configuration": {
                           "computed": true,
                           "description_kind": "plain",
@@ -357,6 +446,95 @@ const awsccBedrockagentcoreMemory = `{
                       "list",
                       "string"
                     ]
+                  },
+                  "status": {
+                    "computed": true,
+                    "description": "Status of the memory strategy",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "strategy_id": {
+                    "computed": true,
+                    "description": "Unique identifier for the memory strategy",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "type": {
+                    "computed": true,
+                    "description": "Type of memory strategy",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "updated_at": {
+                    "computed": true,
+                    "description": "Last update timestamp of the memory strategy",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "episodic_memory_strategy": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "created_at": {
+                    "computed": true,
+                    "description": "Creation timestamp of the memory strategy",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "description": {
+                    "computed": true,
+                    "description": "Description of the Memory resource",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "name": {
+                    "computed": true,
+                    "description": "Name of the Memory resource",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "namespaces": {
+                    "computed": true,
+                    "description": "List of namespaces for memory strategy",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "reflection_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "namespaces": {
+                          "computed": true,
+                          "description": "List of namespaces for memory strategy",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
                   },
                   "status": {
                     "computed": true,

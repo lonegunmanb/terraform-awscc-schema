@@ -10,7 +10,7 @@ const awsccEcrRepositoryCreationTemplate = `{
   "block": {
     "attributes": {
       "applied_for": {
-        "description": "A list of enumerable Strings representing the repository creation scenarios that this template will apply towards. The two supported scenarios are PULL_THROUGH_CACHE and REPLICATION",
+        "description": "A list of enumerable Strings representing the repository creation scenarios that this template will apply towards. The supported scenarios are PULL_THROUGH_CACHE, REPLICATION, and CREATE_ON_PUSH",
         "description_kind": "plain",
         "required": true,
         "type": [

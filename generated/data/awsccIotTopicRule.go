@@ -329,10 +329,39 @@ const awsccIotTopicRule = `{
                             "nesting_mode": "single"
                           }
                         },
+                        "batch_config": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "max_batch_open_ms": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "max_batch_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "max_batch_size_bytes": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "confirmation_url": {
                           "computed": true,
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "enable_batching": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
                         },
                         "headers": {
                           "computed": true,
@@ -1235,10 +1264,39 @@ const awsccIotTopicRule = `{
                             "nesting_mode": "single"
                           }
                         },
+                        "batch_config": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "max_batch_open_ms": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "max_batch_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "max_batch_size_bytes": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "confirmation_url": {
                           "computed": true,
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "enable_batching": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
                         },
                         "headers": {
                           "computed": true,

@@ -110,6 +110,11 @@ const awsccEcsCapacityProvider = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "capacity_option_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "ec_2_instance_profile_arn": {
                     "computed": true,
                     "description_kind": "plain",

@@ -20,6 +20,11 @@ const awsccDaxSubnetGroup = `{
         "required": true,
         "type": "string"
       },
+      "subnet_group_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "subnet_group_name": {
         "computed": true,
         "description_kind": "plain",

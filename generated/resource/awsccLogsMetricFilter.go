@@ -18,6 +18,7 @@ const awsccLogsMetricFilter = `{
       },
       "emit_system_field_dimensions": {
         "computed": true,
+        "description": "The list of system fields that are emitted as additional dimensions in the generated metrics. Returns the ` + "`" + `` + "`" + `emitSystemFieldDimensions` + "`" + `` + "`" + ` value if it was specified when the metric filter was created.",
         "description_kind": "plain",
         "optional": true,
         "type": [
@@ -27,6 +28,7 @@ const awsccLogsMetricFilter = `{
       },
       "field_selection_criteria": {
         "computed": true,
+        "description": "The filter expression that specifies which log events are processed by this metric filter based on system fields. Returns the ` + "`" + `` + "`" + `fieldSelectionCriteria` + "`" + `` + "`" + ` value if it was specified when the metric filter was created.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

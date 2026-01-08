@@ -186,6 +186,12 @@ const awsccBedrockagentcoreRuntime = `{
           "string"
         ]
       },
+      "failure_reason": {
+        "computed": true,
+        "description": "The reason for failure if the agent is in a failed state.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

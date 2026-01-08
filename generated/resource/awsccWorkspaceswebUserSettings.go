@@ -380,6 +380,12 @@ const awsccWorkspaceswebUserSettings = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "web_authn_allowed": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       }
     },
     "description": "Definition of AWS::WorkSpacesWeb::UserSettings Resource Type",

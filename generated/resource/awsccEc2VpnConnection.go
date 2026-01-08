@@ -118,6 +118,7 @@ const awsccEc2VpnConnection = `{
       },
       "tunnel_bandwidth": {
         "computed": true,
+        "description": "The desired bandwidth specification for the VPN tunnel, used when creating or modifying VPN connection options to set the tunnel's throughput capacity. ` + "`" + `` + "`" + `standard` + "`" + `` + "`" + ` supports up to 1.25 Gbps per tunnel, while ` + "`" + `` + "`" + `large` + "`" + `` + "`" + ` supports up to 5 Gbps per tunnel. The default value is ` + "`" + `` + "`" + `standard` + "`" + `` + "`" + `. Existing VPN connections without a bandwidth setting will automatically default to ` + "`" + `` + "`" + `standard` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -137,6 +138,7 @@ const awsccEc2VpnConnection = `{
       },
       "vpn_concentrator_id": {
         "computed": true,
+        "description": "The ID of the VPN concentrator to associate with the VPN connection.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -212,18 +214,21 @@ const awsccEc2VpnConnection = `{
                       "attributes": {
                         "bgp_log_enabled": {
                           "computed": true,
+                          "description": "Specifies whether to enable BGP logging for the VPN connection. Default value is ` + "`" + `` + "`" + `False` + "`" + `` + "`" + `.\n Valid values: ` + "`" + `` + "`" + `True` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `False` + "`" + `` + "`" + `",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "bool"
                         },
                         "bgp_log_group_arn": {
                           "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the CloudWatch log group where BGP logs will be sent.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "bgp_log_output_format": {
                           "computed": true,
+                          "description": "The desired output format for BGP logs to be sent to CloudWatch. Default format is ` + "`" + `` + "`" + `json` + "`" + `` + "`" + `.\n Valid values: ` + "`" + `` + "`" + `json` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `text` + "`" + `` + "`" + `",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"

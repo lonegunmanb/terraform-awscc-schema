@@ -17,7 +17,7 @@ const awsccEcrPullTimeUpdateExclusion = `{
       },
       "principal_arn": {
         "computed": true,
-        "description": "Principal arn that should not update image pull times.",
+        "description": "The ARN of the IAM principal to remove from the pull time update exclusion list.",
         "description_kind": "plain",
         "type": "string"
       }

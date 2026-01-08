@@ -171,6 +171,29 @@ const awsccAutoscalingAutoScalingGroup = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "instance_lifecycle_policy": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "retention_triggers": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "terminate_hook_abandon": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "instance_maintenance_policy": {
         "computed": true,
         "description": "An instance maintenance policy. For more information, see [Set instance maintenance policy](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html) in the *Amazon EC2 Auto Scaling User Guide*.",
@@ -423,6 +446,11 @@ const awsccAutoscalingAutoScalingGroup = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "image_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "instance_requirements": {
                           "computed": true,
                           "description": "The instance requirements. Amazon EC2 Auto Scaling uses your specified requirements to identify instance types. Then, it uses your On-Demand and Spot allocation strategies to launch instances from these instance types.\n You can specify up to four separate sets of instance requirements per Auto Scaling group. This is useful for provisioning instances from different Amazon Machine Images (AMIs) in the same Auto Scaling group. To do this, create the AMIs and create a new launch template for each AMI. Then, create a compatible set of instance requirements for each launch template. \n  If you specify ` + "`" + `` + "`" + `InstanceRequirements` + "`" + `` + "`" + `, you can't specify ` + "`" + `` + "`" + `InstanceType` + "`" + `` + "`" + `.",

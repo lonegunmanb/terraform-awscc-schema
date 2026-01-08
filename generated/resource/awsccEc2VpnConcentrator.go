@@ -23,12 +23,14 @@ const awsccEc2VpnConcentrator = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "The key of the tag.\n Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with ` + "`" + `` + "`" + `aws:` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The value of the tag.\n Constraints: Tag values are case-sensitive and accept a maximum of 256 Unicode characters.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -40,30 +42,28 @@ const awsccEc2VpnConcentrator = `{
       },
       "transit_gateway_attachment_id": {
         "computed": true,
-        "description": "The ID of the transit gateway attachment",
         "description_kind": "plain",
         "type": "string"
       },
       "transit_gateway_id": {
-        "description": "The ID of the transit gateway",
+        "description": "The ID of the transit gateway associated with the VPN concentrator.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
       "type": {
-        "description": "The type of VPN concentrator",
+        "description": "The type of VPN concentrator.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
       "vpn_concentrator_id": {
         "computed": true,
-        "description": "The provider-assigned unique ID for this managed resource",
         "description_kind": "plain",
         "type": "string"
       }
     },
-    "description": "Resource Type definition for AWS::EC2::VPNConcentrator",
+    "description": "Describes a VPN concentrator.",
     "description_kind": "plain"
   },
   "version": 1

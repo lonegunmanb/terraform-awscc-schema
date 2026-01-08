@@ -37,6 +37,85 @@ const awsccBedrockagentcoreGateway = `{
                       "string"
                     ]
                   },
+                  "allowed_scopes": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "custom_claims": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "authorizing_claim_match_value": {
+                          "computed": true,
+                          "description": "The value or values in the custom claim to match and relationship of match",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "claim_match_operator": {
+                                "computed": true,
+                                "description": "The relationship between the claim field value and the value or values being matched",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "claim_match_value": {
+                                "computed": true,
+                                "description": "The value or values in the custom claim to match for",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "match_value_string": {
+                                      "computed": true,
+                                      "description": "The string value to match for",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "match_value_string_list": {
+                                      "computed": true,
+                                      "description": "The list of strings to check for a match",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "inbound_token_claim_name": {
+                          "computed": true,
+                          "description": "The name of the custom claim to validate",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "inbound_token_claim_value_type": {
+                          "computed": true,
+                          "description": "Token claim data type",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
                   "discovery_url": {
                     "computed": true,
                     "description_kind": "plain",

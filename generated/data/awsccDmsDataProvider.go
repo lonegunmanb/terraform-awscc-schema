@@ -432,6 +432,46 @@ const awsccDmsDataProvider = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "sybase_ase_settings": {
+              "computed": true,
+              "description": "SybaseAseSettings property identifier.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "certificate_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "database_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "encrypt_password": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "port": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "server_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "ssl_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

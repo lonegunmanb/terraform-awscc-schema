@@ -78,39 +78,19 @@ const awsccSecurityhubConnectorV2 = `{
         "type": "string"
       },
       "provider_name": {
-        "description": "The provider configuration of the connector",
+        "description": "The third-party provider configuration for the connector",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "jira_cloud": {
               "computed": true,
+              "description": "The initial configuration settings required to establish an integration between Security Hub and Jira Cloud",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
-                  "auth_status": {
-                    "computed": true,
-                    "description": "The auth status of the connector",
-                    "description_kind": "plain",
-                    "type": "string"
-                  },
-                  "auth_url": {
-                    "computed": true,
-                    "description": "The authUrl of the JiraCloud connector",
-                    "description_kind": "plain",
-                    "type": "string"
-                  },
-                  "cloud_id": {
-                    "computed": true,
-                    "description_kind": "plain",
-                    "type": "string"
-                  },
-                  "domain": {
-                    "computed": true,
-                    "description_kind": "plain",
-                    "type": "string"
-                  },
                   "project_key": {
                     "computed": true,
+                    "description": "The project key for a Jira Cloud instance",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -122,24 +102,20 @@ const awsccSecurityhubConnectorV2 = `{
             },
             "service_now": {
               "computed": true,
+              "description": "The initial configuration settings required to establish an integration between Security Hub and ServiceNow ITSM",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
-                  "auth_status": {
-                    "computed": true,
-                    "description": "The auth status of the connector",
-                    "description_kind": "plain",
-                    "type": "string"
-                  },
                   "instance_name": {
                     "computed": true,
+                    "description": "The instance name of ServiceNow ITSM",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "secret_arn": {
                     "computed": true,
-                    "description": "The ARN of secrets manager containing ClientId and ClientSecret",
+                    "description": "The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the ServiceNow credentials",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"

@@ -9,6 +9,28 @@ import (
 const awsccConnectHoursOfOperation = `{
   "block": {
     "attributes": {
+      "child_hours_of_operations": {
+        "computed": true,
+        "description": "List of child hours of operations.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "id": {
+              "computed": true,
+              "description": "The identifier for the hours of operation.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "name": {
+              "computed": true,
+              "description": "The name of the hours of operation.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "config": {
         "computed": true,
         "description": "Configuration information for the hours of operation: day, start time, and end time.",
@@ -176,6 +198,69 @@ const awsccConnectHoursOfOperation = `{
               "description": "The name of the hours of operation override.",
               "description_kind": "plain",
               "type": "string"
+            },
+            "override_type": {
+              "computed": true,
+              "description": "The type of hours of operation override.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "recurrence_config": {
+              "computed": true,
+              "description": "Configuration for recurring hours of operation overrides.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "recurrence_pattern": {
+                    "computed": true,
+                    "description": "Pattern for recurring hours of operation overrides.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "by_month": {
+                          "computed": true,
+                          "description": "List of months (1-12) for recurrence pattern.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "number"
+                          ]
+                        },
+                        "by_month_day": {
+                          "computed": true,
+                          "description": "List of month days (-1 to 31) for recurrence pattern.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "number"
+                          ]
+                        },
+                        "by_weekday_occurrence": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "number"
+                          ]
+                        },
+                        "frequency": {
+                          "computed": true,
+                          "description": "The frequency of recurrence for hours of operation overrides.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "interval": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "list"
@@ -198,6 +283,28 @@ const awsccConnectHoursOfOperation = `{
         "description": "The name of the hours of operation.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "parent_hours_of_operations": {
+        "computed": true,
+        "description": "List of parent hours of operations.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "id": {
+              "computed": true,
+              "description": "The identifier for the hours of operation.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "name": {
+              "computed": true,
+              "description": "The name of the hours of operation.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
       },
       "tags": {
         "computed": true,

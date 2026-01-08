@@ -11,6 +11,7 @@ const awsccLexBotAlias = `{
     "attributes": {
       "arn": {
         "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the bot alias.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -296,7 +297,7 @@ const awsccLexBotAlias = `{
         "optional": true
       }
     },
-    "description": "A Bot Alias enables you to change the version of a bot without updating applications that use the bot",
+    "description": "Resource Type definition for a Bot Alias, which enables you to change the version of a bot without updating applications that use the bot",
     "description_kind": "plain"
   },
   "version": 1

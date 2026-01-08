@@ -28,6 +28,24 @@ const awsccConnectContactFlowModule = `{
         "optional": true,
         "type": "string"
       },
+      "external_invocation_configuration": {
+        "computed": true,
+        "description": "Defines the external invocation configuration of the flow module resource",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled": {
+              "computed": true,
+              "description": "Specifies whether the flow module resource is enabled for external invocation",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -44,6 +62,13 @@ const awsccConnectContactFlowModule = `{
         "description": "The name of the contact flow module.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "settings": {
+        "computed": true,
+        "description": "The schema of the settings for contact flow module in JSON Schema V4 format.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "state": {

@@ -978,6 +978,12 @@ const awsccMediapackagev2OriginEndpoint = `{
                       "list",
                       "string"
                     ]
+                  },
+                  "scte_in_segments": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"

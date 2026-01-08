@@ -15,6 +15,12 @@ const awsccEmrStep = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "encryption_key_arn": {
+        "computed": true,
+        "description": "The KMS key ARN to encrypt the logs published to the given Amazon S3 destination. When omitted, EMR falls back to cluster-level logging behavior.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "hadoop_jar_step": {
         "computed": true,
         "description": "The HadoopJarStepConfig property type specifies a job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for the cluster to execute as a step on the master node, and then waits for the job to finish or fail before executing subsequent steps.",
@@ -71,6 +77,12 @@ const awsccEmrStep = `{
       "job_flow_id": {
         "computed": true,
         "description": "A string that uniquely identifies the cluster (job flow).",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "log_uri": {
+        "computed": true,
+        "description": "The Amazon S3 destination URI for log publishing. When omitted, EMR falls back to cluster-level logging behavior.",
         "description_kind": "plain",
         "type": "string"
       },

@@ -9,6 +9,51 @@ import (
 const awsccRdsDbInstance = `{
   "block": {
     "attributes": {
+      "additional_storage_volumes": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "allocated_storage": {
+              "computed": true,
+              "description": "The amount of storage allocated for the additional storage volume, in gibibytes (GiB). The minimum is 20 GiB. The maximum is 65,536 GiB (64 TiB).",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "iops": {
+              "computed": true,
+              "description": "The number of I/O operations per second (IOPS) provisioned for the additional storage volume.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "max_allocated_storage": {
+              "computed": true,
+              "description": "The upper limit in gibibytes (GiB) to which RDS can automatically scale the storage of the additional storage volume.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "storage_throughput": {
+              "computed": true,
+              "description": "The storage throughput value for the additional storage volume, in mebibytes per second (MiBps). This setting applies only to the General Purpose SSD gp3 storage type.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "storage_type": {
+              "computed": true,
+              "description": "The storage type for the additional storage volume.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "volume_name": {
+              "computed": true,
+              "description": "The name of the additional storage volume.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "allocated_storage": {
         "computed": true,
         "description": "The amount of storage in gibibytes (GiB) to be initially allocated for the database instance.\n  If any value is set in the ` + "`" + `` + "`" + `Iops` + "`" + `` + "`" + ` parameter, ` + "`" + `` + "`" + `AllocatedStorage` + "`" + `` + "`" + ` must be at least 100 GiB, which corresponds to the minimum Iops value of 1,000. If you increase the ` + "`" + `` + "`" + `Iops` + "`" + `` + "`" + ` value (in 1,000 IOPS increments), then you must also increase the ` + "`" + `` + "`" + `AllocatedStorage` + "`" + `` + "`" + ` value (in 100-GiB increments). \n   *Amazon Aurora* \n Not applicable. Aurora cluster volumes automatically grow as the amount of data in your database increases, though you are only charged for the space that you use in an Aurora cluster volume.\n  *Db2* \n Constraints to the amount of storage for each storage type are the following:\n  +  General Purpose (SSD) storage (gp3): Must be an integer from 20 to 64000.\n  +  Provisioned IOPS storage (io1): Must be an integer from 100 to 64000.\n  \n  *MySQL* \n Constraints to the amount of storage for each storage type are the following: \n  +  General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.\n  +  Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.\n  +  Magnetic storage (standard): Must be an integer from 5 to 3072.\n  \n  *MariaDB* \n Constraints to the amount of storage for each storage type are the following: \n  +  General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.\n  +  Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.\n  +  Magnetic storage (standard): Must be an integer from 5 to 3072.\n  \n  *PostgreSQL* \n Constraints to the amount of storage for each storage type are the following: \n  +  General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.\n  +  Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.\n  +  Magnetic storage (standard): Must be an integer from 5 to 3072.\n  \n  *Oracle* \n Constraints to the amount of storage for each storage type are the following: \n  +  General Purpose (SSD) storage (gp2): Must be an integer from 20 to 65536.\n  +  Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.\n  +  Magnetic storage (standard): Must be an integer from 10 to 3072.\n  \n  *SQL Server* \n Constraints to the amount of storage for each storage type are the following: \n  +  General Purpose (SSD) storage (gp2):\n  +  Enterprise and Standard editions: Must be an integer from 20 to 16384.\n  +  Web and Express editions: Must be an integer from 20 to 16384.\n  \n  +  Provisioned IOPS storage (io1):\n  +  Enterprise and Standard editions: Must be an integer from 20 to 16384.\n  +  Web and Express editions: Must be an integer from 20 to 16384.\n  \n  +  Magnetic storage (standard):\n  +  Enterprise and Standard editions: Must be an integer from 20 to 1024.\n  +  Web and Express editions: Must be an integer from 20 to 1024.",

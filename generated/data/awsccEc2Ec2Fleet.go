@@ -69,6 +69,11 @@ const awsccEc2Ec2Fleet = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "availability_zone_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "block_device_mappings": {
                     "computed": true,
                     "description_kind": "plain",

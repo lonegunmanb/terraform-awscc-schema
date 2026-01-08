@@ -33,9 +33,32 @@ const awsccWisdomAssistantAssociation = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
-            "knowledge_base_id": {
+            "external_bedrock_knowledge_base_config": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "nested_type": {
+                "attributes": {
+                  "access_role_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "bedrock_knowledge_base_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "knowledge_base_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
               "type": "string"
             }
           },

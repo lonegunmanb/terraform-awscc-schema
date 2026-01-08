@@ -11,6 +11,7 @@ const awsccLexBotAlias = `{
     "attributes": {
       "arn": {
         "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the bot alias.",
         "description_kind": "plain",
         "type": "string"
       },

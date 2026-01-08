@@ -9,6 +9,15 @@ import (
 const awsccOdbOdbPeeringConnection = `{
   "block": {
     "attributes": {
+      "additional_peer_network_cidrs": {
+        "computed": true,
+        "description": "The additional CIDR blocks for the ODB peering connection.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "display_name": {
         "computed": true,
         "description": "The name of the ODB peering connection.",
@@ -50,6 +59,15 @@ const awsccOdbOdbPeeringConnection = `{
         "description": "The Amazon Resource Name (ARN) of the peer network.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "peer_network_cidrs": {
+        "computed": true,
+        "description": "The CIDR blocks for the ODB peering connection.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
       },
       "peer_network_id": {
         "computed": true,

@@ -73,6 +73,27 @@ const awsccBillingBillingView = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "time_range": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "begin_date_inclusive": {
+                    "computed": true,
+                    "description": "The time in ISO 8601 format, UTC time (YYYY-MM-DDTHH:MM:SSZ).",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "end_date_inclusive": {
+                    "computed": true,
+                    "description": "The time in ISO 8601 format, UTC time (YYYY-MM-DDTHH:MM:SSZ).",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

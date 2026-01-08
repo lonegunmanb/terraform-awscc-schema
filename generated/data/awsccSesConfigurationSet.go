@@ -94,6 +94,48 @@ const awsccSesConfigurationSet = `{
                 "list",
                 "string"
               ]
+            },
+            "validation_options": {
+              "computed": true,
+              "description": "An object that contains information about the validation options for your account.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "condition_threshold": {
+                    "computed": true,
+                    "description": "The condition threshold settings for suppression validation.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "condition_threshold_enabled": {
+                          "computed": true,
+                          "description": "Whether the condition threshold is enabled or disabled.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "overall_confidence_threshold": {
+                          "computed": true,
+                          "description": "The overall confidence threshold settings.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "confidence_verdict_threshold": {
+                                "computed": true,
+                                "description": "The confidence verdict threshold level.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"
