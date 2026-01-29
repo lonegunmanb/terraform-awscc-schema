@@ -48,6 +48,16 @@ const awsccDatazoneEnvironmentBlueprintConfiguration = `{
         "optional": true,
         "type": "string"
       },
+      "global_parameters": {
+        "computed": true,
+        "description": "Region-agnostic environment blueprint parameters.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "map",
+          "string"
+        ]
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

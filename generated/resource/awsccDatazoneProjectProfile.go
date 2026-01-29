@@ -228,6 +228,12 @@ const awsccDatazoneProjectProfile = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "use_default_configurations": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
       }
     },
     "description": "Definition of AWS::DataZone::ProjectProfile Resource Type",

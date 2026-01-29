@@ -161,6 +161,28 @@ const awsccBackupBackupPlan = `{
                     "required": true,
                     "type": "string"
                   },
+                  "scan_actions": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "malware_scanner": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "scan_mode": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
                   "schedule_expression": {
                     "computed": true,
                     "description_kind": "plain",
@@ -194,6 +216,37 @@ const awsccBackupBackupPlan = `{
                 "nesting_mode": "list"
               },
               "required": true
+            },
+            "scan_settings": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "malware_scanner": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "resource_types": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "scanner_role_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

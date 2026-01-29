@@ -145,6 +145,25 @@ const awsccBackupBackupPlan = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "scan_actions": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "malware_scanner": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "scan_mode": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
                   "schedule_expression": {
                     "computed": true,
                     "description_kind": "plain",
@@ -166,6 +185,33 @@ const awsccBackupBackupPlan = `{
                     "type": "string"
                   },
                   "target_logically_air_gapped_backup_vault_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
+            "scan_settings": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "malware_scanner": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "resource_types": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "scanner_role_arn": {
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"

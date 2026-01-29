@@ -83,7 +83,7 @@ const awsccConfigOrganizationConformancePack = `{
         "type": "string"
       }
     },
-    "description": "Resource schema for AWS::Config::OrganizationConformancePack.",
+    "description": "Resource Type definition for AWS::Config::OrganizationConformancePack.",
     "description_kind": "plain"
   },
   "version": 1

@@ -33,6 +33,12 @@ const awsccGameliftScript = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "node_js_version": {
+        "computed": true,
+        "description": "The Node.js version used for execution of the Realtime script.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "script_id": {
         "computed": true,
         "description": "A unique identifier for the Realtime script",

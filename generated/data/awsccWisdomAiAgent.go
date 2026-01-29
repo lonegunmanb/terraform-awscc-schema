@@ -209,6 +209,30 @@ const awsccWisdomAiAgent = `{
                 "nesting_mode": "single"
               }
             },
+            "case_summarization_ai_agent_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "case_summarization_ai_guardrail_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "case_summarization_ai_prompt_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "locale": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "email_generative_answer_ai_agent_configuration": {
               "computed": true,
               "description_kind": "plain",
@@ -718,6 +742,219 @@ const awsccWisdomAiAgent = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "note_taking_ai_agent_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "locale": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "note_taking_ai_guardrail_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "note_taking_ai_prompt_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "orchestration_ai_agent_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "connect_instance_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "locale": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "orchestration_ai_guardrail_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "orchestration_ai_prompt_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "tool_configurations": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "annotations": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "description": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "input_schema": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "instruction": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "examples": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "instruction": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "output_filters": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "json_path": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "output_configuration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "output_variable_name_override": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "session_data_namespace": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        },
+                        "output_schema": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "override_input_values": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "json_path": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "value": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "constant": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "type": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "value": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        },
+                        "title": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "tool_id": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "tool_name": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "tool_type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "user_interaction_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "is_user_confirmation_required": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
                   }
                 },
                 "nesting_mode": "single"

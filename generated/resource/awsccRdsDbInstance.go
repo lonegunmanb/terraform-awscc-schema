@@ -11,6 +11,7 @@ const awsccRdsDbInstance = `{
     "attributes": {
       "additional_storage_volumes": {
         "computed": true,
+        "description": "The additional storage volumes associated with the DB instance. RDS supports additional storage volumes for RDS for Oracle and RDS for SQL Server.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -37,21 +38,21 @@ const awsccRdsDbInstance = `{
             },
             "storage_throughput": {
               "computed": true,
-              "description": "The storage throughput value for the additional storage volume, in mebibytes per second (MiBps). This setting applies only to the General Purpose SSD gp3 storage type.",
+              "description": "The storage throughput value for the additional storage volume, in mebibytes per second (MiBps). This setting applies only to the General Purpose SSD (` + "`" + `` + "`" + `gp3` + "`" + `` + "`" + `) storage type.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "storage_type": {
               "computed": true,
-              "description": "The storage type for the additional storage volume.",
+              "description": "The storage type for the additional storage volume.\n Valid Values: ` + "`" + `` + "`" + `GP3 | IO2` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "volume_name": {
               "computed": true,
-              "description": "The name of the additional storage volume.",
+              "description": "The name of the additional storage volume.\n Valid Values: ` + "`" + `` + "`" + `RDSDBDATA2 | RDSDBDATA3 | RDSDBDATA4` + "`" + `` + "`" + `",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

@@ -166,6 +166,12 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "drm_settings": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify one or more DRM settings for all of your manifest egress requests. When you include a DRM setting, note that you cannot use an identical DRM setting query parameter for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "end": {
                     "computed": true,
                     "description": "\u003cp\u003eOptionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
@@ -409,6 +415,12 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "drm_settings": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify one or more DRM settings for all of your manifest egress requests. When you include a DRM setting, note that you cannot use an identical DRM setting query parameter for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "end": {
                     "computed": true,
                     "description": "\u003cp\u003eOptionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
@@ -546,6 +558,12 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "drm_settings": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify one or more DRM settings for all of your manifest egress requests. When you include a DRM setting, note that you cannot use an identical DRM setting query parameter for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "end": {
                     "computed": true,
                     "description": "\u003cp\u003eOptionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
@@ -677,6 +695,12 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "drm_settings": {
+                    "computed": true,
+                    "description": "\u003cp\u003eOptionally specify one or more DRM settings for all of your manifest egress requests. When you include a DRM setting, note that you cannot use an identical DRM setting query parameter for this manifest's endpoint URL.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "end": {
                     "computed": true,
                     "description": "\u003cp\u003eOptionally specify the end time for all of your manifest egress requests. When you include end time, note that you cannot use end time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
@@ -792,6 +816,12 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "certificate_arn": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe ARN for the certificate that you imported to AWS Certificate Manager to add content key encryption to this endpoint. For this feature to work, your DRM key provider must support content key encryption.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "drm_systems": {
                           "computed": true,
                           "description": "\u003cp\u003eThe DRM solution provider you're using to protect your content during distribution.\u003c/p\u003e",

@@ -67,6 +67,28 @@ const awsccCloudfrontKeyValueStore = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       }
     },
     "description": "The key value store. Use this to separate data from function code, allowing you to update data without having to publish a new version of a function. The key value store holds keys and their corresponding values.",

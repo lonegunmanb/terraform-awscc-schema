@@ -23,7 +23,7 @@ const awsccAutoscalingAutoScalingGroup = `{
       },
       "availability_zone_distribution": {
         "computed": true,
-        "description": "The instance capacity distribution across Availability Zones.",
+        "description": "The EC2 instance capacity distribution across Availability Zones for the Auto Scaling group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -41,7 +41,7 @@ const awsccAutoscalingAutoScalingGroup = `{
       },
       "availability_zone_impairment_policy": {
         "computed": true,
-        "description": "The Availability Zone impairment policy.",
+        "description": "The Availability Zone impairment policy for the Auto Scaling group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -83,7 +83,7 @@ const awsccAutoscalingAutoScalingGroup = `{
       },
       "capacity_reservation_specification": {
         "computed": true,
-        "description": "The capacity reservation specification.",
+        "description": "The capacity reservation specification for the Auto Scaling group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -194,16 +194,19 @@ const awsccAutoscalingAutoScalingGroup = `{
       },
       "instance_lifecycle_policy": {
         "computed": true,
+        "description": "The instance lifecycle policy for the Auto Scaling group.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "retention_triggers": {
               "computed": true,
+              "description": "Specifies the conditions that trigger instance retention behavior. These triggers determine when instances should move to a ` + "`" + `` + "`" + `Retained` + "`" + `` + "`" + ` state instead of automatic termination. This allows you to maintain control over instance management when lifecycles transition and operations fail.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "terminate_hook_abandon": {
                     "computed": true,
+                    "description": "Specifies the action when a termination lifecycle hook is abandoned due to failure, timeout, or explicit abandonment (calling CompleteLifecycleAction). \n  Set to ` + "`" + `` + "`" + `Retain` + "`" + `` + "`" + ` to move instances to a ` + "`" + `` + "`" + `Retained` + "`" + `` + "`" + ` state. Set to ` + "`" + `` + "`" + `Terminate` + "`" + `` + "`" + ` for default termination behavior. \n  Retained instances don't count toward desired capacity and remain until you call ` + "`" + `` + "`" + `TerminateInstanceInAutoScalingGroup` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -504,6 +507,7 @@ const awsccAutoscalingAutoScalingGroup = `{
                       "attributes": {
                         "image_id": {
                           "computed": true,
+                          "description": "The ID of the Amazon Machine Image (AMI) to use for instances launched with this override. When using Instance Refresh with ` + "`" + `` + "`" + `ReplaceRootVolume` + "`" + `` + "`" + ` strategy, this specifies the AMI for root volume replacement operations. \n  For ` + "`" + `` + "`" + `ReplaceRootVolume` + "`" + `` + "`" + ` operations: \n  +  All overrides in the ` + "`" + `` + "`" + `MixedInstancesPolicy` + "`" + `` + "`" + ` must specify an ImageId\n  +  The AMI must contain only a single root volume\n  +  Root volume replacement doesn't support multi-volume AMIs",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"

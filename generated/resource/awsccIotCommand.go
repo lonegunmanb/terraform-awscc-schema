@@ -132,6 +132,12 @@ const awsccIotCommand = `{
               "optional": true,
               "type": "string"
             },
+            "type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "value": {
               "computed": true,
               "description_kind": "plain",
@@ -183,6 +189,84 @@ const awsccIotCommand = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            },
+            "value_conditions": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "comparison_operator": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "operand": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "number": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "number_range": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "max": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "min": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "numbers": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
+                        "string": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "strings": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "list"
@@ -219,12 +303,46 @@ const awsccIotCommand = `{
         },
         "optional": true
       },
+      "payload_template": {
+        "computed": true,
+        "description": "The payload template associated with the command.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "pending_deletion": {
         "computed": true,
         "description": "A flag indicating whether the command is pending deletion.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
+      },
+      "preprocessor": {
+        "computed": true,
+        "description": "The command preprocessor configuration.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "aws_json_substitution": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "output_format": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "role_arn": {
         "computed": true,

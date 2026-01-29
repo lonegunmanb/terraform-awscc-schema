@@ -136,6 +136,12 @@ const awsccEcsCapacityProvider = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "fips_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
                   "instance_requirements": {
                     "computed": true,
                     "description_kind": "plain",

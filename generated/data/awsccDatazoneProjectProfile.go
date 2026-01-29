@@ -203,6 +203,11 @@ const awsccDatazoneProjectProfile = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "use_default_configurations": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
       }
     },
     "description": "Data Source schema for AWS::DataZone::ProjectProfile",

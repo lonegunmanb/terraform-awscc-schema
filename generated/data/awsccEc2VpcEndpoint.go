@@ -42,11 +42,13 @@ const awsccEc2VpcEndpoint = `{
             },
             "private_dns_preference": {
               "computed": true,
+              "description": "The preference for which private domains have a private hosted zone created for and associated with the specified VPC. Only supported when private DNS is enabled and when the VPC endpoint type is ServiceNetwork or Resource.",
               "description_kind": "plain",
               "type": "string"
             },
             "private_dns_specified_domains": {
               "computed": true,
+              "description": "Indicates which of the private domains to create private hosted zones for and associate with the specified VPC. Only supported when private DNS is enabled and the private DNS preference is ` + "`" + `` + "`" + `VERIFIED_DOMAINS_AND_SPECIFIED_DOMAINS` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `SPECIFIED_DOMAINS_ONLY` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "type": [
                 "list",

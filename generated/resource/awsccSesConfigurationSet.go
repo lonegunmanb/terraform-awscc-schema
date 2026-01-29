@@ -9,6 +9,24 @@ import (
 const awsccSesConfigurationSet = `{
   "block": {
     "attributes": {
+      "archiving_options": {
+        "computed": true,
+        "description": "An object that defines a MailManager archive that is used to preserve emails that you send using the configuration set.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "archive_arn": {
+              "computed": true,
+              "description": "The ARN of the MailManager archive to associate with the configuration set.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "delivery_options": {
         "computed": true,
         "description": "An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.",

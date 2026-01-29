@@ -21,6 +21,13 @@ const awsccOpensearchserverlessCollection = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "collection_group_name": {
+        "computed": true,
+        "description": "The name of the collection group to associate with the collection.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "collection_id": {
         "computed": true,
         "description": "The identifier of the collection",
@@ -40,6 +47,31 @@ const awsccOpensearchserverlessCollection = `{
         "optional": true,
         "type": "string"
       },
+      "encryption_config": {
+        "computed": true,
+        "description": "Encryption settings for the collection",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "aws_owned_key": {
+              "computed": true,
+              "description": "Indicates whether to use an AWS owned key for encryption.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "kms_key_arn": {
+              "computed": true,
+              "description": "Key Management Service key used to encrypt the collection.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -48,7 +80,7 @@ const awsccOpensearchserverlessCollection = `{
       },
       "kms_key_arn": {
         "computed": true,
-        "description": "The ARN of the AWS KMS key used to encrypt the collection.",
+        "description": "Key Management Service key used to encrypt the collection.",
         "description_kind": "plain",
         "type": "string"
       },

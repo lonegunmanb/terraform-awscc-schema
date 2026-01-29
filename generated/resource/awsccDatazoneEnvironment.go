@@ -33,6 +33,13 @@ const awsccDatazoneEnvironment = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "deployment_order": {
+        "computed": true,
+        "description": "The deployment order for the environment.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "description": {
         "computed": true,
         "description": "The description of the Amazon DataZone environment.",
@@ -70,6 +77,20 @@ const awsccDatazoneEnvironment = `{
         "computed": true,
         "description": "The ID of the blueprint with which the Amazon DataZone environment was created.",
         "description_kind": "plain",
+        "type": "string"
+      },
+      "environment_blueprint_identifier": {
+        "computed": true,
+        "description": "The identifier of the environment blueprint.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "environment_configuration_id": {
+        "computed": true,
+        "description": "The identifier of the environment configuration.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "environment_id": {

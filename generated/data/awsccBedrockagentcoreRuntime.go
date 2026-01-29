@@ -151,6 +151,78 @@ const awsccBedrockagentcoreRuntime = `{
                       "string"
                     ]
                   },
+                  "allowed_scopes": {
+                    "computed": true,
+                    "description": "List of allowed scopes",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "custom_claims": {
+                    "computed": true,
+                    "description": "List of required custom claims",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "authorizing_claim_match_value": {
+                          "computed": true,
+                          "description": "The value or values in the custom claim to match and relationship of match",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "claim_match_operator": {
+                                "computed": true,
+                                "description": "The relationship between the claim field value and the value or values being matched",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "claim_match_value": {
+                                "computed": true,
+                                "description": "The value or values in the custom claim to match for",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "match_value_string": {
+                                      "computed": true,
+                                      "description": "The string value to match for",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "match_value_string_list": {
+                                      "computed": true,
+                                      "description": "The list of strings to check for a match",
+                                      "description_kind": "plain",
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "inbound_token_claim_name": {
+                          "computed": true,
+                          "description": "The name of the custom claim to validate",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "inbound_token_claim_value_type": {
+                          "computed": true,
+                          "description": "Token claim data type",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
                   "discovery_url": {
                     "computed": true,
                     "description": "OpenID Connect discovery URL",
