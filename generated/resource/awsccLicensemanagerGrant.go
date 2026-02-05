@@ -66,6 +66,31 @@ const awsccLicensemanagerGrant = `{
         "optional": true,
         "type": "string"
       },
+      "tags": {
+        "computed": true,
+        "description": "A list of tags to attach.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name of the tag.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the tag.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "version": {
         "computed": true,
         "description": "The version of the grant.",

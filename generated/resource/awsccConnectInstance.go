@@ -75,6 +75,13 @@ const awsccConnectInstance = `{
               "required": true,
               "type": "bool"
             },
+            "message_streaming": {
+              "computed": true,
+              "description": "Boolean flag which enables MESSAGE_STREAMING on an instance.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
             "multi_party_chat_conference": {
               "computed": true,
               "description": "Boolean flag which enables MULTI_PARTY_CHAT_CONFERENCE on an instance.",

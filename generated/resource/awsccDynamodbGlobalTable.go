@@ -15,23 +15,26 @@ const awsccDynamodbGlobalTable = `{
         "type": "string"
       },
       "attribute_definitions": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "attribute_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "attribute_type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
           "nesting_mode": "set"
         },
-        "required": true
+        "optional": true
       },
       "billing_mode": {
         "computed": true,
@@ -91,6 +94,38 @@ const awsccDynamodbGlobalTable = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "read_on_demand_throughput_settings": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "max_read_request_units": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "read_provisioned_throughput_settings": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "read_capacity_units": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
                   }
                 },
                 "nesting_mode": "single"
@@ -212,6 +247,12 @@ const awsccDynamodbGlobalTable = `{
         },
         "optional": true
       },
+      "global_table_source_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "global_table_witnesses": {
         "computed": true,
         "description_kind": "plain",
@@ -235,23 +276,26 @@ const awsccDynamodbGlobalTable = `{
         "type": "string"
       },
       "key_schema": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "attribute_name": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "key_type": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
           "nesting_mode": "list"
         },
-        "required": true
+        "optional": true
       },
       "local_secondary_indexes": {
         "computed": true,
@@ -321,6 +365,38 @@ const awsccDynamodbGlobalTable = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "read_on_demand_throughput_settings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "max_read_request_units": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "read_provisioned_throughput_settings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "read_capacity_units": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "replicas": {
         "description_kind": "plain",
@@ -485,6 +561,12 @@ const awsccDynamodbGlobalTable = `{
                 "nesting_mode": "set"
               },
               "optional": true
+            },
+            "global_table_settings_replication_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             },
             "kinesis_stream_specification": {
               "computed": true,

@@ -22,6 +22,51 @@ const awsccTransferWebApp = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "endpoint_details": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "vpc": {
+              "computed": true,
+              "description": "You can provide a structure that contains the details for the VPC endpoint to use with your web app.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "security_group_ids": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "subnet_ids": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "vpc_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -79,6 +124,11 @@ const awsccTransferWebApp = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "vpc_endpoint_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "web_app_customization": {
         "computed": true,

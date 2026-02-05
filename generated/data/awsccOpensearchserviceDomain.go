@@ -205,6 +205,21 @@ const awsccOpensearchserviceDomain = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "serverless_vector_acceleration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description": "Whether to enable serverless vector acceleration.",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

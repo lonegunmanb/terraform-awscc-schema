@@ -168,6 +168,28 @@ const awsccGameliftFleet = `{
                     "description_kind": "plain",
                     "type": "number"
                   },
+                  "managed_capacity_configuration": {
+                    "computed": true,
+                    "description": "Configuration options for Amazon GameLift Servers-managed capacity behavior.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "scale_in_after_inactivity_minutes": {
+                          "computed": true,
+                          "description": "Length of time, in minutes, that Amazon GameLift Servers will wait before scaling in your MinSize and DesiredInstances to 0 after a period with no game session activity.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "zero_capacity_strategy": {
+                          "computed": true,
+                          "description": "The strategy Amazon GameLift Servers will use to automatically scale your capacity to and from zero in response to game session activity. Game session activity refers to any active running sessions or game session requests. When set to SCALE_TO_AND_FROM_ZERO, MinSize must not be specified and will be managed automatically. When set to MANUAL, MinSize is required.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "max_size": {
                     "computed": true,
                     "description": "The maximum value that is allowed for the fleet's instance count for a location. When creating a new fleet, GameLift automatically sets this value to \"1\". Once the fleet is active, you can change this value.",

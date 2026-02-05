@@ -27,6 +27,33 @@ const awsccTransferConnector = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "async_mdn_config": {
+              "computed": true,
+              "description": "Configuration for an AS2 connector with ASYNC MDN Response",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "server_ids": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
+                  "url": {
+                    "computed": true,
+                    "description": "URL of the server to receive the MDN response on",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "basic_auth_secret_id": {
               "computed": true,
               "description": "ARN or name of the secret in AWS Secrets Manager which contains the credentials for Basic authentication. If empty, Basic authentication is disabled for the AS2 connector",

@@ -10,10 +10,9 @@ const awsccLicensemanagerLicense = `{
   "block": {
     "attributes": {
       "beneficiary": {
-        "computed": true,
         "description": "Beneficiary of the license.",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "consumption_configuration": {
@@ -185,10 +184,9 @@ const awsccLicensemanagerLicense = `{
         "type": "string"
       },
       "product_sku": {
-        "computed": true,
         "description": "ProductSKU of the license.",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "status": {
@@ -196,6 +194,31 @@ const awsccLicensemanagerLicense = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "A list of tags to attach.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name of the tag.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the tag.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       },
       "validity": {
         "description_kind": "plain",

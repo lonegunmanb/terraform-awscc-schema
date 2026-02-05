@@ -21,6 +21,46 @@ const awsccTransferWebApp = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "endpoint_details": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "vpc": {
+              "computed": true,
+              "description": "You can provide a structure that contains the details for the VPC endpoint to use with your web app.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "security_group_ids": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "subnet_ids": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "vpc_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -73,6 +113,11 @@ const awsccTransferWebApp = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "vpc_endpoint_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "web_app_customization": {
         "computed": true,

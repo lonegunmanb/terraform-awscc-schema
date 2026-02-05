@@ -16,6 +16,13 @@ const awsccEc2VolumeAttachment = `{
         "optional": true,
         "type": "string"
       },
+      "ebs_card_index": {
+        "computed": true,
+        "description": "The index of the EBS card. Some instance types support multiple EBS cards. The default EBS card index is 0.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
