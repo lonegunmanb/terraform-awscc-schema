@@ -9,6 +9,82 @@ import (
 const awsccConnectUser = `{
   "block": {
     "attributes": {
+      "after_contact_work_configs": {
+        "computed": true,
+        "description": "After Contact Work configurations of a user.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "after_contact_work_config": {
+              "computed": true,
+              "description": "After Contact Work configuration.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "after_contact_work_time_limit": {
+                    "computed": true,
+                    "description": "The After Call Work (ACW) timeout setting, in seconds.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "agent_first_callback_after_contact_work_config": {
+              "computed": true,
+              "description": "After Contact Work configuration.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "after_contact_work_time_limit": {
+                    "computed": true,
+                    "description": "The After Call Work (ACW) timeout setting, in seconds.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "channel": {
+              "computed": true,
+              "description": "The channels that agents can handle in the Contact Control Panel (CCP).",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
+      "auto_accept_configs": {
+        "computed": true,
+        "description": "Auto-accept configurations of a user.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "agent_first_callback_auto_accept": {
+              "computed": true,
+              "description": "The agent first callback auto accept setting.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "auto_accept": {
+              "computed": true,
+              "description": "The Auto accept setting.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "channel": {
+              "computed": true,
+              "description": "The channels that agents can handle in the Contact Control Panel (CCP).",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "directory_user_id": {
         "computed": true,
         "description": "The identifier of the user account in the directory used for identity management.",
@@ -79,6 +155,28 @@ const awsccConnectUser = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "persistent_connection_configs": {
+        "computed": true,
+        "description": "Persistent Connection configurations of a user.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "channel": {
+              "computed": true,
+              "description": "The channels that agents can handle in the Contact Control Panel (CCP).",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "persistent_connection": {
+              "computed": true,
+              "description": "The Persistent Connection setting.",
+              "description_kind": "plain",
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "phone_config": {
         "computed": true,
         "description": "The phone settings for the user.",
@@ -117,6 +215,34 @@ const awsccConnectUser = `{
             }
           },
           "nesting_mode": "single"
+        }
+      },
+      "phone_number_configs": {
+        "computed": true,
+        "description": "Phone Number configurations of a user.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "channel": {
+              "computed": true,
+              "description": "The channels that agents can handle in the Contact Control Panel (CCP).",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "phone_number": {
+              "computed": true,
+              "description": "The phone number for the user's desk phone.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "phone_type": {
+              "computed": true,
+              "description": "The phone type.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
         }
       },
       "routing_profile_arn": {
@@ -195,6 +321,28 @@ const awsccConnectUser = `{
         "description": "The user name for the account.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "voice_enhancement_configs": {
+        "computed": true,
+        "description": "Voice Enhancement configurations of a user.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "channel": {
+              "computed": true,
+              "description": "The channels that agents can handle in the Contact Control Panel (CCP).",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "voice_enhancement_mode": {
+              "computed": true,
+              "description": "The Voice Enhancement Mode setting.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
       }
     },
     "description": "Data Source schema for AWS::Connect::User",

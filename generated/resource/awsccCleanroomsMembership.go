@@ -143,6 +143,12 @@ const awsccCleanroomsMembership = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "is_metrics_enabled": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "job_log_status": {
         "computed": true,
         "description_kind": "plain",

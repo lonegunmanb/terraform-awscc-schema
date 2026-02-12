@@ -278,6 +278,48 @@ const awsccGroundstationConfig = `{
                 "nesting_mode": "single"
               }
             },
+            "telemetry_sink_config": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "telemetry_sink_data": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "kinesis_data_stream_data": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "kinesis_data_stream_arn": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "kinesis_role_arn": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "telemetry_sink_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "tracking_config": {
               "computed": true,
               "description_kind": "plain",

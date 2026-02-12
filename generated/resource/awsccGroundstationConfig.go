@@ -316,6 +316,54 @@ const awsccGroundstationConfig = `{
               },
               "optional": true
             },
+            "telemetry_sink_config": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "telemetry_sink_data": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "kinesis_data_stream_data": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "kinesis_data_stream_arn": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "kinesis_role_arn": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "telemetry_sink_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "tracking_config": {
               "computed": true,
               "description_kind": "plain",

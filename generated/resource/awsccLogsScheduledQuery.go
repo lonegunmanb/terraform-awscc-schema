@@ -6,56 +6,55 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccWorkspaceswebPortal = `{
+const awsccLogsScheduledQuery = `{
   "block": {
     "attributes": {
-      "additional_encryption_context": {
+      "creation_time": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
-        "type": [
-          "map",
-          "string"
-        ]
+        "type": "number"
       },
-      "authentication_type": {
+      "description": {
         "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
-      "browser_settings_arn": {
+      "destination_configuration": {
         "computed": true,
         "description_kind": "plain",
-        "optional": true,
-        "type": "string"
+        "nested_type": {
+          "attributes": {
+            "s3_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "destination_identifier": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "role_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
-      "browser_type": {
-        "computed": true,
+      "execution_role_arn": {
         "description_kind": "plain",
-        "type": "string"
-      },
-      "creation_date": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "customer_managed_key": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
-      "data_protection_settings_arn": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
-      "display_name": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "id": {
@@ -64,70 +63,77 @@ const awsccWorkspaceswebPortal = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "instance_type": {
+      "last_execution_status": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "last_triggered_time": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "last_updated_time": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "log_group_identifiers": {
         "computed": true,
         "description_kind": "plain",
         "optional": true,
-        "type": "string"
+        "type": [
+          "list",
+          "string"
+        ]
       },
-      "ip_access_settings_arn": {
-        "computed": true,
+      "name": {
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
-      "max_concurrent_sessions": {
+      "query_language": {
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "query_string": {
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "schedule_end_time": {
         "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "number"
       },
-      "network_settings_arn": {
+      "schedule_expression": {
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "schedule_start_time": {
         "computed": true,
         "description_kind": "plain",
         "optional": true,
-        "type": "string"
+        "type": "number"
       },
-      "portal_arn": {
+      "scheduled_query_arn": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
       },
-      "portal_custom_domain": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
-      "portal_endpoint": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "portal_status": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "renderer_type": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "service_provider_saml_metadata": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
-      "session_logger_arn": {
+      "start_time_offset": {
         "computed": true,
         "description_kind": "plain",
         "optional": true,
-        "type": "string"
+        "type": "number"
       },
-      "status_reason": {
+      "state": {
         "computed": true,
         "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "tags": {
@@ -152,33 +158,21 @@ const awsccWorkspaceswebPortal = `{
         },
         "optional": true
       },
-      "trust_store_arn": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
-      "user_access_logging_settings_arn": {
-        "computed": true,
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
-      "user_settings_arn": {
+      "timezone": {
         "computed": true,
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       }
     },
-    "description": "Definition of AWS::WorkSpacesWeb::Portal Resource Type",
+    "description": "Creates a new Scheduled Query that allows you to define a Logs Insights query that will run on a schedule and configure actions to take with the query results.",
     "description_kind": "plain"
   },
   "version": 1
 }`
 
-func AwsccWorkspaceswebPortalSchema() *tfjson.Schema {
+func AwsccLogsScheduledQuerySchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccWorkspaceswebPortal), &result)
+	_ = json.Unmarshal([]byte(awsccLogsScheduledQuery), &result)
 	return &result
 }

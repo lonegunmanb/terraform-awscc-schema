@@ -135,6 +135,13 @@ const awsccGroundstationMissionProfile = `{
         },
         "optional": true
       },
+      "telemetry_sink_config_arn": {
+        "computed": true,
+        "description": "ARN of a Config resource of type TelemetrySinkConfig used for telemetry data sink configuration.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "tracking_config_arn": {
         "description_kind": "plain",
         "required": true,

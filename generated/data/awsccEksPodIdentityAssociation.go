@@ -51,6 +51,12 @@ const awsccEksPodIdentityAssociation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "policy": {
+        "computed": true,
+        "description": "The policy of the pod identity association.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "role_arn": {
         "computed": true,
         "description": "The IAM role ARN that the pod identity association is created for.",

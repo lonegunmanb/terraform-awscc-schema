@@ -198,6 +198,11 @@ const awsccCleanroomsCollaboration = `{
         "required": true,
         "type": "string"
       },
+      "is_metrics_enabled": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "job_log_status": {
         "computed": true,
         "description_kind": "plain",

@@ -151,6 +151,12 @@ const awsccAutoscalingAutoScalingGroup = `{
         "optional": true,
         "type": "number"
       },
+      "deletion_protection": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "desired_capacity": {
         "computed": true,
         "description": "The desired capacity is the initial capacity of the Auto Scaling group at the time of its creation and the capacity it attempts to maintain. It can scale beyond this capacity if you configure automatic scaling.\n The number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a desired capacity when creating the stack, the default is the minimum size of the group.\n CloudFormation marks the Auto Scaling group as successful (by setting its status to CREATE_COMPLETE) when the desired capacity is reached. However, if a maximum Spot price is set in the launch template or launch configuration that you specified, then desired capacity is not used as a criteria for success. Whether your request is fulfilled depends on Spot Instance capacity and your maximum price.",
@@ -206,7 +212,7 @@ const awsccAutoscalingAutoScalingGroup = `{
                 "attributes": {
                   "terminate_hook_abandon": {
                     "computed": true,
-                    "description": "Specifies the action when a termination lifecycle hook is abandoned due to failure, timeout, or explicit abandonment (calling CompleteLifecycleAction). \n  Set to ` + "`" + `` + "`" + `Retain` + "`" + `` + "`" + ` to move instances to a ` + "`" + `` + "`" + `Retained` + "`" + `` + "`" + ` state. Set to ` + "`" + `` + "`" + `Terminate` + "`" + `` + "`" + ` for default termination behavior. \n  Retained instances don't count toward desired capacity and remain until you call ` + "`" + `` + "`" + `TerminateInstanceInAutoScalingGroup` + "`" + `` + "`" + `.",
+                    "description": "Specifies the action when a termination lifecycle hook is abandoned due to failure, timeout, or explicit abandonment (calling CompleteLifecycleAction). \n  Set to ` + "`" + `` + "`" + `retain` + "`" + `` + "`" + ` to move instances to a retained state. Set to ` + "`" + `` + "`" + `terminate` + "`" + `` + "`" + ` for default termination behavior. \n  Retained instances don't count toward desired capacity and remain until you call ` + "`" + `` + "`" + `TerminateInstanceInAutoScalingGroup` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
