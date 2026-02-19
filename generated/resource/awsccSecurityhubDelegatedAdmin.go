@@ -10,7 +10,7 @@ const awsccSecurityhubDelegatedAdmin = `{
   "block": {
     "attributes": {
       "admin_account_id": {
-        "description": "The AWS-account identifier of the account to designate as the Security Hub administrator account.",
+        "description": "The AWS-account identifier of the account to designate as the Security Hub CSPM administrator account.",
         "description_kind": "plain",
         "required": true,
         "type": "string"

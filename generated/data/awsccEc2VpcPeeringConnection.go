@@ -9,6 +9,12 @@ import (
 const awsccEc2VpcPeeringConnection = `{
   "block": {
     "attributes": {
+      "assume_role_region": {
+        "computed": true,
+        "description": "The Region code to use when calling Security Token Service (STS) to assume the PeerRoleArn, if provided.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

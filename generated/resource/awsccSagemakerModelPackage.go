@@ -1031,7 +1031,6 @@ const awsccSagemakerModelPackage = `{
         "computed": true,
         "description": "The time at which the model package was last modified.",
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "metadata_properties": {

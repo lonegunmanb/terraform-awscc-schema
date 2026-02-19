@@ -33,6 +33,78 @@ const awsccVerifiedpermissionsPolicyStore = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "encryption_settings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "default": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "kms_encryption_settings": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "encryption_context": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  },
+                  "key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "encryption_state": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "default": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "kms_encryption_state": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "encryption_context": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  },
+                  "key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

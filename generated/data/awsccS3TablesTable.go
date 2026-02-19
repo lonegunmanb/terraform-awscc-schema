@@ -37,6 +37,56 @@ const awsccS3TablesTable = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "iceberg_partition_spec": {
+              "computed": true,
+              "description": "Partition specification for an Iceberg table",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "fields": {
+                    "computed": true,
+                    "description": "List of partition fields",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "field_id": {
+                          "computed": true,
+                          "description": "The partition field ID (auto-assigned starting from 1000 if not specified)",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "name": {
+                          "computed": true,
+                          "description": "The name of the partition field",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "source_id": {
+                          "computed": true,
+                          "description": "The source column ID to partition on",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "transform": {
+                          "computed": true,
+                          "description": "The partition transform function (identity, bucket[N], truncate[N], year, month, day, hour)",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
+                  "spec_id": {
+                    "computed": true,
+                    "description": "The partition spec ID (defaults to 0 if not specified)",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "iceberg_schema": {
               "computed": true,
               "description": "Contains details about the schema for an Iceberg table",
@@ -49,6 +99,12 @@ const awsccS3TablesTable = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "id": {
+                          "computed": true,
+                          "description": "The unique identifier for the field",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
                         "name": {
                           "computed": true,
                           "description": "The name of the field",
@@ -74,6 +130,65 @@ const awsccS3TablesTable = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "iceberg_sort_order": {
+              "computed": true,
+              "description": "Sort order specification for an Iceberg table",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "fields": {
+                    "computed": true,
+                    "description": "List of sort fields",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "direction": {
+                          "computed": true,
+                          "description": "Sort direction (asc or desc)",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "null_order": {
+                          "computed": true,
+                          "description": "Null value ordering (nulls-first or nulls-last)",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "source_id": {
+                          "computed": true,
+                          "description": "The source column ID to sort on",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "transform": {
+                          "computed": true,
+                          "description": "The sort transform function",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
+                  "order_id": {
+                    "computed": true,
+                    "description": "The sort order ID (defaults to 1 if not specified, 0 is reserved for unsorted)",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "table_properties": {
+              "computed": true,
+              "description": "Iceberg table properties (e.g., format-version, write.parquet.compression-codec)",
+              "description_kind": "plain",
+              "type": [
+                "map",
+                "string"
+              ]
             }
           },
           "nesting_mode": "single"

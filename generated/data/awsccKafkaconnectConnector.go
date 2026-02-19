@@ -21,6 +21,12 @@ const awsccKafkaconnectConnector = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "max_autoscaling_task_count": {
+                    "computed": true,
+                    "description": "The maximum number of tasks allocated to the connector during autoscaling operations.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
                   "max_worker_count": {
                     "computed": true,
                     "description": "The maximum number of workers for a connector.",
