@@ -99,6 +99,12 @@ const awsccPcaconnectorscepConnector = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "vpc_endpoint_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       }
     },
     "description": "Represents a Connector that allows certificate issuance through Simple Certificate Enrollment Protocol (SCEP)",

@@ -137,6 +137,7 @@ const awsccAutoscalingAutoScalingGroup = `{
       },
       "deletion_protection": {
         "computed": true,
+        "description": "The deletion protection setting for the Auto Scaling group.",
         "description_kind": "plain",
         "type": "string"
       },

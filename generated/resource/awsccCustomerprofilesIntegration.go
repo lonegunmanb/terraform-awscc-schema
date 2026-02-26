@@ -418,6 +418,13 @@ const awsccCustomerprofilesIntegration = `{
         },
         "optional": true
       },
+      "scope": {
+        "computed": true,
+        "description": "Scope of the integration, such as 'PROFILE' or 'DOMAIN'",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "The tags (keys and values) associated with the integration",

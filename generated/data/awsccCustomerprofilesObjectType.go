@@ -166,6 +166,12 @@ const awsccCustomerprofilesObjectType = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "source_priority": {
+        "computed": true,
+        "description": "Defines the priority order of object types. Lower value indicates higher priority.",
+        "description_kind": "plain",
+        "type": "number"
+      },
       "tags": {
         "computed": true,
         "description": "The tags (keys and values) associated with the integration.",

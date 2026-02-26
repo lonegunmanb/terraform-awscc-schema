@@ -9,6 +9,32 @@ import (
 const awsccCasesField = `{
   "block": {
     "attributes": {
+      "attributes": {
+        "computed": true,
+        "description": "Field-type specific attributes that control rendering and validation behavior",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "text": {
+              "computed": true,
+              "description": "Field attributes for Text field type",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "is_multiline": {
+                    "computed": true,
+                    "description": "Attribute that defines rendering component and validation",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "created_time": {
         "computed": true,
         "description": "The time at which the field was created.",

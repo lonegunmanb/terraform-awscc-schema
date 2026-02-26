@@ -26,11 +26,13 @@ const awsccLambdaFunction = `{
       },
       "capacity_provider_config": {
         "computed": true,
+        "description": "Configuration for the capacity provider that manages compute resources for Lambda functions.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "lambda_managed_instances_capacity_provider_config": {
               "computed": true,
+              "description": "Configuration for Lambda-managed instances used by the capacity provider.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -50,7 +52,7 @@ const awsccLambdaFunction = `{
                   },
                   "per_execution_environment_max_concurrency": {
                     "computed": true,
-                    "description": "The maximum number of concurrent execution environments that can run on each compute instance.",
+                    "description": "The maximum number of concurrent executions that can run on each execution environment.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
@@ -107,7 +109,7 @@ const awsccLambdaFunction = `{
             },
             "zip_file": {
               "computed": true,
-              "description": "(Node.js and Python) The source code of your Lambda function. If you include your function source inline with this parameter, CFN places it in a file named ` + "`" + `` + "`" + `index` + "`" + `` + "`" + ` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html). This zip file cannot exceed 4MB. For the ` + "`" + `` + "`" + `Handler` + "`" + `` + "`" + ` property, the first part of the handler identifier must be ` + "`" + `` + "`" + `index` + "`" + `` + "`" + `. For example, ` + "`" + `` + "`" + `index.handler` + "`" + `` + "`" + `.\n  When you specify source code inline for a Node.js function, the ` + "`" + `` + "`" + `index` + "`" + `` + "`" + ` file that CFN creates uses the extension ` + "`" + `` + "`" + `.js` + "`" + `` + "`" + `. This means that LAM treats the file as a CommonJS module. ES modules aren't supported for inline functions.\n   For JSON, you must escape quotes and special characters such as newline (` + "`" + `` + "`" + `\\n` + "`" + `` + "`" + `) with a backslash.\n If you specify a function that interacts with an AWS CloudFormation custom resource, you don't have to write your own functions to send responses to the custom resource that invoked the function. AWS CloudFormation provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html)) that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html) for details.",
+              "description": "(Node.js and Python) The source code of your Lambda function. If you include your function source inline with this parameter, CFN places it in a file named ` + "`" + `` + "`" + `index` + "`" + `` + "`" + ` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html). This zip file cannot exceed 4MB. For the ` + "`" + `` + "`" + `Handler` + "`" + `` + "`" + ` property, the first part of the handler identifier must be ` + "`" + `` + "`" + `index` + "`" + `` + "`" + `. For example, ` + "`" + `` + "`" + `index.handler` + "`" + `` + "`" + `.\n  When you specify source code inline for a Node.js function, the ` + "`" + `` + "`" + `index` + "`" + `` + "`" + ` file that CFN creates uses the extension ` + "`" + `` + "`" + `.js` + "`" + `` + "`" + `. This means that Node.js treats the file as a CommonJS module.\n When using Node.js 24 or later, Node.js can automatically detect if a ` + "`" + `` + "`" + `.js` + "`" + `` + "`" + ` file should be treated as CommonJS or as an ES module. To enable auto-detection, add the ` + "`" + `` + "`" + `--experimental-detect-module` + "`" + `` + "`" + ` flag to the ` + "`" + `` + "`" + `NODE_OPTIONS` + "`" + `` + "`" + ` environment variable. For more information, see [Experimental Node.js features](https://docs.aws.amazon.com//lambda/latest/dg/lambda-nodejs.html#nodejs-experimental-features).\n   For JSON, you must escape quotes and special characters such as newline (` + "`" + `` + "`" + `\\n` + "`" + `` + "`" + `) with a backslash.\n If you specify a function that interacts with an AWS CloudFormation custom resource, you don't have to write your own functions to send responses to the custom resource that invoked the function. AWS CloudFormation provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html)) that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html) for details.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -151,19 +153,20 @@ const awsccLambdaFunction = `{
       },
       "durable_config": {
         "computed": true,
+        "description": "Configuration settings for [durable functions](https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html), including execution timeout and retention period for execution history.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "execution_timeout": {
               "computed": true,
-              "description": "The amount of time (in seconds) that Lambda allows a durable function to run before stopping it. The maximum is one 366-day year or 31,622,400 seconds.",
+              "description": "The maximum time (in seconds) that a durable execution can run before timing out. This timeout applies to the entire durable execution, not individual function invocations.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "retention_period_in_days": {
               "computed": true,
-              "description": "The number of days after a durable execution is closed that Lambda retains its history, from one to 90 days. The default is 14 days.",
+              "description": "The number of days to retain execution history after a durable execution completes. After this period, execution history is no longer available through the GetDurableExecutionHistory API.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
@@ -246,6 +249,7 @@ const awsccLambdaFunction = `{
       },
       "function_scaling_config": {
         "computed": true,
+        "description": "Configuration that defines the scaling behavior for a Lambda Managed Instances function, including the minimum and maximum number of execution environments that can be provisioned.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -514,12 +518,13 @@ const awsccLambdaFunction = `{
       },
       "tenancy_config": {
         "computed": true,
+        "description": "The function's tenant isolation configuration settings. Determines whether the Lambda function runs on a shared or dedicated infrastructure per unique tenant.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "tenant_isolation_mode": {
               "computed": true,
-              "description": "Determines how your Lambda function isolates execution environments between tenants.",
+              "description": "Tenant isolation mode allows for invocation to be sent to a corresponding execution environment dedicated to a specific tenant ID.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

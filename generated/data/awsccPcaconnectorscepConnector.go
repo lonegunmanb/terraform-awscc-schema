@@ -94,6 +94,11 @@ const awsccPcaconnectorscepConnector = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "vpc_endpoint_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::PCAConnectorSCEP::Connector",

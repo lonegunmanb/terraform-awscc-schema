@@ -11,13 +11,11 @@ const awsccLambdaCapacityProvider = `{
     "attributes": {
       "arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the capacity provider. This is a read-only property that is automatically generated when the capacity provider is created.",
         "description_kind": "plain",
         "type": "string"
       },
       "capacity_provider_name": {
         "computed": true,
-        "description": "The name of the capacity provider. The name must be unique within your AWS account and region. If you don't specify a name, CloudFormation generates one.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -30,14 +28,14 @@ const awsccLambdaCapacityProvider = `{
           "attributes": {
             "max_v_cpu_count": {
               "computed": true,
-              "description": "The maximum number of EC2 instances that the capacity provider can scale up to.",
+              "description": "The maximum number of vCPUs that the capacity provider can provision across all compute instances.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
             },
             "scaling_mode": {
               "computed": true,
-              "description": "The scaling mode for the capacity provider.",
+              "description": "The scaling mode that determines how the capacity provider responds to changes in demand.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -50,14 +48,14 @@ const awsccLambdaCapacityProvider = `{
                 "attributes": {
                   "predefined_metric_type": {
                     "computed": true,
-                    "description": "The predefined metric for target tracking.",
+                    "description": "The predefined metric type to track for scaling decisions.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "target_value": {
                     "computed": true,
-                    "description": "The target value for the metric as a percentage (for example, 70.0 for 70%).",
+                    "description": "The target value for the metric that the scaling policy attempts to maintain through scaling actions.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
@@ -80,13 +78,13 @@ const awsccLambdaCapacityProvider = `{
       },
       "instance_requirements": {
         "computed": true,
-        "description": "Specifications for the types of EC2 instances that the capacity provider can use.",
+        "description": "The instance requirements for compute resources managed by the capacity provider.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "allowed_instance_types": {
               "computed": true,
-              "description": "A list of instance types that the capacity provider can use. Supports wildcards (for example, m5.*).",
+              "description": "A list of EC2 instance types that the capacity provider is allowed to use. If not specified, all compatible instance types are allowed.",
               "description_kind": "plain",
               "optional": true,
               "type": [
@@ -96,7 +94,7 @@ const awsccLambdaCapacityProvider = `{
             },
             "architectures": {
               "computed": true,
-              "description": "The instruction set architecture for EC2 instances. Specify either x86_64 or arm64.",
+              "description": "A list of supported CPU architectures for compute instances. Valid values include ` + "`" + `` + "`" + `x86_64` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `arm64` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "optional": true,
               "type": [
@@ -106,7 +104,7 @@ const awsccLambdaCapacityProvider = `{
             },
             "excluded_instance_types": {
               "computed": true,
-              "description": "A list of instance types that the capacity provider should not use. Takes precedence over AllowedInstanceTypes.",
+              "description": "A list of EC2 instance types that the capacity provider should not use, even if they meet other requirements.",
               "description_kind": "plain",
               "optional": true,
               "type": [
@@ -121,18 +119,18 @@ const awsccLambdaCapacityProvider = `{
       },
       "kms_key_arn": {
         "computed": true,
-        "description": "The ARN of the AWS Key Management Service (KMS) key used by the capacity provider.",
+        "description": "The ARN of the KMS key used to encrypt the capacity provider's resources.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
       },
       "permissions_config": {
-        "description": "IAM permissions configuration for the capacity provider.",
+        "description": "The permissions configuration for the capacity provider.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "capacity_provider_operator_role_arn": {
-              "description": "The ARN of the IAM role that Lambda assumes to manage the capacity provider.",
+              "description": "The ARN of the IAM role that the capacity provider uses to manage compute instances and other AWS resources.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
@@ -144,13 +142,13 @@ const awsccLambdaCapacityProvider = `{
       },
       "state": {
         "computed": true,
-        "description": "The current state of the capacity provider.",
+        "description": "The current state of the capacity provider. Indicates whether the provider is being created, is active and ready for use, has failed, or is being deleted.",
         "description_kind": "plain",
         "type": "string"
       },
       "tags": {
         "computed": true,
-        "description": "A list of tags to apply to the capacity provider.",
+        "description": "A key-value pair that provides metadata for the capacity provider.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -174,12 +172,12 @@ const awsccLambdaCapacityProvider = `{
         "optional": true
       },
       "vpc_config": {
-        "description": "VPC configuration for the capacity provider.",
+        "description": "The VPC configuration for the capacity provider.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "security_group_ids": {
-              "description": "A list of security group IDs to associate with EC2 instances.",
+              "description": "A list of security group IDs that control network access for compute instances managed by the capacity provider.",
               "description_kind": "plain",
               "required": true,
               "type": [
@@ -188,7 +186,7 @@ const awsccLambdaCapacityProvider = `{
               ]
             },
             "subnet_ids": {
-              "description": "A list of subnet IDs where the capacity provider can launch EC2 instances.",
+              "description": "A list of subnet IDs where the capacity provider launches compute instances.",
               "description_kind": "plain",
               "required": true,
               "type": [
@@ -202,7 +200,7 @@ const awsccLambdaCapacityProvider = `{
         "required": true
       }
     },
-    "description": "Resource Type definition for AWS::Lambda::CapacityProvider",
+    "description": "Creates a capacity provider that manages compute resources for Lambda functions",
     "description_kind": "plain"
   },
   "version": 1

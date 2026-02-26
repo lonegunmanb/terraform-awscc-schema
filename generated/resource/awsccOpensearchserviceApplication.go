@@ -116,6 +116,13 @@ const awsccOpensearchserviceApplication = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "kms_key_arn": {
+        "computed": true,
+        "description": "The ARN of the KMS key used to encrypt the application.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "name": {
         "description": "The name of the application.",
         "description_kind": "plain",

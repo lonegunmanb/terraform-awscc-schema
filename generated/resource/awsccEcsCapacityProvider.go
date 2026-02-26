@@ -130,6 +130,28 @@ const awsccEcsCapacityProvider = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "capacity_reservations": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "reservation_group_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "reservation_preference": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "ec_2_instance_profile_arn": {
                     "computed": true,
                     "description_kind": "plain",
