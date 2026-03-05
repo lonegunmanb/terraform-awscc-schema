@@ -46,9 +46,10 @@ const awsccCloudwatchAlarm = `{
         "type": "string"
       },
       "comparison_operator": {
+        "computed": true,
         "description": "The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "datapoints_to_alarm": {
@@ -66,14 +67,14 @@ const awsccCloudwatchAlarm = `{
           "attributes": {
             "name": {
               "computed": true,
-              "description": "The name of the dimension, from 1?255 characters in length. This dimension name must have been included when the metric was published.",
+              "description": "The name of the dimension, from 1–255 characters in length. This dimension name must have been included when the metric was published.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "The value for the dimension, from 1?255 characters in length.",
+              "description": "The value for the dimension, from 1–255 characters in length.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -91,9 +92,10 @@ const awsccCloudwatchAlarm = `{
         "type": "string"
       },
       "evaluation_periods": {
+        "computed": true,
         "description": "The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an \"M out of N\" alarm, this value is the N, and ` + "`" + `` + "`" + `DatapointsToAlarm` + "`" + `` + "`" + ` is the M.\n For more information, see [Evaluating an Alarm](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation) in the *User Guide*.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "number"
       },
       "extended_statistic": {
@@ -180,14 +182,14 @@ const awsccCloudwatchAlarm = `{
                             "attributes": {
                               "name": {
                                 "computed": true,
-                                "description": "The name of the dimension, from 1?255 characters in length. This dimension name must have been included when the metric was published.",
+                                "description": "The name of the dimension, from 1–255 characters in length. This dimension name must have been included when the metric was published.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
                               },
                               "value": {
                                 "computed": true,
-                                "description": "The value for the dimension, from 1?255 characters in length.",
+                                "description": "The value for the dimension, from 1–255 characters in length.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"

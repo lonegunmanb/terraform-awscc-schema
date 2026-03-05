@@ -54,6 +54,20 @@ const awsccObservabilityadminOrganizationCentralizationRule = `{
                             "nesting_mode": "single"
                           }
                         },
+                        "log_group_name_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "log_group_name_pattern": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "logs_encryption_configuration": {
                           "computed": true,
                           "description_kind": "plain",

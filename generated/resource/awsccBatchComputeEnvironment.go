@@ -193,6 +193,22 @@ const awsccBatchComputeEnvironment = `{
               "optional": true,
               "type": "string"
             },
+            "scaling_policy": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "min_scale_down_delay_minutes": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "security_group_ids": {
               "computed": true,
               "description_kind": "plain",

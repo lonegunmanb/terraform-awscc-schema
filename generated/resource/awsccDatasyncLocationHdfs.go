@@ -31,6 +31,55 @@ const awsccDatasyncLocationHdfs = `{
         "optional": true,
         "type": "number"
       },
+      "cmk_secret_config": {
+        "computed": true,
+        "description": "Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed AWS KMS key.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "kms_key_arn": {
+              "computed": true,
+              "description": "Specifies the ARN for the customer-managed AWS KMS key used to encrypt the secret specified for SecretArn. DataSync provides this key to AWS Secrets Manager.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "secret_arn": {
+              "computed": true,
+              "description": "Specifies the ARN for an AWS Secrets Manager secret, managed by DataSync.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "custom_secret_config": {
+        "computed": true,
+        "description": "Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and an IAM role that DataSync can assume and access the customer-managed secret.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "secret_access_role_arn": {
+              "computed": true,
+              "description": "Specifies the ARN for the AWS Identity and Access Management role that DataSync uses to access the secret specified for SecretArn.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "secret_arn": {
+              "computed": true,
+              "description": "Specifies the ARN for a customer created AWS Secrets Manager secret.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -76,6 +125,22 @@ const awsccDatasyncLocationHdfs = `{
         "description": "The URL of the HDFS location that was described.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "managed_secret_config": {
+        "computed": true,
+        "description": "Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location. DataSync uses the default AWS-managed KMS key to encrypt this secret in AWS Secrets Manager.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "secret_arn": {
+              "computed": true,
+              "description": "Specifies the ARN for an AWS Secrets Manager secret.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "name_nodes": {
         "description": "An array of Name Node(s) of the HDFS location.",
@@ -171,7 +236,7 @@ const awsccDatasyncLocationHdfs = `{
         "optional": true
       }
     },
-    "description": "Resource schema for AWS::DataSync::LocationHDFS.",
+    "description": "Resource Type definition for AWS::DataSync::LocationHDFS.",
     "description_kind": "plain"
   },
   "version": 1

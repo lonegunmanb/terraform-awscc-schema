@@ -61,13 +61,13 @@ const awsccCloudwatchAlarm = `{
           "attributes": {
             "name": {
               "computed": true,
-              "description": "The name of the dimension, from 1?255 characters in length. This dimension name must have been included when the metric was published.",
+              "description": "The name of the dimension, from 1–255 characters in length. This dimension name must have been included when the metric was published.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "The value for the dimension, from 1?255 characters in length.",
+              "description": "The value for the dimension, from 1–255 characters in length.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -164,13 +164,13 @@ const awsccCloudwatchAlarm = `{
                             "attributes": {
                               "name": {
                                 "computed": true,
-                                "description": "The name of the dimension, from 1?255 characters in length. This dimension name must have been included when the metric was published.",
+                                "description": "The name of the dimension, from 1–255 characters in length. This dimension name must have been included when the metric was published.",
                                 "description_kind": "plain",
                                 "type": "string"
                               },
                               "value": {
                                 "computed": true,
-                                "description": "The value for the dimension, from 1?255 characters in length.",
+                                "description": "The value for the dimension, from 1–255 characters in length.",
                                 "description_kind": "plain",
                                 "type": "string"
                               }
