@@ -37,6 +37,16 @@ const awsccOdbOdbNetwork = `{
         "optional": true,
         "type": "string"
       },
+      "cross_region_s3_restore_sources": {
+        "computed": true,
+        "description": "The cross-Region Amazon S3 restore sources for the ODB network.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "set",
+          "string"
+        ]
+      },
       "custom_domain_name": {
         "computed": true,
         "description": "The domain name to use for the resources in the ODB network.",
@@ -71,12 +81,94 @@ const awsccOdbOdbNetwork = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "kms_access": {
+        "computed": true,
+        "description": "The AWS Key Management Service (KMS) access configuration for the ODB network.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "kms_policy_document": {
+        "computed": true,
+        "description": "The AWS Key Management Service (KMS) policy document that defines permissions for key usage within the ODB network.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "managed_services": {
         "computed": true,
         "description": "The managed services configuration for the ODB network.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "cross_region_s3_restore_sources_access": {
+              "computed": true,
+              "description": "The access configuration for the cross-Region Amazon S3 database restore source.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "ipv_4_addresses": {
+                    "computed": true,
+                    "description": "The IPv4 addresses allowed for cross-Region Amazon S3 restore access.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "region": {
+                    "computed": true,
+                    "description": "The AWS-Region for cross-Region Amazon S3 restore access.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "status": {
+                    "computed": true,
+                    "description": "The current status of the cross-Region Amazon S3 restore access configuration.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            },
+            "kms_access": {
+              "computed": true,
+              "description": "The AWS Key Management Service (KMS) access configuration.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "domain_name": {
+                    "computed": true,
+                    "description": "The domain name for the AWS KMS access.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "ipv_4_addresses": {
+                    "computed": true,
+                    "description": "The IPv4 addresses for the AWS KMS access.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "kms_policy_document": {
+                    "computed": true,
+                    "description": "The endpoint policy for the AWS KMS access.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "status": {
+                    "computed": true,
+                    "description": "The status of the AWS KMS access.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "managed_s3_backup_access": {
               "computed": true,
               "description": "The managed Amazon S3 backup access configuration.",
@@ -182,6 +274,43 @@ const awsccOdbOdbNetwork = `{
                 "nesting_mode": "single"
               }
             },
+            "sts_access": {
+              "computed": true,
+              "description": "The AWS Security Token Service (STS) access configuration.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "domain_name": {
+                    "computed": true,
+                    "description": "The domain name for the AWS STS access.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "ipv_4_addresses": {
+                    "computed": true,
+                    "description": "The IPv4 addresses for the AWS STS access.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "status": {
+                    "computed": true,
+                    "description": "The status of the AWS STS access.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "sts_policy_document": {
+                    "computed": true,
+                    "description": "The endpoint policy for the AWS STS access.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "zero_etl_access": {
               "computed": true,
               "description": "The Zero-ETL access configuration.",
@@ -248,6 +377,20 @@ const awsccOdbOdbNetwork = `{
       "s3_policy_document": {
         "computed": true,
         "description": "Specifies the endpoint policy for Amazon S3 access from the ODB network.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "sts_access": {
+        "computed": true,
+        "description": "The AWS Security Token Service (STS) access configuration for the ODB network.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "sts_policy_document": {
+        "computed": true,
+        "description": "The AWS Security Token Service (STS) policy document that defines permissions for token service usage within the ODB network.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

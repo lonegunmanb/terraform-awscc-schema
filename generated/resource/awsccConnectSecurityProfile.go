@@ -41,6 +41,31 @@ const awsccConnectSecurityProfile = `{
         },
         "optional": true
       },
+      "allowed_flow_modules": {
+        "computed": true,
+        "description": "The list of flow-module resources to be linked to a security profile in Amazon Connect.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "flow_module_id": {
+              "computed": true,
+              "description": "The identifier of the application that you want to give access to.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "type": {
+              "computed": true,
+              "description": "The type of the first-party application",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
       "applications": {
         "computed": true,
         "description": "A list of third-party applications that the security profile will give access to.",
@@ -60,6 +85,13 @@ const awsccConnectSecurityProfile = `{
             "namespace": {
               "computed": true,
               "description": "Namespace of the application that you want to give access to.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "type": {
+              "computed": true,
+              "description": "The type of the application.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

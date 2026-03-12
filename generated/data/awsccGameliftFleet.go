@@ -205,6 +205,12 @@ const awsccGameliftFleet = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "player_gateway_status": {
+              "computed": true,
+              "description": "The player gateway status for the location.",
+              "description_kind": "plain",
+              "type": "string"
             }
           },
           "nesting_mode": "list"
@@ -261,6 +267,28 @@ const awsccGameliftFleet = `{
       "peer_vpc_id": {
         "computed": true,
         "description": "A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the VPC Dashboard in the AWS Management Console.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "player_gateway_configuration": {
+        "computed": true,
+        "description": "Configuration for player gateway.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "game_server_ip_protocol_supported": {
+              "computed": true,
+              "description": "The IP protocol supported by the game server.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "player_gateway_mode": {
+        "computed": true,
+        "description": "The player gateway mode for the fleet.",
         "description_kind": "plain",
         "type": "string"
       },

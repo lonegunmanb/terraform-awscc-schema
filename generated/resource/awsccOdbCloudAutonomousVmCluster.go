@@ -144,6 +144,38 @@ const awsccOdbCloudAutonomousVmCluster = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "iam_roles": {
+        "computed": true,
+        "description": "The AWS Identity and Access Management (IAM) service roles associated with the Autonomous VM cluster.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "aws_integration": {
+              "computed": true,
+              "description": "The AWS integration configuration settings for the AWS Identity and Access Management (IAM) service role.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "iam_role_arn": {
+              "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) service role.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "status": {
+              "computed": true,
+              "description": "The current status of the AWS Identity and Access Management (IAM) service role.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

@@ -326,6 +326,12 @@ const awsccCleanroomsConfiguredTable = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "catalog_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "database_name": {
                     "computed": true,
                     "description_kind": "plain",

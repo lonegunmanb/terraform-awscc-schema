@@ -9,6 +9,24 @@ import (
 const awsccConnectQueue = `{
   "block": {
     "attributes": {
+      "additional_email_addresses": {
+        "computed": true,
+        "description": "The email addresses that agents can use when replying to or initiating email contacts",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "email_address_arn": {
+              "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the email address",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "description": {
         "computed": true,
         "description": "The description of the queue.",

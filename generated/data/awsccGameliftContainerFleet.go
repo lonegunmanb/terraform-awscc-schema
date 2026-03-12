@@ -257,6 +257,12 @@ const awsccGameliftContainerFleet = `{
                 "nesting_mode": "single"
               }
             },
+            "player_gateway_status": {
+              "computed": true,
+              "description": "The player gateway status for the location.",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "stopped_actions": {
               "computed": true,
               "description": "A list of fleet actions that have been suspended in the fleet location.",
@@ -328,6 +334,12 @@ const awsccGameliftContainerFleet = `{
       "per_instance_container_group_definition_name": {
         "computed": true,
         "description": "The name of the container group definition that will be created per instance. This field is optional if you specify GameServerContainerGroupDefinitionName.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "player_gateway_mode": {
+        "computed": true,
+        "description": "The player gateway mode for the container fleet.",
         "description_kind": "plain",
         "type": "string"
       },

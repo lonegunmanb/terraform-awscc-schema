@@ -99,6 +99,30 @@ const awsccXraySamplingRule = `{
               "optional": true,
               "type": "string"
             },
+            "sampling_rate_boost": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cooldown_window_minutes": {
+                    "computed": true,
+                    "description": "Time window (in minutes) in which only one sampling rate boost can be triggered. After a boost occurs, no further boosts are allowed until the next window.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "max_rate": {
+                    "computed": true,
+                    "description": "The maximum sampling rate X-Ray will apply when it detects anomalies. X-Ray determines the appropriate rate between your baseline and the maximum, depending on anomaly activity.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "service_name": {
               "computed": true,
               "description": "Matches the name that the service uses to identify itself in segments.",
@@ -222,6 +246,30 @@ const awsccXraySamplingRule = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "sampling_rate_boost": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "cooldown_window_minutes": {
+                          "computed": true,
+                          "description": "Time window (in minutes) in which only one sampling rate boost can be triggered. After a boost occurs, no further boosts are allowed until the next window.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "max_rate": {
+                          "computed": true,
+                          "description": "The maximum sampling rate X-Ray will apply when it detects anomalies. X-Ray determines the appropriate rate between your baseline and the maximum, depending on anomaly activity.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "service_name": {
                     "computed": true,
                     "description": "Matches the name that the service uses to identify itself in segments.",
@@ -330,6 +378,30 @@ const awsccXraySamplingRule = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "sampling_rate_boost": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cooldown_window_minutes": {
+                    "computed": true,
+                    "description": "Time window (in minutes) in which only one sampling rate boost can be triggered. After a boost occurs, no further boosts are allowed until the next window.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "max_rate": {
+                    "computed": true,
+                    "description": "The maximum sampling rate X-Ray will apply when it detects anomalies. X-Ray determines the appropriate rate between your baseline and the maximum, depending on anomaly activity.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "service_name": {
               "computed": true,

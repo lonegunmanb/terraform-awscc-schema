@@ -79,6 +79,16 @@ const awsccOdbOdbPeeringConnection = `{
         "optional": true,
         "type": "string"
       },
+      "peer_network_route_table_ids": {
+        "computed": true,
+        "description": "The unique identifier of the VPC route table for which a route to the ODB network is automatically created during peering connection establishment.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "tags": {
         "computed": true,
         "description": "Tags to assign to the Odb peering connection.",

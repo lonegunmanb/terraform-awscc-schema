@@ -444,6 +444,22 @@ const awsccOpensearchserviceDomain = `{
         },
         "optional": true
       },
+      "deployment_strategy_options": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "deployment_strategy": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "domain_arn": {
         "computed": true,
         "description_kind": "plain",

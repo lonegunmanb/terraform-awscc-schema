@@ -199,19 +199,16 @@ const awsccRedshiftserverlessWorkgroup = `{
                   "parameter_key": {
                     "computed": true,
                     "description_kind": "plain",
-                    "optional": true,
                     "type": "string"
                   },
                   "parameter_value": {
                     "computed": true,
                     "description_kind": "plain",
-                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "set"
-              },
-              "optional": true
+              }
             },
             "creation_date": {
               "computed": true,
