@@ -230,49 +230,6 @@ const awsccWorkspacesinstancesWorkspaceInstance = `{
               "description_kind": "plain",
               "type": "string"
             },
-            "instance_market_options": {
-              "computed": true,
-              "description_kind": "plain",
-              "nested_type": {
-                "attributes": {
-                  "market_type": {
-                    "computed": true,
-                    "description_kind": "plain",
-                    "type": "string"
-                  },
-                  "spot_options": {
-                    "computed": true,
-                    "description_kind": "plain",
-                    "nested_type": {
-                      "attributes": {
-                        "instance_interruption_behavior": {
-                          "computed": true,
-                          "description_kind": "plain",
-                          "type": "string"
-                        },
-                        "max_price": {
-                          "computed": true,
-                          "description_kind": "plain",
-                          "type": "string"
-                        },
-                        "spot_instance_type": {
-                          "computed": true,
-                          "description_kind": "plain",
-                          "type": "string"
-                        },
-                        "valid_until_utc": {
-                          "computed": true,
-                          "description_kind": "plain",
-                          "type": "string"
-                        }
-                      },
-                      "nesting_mode": "single"
-                    }
-                  }
-                },
-                "nesting_mode": "single"
-              }
-            },
             "instance_type": {
               "computed": true,
               "description_kind": "plain",

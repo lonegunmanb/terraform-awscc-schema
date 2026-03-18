@@ -67,6 +67,21 @@ const awsccBatchSchedulingPolicy = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "quota_share_policy": {
+        "computed": true,
+        "description": "Quota Share Policy for the Job Queue.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "idle_resource_assignment_strategy": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "tags": {
         "computed": true,
         "description": "A key-value pair to associate with a resource.",

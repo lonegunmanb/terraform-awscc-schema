@@ -14,6 +14,12 @@ const awsccDeadlineFarm = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "cost_scale_factor": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "description": {
         "computed": true,
         "description_kind": "plain",

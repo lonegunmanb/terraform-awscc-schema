@@ -97,10 +97,9 @@ const awsccMediaconnectFlowSource = `{
         "type": "string"
       },
       "flow_arn": {
-        "computed": true,
         "description": "The ARN of the flow.",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "gateway_bridge_source": {
@@ -239,6 +238,29 @@ const awsccMediaconnectFlowSource = `{
         "optional": true,
         "type": "string"
       },
+      "tags": {
+        "computed": true,
+        "description": "Key-value pairs that can be used to tag and organize this flow source.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "vpc_interface_name": {
         "computed": true,
         "description": "The name of the VPC Interface this Source is configured with.",
@@ -254,7 +276,7 @@ const awsccMediaconnectFlowSource = `{
         "type": "string"
       }
     },
-    "description": "Resource schema for AWS::MediaConnect::FlowSource",
+    "description": "Resource Type definition for AWS::MediaConnect::FlowSource",
     "description_kind": "plain"
   },
   "version": 1

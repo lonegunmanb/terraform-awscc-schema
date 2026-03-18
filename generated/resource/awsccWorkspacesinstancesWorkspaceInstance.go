@@ -262,56 +262,6 @@ const awsccWorkspacesinstancesWorkspaceInstance = `{
               "optional": true,
               "type": "string"
             },
-            "instance_market_options": {
-              "computed": true,
-              "description_kind": "plain",
-              "nested_type": {
-                "attributes": {
-                  "market_type": {
-                    "computed": true,
-                    "description_kind": "plain",
-                    "optional": true,
-                    "type": "string"
-                  },
-                  "spot_options": {
-                    "computed": true,
-                    "description_kind": "plain",
-                    "nested_type": {
-                      "attributes": {
-                        "instance_interruption_behavior": {
-                          "computed": true,
-                          "description_kind": "plain",
-                          "optional": true,
-                          "type": "string"
-                        },
-                        "max_price": {
-                          "computed": true,
-                          "description_kind": "plain",
-                          "optional": true,
-                          "type": "string"
-                        },
-                        "spot_instance_type": {
-                          "computed": true,
-                          "description_kind": "plain",
-                          "optional": true,
-                          "type": "string"
-                        },
-                        "valid_until_utc": {
-                          "computed": true,
-                          "description_kind": "plain",
-                          "optional": true,
-                          "type": "string"
-                        }
-                      },
-                      "nesting_mode": "single"
-                    },
-                    "optional": true
-                  }
-                },
-                "nesting_mode": "single"
-              },
-              "optional": true
-            },
             "instance_type": {
               "computed": true,
               "description_kind": "plain",
