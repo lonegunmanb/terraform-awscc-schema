@@ -164,6 +164,12 @@ const awsccEcsCapacityProvider = `{
                     "optional": true,
                     "type": "bool"
                   },
+                  "instance_metadata_tags_propagation": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
                   "instance_requirements": {
                     "computed": true,
                     "description_kind": "plain",

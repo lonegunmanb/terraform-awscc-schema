@@ -138,6 +138,12 @@ const awsccObservabilityadminOrganizationCentralizationRule = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "data_source_selection_criteria": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
                         "encrypted_log_group_strategy": {
                           "computed": true,
                           "description_kind": "plain",

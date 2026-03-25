@@ -128,6 +128,24 @@ const awsccOpensearchserverlessCollection = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "vector_options": {
+        "computed": true,
+        "description": "Vector search configuration options for the collection",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "serverless_vector_acceleration": {
+              "computed": true,
+              "description": "Indicates whether GPU acceleration is enabled for vector indexing",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       }
     },
     "description": "Amazon OpenSearchServerless collection resource",

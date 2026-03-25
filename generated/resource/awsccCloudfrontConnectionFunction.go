@@ -11,6 +11,7 @@ const awsccCloudfrontConnectionFunction = `{
     "attributes": {
       "auto_publish": {
         "computed": true,
+        "description": "A flag that determines whether to automatically publish the function to the ` + "`" + `` + "`" + `LIVE` + "`" + `` + "`" + ` stage when it?s created. To automatically publish to the ` + "`" + `` + "`" + `LIVE` + "`" + `` + "`" + ` stage, set this property to ` + "`" + `` + "`" + `true` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
@@ -21,26 +22,31 @@ const awsccCloudfrontConnectionFunction = `{
         "type": "string"
       },
       "connection_function_code": {
+        "description": "The code for the connection function.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
       "connection_function_config": {
+        "description": "Contains configuration information about a CloudFront function.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "comment": {
+              "description": "A comment to describe the function.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
             },
             "key_value_store_associations": {
               "computed": true,
+              "description": "The configuration for the key value store associations.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "key_value_store_arn": {
                     "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the key value store association.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -51,6 +57,7 @@ const awsccCloudfrontConnectionFunction = `{
               "optional": true
             },
             "runtime": {
+              "description": "The function's runtime environment version.",
               "description_kind": "plain",
               "required": true,
               "type": "string"
@@ -87,6 +94,7 @@ const awsccCloudfrontConnectionFunction = `{
         "type": "string"
       },
       "name": {
+        "description": "The connection function name.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -103,17 +111,20 @@ const awsccCloudfrontConnectionFunction = `{
       },
       "tags": {
         "computed": true,
+        "description": "A complex type that contains zero or more ` + "`" + `` + "`" + `Tag` + "`" + `` + "`" + ` elements.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
               "computed": true,
+              "description": "A string that contains ` + "`" + `` + "`" + `Tag` + "`" + `` + "`" + ` key.\n The string length should be between 1 and 128 characters. Valid characters include ` + "`" + `` + "`" + `a-z` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `A-Z` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `0-9` + "`" + `` + "`" + `, space, and the special characters ` + "`" + `` + "`" + `_ - . : / = + @` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "A string that contains an optional ` + "`" + `` + "`" + `Tag` + "`" + `` + "`" + ` value.\n The string length should be between 0 and 256 characters. Valid characters include ` + "`" + `` + "`" + `a-z` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `A-Z` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `0-9` + "`" + `` + "`" + `, space, and the special characters ` + "`" + `` + "`" + `_ - . : / = + @` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -124,7 +135,7 @@ const awsccCloudfrontConnectionFunction = `{
         "optional": true
       }
     },
-    "description": "Resource Type definition for AWS::CloudFront::ConnectionFunction",
+    "description": "A connection function.",
     "description_kind": "plain"
   },
   "version": 1

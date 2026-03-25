@@ -98,6 +98,36 @@ const awsccAppstreamImageBuilder = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "root_volume_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "volume_size_in_gb": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "softwares_to_install": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
+      "softwares_to_uninstall": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "streaming_url": {
         "computed": true,
         "description_kind": "plain",
