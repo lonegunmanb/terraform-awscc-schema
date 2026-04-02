@@ -829,6 +829,31 @@ const awsccDatazoneConnection = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            },
+            "workflows_mwaa_properties": {
+              "computed": true,
+              "description": "Workflows MWAA Properties Input",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "mwaa_environment_name": {
+                    "computed": true,
+                    "description": "The name of the MWAA environment.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "workflows_serverless_properties": {
+              "computed": true,
+              "description": "Workflows Serverless Properties Input",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             }
           },
           "nesting_mode": "single"

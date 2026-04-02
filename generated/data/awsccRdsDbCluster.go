@@ -505,6 +505,11 @@ const awsccRdsDbCluster = `{
         "description_kind": "plain",
         "type": "bool"
       },
+      "storage_encryption_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "storage_throughput": {
         "computed": true,
         "description_kind": "plain",

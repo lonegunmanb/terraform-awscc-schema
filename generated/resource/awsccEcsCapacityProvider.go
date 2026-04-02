@@ -492,6 +492,22 @@ const awsccEcsCapacityProvider = `{
                     },
                     "optional": true
                   },
+                  "local_storage_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "use_local_storage": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "monitoring": {
                     "computed": true,
                     "description_kind": "plain",

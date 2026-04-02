@@ -593,6 +593,23 @@ const awsccEc2Ec2Fleet = `{
         "description_kind": "plain",
         "type": "bool"
       },
+      "reserved_capacity_options": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "reservation_types": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "spot_options": {
         "computed": true,
         "description_kind": "plain",

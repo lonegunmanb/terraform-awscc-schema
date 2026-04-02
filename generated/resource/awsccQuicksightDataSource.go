@@ -410,20 +410,20 @@ const awsccQuicksightDataSource = `{
                   },
                   "iam_parameters": {
                     "computed": true,
-                    "description": "\u003cp\u003eA structure that grants Quick Suite access to your cluster and make a call to the \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e API. For more information on the \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e API, see \u003ca href=\"https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html\"\u003e\n               \u003ccode\u003eGetClusterCredentials\u003c/code\u003e\n            \u003c/a\u003e.\u003c/p\u003e",
+                    "description": "\u003cp\u003eA structure that grants Amazon QuickSight access to your cluster and make a call to the \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e API. For more information on the \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e API, see \u003ca href=\"https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html\"\u003e\n               \u003ccode\u003eGetClusterCredentials\u003c/code\u003e\n            \u003c/a\u003e.\u003c/p\u003e",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "auto_create_database_user": {
                           "computed": true,
-                          "description": "\u003cp\u003eAutomatically creates a database user. If your database doesn't have a \u003ccode\u003eDatabaseUser\u003c/code\u003e, set this parameter to \u003ccode\u003eTrue\u003c/code\u003e. If there is no \u003ccode\u003eDatabaseUser\u003c/code\u003e, Amazon Quick Suite can't connect to your cluster. The \u003ccode\u003eRoleArn\u003c/code\u003e that you use for this operation must grant access to \u003ccode\u003eredshift:CreateClusterUser\u003c/code\u003e to successfully create the user.\u003c/p\u003e",
+                          "description": "\u003cp\u003eAutomatically creates a database user. If your database doesn't have a \u003ccode\u003eDatabaseUser\u003c/code\u003e, set this parameter to \u003ccode\u003eTrue\u003c/code\u003e. If there is no \u003ccode\u003eDatabaseUser\u003c/code\u003e, Amazon QuickSight can't connect to your cluster. The \u003ccode\u003eRoleArn\u003c/code\u003e that you use for this operation must grant access to \u003ccode\u003eredshift:CreateClusterUser\u003c/code\u003e to successfully create the user.\u003c/p\u003e",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "bool"
                         },
                         "database_groups": {
                           "computed": true,
-                          "description": "\u003cp\u003eA list of groups whose permissions will be granted to Quick Suite to access the cluster. These permissions are combined with the permissions granted to Quick Suite by the \u003ccode\u003eDatabaseUser\u003c/code\u003e. If you choose to include this parameter, the \u003ccode\u003eRoleArn\u003c/code\u003e must grant access to \u003ccode\u003eredshift:JoinGroup\u003c/code\u003e.\u003c/p\u003e",
+                          "description": "\u003cp\u003eA list of groups whose permissions will be granted to Amazon QuickSight to access the cluster. These permissions are combined with the permissions granted to Amazon QuickSight by the \u003ccode\u003eDatabaseUser\u003c/code\u003e. If you choose to include this parameter, the \u003ccode\u003eRoleArn\u003c/code\u003e must grant access to \u003ccode\u003eredshift:JoinGroup\u003c/code\u003e.\u003c/p\u003e",
                           "description_kind": "plain",
                           "optional": true,
                           "type": [
@@ -433,14 +433,14 @@ const awsccQuicksightDataSource = `{
                         },
                         "database_user": {
                           "computed": true,
-                          "description": "\u003cp\u003eThe user whose permissions and group memberships will be used by Quick Suite to access the cluster. If this user already exists in your database, Quick Suite is granted the same permissions that the user has. If the user doesn't exist, set the value of \u003ccode\u003eAutoCreateDatabaseUser\u003c/code\u003e to \u003ccode\u003eTrue\u003c/code\u003e to create a new user with PUBLIC permissions.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe user whose permissions and group memberships will be used by Amazon QuickSight to access the cluster. If this user already exists in your database, Amazon QuickSight is granted the same permissions that the user has. If the user doesn't exist, set the value of \u003ccode\u003eAutoCreateDatabaseUser\u003c/code\u003e to \u003ccode\u003eTrue\u003c/code\u003e to create a new user with PUBLIC permissions.\u003c/p\u003e",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
                           "computed": true,
-                          "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to allow Quick Suite to call \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e on your cluster. The calling principal must have \u003ccode\u003eiam:PassRole\u003c/code\u003e access to pass the role to Quick Suite. The role's trust policy must allow the Quick Suite service principal to assume the role.\u003c/p\u003e",
+                          "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to allow Amazon QuickSight to call \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e on your cluster. The calling principal must have \u003ccode\u003eiam:PassRole\u003c/code\u003e access to pass the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight service principal to assume the role.\u003c/p\u003e",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -514,6 +514,22 @@ const awsccQuicksightDataSource = `{
                   "role_arn": {
                     "computed": true,
                     "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to override an account-wide role for a specific S3 data source. For example, say an account administrator has turned off all S3 access with an account-wide role. The administrator can then use \u003ccode\u003eRoleArn\u003c/code\u003e to bypass the account-wide role and allow S3 access for the single S3 data source that is specified in the structure, even if the account-wide role forbidding S3 access is still active.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "s3_tables_parameters": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "table_bucket_arn": {
+                    "computed": true,
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -1273,20 +1289,20 @@ const awsccQuicksightDataSource = `{
                               },
                               "iam_parameters": {
                                 "computed": true,
-                                "description": "\u003cp\u003eA structure that grants Quick Suite access to your cluster and make a call to the \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e API. For more information on the \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e API, see \u003ca href=\"https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html\"\u003e\n               \u003ccode\u003eGetClusterCredentials\u003c/code\u003e\n            \u003c/a\u003e.\u003c/p\u003e",
+                                "description": "\u003cp\u003eA structure that grants Amazon QuickSight access to your cluster and make a call to the \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e API. For more information on the \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e API, see \u003ca href=\"https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html\"\u003e\n               \u003ccode\u003eGetClusterCredentials\u003c/code\u003e\n            \u003c/a\u003e.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "auto_create_database_user": {
                                       "computed": true,
-                                      "description": "\u003cp\u003eAutomatically creates a database user. If your database doesn't have a \u003ccode\u003eDatabaseUser\u003c/code\u003e, set this parameter to \u003ccode\u003eTrue\u003c/code\u003e. If there is no \u003ccode\u003eDatabaseUser\u003c/code\u003e, Amazon Quick Suite can't connect to your cluster. The \u003ccode\u003eRoleArn\u003c/code\u003e that you use for this operation must grant access to \u003ccode\u003eredshift:CreateClusterUser\u003c/code\u003e to successfully create the user.\u003c/p\u003e",
+                                      "description": "\u003cp\u003eAutomatically creates a database user. If your database doesn't have a \u003ccode\u003eDatabaseUser\u003c/code\u003e, set this parameter to \u003ccode\u003eTrue\u003c/code\u003e. If there is no \u003ccode\u003eDatabaseUser\u003c/code\u003e, Amazon QuickSight can't connect to your cluster. The \u003ccode\u003eRoleArn\u003c/code\u003e that you use for this operation must grant access to \u003ccode\u003eredshift:CreateClusterUser\u003c/code\u003e to successfully create the user.\u003c/p\u003e",
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": "bool"
                                     },
                                     "database_groups": {
                                       "computed": true,
-                                      "description": "\u003cp\u003eA list of groups whose permissions will be granted to Quick Suite to access the cluster. These permissions are combined with the permissions granted to Quick Suite by the \u003ccode\u003eDatabaseUser\u003c/code\u003e. If you choose to include this parameter, the \u003ccode\u003eRoleArn\u003c/code\u003e must grant access to \u003ccode\u003eredshift:JoinGroup\u003c/code\u003e.\u003c/p\u003e",
+                                      "description": "\u003cp\u003eA list of groups whose permissions will be granted to Amazon QuickSight to access the cluster. These permissions are combined with the permissions granted to Amazon QuickSight by the \u003ccode\u003eDatabaseUser\u003c/code\u003e. If you choose to include this parameter, the \u003ccode\u003eRoleArn\u003c/code\u003e must grant access to \u003ccode\u003eredshift:JoinGroup\u003c/code\u003e.\u003c/p\u003e",
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": [
@@ -1296,14 +1312,14 @@ const awsccQuicksightDataSource = `{
                                     },
                                     "database_user": {
                                       "computed": true,
-                                      "description": "\u003cp\u003eThe user whose permissions and group memberships will be used by Quick Suite to access the cluster. If this user already exists in your database, Quick Suite is granted the same permissions that the user has. If the user doesn't exist, set the value of \u003ccode\u003eAutoCreateDatabaseUser\u003c/code\u003e to \u003ccode\u003eTrue\u003c/code\u003e to create a new user with PUBLIC permissions.\u003c/p\u003e",
+                                      "description": "\u003cp\u003eThe user whose permissions and group memberships will be used by Amazon QuickSight to access the cluster. If this user already exists in your database, Amazon QuickSight is granted the same permissions that the user has. If the user doesn't exist, set the value of \u003ccode\u003eAutoCreateDatabaseUser\u003c/code\u003e to \u003ccode\u003eTrue\u003c/code\u003e to create a new user with PUBLIC permissions.\u003c/p\u003e",
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": "string"
                                     },
                                     "role_arn": {
                                       "computed": true,
-                                      "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to allow Quick Suite to call \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e on your cluster. The calling principal must have \u003ccode\u003eiam:PassRole\u003c/code\u003e access to pass the role to Quick Suite. The role's trust policy must allow the Quick Suite service principal to assume the role.\u003c/p\u003e",
+                                      "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to allow Amazon QuickSight to call \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e on your cluster. The calling principal must have \u003ccode\u003eiam:PassRole\u003c/code\u003e access to pass the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight service principal to assume the role.\u003c/p\u003e",
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": "string"
@@ -1377,6 +1393,22 @@ const awsccQuicksightDataSource = `{
                               "role_arn": {
                                 "computed": true,
                                 "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to override an account-wide role for a specific S3 data source. For example, say an account administrator has turned off all S3 access with an account-wide role. The administrator can then use \u003ccode\u003eRoleArn\u003c/code\u003e to bypass the account-wide role and allow S3 access for the single S3 data source that is specified in the structure, even if the account-wide role forbidding S3 access is still active.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "s3_tables_parameters": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "table_bucket_arn": {
+                                "computed": true,
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
@@ -1765,7 +1797,7 @@ const awsccQuicksightDataSource = `{
       },
       "data_source_parameters": {
         "computed": true,
-        "description": "\u003cp\u003eThe parameters that Amazon Quick Suite uses to connect to your underlying data source.\n            This is a variant type structure. For this structure to be valid, only one of the\n            attributes can be non-null.\u003c/p\u003e",
+        "description": "\u003cp\u003eThe parameters that Amazon QuickSight uses to connect to your underlying data source.\n            This is a variant type structure. For this structure to be valid, only one of the\n            attributes can be non-null.\u003c/p\u003e",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -2164,20 +2196,20 @@ const awsccQuicksightDataSource = `{
                   },
                   "iam_parameters": {
                     "computed": true,
-                    "description": "\u003cp\u003eA structure that grants Quick Suite access to your cluster and make a call to the \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e API. For more information on the \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e API, see \u003ca href=\"https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html\"\u003e\n               \u003ccode\u003eGetClusterCredentials\u003c/code\u003e\n            \u003c/a\u003e.\u003c/p\u003e",
+                    "description": "\u003cp\u003eA structure that grants Amazon QuickSight access to your cluster and make a call to the \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e API. For more information on the \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e API, see \u003ca href=\"https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html\"\u003e\n               \u003ccode\u003eGetClusterCredentials\u003c/code\u003e\n            \u003c/a\u003e.\u003c/p\u003e",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "auto_create_database_user": {
                           "computed": true,
-                          "description": "\u003cp\u003eAutomatically creates a database user. If your database doesn't have a \u003ccode\u003eDatabaseUser\u003c/code\u003e, set this parameter to \u003ccode\u003eTrue\u003c/code\u003e. If there is no \u003ccode\u003eDatabaseUser\u003c/code\u003e, Amazon Quick Suite can't connect to your cluster. The \u003ccode\u003eRoleArn\u003c/code\u003e that you use for this operation must grant access to \u003ccode\u003eredshift:CreateClusterUser\u003c/code\u003e to successfully create the user.\u003c/p\u003e",
+                          "description": "\u003cp\u003eAutomatically creates a database user. If your database doesn't have a \u003ccode\u003eDatabaseUser\u003c/code\u003e, set this parameter to \u003ccode\u003eTrue\u003c/code\u003e. If there is no \u003ccode\u003eDatabaseUser\u003c/code\u003e, Amazon QuickSight can't connect to your cluster. The \u003ccode\u003eRoleArn\u003c/code\u003e that you use for this operation must grant access to \u003ccode\u003eredshift:CreateClusterUser\u003c/code\u003e to successfully create the user.\u003c/p\u003e",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "bool"
                         },
                         "database_groups": {
                           "computed": true,
-                          "description": "\u003cp\u003eA list of groups whose permissions will be granted to Quick Suite to access the cluster. These permissions are combined with the permissions granted to Quick Suite by the \u003ccode\u003eDatabaseUser\u003c/code\u003e. If you choose to include this parameter, the \u003ccode\u003eRoleArn\u003c/code\u003e must grant access to \u003ccode\u003eredshift:JoinGroup\u003c/code\u003e.\u003c/p\u003e",
+                          "description": "\u003cp\u003eA list of groups whose permissions will be granted to Amazon QuickSight to access the cluster. These permissions are combined with the permissions granted to Amazon QuickSight by the \u003ccode\u003eDatabaseUser\u003c/code\u003e. If you choose to include this parameter, the \u003ccode\u003eRoleArn\u003c/code\u003e must grant access to \u003ccode\u003eredshift:JoinGroup\u003c/code\u003e.\u003c/p\u003e",
                           "description_kind": "plain",
                           "optional": true,
                           "type": [
@@ -2187,14 +2219,14 @@ const awsccQuicksightDataSource = `{
                         },
                         "database_user": {
                           "computed": true,
-                          "description": "\u003cp\u003eThe user whose permissions and group memberships will be used by Quick Suite to access the cluster. If this user already exists in your database, Quick Suite is granted the same permissions that the user has. If the user doesn't exist, set the value of \u003ccode\u003eAutoCreateDatabaseUser\u003c/code\u003e to \u003ccode\u003eTrue\u003c/code\u003e to create a new user with PUBLIC permissions.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe user whose permissions and group memberships will be used by Amazon QuickSight to access the cluster. If this user already exists in your database, Amazon QuickSight is granted the same permissions that the user has. If the user doesn't exist, set the value of \u003ccode\u003eAutoCreateDatabaseUser\u003c/code\u003e to \u003ccode\u003eTrue\u003c/code\u003e to create a new user with PUBLIC permissions.\u003c/p\u003e",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
                         },
                         "role_arn": {
                           "computed": true,
-                          "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to allow Quick Suite to call \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e on your cluster. The calling principal must have \u003ccode\u003eiam:PassRole\u003c/code\u003e access to pass the role to Quick Suite. The role's trust policy must allow the Quick Suite service principal to assume the role.\u003c/p\u003e",
+                          "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to allow Amazon QuickSight to call \u003ccode\u003eredshift:GetClusterCredentials\u003c/code\u003e on your cluster. The calling principal must have \u003ccode\u003eiam:PassRole\u003c/code\u003e access to pass the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight service principal to assume the role.\u003c/p\u003e",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -2268,6 +2300,22 @@ const awsccQuicksightDataSource = `{
                   "role_arn": {
                     "computed": true,
                     "description": "\u003cp\u003eUse the \u003ccode\u003eRoleArn\u003c/code\u003e structure to override an account-wide role for a specific S3 data source. For example, say an account administrator has turned off all S3 access with an account-wide role. The administrator can then use \u003ccode\u003eRoleArn\u003c/code\u003e to bypass the account-wide role and allow S3 access for the single S3 data source that is specified in the structure, even if the account-wide role forbidding S3 access is still active.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "s3_tables_parameters": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "table_bucket_arn": {
+                    "computed": true,
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -2656,7 +2704,7 @@ const awsccQuicksightDataSource = `{
             },
             "principal": {
               "computed": true,
-              "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the principal. This can be one of the\n            following:\u003c/p\u003e\n         \u003cul\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon Quick Suite user or group associated with a data source or dataset. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon Quick Suite user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight\n                    ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.\n                    (This is less common.) \u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
+              "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the principal. This can be one of the\n            following:\u003c/p\u003e\n         \u003cul\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight\n                    ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.\n                    (This is less common.) \u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -2674,7 +2722,7 @@ const awsccQuicksightDataSource = `{
       },
       "ssl_properties": {
         "computed": true,
-        "description": "\u003cp\u003eSecure Socket Layer (SSL) properties that apply when Quick Suite connects to your\n            underlying data source.\u003c/p\u003e",
+        "description": "\u003cp\u003eSecure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your\n            underlying data source.\u003c/p\u003e",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

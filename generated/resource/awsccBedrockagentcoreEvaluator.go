@@ -33,23 +33,63 @@ const awsccBedrockagentcoreEvaluator = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "code_based": {
+              "computed": true,
+              "description": "The configuration for code-based evaluation using a Lambda function.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "lambda_config": {
+                    "computed": true,
+                    "description": "The Lambda function configuration for code-based evaluation.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "lambda_arn": {
+                          "computed": true,
+                          "description": "The ARN of the Lambda function used for evaluation.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "lambda_timeout_in_seconds": {
+                          "computed": true,
+                          "description": "The timeout in seconds for the Lambda function invocation.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "llm_as_a_judge": {
+              "computed": true,
               "description": "The configuration for LLM-as-a-Judge evaluation.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "instructions": {
+                    "computed": true,
                     "description": "The evaluation instructions that guide the language model in assessing agent performance.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "model_config": {
+                    "computed": true,
                     "description": "The model configuration that specifies which foundation model to use for evaluation.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "bedrock_evaluator_model_config": {
+                          "computed": true,
                           "description": "The configuration for using Amazon Bedrock models in evaluator assessments.",
                           "description_kind": "plain",
                           "nested_type": {
@@ -94,22 +134,24 @@ const awsccBedrockagentcoreEvaluator = `{
                                 "optional": true
                               },
                               "model_id": {
+                                "computed": true,
                                 "description": "The identifier of the Amazon Bedrock model to use for evaluation.",
                                 "description_kind": "plain",
-                                "required": true,
+                                "optional": true,
                                 "type": "string"
                               }
                             },
                             "nesting_mode": "single"
                           },
-                          "required": true
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   },
                   "rating_scale": {
+                    "computed": true,
                     "description": "The rating scale that defines how evaluators should score agent performance.",
                     "description_kind": "plain",
                     "nested_type": {
@@ -172,12 +214,12 @@ const awsccBedrockagentcoreEvaluator = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"

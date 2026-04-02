@@ -101,6 +101,29 @@ const awsccDatazoneProject = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "resource_tags": {
+        "computed": true,
+        "description": "The resource tags of the project.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "user_parameters": {
         "computed": true,
         "description": "The user parameters of the project.",
@@ -147,7 +170,7 @@ const awsccDatazoneProject = `{
         "optional": true
       }
     },
-    "description": "Amazon DataZone projects are business use case?based groupings of people, assets (data), and tools used to simplify access to the AWS analytics.",
+    "description": "Amazon DataZone projects are business use case–based groupings of people, assets (data), and tools used to simplify access to the AWS analytics.",
     "description_kind": "plain"
   },
   "version": 1

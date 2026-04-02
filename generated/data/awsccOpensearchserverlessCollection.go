@@ -67,6 +67,25 @@ const awsccOpensearchserverlessCollection = `{
           "nesting_mode": "single"
         }
       },
+      "fips_endpoints": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "collection_endpoint": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "dashboard_endpoint": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

@@ -40,6 +40,13 @@ const awsccDevopsagentAgentSpace = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "kms_key_arn": {
+        "computed": true,
+        "description": "The ARN of the KMS key to use for encryption.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "name": {
         "description": "The name of the AgentSpace.",
         "description_kind": "plain",
@@ -116,6 +123,31 @@ const awsccDevopsagentAgentSpace = `{
             }
           },
           "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "tags": {
+        "computed": true,
+        "description": "An array of key-value pairs to apply to this resource.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name of the tag.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the tag.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
         },
         "optional": true
       },

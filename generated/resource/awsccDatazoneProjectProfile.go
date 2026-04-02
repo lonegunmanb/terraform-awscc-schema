@@ -9,6 +9,12 @@ import (
 const awsccDatazoneProjectProfile = `{
   "block": {
     "attributes": {
+      "allow_custom_project_resource_tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "created_at": {
         "computed": true,
         "description_kind": "plain",
@@ -221,6 +227,40 @@ const awsccDatazoneProjectProfile = `{
       "project_profile_id": {
         "computed": true,
         "description_kind": "plain",
+        "type": "string"
+      },
+      "project_resource_tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "is_value_editable": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
+      "project_resource_tags_description": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "status": {

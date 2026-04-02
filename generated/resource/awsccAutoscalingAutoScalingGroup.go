@@ -39,6 +39,15 @@ const awsccAutoscalingAutoScalingGroup = `{
         },
         "optional": true
       },
+      "availability_zone_ids": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "set",
+          "string"
+        ]
+      },
       "availability_zone_impairment_policy": {
         "computed": true,
         "description": "The Availability Zone impairment policy for the Auto Scaling group.",

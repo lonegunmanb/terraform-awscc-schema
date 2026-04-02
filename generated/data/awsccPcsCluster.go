@@ -207,6 +207,28 @@ const awsccPcsCluster = `{
                 "nesting_mode": "single"
               }
             },
+            "cgroup_custom_settings": {
+              "computed": true,
+              "description": "Additional cgroup-specific configuration that directly maps to cgroup.conf settings.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "parameter_name": {
+                    "computed": true,
+                    "description": "The cgroup.conf parameter name.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "parameter_value": {
+                    "computed": true,
+                    "description": "The value for the cgroup.conf parameter.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
             "jwt_auth": {
               "computed": true,
               "description": "JWT authentication configuration for Slurm.",
@@ -281,6 +303,28 @@ const awsccPcsCluster = `{
                   }
                 },
                 "nesting_mode": "single"
+              }
+            },
+            "slurmdbd_custom_settings": {
+              "computed": true,
+              "description": "Additional slurmdbd-specific configuration that directly maps to slurmdbd.conf settings.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "parameter_name": {
+                    "computed": true,
+                    "description": "The slurmdbd.conf parameter name.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "parameter_value": {
+                    "computed": true,
+                    "description": "The value for the slurmdbd.conf parameter.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
               }
             }
           },

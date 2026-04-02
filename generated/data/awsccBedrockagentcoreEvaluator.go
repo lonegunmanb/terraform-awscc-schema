@@ -33,6 +33,38 @@ const awsccBedrockagentcoreEvaluator = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "code_based": {
+              "computed": true,
+              "description": "The configuration for code-based evaluation using a Lambda function.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "lambda_config": {
+                    "computed": true,
+                    "description": "The Lambda function configuration for code-based evaluation.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "lambda_arn": {
+                          "computed": true,
+                          "description": "The ARN of the Lambda function used for evaluation.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "lambda_timeout_in_seconds": {
+                          "computed": true,
+                          "description": "The timeout in seconds for the Lambda function invocation.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "llm_as_a_judge": {
               "computed": true,
               "description": "The configuration for LLM-as-a-Judge evaluation.",

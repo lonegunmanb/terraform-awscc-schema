@@ -96,6 +96,26 @@ const awsccDatazoneProject = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "resource_tags": {
+        "computed": true,
+        "description": "The resource tags of the project.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "user_parameters": {
         "computed": true,
         "description": "The user parameters of the project.",

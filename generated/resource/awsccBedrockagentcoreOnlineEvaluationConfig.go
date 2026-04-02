@@ -86,6 +86,7 @@ const awsccBedrockagentcoreOnlineEvaluationConfig = `{
         "computed": true,
         "description": "The execution status indicating whether the online evaluation is currently running.",
         "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "id": {
