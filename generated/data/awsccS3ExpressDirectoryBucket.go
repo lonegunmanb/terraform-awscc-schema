@@ -158,6 +158,34 @@ const awsccS3ExpressDirectoryBucket = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "metrics_configurations": {
+        "computed": true,
+        "description": "Specifies the metrics configurations for the Amazon S3 Express bucket.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "access_point_arn": {
+              "computed": true,
+              "description": "The access point ARN used when evaluating a metrics filter.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "id": {
+              "computed": true,
+              "description": "The ID used to identify the metrics configuration.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "prefix": {
+              "computed": true,
+              "description": "The prefix used when evaluating a metrics filter.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "tags": {
         "computed": true,
         "description_kind": "plain",

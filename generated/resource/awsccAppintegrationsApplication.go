@@ -81,10 +81,18 @@ const awsccAppintegrationsApplication = `{
         },
         "required": true
       },
+      "application_type": {
+        "computed": true,
+        "description": "The type of application",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "description": {
+        "computed": true,
         "description": "The application description.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "id": {

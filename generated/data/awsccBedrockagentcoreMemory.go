@@ -138,6 +138,15 @@ const awsccBedrockagentcoreMemory = `{
                                       "description_kind": "plain",
                                       "type": "string"
                                     },
+                                    "namespace_templates": {
+                                      "computed": true,
+                                      "description": "List of namespaces for memory strategy",
+                                      "description_kind": "plain",
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
                                     "namespaces": {
                                       "computed": true,
                                       "description": "List of namespaces for memory strategy",
@@ -389,6 +398,15 @@ const awsccBedrockagentcoreMemory = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "namespace_templates": {
+                    "computed": true,
+                    "description": "List of namespaces for memory strategy",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
                   "namespaces": {
                     "computed": true,
                     "description": "List of namespaces for memory strategy",
@@ -449,6 +467,15 @@ const awsccBedrockagentcoreMemory = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "namespace_templates": {
+                    "computed": true,
+                    "description": "List of namespaces for memory strategy",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
                   "namespaces": {
                     "computed": true,
                     "description": "List of namespaces for memory strategy",
@@ -463,6 +490,15 @@ const awsccBedrockagentcoreMemory = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "namespace_templates": {
+                          "computed": true,
+                          "description": "List of namespaces for memory strategy",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
                         "namespaces": {
                           "computed": true,
                           "description": "List of namespaces for memory strategy",
@@ -527,6 +563,15 @@ const awsccBedrockagentcoreMemory = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "namespace_templates": {
+                    "computed": true,
+                    "description": "List of namespaces for memory strategy",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
                   "namespaces": {
                     "computed": true,
                     "description": "List of namespaces for memory strategy",
@@ -587,6 +632,15 @@ const awsccBedrockagentcoreMemory = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "namespace_templates": {
+                    "computed": true,
+                    "description": "List of namespaces for memory strategy",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
                   "namespaces": {
                     "computed": true,
                     "description": "List of namespaces for memory strategy",
@@ -646,6 +700,15 @@ const awsccBedrockagentcoreMemory = `{
                     "description": "Name of the Memory resource",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "namespace_templates": {
+                    "computed": true,
+                    "description": "List of namespaces for memory strategy",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   },
                   "namespaces": {
                     "computed": true,

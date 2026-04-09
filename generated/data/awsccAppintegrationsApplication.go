@@ -77,6 +77,12 @@ const awsccAppintegrationsApplication = `{
           "nesting_mode": "single"
         }
       },
+      "application_type": {
+        "computed": true,
+        "description": "The type of application",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description": "The application description.",

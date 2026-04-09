@@ -1155,6 +1155,35 @@ const awsccEcsTaskDefinition = `{
               "description": "The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.\n When using a volume configured at launch, the ` + "`" + `` + "`" + `name` + "`" + `` + "`" + ` is required and must also be specified as the volume name in the ` + "`" + `` + "`" + `ServiceVolumeConfiguration` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `TaskVolumeConfiguration` + "`" + `` + "`" + ` parameter when creating your service or standalone task.\n For all other types of volumes, this name is referenced in the ` + "`" + `` + "`" + `sourceVolume` + "`" + `` + "`" + ` parameter of the ` + "`" + `` + "`" + `mountPoints` + "`" + `` + "`" + ` object in the container definition.\n When a volume is using the ` + "`" + `` + "`" + `efsVolumeConfiguration` + "`" + `` + "`" + `, the name is required.",
               "description_kind": "plain",
               "type": "string"
+            },
+            "s3_files_volume_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "access_point_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "file_system_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "root_directory": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "transit_encryption_port": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "set"

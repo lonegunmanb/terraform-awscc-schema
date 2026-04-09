@@ -107,6 +107,12 @@ const awsccStepfunctionsStateMachineAlias = `{
           "nesting_mode": "set"
         },
         "optional": true
+      },
+      "state_machine_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       }
     },
     "description": "Resource schema for StateMachineAlias",

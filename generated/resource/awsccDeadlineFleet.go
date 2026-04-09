@@ -78,6 +78,34 @@ const awsccDeadlineFleet = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "auto_scaling_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "scale_out_workers_per_minute": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "standby_worker_count": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "worker_idle_duration_seconds": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "mode": {
                     "computed": true,
                     "description_kind": "plain",
@@ -278,6 +306,34 @@ const awsccDeadlineFleet = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "auto_scaling_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "scale_out_workers_per_minute": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "standby_worker_count": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "worker_idle_duration_seconds": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "instance_capabilities": {
                     "computed": true,
                     "description_kind": "plain",

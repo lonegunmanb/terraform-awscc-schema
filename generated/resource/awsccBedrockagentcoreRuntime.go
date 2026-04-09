@@ -290,6 +290,35 @@ const awsccBedrockagentcoreRuntime = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "filesystem_configurations": {
+        "computed": true,
+        "description": "Filesystem configurations for the agent runtime",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "session_storage": {
+              "computed": true,
+              "description": "Configuration for session storage",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "mount_path": {
+                    "computed": true,
+                    "description": "Mount path for session storage",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

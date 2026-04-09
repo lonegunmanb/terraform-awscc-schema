@@ -36,7 +36,7 @@ const awsccS3TablesTable = `{
       },
       "iceberg_metadata": {
         "computed": true,
-        "description": "Contains details about the metadata for an Iceberg table.",
+        "description": "Contains details about the metadata for an Iceberg table. Specify either IcebergSchema (for simple flat schemas with primitive types only) or IcebergSchemaV2 (for schemas with nested types like struct, list, map), but not both.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -99,7 +99,7 @@ const awsccS3TablesTable = `{
             },
             "iceberg_schema": {
               "computed": true,
-              "description": "Contains details about the schema for an Iceberg table",
+              "description": "Schema definition for flat tables with primitive types only. Mutually exclusive with IcebergSchemaV2.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -141,6 +141,87 @@ const awsccS3TablesTable = `{
                       "nesting_mode": "list"
                     },
                     "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "iceberg_schema_v2": {
+              "computed": true,
+              "description": "Schema definition that supports Apache Iceberg nested types (struct, list, map) and primitive types. Mutually exclusive with IcebergSchema.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "identifier_field_ids": {
+                    "computed": true,
+                    "description": "A list of field IDs that are used as the identifier fields for the table. Identifier fields uniquely identify a row in the table.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "number"
+                    ]
+                  },
+                  "schema_id": {
+                    "computed": true,
+                    "description": "An optional unique identifier for the schema",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "schema_v2_field_list": {
+                    "computed": true,
+                    "description": "The schema fields for the table",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "doc": {
+                          "computed": true,
+                          "description": "Optional documentation for the field",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "id": {
+                          "computed": true,
+                          "description": "The unique identifier for the field",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "name": {
+                          "computed": true,
+                          "description": "The name of the field",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "required": {
+                          "computed": true,
+                          "description": "A Boolean value that specifies whether values are required for each row in this field",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        },
+                        "type": {
+                          "computed": true,
+                          "description": "The field type. For primitive types, use a string (e.g., 'int', 'string', 'long'). For nested types, use an object (e.g., {'type': 'struct', 'fields': [...]} for struct, {'type': 'list', 'element-id': N, 'element': 'type'} for list, {'type': 'map', 'key-id': N, 'key': 'type', 'value-id': N, 'value': 'type'} for map).",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
+                  "schema_v2_field_type": {
+                    "computed": true,
+                    "description": "The type of the top-level schema, which is always 'struct'",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"

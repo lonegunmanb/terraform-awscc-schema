@@ -1231,6 +1231,50 @@ const awsccCustomerprofilesSegmentDefinition = `{
           "nesting_mode": "single"
         }
       },
+      "segment_sort": {
+        "computed": true,
+        "description": "The segment sort configuration for ordering segment results.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "attributes": {
+              "computed": true,
+              "description": "A list of attributes used to sort the segments and their ordering preferences.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "data_type": {
+                    "computed": true,
+                    "description": "The data type of the sort attribute (e.g., string, number, date).",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "name": {
+                    "computed": true,
+                    "description": "The name of the attribute to sort by.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "order": {
+                    "computed": true,
+                    "description": "The sort order for the attribute (ascending or descending).",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "type": {
+                    "computed": true,
+                    "description": "The type of attribute (e.g., profile, calculated).",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "segment_sql_query": {
         "computed": true,
         "description": "The SQL query that defines the segment criteria.",

@@ -53,6 +53,48 @@ const awsccS3TablesTableBucket = `{
           "nesting_mode": "single"
         }
       },
+      "replication_configuration": {
+        "computed": true,
+        "description": "Specifies replication configuration for the table bucket",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "role": {
+              "computed": true,
+              "description": "The ARN of the IAM role to use for replication",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "rules": {
+              "computed": true,
+              "description": "List of replication rules",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "destinations": {
+                    "computed": true,
+                    "description": "List of replication destinations",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "destination_table_bucket_arn": {
+                          "computed": true,
+                          "description": "The ARN of the destination table bucket",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "storage_class_configuration": {
         "computed": true,
         "description": "Specifies storage class settings for the table bucket",
