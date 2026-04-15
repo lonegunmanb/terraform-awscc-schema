@@ -941,6 +941,31 @@ const awsccConnectcampaignsv2Campaign = `{
         "required": true,
         "type": "string"
       },
+      "entry_limits_config": {
+        "computed": true,
+        "description": "Entry limits config for a campaign",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "max_entry_count": {
+              "computed": true,
+              "description": "Maximum number of entries per participant. 0 indicates unlimited entries.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "min_entry_interval": {
+              "computed": true,
+              "description": "Minimum time interval between entries for the same participant in ISO 8601 duration format",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

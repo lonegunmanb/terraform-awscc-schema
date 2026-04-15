@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestAwsccApigatewayv2StagesSchema(t *testing.T) {
+func TestAwsccNeptunegraphGraphSnapshotSchema(t *testing.T) {
 	defaultSchema := &tfjson.Schema{}
-	s := data.AwsccApigatewayv2StagesSchema()
+	s := data.AwsccNeptunegraphGraphSnapshotSchema()
 	assert.NotNil(t, s)
 	assert.NotEqual(t, defaultSchema, s)
 }

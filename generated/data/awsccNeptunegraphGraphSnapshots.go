@@ -6,7 +6,7 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccApigatewayv2Stages = `{
+const awsccNeptunegraphGraphSnapshots = `{
   "block": {
     "attributes": {
       "id": {
@@ -25,14 +25,14 @@ const awsccApigatewayv2Stages = `{
         ]
       }
     },
-    "description": "Plural Data Source schema for AWS::ApiGatewayV2::Stage",
+    "description": "Plural Data Source schema for AWS::NeptuneGraph::GraphSnapshot",
     "description_kind": "plain"
   },
   "version": 0
 }`
 
-func AwsccApigatewayv2StagesSchema() *tfjson.Schema {
+func AwsccNeptunegraphGraphSnapshotsSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccApigatewayv2Stages), &result)
+	_ = json.Unmarshal([]byte(awsccNeptunegraphGraphSnapshots), &result)
 	return &result
 }

@@ -59,6 +59,11 @@ const awsccBcmdataexportsExport = `{
                           "description_kind": "plain",
                           "type": "string"
                         },
+                        "s3_bucket_owner": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "s3_output_configurations": {
                           "computed": true,
                           "description_kind": "plain",
