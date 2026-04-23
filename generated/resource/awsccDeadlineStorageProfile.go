@@ -64,7 +64,7 @@ const awsccDeadlineStorageProfile = `{
         "type": "string"
       }
     },
-    "description": "Definition of AWS::Deadline::StorageProfile Resource Type",
+    "description": "Resource Type definition for AWS::Deadline::StorageProfile",
     "description_kind": "plain"
   },
   "version": 1

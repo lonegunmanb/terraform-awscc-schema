@@ -39,6 +39,39 @@ const awsccSesMailManagerIngressPoint = `{
               "computed": true,
               "description_kind": "plain",
               "type": "string"
+            },
+            "tls_auth_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "trust_store": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "ca_content": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "crl_content": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "kms_key_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"
@@ -124,6 +157,11 @@ const awsccSesMailManagerIngressPoint = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "tls_policy": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "traffic_policy_id": {
         "computed": true,

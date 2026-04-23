@@ -87,7 +87,7 @@ const awsccDeadlineLicenseEndpoint = `{
         "type": "string"
       }
     },
-    "description": "Definition of AWS::Deadline::LicenseEndpoint Resource Type",
+    "description": "Resource Type definition for AWS::Deadline::LicenseEndpoint",
     "description_kind": "plain"
   },
   "version": 1

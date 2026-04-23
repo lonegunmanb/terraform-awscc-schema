@@ -47,6 +47,13 @@ const awsccNeptunegraphGraph = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "kms_key_identifier": {
+        "computed": true,
+        "description": "The ARN of the KMS key used to encrypt data in the Neptune Analytics graph. If not specified, the graph is encrypted with an AWS managed key.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "provisioned_memory": {
         "description": "Memory for the Graph.",
         "description_kind": "plain",

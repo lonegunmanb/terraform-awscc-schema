@@ -51,7 +51,7 @@ const awsccDeadlineQueueEnvironment = `{
         "type": "string"
       }
     },
-    "description": "Definition of AWS::Deadline::QueueEnvironment Resource Type",
+    "description": "Resource Type definition for AWS::Deadline::QueueEnvironment",
     "description_kind": "plain"
   },
   "version": 1

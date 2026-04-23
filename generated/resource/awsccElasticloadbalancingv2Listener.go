@@ -502,7 +502,7 @@ const awsccElasticloadbalancingv2Listener = `{
             },
             "mode": {
               "computed": true,
-              "description": "The client certificate handling method. Options are ` + "`" + `` + "`" + `off` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `passthrough` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `verify` + "`" + `` + "`" + `. The default value is ` + "`" + `` + "`" + `off` + "`" + `` + "`" + `.",
+              "description": "The client certificate handling method. Options are ` + "`" + `` + "`" + `off` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `passthrough` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `verify` + "`" + `` + "`" + `. The default value on initial resource creation is ` + "`" + `` + "`" + `off` + "`" + `` + "`" + `. After mutual authentication is turned on, you must explicitly set the ` + "`" + `` + "`" + `Mode` + "`" + `` + "`" + ` to ` + "`" + `` + "`" + `off` + "`" + `` + "`" + ` to turn it off; removing the property from your template will not turn it off.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

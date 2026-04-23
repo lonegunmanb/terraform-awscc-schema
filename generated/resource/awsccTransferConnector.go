@@ -189,6 +189,13 @@ const awsccTransferConnector = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "ip_address_type": {
+        "computed": true,
+        "description": "IP address type for Connector",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "logging_role": {
         "computed": true,
         "description": "Specifies the logging role for the connector.",

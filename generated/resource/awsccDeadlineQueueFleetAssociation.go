@@ -31,7 +31,7 @@ const awsccDeadlineQueueFleetAssociation = `{
         "type": "string"
       }
     },
-    "description": "Definition of AWS::Deadline::QueueFleetAssociation Resource Type",
+    "description": "Resource Type definition for AWS::Deadline::QueueFleetAssociation",
     "description_kind": "plain"
   },
   "version": 1

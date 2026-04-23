@@ -11,6 +11,7 @@ const awsccEcsDaemon = `{
     "attributes": {
       "capacity_provider_arns": {
         "computed": true,
+        "description": "The Amazon Resource Names (ARNs) of the capacity providers associated with the daemon.",
         "description_kind": "plain",
         "type": [
           "list",
@@ -19,6 +20,7 @@ const awsccEcsDaemon = `{
       },
       "cluster_arn": {
         "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the cluster that the daemon is running in.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -44,6 +46,7 @@ const awsccEcsDaemon = `{
       },
       "daemon_task_definition_arn": {
         "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the daemon task definition used by this revision.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -54,16 +57,19 @@ const awsccEcsDaemon = `{
       },
       "deployment_configuration": {
         "computed": true,
+        "description": "The deployment configuration used for this daemon deployment.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "alarms": {
               "computed": true,
+              "description": "The CloudWatch alarm configuration for the daemon deployment. When alarms are triggered during a deployment, the deployment can be automatically rolled back.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "alarm_names": {
                     "computed": true,
+                    "description": "The CloudWatch alarm names to monitor during a daemon deployment.",
                     "description_kind": "plain",
                     "type": [
                       "list",
@@ -72,6 +78,7 @@ const awsccEcsDaemon = `{
                   },
                   "enable": {
                     "computed": true,
+                    "description": "Determines whether to use the CloudWatch alarm option in the daemon deployment process. The default value is ` + "`" + `` + "`" + `false` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "type": "bool"
                   }
@@ -81,11 +88,13 @@ const awsccEcsDaemon = `{
             },
             "bake_time_in_minutes": {
               "computed": true,
+              "description": "The amount of time (in minutes) to wait after a successful deployment step before proceeding. This allows time to monitor for issues before continuing. The default value is 0.",
               "description_kind": "plain",
               "type": "number"
             },
             "drain_percent": {
               "computed": true,
+              "description": "The percentage of container instances to drain simultaneously during a daemon deployment. Valid values are between 0.0 and 100.0.",
               "description_kind": "plain",
               "type": "number"
             }
@@ -95,11 +104,13 @@ const awsccEcsDaemon = `{
       },
       "enable_ecs_managed_tags": {
         "computed": true,
+        "description": "Specifies whether Amazon ECS managed tags are turned on for the daemon tasks.",
         "description_kind": "plain",
         "type": "bool"
       },
       "enable_execute_command": {
         "computed": true,
+        "description": "Specifies whether the execute command functionality is turned on for the daemon tasks.",
         "description_kind": "plain",
         "type": "bool"
       },
@@ -111,6 +122,7 @@ const awsccEcsDaemon = `{
       },
       "propagate_tags": {
         "computed": true,
+        "description": "Specifies whether tags are propagated from the daemon to the daemon tasks.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -121,11 +133,13 @@ const awsccEcsDaemon = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "One part of a key-value pair that make up a tag. A ` + "`" + `` + "`" + `key` + "`" + `` + "`" + ` is a general label that acts like a category for more specific tag values.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The optional part of a key-value pair that make up a tag. A ` + "`" + `` + "`" + `value` + "`" + `` + "`" + ` acts as a descriptor within a tag category (key).",
               "description_kind": "plain",
               "type": "string"
             }

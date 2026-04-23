@@ -61,6 +61,15 @@ const awsccOrganizationsAccount = `{
           "string"
         ]
       },
+      "paths": {
+        "computed": true,
+        "description": "The paths in the organization where the account exists.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "role_name": {
         "computed": true,
         "description": "The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. Default name is OrganizationAccountAccessRole if not specified.",

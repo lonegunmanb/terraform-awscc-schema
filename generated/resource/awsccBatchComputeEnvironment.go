@@ -48,6 +48,12 @@ const awsccBatchComputeEnvironment = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "batch_image_status": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "image_id_override": {
                     "computed": true,
                     "description_kind": "plain",

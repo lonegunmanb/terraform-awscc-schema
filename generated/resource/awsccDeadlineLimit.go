@@ -52,7 +52,7 @@ const awsccDeadlineLimit = `{
         "type": "number"
       }
     },
-    "description": "Definition of AWS::Deadline::Limit Resource Type",
+    "description": "Resource Type definition for AWS::Deadline::Limit",
     "description_kind": "plain"
   },
   "version": 1

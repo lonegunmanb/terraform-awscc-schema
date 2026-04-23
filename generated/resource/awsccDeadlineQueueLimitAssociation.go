@@ -31,7 +31,7 @@ const awsccDeadlineQueueLimitAssociation = `{
         "type": "string"
       }
     },
-    "description": "Definition of AWS::Deadline::QueueLimitAssociation Resource Type",
+    "description": "Resource Type definition for AWS::Deadline::QueueLimitAssociation",
     "description_kind": "plain"
   },
   "version": 1

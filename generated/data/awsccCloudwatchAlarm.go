@@ -61,13 +61,13 @@ const awsccCloudwatchAlarm = `{
           "attributes": {
             "name": {
               "computed": true,
-              "description": "The name of the dimension, from 1–255 characters in length. This dimension name must have been included when the metric was published.",
+              "description": "The name of the dimension, from 1?255 characters in length. This dimension name must have been included when the metric was published.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "The value for the dimension, from 1–255 characters in length.",
+              "description": "The value for the dimension, from 1?255 characters in length.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -80,6 +80,47 @@ const awsccCloudwatchAlarm = `{
         "description": "Used only for alarms based on percentiles. If ` + "`" + `` + "`" + `ignore` + "`" + `` + "`" + `, the alarm state does not change during periods with too few data points to be statistically significant. If ` + "`" + `` + "`" + `evaluate` + "`" + `` + "`" + ` or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "evaluation_criteria": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "prom_ql_criteria": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "pending_period": {
+                    "computed": true,
+                    "description": "The pending period for the alarm.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "query": {
+                    "computed": true,
+                    "description": "The PromQL query string.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "recovery_period": {
+                    "computed": true,
+                    "description": "The recovery period for the alarm.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "evaluation_interval": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "number"
       },
       "evaluation_periods": {
         "computed": true,
@@ -164,13 +205,13 @@ const awsccCloudwatchAlarm = `{
                             "attributes": {
                               "name": {
                                 "computed": true,
-                                "description": "The name of the dimension, from 1–255 characters in length. This dimension name must have been included when the metric was published.",
+                                "description": "The name of the dimension, from 1?255 characters in length. This dimension name must have been included when the metric was published.",
                                 "description_kind": "plain",
                                 "type": "string"
                               },
                               "value": {
                                 "computed": true,
-                                "description": "The value for the dimension, from 1–255 characters in length.",
+                                "description": "The value for the dimension, from 1?255 characters in length.",
                                 "description_kind": "plain",
                                 "type": "string"
                               }

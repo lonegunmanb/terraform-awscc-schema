@@ -710,7 +710,7 @@ const awsccDeadlineFleet = `{
         "type": "number"
       }
     },
-    "description": "Definition of AWS::Deadline::Fleet Resource Type",
+    "description": "Resource Type definition for AWS::Deadline::Fleet",
     "description_kind": "plain"
   },
   "version": 1

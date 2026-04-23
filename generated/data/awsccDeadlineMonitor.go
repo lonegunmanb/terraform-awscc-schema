@@ -35,6 +35,12 @@ const awsccDeadlineMonitor = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "identity_center_region": {
+        "computed": true,
+        "description": "The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "monitor_id": {
         "computed": true,
         "description_kind": "plain",

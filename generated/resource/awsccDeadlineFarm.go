@@ -74,7 +74,7 @@ const awsccDeadlineFarm = `{
         "optional": true
       }
     },
-    "description": "Definition of AWS::Deadline::Farm Resource Type",
+    "description": "Resource Type definition for AWS::Deadline::Farm",
     "description_kind": "plain"
   },
   "version": 1

@@ -35,13 +35,89 @@ const awsccMskReplicator = `{
           "attributes": {
             "amazon_msk_cluster": {
               "computed": true,
-              "description": "Details of an Amazon MSK cluster. Exactly one of AmazonMskCluster is required.",
+              "description": "Details of an Amazon MSK cluster.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "msk_cluster_arn": {
                     "computed": true,
                     "description": "The ARN of an Amazon MSK cluster.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "apache_kafka_cluster": {
+              "computed": true,
+              "description": "Details of an Apache Kafka cluster.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "apache_kafka_cluster_id": {
+                    "computed": true,
+                    "description": "The ID of the Apache Kafka cluster.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "bootstrap_broker_string": {
+                    "computed": true,
+                    "description": "The bootstrap broker string of the Apache Kafka cluster.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "client_authentication": {
+              "computed": true,
+              "description": "Details of the client authentication used by the Apache Kafka cluster.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "sasl_scram": {
+                    "computed": true,
+                    "description": "Details for SASL/SCRAM client authentication.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "mechanism": {
+                          "computed": true,
+                          "description": "The SASL/SCRAM authentication mechanism.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the Secrets Manager secret.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "encryption_in_transit": {
+              "computed": true,
+              "description": "Details of encryption in transit to the Apache Kafka cluster.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "encryption_type": {
+                    "computed": true,
+                    "description": "The type of encryption in transit to the Apache Kafka cluster.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "root_ca_certificate": {
+                    "computed": true,
+                    "description": "The root CA certificate.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -81,6 +157,98 @@ const awsccMskReplicator = `{
           "nesting_mode": "set"
         }
       },
+      "log_delivery": {
+        "computed": true,
+        "description": "Configuration for log delivery for the replicator.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "replicator_log_delivery": {
+              "computed": true,
+              "description": "The replicator logs configuration.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cloudwatch_logs": {
+                    "computed": true,
+                    "description": "Details of the CloudWatch Logs destination for replicator logs.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enabled": {
+                          "computed": true,
+                          "description": "Whether log delivery to CloudWatch Logs is enabled.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "log_group": {
+                          "computed": true,
+                          "description": "The CloudWatch log group that is the destination for log delivery.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "firehose": {
+                    "computed": true,
+                    "description": "Details of the Kinesis Data Firehose delivery stream that is the destination for replicator logs.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "delivery_stream": {
+                          "computed": true,
+                          "description": "The Firehose delivery stream that is the destination for log delivery.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "enabled": {
+                          "computed": true,
+                          "description": "Whether log delivery to Firehose is enabled.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "s3": {
+                    "computed": true,
+                    "description": "Details of the Amazon S3 destination for replicator logs.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "bucket": {
+                          "computed": true,
+                          "description": "The S3 bucket that is the destination for log delivery.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "enabled": {
+                          "computed": true,
+                          "description": "Whether log delivery to S3 is enabled.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "prefix": {
+                          "computed": true,
+                          "description": "The S3 prefix that is the destination for log delivery.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "replication_info_list": {
         "computed": true,
         "description": "A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.",
@@ -93,6 +261,12 @@ const awsccMskReplicator = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "consumer_group_offset_sync_mode": {
+                    "computed": true,
+                    "description": "The consumer group offset synchronization mode.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "consumer_groups_to_exclude": {
                     "computed": true,
                     "description": "List of regular expression patterns indicating the consumer groups that should not be replicated.",
@@ -133,6 +307,12 @@ const awsccMskReplicator = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "source_kafka_cluster_id": {
+              "computed": true,
+              "description": "The ID of the source Kafka cluster.",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "target_compression_type": {
               "computed": true,
               "description": "The type of compression to use writing records to target Kafka cluster.",
@@ -142,6 +322,12 @@ const awsccMskReplicator = `{
             "target_kafka_cluster_arn": {
               "computed": true,
               "description": "Amazon Resource Name of the target Kafka cluster.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "target_kafka_cluster_id": {
+              "computed": true,
+              "description": "The ID of the target Kafka cluster.",
               "description_kind": "plain",
               "type": "string"
             },

@@ -48,7 +48,7 @@ const awsccDeadlineMeteredProduct = `{
         "type": "string"
       }
     },
-    "description": "Definition of AWS::Deadline::MeteredProduct Resource Type",
+    "description": "Resource Type definition for AWS::Deadline::MeteredProduct",
     "description_kind": "plain"
   },
   "version": 1

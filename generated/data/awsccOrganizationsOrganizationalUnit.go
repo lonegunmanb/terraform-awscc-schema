@@ -39,6 +39,12 @@ const awsccOrganizationsOrganizationalUnit = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "path": {
+        "computed": true,
+        "description": "The path in the organization where this OU exists.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "A list of tags that you want to attach to the newly created OU.",

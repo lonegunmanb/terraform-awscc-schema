@@ -58,25 +58,8 @@ const awsccCloudformationGuardHook = `{
           "attributes": {
             "input_params": {
               "computed": true,
-              "description": "S3 Source Location for the Guard files.",
               "description_kind": "plain",
-              "nested_type": {
-                "attributes": {
-                  "uri": {
-                    "computed": true,
-                    "description": "S3 uri of Guard files.",
-                    "description_kind": "plain",
-                    "type": "string"
-                  },
-                  "version_id": {
-                    "computed": true,
-                    "description": "S3 object version",
-                    "description_kind": "plain",
-                    "type": "string"
-                  }
-                },
-                "nesting_mode": "single"
-              }
+              "type": "string"
             }
           },
           "nesting_mode": "single"
