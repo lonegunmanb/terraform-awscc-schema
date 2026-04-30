@@ -471,6 +471,35 @@ const awsccBatchJobDefinition = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "s3_files_volume_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "access_point_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "file_system_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "root_directory": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "transit_encryption_port": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "list"
@@ -788,6 +817,16 @@ const awsccBatchJobDefinition = `{
                             "nesting_mode": "list"
                           }
                         },
+                        "start_timeout": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "stop_timeout": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
                         "ulimits": {
                           "computed": true,
                           "description_kind": "plain",
@@ -969,6 +1008,35 @@ const awsccBatchJobDefinition = `{
                           "computed": true,
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "s3_files_volume_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "access_point_arn": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "file_system_arn": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "root_directory": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "transit_encryption_port": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
                         }
                       },
                       "nesting_mode": "list"
@@ -1923,6 +1991,35 @@ const awsccBatchJobDefinition = `{
                                 "computed": true,
                                 "description_kind": "plain",
                                 "type": "string"
+                              },
+                              "s3_files_volume_configuration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "access_point_arn": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "file_system_arn": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "root_directory": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "transit_encryption_port": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
                               }
                             },
                             "nesting_mode": "list"
@@ -2240,6 +2337,16 @@ const awsccBatchJobDefinition = `{
                                         "nesting_mode": "list"
                                       }
                                     },
+                                    "start_timeout": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    },
+                                    "stop_timeout": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    },
                                     "ulimits": {
                                       "computed": true,
                                       "description_kind": "plain",
@@ -2369,6 +2476,35 @@ const awsccBatchJobDefinition = `{
                                       "computed": true,
                                       "description_kind": "plain",
                                       "type": "string"
+                                    },
+                                    "s3_files_volume_configuration": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "access_point_arn": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "file_system_arn": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "root_directory": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "transit_encryption_port": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "number"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
                                     }
                                   },
                                   "nesting_mode": "list"

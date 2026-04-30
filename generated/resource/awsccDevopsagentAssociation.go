@@ -113,6 +113,24 @@ const awsccDevopsagentAssociation = `{
               },
               "optional": true
             },
+            "azure": {
+              "computed": true,
+              "description": "Azure subscription integration configuration",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "subscription_id": {
+                    "computed": true,
+                    "description": "Azure subscription ID corresponding to provided resources",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "dynatrace": {
               "computed": true,
               "description": "Dynatrace monitoring configuration",
@@ -357,6 +375,27 @@ const awsccDevopsagentAssociation = `{
               },
               "optional": true
             },
+            "mcp_server_sig_v4": {
+              "computed": true,
+              "description": "SigV4-authenticated MCP server configuration",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "tools": {
+                    "computed": true,
+                    "description": "List of MCP tools available for the association",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "mcp_server_splunk": {
               "computed": true,
               "description": "Splunk MCP server configuration",
@@ -390,6 +429,41 @@ const awsccDevopsagentAssociation = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "pager_duty": {
+              "computed": true,
+              "description": "PagerDuty integration configuration",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "customer_email": {
+                    "computed": true,
+                    "description": "Email to be used in PagerDuty API header",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "enable_webhook_updates": {
+                    "computed": true,
+                    "description": "When set to true, enables the Agent Space to create and update webhooks for receiving notifications and events from the service",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
+                  "services": {
+                    "computed": true,
+                    "description": "List of PagerDuty service IDs available for the association",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   }
                 },
                 "nesting_mode": "single"

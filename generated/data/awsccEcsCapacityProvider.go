@@ -84,6 +84,20 @@ const awsccEcsCapacityProvider = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "auto_repair_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "actions_status": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "infrastructure_optimization": {
               "computed": true,
               "description": "Defines how Amazon ECS Managed Instances optimizes the infrastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle EC2 instances optimization delay.",

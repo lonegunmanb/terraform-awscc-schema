@@ -86,6 +86,89 @@ const awsccS3ExpressDirectoryBucket = `{
         "required": true,
         "type": "string"
       },
+      "inventory_configurations": {
+        "computed": true,
+        "description": "The inventory configuration for an Amazon S3 Express bucket.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "destination": {
+              "computed": true,
+              "description": "Specifies information about where to publish inventory reports for an Amazon S3 Express bucket.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "bucket_account_id": {
+                    "computed": true,
+                    "description": "The account ID that owns the destination S3 bucket. ",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "bucket_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the destination Amazon S3 bucket to which data is exported.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "format": {
+                    "computed": true,
+                    "description": "Specifies the file format used when exporting data to Amazon S3.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "prefix": {
+                    "computed": true,
+                    "description": "The prefix to use when exporting data. The prefix is prepended to all results.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "enabled": {
+              "computed": true,
+              "description": "Specifies whether the inventory is enabled or disabled.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "id": {
+              "computed": true,
+              "description": "The ID used to identify the inventory configuration.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "included_object_versions": {
+              "computed": true,
+              "description": "Object versions to include in the inventory list.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "optional_fields": {
+              "computed": true,
+              "description": "Contains the optional fields that are included in the inventory results.",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "prefix": {
+              "computed": true,
+              "description": "The prefix that is prepended to all inventory results.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "schedule_frequency": {
+              "computed": true,
+              "description": "Specifies the schedule for generating inventory results.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "lifecycle_configuration": {
         "computed": true,
         "description": "Lifecycle rules that define how Amazon S3 Express manages objects during their lifetime.",

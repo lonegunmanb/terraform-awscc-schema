@@ -81,6 +81,7 @@ const awsccRoute53GlobalresolverGlobalResolver = `{
         "type": "string"
       },
       "regions": {
+        "description": "A list of regions the Global Resolver will exist in. This list cannot be updated and will stay fixed for the duration of the Global Resolver.",
         "description_kind": "plain",
         "required": true,
         "type": [

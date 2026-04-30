@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestAwsccMediaconnectFlowVpcInterfacesSchema(t *testing.T) {
+func TestAwsccDevopsagentPrivateConnectionSchema(t *testing.T) {
 	defaultSchema := &tfjson.Schema{}
-	s := data.AwsccMediaconnectFlowVpcInterfacesSchema()
+	s := data.AwsccDevopsagentPrivateConnectionSchema()
 	assert.NotNil(t, s)
 	assert.NotEqual(t, defaultSchema, s)
 }

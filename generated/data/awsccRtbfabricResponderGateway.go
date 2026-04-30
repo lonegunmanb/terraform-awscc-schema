@@ -58,6 +58,55 @@ const awsccRtbfabricResponderGateway = `{
                       "string"
                     ]
                   },
+                  "health_check_config": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "healthy_threshold_count": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "interval_seconds": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "path": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "port": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "protocol": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "status_code_matcher": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "timeout_ms": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "unhealthy_threshold_count": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "role_arn": {
                     "computed": true,
                     "description_kind": "plain",

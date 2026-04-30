@@ -56,6 +56,26 @@ const awsccMediaconnectFlowVpcInterface = `{
         "description": "Subnet must be in the AZ of the Flow",
         "description_kind": "plain",
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "Key-value pairs that can be used to tag and organize this VPC network interface.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        }
       }
     },
     "description": "Data Source schema for AWS::MediaConnect::FlowVpcInterface",
