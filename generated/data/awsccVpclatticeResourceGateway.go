@@ -36,6 +36,11 @@ const awsccVpclatticeResourceGateway = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "resource_config_dns_resolution": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "resource_gateway_id": {
         "computed": true,
         "description_kind": "plain",

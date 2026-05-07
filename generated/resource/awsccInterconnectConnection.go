@@ -113,9 +113,27 @@ const awsccInterconnectConnection = `{
           "nesting_mode": "single"
         }
       },
+      "remote_account": {
+        "computed": true,
+        "description": "The remote account identifier for the connection. Required when creating a connection through AWS. Replaces RemoteOwnerAccount.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "identifier": {
+              "computed": true,
+              "description": "The identifier of the remote account.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "remote_owner_account": {
         "computed": true,
-        "description": "The account ID of the remote owner. Required when creating a connection through AWS.",
+        "description": "Deprecated. Use RemoteAccount instead. The account ID of the remote owner. Required when creating a connection through AWS.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

@@ -125,6 +125,12 @@ const awsccCloudfrontTrustStore = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "use_client_certificate_ocsp_endpoint": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
       }
     },
     "description": "A trust store.",

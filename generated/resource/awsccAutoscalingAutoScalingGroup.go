@@ -41,6 +41,7 @@ const awsccAutoscalingAutoScalingGroup = `{
       },
       "availability_zone_ids": {
         "computed": true,
+        "description": "The Availability Zone IDs where the Auto Scaling group can launch instances.",
         "description_kind": "plain",
         "optional": true,
         "type": [

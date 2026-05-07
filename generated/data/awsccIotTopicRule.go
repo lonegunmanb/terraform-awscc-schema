@@ -334,6 +334,11 @@ const awsccIotTopicRule = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "batch_across_topics": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
+                              },
                               "max_batch_open_ms": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -1269,6 +1274,11 @@ const awsccIotTopicRule = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "batch_across_topics": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
+                              },
                               "max_batch_open_ms": {
                                 "computed": true,
                                 "description_kind": "plain",

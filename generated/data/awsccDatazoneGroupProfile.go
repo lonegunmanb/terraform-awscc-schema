@@ -39,10 +39,28 @@ const awsccDatazoneGroupProfile = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "group_type": {
+        "computed": true,
+        "description": "The type of the group.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "role_principal_arn": {
+        "computed": true,
+        "description": "The ARN of the role principal for the group profile.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "role_principal_id": {
+        "computed": true,
+        "description": "The ID of the role principal for the group profile.",
+        "description_kind": "plain",
         "type": "string"
       },
       "status": {

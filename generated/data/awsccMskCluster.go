@@ -516,6 +516,20 @@ const awsccMskCluster = `{
           "map",
           "string"
         ]
+      },
+      "zookeeper_access": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        }
       }
     },
     "description": "Data Source schema for AWS::MSK::Cluster",

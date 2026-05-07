@@ -244,6 +244,13 @@ const awsccBedrockagentcoreEvaluator = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "kms_key_arn": {
+        "computed": true,
+        "description": "The ARN of the KMS key used to encrypt evaluator data.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "level": {
         "description": "The evaluation level that determines the scope of evaluation.",
         "description_kind": "plain",

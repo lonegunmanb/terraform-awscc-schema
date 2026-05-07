@@ -25,6 +25,18 @@ const awsccDatazoneUserProfile = `{
                     "description": "The ARN of the IAM User Profile.",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "group_profile_id": {
+                    "computed": true,
+                    "description": "The group profile ID of the IAM User Profile.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "session_name": {
+                    "computed": true,
+                    "description": "The session name of the IAM User Profile.",
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -78,6 +90,13 @@ const awsccDatazoneUserProfile = `{
         "computed": true,
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
+        "type": "string"
+      },
+      "session_name": {
+        "computed": true,
+        "description": "The session name of the user profile.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "status": {

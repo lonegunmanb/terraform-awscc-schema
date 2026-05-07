@@ -66,9 +66,56 @@ const awsccDatazoneProject = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "membership_assignments": {
+        "computed": true,
+        "description": "The project membership assignments.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "designation": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "member": {
+              "computed": true,
+              "description": "The member of the project.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "group_identifier": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "user_identifier": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "name": {
         "computed": true,
         "description": "The name of the Amazon DataZone project.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "project_category": {
+        "computed": true,
+        "description": "The project category.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "project_execution_role": {
+        "computed": true,
+        "description": "The project execution role ARN.",
         "description_kind": "plain",
         "type": "string"
       },

@@ -9,6 +9,35 @@ import (
 const awsccBedrockagentcoreCodeInterpreterCustom = `{
   "block": {
     "attributes": {
+      "certificates": {
+        "computed": true,
+        "description": "List of root CA certificates in PEM format.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "certificate_location": {
+              "computed": true,
+              "description": "Certificate location in Secrets Manager.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "secret_arn": {
+                    "computed": true,
+                    "description": "Secrets Manager secret ARN.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "code_interpreter_arn": {
         "computed": true,
         "description": "The ARN of a CodeInterpreter resource.",

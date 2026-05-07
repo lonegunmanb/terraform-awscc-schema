@@ -116,6 +116,11 @@ const awsccCloudfrontTrustStore = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "use_client_certificate_ocsp_endpoint": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
       }
     },
     "description": "Data Source schema for AWS::CloudFront::TrustStore",

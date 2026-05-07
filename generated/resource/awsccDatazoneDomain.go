@@ -29,9 +29,10 @@ const awsccDatazoneDomain = `{
         "type": "string"
       },
       "domain_execution_role": {
+        "computed": true,
         "description": "The domain execution role that is created when an Amazon DataZone domain is created. The domain execution role is created in the AWS account that houses the Amazon DataZone domain.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "domain_id": {

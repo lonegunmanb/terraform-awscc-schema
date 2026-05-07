@@ -43,6 +43,28 @@ const awsccBedrockagentcoreMemory = `{
         "required": true,
         "type": "string"
       },
+      "indexed_keys": {
+        "computed": true,
+        "description": "List of indexed keys for the memory",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "Key name for metadata fields",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "type": {
+              "computed": true,
+              "description": "Supported data types for metadata values",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "memory_arn": {
         "computed": true,
         "description": "ARN of the Memory resource",
@@ -132,6 +154,134 @@ const awsccBedrockagentcoreMemory = `{
                                       "description": "Text prompt for model instructions",
                                       "description_kind": "plain",
                                       "type": "string"
+                                    },
+                                    "memory_record_schema": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "metadata_schema": {
+                                            "computed": true,
+                                            "description": "List of metadata schema entries",
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "extraction_config": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "llm_extraction_config": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "nested_type": {
+                                                          "attributes": {
+                                                            "definition": {
+                                                              "computed": true,
+                                                              "description": "Definition for the metadata schema entry",
+                                                              "description_kind": "plain",
+                                                              "type": "string"
+                                                            },
+                                                            "llm_extraction_instruction": {
+                                                              "computed": true,
+                                                              "description": "LLM extraction instruction",
+                                                              "description_kind": "plain",
+                                                              "type": "string"
+                                                            },
+                                                            "validation": {
+                                                              "computed": true,
+                                                              "description_kind": "plain",
+                                                              "nested_type": {
+                                                                "attributes": {
+                                                                  "number_validation": {
+                                                                    "computed": true,
+                                                                    "description_kind": "plain",
+                                                                    "nested_type": {
+                                                                      "attributes": {
+                                                                        "max_value": {
+                                                                          "computed": true,
+                                                                          "description_kind": "plain",
+                                                                          "type": "number"
+                                                                        },
+                                                                        "min_value": {
+                                                                          "computed": true,
+                                                                          "description_kind": "plain",
+                                                                          "type": "number"
+                                                                        }
+                                                                      },
+                                                                      "nesting_mode": "single"
+                                                                    }
+                                                                  },
+                                                                  "string_list_validation": {
+                                                                    "computed": true,
+                                                                    "description_kind": "plain",
+                                                                    "nested_type": {
+                                                                      "attributes": {
+                                                                        "allowed_values": {
+                                                                          "computed": true,
+                                                                          "description_kind": "plain",
+                                                                          "type": [
+                                                                            "list",
+                                                                            "string"
+                                                                          ]
+                                                                        },
+                                                                        "max_items": {
+                                                                          "computed": true,
+                                                                          "description_kind": "plain",
+                                                                          "type": "number"
+                                                                        }
+                                                                      },
+                                                                      "nesting_mode": "single"
+                                                                    }
+                                                                  },
+                                                                  "string_validation": {
+                                                                    "computed": true,
+                                                                    "description_kind": "plain",
+                                                                    "nested_type": {
+                                                                      "attributes": {
+                                                                        "allowed_values": {
+                                                                          "computed": true,
+                                                                          "description_kind": "plain",
+                                                                          "type": [
+                                                                            "list",
+                                                                            "string"
+                                                                          ]
+                                                                        }
+                                                                      },
+                                                                      "nesting_mode": "single"
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "nesting_mode": "single"
+                                                              }
+                                                            }
+                                                          },
+                                                          "nesting_mode": "single"
+                                                        }
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                },
+                                                "key": {
+                                                  "computed": true,
+                                                  "description": "Key name for metadata fields",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "type": {
+                                                  "computed": true,
+                                                  "description": "Supported data types for metadata values",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "list"
+                                            }
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
                                     },
                                     "model_id": {
                                       "computed": true,
@@ -392,6 +542,134 @@ const awsccBedrockagentcoreMemory = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "memory_record_schema": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metadata_schema": {
+                          "computed": true,
+                          "description": "List of metadata schema entries",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "extraction_config": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "llm_extraction_config": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "definition": {
+                                            "computed": true,
+                                            "description": "Definition for the metadata schema entry",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "llm_extraction_instruction": {
+                                            "computed": true,
+                                            "description": "LLM extraction instruction",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "validation": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "number_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "max_value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      },
+                                                      "min_value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                },
+                                                "string_list_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "allowed_values": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": [
+                                                          "list",
+                                                          "string"
+                                                        ]
+                                                      },
+                                                      "max_items": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                },
+                                                "string_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "allowed_values": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": [
+                                                          "list",
+                                                          "string"
+                                                        ]
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            }
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "key": {
+                                "computed": true,
+                                "description": "Key name for metadata fields",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "type": {
+                                "computed": true,
+                                "description": "Supported data types for metadata values",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "name": {
                     "computed": true,
                     "description": "Name of the Memory resource",
@@ -461,6 +739,134 @@ const awsccBedrockagentcoreMemory = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "memory_record_schema": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metadata_schema": {
+                          "computed": true,
+                          "description": "List of metadata schema entries",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "extraction_config": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "llm_extraction_config": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "definition": {
+                                            "computed": true,
+                                            "description": "Definition for the metadata schema entry",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "llm_extraction_instruction": {
+                                            "computed": true,
+                                            "description": "LLM extraction instruction",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "validation": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "number_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "max_value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      },
+                                                      "min_value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                },
+                                                "string_list_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "allowed_values": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": [
+                                                          "list",
+                                                          "string"
+                                                        ]
+                                                      },
+                                                      "max_items": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                },
+                                                "string_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "allowed_values": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": [
+                                                          "list",
+                                                          "string"
+                                                        ]
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            }
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "key": {
+                                "computed": true,
+                                "description": "Key name for metadata fields",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "type": {
+                                "computed": true,
+                                "description": "Supported data types for metadata values",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "name": {
                     "computed": true,
                     "description": "Name of the Memory resource",
@@ -490,6 +896,134 @@ const awsccBedrockagentcoreMemory = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "memory_record_schema": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "metadata_schema": {
+                                "computed": true,
+                                "description": "List of metadata schema entries",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "extraction_config": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "llm_extraction_config": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "definition": {
+                                                  "computed": true,
+                                                  "description": "Definition for the metadata schema entry",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "llm_extraction_instruction": {
+                                                  "computed": true,
+                                                  "description": "LLM extraction instruction",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
+                                                "validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "number_validation": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "nested_type": {
+                                                          "attributes": {
+                                                            "max_value": {
+                                                              "computed": true,
+                                                              "description_kind": "plain",
+                                                              "type": "number"
+                                                            },
+                                                            "min_value": {
+                                                              "computed": true,
+                                                              "description_kind": "plain",
+                                                              "type": "number"
+                                                            }
+                                                          },
+                                                          "nesting_mode": "single"
+                                                        }
+                                                      },
+                                                      "string_list_validation": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "nested_type": {
+                                                          "attributes": {
+                                                            "allowed_values": {
+                                                              "computed": true,
+                                                              "description_kind": "plain",
+                                                              "type": [
+                                                                "list",
+                                                                "string"
+                                                              ]
+                                                            },
+                                                            "max_items": {
+                                                              "computed": true,
+                                                              "description_kind": "plain",
+                                                              "type": "number"
+                                                            }
+                                                          },
+                                                          "nesting_mode": "single"
+                                                        }
+                                                      },
+                                                      "string_validation": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "nested_type": {
+                                                          "attributes": {
+                                                            "allowed_values": {
+                                                              "computed": true,
+                                                              "description_kind": "plain",
+                                                              "type": [
+                                                                "list",
+                                                                "string"
+                                                              ]
+                                                            }
+                                                          },
+                                                          "nesting_mode": "single"
+                                                        }
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            }
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "key": {
+                                      "computed": true,
+                                      "description": "Key name for metadata fields",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "computed": true,
+                                      "description": "Supported data types for metadata values",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "namespace_templates": {
                           "computed": true,
                           "description": "List of namespaces for memory strategy",
@@ -556,6 +1090,134 @@ const awsccBedrockagentcoreMemory = `{
                     "description": "Description of the Memory resource",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "memory_record_schema": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metadata_schema": {
+                          "computed": true,
+                          "description": "List of metadata schema entries",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "extraction_config": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "llm_extraction_config": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "definition": {
+                                            "computed": true,
+                                            "description": "Definition for the metadata schema entry",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "llm_extraction_instruction": {
+                                            "computed": true,
+                                            "description": "LLM extraction instruction",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "validation": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "number_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "max_value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      },
+                                                      "min_value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                },
+                                                "string_list_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "allowed_values": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": [
+                                                          "list",
+                                                          "string"
+                                                        ]
+                                                      },
+                                                      "max_items": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                },
+                                                "string_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "allowed_values": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": [
+                                                          "list",
+                                                          "string"
+                                                        ]
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            }
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "key": {
+                                "computed": true,
+                                "description": "Key name for metadata fields",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "type": {
+                                "computed": true,
+                                "description": "Supported data types for metadata values",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   },
                   "name": {
                     "computed": true,
@@ -626,6 +1288,134 @@ const awsccBedrockagentcoreMemory = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "memory_record_schema": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metadata_schema": {
+                          "computed": true,
+                          "description": "List of metadata schema entries",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "extraction_config": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "llm_extraction_config": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "definition": {
+                                            "computed": true,
+                                            "description": "Definition for the metadata schema entry",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "llm_extraction_instruction": {
+                                            "computed": true,
+                                            "description": "LLM extraction instruction",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "validation": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "number_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "max_value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      },
+                                                      "min_value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                },
+                                                "string_list_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "allowed_values": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": [
+                                                          "list",
+                                                          "string"
+                                                        ]
+                                                      },
+                                                      "max_items": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                },
+                                                "string_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "allowed_values": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": [
+                                                          "list",
+                                                          "string"
+                                                        ]
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            }
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "key": {
+                                "computed": true,
+                                "description": "Key name for metadata fields",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "type": {
+                                "computed": true,
+                                "description": "Supported data types for metadata values",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "name": {
                     "computed": true,
                     "description": "Name of the Memory resource",
@@ -694,6 +1484,134 @@ const awsccBedrockagentcoreMemory = `{
                     "description": "Description of the Memory resource",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "memory_record_schema": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metadata_schema": {
+                          "computed": true,
+                          "description": "List of metadata schema entries",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "extraction_config": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "llm_extraction_config": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "definition": {
+                                            "computed": true,
+                                            "description": "Definition for the metadata schema entry",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "llm_extraction_instruction": {
+                                            "computed": true,
+                                            "description": "LLM extraction instruction",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "validation": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "number_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "max_value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      },
+                                                      "min_value": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                },
+                                                "string_list_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "allowed_values": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": [
+                                                          "list",
+                                                          "string"
+                                                        ]
+                                                      },
+                                                      "max_items": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": "number"
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                },
+                                                "string_validation": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "nested_type": {
+                                                    "attributes": {
+                                                      "allowed_values": {
+                                                        "computed": true,
+                                                        "description_kind": "plain",
+                                                        "type": [
+                                                          "list",
+                                                          "string"
+                                                        ]
+                                                      }
+                                                    },
+                                                    "nesting_mode": "single"
+                                                  }
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            }
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "key": {
+                                "computed": true,
+                                "description": "Key name for metadata fields",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "type": {
+                                "computed": true,
+                                "description": "Supported data types for metadata values",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   },
                   "name": {
                     "computed": true,

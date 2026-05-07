@@ -36,6 +36,32 @@ const awsccBedrockagentcoreBrowserCustom = `{
           "nesting_mode": "single"
         }
       },
+      "certificates": {
+        "computed": true,
+        "description": "List of root CA certificates in PEM format.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "certificate_location": {
+              "computed": true,
+              "description": "Certificate location in Secrets Manager.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "secret_arn": {
+                    "computed": true,
+                    "description": "Secrets Manager secret ARN.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "created_at": {
         "computed": true,
         "description": "Timestamp when the browser was created.",
@@ -47,6 +73,42 @@ const awsccBedrockagentcoreBrowserCustom = `{
         "description": "The description of the browser.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "enterprise_policies": {
+        "computed": true,
+        "description": "A list of enterprise policy files for the browser.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "location": {
+              "computed": true,
+              "description": "The S3 location of the enterprise policy file.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "bucket": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "prefix": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "type": {
+              "computed": true,
+              "description": "The type of browser enterprise policy.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
       },
       "execution_role_arn": {
         "computed": true,

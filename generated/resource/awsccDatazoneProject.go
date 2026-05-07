@@ -69,10 +69,64 @@ const awsccDatazoneProject = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "membership_assignments": {
+        "computed": true,
+        "description": "The project membership assignments.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "designation": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "member": {
+              "computed": true,
+              "description": "The member of the project.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "group_identifier": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "user_identifier": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "name": {
         "description": "The name of the Amazon DataZone project.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "project_category": {
+        "computed": true,
+        "description": "The project category.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "project_execution_role": {
+        "computed": true,
+        "description": "The project execution role ARN.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "project_id": {

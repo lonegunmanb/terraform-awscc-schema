@@ -9,6 +9,15 @@ import (
 const awsccRdsCustomDbEngineVersion = `{
   "block": {
     "attributes": {
+      "database_installation_files": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "database_installation_files_s3_bucket_name": {
         "computed": true,
         "description": "The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is ` + "`" + `` + "`" + `my-custom-installation-files` + "`" + `` + "`" + `.",
