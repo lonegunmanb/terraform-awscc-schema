@@ -66,6 +66,15 @@ const awsccOdbOdbNetwork = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "ec_2_placement_group_ids": {
+        "computed": true,
+        "description": "The list of EC2 placement group IDs associated with your ODB network.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

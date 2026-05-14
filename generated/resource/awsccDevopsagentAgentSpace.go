@@ -47,6 +47,13 @@ const awsccDevopsagentAgentSpace = `{
         "optional": true,
         "type": "string"
       },
+      "locale": {
+        "computed": true,
+        "description": "The locale for the AgentSpace, which determines the language used in agent responses.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "name": {
         "description": "The name of the AgentSpace.",
         "description_kind": "plain",

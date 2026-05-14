@@ -16,7 +16,7 @@ const awsccCloudfrontKeyValueStore = `{
       },
       "comment": {
         "computed": true,
-        "description": "A comment for the key value store.",
+        "description": "A comment to describe the Key Value Store. Omitting ` + "`" + `` + "`" + `Comment` + "`" + `` + "`" + ` from the template during updates will clear the existing comment (set to empty string). To preserve an existing comment, you must explicitly include it in the template.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -66,16 +66,19 @@ const awsccCloudfrontKeyValueStore = `{
       },
       "tags": {
         "computed": true,
+        "description": "A complex type that contains zero or more ` + "`" + `` + "`" + `Tag` + "`" + `` + "`" + ` elements.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
               "computed": true,
+              "description": "A string that contains ` + "`" + `` + "`" + `Tag` + "`" + `` + "`" + ` key.\n The string length should be between 1 and 128 characters. Valid characters include ` + "`" + `` + "`" + `a-z` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `A-Z` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `0-9` + "`" + `` + "`" + `, space, and the special characters ` + "`" + `` + "`" + `_ - . : / = + @` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "A string that contains an optional ` + "`" + `` + "`" + `Tag` + "`" + `` + "`" + ` value.\n The string length should be between 0 and 256 characters. Valid characters include ` + "`" + `` + "`" + `a-z` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `A-Z` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `0-9` + "`" + `` + "`" + `, space, and the special characters ` + "`" + `` + "`" + `_ - . : / = + @` + "`" + `` + "`" + `.",
               "description_kind": "plain",
               "type": "string"
             }

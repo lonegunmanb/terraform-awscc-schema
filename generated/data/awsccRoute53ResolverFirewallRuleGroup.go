@@ -71,13 +71,13 @@ const awsccRoute53ResolverFirewallRuleGroup = `{
             },
             "confidence_threshold": {
               "computed": true,
-              "description": "FirewallDomainRedirectionAction",
+              "description": "ConfidenceThreshold",
               "description_kind": "plain",
               "type": "string"
             },
             "dns_threat_protection": {
               "computed": true,
-              "description": "FirewallDomainRedirectionAction",
+              "description": "DnsThreatProtection",
               "description_kind": "plain",
               "type": "string"
             },
@@ -92,6 +92,48 @@ const awsccRoute53ResolverFirewallRuleGroup = `{
               "description": "FirewallDomainRedirectionAction",
               "description_kind": "plain",
               "type": "string"
+            },
+            "firewall_rule_type": {
+              "computed": true,
+              "description": "Advanced firewall rule type. Mutually exclusive with FirewallDomainListId and DnsThreatProtection/ConfidenceThreshold.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "firewall_advanced_content_category": {
+                    "computed": true,
+                    "description": "Configuration for an advanced content category rule type.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "category": {
+                          "computed": true,
+                          "description": "The content category value.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "firewall_advanced_threat_category": {
+                    "computed": true,
+                    "description": "Configuration for an advanced threat category rule type.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "category": {
+                          "computed": true,
+                          "description": "The threat category value.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
             },
             "firewall_threat_protection_id": {
               "computed": true,

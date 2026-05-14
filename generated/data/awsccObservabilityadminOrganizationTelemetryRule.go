@@ -15,12 +15,52 @@ const awsccObservabilityadminOrganizationTelemetryRule = `{
         "required": true,
         "type": "string"
       },
+      "region_statuses": {
+        "computed": true,
+        "description": "Per-region replication status of the rule",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "region": {
+              "computed": true,
+              "description": "The AWS region code",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "rule_arn": {
+              "computed": true,
+              "description": "The ARN of the rule in this region",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "status": {
+              "computed": true,
+              "description": "The replication status of the rule in this region",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "rule": {
         "computed": true,
         "description": "The telemetry rule",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "all_regions": {
+              "computed": true,
+              "description": "When true, the rule is replicated to all supported regions",
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "allow_field_updates": {
+              "computed": true,
+              "description": "When true, configuration drift in managed telemetry resources will be detected and remediated for resource-level fields.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
             "destination_configuration": {
               "computed": true,
               "description": "The destination configuration for telemetry data",
@@ -333,6 +373,15 @@ const awsccObservabilityadminOrganizationTelemetryRule = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "regions": {
+              "computed": true,
+              "description": "List of AWS region codes where the rule should be replicated",
+              "description_kind": "plain",
+              "type": [
+                "set",
+                "string"
+              ]
             },
             "resource_type": {
               "computed": true,

@@ -26,6 +26,28 @@ const awsccCloudwatchDashboard = `{
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "A list of key-value pairs to associate with the cloudwatch dashboard. You can associate up to 50 tags with a dashboard",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "A unique identifier for the tag. The combination of tag keys and values can help you organize and categorize your resources.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the specified tag key.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        }
       }
     },
     "description": "Data Source schema for AWS::CloudWatch::Dashboard",

@@ -44,6 +44,34 @@ const awsccDatazoneConnection = `{
         },
         "optional": true
       },
+      "configurations": {
+        "computed": true,
+        "description": "The configurations of the connection.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "classification": {
+              "computed": true,
+              "description": "The classification of the connection configuration.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "properties": {
+              "computed": true,
+              "description": "Property Map",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "map",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "connection_id": {
         "computed": true,
         "description": "The ID of the connection.",
@@ -534,6 +562,24 @@ const awsccDatazoneConnection = `{
               },
               "optional": true
             },
+            "lakehouse_properties": {
+              "computed": true,
+              "description": "Lakehouse Properties Input",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "glue_lineage_sync_enabled": {
+                    "computed": true,
+                    "description": "Specifies whether Glue lineage sync is enabled for the lakehouse connection.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "mlflow_properties": {
               "computed": true,
               "description": "MLflow Properties Input",
@@ -682,6 +728,13 @@ const awsccDatazoneConnection = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "register_s3_access_grant_location": {
+                    "computed": true,
+                    "description": "Specifies whether to register the S3 Access Grant location.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
                   "s3_access_grant_location_id": {
                     "computed": true,
                     "description": "The Amazon S3 Access Grant location ID that's part of the Amazon S3 properties of a connection.",

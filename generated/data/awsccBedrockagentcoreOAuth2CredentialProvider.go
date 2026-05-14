@@ -163,6 +163,47 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "on_behalf_of_token_exchange_config": {
+                    "computed": true,
+                    "description": "Configuration for on-behalf-of token exchange",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "grant_type": {
+                          "computed": true,
+                          "description": "The grant type for on-behalf-of token exchange",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "token_exchange_grant_type_config": {
+                          "computed": true,
+                          "description": "Configuration for RFC 8693 Token Exchange",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "actor_token_content": {
+                                "computed": true,
+                                "description": "The actor token content type",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "actor_token_scopes": {
+                                "computed": true,
+                                "description": "The actor token scopes. Only valid when ActorTokenContent is M2M.",
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"
@@ -395,6 +436,47 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                     "description": "The discovery URL for the OAuth2 provider",
                     "description_kind": "plain",
                     "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "on_behalf_of_token_exchange_config": {
+              "computed": true,
+              "description": "Configuration for on-behalf-of token exchange",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "grant_type": {
+                    "computed": true,
+                    "description": "The grant type for on-behalf-of token exchange",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "token_exchange_grant_type_config": {
+                    "computed": true,
+                    "description": "Configuration for RFC 8693 Token Exchange",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "actor_token_content": {
+                          "computed": true,
+                          "description": "The actor token content type",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "actor_token_scopes": {
+                          "computed": true,
+                          "description": "The actor token scopes. Only valid when ActorTokenContent is M2M.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"
