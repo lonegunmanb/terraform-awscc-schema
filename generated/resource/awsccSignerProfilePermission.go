@@ -42,7 +42,7 @@ const awsccSignerProfilePermission = `{
         "type": "string"
       }
     },
-    "description": "An example resource schema demonstrating some basic constructs and validation rules.",
+    "description": "Resource Type definition for AWS::Signer::ProfilePermission",
     "description_kind": "plain"
   },
   "version": 1

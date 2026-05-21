@@ -296,6 +296,56 @@ const awsccBedrockagentcoreRuntime = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "efs_access_point": {
+              "computed": true,
+              "description": "Configuration for EFS access point filesystem",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "access_point_arn": {
+                    "computed": true,
+                    "description": "ARN of the EFS access point",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "mount_path": {
+                    "computed": true,
+                    "description": "Mount path for filesystem configuration",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "s3_files_access_point": {
+              "computed": true,
+              "description": "Configuration for S3 Files access point filesystem",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "access_point_arn": {
+                    "computed": true,
+                    "description": "ARN of the S3 Files access point",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "mount_path": {
+                    "computed": true,
+                    "description": "Mount path for filesystem configuration",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "session_storage": {
               "computed": true,
               "description": "Configuration for session storage",
@@ -304,7 +354,7 @@ const awsccBedrockagentcoreRuntime = `{
                 "attributes": {
                   "mount_path": {
                     "computed": true,
-                    "description": "Mount path for session storage",
+                    "description": "Mount path for filesystem configuration",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"

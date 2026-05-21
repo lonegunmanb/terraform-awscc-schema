@@ -16,10 +16,9 @@ const awsccNeptunegraphGraphSnapshot = `{
         "type": "string"
       },
       "graph_identifier": {
-        "computed": true,
         "description": "The unique identifier of the Neptune Analytics graph to create the snapshot from.",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "graph_snapshot_id": {

@@ -424,7 +424,7 @@ const awsccElasticacheReplicationGroup = `{
       },
       "replicas_per_node_group": {
         "computed": true,
-        "description": "An optional parameter that specifies the number of replica nodes in each node group (shard). Valid values are 0 to 5.",
+        "description": "An optional parameter that specifies the number of replica nodes in each node group (shard). Valid values are 0 to 5.\n\n**Note:** Using ReplicasPerNodeGroup with NodeGroupConfiguration results in resource replacement. For online scaling, use ReplicasPerNodeGroup alone.",
         "description_kind": "plain",
         "optional": true,
         "type": "number"

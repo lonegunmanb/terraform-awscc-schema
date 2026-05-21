@@ -257,6 +257,54 @@ const awsccApplicationsignalsServiceLevelObjective = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "composite_sli_config": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "composite_sli_components": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "operation_name": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          },
+                          "optional": true
+                        },
+                        "selection_config": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "pattern": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "dependency_config": {
                     "computed": true,
                     "description": "Configuration for identifying a dependency and its operation",
@@ -294,6 +342,44 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                       "map",
                       "string"
                     ]
+                  },
+                  "metric_name": {
+                    "computed": true,
+                    "description": "The name of the metric for non-Application Signals services",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "metric_source": {
+                    "computed": true,
+                    "description": "Configuration for identifying the source of metrics for non-Application Signals services",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metric_source_attributes": {
+                          "computed": true,
+                          "description": "Optional additional attributes for the metric source",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        },
+                        "metric_source_key_attributes": {
+                          "computed": true,
+                          "description": "Required attributes that identify the metric source",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
                   },
                   "metric_type": {
                     "computed": true,
@@ -719,6 +805,54 @@ const awsccApplicationsignalsServiceLevelObjective = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "composite_sli_config": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "composite_sli_components": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "operation_name": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          },
+                          "optional": true
+                        },
+                        "selection_config": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "pattern": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "dependency_config": {
                     "computed": true,
                     "description": "Configuration for identifying a dependency and its operation",
@@ -875,6 +1009,44 @@ const awsccApplicationsignalsServiceLevelObjective = `{
                         }
                       },
                       "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
+                  "metric_name": {
+                    "computed": true,
+                    "description": "The name of the metric for non-Application Signals services",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "metric_source": {
+                    "computed": true,
+                    "description": "Configuration for identifying the source of metrics for non-Application Signals services",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metric_source_attributes": {
+                          "computed": true,
+                          "description": "Optional additional attributes for the metric source",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        },
+                        "metric_source_key_attributes": {
+                          "computed": true,
+                          "description": "Required attributes that identify the metric source",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
                     },
                     "optional": true
                   },

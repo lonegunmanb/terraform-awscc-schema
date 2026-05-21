@@ -119,6 +119,7 @@ const awsccCloudfrontTrustStore = `{
       },
       "use_client_certificate_ocsp_endpoint": {
         "computed": true,
+        "description": "A boolean. When true, performs real-time certificate revocation checks by querying the OCSP endpoint specified within the client certificate.",
         "description_kind": "plain",
         "type": "bool"
       }

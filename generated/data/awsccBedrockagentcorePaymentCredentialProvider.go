@@ -1,0 +1,263 @@
+package data
+
+import (
+	"encoding/json"
+
+	tfjson "github.com/hashicorp/terraform-json"
+)
+
+const awsccBedrockagentcorePaymentCredentialProvider = `{
+  "block": {
+    "attributes": {
+      "created_time": {
+        "computed": true,
+        "description": "The timestamp when the credential provider was created",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "credential_provider_arn": {
+        "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the payment credential provider",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "credential_provider_vendor": {
+        "computed": true,
+        "description": "Supported vendor types for payment providers",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "id": {
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "last_updated_time": {
+        "computed": true,
+        "description": "The timestamp when the credential provider was last updated",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "name": {
+        "computed": true,
+        "description": "Unique name for the payment credential provider",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "provider_configuration_input": {
+        "computed": true,
+        "description": "Provider configuration input containing secrets for creation/update",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "coinbase_cdp_configuration": {
+              "computed": true,
+              "description": "Coinbase CDP configuration with API credentials",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "api_key_id": {
+                    "computed": true,
+                    "description": "The Coinbase CDP API key ID",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "api_key_secret": {
+                    "computed": true,
+                    "description": "The Coinbase CDP API key secret",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "wallet_secret": {
+                    "computed": true,
+                    "description": "The Coinbase CDP wallet secret",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "stripe_privy_configuration": {
+              "computed": true,
+              "description": "Stripe Privy configuration with credentials",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "app_id": {
+                    "computed": true,
+                    "description": "The app ID provided by Privy",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "app_secret": {
+                    "computed": true,
+                    "description": "The app secret provided by Privy",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "authorization_id": {
+                    "computed": true,
+                    "description": "The authorization ID for the Stripe Privy integration",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "authorization_private_key": {
+                    "computed": true,
+                    "description": "The authorization private key for the Stripe Privy integration",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "provider_configuration_output": {
+        "computed": true,
+        "description": "Provider configuration output containing secret ARNs (no raw secrets)",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "coinbase_cdp_configuration": {
+              "computed": true,
+              "description": "Coinbase CDP configuration output with secret ARNs",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "api_key_id": {
+                    "computed": true,
+                    "description": "The Coinbase CDP API key ID",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "api_key_secret_arn": {
+                    "computed": true,
+                    "description": "Contains information about a secret in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "The ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "wallet_secret_arn": {
+                    "computed": true,
+                    "description": "Contains information about a secret in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "The ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "stripe_privy_configuration": {
+              "computed": true,
+              "description": "Stripe Privy configuration output with secret ARNs",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "app_id": {
+                    "computed": true,
+                    "description": "The app ID provided by Privy",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "app_secret_arn": {
+                    "computed": true,
+                    "description": "Contains information about a secret in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "The ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "authorization_id": {
+                    "computed": true,
+                    "description": "The authorization ID for the Stripe Privy integration",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "authorization_private_key_arn": {
+                    "computed": true,
+                    "description": "Contains information about a secret in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "The ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "tags": {
+        "computed": true,
+        "description": "Tags for the payment credential provider",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      }
+    },
+    "description": "Data Source schema for AWS::BedrockAgentCore::PaymentCredentialProvider",
+    "description_kind": "plain"
+  },
+  "version": 0
+}`
+
+func AwsccBedrockagentcorePaymentCredentialProviderSchema() *tfjson.Schema {
+	var result tfjson.Schema
+	_ = json.Unmarshal([]byte(awsccBedrockagentcorePaymentCredentialProvider), &result)
+	return &result
+}

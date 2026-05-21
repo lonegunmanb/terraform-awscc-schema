@@ -350,6 +350,41 @@ const awsccDevopsagentAssociation = `{
               },
               "optional": true
             },
+            "mcp_server_grafana": {
+              "computed": true,
+              "description": "Grafana MCP server configuration",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enable_webhook_updates": {
+                    "computed": true,
+                    "description": "When set to true, enables the Agent Space to create and update webhooks for receiving notifications and events from the service",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
+                  "endpoint": {
+                    "computed": true,
+                    "description": "MCP server endpoint URL",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "tools": {
+                    "computed": true,
+                    "description": "List of tool categories to enable for the Grafana MCP server",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "mcp_server_new_relic": {
               "computed": true,
               "description": "NewRelic MCP server configuration",

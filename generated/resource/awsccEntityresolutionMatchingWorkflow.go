@@ -83,17 +83,20 @@ const awsccEntityresolutionMatchingWorkflow = `{
             },
             "customer_profiles_integration_config": {
               "computed": true,
+              "description": "The Customer Profiles integration configuration for the output source",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "domain_arn": {
                     "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the Customer Profiles domain",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "object_type_arn": {
                     "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the Customer Profiles object type",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -247,6 +250,24 @@ const awsccEntityresolutionMatchingWorkflow = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "matching_config": {
+                    "computed": true,
+                    "description": "Configuration for matching behavior within rule condition properties",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enable_transitive_matching": {
+                          "computed": true,
+                          "description": "Enables transitive matching to process records across all rule levels and connect unmatched records to existing match groups",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "rules": {
                     "computed": true,
                     "description_kind": "plain",
