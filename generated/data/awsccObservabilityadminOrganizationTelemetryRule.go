@@ -196,6 +196,25 @@ const awsccObservabilityadminOrganizationTelemetryRule = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "log_delivery_parameters": {
+                    "computed": true,
+                    "description": "Parameters for log delivery configuration",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "log_types": {
+                          "computed": true,
+                          "description": "Types of logs to deliver",
+                          "description_kind": "plain",
+                          "type": [
+                            "set",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "retention_in_days": {
                     "computed": true,
                     "description": "Number of days to retain the telemetry data in the specified destination",

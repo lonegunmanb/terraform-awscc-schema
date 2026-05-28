@@ -36,9 +36,8 @@ const awsccPcaconnectoradTemplateGroupAccessControlEntry = `{
         "type": "string"
       },
       "group_security_identifier": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "id": {
@@ -48,9 +47,8 @@ const awsccPcaconnectoradTemplateGroupAccessControlEntry = `{
         "type": "string"
       },
       "template_arn": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       }
     },

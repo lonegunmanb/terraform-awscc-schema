@@ -215,13 +215,13 @@ const awsccObservabilityadminTelemetryRule = `{
                   },
                   "log_delivery_parameters": {
                     "computed": true,
-                    "description": "Parameters for BedrockAgentCore log delivery",
+                    "description": "Parameters for log delivery configuration",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "log_types": {
                           "computed": true,
-                          "description": "Types of logs to deliver for BedrockAgentCore resources",
+                          "description": "Types of logs to deliver",
                           "description_kind": "plain",
                           "optional": true,
                           "type": [

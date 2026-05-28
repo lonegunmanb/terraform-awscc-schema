@@ -113,6 +113,28 @@ const awsccTimestreamInfluxDbInstance = `{
           "nesting_mode": "single"
         }
       },
+      "maintenance_schedule": {
+        "computed": true,
+        "description": "The maintenance schedule for the InfluxDB instance.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "preferred_maintenance_window": {
+              "computed": true,
+              "description": "The preferred maintenance window in format ddd:HH:MM-ddd:HH:MM.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "timezone": {
+              "computed": true,
+              "description": "The IANA timezone identifier for the maintenance schedule.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "name": {
         "computed": true,
         "description": "The unique name that is associated with the InfluxDB instance.",
@@ -122,6 +144,12 @@ const awsccTimestreamInfluxDbInstance = `{
       "network_type": {
         "computed": true,
         "description": "Network type of the InfluxDB Instance.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "next_maintenance_time": {
+        "computed": true,
+        "description": "The timestamp of the next scheduled maintenance event.",
         "description_kind": "plain",
         "type": "string"
       },

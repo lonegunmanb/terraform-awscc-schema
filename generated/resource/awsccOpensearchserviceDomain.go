@@ -264,6 +264,34 @@ const awsccOpensearchserviceDomain = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "automated_snapshot_pause_options": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "end_time": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "start_time": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "cluster_config": {
         "computed": true,
         "description_kind": "plain",
@@ -868,6 +896,13 @@ const awsccOpensearchserviceDomain = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "egress_enabled": {
+              "computed": true,
+              "description": "Controls whether egress traffic from the domain is routed through the customer VPC.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
             "security_group_ids": {
               "computed": true,
               "description_kind": "plain",

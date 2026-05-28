@@ -33,6 +33,13 @@ const awsccTransferWebApp = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "ip_address_type": {
+                    "computed": true,
+                    "description": "The IP address type for the VPC endpoint used by the web app.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "security_group_ids": {
                     "computed": true,
                     "description_kind": "plain",

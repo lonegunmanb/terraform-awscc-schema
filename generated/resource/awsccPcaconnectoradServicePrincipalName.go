@@ -10,15 +10,13 @@ const awsccPcaconnectoradServicePrincipalName = `{
   "block": {
     "attributes": {
       "connector_arn": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "directory_registration_arn": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "id": {
