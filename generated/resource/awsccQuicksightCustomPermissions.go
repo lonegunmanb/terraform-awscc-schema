@@ -24,6 +24,12 @@ const awsccQuicksightCustomPermissions = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "access_apps_native_data_store": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "action": {
               "computed": true,
               "description_kind": "plain",
@@ -67,6 +73,12 @@ const awsccQuicksightCustomPermissions = `{
               "type": "string"
             },
             "approve_flow_share_requests": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "apps": {
               "computed": true,
               "description_kind": "plain",
               "optional": true,
@@ -151,6 +163,12 @@ const awsccQuicksightCustomPermissions = `{
               "type": "string"
             },
             "create_and_update_amazon_s_three_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "create_and_update_apps": {
               "computed": true,
               "description_kind": "plain",
               "optional": true,
@@ -444,6 +462,12 @@ const awsccQuicksightCustomPermissions = `{
               "optional": true,
               "type": "string"
             },
+            "create_spaces": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "create_spice_dataset": {
               "computed": true,
               "description_kind": "plain",
@@ -553,6 +577,12 @@ const awsccQuicksightCustomPermissions = `{
               "type": "string"
             },
             "intercom_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "invoke_apps_ai_inference": {
               "computed": true,
               "description_kind": "plain",
               "optional": true,
@@ -750,6 +780,12 @@ const awsccQuicksightCustomPermissions = `{
               "optional": true,
               "type": "string"
             },
+            "share_apps": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "share_asana_action": {
               "computed": true,
               "description_kind": "plain",
@@ -769,6 +805,12 @@ const awsccQuicksightCustomPermissions = `{
               "type": "string"
             },
             "share_canva_agent_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "share_chat_agents": {
               "computed": true,
               "description_kind": "plain",
               "optional": true,
@@ -997,6 +1039,12 @@ const awsccQuicksightCustomPermissions = `{
               "type": "string"
             },
             "share_smartsheet_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "share_spaces": {
               "computed": true,
               "description_kind": "plain",
               "optional": true,

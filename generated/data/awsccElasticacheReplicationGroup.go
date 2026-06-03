@@ -94,6 +94,18 @@ const awsccElasticacheReplicationGroup = `{
         "description_kind": "plain",
         "type": "bool"
       },
+      "durability": {
+        "computed": true,
+        "description": "The durability setting for the replication group. Valid values: default, async, sync, disabled. Enabling durability on an existing non-durable cluster or disabling durability on an existing durable cluster is not currently supported and will result in an error; specify the desired durability at create time. The resolved state is returned in EffectiveDurability.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "effective_durability": {
+        "computed": true,
+        "description": "The resolved durability state of the replication group after resolving the default value. This is a read-only property.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "engine": {
         "computed": true,
         "description": "The name of the cache engine to be used for the clusters in this replication group.",

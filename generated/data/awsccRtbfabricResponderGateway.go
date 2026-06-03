@@ -9,7 +9,17 @@ import (
 const awsccRtbfabricResponderGateway = `{
   "block": {
     "attributes": {
+      "acm_certificate_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "certificate_association_status": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
@@ -29,7 +39,17 @@ const awsccRtbfabricResponderGateway = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "external_inbound_endpoint": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "gateway_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "gateway_type": {
         "computed": true,
         "description_kind": "plain",
         "type": "string"
@@ -39,6 +59,23 @@ const awsccRtbfabricResponderGateway = `{
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "listener_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "protocols": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "managed_endpoint_configuration": {
         "computed": true,

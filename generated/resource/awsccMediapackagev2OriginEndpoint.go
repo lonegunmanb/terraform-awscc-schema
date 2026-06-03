@@ -50,6 +50,22 @@ const awsccMediapackagev2OriginEndpoint = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "availability_start_time_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "fixed_availability_start_time": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "base_urls": {
               "computed": true,
               "description": "\u003cp\u003eThe base URL to use for retrieving segments.\u003c/p\u003e",
@@ -327,6 +343,12 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
+                  },
+                  "scte_in_manifests": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -373,6 +395,12 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description_kind": "plain",
               "optional": true,
               "type": "number"
+            },
+            "uri_path_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             },
             "utc_timing": {
               "computed": true,
@@ -537,6 +565,12 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
+                  },
+                  "scte_in_manifests": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -567,6 +601,12 @@ const awsccMediapackagev2OriginEndpoint = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            },
+            "uri_path_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             },
             "url": {
               "computed": true,
@@ -699,6 +739,12 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
+                  },
+                  "scte_in_manifests": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -729,6 +775,12 @@ const awsccMediapackagev2OriginEndpoint = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            },
+            "uri_path_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             },
             "url": {
               "computed": true,
@@ -922,7 +974,7 @@ const awsccMediapackagev2OriginEndpoint = `{
                       "attributes": {
                         "certificate_arn": {
                           "computed": true,
-                          "description": "\u003cp\u003eThe ARN for the certificate that you imported to AWS Certificate Manager to add content key encryption to this endpoint. For this feature to work, your DRM key provider must support content key encryption.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe ARN for the certificate that you imported to Amazon Web Services Certificate Manager to add content key encryption to this endpoint. For this feature to work, your DRM key provider must support content key encryption.\u003c/p\u003e",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
@@ -1004,6 +1056,16 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "custom_ad_types": {
+                    "computed": true,
+                    "description": "\u003cp\u003eA list of additional non-Ad SCTE-35 event types to treat as advertisements. When configured, events matching these types produce ad markers (such as \u003ccode\u003eSCTE35-OUT\u003c/code\u003e and \u003ccode\u003eSCTE35-IN\u003c/code\u003e in HLS DATERANGE tags) in manifests.\u003c/p\u003e \u003cp\u003eValid values: \u003ccode\u003ePROGRAM\u003c/code\u003e | \u003ccode\u003eCHAPTER\u003c/code\u003e | \u003ccode\u003eUNSCHEDULED_EVENT\u003c/code\u003e | \u003ccode\u003eALTERNATE_CONTENT_OPPORTUNITY\u003c/code\u003e | \u003ccode\u003eNETWORK\u003c/code\u003e \u003c/p\u003e \u003cp\u003eIf you don't specify any values, the default is empty (only default ad types are used).\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
                   "scte_filter": {
                     "computed": true,
                     "description": "\u003cp\u003eThe SCTE-35 message types that you want to be treated as ad markers in the output.\u003c/p\u003e",
@@ -1086,6 +1148,12 @@ const awsccMediapackagev2OriginEndpoint = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "uri_separator": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       }
     },
     "description": "\u003cp\u003eRepresents an origin endpoint that is associated with a channel, offering a dynamically repackaged version of its content through various streaming media protocols. The content can be efficiently disseminated to end-users via a Content Delivery Network (CDN), like Amazon CloudFront.\u003c/p\u003e",

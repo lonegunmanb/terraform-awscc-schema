@@ -136,6 +136,12 @@ const awsccSecurityagentTargetDomain = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "verification_status_reason": {
+        "computed": true,
+        "description": "Reason for the current target domain verification status",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "verified_at": {
         "computed": true,
         "description": "Timestamp when the target domain was last successfully verified",

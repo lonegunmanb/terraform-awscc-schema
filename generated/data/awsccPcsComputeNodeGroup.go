@@ -145,6 +145,12 @@ const awsccPcsComputeNodeGroup = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "scale_down_idle_time_in_seconds": {
+              "computed": true,
+              "description": "The time before an idle node is scaled down.",
+              "description_kind": "plain",
+              "type": "number"
+            },
             "slurm_custom_settings": {
               "computed": true,
               "description": "Additional Slurm-specific configuration that directly maps to Slurm settings.",

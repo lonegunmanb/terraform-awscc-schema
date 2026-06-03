@@ -85,11 +85,6 @@ const awsccLambdaFunction = `{
               "description_kind": "plain",
               "type": "string"
             },
-            "s3_object_storage_mode": {
-              "computed": true,
-              "description_kind": "plain",
-              "type": "string"
-            },
             "s3_object_version": {
               "computed": true,
               "description": "For versioned objects, the version of the deployment package object to use.",
@@ -199,13 +194,13 @@ const awsccLambdaFunction = `{
       },
       "file_system_configs": {
         "computed": true,
-        "description": "Connection settings for an Amazon EFS file system. To connect a function to a file system, a mount target must be available in every Availability Zone that your function connects to. If your template contains an [AWS::EFS::MountTarget](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html) resource, you must also specify a ` + "`" + `` + "`" + `DependsOn` + "`" + `` + "`" + ` attribute to ensure that the mount target is created or updated before the function.\n For more information about using the ` + "`" + `` + "`" + `DependsOn` + "`" + `` + "`" + ` attribute, see [DependsOn Attribute](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html).",
+        "description": "Connection settings for an Amazon EFS or Amazon S3 Files file system. To connect a function to a file system, a mount target must be available in every Availability Zone that your function connects to. If your template contains an [AWS::EFS::MountTarget](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html) or [AWS::S3Files::MountTarget](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3files-mounttarget.html) resource, you must also specify a ` + "`" + `` + "`" + `DependsOn` + "`" + `` + "`" + ` attribute to ensure that the mount target is created or updated before the function.\n For more information about using the ` + "`" + `` + "`" + `DependsOn` + "`" + `` + "`" + ` attribute, see [DependsOn Attribute](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html).",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "arn": {
               "computed": true,
-              "description": "The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system.",
+              "description": "The Amazon Resource Name (ARN) of the Amazon EFS or Amazon S3 Files access point that provides access to the file system.",
               "description_kind": "plain",
               "type": "string"
             },

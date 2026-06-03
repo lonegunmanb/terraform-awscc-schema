@@ -593,6 +593,13 @@ const awsccConnectcampaignsv2Campaign = `{
                       "list",
                       "string"
                     ]
+                  },
+                  "local_time_zone_detection_scope": {
+                    "computed": true,
+                    "description": "Local TimeZone Detection scope",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"

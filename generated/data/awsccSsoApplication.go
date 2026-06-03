@@ -33,6 +33,12 @@ const awsccSsoApplication = `{
         "required": true,
         "type": "string"
       },
+      "identity_store_arn": {
+        "computed": true,
+        "description": "The ARN of the identity store associated with the Identity Center instance",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "instance_arn": {
         "computed": true,
         "description": "The ARN of the instance of IAM Identity Center under which the operation will run",

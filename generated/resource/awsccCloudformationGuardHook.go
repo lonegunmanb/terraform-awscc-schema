@@ -61,6 +61,7 @@ const awsccCloudformationGuardHook = `{
           "attributes": {
             "input_params": {
               "computed": true,
+              "description": "Specifies the S3 location of input parameter files for your Guard rules. You can specify either a single S3 location or an array of up to 10 S3 locations.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

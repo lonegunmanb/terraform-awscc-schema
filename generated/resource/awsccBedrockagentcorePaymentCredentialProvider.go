@@ -71,9 +71,73 @@ const awsccBedrockagentcorePaymentCredentialProvider = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "api_key_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "api_key_secret_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "wallet_secret": {
                     "computed": true,
                     "description": "The Coinbase CDP wallet secret",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "wallet_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "wallet_secret_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -103,6 +167,38 @@ const awsccBedrockagentcorePaymentCredentialProvider = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "app_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "app_secret_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "authorization_id": {
                     "computed": true,
                     "description": "The authorization ID for the Stripe Privy integration",
@@ -113,6 +209,38 @@ const awsccBedrockagentcorePaymentCredentialProvider = `{
                   "authorization_private_key": {
                     "computed": true,
                     "description": "The authorization private key for the Stripe Privy integration",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "authorization_private_key_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "authorization_private_key_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -161,6 +289,18 @@ const awsccBedrockagentcorePaymentCredentialProvider = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "api_key_secret_json_key": {
+                    "computed": true,
+                    "description": "The JSON key within the secret that contains the API key secret value",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "api_key_secret_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "wallet_secret_arn": {
                     "computed": true,
                     "description": "Contains information about a secret in AWS Secrets Manager",
@@ -176,6 +316,18 @@ const awsccBedrockagentcorePaymentCredentialProvider = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "wallet_secret_json_key": {
+                    "computed": true,
+                    "description": "The JSON key within the secret that contains the wallet secret value",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "wallet_secret_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -209,6 +361,18 @@ const awsccBedrockagentcorePaymentCredentialProvider = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "app_secret_json_key": {
+                    "computed": true,
+                    "description": "The JSON key within the secret that contains the app secret value",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "app_secret_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "authorization_id": {
                     "computed": true,
                     "description": "The authorization ID for the Stripe Privy integration",
@@ -230,6 +394,18 @@ const awsccBedrockagentcorePaymentCredentialProvider = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "authorization_private_key_json_key": {
+                    "computed": true,
+                    "description": "The JSON key within the secret that contains the authorization private key value",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "authorization_private_key_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"

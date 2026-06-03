@@ -252,6 +252,12 @@ const awsccSagemakerDomain = `{
                           "description": "The Amazon Resource Name (ARN) of the image version created on the instance.",
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
+                          "description_kind": "plain",
+                          "type": "string"
                         }
                       },
                       "nesting_mode": "single"
@@ -302,6 +308,12 @@ const awsccSagemakerDomain = `{
                         "sage_maker_image_version_arn": {
                           "computed": true,
                           "description": "The Amazon Resource Name (ARN) of the image version created on the instance.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -383,6 +395,12 @@ const awsccSagemakerDomain = `{
                         "sage_maker_image_version_arn": {
                           "computed": true,
                           "description": "The Amazon Resource Name (ARN) of the image version created on the instance.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -569,6 +587,12 @@ const awsccSagemakerDomain = `{
                         "sage_maker_image_version_arn": {
                           "computed": true,
                           "description": "The Amazon Resource Name (ARN) of the image version created on the instance.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -813,6 +837,12 @@ const awsccSagemakerDomain = `{
                           "description": "The Amazon Resource Name (ARN) of the image version created on the instance.",
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
+                          "description_kind": "plain",
+                          "type": "string"
                         }
                       },
                       "nesting_mode": "single"
@@ -863,6 +893,12 @@ const awsccSagemakerDomain = `{
                         "sage_maker_image_version_arn": {
                           "computed": true,
                           "description": "The Amazon Resource Name (ARN) of the image version created on the instance.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -946,6 +982,12 @@ const awsccSagemakerDomain = `{
                           "description": "The Amazon Resource Name (ARN) of the image version created on the instance.",
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
+                          "description_kind": "plain",
+                          "type": "string"
                         }
                       },
                       "nesting_mode": "single"
@@ -1024,6 +1066,12 @@ const awsccSagemakerDomain = `{
                         "sage_maker_image_version_arn": {
                           "computed": true,
                           "description": "The Amazon Resource Name (ARN) of the image version created on the instance.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -1292,6 +1340,12 @@ const awsccSagemakerDomain = `{
                           "description": "The Amazon Resource Name (ARN) of the image version created on the instance.",
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
+                          "description_kind": "plain",
+                          "type": "string"
                         }
                       },
                       "nesting_mode": "single"
@@ -1383,6 +1437,12 @@ const awsccSagemakerDomain = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "home_efs_file_system_creation": {
+        "computed": true,
+        "description": "Indicates whether a home EFS file system is created for the domain. Set to Disabled to skip EFS creation and reduce domain creation time.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "home_efs_file_system_id": {
         "computed": true,

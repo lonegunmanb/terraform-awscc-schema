@@ -82,13 +82,14 @@ const awsccMediapackagev2Channel = `{
           "attributes": {
             "mqcs_input_switching": {
               "computed": true,
-              "description": "\u003cp\u003eWhen true, AWS Elemental MediaPackage performs input switching based on the MQCS. Default is true. This setting is valid only when \u003ccode\u003eInputType\u003c/code\u003e is \u003ccode\u003eCMAF\u003c/code\u003e.\u003c/p\u003e",
+              "description": "\u003cp\u003eWhen true, AWS Elemental MediaPackage performs input switching based on the MQCS. Default is false. This setting is valid only when \u003ccode\u003eInputType\u003c/code\u003e is \u003ccode\u003eCMAF\u003c/code\u003e.\u003c/p\u003e",
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
             },
             "preferred_input": {
               "computed": true,
+              "description": "\u003cp\u003eFor CMAF inputs, indicates which input MediaPackage should prefer when both inputs have equal MQCS scores. Select \u003ccode\u003e1\u003c/code\u003e to prefer the first ingest endpoint, or \u003ccode\u003e2\u003c/code\u003e to prefer the second ingest endpoint. If you don't specify a preferred input, MediaPackage uses its default switching behavior when MQCS scores are equal.\u003c/p\u003e",
               "description_kind": "plain",
               "optional": true,
               "type": "number"

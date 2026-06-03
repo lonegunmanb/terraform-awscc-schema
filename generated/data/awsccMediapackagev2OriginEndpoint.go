@@ -50,6 +50,20 @@ const awsccMediapackagev2OriginEndpoint = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "availability_start_time_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "fixed_availability_start_time": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "base_urls": {
               "computed": true,
               "description": "\u003cp\u003eThe base URL to use for retrieving segments.\u003c/p\u003e",
@@ -292,6 +306,11 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "scte_in_manifests": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -332,6 +351,11 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description": "\u003cp\u003eThe amount of time (in seconds) that the player should be from the end of the manifest.\u003c/p\u003e",
               "description_kind": "plain",
               "type": "number"
+            },
+            "uri_path_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             },
             "utc_timing": {
               "computed": true,
@@ -477,6 +501,11 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "scte_in_manifests": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -503,6 +532,11 @@ const awsccMediapackagev2OriginEndpoint = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "uri_path_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             },
             "url": {
               "computed": true,
@@ -620,6 +654,11 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "scte_in_manifests": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -646,6 +685,11 @@ const awsccMediapackagev2OriginEndpoint = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "uri_path_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             },
             "url": {
               "computed": true,
@@ -818,7 +862,7 @@ const awsccMediapackagev2OriginEndpoint = `{
                       "attributes": {
                         "certificate_arn": {
                           "computed": true,
-                          "description": "\u003cp\u003eThe ARN for the certificate that you imported to AWS Certificate Manager to add content key encryption to this endpoint. For this feature to work, your DRM key provider must support content key encryption.\u003c/p\u003e",
+                          "description": "\u003cp\u003eThe ARN for the certificate that you imported to Amazon Web Services Certificate Manager to add content key encryption to this endpoint. For this feature to work, your DRM key provider must support content key encryption.\u003c/p\u003e",
                           "description_kind": "plain",
                           "type": "string"
                         },
@@ -889,6 +933,15 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "custom_ad_types": {
+                    "computed": true,
+                    "description": "\u003cp\u003eA list of additional non-Ad SCTE-35 event types to treat as advertisements. When configured, events matching these types produce ad markers (such as \u003ccode\u003eSCTE35-OUT\u003c/code\u003e and \u003ccode\u003eSCTE35-IN\u003c/code\u003e in HLS DATERANGE tags) in manifests.\u003c/p\u003e \u003cp\u003eValid values: \u003ccode\u003ePROGRAM\u003c/code\u003e | \u003ccode\u003eCHAPTER\u003c/code\u003e | \u003ccode\u003eUNSCHEDULED_EVENT\u003c/code\u003e | \u003ccode\u003eALTERNATE_CONTENT_OPPORTUNITY\u003c/code\u003e | \u003ccode\u003eNETWORK\u003c/code\u003e \u003c/p\u003e \u003cp\u003eIf you don't specify any values, the default is empty (only default ad types are used).\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
                   "scte_filter": {
                     "computed": true,
                     "description": "\u003cp\u003eThe SCTE-35 message types that you want to be treated as ad markers in the output.\u003c/p\u003e",
@@ -959,6 +1012,11 @@ const awsccMediapackagev2OriginEndpoint = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "uri_separator": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::MediaPackageV2::OriginEndpoint",
