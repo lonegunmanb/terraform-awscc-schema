@@ -31,6 +31,18 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
           "nesting_mode": "single"
         }
       },
+      "client_secret_json_key": {
+        "computed": true,
+        "description": "The JSON key within the secret that contains the client secret value",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "client_secret_source": {
+        "computed": true,
+        "description": "The source of the client secret",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "created_time": {
         "computed": true,
         "description": "The timestamp when the credential provider was created",
@@ -88,6 +100,33 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "client_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "client_secret_source": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -99,6 +138,12 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "client_authentication_method": {
+                    "computed": true,
+                    "description": "The client authentication method to use when authenticating with the token endpoint",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "client_id": {
                     "computed": true,
                     "description": "The client ID for the custom OAuth2 provider",
@@ -108,6 +153,34 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                   "client_secret": {
                     "computed": true,
                     "description": "The client secret for the custom OAuth2 provider",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "client_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "client_secret_source": {
+                    "computed": true,
+                    "description": "The source of the client secret",
                     "description_kind": "plain",
                     "type": "string"
                   },
@@ -224,6 +297,33 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "client_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "client_secret_source": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -241,6 +341,33 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                     "type": "string"
                   },
                   "client_secret": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "client_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "client_secret_source": {
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
@@ -267,6 +394,33 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                     "type": "string"
                   },
                   "client_secret": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "client_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "client_secret_source": {
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
@@ -302,6 +456,33 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "client_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "client_secret_source": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -319,6 +500,33 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                     "type": "string"
                   },
                   "client_secret": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "client_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "client_secret_source": {
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
@@ -348,6 +556,33 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "client_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "client_secret_source": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -368,6 +603,33 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "client_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "client_secret_source": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"
@@ -383,6 +645,12 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "client_authentication_method": {
+              "computed": true,
+              "description": "The client authentication method used when authenticating with the token endpoint",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "client_id": {
               "computed": true,
               "description_kind": "plain",

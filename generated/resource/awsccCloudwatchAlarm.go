@@ -93,31 +93,33 @@ const awsccCloudwatchAlarm = `{
       },
       "evaluation_criteria": {
         "computed": true,
+        "description": "The evaluation criteria for the alarm.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "prom_ql_criteria": {
               "computed": true,
+              "description": "The PromQL criteria for the alarm evaluation.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "pending_period": {
                     "computed": true,
-                    "description": "The pending period for the alarm.",
+                    "description": "The duration, in seconds, that a contributor must be continuously breaching before it transitions to the ` + "`" + `` + "`" + `ALARM` + "`" + `` + "`" + ` state.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
                   },
                   "query": {
                     "computed": true,
-                    "description": "The PromQL query string.",
+                    "description": "The PromQL query that the alarm evaluates. The query must return a result of vector type. Each entry in the vector result represents an alarm contributor.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "recovery_period": {
                     "computed": true,
-                    "description": "The recovery period for the alarm.",
+                    "description": "The duration, in seconds, that a contributor must continuously not be breaching before it transitions back to the ` + "`" + `` + "`" + `OK` + "`" + `` + "`" + ` state.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
@@ -134,6 +136,7 @@ const awsccCloudwatchAlarm = `{
       },
       "evaluation_interval": {
         "computed": true,
+        "description": "The frequency, in seconds, at which the alarm is evaluated.",
         "description_kind": "plain",
         "optional": true,
         "type": "number"

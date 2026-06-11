@@ -40,6 +40,13 @@ const awsccOpensearchserverlessCollection = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "deletion_protection": {
+        "computed": true,
+        "description": "The deletion protection state of the collection",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description": "The description of the collection",

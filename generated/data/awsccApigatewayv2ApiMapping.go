@@ -11,7 +11,7 @@ const awsccApigatewayv2ApiMapping = `{
     "attributes": {
       "api_id": {
         "computed": true,
-        "description": "The identifier of the API.",
+        "description": "The API identifier.",
         "description_kind": "plain",
         "type": "string"
       },

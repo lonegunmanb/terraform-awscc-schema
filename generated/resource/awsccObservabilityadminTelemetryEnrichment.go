@@ -16,10 +16,9 @@ const awsccObservabilityadminTelemetryEnrichment = `{
         "type": "string"
       },
       "scope": {
-        "computed": true,
         "description": "Scope of the Telemetry Enrichment",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "status": {

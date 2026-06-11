@@ -176,6 +176,12 @@ const awsccMediaconnectFlowOutput = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "ndi_output_timecode_source": {
+        "computed": true,
+        "description": "The timecode source for the NDI output.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "ndi_program_name": {
         "computed": true,
         "description": "A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.",

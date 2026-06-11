@@ -272,19 +272,47 @@ const awsccEksCluster = `{
           "attributes": {
             "control_plane_instance_type": {
               "computed": true,
-              "description": "Specify the Instance type of the machines that should be used to create your cluster.",
+              "description": "The EC2 instance type for the Kubernetes control plane instances of your local Amazon EKS cluster on AWS Outposts. This instance type applies to all control plane instances and cannot be changed after cluster creation.",
               "description_kind": "plain",
               "type": "string"
             },
             "control_plane_placement": {
               "computed": true,
-              "description": "Specify the placement group of the control plane machines for your cluster.",
+              "description": "An object representing the placement configuration for all the control plane instances of your local Amazon EKS cluster on an AWS Outpost.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "group_name": {
                     "computed": true,
-                    "description": "Specify the placement group name of the control place machines for your cluster.",
+                    "description": "The name of the placement group for the Kubernetes control plane instances. This setting can't be changed after cluster creation.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "spread_level": {
+                    "computed": true,
+                    "description": "Optional parameter to specify the placement group spread level for control plane instances. If not provided, EKS will deploy control plane instances without a placement group.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "etcd_instance_type": {
+              "computed": true,
+              "description": "The EC2 instance type for etcd instances of your local Amazon EKS cluster on AWS Outposts. This instance type applies to all etcd instances and cannot be changed after cluster creation.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "etcd_placement": {
+              "computed": true,
+              "description": "An object representing the placement configuration for the etcd instances of your local Amazon EKS cluster on an AWS Outpost.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "spread_level": {
+                    "computed": true,
+                    "description": "Optional parameter to specify the placement group spread level for etcd instances. If not provided, EKS will deploy etcd instances without a placement group.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -294,7 +322,7 @@ const awsccEksCluster = `{
             },
             "outpost_arns": {
               "computed": true,
-              "description": "Specify one or more Arn(s) of Outpost(s) on which you would like to create your cluster.",
+              "description": "The ARN of the Outpost that you want to use for your local Amazon EKS cluster on Outposts. Only a single Outpost ARN is supported.",
               "description_kind": "plain",
               "type": [
                 "list",

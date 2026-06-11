@@ -17,7 +17,7 @@ const awsccApigatewayv2IntegrationResponse = `{
       },
       "content_handling_strategy": {
         "computed": true,
-        "description": "Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are ` + "`" + `` + "`" + `CONVERT_TO_BINARY` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `CONVERT_TO_TEXT` + "`" + `` + "`" + `, with the following behaviors:\n  ` + "`" + `` + "`" + `CONVERT_TO_BINARY` + "`" + `` + "`" + `: Converts a response payload from a Base64-encoded string to the corresponding binary blob.\n  ` + "`" + `` + "`" + `CONVERT_TO_TEXT` + "`" + `` + "`" + `: Converts a response payload from a binary blob to a Base64-encoded string.\n If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.",
+        "description": "Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are ` + "`" + `` + "`" + `CONVERT_TO_BINARY` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `CONVERT_TO_TEXT` + "`" + `` + "`" + `, with the following behaviors:\n ` + "`" + `` + "`" + `CONVERT_TO_BINARY` + "`" + `` + "`" + `: Converts a response payload from a Base64-encoded string to the corresponding binary blob.\n ` + "`" + `` + "`" + `CONVERT_TO_TEXT` + "`" + `` + "`" + `: Converts a response payload from a binary blob to a Base64-encoded string.\n If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

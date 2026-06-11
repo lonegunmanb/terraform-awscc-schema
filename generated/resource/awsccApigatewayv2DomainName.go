@@ -49,6 +49,7 @@ const awsccApigatewayv2DomainName = `{
             },
             "ip_address_type": {
               "computed": true,
+              "description": "The IP address types that can invoke the domain name. Use ` + "`" + `` + "`" + `ipv4` + "`" + `` + "`" + ` to allow only IPv4 addresses to invoke your domain name, or use ` + "`" + `` + "`" + `dualstack` + "`" + `` + "`" + ` to allow both IPv4 and IPv6 addresses to invoke your domain name.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -115,6 +116,7 @@ const awsccApigatewayv2DomainName = `{
       },
       "routing_mode": {
         "computed": true,
+        "description": "The routing mode API Gateway uses to route traffic to your APIs.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

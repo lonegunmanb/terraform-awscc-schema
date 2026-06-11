@@ -128,6 +128,43 @@ const awsccLambdaCapacityProvider = `{
           "nesting_mode": "single"
         }
       },
+      "propagate_tags": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "explicit_tags": {
+              "computed": true,
+              "description": "A list of tags to explicitly propagate to managed resources.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description": "The key name of the tag.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description": "The value for the tag.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            },
+            "mode": {
+              "computed": true,
+              "description": "The mode for tag propagation.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "state": {
         "computed": true,
         "description": "The current state of the capacity provider. Indicates whether the provider is being created, is active and ready for use, has failed, or is being deleted.",

@@ -32,6 +32,44 @@ const awsccBedrockagentcoreApiKeyCredentialProvider = `{
           "nesting_mode": "single"
         }
       },
+      "api_key_secret_config": {
+        "computed": true,
+        "description": "Configuration for a customer-provided secret containing the API key",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "json_key": {
+              "computed": true,
+              "description": "The JSON key within the secret that contains the credential value",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "secret_id": {
+              "computed": true,
+              "description": "The ID or ARN of the secret in AWS Secrets Manager",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "api_key_secret_json_key": {
+        "computed": true,
+        "description": "The JSON key within the secret that contains the API key value",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "api_key_secret_source": {
+        "computed": true,
+        "description": "The source of the API key secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "created_time": {
         "computed": true,
         "description": "The timestamp when the credential provider was created",

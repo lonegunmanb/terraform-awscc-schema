@@ -69,6 +69,55 @@ const awsccAppstreamStack = `{
           "string"
         ]
       },
+      "content_redirection": {
+        "computed": true,
+        "description": "The content redirection settings for the stack. These settings control URL redirection between the streaming session and the local device.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "host_to_client": {
+              "computed": true,
+              "description": "The URL redirection configuration from the streaming session host to the client.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "allowed_urls": {
+                    "computed": true,
+                    "description": "The URLs that are allowed for redirection.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "denied_urls": {
+                    "computed": true,
+                    "description": "The URLs that are denied for redirection.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "enabled": {
+                    "computed": true,
+                    "description": "Specifies whether URL redirection is enabled or disabled.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "delete_storage_connectors": {
         "computed": true,
         "description": "This parameter has been deprecated. Deletes the storage connectors currently enabled for the stack.",

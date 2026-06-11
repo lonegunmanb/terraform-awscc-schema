@@ -142,6 +142,13 @@ const awsccPaymentcryptographyKey = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "policy": {
+        "computed": true,
+        "description": "The resource-based policy attached to the key, in JSON format.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "replication_regions": {
         "computed": true,
         "description_kind": "plain",

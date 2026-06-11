@@ -106,6 +106,12 @@ const awsccVerifiedpermissionsPolicy = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "name": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "policy_id": {
         "computed": true,
         "description_kind": "plain",

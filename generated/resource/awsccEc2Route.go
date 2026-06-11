@@ -97,6 +97,12 @@ const awsccEc2Route = `{
         "optional": true,
         "type": "string"
       },
+      "odb_network_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "route_table_id": {
         "description": "The ID of the route table for the route.",
         "description_kind": "plain",

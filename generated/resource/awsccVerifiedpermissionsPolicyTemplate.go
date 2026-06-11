@@ -21,6 +21,12 @@ const awsccVerifiedpermissionsPolicyTemplate = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "name": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "policy_store_id": {
         "description_kind": "plain",
         "required": true,

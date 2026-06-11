@@ -38,6 +38,28 @@ const awsccConnectIntegrationAssociation = `{
         "description": "Specifies the integration type to be associated with the instance",
         "description_kind": "plain",
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "The tags used to organize, track, or control access for this resource.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name of the tag.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the tag.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
       }
     },
     "description": "Data Source schema for AWS::Connect::IntegrationAssociation",
