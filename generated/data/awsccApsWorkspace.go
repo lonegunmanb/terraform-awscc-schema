@@ -189,9 +189,21 @@ const awsccApsWorkspace = `{
                 "nesting_mode": "set"
               }
             },
+            "out_of_order_time_window_in_seconds": {
+              "computed": true,
+              "description": "The time window in seconds for accepting out-of-order samples",
+              "description_kind": "plain",
+              "type": "number"
+            },
             "retention_period_in_days": {
               "computed": true,
               "description": "How many days that metrics are retained in the workspace",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "rule_query_offset_in_seconds": {
+              "computed": true,
+              "description": "Duration in seconds to offset rule evaluation queries into the past",
               "description_kind": "plain",
               "type": "number"
             }

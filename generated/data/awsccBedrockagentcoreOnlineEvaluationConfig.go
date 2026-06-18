@@ -9,6 +9,25 @@ import (
 const awsccBedrockagentcoreOnlineEvaluationConfig = `{
   "block": {
     "attributes": {
+      "clustering_config": {
+        "computed": true,
+        "description": "The configuration for clustering analysis of evaluation results.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "frequencies": {
+              "computed": true,
+              "description": "The list of frequencies at which clustering reports are generated.",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "created_at": {
         "computed": true,
         "description": "The timestamp when the online evaluation configuration was created.",
@@ -92,6 +111,22 @@ const awsccBedrockagentcoreOnlineEvaluationConfig = `{
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "insights": {
+        "computed": true,
+        "description": "The list of insights to enable for failure analysis.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "insight_id": {
+              "computed": true,
+              "description": "The unique identifier of the insight.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
       },
       "online_evaluation_config_arn": {
         "computed": true,

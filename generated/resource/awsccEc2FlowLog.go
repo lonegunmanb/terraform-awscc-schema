@@ -110,6 +110,32 @@ const awsccEc2FlowLog = `{
         "required": true,
         "type": "string"
       },
+      "tag_field_specifications": {
+        "computed": true,
+        "description": "The resource types and associated tags for EC2 resources associated with the EC2 Tags feature for log enrichment.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "resource_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "tag_keys": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "tags": {
         "computed": true,
         "description": "The tags to apply to the flow logs.",

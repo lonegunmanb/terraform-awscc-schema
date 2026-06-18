@@ -20,12 +20,10 @@ const awsccQuicksightActionConnector = `{
         "type": "string"
       },
       "authentication_config": {
-        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "authentication_metadata": {
-              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -252,18 +250,17 @@ const awsccQuicksightActionConnector = `{
                 },
                 "nesting_mode": "single"
               },
-              "optional": true
+              "required": true
             },
             "authentication_type": {
-              "computed": true,
               "description_kind": "plain",
-              "optional": true,
+              "required": true,
               "type": "string"
             }
           },
           "nesting_mode": "single"
         },
-        "optional": true
+        "required": true
       },
       "aws_account_id": {
         "description_kind": "plain",

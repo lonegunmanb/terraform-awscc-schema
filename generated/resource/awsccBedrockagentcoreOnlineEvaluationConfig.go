@@ -9,6 +9,27 @@ import (
 const awsccBedrockagentcoreOnlineEvaluationConfig = `{
   "block": {
     "attributes": {
+      "clustering_config": {
+        "computed": true,
+        "description": "The configuration for clustering analysis of evaluation results.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "frequencies": {
+              "computed": true,
+              "description": "The list of frequencies at which clustering reports are generated.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "created_at": {
         "computed": true,
         "description": "The timestamp when the online evaluation configuration was created.",
@@ -67,20 +88,22 @@ const awsccBedrockagentcoreOnlineEvaluationConfig = `{
         "type": "string"
       },
       "evaluators": {
+        "computed": true,
         "description": "The list of evaluators to apply during online evaluation.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "evaluator_id": {
+              "computed": true,
               "description": "The unique identifier of the evaluator.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
           "nesting_mode": "list"
         },
-        "required": true
+        "optional": true
       },
       "execution_status": {
         "computed": true,
@@ -94,6 +117,24 @@ const awsccBedrockagentcoreOnlineEvaluationConfig = `{
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "insights": {
+        "computed": true,
+        "description": "The list of insights to enable for failure analysis.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "insight_id": {
+              "computed": true,
+              "description": "The unique identifier of the insight.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       },
       "online_evaluation_config_arn": {
         "computed": true,

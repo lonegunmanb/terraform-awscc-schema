@@ -105,6 +105,32 @@ const awsccObservabilityadminOrganizationCentralizationRule = `{
                     },
                     "optional": true
                   },
+                  "destination_metrics_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "backup_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "region": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "region": {
                     "description_kind": "plain",
                     "required": true,
@@ -151,6 +177,22 @@ const awsccObservabilityadminOrganizationCentralizationRule = `{
                           "type": "string"
                         },
                         "log_group_selection_criteria": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "source_metrics_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metrics_selection_criteria": {
                           "computed": true,
                           "description_kind": "plain",
                           "optional": true,

@@ -88,6 +88,7 @@ const awsccEc2Route = `{
       },
       "odb_network_arn": {
         "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the ODB network.",
         "description_kind": "plain",
         "type": "string"
       },

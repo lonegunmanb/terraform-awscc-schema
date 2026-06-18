@@ -133,6 +133,11 @@ const awsccWisdomAiGuardrail = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "modified_time_seconds": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "number"
+      },
       "name": {
         "computed": true,
         "description_kind": "plain",

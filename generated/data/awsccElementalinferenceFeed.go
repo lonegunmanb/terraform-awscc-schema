@@ -76,6 +76,49 @@ const awsccElementalinferenceFeed = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "subtitling": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "aspect_ratio": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "height": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "width": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "dictionary": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "language": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "profanity_filter": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"

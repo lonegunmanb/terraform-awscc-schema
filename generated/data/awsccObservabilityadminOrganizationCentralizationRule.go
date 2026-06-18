@@ -96,6 +96,29 @@ const awsccObservabilityadminOrganizationCentralizationRule = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "destination_metrics_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "backup_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "region": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "region": {
                     "computed": true,
                     "description_kind": "plain",
@@ -139,6 +162,20 @@ const awsccObservabilityadminOrganizationCentralizationRule = `{
                           "type": "string"
                         },
                         "log_group_selection_criteria": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "source_metrics_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "metrics_selection_criteria": {
                           "computed": true,
                           "description_kind": "plain",
                           "type": "string"

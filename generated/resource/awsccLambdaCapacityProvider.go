@@ -147,7 +147,6 @@ const awsccLambdaCapacityProvider = `{
           "attributes": {
             "explicit_tags": {
               "computed": true,
-              "description": "A list of tags to explicitly propagate to managed resources.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -210,6 +209,41 @@ const awsccLambdaCapacityProvider = `{
             }
           },
           "nesting_mode": "set"
+        },
+        "optional": true
+      },
+      "telemetry_config": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "logging_config": {
+              "computed": true,
+              "description": "The logging configuration for the capacity provider.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "log_group": {
+                    "computed": true,
+                    "description": "The log group name.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "system_log_level": {
+                    "computed": true,
+                    "description": "System log granularity level",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
         },
         "optional": true
       },

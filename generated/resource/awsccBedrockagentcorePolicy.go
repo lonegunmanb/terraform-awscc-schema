@@ -21,20 +21,40 @@ const awsccBedrockagentcorePolicy = `{
         "nested_type": {
           "attributes": {
             "cedar": {
+              "computed": true,
               "description": "A Cedar policy statement within the AgentCore Policy system.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "statement": {
+                    "computed": true,
                     "description": "The Cedar policy statement that defines the authorization logic.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
+            },
+            "policy": {
+              "computed": true,
+              "description": "A policy statement within the AgentCore Policy system.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "statement": {
+                    "computed": true,
+                    "description": "The policy statement.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -44,6 +64,13 @@ const awsccBedrockagentcorePolicy = `{
       "description": {
         "computed": true,
         "description": "A human-readable description of the policy's purpose and functionality.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "enforcement_mode": {
+        "computed": true,
+        "description": "Whether the policy contributes to the enforce decision returned to Gateway. LOG_ONLY policies are still evaluated but their decisions are observed only, allowing customers to validate a policy against real traffic before promoting it.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

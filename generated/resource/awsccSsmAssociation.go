@@ -15,6 +15,13 @@ const awsccSsmAssociation = `{
         "optional": true,
         "type": "bool"
       },
+      "association_dispatch_assume_role": {
+        "computed": true,
+        "description": "A role used by association to take actions on your behalf.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "association_id": {
         "computed": true,
         "description": "Unique identifier of the association.",
@@ -156,6 +163,31 @@ const awsccSsmAssociation = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "A key-value pair to associate with a resource.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The name of the tag.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value of the tag.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       },
       "targets": {
         "computed": true,

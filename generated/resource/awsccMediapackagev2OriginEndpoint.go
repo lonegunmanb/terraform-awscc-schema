@@ -50,6 +50,12 @@ const awsccMediapackagev2OriginEndpoint = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "audio_timeline_pattern": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "availability_start_time_configuration": {
               "computed": true,
               "description_kind": "plain",

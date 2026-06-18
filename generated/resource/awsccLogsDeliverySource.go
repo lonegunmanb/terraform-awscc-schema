@@ -15,6 +15,16 @@ const awsccLogsDeliverySource = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "delivery_source_configuration": {
+        "computed": true,
+        "description": "A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "map",
+          "string"
+        ]
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -53,6 +63,18 @@ const awsccLogsDeliverySource = `{
       "service": {
         "computed": true,
         "description": "The AWS service that is sending logs.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "status": {
+        "computed": true,
+        "description": "The status of this delivery source. The value can be ACTIVE or INACTIVE.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "status_reason": {
+        "computed": true,
+        "description": "The reason for the status of this delivery source, such as RESOURCE_DELETED.",
         "description_kind": "plain",
         "type": "string"
       },

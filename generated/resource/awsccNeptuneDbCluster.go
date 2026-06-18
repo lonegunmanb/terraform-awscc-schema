@@ -129,6 +129,13 @@ const awsccNeptuneDbCluster = `{
         "optional": true,
         "type": "string"
       },
+      "global_cluster_identifier": {
+        "computed": true,
+        "description": "The ID of the Neptune global database to which this new DB cluster should be added.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "iam_auth_enabled": {
         "computed": true,
         "description": "True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.",
@@ -145,6 +152,13 @@ const awsccNeptuneDbCluster = `{
       "kms_key_id": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN) of the AWS KMS key that is used to encrypt the database instances in the DB cluster, such as arn:aws:kms:us-east-1:012345678910:key/abcd1234-a123-456a-a12b-a123b4cd56ef. If you enable the StorageEncrypted property but don't specify this property, the default KMS key is used. If you specify this property, you must set the StorageEncrypted property to true.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "network_type": {
+        "computed": true,
+        "description": "The network type of the DB cluster.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

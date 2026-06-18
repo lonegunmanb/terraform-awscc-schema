@@ -60,6 +60,12 @@ const awsccOpensearchserverlessCollectionGroup = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "generation": {
+        "computed": true,
+        "description": "The generation of Amazon OpenSearch Serverless for the collection group. Valid values are CLASSIC and NEXTGEN.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

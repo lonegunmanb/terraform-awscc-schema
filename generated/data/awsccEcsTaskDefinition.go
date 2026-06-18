@@ -370,7 +370,7 @@ const awsccEcsTaskDefinition = `{
                   },
                   "tmpfs": {
                     "computed": true,
-                    "description": "The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the ` + "`" + `` + "`" + `--tmpfs` + "`" + `` + "`" + ` option to docker run.\n  If you're using tasks that use the Fargate launch type, the ` + "`" + `` + "`" + `tmpfs` + "`" + `` + "`" + ` parameter isn't supported.",
+                    "description": "The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the ` + "`" + `` + "`" + `--tmpfs` + "`" + `` + "`" + ` option to docker run.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
@@ -578,7 +578,7 @@ const awsccEcsTaskDefinition = `{
             },
             "resource_requirements": {
               "computed": true,
-              "description": "The type and amount of a resource to assign to a container. The only supported resource is a GPU.",
+              "description": "The type and amount of a resource to assign to a container. The supported resources are GPUs and Neuron devices.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -590,7 +590,7 @@ const awsccEcsTaskDefinition = `{
                   },
                   "value": {
                     "computed": true,
-                    "description": "The value for the specified resource type.\n When the type is ` + "`" + `` + "`" + `GPU` + "`" + `` + "`" + `, the value is the number of physical ` + "`" + `` + "`" + `GPUs` + "`" + `` + "`" + ` the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.\n When the type is ` + "`" + `` + "`" + `InferenceAccelerator` + "`" + `` + "`" + `, the ` + "`" + `` + "`" + `value` + "`" + `` + "`" + ` matches the ` + "`" + `` + "`" + `deviceName` + "`" + `` + "`" + ` for an [InferenceAccelerator](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html) specified in a task definition.",
+                    "description": "The value for the specified resource type.\n When the type is ` + "`" + `` + "`" + `GPU` + "`" + `` + "`" + `, the value is the number of physical ` + "`" + `` + "`" + `GPUs` + "`" + `` + "`" + ` the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on. You can also specify ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` to allocate all available GPUs on the instance to the container.\n When the type is ` + "`" + `` + "`" + `NeuronDevice` + "`" + `` + "`" + `, the value must be ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + `. This allocates all available Neuron devices on the instance to the container. Only one container in a task can specify ` + "`" + `` + "`" + `NeuronDevice` + "`" + `` + "`" + ` resources. This resource type is only supported on Managed Instances.\n When the type is ` + "`" + `` + "`" + `InferenceAccelerator` + "`" + `` + "`" + `, the ` + "`" + `` + "`" + `value` + "`" + `` + "`" + ` matches the ` + "`" + `` + "`" + `deviceName` + "`" + `` + "`" + ` for an [InferenceAccelerator](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html) specified in a task definition.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -1152,32 +1152,37 @@ const awsccEcsTaskDefinition = `{
             },
             "name": {
               "computed": true,
-              "description": "The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.\n When using a volume configured at launch, the ` + "`" + `` + "`" + `name` + "`" + `` + "`" + ` is required and must also be specified as the volume name in the ` + "`" + `` + "`" + `ServiceVolumeConfiguration` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `TaskVolumeConfiguration` + "`" + `` + "`" + ` parameter when creating your service or standalone task.\n For all other types of volumes, this name is referenced in the ` + "`" + `` + "`" + `sourceVolume` + "`" + `` + "`" + ` parameter of the ` + "`" + `` + "`" + `mountPoints` + "`" + `` + "`" + ` object in the container definition.\n When a volume is using the ` + "`" + `` + "`" + `efsVolumeConfiguration` + "`" + `` + "`" + `, the name is required.",
+              "description": "The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.\n When using a volume configured at launch, the ` + "`" + `` + "`" + `name` + "`" + `` + "`" + ` is required and must also be specified as the volume name in the ` + "`" + `` + "`" + `ServiceVolumeConfiguration` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `TaskVolumeConfiguration` + "`" + `` + "`" + ` parameter when creating your service or standalone task.\n For all other types of volumes, this name is referenced in the ` + "`" + `` + "`" + `sourceVolume` + "`" + `` + "`" + ` parameter of the ` + "`" + `` + "`" + `mountPoints` + "`" + `` + "`" + ` object in the container definition.\n When a volume is using the ` + "`" + `` + "`" + `efsVolumeConfiguration` + "`" + `` + "`" + `, the name is required.\n When a volume is using the ` + "`" + `` + "`" + `s3filesVolumeConfiguration` + "`" + `` + "`" + `, the name is required.",
               "description_kind": "plain",
               "type": "string"
             },
             "s3_files_volume_configuration": {
               "computed": true,
+              "description": "This parameter is specified when you use an Amazon S3 Files file system for task storage.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "access_point_arn": {
                     "computed": true,
+                    "description": "The full ARN of the S3 Files access point to use. If an access point is specified, the root directory value specified in the ` + "`" + `` + "`" + `S3FilesVolumeConfiguration` + "`" + `` + "`" + ` must either be omitted or set to ` + "`" + `` + "`" + `/` + "`" + `` + "`" + ` which will enforce the path set on the S3 Files access point. For more information, see [Creating S3 Files access points](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-files-access-points-creating.html).",
                     "description_kind": "plain",
                     "type": "string"
                   },
                   "file_system_arn": {
                     "computed": true,
+                    "description": "The full ARN of the S3 Files file system to mount.",
                     "description_kind": "plain",
                     "type": "string"
                   },
                   "root_directory": {
                     "computed": true,
+                    "description": "The directory within the Amazon S3 Files file system to mount as the root directory. If this parameter is omitted, the root of the Amazon S3 Files file system will be used. Specifying ` + "`" + `` + "`" + `/` + "`" + `` + "`" + ` will have the same effect as omitting this parameter.\n  If a S3 Files access point is specified in the ` + "`" + `` + "`" + `accessPointArn` + "`" + `` + "`" + `, the root directory parameter must either be omitted or set to ` + "`" + `` + "`" + `/` + "`" + `` + "`" + ` which will enforce the path set on the S3 Files access point.",
                     "description_kind": "plain",
                     "type": "string"
                   },
                   "transit_encryption_port": {
                     "computed": true,
+                    "description": "The port to use for sending encrypted data between the ECS host and the S3 Files file system. If you do not specify a transit encryption port, it will use the port selection strategy that the Amazon S3 Files mount helper uses. For more information, see [S3 Files mount helper](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-files-mounting.html).",
                     "description_kind": "plain",
                     "type": "number"
                   }
