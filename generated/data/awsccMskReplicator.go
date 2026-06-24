@@ -77,6 +77,22 @@ const awsccMskReplicator = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "mtls": {
+                    "computed": true,
+                    "description": "Details for mTLS client authentication.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the Secrets Manager secret.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "sasl_scram": {
                     "computed": true,
                     "description": "Details for SASL/SCRAM client authentication.",

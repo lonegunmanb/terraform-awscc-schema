@@ -45,6 +45,12 @@ const awsccLambdaLayerVersion = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "s3_object_storage_mode": {
+              "computed": true,
+              "description": "Specifies whether Lambda should copy the deployment package to its internal storage (COPY) or reference it directly from your S3 bucket (REFERENCE).",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "s3_object_version": {
               "computed": true,
               "description": "For versioned objects, the version of the layer archive object to use.",

@@ -295,7 +295,7 @@ const awsccSchedulerSchedule = `{
                     "type": [
                       "list",
                       [
-                        "list",
+                        "map",
                         "string"
                       ]
                     ]

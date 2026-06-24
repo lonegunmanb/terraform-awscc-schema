@@ -117,7 +117,7 @@ const awsccOmicsAnnotationStore = `{
                     "type": [
                       "list",
                       [
-                        "list",
+                        "map",
                         "string"
                       ]
                     ]

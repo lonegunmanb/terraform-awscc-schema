@@ -89,6 +89,25 @@ const awsccGameliftContainerGroupDefinition = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "linux_capabilities": {
+              "computed": true,
+              "description": "Linux-specific modifications applied to the default Docker container configuration, such as Linux capabilities.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "include": {
+                    "computed": true,
+                    "description": "The list of Linux capabilities to add to the container's default configuration.",
+                    "description_kind": "plain",
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "mount_points": {
               "computed": true,
               "description": "A list of mount point configurations to be used in a container.",
@@ -317,6 +336,25 @@ const awsccGameliftContainerGroupDefinition = `{
               "description": "Specifies the image URI of this container.",
               "description_kind": "plain",
               "type": "string"
+            },
+            "linux_capabilities": {
+              "computed": true,
+              "description": "Linux-specific modifications applied to the default Docker container configuration, such as Linux capabilities.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "include": {
+                    "computed": true,
+                    "description": "The list of Linux capabilities to add to the container's default configuration.",
+                    "description_kind": "plain",
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
             },
             "memory_hard_limit_mebibytes": {
               "computed": true,

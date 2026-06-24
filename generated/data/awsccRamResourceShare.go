@@ -83,6 +83,28 @@ const awsccRamResourceShare = `{
           "string"
         ]
       },
+      "resource_share_configuration": {
+        "computed": true,
+        "description": "Specifies the configuration for the resource share",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "exclusive_account_access": {
+              "computed": true,
+              "description": "The resource share restricts access to an account",
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "retain_sharing_on_account_leave_organization": {
+              "computed": true,
+              "description": "Specifies whether the consumer account retains access to the resource share after leaving the organization.",
+              "description_kind": "plain",
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "sources": {
         "computed": true,
         "description": "Specifies from which source accounts the service principal has access to the resources in this resource share.",

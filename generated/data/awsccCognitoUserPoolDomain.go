@@ -44,6 +44,34 @@ const awsccCognitoUserPoolDomain = `{
         "description_kind": "plain",
         "type": "number"
       },
+      "routing": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "failover": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "primary_route_53_health_check_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "secondary_region": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "user_pool_id": {
         "computed": true,
         "description_kind": "plain",

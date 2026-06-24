@@ -426,6 +426,13 @@ const awsccEksCluster = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "control_plane_egress_mode": {
+              "computed": true,
+              "description": "Specify the egress mode for the cluster control plane. If you set this to CUSTOMER_ROUTED, the control plane routes traffic through your VPC subnets instead of using AWS managed networking.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "endpoint_private_access": {
               "computed": true,
               "description": "Set this value to true to enable private access for your cluster's Kubernetes API server endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC use the private VPC endpoint. The default value for this parameter is false, which disables private access for your Kubernetes API server. If you disable private access and you have nodes or AWS Fargate pods in the cluster, then ensure that publicAccessCidrs includes the necessary CIDR blocks for communication with the nodes or Fargate pods.",
