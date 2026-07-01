@@ -41,6 +41,13 @@ const awsccResiliencehubv2System = `{
         "required": true,
         "type": "string"
       },
+      "sharing_enabled": {
+        "computed": true,
+        "description": "Whether the system is enabled to be shared with other members of the Organization. Only applicable if the system owner is a management account or delegated admin.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "system_arn": {
         "computed": true,
         "description": "The ARN of the system.",

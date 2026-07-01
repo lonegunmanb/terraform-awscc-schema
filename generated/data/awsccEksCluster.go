@@ -442,6 +442,22 @@ const awsccEksCluster = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "rollback_config": {
+        "computed": true,
+        "description": "The rollback configuration to use for the cluster version rollback.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "timeout_minutes": {
+              "computed": true,
+              "description": "The timeout in minutes for the version rollback operation. If not specified, defaults to 720 minutes (12 hours).",
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "storage_config": {
         "computed": true,
         "description": "Todo: add description",

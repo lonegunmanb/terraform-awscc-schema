@@ -66,6 +66,143 @@ const awsccBedrockKnowledgeBase = `{
               },
               "optional": true
             },
+            "managed_knowledge_base_configuration": {
+              "computed": true,
+              "description": "Contains details about the model used to create vector embeddings for a managed knowledge base.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "embedding_model_arn": {
+                    "computed": true,
+                    "description": "The ARN of the model used to create vector embeddings for the knowledge base.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "embedding_model_configuration": {
+                    "computed": true,
+                    "description": "The embeddings model configuration details for the vector model used in Knowledge Base.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "bedrock_embedding_model_configuration": {
+                          "computed": true,
+                          "description": "The vector configuration details for the Bedrock embeddings model.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "audio": {
+                                "computed": true,
+                                "description": "List of audio configurations for multi modal ingestion.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "segmentation_configuration": {
+                                      "computed": true,
+                                      "description": "Configure the audio segmentation configuration for multi modal ingestion.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "fixed_length_duration": {
+                                            "computed": true,
+                                            "description": "Duration in seconds to segment the multi modal media",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "number"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                },
+                                "optional": true
+                              },
+                              "dimensions": {
+                                "computed": true,
+                                "description": "The dimensions details for the vector configuration used on the Bedrock embeddings model.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              },
+                              "embedding_data_type": {
+                                "computed": true,
+                                "description": "The data type for the vectors when using a model to convert text into vector embeddings.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "video": {
+                                "computed": true,
+                                "description": "List of video configurations for multi modal ingestion.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "segmentation_configuration": {
+                                      "computed": true,
+                                      "description": "Configure the video segmentation configuration for multi modal ingestion.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "fixed_length_duration": {
+                                            "computed": true,
+                                            "description": "Duration in seconds to segment the multi modal media",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "number"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                },
+                                "optional": true
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "embedding_model_type": {
+                    "computed": true,
+                    "description": "The type of embedding model to use for the managed knowledge base.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "server_side_encryption_configuration": {
+                    "computed": true,
+                    "description": "Contains details about the server-side encryption for the managed knowledge base.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "kms_key_arn": {
+                          "computed": true,
+                          "description": "The ARN of the AWS KMS key used to encrypt the managed knowledge base.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "sql_knowledge_base_configuration": {
               "computed": true,
               "description": "Configurations for a SQL knowledge base",

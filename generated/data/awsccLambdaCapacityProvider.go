@@ -130,11 +130,13 @@ const awsccLambdaCapacityProvider = `{
       },
       "propagate_tags": {
         "computed": true,
+        "description": "Configuration for tag propagation to managed resources launched by the capacity provider.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "explicit_tags": {
               "computed": true,
+              "description": "A list of tags to explicitly propagate to managed resources. Maximum of 40 tags.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -156,7 +158,7 @@ const awsccLambdaCapacityProvider = `{
             },
             "mode": {
               "computed": true,
-              "description": "The mode for tag propagation.",
+              "description": "The mode for tag propagation. Use ` + "`" + `` + "`" + `Explicit` + "`" + `` + "`" + ` to propagate specific tags, or ` + "`" + `` + "`" + `None` + "`" + `` + "`" + ` to disable propagation.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -199,19 +201,16 @@ const awsccLambdaCapacityProvider = `{
           "attributes": {
             "logging_config": {
               "computed": true,
-              "description": "The logging configuration for the capacity provider.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "log_group": {
                     "computed": true,
-                    "description": "The log group name.",
                     "description_kind": "plain",
                     "type": "string"
                   },
                   "system_log_level": {
                     "computed": true,
-                    "description": "System log granularity level",
                     "description_kind": "plain",
                     "type": "string"
                   }

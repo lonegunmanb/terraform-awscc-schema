@@ -93,6 +93,12 @@ const awsccLambdaFunction = `{
               "optional": true,
               "type": "string"
             },
+            "s3_object_storage_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "s3_object_version": {
               "computed": true,
               "description": "For versioned objects, the version of the deployment package object to use.",

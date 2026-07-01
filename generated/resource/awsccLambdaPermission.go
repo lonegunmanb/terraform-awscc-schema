@@ -43,7 +43,7 @@ const awsccLambdaPermission = `{
       },
       "invoked_via_function_url": {
         "computed": true,
-        "description": "Restricts the ` + "`" + `` + "`" + `lambda:InvokeFunction` + "`" + `` + "`" + ` action to function URL calls. When specified, this option prevents the principal from invoking the function by any means other than the function URL. For more information, see [Control access to Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html).",
+        "description": "Indicates whether the permission applies when the function is invoked through a function URL.",
         "description_kind": "plain",
         "optional": true,
         "type": "bool"

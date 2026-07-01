@@ -143,6 +143,24 @@ const awsccRoute53ResolverFirewallRuleGroup = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "partner_threat_protection": {
+                    "computed": true,
+                    "description": "Configuration for a partner threat protection rule type.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "partner": {
+                          "computed": true,
+                          "description": "The partner identifier value.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -166,6 +184,13 @@ const awsccRoute53ResolverFirewallRuleGroup = `{
             "qtype": {
               "computed": true,
               "description": "Qtype",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "status": {
+              "computed": true,
+              "description": "The status of the firewall rule.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

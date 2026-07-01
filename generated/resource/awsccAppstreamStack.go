@@ -34,6 +34,77 @@ const awsccAppstreamStack = `{
         },
         "optional": true
       },
+      "agent_access_config": {
+        "computed": true,
+        "description": "The configuration for agent access on the stack. If specified, agent access is enabled for the stack.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "s3_bucket_arn": {
+              "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots are stored. Required when ScreenshotsUploadEnabled is true.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "screen_image_format": {
+              "computed": true,
+              "description": "The image format for agent screen captures.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "screen_resolution": {
+              "computed": true,
+              "description": "The screen resolution for the agent streaming environment.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "screenshots_upload_enabled": {
+              "computed": true,
+              "description": "Indicates whether screenshot uploads to Amazon S3 are enabled for agent sessions.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "settings": {
+              "computed": true,
+              "description": "The list of agent access settings that define permissions for each agent action. You must specify at least one setting.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "agent_action": {
+                    "computed": true,
+                    "description": "The agent action to configure. Valid values are COMPUTER_VISION, COMPUTER_INPUT, and FORWARD_MCP_TOOLS. COMPUTER_VISION allows agents to take screenshots of the desktop. COMPUTER_INPUT allows agents to click, type, and scroll on the desktop and requires COMPUTER_VISION to also be enabled. FORWARD_MCP_TOOLS allows agents to interact with applications and the desktop operating system through direct MCP calls rather than using computer use tools. Forwards MCP tools configured on the WorkSpaces application session to the agent.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "permission": {
+                    "computed": true,
+                    "description": "Whether the agent action is enabled or disabled.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "user_control_mode": {
+              "computed": true,
+              "description": "The user control mode for agent sessions. This setting determines how users can interact with agent sessions. Valid values are VIEW_ONLY, VIEW_STOP, and DISABLED.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "application_settings": {
         "computed": true,
         "description": "The persistent application settings for users of the stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.",
@@ -49,7 +120,7 @@ const awsccAppstreamStack = `{
             },
             "settings_group": {
               "computed": true,
-              "description": "The path prefix for the S3 bucket where users? persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack.",
+              "description": "The path prefix for the S3 bucket where users' persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

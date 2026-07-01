@@ -440,16 +440,19 @@ const awsccEcsService = `{
       },
       "monitoring": {
         "computed": true,
+        "description": "The optional monitoring configuration for the service, which defines the resolution for the service-level ` + "`" + `` + "`" + `CPUUtilization` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `MemoryUtilization` + "`" + `` + "`" + ` Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of ` + "`" + `` + "`" + `60` + "`" + `` + "`" + ` seconds.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "metric_configurations": {
               "computed": true,
+              "description": "The list of metric configurations for the service monitoring.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "metric_names": {
                     "computed": true,
+                    "description": "The list of metric names to configure. The supported metric names are ` + "`" + `` + "`" + `CPUUtilization` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `MemoryUtilization` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": [
@@ -459,6 +462,7 @@ const awsccEcsService = `{
                   },
                   "resolution_seconds": {
                     "computed": true,
+                    "description": "The resolution, in seconds, at which to collect the metrics. The valid values are ` + "`" + `` + "`" + `20` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `60` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"

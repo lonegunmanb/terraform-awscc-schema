@@ -162,6 +162,118 @@ const awsccSecurityagentAgentSpace = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "bitbucket_capabilities": {
+                    "computed": true,
+                    "description": "Bitbucket repository capabilities",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "leave_comments": {
+                          "computed": true,
+                          "description": "Enables Code Review in the repository",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "remediate_code": {
+                          "computed": true,
+                          "description": "Enables creation of pull requests with automated fixes",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "bitbucket_repository": {
+                    "computed": true,
+                    "description": "Bitbucket repository details",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "name": {
+                          "computed": true,
+                          "description": "Bitbucket repository name",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "workspace": {
+                          "computed": true,
+                          "description": "Bitbucket workspace slug owning the repository",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "confluence_capabilities": {
+                    "computed": true,
+                    "description": "Confluence document capabilities",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "create_document": {
+                          "computed": true,
+                          "description": "Enables creation of new Confluence documents in the same space",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "fetch_document": {
+                          "computed": true,
+                          "description": "Enables read access to the document content",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "update_document": {
+                          "computed": true,
+                          "description": "Enables updates to the document",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "confluence_document": {
+                    "computed": true,
+                    "description": "Confluence document details",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "name": {
+                          "computed": true,
+                          "description": "Customer-supplied logical name for the Confluence document",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "page_id": {
+                          "computed": true,
+                          "description": "Confluence page identifier",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "space_key": {
+                          "computed": true,
+                          "description": "Confluence space key containing the document",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "space_title": {
+                          "computed": true,
+                          "description": "Read-only human-readable title of the containing space, populated from service-side metadata",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "title": {
+                          "computed": true,
+                          "description": "Read-only human-readable title of the page, populated from service-side metadata",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "git_hub_capabilities": {
                     "computed": true,
                     "description": "GitHub repository capabilities",
@@ -199,6 +311,50 @@ const awsccSecurityagentAgentSpace = `{
                         "owner": {
                           "computed": true,
                           "description": "GitHub repository owner (user or organization)",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "git_lab_capabilities": {
+                    "computed": true,
+                    "description": "GitLab repository capabilities",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "leave_comments": {
+                          "computed": true,
+                          "description": "Enables Code Review in the repository",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "remediate_code": {
+                          "computed": true,
+                          "description": "Enables creation of merge requests with automated fixes",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "git_lab_repository": {
+                    "computed": true,
+                    "description": "GitLab repository details",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "name": {
+                          "computed": true,
+                          "description": "GitLab project name",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "namespace": {
+                          "computed": true,
+                          "description": "GitLab project namespace (user, group, or subgroup path)",
                           "description_kind": "plain",
                           "type": "string"
                         }

@@ -155,6 +155,114 @@ const awsccBedrockDataSource = `{
               },
               "optional": true
             },
+            "managed_knowledge_base_connector_configuration": {
+              "computed": true,
+              "description": "Configuration for managed knowledge base connector data sources.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "connector_parameters": {
+                    "computed": true,
+                    "description": "Connector-specific parameters.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "deletion_protection_configuration": {
+                    "computed": true,
+                    "description": "Configuration for deletion protection.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "deletion_protection_status": {
+                          "computed": true,
+                          "description": "Indicates whether a feature is enabled or disabled.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "deletion_protection_threshold": {
+                          "computed": true,
+                          "description": "Threshold for deletion protection.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "media_extraction_configuration": {
+                    "computed": true,
+                    "description": "Configuration for media extraction settings.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "audio_extraction_configuration": {
+                          "computed": true,
+                          "description": "Configuration for audio extraction.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "audio_extraction_status": {
+                                "computed": true,
+                                "description": "Indicates whether a feature is enabled or disabled.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "image_extraction_configuration": {
+                          "computed": true,
+                          "description": "Configuration for image extraction.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "image_extraction_status": {
+                                "computed": true,
+                                "description": "Indicates whether a feature is enabled or disabled.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "video_extraction_configuration": {
+                          "computed": true,
+                          "description": "Configuration for video extraction.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "video_extraction_status": {
+                                "computed": true,
+                                "description": "Indicates whether a feature is enabled or disabled.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "s3_configuration": {
               "computed": true,
               "description": "The configuration information to connect to Amazon S3 as your data source.",

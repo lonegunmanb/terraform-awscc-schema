@@ -215,6 +215,11 @@ const awsccEcsExpressGatewayService = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "task_definition_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "task_role_arn": {
               "computed": true,
               "description_kind": "plain",
@@ -564,6 +569,11 @@ const awsccEcsExpressGatewayService = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "task_definition_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "task_role_arn": {
         "computed": true,

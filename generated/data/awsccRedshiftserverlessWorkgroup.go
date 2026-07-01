@@ -93,7 +93,7 @@ const awsccRedshiftserverlessWorkgroup = `{
       },
       "recovery_point_id": {
         "computed": true,
-        "description": "The recovery point id to restore from.",
+        "description": "The identifier of the recovery point to restore the namespace from. When this resource is first created, the namespace is restored from this recovery point. On subsequent updates, a restore occurs only when RecoveryPointId changes from its previous value. If the value is unchanged or removed, no restore takes place and existing data is preserved.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -108,19 +108,19 @@ const awsccRedshiftserverlessWorkgroup = `{
       },
       "snapshot_arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the snapshot to restore from.",
+        "description": "The Amazon Resource Name (ARN) of the snapshot to restore the namespace from. Specify either SnapshotArn or SnapshotName, but not both. When this resource is first created, the namespace is restored from this snapshot. On subsequent updates, a restore occurs only when SnapshotArn changes from its previous value. If the value is unchanged or removed, no restore takes place and existing data is preserved.",
         "description_kind": "plain",
         "type": "string"
       },
       "snapshot_name": {
         "computed": true,
-        "description": "The snapshot name to restore from.",
+        "description": "The name of the snapshot to restore the namespace from. Because snapshot names are unique only within an account, also specify SnapshotOwnerAccount when restoring from a snapshot owned by a different account. Specify either SnapshotName or SnapshotArn, but not both. When this resource is first created, the namespace is restored from this snapshot. On subsequent updates, a restore occurs only when SnapshotName or SnapshotOwnerAccount changes from its previous value. If both values are unchanged or SnapshotName is removed, no restore takes place and existing data is preserved.",
         "description_kind": "plain",
         "type": "string"
       },
       "snapshot_owner_account": {
         "computed": true,
-        "description": "The Amazon Web Services account that owns the snapshot.",
+        "description": "The AWS account ID that owns the snapshot. Required when restoring from a snapshot shared by another account. Used in combination with SnapshotName. On updates, changing this value while SnapshotName is set triggers a restore from the newly referenced snapshot. If the value is unchanged, no restore takes place and existing data is preserved.",
         "description_kind": "plain",
         "type": "string"
       },

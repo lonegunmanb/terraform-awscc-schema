@@ -215,6 +215,11 @@ const awsccEcsExpressGatewayService = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "task_definition_arn": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "task_role_arn": {
               "computed": true,
               "description_kind": "plain",
@@ -347,8 +352,9 @@ const awsccEcsExpressGatewayService = `{
         "type": "string"
       },
       "execution_role_arn": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "health_check_path": {
@@ -403,6 +409,7 @@ const awsccEcsExpressGatewayService = `{
         "optional": true
       },
       "primary_container": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -466,8 +473,9 @@ const awsccEcsExpressGatewayService = `{
               "optional": true
             },
             "image": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "repository_credentials": {
@@ -511,7 +519,7 @@ const awsccEcsExpressGatewayService = `{
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
       },
       "scaling_target": {
         "computed": true,
@@ -593,6 +601,12 @@ const awsccEcsExpressGatewayService = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "task_definition_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       },
       "task_role_arn": {
         "computed": true,
