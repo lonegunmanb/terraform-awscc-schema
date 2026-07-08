@@ -55,6 +55,16 @@ const awsccImagebuilderImageRecipe = `{
           "string"
         ]
       },
+      "ami_watermarks": {
+        "computed": true,
+        "description": "The AMI watermark names to attach to the output AMI from this recipe. AMI watermarks are lineage markers that automatically propagate to derivative AMIs when the source AMI is copied or distributed.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN) of the image recipe.",

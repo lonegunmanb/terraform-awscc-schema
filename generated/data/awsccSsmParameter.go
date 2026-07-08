@@ -15,6 +15,11 @@ const awsccSsmParameter = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "data_type": {
         "computed": true,
         "description": "The data type of the parameter, such as ` + "`" + `` + "`" + `text` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `aws:ec2:image` + "`" + `` + "`" + `. The default is ` + "`" + `` + "`" + `text` + "`" + `` + "`" + `.",

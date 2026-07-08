@@ -34,12 +34,14 @@ const awsccEvsEnvironment = `{
         }
       },
       "connectivity_info": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "private_route_server_peerings": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
@@ -48,7 +50,7 @@ const awsccEvsEnvironment = `{
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
       },
       "created_at": {
         "computed": true,
@@ -328,24 +330,27 @@ const awsccEvsEnvironment = `{
         "type": "string"
       },
       "license_info": {
+        "computed": true,
         "description": "The license information for an EVS environment",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "solution_key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "vsan_key": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
       },
       "modified_at": {
         "computed": true,
@@ -377,8 +382,9 @@ const awsccEvsEnvironment = `{
         "type": "string"
       },
       "site_id": {
+        "computed": true,
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "state_details": {
@@ -417,58 +423,68 @@ const awsccEvsEnvironment = `{
         "type": "bool"
       },
       "vcf_hostnames": {
+        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "cloud_builder": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "nsx": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "nsx_edge_1": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "nsx_edge_2": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "nsx_manager_1": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "nsx_manager_2": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "nsx_manager_3": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "sddc_manager": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "v_center": {
+              "computed": true,
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
       },
       "vcf_version": {
         "description_kind": "plain",

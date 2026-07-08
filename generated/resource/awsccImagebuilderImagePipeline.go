@@ -115,6 +115,16 @@ const awsccImagebuilderImagePipeline = `{
         },
         "optional": true
       },
+      "image_tags": {
+        "computed": true,
+        "description": "The tags to be applied to images created by this pipeline.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "map",
+          "string"
+        ]
+      },
       "image_tests_configuration": {
         "computed": true,
         "description": "The image tests configuration of the image pipeline.",

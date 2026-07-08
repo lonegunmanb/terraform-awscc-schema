@@ -654,6 +654,94 @@ const awsccMediaconnectRouterInput = `{
           "nesting_mode": "single"
         }
       },
+      "content_quality_analysis_configuration": {
+        "computed": true,
+        "description": "The content quality analysis configuration for the router input. The content quality analysis feature only monitors the first video stream and the first audio stream it encounters within the router input source.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "content_level": {
+              "computed": true,
+              "description": "Configures the content quality analysis features for the router input.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "black_frames": {
+                    "computed": true,
+                    "description": "Detects black frames in the router input's source content and reports them through a CloudWatch metric, an EventBridge event, and a router input message.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "threshold_seconds": {
+                          "computed": true,
+                          "description": "The number of consecutive seconds of black frames that MediaConnect must detect before it reports an issue.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "frozen_frames": {
+                    "computed": true,
+                    "description": "Detects frozen video frames in the router input's source content and reports them through a CloudWatch metric, an EventBridge event, and a router input message.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "threshold_seconds": {
+                          "computed": true,
+                          "description": "The number of consecutive seconds of a frozen frame that MediaConnect must detect before it reports an issue.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "silent_audio": {
+                    "computed": true,
+                    "description": "Detects silent audio in the router input's source content and reports it through a CloudWatch metric, an EventBridge event, and a router input message.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "threshold_seconds": {
+                          "computed": true,
+                          "description": "The number of consecutive seconds of silence that MediaConnect must detect before it reports an issue.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "content_quality_analysis_type": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "created_at": {
         "computed": true,
         "description": "The timestamp when the router input was created.",

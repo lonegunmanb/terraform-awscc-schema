@@ -9,6 +9,12 @@ import (
 const awsccCodepipelinePipeline = `{
   "block": {
     "attributes": {
+      "arn": {
+        "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the pipeline.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "artifact_store": {
         "computed": true,
         "description": "The S3 bucket where artifacts for the pipeline are stored.",

@@ -63,6 +63,12 @@ const awsccVpclatticeService = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "idle_timeout_seconds": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "last_updated_at": {
         "computed": true,
         "description_kind": "plain",
