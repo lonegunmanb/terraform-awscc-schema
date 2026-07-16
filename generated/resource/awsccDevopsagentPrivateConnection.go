@@ -57,6 +57,13 @@ const awsccDevopsagentPrivateConnection = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "dns_resolution": {
+                    "computed": true,
+                    "description": "DNS resolution mode for the resource gateway. Defaults to PUBLIC when not set.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "host_address": {
                     "computed": true,
                     "description": "IP address or DNS name of the target resource.",

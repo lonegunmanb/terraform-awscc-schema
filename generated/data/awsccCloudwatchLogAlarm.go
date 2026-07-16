@@ -131,7 +131,7 @@ const awsccCloudwatchLogAlarm = `{
                 "attributes": {
                   "end_time_offset": {
                     "computed": true,
-                    "description": "The number of seconds into the past to end the query window.",
+                    "description": "The number of seconds into the past to end the query window. Must be a non-negative value and cannot exceed 2592000 seconds (30 days).",
                     "description_kind": "plain",
                     "type": "number"
                   },
@@ -143,7 +143,7 @@ const awsccCloudwatchLogAlarm = `{
                   },
                   "start_time_offset": {
                     "computed": true,
-                    "description": "The number of seconds into the past to start the query window.",
+                    "description": "The number of seconds into the past to start the query window. Must be a positive value and cannot exceed 2592000 seconds (30 days).",
                     "description_kind": "plain",
                     "type": "number"
                   }
@@ -156,6 +156,28 @@ const awsccCloudwatchLogAlarm = `{
               "description": "The ARN of the IAM role that grants permissions to execute the scheduled query.",
               "description_kind": "plain",
               "type": "string"
+            },
+            "tags": {
+              "computed": true,
+              "description": "A list of key-value pairs to associate with the scheduled query that backs the log alarm.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description": "A unique identifier for the tag. The combination of tag keys and values can help you organize and categorize your resources.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description": "The value for the specified tag key.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              }
             }
           },
           "nesting_mode": "single"

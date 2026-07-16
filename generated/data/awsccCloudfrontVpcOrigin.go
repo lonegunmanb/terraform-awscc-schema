@@ -86,6 +86,11 @@ const awsccCloudfrontVpcOrigin = `{
               "description_kind": "plain",
               "type": "number"
             },
+            "ip_address_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "name": {
               "computed": true,
               "description": "The name of the CloudFront VPC origin endpoint configuration.",

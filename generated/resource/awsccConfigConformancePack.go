@@ -9,6 +9,12 @@ import (
 const awsccConfigConformancePack = `{
   "block": {
     "attributes": {
+      "conformance_pack_arn": {
+        "computed": true,
+        "description": "Amazon Resource Name (ARN) of the conformance pack.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "conformance_pack_input_parameters": {
         "computed": true,
         "description": "A list of ConformancePackInputParameter objects.",
@@ -59,6 +65,31 @@ const awsccConfigConformancePack = `{
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "The tags for the conformance pack.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       },
       "template_body": {
         "computed": true,

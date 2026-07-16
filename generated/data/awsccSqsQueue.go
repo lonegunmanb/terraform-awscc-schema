@@ -22,7 +22,7 @@ const awsccSqsQueue = `{
       },
       "deduplication_scope": {
         "computed": true,
-        "description": "For high throughput for FIFO queues, specifies whether message deduplication occurs at the message group or queue level. Valid values are ` + "`" + `` + "`" + `messageGroup` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `queue` + "`" + `` + "`" + `.\n To enable high throughput for a FIFO queue, set this attribute to ` + "`" + `` + "`" + `messageGroup` + "`" + `` + "`" + ` *and* set the ` + "`" + `` + "`" + `FifoThroughputLimit` + "`" + `` + "`" + ` attribute to ` + "`" + `` + "`" + `perMessageGroupId` + "`" + `` + "`" + `. If you set these attributes to anything other than these values, normal throughput is in effect and deduplication occurs as specified. For more information, see [High throughput for FIFO queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html) and [Quotas related to messages](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html) in the *Developer Guide*.",
+        "description": "For high throughput for FIFO queues, specifies whether message deduplication occurs at the message group or queue level. Valid values are ` + "`" + `` + "`" + `messageGroup` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `queue` + "`" + `` + "`" + `.\n To enable high throughput for a FIFO queue, set this attribute to ` + "`" + `` + "`" + `messageGroup` + "`" + `` + "`" + `*and* set the ` + "`" + `` + "`" + `FifoThroughputLimit` + "`" + `` + "`" + ` attribute to ` + "`" + `` + "`" + `perMessageGroupId` + "`" + `` + "`" + `. If you set these attributes to anything other than these values, normal throughput is in effect and deduplication occurs as specified. For more information, see [High throughput for FIFO queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html) and [Quotas related to messages](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html) in the *Developer Guide*.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -34,13 +34,13 @@ const awsccSqsQueue = `{
       },
       "fifo_queue": {
         "computed": true,
-        "description": "If set to true, creates a FIFO queue. If you don't specify this property, SQS creates a standard queue. For more information, see [FIFO queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html) in the *Developer Guide*.",
+        "description": "If set to true, creates a FIFO queue. If you don't specify this property, SQS creates a standard queue. For more information, see [Amazon SQS FIFO queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-fifo-queues.html) in the *Developer Guide*.",
         "description_kind": "plain",
         "type": "bool"
       },
       "fifo_throughput_limit": {
         "computed": true,
-        "description": "For high throughput for FIFO queues, specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are ` + "`" + `` + "`" + `perQueue` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `perMessageGroupId` + "`" + `` + "`" + `.\n To enable high throughput for a FIFO queue, set this attribute to ` + "`" + `` + "`" + `perMessageGroupId` + "`" + `` + "`" + ` *and* set the ` + "`" + `` + "`" + `DeduplicationScope` + "`" + `` + "`" + ` attribute to ` + "`" + `` + "`" + `messageGroup` + "`" + `` + "`" + `. If you set these attributes to anything other than these values, normal throughput is in effect and deduplication occurs as specified. For more information, see [High throughput for FIFO queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html) and [Quotas related to messages](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html) in the *Developer Guide*.",
+        "description": "For high throughput for FIFO queues, specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are ` + "`" + `` + "`" + `perQueue` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `perMessageGroupId` + "`" + `` + "`" + `.\n To enable high throughput for a FIFO queue, set this attribute to ` + "`" + `` + "`" + `perMessageGroupId` + "`" + `` + "`" + `*and* set the ` + "`" + `` + "`" + `DeduplicationScope` + "`" + `` + "`" + ` attribute to ` + "`" + `` + "`" + `messageGroup` + "`" + `` + "`" + `. If you set these attributes to anything other than these values, normal throughput is in effect and deduplication occurs as specified. For more information, see [High throughput for FIFO queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html) and [Quotas related to messages](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html) in the *Developer Guide*.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -58,13 +58,13 @@ const awsccSqsQueue = `{
       },
       "kms_master_key_id": {
         "computed": true,
-        "description": "The ID of an AWS Key Management Service (KMS) for SQS, or a custom KMS. To use the AWS managed KMS for SQS, specify a (default) alias ARN, alias name (e.g. ` + "`" + `` + "`" + `alias/aws/sqs` + "`" + `` + "`" + `), key ARN, or key ID. For more information, see the following:\n  +   [Encryption at rest](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html) in the *Developer Guide* \n  +   [CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html) in the *API Reference* \n  +   [Request Parameters](https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters) in the *Key Management Service API Reference* \n  +   The Key Management Service (KMS) section of the [Best Practices](https://docs.aws.amazon.com/https://d0.awsstatic.com/whitepapers/aws-kms-best-practices.pdf) whitepaper",
+        "description": "The ID of an AWS Key Management Service (KMS) for SQS, or a custom KMS. To use the AWS managed KMS for SQS, specify a (default) alias ARN, alias name (for example ` + "`" + `` + "`" + `alias/aws/sqs` + "`" + `` + "`" + `), key ARN, or key ID. For more information, see the following:\n  +  [Encryption at rest](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html) in the *Developer Guide*\n  +  [CreateQueue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_CreateQueue.html) in the *API Reference*\n  +  [Request Parameters](https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters) in the *Key Management Service API Reference*\n  +   The Key Management Service (KMS) section of the [Security best practices for Key Management Service](https://docs.aws.amazon.com/kms/latest/developerguide/best-practices.html) in the *Key Management Service Developer Guide*",
         "description_kind": "plain",
         "type": "string"
       },
       "maximum_message_size": {
         "computed": true,
-        "description": "The limit of how many bytes that a message can contain before SQS rejects it. You can specify an integer value from ` + "`" + `` + "`" + `1,024` + "`" + `` + "`" + ` bytes (1 KiB) to ` + "`" + `` + "`" + `262,144` + "`" + `` + "`" + ` bytes (256 KiB). The default value is ` + "`" + `` + "`" + `262,144` + "`" + `` + "`" + ` (256 KiB).",
+        "description": "The limit of how many bytes that a message can contain before SQS rejects it. You can specify an integer from 1,024 bytes (1 KiB) to 1,048,576 bytes (1 MiB). Default: 1,048,576 bytes (1 MiB).",
         "description_kind": "plain",
         "type": "number"
       },
@@ -76,7 +76,7 @@ const awsccSqsQueue = `{
       },
       "queue_name": {
         "computed": true,
-        "description": "A name for the queue. To create a FIFO queue, the name of your FIFO queue must end with the ` + "`" + `` + "`" + `.fifo` + "`" + `` + "`" + ` suffix. For more information, see [FIFO queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html) in the *Developer Guide*.\n If you don't specify a name, CFN generates a unique physical ID and uses that ID for the queue name. For more information, see [Name type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html) in the *User Guide*. \n  If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.",
+        "description": "A name for the queue. To create a FIFO queue, the name of your FIFO queue must end with the ` + "`" + `` + "`" + `.fifo` + "`" + `` + "`" + ` suffix. For more information, see [Amazon SQS FIFO queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-fifo-queues.html) in the *Developer Guide*.\n If you don't specify a name, CFN generates a unique physical ID and uses that ID for the queue name. For more information, see [Name type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html) in the *User Guide*. \n  If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -99,7 +99,7 @@ const awsccSqsQueue = `{
       },
       "redrive_policy": {
         "computed": true,
-        "description": "The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. The parameters are as follows:\n  +  ` + "`" + `` + "`" + `deadLetterTargetArn` + "`" + `` + "`" + `: The Amazon Resource Name (ARN) of the dead-letter queue to which SQS moves messages after the value of ` + "`" + `` + "`" + `maxReceiveCount` + "`" + `` + "`" + ` is exceeded.\n  +  ` + "`" + `` + "`" + `maxReceiveCount` + "`" + `` + "`" + `: The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the ` + "`" + `` + "`" + `ReceiveCount` + "`" + `` + "`" + ` for a message exceeds the ` + "`" + `` + "`" + `maxReceiveCount` + "`" + `` + "`" + ` for a queue, SQS moves the message to the dead-letter-queue.\n  \n  The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue.\n   *JSON* \n  ` + "`" + `` + "`" + `{ \"deadLetterTargetArn\" : String, \"maxReceiveCount\" : Integer }` + "`" + `` + "`" + ` \n  *YAML* \n  ` + "`" + `` + "`" + `deadLetterTargetArn : String` + "`" + `` + "`" + ` \n  ` + "`" + `` + "`" + `maxReceiveCount : Integer` + "`" + `` + "`" + `",
+        "description": "The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. The parameters are as follows:\n  +  ` + "`" + `` + "`" + `deadLetterTargetArn` + "`" + `` + "`" + `: The Amazon Resource Name (ARN) of the dead-letter queue to which SQS moves messages after the value of ` + "`" + `` + "`" + `maxReceiveCount` + "`" + `` + "`" + ` is exceeded.\n  +  ` + "`" + `` + "`" + `maxReceiveCount` + "`" + `` + "`" + `: The number of times a message is received by a consumer of the source queue before being moved to the dead-letter queue. When the ` + "`" + `` + "`" + `ReceiveCount` + "`" + `` + "`" + ` for a message exceeds the ` + "`" + `` + "`" + `maxReceiveCount` + "`" + `` + "`" + ` for a queue, SQS moves the message to the dead-letter-queue.\n  \n  The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue.\n   *JSON* \n  ` + "`" + `` + "`" + `{ \"deadLetterTargetArn\" : String, \"maxReceiveCount\" : Integer }` + "`" + `` + "`" + ` \n  *YAML* \n  ` + "`" + `` + "`" + `deadLetterTargetArn : String` + "`" + `` + "`" + ` \n  ` + "`" + `` + "`" + `maxReceiveCount : Integer` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "type": "string"
       },
@@ -117,13 +117,11 @@ const awsccSqsQueue = `{
           "attributes": {
             "key": {
               "computed": true,
-              "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
               "description_kind": "plain",
               "type": "string"
             }

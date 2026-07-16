@@ -21,6 +21,12 @@ const awsccConnectUser = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "after_contact_work_mode": {
+                    "computed": true,
+                    "description": "The after contact work (ACW) mode for the channel.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "after_contact_work_time_limit": {
                     "computed": true,
                     "description": "The After Call Work (ACW) timeout setting, in seconds.",
@@ -37,6 +43,12 @@ const awsccConnectUser = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "after_contact_work_mode": {
+                    "computed": true,
+                    "description": "The after contact work (ACW) mode for the channel.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "after_contact_work_time_limit": {
                     "computed": true,
                     "description": "The After Call Work (ACW) timeout setting, in seconds.",

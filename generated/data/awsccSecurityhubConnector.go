@@ -1,4 +1,4 @@
-package resource
+package data
 
 import (
 	"encoding/json"
@@ -6,7 +6,7 @@ import (
 	tfjson "github.com/hashicorp/terraform-json"
 )
 
-const awsccSecurityhubConnectorV2 = `{
+const awsccSecurityhubConnector = `{
   "block": {
     "attributes": {
       "connector_arn": {
@@ -29,7 +29,13 @@ const awsccSecurityhubConnectorV2 = `{
       },
       "created_at": {
         "computed": true,
-        "description": "The timestamp formatted in ISO8601",
+        "description": "The date and time for createdAt in UTC and ISO 8601 format.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "created_by": {
+        "computed": true,
+        "description": "The principal that created the connector",
         "description_kind": "plain",
         "type": "string"
       },
@@ -37,7 +43,6 @@ const awsccSecurityhubConnectorV2 = `{
         "computed": true,
         "description": "A description of the connector",
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "enablement_status": {
@@ -46,16 +51,10 @@ const awsccSecurityhubConnectorV2 = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "enablement_status_reason": {
-        "computed": true,
-        "description": "The reason for the enablement status of the connector",
-        "description_kind": "plain",
-        "type": "string"
-      },
       "id": {
-        "computed": true,
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
+        "required": true,
         "type": "string"
       },
       "issues": {
@@ -80,45 +79,39 @@ const awsccSecurityhubConnectorV2 = `{
           "nesting_mode": "list"
         }
       },
-      "kms_key_arn": {
-        "computed": true,
-        "description": "The ARN of KMS key used for the connector",
-        "description_kind": "plain",
-        "optional": true,
-        "type": "string"
-      },
       "last_checked_at": {
         "computed": true,
-        "description": "The timestamp formatted in ISO8601",
+        "description": "The date and time for lastCheckedAt in UTC and ISO 8601 format.",
         "description_kind": "plain",
         "type": "string"
       },
       "last_updated_at": {
         "computed": true,
-        "description": "The timestamp formatted in ISO8601",
+        "description": "The date and time for lastUpdatedAt in UTC and ISO 8601 format.",
         "description_kind": "plain",
         "type": "string"
       },
       "message": {
         "computed": true,
-        "description": "The message of the connector status change",
+        "description": "The message associated with the connector status change",
         "description_kind": "plain",
         "type": "string"
       },
       "name": {
+        "computed": true,
         "description": "The name of the connector",
         "description_kind": "plain",
-        "required": true,
         "type": "string"
       },
       "provider_name": {
-        "description": "The third-party provider configuration for the connector",
+        "computed": true,
+        "description": "The CSPM provider configuration for the connector",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "azure": {
               "computed": true,
-              "description": "The configuration settings required to establish an integration between AWS Security Hub and Azure",
+              "description": "The configuration settings for an Azure CSPM provider",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -126,14 +119,12 @@ const awsccSecurityhubConnectorV2 = `{
                     "computed": true,
                     "description": "The ARN of the AWS Config connector used for the Azure integration",
                     "description_kind": "plain",
-                    "optional": true,
                     "type": "string"
                   },
                   "azure_regions": {
                     "computed": true,
                     "description": "The list of Azure regions to include in the connector scope",
                     "description_kind": "plain",
-                    "optional": true,
                     "type": [
                       "set",
                       "string"
@@ -149,14 +140,12 @@ const awsccSecurityhubConnectorV2 = `{
                           "computed": true,
                           "description": "The scope type for the Azure connector",
                           "description_kind": "plain",
-                          "optional": true,
                           "type": "string"
                         },
                         "scope_values": {
                           "computed": true,
                           "description": "The list of scope values for the Azure connector",
                           "description_kind": "plain",
-                          "optional": true,
                           "type": [
                             "set",
                             "string"
@@ -164,81 +153,34 @@ const awsccSecurityhubConnectorV2 = `{
                         }
                       },
                       "nesting_mode": "single"
-                    },
-                    "optional": true
+                    }
                   }
                 },
                 "nesting_mode": "single"
-              },
-              "optional": true
-            },
-            "jira_cloud": {
-              "computed": true,
-              "description": "The initial configuration settings required to establish an integration between Security Hub and Jira Cloud",
-              "description_kind": "plain",
-              "nested_type": {
-                "attributes": {
-                  "project_key": {
-                    "computed": true,
-                    "description": "The project key for a Jira Cloud instance",
-                    "description_kind": "plain",
-                    "optional": true,
-                    "type": "string"
-                  }
-                },
-                "nesting_mode": "single"
-              },
-              "optional": true
-            },
-            "service_now": {
-              "computed": true,
-              "description": "The initial configuration settings required to establish an integration between Security Hub and ServiceNow ITSM",
-              "description_kind": "plain",
-              "nested_type": {
-                "attributes": {
-                  "instance_name": {
-                    "computed": true,
-                    "description": "The instance name of ServiceNow ITSM",
-                    "description_kind": "plain",
-                    "optional": true,
-                    "type": "string"
-                  },
-                  "secret_arn": {
-                    "computed": true,
-                    "description": "The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the ServiceNow credentials",
-                    "description_kind": "plain",
-                    "optional": true,
-                    "type": "string"
-                  }
-                },
-                "nesting_mode": "single"
-              },
-              "optional": true
+              }
             }
           },
           "nesting_mode": "single"
-        },
-        "required": true
+        }
       },
       "tags": {
         "computed": true,
         "description": "A key-value pair to associate with a resource.",
         "description_kind": "plain",
-        "optional": true,
         "type": [
           "map",
           "string"
         ]
       }
     },
-    "description": "Resource schema for AWS::SecurityHub::ConnectorV2",
+    "description": "Data Source schema for AWS::SecurityHub::Connector",
     "description_kind": "plain"
   },
-  "version": 1
+  "version": 0
 }`
 
-func AwsccSecurityhubConnectorV2Schema() *tfjson.Schema {
+func AwsccSecurityhubConnectorSchema() *tfjson.Schema {
 	var result tfjson.Schema
-	_ = json.Unmarshal([]byte(awsccSecurityhubConnectorV2), &result)
+	_ = json.Unmarshal([]byte(awsccSecurityhubConnector), &result)
 	return &result
 }

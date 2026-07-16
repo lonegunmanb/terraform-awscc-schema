@@ -33,7 +33,7 @@ const awsccCloudfrontFunction = `{
         "nested_type": {
           "attributes": {
             "comment": {
-              "description": "A comment to describe the function.",
+              "description": "A comment to describe the function. The comment cannot be longer than 128 characters.",
               "description_kind": "plain",
               "required": true,
               "type": "string"

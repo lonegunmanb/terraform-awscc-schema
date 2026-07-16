@@ -237,6 +237,12 @@ const awsccDevopsagentService = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "mcp_role_arn": {
+                    "computed": true,
+                    "description": "IAM role ARN for SigV4 signing. Absent when no dedicated role is configured.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "name": {
                     "computed": true,
                     "description": "The MCP server name",
@@ -251,7 +257,7 @@ const awsccDevopsagentService = `{
                   },
                   "role_arn": {
                     "computed": true,
-                    "description": "IAM role ARN for SigV4 signing",
+                    "description": "Deprecated - use McpRoleArn instead. IAM role ARN for SigV4 signing",
                     "description_kind": "plain",
                     "type": "string"
                   },
@@ -830,6 +836,13 @@ const awsccDevopsagentService = `{
                             "string"
                           ]
                         },
+                        "mcp_role_arn": {
+                          "computed": true,
+                          "description": "IAM role ARN to assume for SigV4 signing. Optional - when omitted, credentials are resolved at runtime via a monitor account association.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
                         "region": {
                           "computed": true,
                           "description": "AWS region for SigV4 signing. Use '*' for SigV4a multi-region signing.",
@@ -839,7 +852,7 @@ const awsccDevopsagentService = `{
                         },
                         "role_arn": {
                           "computed": true,
-                          "description": "IAM role ARN to assume for SigV4 signing",
+                          "description": "Deprecated - use McpRoleArn instead. IAM role ARN to assume for SigV4 signing",
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"

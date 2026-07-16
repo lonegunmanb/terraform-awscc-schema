@@ -116,9 +116,10 @@ const awsccCloudwatchLogAlarm = `{
               "type": "string"
             },
             "log_group_identifiers": {
+              "computed": true,
               "description": "The log groups to query.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": [
                 "list",
                 "string"
@@ -137,7 +138,7 @@ const awsccCloudwatchLogAlarm = `{
                 "attributes": {
                   "end_time_offset": {
                     "computed": true,
-                    "description": "The number of seconds into the past to end the query window.",
+                    "description": "The number of seconds into the past to end the query window. Must be a non-negative value and cannot exceed 2592000 seconds (30 days).",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "number"
@@ -149,10 +150,9 @@ const awsccCloudwatchLogAlarm = `{
                     "type": "string"
                   },
                   "start_time_offset": {
-                    "computed": true,
-                    "description": "The number of seconds into the past to start the query window.",
+                    "description": "The number of seconds into the past to start the query window. Must be a positive value and cannot exceed 2592000 seconds (30 days).",
                     "description_kind": "plain",
-                    "optional": true,
+                    "required": true,
                     "type": "number"
                   }
                 },
@@ -165,6 +165,31 @@ const awsccCloudwatchLogAlarm = `{
               "description_kind": "plain",
               "required": true,
               "type": "string"
+            },
+            "tags": {
+              "computed": true,
+              "description": "A list of key-value pairs to associate with the scheduled query that backs the log alarm.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description": "A unique identifier for the tag. The combination of tag keys and values can help you organize and categorize your resources.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description": "The value for the specified tag key.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

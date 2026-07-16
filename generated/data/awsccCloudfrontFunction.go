@@ -34,7 +34,7 @@ const awsccCloudfrontFunction = `{
           "attributes": {
             "comment": {
               "computed": true,
-              "description": "A comment to describe the function.",
+              "description": "A comment to describe the function. The comment cannot be longer than 128 characters.",
               "description_kind": "plain",
               "type": "string"
             },
