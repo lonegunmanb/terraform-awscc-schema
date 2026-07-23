@@ -299,7 +299,7 @@ const awsccImagebuilderImageRecipe = `{
         "type": "string"
       }
     },
-    "description": "Resource schema for AWS::ImageBuilder::ImageRecipe",
+    "description": "Resource Type definition for AWS::ImageBuilder::ImageRecipe",
     "description_kind": "plain"
   },
   "version": 1

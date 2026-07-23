@@ -226,6 +226,13 @@ const awsccImagebuilderImagePipeline = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "timezone": {
+              "computed": true,
+              "description": "The timezone that applies to the scheduling expression, for example \"Etc/UTC\" or \"America/Los_Angeles\" in IANA timezone format. If not specified, this defaults to UTC.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             }
           },
           "nesting_mode": "single"
@@ -308,7 +315,7 @@ const awsccImagebuilderImagePipeline = `{
         "optional": true
       }
     },
-    "description": "Resource schema for AWS::ImageBuilder::ImagePipeline",
+    "description": "Resource Type definition for AWS::ImageBuilder::ImagePipeline",
     "description_kind": "plain"
   },
   "version": 1

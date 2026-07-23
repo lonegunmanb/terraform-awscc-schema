@@ -173,6 +173,45 @@ const awsccBedrockagentcoreRuntime = `{
                       "string"
                     ]
                   },
+                  "allowed_workload_configuration": {
+                    "computed": true,
+                    "description": "Allow-list of upstream workloads permitted to reach this resource via the workload identity chain. When set, the data plane enforces that the introspected workload chain's caller matches one of the configured hosting environments or workload identities; absent means no chain enforcement.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "hosting_environments": {
+                          "computed": true,
+                          "description": "List of allow-listed hosting environments",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "arn": {
+                                "computed": true,
+                                "description": "The ARN of the bedrock-agentcore hosting environment",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "set"
+                          },
+                          "optional": true
+                        },
+                        "workload_identities": {
+                          "computed": true,
+                          "description": "List of allow-listed workload identity names",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "set",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "custom_claims": {
                     "computed": true,
                     "description": "List of required custom claims",
@@ -250,6 +289,206 @@ const awsccBedrockagentcoreRuntime = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
+                  },
+                  "private_endpoint": {
+                    "computed": true,
+                    "description": "Private endpoint configuration. Exactly one of SelfManagedLatticeResource or ManagedVpcResource must be specified.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "managed_vpc_resource": {
+                          "computed": true,
+                          "description": "Managed VPC resource configuration",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "endpoint_ip_address_type": {
+                                "computed": true,
+                                "description": "The IP address type for the endpoint",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "routing_domain": {
+                                "computed": true,
+                                "description": "An intermediate domain to use as the resource configuration endpoint instead of the actual target domain",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "security_group_ids": {
+                                "computed": true,
+                                "description": "The security group IDs",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "subnet_ids": {
+                                "computed": true,
+                                "description": "The subnet IDs",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "tags": {
+                                "computed": true,
+                                "description": "Tags to apply to the managed VPC Lattice resource gateway",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "map",
+                                  "string"
+                                ]
+                              },
+                              "vpc_identifier": {
+                                "computed": true,
+                                "description": "The VPC identifier",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "self_managed_lattice_resource": {
+                          "computed": true,
+                          "description": "Self-managed VPC Lattice resource configuration",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "resource_configuration_identifier": {
+                                "computed": true,
+                                "description": "The identifier of the VPC Lattice resource configuration",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "private_endpoint_overrides": {
+                    "computed": true,
+                    "description": "List of private endpoint overrides",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "domain": {
+                          "computed": true,
+                          "description": "The domain to override",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "private_endpoint": {
+                          "computed": true,
+                          "description": "Private endpoint configuration. Exactly one of SelfManagedLatticeResource or ManagedVpcResource must be specified.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "managed_vpc_resource": {
+                                "computed": true,
+                                "description": "Managed VPC resource configuration",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "endpoint_ip_address_type": {
+                                      "computed": true,
+                                      "description": "The IP address type for the endpoint",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "routing_domain": {
+                                      "computed": true,
+                                      "description": "An intermediate domain to use as the resource configuration endpoint instead of the actual target domain",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "security_group_ids": {
+                                      "computed": true,
+                                      "description": "The security group IDs",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "subnet_ids": {
+                                      "computed": true,
+                                      "description": "The subnet IDs",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "tags": {
+                                      "computed": true,
+                                      "description": "Tags to apply to the managed VPC Lattice resource gateway",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "map",
+                                        "string"
+                                      ]
+                                    },
+                                    "vpc_identifier": {
+                                      "computed": true,
+                                      "description": "The VPC identifier",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "self_managed_lattice_resource": {
+                                "computed": true,
+                                "description": "Self-managed VPC Lattice resource configuration",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "resource_configuration_identifier": {
+                                      "computed": true,
+                                      "description": "The identifier of the VPC Lattice resource configuration",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"

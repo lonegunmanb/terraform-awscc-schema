@@ -15,9 +15,8 @@ const awsccConnectDataTableAttribute = `{
         "type": "string"
       },
       "data_table_arn": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "description": {
@@ -33,9 +32,8 @@ const awsccConnectDataTableAttribute = `{
         "type": "string"
       },
       "instance_arn": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "last_modified_region": {
@@ -68,9 +66,8 @@ const awsccConnectDataTableAttribute = `{
         }
       },
       "name": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "primary": {
@@ -169,9 +166,8 @@ const awsccConnectDataTableAttribute = `{
         "optional": true
       },
       "value_type": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       }
     },

@@ -56,11 +56,39 @@ const awsccConfigOrganizationConformancePack = `{
         "required": true,
         "type": "string"
       },
+      "organization_conformance_pack_arn": {
+        "computed": true,
+        "description": "Amazon Resource Name (ARN) of the organization conformance pack.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "organization_conformance_pack_name": {
         "computed": true,
         "description": "The name of the organization conformance pack.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "The tags for the organization conformance pack.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key name of the tag. You can specify a value that is 1 to 127 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The value for the tag. You can specify a value that is 1 to 255 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -. ",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
       },
       "template_body": {
         "computed": true,

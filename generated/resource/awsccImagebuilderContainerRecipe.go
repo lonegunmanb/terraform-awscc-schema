@@ -331,7 +331,7 @@ const awsccImagebuilderContainerRecipe = `{
         "type": "string"
       }
     },
-    "description": "Resource schema for AWS::ImageBuilder::ContainerRecipe",
+    "description": "Resource Type definition for AWS::ImageBuilder::ContainerRecipe",
     "description_kind": "plain"
   },
   "version": 1

@@ -138,6 +138,12 @@ const awsccEntityresolutionMatchingWorkflow = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "enable_real_time_matching": {
+              "computed": true,
+              "description": "Enables the workflow to use real-time matching. Can only be set on creation for RULE_MATCHING workflows that define RuleConditionProperties.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
             "provider_properties": {
               "computed": true,
               "description_kind": "plain",

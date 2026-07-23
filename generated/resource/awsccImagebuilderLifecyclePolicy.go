@@ -297,7 +297,7 @@ const awsccImagebuilderLifecyclePolicy = `{
         ]
       }
     },
-    "description": "Resource schema for AWS::ImageBuilder::LifecyclePolicy",
+    "description": "Resource Type definition for AWS::ImageBuilder::LifecyclePolicy",
     "description_kind": "plain"
   },
   "version": 1

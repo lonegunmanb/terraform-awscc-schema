@@ -10,13 +10,11 @@ const awsccConnectDataTableRecord = `{
   "block": {
     "attributes": {
       "data_table_arn": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "data_table_record": {
-        "computed": true,
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -43,7 +41,6 @@ const awsccConnectDataTableRecord = `{
               "optional": true
             },
             "values": {
-              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -62,12 +59,12 @@ const awsccConnectDataTableRecord = `{
                 },
                 "nesting_mode": "list"
               },
-              "optional": true
+              "required": true
             }
           },
           "nesting_mode": "single"
         },
-        "optional": true
+        "required": true
       },
       "id": {
         "computed": true,
@@ -76,9 +73,8 @@ const awsccConnectDataTableRecord = `{
         "type": "string"
       },
       "instance_arn": {
-        "computed": true,
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "record_id": {

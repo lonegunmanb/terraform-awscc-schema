@@ -9,6 +9,12 @@ import (
 const awsccEc2PlacementGroup = `{
   "block": {
     "attributes": {
+      "group_id": {
+        "computed": true,
+        "description": "The ID of the placement group.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "group_name": {
         "computed": true,
         "description": "The Group Name of Placement Group.",

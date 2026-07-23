@@ -209,7 +209,7 @@ const awsccImagebuilderInfrastructureConfiguration = `{
         "type": "bool"
       }
     },
-    "description": "Resource schema for AWS::ImageBuilder::InfrastructureConfiguration",
+    "description": "Resource Type definition for AWS::ImageBuilder::InfrastructureConfiguration",
     "description_kind": "plain"
   },
   "version": 1

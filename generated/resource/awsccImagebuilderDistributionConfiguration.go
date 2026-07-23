@@ -373,7 +373,7 @@ const awsccImagebuilderDistributionConfiguration = `{
         ]
       }
     },
-    "description": "Resource schema for AWS::ImageBuilder::DistributionConfiguration",
+    "description": "Resource Type definition for AWS::ImageBuilder::DistributionConfiguration",
     "description_kind": "plain"
   },
   "version": 1

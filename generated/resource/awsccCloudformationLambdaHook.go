@@ -15,6 +15,13 @@ const awsccCloudformationLambdaHook = `{
         "required": true,
         "type": "string"
       },
+      "auto_update": {
+        "computed": true,
+        "description": "Whether to automatically update the extension in this account and Region when a new minor version is published by the extension publisher.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "execution_role": {
         "description": "The execution role ARN assumed by Hooks to invoke Lambda.",
         "description_kind": "plain",
@@ -51,6 +58,31 @@ const awsccCloudformationLambdaHook = `{
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "logging_config": {
+        "computed": true,
+        "description": "Contains logging configuration information for the hook.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "log_group_name": {
+              "computed": true,
+              "description": "The Amazon CloudWatch Logs group to which CloudFormation sends error logging information when invoking the extension's handlers.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "log_role_arn": {
+              "computed": true,
+              "description": "The ARN of the role that CloudFormation should assume when sending log entries to CloudWatch Logs.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "stack_filters": {
         "computed": true,

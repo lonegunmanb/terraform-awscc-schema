@@ -23,6 +23,11 @@ const awsccCognitoUserPoolDomain = `{
               "computed": true,
               "description_kind": "plain",
               "type": "string"
+            },
+            "security_policy": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             }
           },
           "nesting_mode": "single"

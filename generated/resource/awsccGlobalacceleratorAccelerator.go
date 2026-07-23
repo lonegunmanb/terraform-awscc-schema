@@ -34,6 +34,27 @@ const awsccGlobalacceleratorAccelerator = `{
         "optional": true,
         "type": "bool"
       },
+      "flow_logs_enabled": {
+        "computed": true,
+        "description": "Indicates whether flow logs are enabled for the accelerator.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
+      "flow_logs_s3_bucket": {
+        "computed": true,
+        "description": "The name of the Amazon S3 bucket for the flow logs.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "flow_logs_s3_prefix": {
+        "computed": true,
+        "description": "The prefix for the location in the Amazon S3 bucket for the flow logs.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

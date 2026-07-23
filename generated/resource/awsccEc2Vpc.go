@@ -108,6 +108,280 @@ const awsccEc2Vpc = `{
         },
         "optional": true
       },
+      "vpc_encryption_control": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "egress_only_internet_gateway_exclusion": {
+              "computed": true,
+              "description": "The desired exclusion mode for Egress-Only Internet Gateways.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "elastic_file_system_exclusion": {
+              "computed": true,
+              "description": "The desired exclusion mode for Elastic File System.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "internet_gateway_exclusion": {
+              "computed": true,
+              "description": "The desired exclusion mode for Internet Gateways.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "lambda_exclusion": {
+              "computed": true,
+              "description": "The desired exclusion mode for Lambda.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "mode": {
+              "computed": true,
+              "description": "The mode of the VPC encryption control.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "nat_gateway_exclusion": {
+              "computed": true,
+              "description": "The desired exclusion mode for NAT Gateways.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "resource_exclusions": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "egress_only_internet_gateway": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description": "The exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "state_message": {
+                          "computed": true,
+                          "description": "A message describing the exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "elastic_file_system": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description": "The exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "state_message": {
+                          "computed": true,
+                          "description": "A message describing the exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "internet_gateway": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description": "The exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "state_message": {
+                          "computed": true,
+                          "description": "A message describing the exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "lambda": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description": "The exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "state_message": {
+                          "computed": true,
+                          "description": "A message describing the exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "nat_gateway": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description": "The exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "state_message": {
+                          "computed": true,
+                          "description": "A message describing the exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "virtual_private_gateway": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description": "The exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "state_message": {
+                          "computed": true,
+                          "description": "A message describing the exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "vpc_lattice": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description": "The exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "state_message": {
+                          "computed": true,
+                          "description": "A message describing the exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "vpc_peering": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "state": {
+                          "computed": true,
+                          "description": "The exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "state_message": {
+                          "computed": true,
+                          "description": "A message describing the exclusion state of the resource type.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "state": {
+              "computed": true,
+              "description": "The state of the VPC encryption control.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "state_message": {
+              "computed": true,
+              "description": "A message describing the state of the VPC encryption control.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "virtual_private_gateway_exclusion": {
+              "computed": true,
+              "description": "The desired exclusion mode for Virtual Private Gateways.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "vpc_encryption_control_id": {
+              "computed": true,
+              "description": "The ID of the VPC encryption control.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "vpc_id": {
+              "computed": true,
+              "description": "The ID of the VPC.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "vpc_lattice_exclusion": {
+              "computed": true,
+              "description": "The desired exclusion mode for VPC Lattice.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "vpc_peering_exclusion": {
+              "computed": true,
+              "description": "The desired exclusion mode for VPC Peering.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "vpc_id": {
         "computed": true,
         "description_kind": "plain",

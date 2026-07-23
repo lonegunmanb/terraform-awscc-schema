@@ -42,7 +42,7 @@ const awsccRdsCustomDbEngineVersion = `{
       },
       "engine": {
         "computed": true,
-        "description": "The database engine to use for your custom engine version (CEV).\n Valid values:\n  +   ` + "`" + `` + "`" + `custom-oracle-ee` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `custom-oracle-ee-cdb` + "`" + `` + "`" + `",
+        "description": "The database engine to use for your custom engine version (CEV).\n Valid values:\n  +   ` + "`" + `` + "`" + `custom-oracle-ee` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `custom-oracle-ee-cdb` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `sqlserver-dev-ee` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `sqlserver-ee` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `sqlserver-se` + "`" + `` + "`" + `",
         "description_kind": "plain",
         "type": "string"
       },

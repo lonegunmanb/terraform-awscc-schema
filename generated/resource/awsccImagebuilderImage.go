@@ -316,7 +316,7 @@ const awsccImagebuilderImage = `{
         "optional": true
       }
     },
-    "description": "Resource schema for AWS::ImageBuilder::Image",
+    "description": "Resource Type definition for AWS::ImageBuilder::Image",
     "description_kind": "plain"
   },
   "version": 1

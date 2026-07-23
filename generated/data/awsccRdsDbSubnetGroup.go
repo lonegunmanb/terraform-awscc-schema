@@ -9,6 +9,11 @@ import (
 const awsccRdsDbSubnetGroup = `{
   "block": {
     "attributes": {
+      "db_subnet_group_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "db_subnet_group_description": {
         "computed": true,
         "description": "The description for the DB subnet group.",

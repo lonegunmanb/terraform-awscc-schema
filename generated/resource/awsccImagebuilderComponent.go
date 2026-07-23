@@ -141,7 +141,7 @@ const awsccImagebuilderComponent = `{
         "type": "string"
       }
     },
-    "description": "Resource schema for AWS::ImageBuilder::Component",
+    "description": "Resource Type definition for AWS::ImageBuilder::Component",
     "description_kind": "plain"
   },
   "version": 1

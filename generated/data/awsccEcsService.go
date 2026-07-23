@@ -128,6 +128,7 @@ const awsccEcsService = `{
                   },
                   "reset_on_healthy_task": {
                     "computed": true,
+                    "description": "Specifies whether the deployment circuit breaker resets its failure count when a task reaches a healthy state. When set to ` + "`" + `` + "`" + `true` + "`" + `` + "`" + `, a task that reaches a healthy state resets the failure count to ` + "`" + `` + "`" + `0` + "`" + `` + "`" + `. When set to ` + "`" + `` + "`" + `false` + "`" + `` + "`" + `, Amazon ECS does not reset the failure count. The default is ` + "`" + `` + "`" + `true` + "`" + `` + "`" + `.",
                     "description_kind": "plain",
                     "type": "bool"
                   },
@@ -139,16 +140,19 @@ const awsccEcsService = `{
                   },
                   "threshold_configuration": {
                     "computed": true,
+                    "description": "The threshold configuration that controls when the deployment circuit breaker triggers. The ` + "`" + `` + "`" + `type` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `value` + "`" + `` + "`" + ` together determine how many task failures are tolerated before the circuit breaker activates.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "type": {
                           "computed": true,
+                          "description": "Determines how Amazon ECS uses ` + "`" + `` + "`" + `value` + "`" + `` + "`" + ` to calculate the failure threshold. For the percentage types (` + "`" + `` + "`" + `BOUNDED_PERCENT` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `UNBOUNDED_PERCENT` + "`" + `` + "`" + `), Amazon ECS multiplies ` + "`" + `` + "`" + `value` + "`" + `` + "`" + ` by the latest service desired count. For ` + "`" + `` + "`" + `COUNT` + "`" + `` + "`" + `, Amazon ECS uses ` + "`" + `` + "`" + `value` + "`" + `` + "`" + ` directly as the threshold. The default is ` + "`" + `` + "`" + `BOUNDED_PERCENT` + "`" + `` + "`" + `.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "value": {
                           "computed": true,
+                          "description": "Specifies the integer that Amazon ECS uses to calculate the failure threshold. When ` + "`" + `` + "`" + `type` + "`" + `` + "`" + ` is ` + "`" + `` + "`" + `COUNT` + "`" + `` + "`" + `, this value is the failure threshold itself. When ` + "`" + `` + "`" + `type` + "`" + `` + "`" + ` is a percentage type, Amazon ECS multiplies this value by the latest service desired count to produce the failure threshold. The default is ` + "`" + `` + "`" + `50` + "`" + `` + "`" + `.",
                           "description_kind": "plain",
                           "type": "number"
                         }

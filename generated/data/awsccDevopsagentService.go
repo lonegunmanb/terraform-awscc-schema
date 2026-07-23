@@ -545,6 +545,34 @@ const awsccDevopsagentService = `{
                             "nesting_mode": "single"
                           }
                         },
+                        "bearer_token": {
+                          "computed": true,
+                          "description": "Bearer token authentication details",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "authorization_header": {
+                                "computed": true,
+                                "description": "HTTP header name to send the bearer token",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "token_name": {
+                                "computed": true,
+                                "description": "User friendly bearer token name",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "token_value": {
+                                "computed": true,
+                                "description": "Bearer token value",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "o_auth_client_credentials": {
                           "computed": true,
                           "description": "MCP server OAuth client credentials configuration",

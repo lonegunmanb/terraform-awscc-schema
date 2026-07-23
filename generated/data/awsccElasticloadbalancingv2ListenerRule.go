@@ -526,6 +526,11 @@ const awsccElasticloadbalancingv2ListenerRule = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "ip_address_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "values": {
                     "computed": true,
                     "description": "The source IP addresses, in CIDR format. You can use both IPv4 and IPv6 addresses. Wildcards are not supported.\n If you specify multiple addresses, the condition is satisfied if the source IP address of the request matches one of the CIDR blocks. This condition is not satisfied by the addresses in the X-Forwarded-For header.",

@@ -111,6 +111,162 @@ const awsccPcsComputeNodeGroup = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "node_lifecycle_actions": {
+        "computed": true,
+        "description": "Custom scripts that run at defined points in a compute node's lifecycle.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "script_caching_policy": {
+              "computed": true,
+              "description": "Controls whether lifecycle scripts are downloaded once at first boot (CACHE_ONCE) or re-downloaded on every reboot (REFRESH_ON_REBOOT). Defaults to CACHE_ONCE.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "stages": {
+              "computed": true,
+              "description": "The ordered scripts to run at each compute node lifecycle stage.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "node_bootstrapped": {
+                    "computed": true,
+                    "description": "Scripts to run after the node is bootstrapped, once the PCS configuration phase completes and before slurmd starts.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "arguments": {
+                          "computed": true,
+                          "description": "An ordered list of arguments passed to the script.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
+                        "execution_policy": {
+                          "computed": true,
+                          "description": "Whether the script runs only on the node's first boot (FIRST_BOOT_ONLY) or on every boot including reboots (EVERY_BOOT). Defaults to FIRST_BOOT_ONLY.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "name": {
+                          "computed": true,
+                          "description": "A human-readable name that identifies the script.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "on_error": {
+                          "computed": true,
+                          "description": "The behavior when the script exits with an error. Defaults to TERMINATE.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "script_source": {
+                          "computed": true,
+                          "description": "The external location of a lifecycle script.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "checksum": {
+                                "computed": true,
+                                "description": "A 64-character hexadecimal SHA-256 digest used to verify script integrity.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "s3_version_id": {
+                                "computed": true,
+                                "description": "The S3 object version ID of the script, when stored in a versioned bucket.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "script_location": {
+                                "computed": true,
+                                "description": "The S3 URI or HTTPS URL where the script is stored.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
+                  "node_ready": {
+                    "computed": true,
+                    "description": "Scripts to execute when the node becomes ready (every boot).",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "arguments": {
+                          "computed": true,
+                          "description": "An ordered list of arguments passed to the script.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
+                        "execution_policy": {
+                          "computed": true,
+                          "description": "Whether the script runs only on the node's first boot (FIRST_BOOT_ONLY) or on every boot including reboots (EVERY_BOOT). Defaults to FIRST_BOOT_ONLY.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "name": {
+                          "computed": true,
+                          "description": "A human-readable name that identifies the script.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "on_error": {
+                          "computed": true,
+                          "description": "The behavior when the script exits with an error. Defaults to TERMINATE.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "script_source": {
+                          "computed": true,
+                          "description": "The external location of a lifecycle script.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "checksum": {
+                                "computed": true,
+                                "description": "A 64-character hexadecimal SHA-256 digest used to verify script integrity.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "s3_version_id": {
+                                "computed": true,
+                                "description": "The S3 object version ID of the script, when stored in a versioned bucket.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "script_location": {
+                                "computed": true,
+                                "description": "The S3 URI or HTTPS URL where the script is stored.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "purchase_option": {
         "computed": true,
         "description": "Specifies how EC2 instances are purchased on your behalf. AWS PCS supports On-Demand, Spot, Capacity Block, and Interruptible Capacity Reservation instances. For more information, see Instance purchasing options in the Amazon Elastic Compute Cloud User Guide. If you don't provide this option, it defaults to On-Demand.",

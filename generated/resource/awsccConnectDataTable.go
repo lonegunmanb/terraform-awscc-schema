@@ -35,10 +35,9 @@ const awsccConnectDataTable = `{
         "type": "string"
       },
       "instance_arn": {
-        "computed": true,
         "description": "The identifier of the Amazon Connect instance.",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "last_modified_region": {
@@ -70,17 +69,15 @@ const awsccConnectDataTable = `{
         }
       },
       "name": {
-        "computed": true,
         "description": "The name of the Data Table",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "status": {
-        "computed": true,
         "description": "The status of the Data Table",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "tags": {
@@ -109,17 +106,15 @@ const awsccConnectDataTable = `{
         "optional": true
       },
       "time_zone": {
-        "computed": true,
         "description": "The time zone of the Data Table",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "value_lock_level": {
-        "computed": true,
         "description": "The value lock level of the Data Table",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       }
     },

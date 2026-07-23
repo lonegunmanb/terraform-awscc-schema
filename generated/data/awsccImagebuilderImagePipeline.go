@@ -202,6 +202,12 @@ const awsccImagebuilderImagePipeline = `{
               "description": "The expression determines how often EC2 Image Builder evaluates your pipelineExecutionStartCondition.",
               "description_kind": "plain",
               "type": "string"
+            },
+            "timezone": {
+              "computed": true,
+              "description": "The timezone that applies to the scheduling expression, for example \"Etc/UTC\" or \"America/Los_Angeles\" in IANA timezone format. If not specified, this defaults to UTC.",
+              "description_kind": "plain",
+              "type": "string"
             }
           },
           "nesting_mode": "single"
