@@ -11,13 +11,11 @@ const awsccSecurityhubConnector = `{
     "attributes": {
       "connector_arn": {
         "computed": true,
-        "description": "The ARN of the connector",
         "description_kind": "plain",
         "type": "string"
       },
       "connector_id": {
         "computed": true,
-        "description": "The ID of the connector",
         "description_kind": "plain",
         "type": "string"
       },
@@ -29,19 +27,18 @@ const awsccSecurityhubConnector = `{
       },
       "created_at": {
         "computed": true,
-        "description": "The date and time for createdAt in UTC and ISO 8601 format.",
+        "description": "The timestamp formatted in ISO8601",
         "description_kind": "plain",
         "type": "string"
       },
       "created_by": {
         "computed": true,
-        "description": "The principal that created the connector",
         "description_kind": "plain",
         "type": "string"
       },
       "description": {
         "computed": true,
-        "description": "A description of the connector",
+        "description": "The description of the connector.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -59,19 +56,18 @@ const awsccSecurityhubConnector = `{
       },
       "issues": {
         "computed": true,
-        "description": "The list of health issues associated with the connector",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "code": {
               "computed": true,
-              "description": "The code identifying the type of health issue",
+              "description": "The error code that identifies the type of health issue.",
               "description_kind": "plain",
               "type": "string"
             },
             "message": {
               "computed": true,
-              "description": "The message describing the health issue",
+              "description": "A human-readable message that describes the health issue.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -81,49 +77,47 @@ const awsccSecurityhubConnector = `{
       },
       "last_checked_at": {
         "computed": true,
-        "description": "The date and time for lastCheckedAt in UTC and ISO 8601 format.",
+        "description": "The timestamp formatted in ISO8601",
         "description_kind": "plain",
         "type": "string"
       },
       "last_updated_at": {
         "computed": true,
-        "description": "The date and time for lastUpdatedAt in UTC and ISO 8601 format.",
+        "description": "The timestamp formatted in ISO8601",
         "description_kind": "plain",
         "type": "string"
       },
       "message": {
         "computed": true,
-        "description": "The message associated with the connector status change",
         "description_kind": "plain",
         "type": "string"
       },
       "name": {
         "computed": true,
-        "description": "The name of the connector",
+        "description": "The name of the connector.",
         "description_kind": "plain",
         "type": "string"
       },
       "provider_name": {
         "computed": true,
-        "description": "The CSPM provider configuration for the connector",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "azure": {
               "computed": true,
-              "description": "The configuration settings for an Azure CSPM provider",
+              "description": "The configuration for connecting to an Azure environment.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "aws_config_connector_arn": {
                     "computed": true,
-                    "description": "The ARN of the AWS Config connector used for the Azure integration",
+                    "description": "The ARN of the multi-cloud configuration connector used to establish the connection to Azure.",
                     "description_kind": "plain",
                     "type": "string"
                   },
                   "azure_regions": {
                     "computed": true,
-                    "description": "The list of Azure regions to include in the connector scope",
+                    "description": "The list of Azure regions to monitor.",
                     "description_kind": "plain",
                     "type": [
                       "set",
@@ -132,19 +126,19 @@ const awsccSecurityhubConnector = `{
                   },
                   "scope_configuration": {
                     "computed": true,
-                    "description": "The scope configuration for an Azure connector",
+                    "description": "The scope configuration that defines which Azure resources are monitored.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "scope_type": {
                           "computed": true,
-                          "description": "The scope type for the Azure connector",
+                          "description": "The type of scope. Valid values are ` + "`" + `` + "`" + `tenant` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `subscription` + "`" + `` + "`" + `.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "scope_values": {
                           "computed": true,
-                          "description": "The list of scope values for the Azure connector",
+                          "description": "The list of scope values, such as subscription IDs, when the scope type is ` + "`" + `` + "`" + `subscription` + "`" + `` + "`" + `.",
                           "description_kind": "plain",
                           "type": [
                             "set",

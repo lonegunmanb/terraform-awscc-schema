@@ -188,6 +188,12 @@ const awsccSagemakerUserProfile = `{
                           "description": "The ARN of the image version created on the instance.",
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
+                          "description_kind": "plain",
+                          "type": "string"
                         }
                       },
                       "nesting_mode": "single"
@@ -430,6 +436,40 @@ const awsccSagemakerUserProfile = `{
                           "description": "The ARN of the image version created on the instance.",
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "emr_settings": {
+                    "computed": true,
+                    "description": "The configuration parameters for EMR settings.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "assumable_role_arns": {
+                          "computed": true,
+                          "description": "An array of Amazon Resource Names (ARNs) of the IAM roles that the execution role of SageMaker can assume.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
+                        "execution_role_arns": {
+                          "computed": true,
+                          "description": "An array of ARNs of IAM roles used by EMR cluster instances or job execution environments.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
                         }
                       },
                       "nesting_mode": "single"
@@ -480,6 +520,12 @@ const awsccSagemakerUserProfile = `{
                         "sage_maker_image_version_arn": {
                           "computed": true,
                           "description": "The ARN of the image version created on the instance.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -561,6 +607,12 @@ const awsccSagemakerUserProfile = `{
                         "sage_maker_image_version_arn": {
                           "computed": true,
                           "description": "The ARN of the image version created on the instance.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "training_plan_arn": {
+                          "computed": true,
+                          "description": "The Amazon Resource Name (ARN) of the training plan to use for the ResourceSpec.",
                           "description_kind": "plain",
                           "type": "string"
                         }

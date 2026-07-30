@@ -542,6 +542,12 @@ const awsccOpensearchserviceDomain = `{
           "nesting_mode": "single"
         }
       },
+      "engine_mode": {
+        "computed": true,
+        "description": "The engine mode of the domain. Determines whether the domain runs the standard (GENERAL) engine or the optimized multi-engine (OPTIMIZED) engine. This value cannot be changed after the domain is created.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "engine_version": {
         "computed": true,
         "description_kind": "plain",
@@ -782,6 +788,12 @@ const awsccOpensearchserviceDomain = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "use_case": {
+        "computed": true,
+        "description": "The primary use case of the domain. Determines the default configuration tuned for the workload. For GENERAL engine-mode domains, this value can be changed after creation. For OPTIMIZED engine-mode domains, this value cannot be changed after creation.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "vpc_options": {
         "computed": true,

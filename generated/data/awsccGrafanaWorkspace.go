@@ -296,6 +296,26 @@ const awsccGrafanaWorkspace = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "tags": {
+        "computed": true,
+        "description": "The list of tags associated with the workspace.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "vpc_configuration": {
         "computed": true,
         "description": "The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.",

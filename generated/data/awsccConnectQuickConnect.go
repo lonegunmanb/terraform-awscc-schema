@@ -45,6 +45,22 @@ const awsccConnectQuickConnect = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "flow_config": {
+              "computed": true,
+              "description": "The flow configuration. This is required only if QuickConnectType is FLOW.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "contact_flow_arn": {
+                    "computed": true,
+                    "description": "The identifier of the contact flow.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "phone_config": {
               "computed": true,
               "description": "The phone configuration. This is required only if QuickConnectType is PHONE_NUMBER.",

@@ -27,6 +27,12 @@ const awsccEc2PlacementGroup = `{
         "required": true,
         "type": "string"
       },
+      "parent_group_id": {
+        "computed": true,
+        "description": "The ID of a parent placement group. Valid for strategies that support parent group linking.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "partition_count": {
         "computed": true,
         "description": "The number of partitions. Valid only when **Strategy** is set to ` + "`" + `partition` + "`" + `",
