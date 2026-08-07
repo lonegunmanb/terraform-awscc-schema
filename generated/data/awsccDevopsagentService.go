@@ -356,6 +356,12 @@ const awsccDevopsagentService = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "exchange_url_private_connection_name": {
+        "computed": true,
+        "description": "The name of the private connection to use for OAuth token exchange requests only. Cannot be specified when PrivateConnectionName is provided.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -365,6 +371,12 @@ const awsccDevopsagentService = `{
       "kms_key_arn": {
         "computed": true,
         "description": "The ARN of the KMS key to use for encryption.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "private_connection_name": {
+        "computed": true,
+        "description": "The name of the private connection to use for VPC connectivity.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -1086,6 +1098,12 @@ const awsccDevopsagentService = `{
           },
           "nesting_mode": "set"
         }
+      },
+      "target_url_private_connection_name": {
+        "computed": true,
+        "description": "The name of the private connection to use for API calls (target URL) only. Cannot be specified when PrivateConnectionName is provided.",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::DevOpsAgent::Service",

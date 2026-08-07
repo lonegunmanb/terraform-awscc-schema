@@ -547,12 +547,14 @@ const awsccElasticloadbalancingv2Listener = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "The key of the tag.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The value of the tag.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

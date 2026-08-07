@@ -356,6 +356,13 @@ const awsccDevopsagentService = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "exchange_url_private_connection_name": {
+        "computed": true,
+        "description": "The name of the private connection to use for OAuth token exchange requests only. Cannot be specified when PrivateConnectionName is provided.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -365,6 +372,13 @@ const awsccDevopsagentService = `{
       "kms_key_arn": {
         "computed": true,
         "description": "The ARN of the KMS key to use for encryption.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "private_connection_name": {
+        "computed": true,
+        "description": "The name of the private connection to use for VPC connectivity.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -1182,6 +1196,13 @@ const awsccDevopsagentService = `{
           "nesting_mode": "set"
         },
         "optional": true
+      },
+      "target_url_private_connection_name": {
+        "computed": true,
+        "description": "The name of the private connection to use for API calls (target URL) only. Cannot be specified when PrivateConnectionName is provided.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       }
     },
     "description": "The AWS::DevOpsAgent::Service resource registers external services (like Dynatrace, MCP servers, GitLab) for integration with DevOpsAgent.",

@@ -35,7 +35,7 @@ const awsccOpensearchserverlessCollectionIndex = `{
         "type": "string"
       }
     },
-    "description": "Resource schema for AWS::OpenSearchServerless::CollectionIndex",
+    "description": "Resource Type definition for AWS::OpenSearchServerless::CollectionIndex",
     "description_kind": "plain"
   },
   "version": 1

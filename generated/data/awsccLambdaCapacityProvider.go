@@ -196,21 +196,25 @@ const awsccLambdaCapacityProvider = `{
       },
       "telemetry_config": {
         "computed": true,
+        "description": "The telemetry configuration for the capacity provider, including logging settings.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "logging_config": {
               "computed": true,
+              "description": "The capacity provider's Amazon CloudWatch Logs configuration settings.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "log_group": {
                     "computed": true,
+                    "description": "The name of the Amazon CloudWatch log group the capacity provider sends logs to. By default, Lambda capacity providers send logs to a default log group named ` + "`" + `` + "`" + `/aws/lambda/capacity-provider/\u003ccapacity provider name\u003e` + "`" + `` + "`" + `. To use a different log group, enter an existing log group or enter a new log group name.",
                     "description_kind": "plain",
                     "type": "string"
                   },
                   "system_log_level": {
                     "computed": true,
+                    "description": "Set this property to filter the system logs for your capacity provider that Lambda sends to CloudWatch. Lambda only sends system logs at the selected level of detail and lower, where ` + "`" + `` + "`" + `DEBUG` + "`" + `` + "`" + ` is the highest level and ` + "`" + `` + "`" + `WARN` + "`" + `` + "`" + ` is the lowest.",
                     "description_kind": "plain",
                     "type": "string"
                   }

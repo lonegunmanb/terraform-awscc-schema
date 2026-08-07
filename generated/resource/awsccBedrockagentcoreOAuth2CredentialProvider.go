@@ -303,6 +303,273 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "private_endpoint": {
+                    "computed": true,
+                    "description": "The private endpoint configuration for connecting to private resources in your VPC",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "managed_vpc_resource": {
+                          "computed": true,
+                          "description": "Configuration for a managed VPC Lattice resource. AgentCore creates and manages the VPC Lattice resource gateway and resource configuration on your behalf.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "endpoint_ip_address_type": {
+                                "computed": true,
+                                "description": "The IP address type for the resource configuration endpoint",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "routing_domain": {
+                                "computed": true,
+                                "description": "An intermediate publicly resolvable domain used as the VPC Lattice resource configuration endpoint",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "security_group_ids": {
+                                "computed": true,
+                                "description": "The security group IDs to associate with the VPC Lattice resource gateway",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "subnet_ids": {
+                                "computed": true,
+                                "description": "The subnet IDs within the VPC where the VPC Lattice resource gateway is placed",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "tags": {
+                                "computed": true,
+                                "description": "Tags to apply to the managed VPC Lattice resource gateway",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "map",
+                                  "string"
+                                ]
+                              },
+                              "vpc_identifier": {
+                                "computed": true,
+                                "description": "The ID of the VPC that contains your private resource",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "self_managed_lattice_resource": {
+                          "computed": true,
+                          "description": "Configuration for a self-managed VPC Lattice resource. You create and manage the VPC Lattice resource gateway and resource configuration, then provide the resource configuration identifier.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "resource_configuration_identifier": {
+                                "computed": true,
+                                "description": "The ARN or ID of the VPC Lattice resource configuration",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "private_endpoint_overrides": {
+                    "computed": true,
+                    "description": "A list of private endpoint overrides. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "domain": {
+                          "computed": true,
+                          "description": "The domain to override with a private endpoint",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "private_endpoint": {
+                          "computed": true,
+                          "description": "The private endpoint configuration for connecting to private resources in your VPC",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "managed_vpc_resource": {
+                                "computed": true,
+                                "description": "Configuration for a managed VPC Lattice resource. AgentCore creates and manages the VPC Lattice resource gateway and resource configuration on your behalf.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "endpoint_ip_address_type": {
+                                      "computed": true,
+                                      "description": "The IP address type for the resource configuration endpoint",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "routing_domain": {
+                                      "computed": true,
+                                      "description": "An intermediate publicly resolvable domain used as the VPC Lattice resource configuration endpoint",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "security_group_ids": {
+                                      "computed": true,
+                                      "description": "The security group IDs to associate with the VPC Lattice resource gateway",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "subnet_ids": {
+                                      "computed": true,
+                                      "description": "The subnet IDs within the VPC where the VPC Lattice resource gateway is placed",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "tags": {
+                                      "computed": true,
+                                      "description": "Tags to apply to the managed VPC Lattice resource gateway",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "map",
+                                        "string"
+                                      ]
+                                    },
+                                    "vpc_identifier": {
+                                      "computed": true,
+                                      "description": "The ID of the VPC that contains your private resource",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "self_managed_lattice_resource": {
+                                "computed": true,
+                                "description": "Configuration for a self-managed VPC Lattice resource. You create and manage the VPC Lattice resource gateway and resource configuration, then provide the resource configuration identifier.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "resource_configuration_identifier": {
+                                      "computed": true,
+                                      "description": "The ARN or ID of the VPC Lattice resource configuration",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
+                  "private_key_jwt_config": {
+                    "computed": true,
+                    "description": "Configuration for private_key_jwt client authentication (RFC 7523)",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "additional_header_claims": {
+                          "computed": true,
+                          "description": "A map of additional claims to include in the JWT client assertion",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        },
+                        "additional_payload_claims": {
+                          "computed": true,
+                          "description": "A map of additional claims to include in the JWT client assertion",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        },
+                        "private_key_source": {
+                          "computed": true,
+                          "description": "Contains the private key source configuration for a JWT client assertion",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "kms_key_source": {
+                                "computed": true,
+                                "description": "Contains the KMS key configuration for a JWT client assertion",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "kms_key_arn": {
+                                      "computed": true,
+                                      "description": "The Amazon Resource Name (ARN) of the KMS key used to sign the JWT client assertion",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "signing_algorithm": {
+                          "computed": true,
+                          "description": "The algorithm used to sign the JWT client assertion",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
@@ -830,10 +1097,254 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "private_endpoint": {
+              "computed": true,
+              "description": "The private endpoint configuration for connecting to private resources in your VPC",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "managed_vpc_resource": {
+                    "computed": true,
+                    "description": "Configuration for a managed VPC Lattice resource. AgentCore creates and manages the VPC Lattice resource gateway and resource configuration on your behalf.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "endpoint_ip_address_type": {
+                          "computed": true,
+                          "description": "The IP address type for the resource configuration endpoint",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "routing_domain": {
+                          "computed": true,
+                          "description": "An intermediate publicly resolvable domain used as the VPC Lattice resource configuration endpoint",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "security_group_ids": {
+                          "computed": true,
+                          "description": "The security group IDs to associate with the VPC Lattice resource gateway",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
+                        "subnet_ids": {
+                          "computed": true,
+                          "description": "The subnet IDs within the VPC where the VPC Lattice resource gateway is placed",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        },
+                        "tags": {
+                          "computed": true,
+                          "description": "Tags to apply to the managed VPC Lattice resource gateway",
+                          "description_kind": "plain",
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        },
+                        "vpc_identifier": {
+                          "computed": true,
+                          "description": "The ID of the VPC that contains your private resource",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "self_managed_lattice_resource": {
+                    "computed": true,
+                    "description": "Configuration for a self-managed VPC Lattice resource. You create and manage the VPC Lattice resource gateway and resource configuration, then provide the resource configuration identifier.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "resource_configuration_identifier": {
+                          "computed": true,
+                          "description": "The ARN or ID of the VPC Lattice resource configuration",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "private_endpoint_overrides": {
+              "computed": true,
+              "description": "The list of private endpoint overrides for the OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "domain": {
+                    "computed": true,
+                    "description": "The domain to override with a private endpoint",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "private_endpoint": {
+                    "computed": true,
+                    "description": "The private endpoint configuration for connecting to private resources in your VPC",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "managed_vpc_resource": {
+                          "computed": true,
+                          "description": "Configuration for a managed VPC Lattice resource. AgentCore creates and manages the VPC Lattice resource gateway and resource configuration on your behalf.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "endpoint_ip_address_type": {
+                                "computed": true,
+                                "description": "The IP address type for the resource configuration endpoint",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "routing_domain": {
+                                "computed": true,
+                                "description": "An intermediate publicly resolvable domain used as the VPC Lattice resource configuration endpoint",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "security_group_ids": {
+                                "computed": true,
+                                "description": "The security group IDs to associate with the VPC Lattice resource gateway",
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "subnet_ids": {
+                                "computed": true,
+                                "description": "The subnet IDs within the VPC where the VPC Lattice resource gateway is placed",
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "tags": {
+                                "computed": true,
+                                "description": "Tags to apply to the managed VPC Lattice resource gateway",
+                                "description_kind": "plain",
+                                "type": [
+                                  "map",
+                                  "string"
+                                ]
+                              },
+                              "vpc_identifier": {
+                                "computed": true,
+                                "description": "The ID of the VPC that contains your private resource",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "self_managed_lattice_resource": {
+                          "computed": true,
+                          "description": "Configuration for a self-managed VPC Lattice resource. You create and manage the VPC Lattice resource gateway and resource configuration, then provide the resource configuration identifier.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "resource_configuration_identifier": {
+                                "computed": true,
+                                "description": "The ARN or ID of the VPC Lattice resource configuration",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
+            "private_key_jwt_config": {
+              "computed": true,
+              "description": "Configuration for private_key_jwt client authentication (RFC 7523)",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "additional_header_claims": {
+                    "computed": true,
+                    "description": "A map of additional claims to include in the JWT client assertion",
+                    "description_kind": "plain",
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  },
+                  "additional_payload_claims": {
+                    "computed": true,
+                    "description": "A map of additional claims to include in the JWT client assertion",
+                    "description_kind": "plain",
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  },
+                  "private_key_source": {
+                    "computed": true,
+                    "description": "Contains the private key source configuration for a JWT client assertion",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "kms_key_source": {
+                          "computed": true,
+                          "description": "Contains the KMS key configuration for a JWT client assertion",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "kms_key_arn": {
+                                "computed": true,
+                                "description": "The Amazon Resource Name (ARN) of the KMS key used to sign the JWT client assertion",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "signing_algorithm": {
+                    "computed": true,
+                    "description": "The algorithm used to sign the JWT client assertion",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"
         }
+      },
+      "status": {
+        "computed": true,
+        "description": "The current status of the OAuth2 credential provider",
+        "description_kind": "plain",
+        "type": "string"
       },
       "tags": {
         "computed": true,

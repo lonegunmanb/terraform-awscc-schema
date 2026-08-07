@@ -61,13 +61,13 @@ const awsccCloudwatchAlarm = `{
           "attributes": {
             "name": {
               "computed": true,
-              "description": "The name of the dimension, from 1?255 characters in length. This dimension name must have been included when the metric was published.",
+              "description": "The name of the dimension, from 1–255 characters in length. This dimension name must have been included when the metric was published.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "The value for the dimension, from 1?255 characters in length.",
+              "description": "The value for the dimension, from 1–255 characters in length.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -130,6 +130,37 @@ const awsccCloudwatchAlarm = `{
         "description": "The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an \"M out of N\" alarm, this value is the N, and ` + "`" + `` + "`" + `DatapointsToAlarm` + "`" + `` + "`" + ` is the M.\n For more information, see [Evaluating an Alarm](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation) in the *User Guide*.",
         "description_kind": "plain",
         "type": "number"
+      },
+      "evaluation_window": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "sliding_window": {
+              "computed": true,
+              "description": "Configuration for sliding evaluation window (default behavior).",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "wall_clock_window": {
+              "computed": true,
+              "description": "Configuration for wall clock based evaluation window.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "timezone": {
+                    "computed": true,
+                    "description": "The timezone for wall clock evaluation, in IANA time zone format (e.g., America/New_York, UTC).",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "extended_statistic": {
         "computed": true,
@@ -208,13 +239,13 @@ const awsccCloudwatchAlarm = `{
                             "attributes": {
                               "name": {
                                 "computed": true,
-                                "description": "The name of the dimension, from 1?255 characters in length. This dimension name must have been included when the metric was published.",
+                                "description": "The name of the dimension, from 1–255 characters in length. This dimension name must have been included when the metric was published.",
                                 "description_kind": "plain",
                                 "type": "string"
                               },
                               "value": {
                                 "computed": true,
-                                "description": "The value for the dimension, from 1?255 characters in length.",
+                                "description": "The value for the dimension, from 1–255 characters in length.",
                                 "description_kind": "plain",
                                 "type": "string"
                               }

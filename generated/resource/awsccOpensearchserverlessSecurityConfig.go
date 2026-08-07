@@ -164,7 +164,7 @@ const awsccOpensearchserverlessSecurityConfig = `{
         "type": "string"
       }
     },
-    "description": "Amazon OpenSearchServerless security config resource",
+    "description": "Resource Type definition for AWS::OpenSearchServerless::SecurityConfig",
     "description_kind": "plain"
   },
   "version": 1

@@ -122,6 +122,11 @@ const awsccMediapackagev2Channel = `{
           "nesting_mode": "single"
         }
       },
+      "output_locking_mode": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description_kind": "plain",

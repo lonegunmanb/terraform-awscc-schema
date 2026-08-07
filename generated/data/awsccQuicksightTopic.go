@@ -21,7 +21,6 @@ const awsccQuicksightTopic = `{
       },
       "config_options": {
         "computed": true,
-        "description": "Model for configuration of a Topic",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -36,11 +35,13 @@ const awsccQuicksightTopic = `{
       },
       "custom_instructions": {
         "computed": true,
+        "description": "\u003cp\u003eInstructions that provide additional guidance and context for response generation.\u003c/p\u003e",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "custom_instructions_string": {
               "computed": true,
+              "description": "\u003cp\u003eA text field for providing additional guidance or context for response generation.\u003c/p\u003e",
               "description_kind": "plain",
               "type": "string"
             }

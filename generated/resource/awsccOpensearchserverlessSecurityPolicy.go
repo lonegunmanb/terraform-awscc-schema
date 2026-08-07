@@ -41,7 +41,7 @@ const awsccOpensearchserverlessSecurityPolicy = `{
         "type": "string"
       }
     },
-    "description": "Amazon OpenSearchServerless security policy resource",
+    "description": "Resource Type definition for AWS::OpenSearchServerless::SecurityPolicy",
     "description_kind": "plain"
   },
   "version": 1

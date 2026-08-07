@@ -67,14 +67,14 @@ const awsccCloudwatchAlarm = `{
           "attributes": {
             "name": {
               "computed": true,
-              "description": "The name of the dimension, from 1?255 characters in length. This dimension name must have been included when the metric was published.",
+              "description": "The name of the dimension, from 1–255 characters in length. This dimension name must have been included when the metric was published.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
-              "description": "The value for the dimension, from 1?255 characters in length.",
+              "description": "The value for the dimension, from 1–255 characters in length.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -147,6 +147,41 @@ const awsccCloudwatchAlarm = `{
         "description_kind": "plain",
         "optional": true,
         "type": "number"
+      },
+      "evaluation_window": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "sliding_window": {
+              "computed": true,
+              "description": "Configuration for sliding evaluation window (default behavior).",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "wall_clock_window": {
+              "computed": true,
+              "description": "Configuration for wall clock based evaluation window.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "timezone": {
+                    "computed": true,
+                    "description": "The timezone for wall clock evaluation, in IANA time zone format (e.g., America/New_York, UTC).",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "extended_statistic": {
         "computed": true,
@@ -232,14 +267,14 @@ const awsccCloudwatchAlarm = `{
                             "attributes": {
                               "name": {
                                 "computed": true,
-                                "description": "The name of the dimension, from 1?255 characters in length. This dimension name must have been included when the metric was published.",
+                                "description": "The name of the dimension, from 1–255 characters in length. This dimension name must have been included when the metric was published.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"
                               },
                               "value": {
                                 "computed": true,
-                                "description": "The value for the dimension, from 1?255 characters in length.",
+                                "description": "The value for the dimension, from 1–255 characters in length.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"

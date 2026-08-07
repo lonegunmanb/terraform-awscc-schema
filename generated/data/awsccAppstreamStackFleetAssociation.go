@@ -11,7 +11,6 @@ const awsccAppstreamStackFleetAssociation = `{
     "attributes": {
       "fleet_name": {
         "computed": true,
-        "description": "The name of the fleet. To associate a fleet with a stack, you must specify a dependency on the fleet resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -21,9 +20,13 @@ const awsccAppstreamStackFleetAssociation = `{
         "required": true,
         "type": "string"
       },
+      "stack_fleet_association_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "stack_name": {
         "computed": true,
-        "description": "The name of the stack. To associate a fleet with a stack, you must specify a dependency on the stack resource.",
         "description_kind": "plain",
         "type": "string"
       }

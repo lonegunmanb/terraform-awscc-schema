@@ -359,7 +359,7 @@ const awsccConnectUser = `{
             },
             "level": {
               "computed": true,
-              "description": "The level of the proficiency. The valid values are 1, 2, 3, 4 and 5.",
+              "description": "The level of the proficiency. The valid values are 0 to 10.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"

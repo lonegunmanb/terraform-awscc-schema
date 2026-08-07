@@ -417,7 +417,7 @@ const awsccElasticloadbalancingv2ListenerRule = `{
           "attributes": {
             "field": {
               "computed": true,
-              "description": "The field in the HTTP request. The following are the possible values:\n  +   ` + "`" + `` + "`" + `http-header` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `http-request-method` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `host-header` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `path-pattern` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `query-string` + "`" + `` + "`" + ` \n  +   ` + "`" + `` + "`" + `source-ip` + "`" + `` + "`" + `",
+              "description": "The name of the field. The possible values are:\n  +  ` + "`" + `` + "`" + `http-header` + "`" + `` + "`" + ` ? [ALB] Matches on an HTTP header field.\n  +  ` + "`" + `` + "`" + `http-request-method` + "`" + `` + "`" + ` ? [ALB] Matches on the HTTP request method.\n  +  ` + "`" + `` + "`" + `host-header` + "`" + `` + "`" + ` ? [ALB] Matches on the host header.\n  +  ` + "`" + `` + "`" + `path-pattern` + "`" + `` + "`" + ` ? [ALB] Matches on the URL path of the request.\n  +  ` + "`" + `` + "`" + `query-string` + "`" + `` + "`" + ` ? [ALB] Matches on a query string parameter.\n  +  ` + "`" + `` + "`" + `source-ip` + "`" + `` + "`" + ` ? [ALB, NLB] Matches on the source IP address. For ALB, use ` + "`" + `` + "`" + `SourceIpConfig` + "`" + `` + "`" + ` with ` + "`" + `` + "`" + `Values` + "`" + `` + "`" + ` to specify CIDR ranges. For NLB, use ` + "`" + `` + "`" + `SourceIpConfig` + "`" + `` + "`" + ` with ` + "`" + `` + "`" + `IpAddressType` + "`" + `` + "`" + ` to match the IP address type (` + "`" + `` + "`" + `ipv4` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `ipv6` + "`" + `` + "`" + `).",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -664,12 +664,14 @@ const awsccElasticloadbalancingv2ListenerRule = `{
           "attributes": {
             "key": {
               "computed": true,
+              "description": "The key of the tag.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The value of the tag.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

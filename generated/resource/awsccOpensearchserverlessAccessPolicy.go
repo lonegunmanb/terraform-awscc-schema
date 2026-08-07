@@ -41,7 +41,7 @@ const awsccOpensearchserverlessAccessPolicy = `{
         "type": "string"
       }
     },
-    "description": "Amazon OpenSearchServerless access policy resource",
+    "description": "Resource Type definition for AWS::OpenSearchServerless::AccessPolicy",
     "description_kind": "plain"
   },
   "version": 1

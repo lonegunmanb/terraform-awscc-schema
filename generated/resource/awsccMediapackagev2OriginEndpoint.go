@@ -58,11 +58,13 @@ const awsccMediapackagev2OriginEndpoint = `{
             },
             "availability_start_time_configuration": {
               "computed": true,
+              "description": "\u003cp\u003eThe configuration for the DASH \u003ccode\u003eavailabilityStartTime\u003c/code\u003e attribute of the Media Presentation Description (MPD). Use this configuration to set a custom availability start time for your DASH manifest.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "fixed_availability_start_time": {
                     "computed": true,
+                    "description": "\u003cp\u003eThe fixed availability start time for the DASH manifest, in ISO 8601 date-time format. The value must have hourly granularity, meaning that the minutes, seconds, and fractional seconds must be zero. The value must be on or after \u003ccode\u003e2024-01-01T00:00:00Z\u003c/code\u003e and must be at least 14 days before the current time.\u003c/p\u003e",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -1055,6 +1057,12 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description_kind": "plain",
               "optional": true,
               "type": "bool"
+            },
+            "output_timestamp_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             },
             "scte": {
               "computed": true,

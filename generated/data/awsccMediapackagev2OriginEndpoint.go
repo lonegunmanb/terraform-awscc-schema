@@ -57,11 +57,13 @@ const awsccMediapackagev2OriginEndpoint = `{
             },
             "availability_start_time_configuration": {
               "computed": true,
+              "description": "\u003cp\u003eThe configuration for the DASH \u003ccode\u003eavailabilityStartTime\u003c/code\u003e attribute of the Media Presentation Description (MPD). Use this configuration to set a custom availability start time for your DASH manifest.\u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "fixed_availability_start_time": {
                     "computed": true,
+                    "description": "\u003cp\u003eThe fixed availability start time for the DASH manifest, in ISO 8601 date-time format. The value must have hourly granularity, meaning that the minutes, seconds, and fractional seconds must be zero. The value must be on or after \u003ccode\u003e2024-01-01T00:00:00Z\u003c/code\u003e and must be at least 14 days before the current time.\u003c/p\u003e",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -931,6 +933,11 @@ const awsccMediapackagev2OriginEndpoint = `{
               "description": "\u003cp\u003eWhen selected, the stream set includes an additional I-frame only stream, along with the other tracks. If false, this extra stream is not included. MediaPackage generates an I-frame only stream from the first rendition in the manifest. The service inserts EXT-I-FRAMES-ONLY tags in the output manifest, and then generates and includes an I-frames only playlist in the stream. This playlist permits player functionality like fast forward and rewind.\u003c/p\u003e",
               "description_kind": "plain",
               "type": "bool"
+            },
+            "output_timestamp_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             },
             "scte": {
               "computed": true,

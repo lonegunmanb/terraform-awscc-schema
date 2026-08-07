@@ -42,6 +42,22 @@ const awsccApsScraper = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "cloudwatch_configuration": {
+              "computed": true,
+              "description": "Configuration for CloudWatch metrics destination",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "dataset_arn": {
+                    "computed": true,
+                    "description": "ARN of a CloudWatch dataset",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

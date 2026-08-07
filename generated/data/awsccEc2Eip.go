@@ -11,6 +11,7 @@ const awsccEc2Eip = `{
     "attributes": {
       "address": {
         "computed": true,
+        "description": "An Elastic IP address or a carrier IP address in a Wavelength Zone.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -39,6 +40,7 @@ const awsccEc2Eip = `{
       },
       "ipam_pool_id": {
         "computed": true,
+        "description": "The ID of an IPAM pool which has an Amazon-provided or BYOIP public IPv4 CIDR provisioned to it. For more information, see [Allocate sequential Elastic IP addresses from an IPAM pool](https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-eip-pool.html) in the *Amazon VPC IPAM User Guide*.",
         "description_kind": "plain",
         "type": "string"
       },

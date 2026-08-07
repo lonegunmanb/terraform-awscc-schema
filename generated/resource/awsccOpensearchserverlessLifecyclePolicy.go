@@ -41,7 +41,7 @@ const awsccOpensearchserverlessLifecyclePolicy = `{
         "type": "string"
       }
     },
-    "description": "Amazon OpenSearchServerless lifecycle policy resource",
+    "description": "Resource Type definition for AWS::OpenSearchServerless::LifecyclePolicy",
     "description_kind": "plain"
   },
   "version": 1

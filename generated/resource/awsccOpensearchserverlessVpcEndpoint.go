@@ -53,7 +53,7 @@ const awsccOpensearchserverlessVpcEndpoint = `{
         "type": "string"
       }
     },
-    "description": "Amazon OpenSearchServerless vpc endpoint resource",
+    "description": "Resource Type definition for AWS::OpenSearchServerless::VpcEndpoint",
     "description_kind": "plain"
   },
   "version": 1
