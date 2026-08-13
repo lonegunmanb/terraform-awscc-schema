@@ -9,6 +9,11 @@ import (
 const awsccRdsDbParameterGroup = `{
   "block": {
     "attributes": {
+      "db_parameter_group_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "db_parameter_group_name": {
         "computed": true,
         "description": "The name of the DB parameter group.\n Constraints:\n  +  Must be 1 to 255 letters, numbers, or hyphens.\n  +  First character must be a letter\n  +  Can't end with a hyphen or contain two consecutive hyphens\n  \n If you don't specify a value for ` + "`" + `` + "`" + `DBParameterGroupName` + "`" + `` + "`" + ` property, a name is automatically created for the DB parameter group.\n  This value is stored as a lowercase string.",

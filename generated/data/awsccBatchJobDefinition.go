@@ -903,6 +903,11 @@ const awsccBatchJobDefinition = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "network_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "pid_mode": {
                     "computed": true,
                     "description_kind": "plain",

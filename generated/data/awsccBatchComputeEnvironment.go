@@ -34,6 +34,15 @@ const awsccBatchComputeEnvironment = `{
               "description_kind": "plain",
               "type": "number"
             },
+            "capacity_tags": {
+              "computed": true,
+              "description": "Capacity-level tags for compute environments.",
+              "description_kind": "plain",
+              "type": [
+                "map",
+                "string"
+              ]
+            },
             "desiredv_cpus": {
               "computed": true,
               "description_kind": "plain",
@@ -149,6 +158,162 @@ const awsccBatchComputeEnvironment = `{
                     "type": "string"
                   },
                   "version": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "managed_instances_provider": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "infrastructure_optimization": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "scale_in_after": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "infrastructure_role_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "instance_launch_template": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "capacity_option_type": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "capacity_reservations": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "reservation_group_arn": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "reservation_preference": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "ec_2_instance_profile_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "fips_enabled": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "instance_metadata_tags_propagation": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "instance_requirements": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "allowed_instance_types": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "local_storage_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "use_local_storage": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "monitoring": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "network_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "security_groups": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "subnets": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "storage_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "storage_size_gi_b": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "propagate_tags": {
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"

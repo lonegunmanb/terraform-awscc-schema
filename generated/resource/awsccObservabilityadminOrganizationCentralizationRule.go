@@ -83,6 +83,12 @@ const awsccObservabilityadminOrganizationCentralizationRule = `{
                                 "optional": true,
                                 "type": "string"
                               },
+                              "encryption_scope": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
                               "encryption_strategy": {
                                 "computed": true,
                                 "description_kind": "plain",

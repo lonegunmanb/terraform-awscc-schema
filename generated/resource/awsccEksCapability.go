@@ -33,6 +33,12 @@ const awsccEksCapability = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "ack": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "argo_cd": {
               "computed": true,
               "description": "Configuration settings for an Argo CD capability. This includes the Kubernetes namespace, IAM Identity Center integration, RBAC role mappings, and network access configuration.",

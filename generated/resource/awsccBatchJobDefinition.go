@@ -1043,6 +1043,12 @@ const awsccBatchJobDefinition = `{
                     },
                     "optional": true
                   },
+                  "network_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "pid_mode": {
                     "computed": true,
                     "description_kind": "plain",

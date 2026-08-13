@@ -144,6 +144,63 @@ const awsccBedrockagentcoreEvaluator = `{
                             "nesting_mode": "single"
                           },
                           "optional": true
+                        },
+                        "responses_evaluator_model_config": {
+                          "computed": true,
+                          "description": "The configuration for using OpenResponses-compatible models in evaluator assessments.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "max_output_tokens": {
+                                "computed": true,
+                                "description": "The maximum number of output tokens to generate, including visible output and reasoning tokens.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              },
+                              "model_id": {
+                                "computed": true,
+                                "description": "The identifier of the model to use for evaluation.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "reasoning": {
+                                "computed": true,
+                                "description": "The reasoning configuration for reasoning models.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "effort": {
+                                      "computed": true,
+                                      "description": "The level of reasoning effort the model applies.",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "temperature": {
+                                "computed": true,
+                                "description": "The sampling temperature between 0 and 2.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              },
+                              "top_p": {
+                                "computed": true,
+                                "description": "The nucleus sampling probability mass between 0 and 1.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"

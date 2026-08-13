@@ -363,6 +363,77 @@ const awsccMskCluster = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "authorizer_logs": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cloudwatch_logs": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enabled": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "log_group": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "firehose": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "delivery_stream": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "enabled": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "s3": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "bucket": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "enabled": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "prefix": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "broker_logs": {
               "computed": true,
               "description_kind": "plain",

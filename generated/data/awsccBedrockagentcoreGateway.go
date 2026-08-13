@@ -19,6 +19,15 @@ const awsccBedrockagentcoreGateway = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "advertised_scope_mapping": {
+                    "computed": true,
+                    "description": "Maps an originalScope (from allowedScopes) to an advertisedScope\nexposed in WWW-Authenticate / Protected Resource Metadata.",
+                    "description_kind": "plain",
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  },
                   "allowed_audience": {
                     "computed": true,
                     "description_kind": "plain",
@@ -50,31 +59,26 @@ const awsccBedrockagentcoreGateway = `{
                       "attributes": {
                         "authorizing_claim_match_value": {
                           "computed": true,
-                          "description": "The value or values in the custom claim to match and relationship of match",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "claim_match_operator": {
                                 "computed": true,
-                                "description": "The relationship between the claim field value and the value or values being matched",
                                 "description_kind": "plain",
                                 "type": "string"
                               },
                               "claim_match_value": {
                                 "computed": true,
-                                "description": "The value or values in the custom claim to match for",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
                                     "match_value_string": {
                                       "computed": true,
-                                      "description": "The string value to match for",
                                       "description_kind": "plain",
                                       "type": "string"
                                     },
                                     "match_value_string_list": {
                                       "computed": true,
-                                      "description": "The list of strings to check for a match",
                                       "description_kind": "plain",
                                       "type": [
                                         "list",
@@ -91,13 +95,11 @@ const awsccBedrockagentcoreGateway = `{
                         },
                         "inbound_token_claim_name": {
                           "computed": true,
-                          "description": "The name of the custom claim to validate",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "inbound_token_claim_value_type": {
                           "computed": true,
-                          "description": "Token claim data type",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -109,6 +111,69 @@ const awsccBedrockagentcoreGateway = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "private_endpoint": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "managed_vpc_resource": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "endpoint_ip_address_type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "routing_domain": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "security_group_ids": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "subnet_ids": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "vpc_identifier": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "self_managed_lattice_resource": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "resource_configuration_identifier": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"
@@ -173,6 +238,29 @@ const awsccBedrockagentcoreGateway = `{
                     "computed": true,
                     "description_kind": "plain",
                     "type": "bool"
+                  },
+                  "payload_filter": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "exclude": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "field": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"
@@ -225,19 +313,16 @@ const awsccBedrockagentcoreGateway = `{
       },
       "policy_engine_configuration": {
         "computed": true,
-        "description": "The configuration for a policy engine associated with a gateway. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with a gateway, the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "arn": {
               "computed": true,
-              "description": "The ARN of the policy engine. The policy engine contains Cedar policies that define fine-grained authorization rules specifying who can perform what actions on which resources as agents interact through the gateway.",
               "description_kind": "plain",
               "type": "string"
             },
             "mode": {
               "computed": true,
-              "description": "The enforcement mode for the policy engine. LOG_ONLY - The policy engine evaluates each action against your policies and adds traces on whether tool calls would be allowed or denied, but does not enforce the decision. Use this mode to test and validate policies before enabling enforcement. ENFORCE - The policy engine evaluates actions against your policies and enforces decisions by allowing or denying agent operations. Test and validate policies in LOG_ONLY mode before enabling enforcement to avoid unintended denials or adversely affecting production traffic.",
               "description_kind": "plain",
               "type": "string"
             }

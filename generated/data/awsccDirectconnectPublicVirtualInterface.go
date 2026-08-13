@@ -72,6 +72,12 @@ const awsccDirectconnectPublicVirtualInterface = `{
         "required": true,
         "type": "string"
       },
+      "rate_limit": {
+        "computed": true,
+        "description": "The rate limit (bandwidth allocation) for the virtual interface. The value must be one of the supported bandwidth values (e.g., 50Mbps, 1Gbps, 10Gbps) and cannot exceed the bandwidth of the parent connection or LAG.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "route_filter_prefixes": {
         "computed": true,
         "description": "The routes to be advertised to the AWS network in this region.",

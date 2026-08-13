@@ -97,6 +97,13 @@ const awsccDirectconnectTransitVirtualInterface = `{
         "optional": true,
         "type": "number"
       },
+      "rate_limit": {
+        "computed": true,
+        "description": "The rate limit (bandwidth allocation) for the virtual interface. The value must be one of the supported bandwidth values (e.g., 50Mbps, 1Gbps, 10Gbps) and cannot exceed the bandwidth of the parent connection or LAG.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "The tags associated with the private virtual interface.",

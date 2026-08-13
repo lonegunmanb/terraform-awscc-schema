@@ -188,6 +188,143 @@ const awsccEksCluster = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "kube_api_server_config": {
+        "computed": true,
+        "description": "The configuration for the Kubernetes API server on an Amazon EKS cluster.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "event_ttl": {
+              "computed": true,
+              "description": "The duration that Kubernetes events are retained (e.g., 30m, 1h).",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "service_node_port_range": {
+              "computed": true,
+              "description": "The port range for Kubernetes NodePort services.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "max_port": {
+                    "computed": true,
+                    "description": "The maximum port number in the range.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "min_port": {
+                    "computed": true,
+                    "description": "The minimum port number in the range.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "kube_controller_manager_config": {
+        "computed": true,
+        "description": "The configuration for the Kubernetes controller manager on an Amazon EKS cluster.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "horizontal_pod_autoscaler_controller_config": {
+              "computed": true,
+              "description": "The horizontal pod autoscaler controller configuration.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "horizontal_pod_autoscaler_sync_period": {
+                    "computed": true,
+                    "description": "The interval between each sync of the horizontal pod autoscaler (e.g., 15s, 1m).",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "kube_scheduler_config": {
+        "computed": true,
+        "description": "The configuration for the Kubernetes scheduler on an Amazon EKS cluster.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "node_resources_fit": {
+              "computed": true,
+              "description": "The NodeResourcesFit plugin configuration for the Kubernetes scheduler.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "scoring_strategy": {
+                    "computed": true,
+                    "description": "The scoring strategy configuration for the NodeResourcesFit scheduler plugin.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "resources": {
+                          "computed": true,
+                          "description": "The resource weights used for scoring nodes.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "name": {
+                                "computed": true,
+                                "description": "The name of the resource (for example, cpu or memory).",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "weight": {
+                                "computed": true,
+                                "description": "The weight assigned to the resource for scoring. Must be between 1 and 100.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          },
+                          "optional": true
+                        },
+                        "type": {
+                          "computed": true,
+                          "description": "The scoring strategy type (LeastAllocated or MostAllocated).",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "kubernetes_network_config": {
         "computed": true,
         "description": "The Kubernetes network configuration for the cluster.",

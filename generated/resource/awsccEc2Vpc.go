@@ -110,70 +110,68 @@ const awsccEc2Vpc = `{
       },
       "vpc_encryption_control": {
         "computed": true,
+        "description": "Describes the configuration and state of VPC encryption controls.\n For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "egress_only_internet_gateway_exclusion": {
               "computed": true,
-              "description": "The desired exclusion mode for Egress-Only Internet Gateways.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "elastic_file_system_exclusion": {
               "computed": true,
-              "description": "The desired exclusion mode for Elastic File System.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "internet_gateway_exclusion": {
               "computed": true,
-              "description": "The desired exclusion mode for Internet Gateways.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "lambda_exclusion": {
               "computed": true,
-              "description": "The desired exclusion mode for Lambda.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "mode": {
               "computed": true,
-              "description": "The mode of the VPC encryption control.",
+              "description": "The encryption mode for the VPC Encryption Control configuration.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "nat_gateway_exclusion": {
               "computed": true,
-              "description": "The desired exclusion mode for NAT Gateways.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "resource_exclusions": {
               "computed": true,
+              "description": "Information about resource exclusions for the VPC Encryption Control configuration.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "egress_only_internet_gateway": {
                     "computed": true,
+                    "description": "The exclusion configuration for egress-only internet gateway traffic.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "state": {
                           "computed": true,
-                          "description": "The exclusion state of the resource type.",
+                          "description": "The current state of the exclusion configuration.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "state_message": {
                           "computed": true,
-                          "description": "A message describing the exclusion state of the resource type.",
+                          "description": "A message providing additional information about the exclusion state.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -183,18 +181,19 @@ const awsccEc2Vpc = `{
                   },
                   "elastic_file_system": {
                     "computed": true,
+                    "description": "The exclusion configuration for Elastic File System traffic.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "state": {
                           "computed": true,
-                          "description": "The exclusion state of the resource type.",
+                          "description": "The current state of the exclusion configuration.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "state_message": {
                           "computed": true,
-                          "description": "A message describing the exclusion state of the resource type.",
+                          "description": "A message providing additional information about the exclusion state.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -204,18 +203,19 @@ const awsccEc2Vpc = `{
                   },
                   "internet_gateway": {
                     "computed": true,
+                    "description": "The exclusion configuration for internet gateway traffic.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "state": {
                           "computed": true,
-                          "description": "The exclusion state of the resource type.",
+                          "description": "The current state of the exclusion configuration.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "state_message": {
                           "computed": true,
-                          "description": "A message describing the exclusion state of the resource type.",
+                          "description": "A message providing additional information about the exclusion state.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -225,18 +225,19 @@ const awsccEc2Vpc = `{
                   },
                   "lambda": {
                     "computed": true,
+                    "description": "The exclusion configuration for Lambda function traffic.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "state": {
                           "computed": true,
-                          "description": "The exclusion state of the resource type.",
+                          "description": "The current state of the exclusion configuration.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "state_message": {
                           "computed": true,
-                          "description": "A message describing the exclusion state of the resource type.",
+                          "description": "A message providing additional information about the exclusion state.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -246,18 +247,19 @@ const awsccEc2Vpc = `{
                   },
                   "nat_gateway": {
                     "computed": true,
+                    "description": "The exclusion configuration for NAT gateway traffic.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "state": {
                           "computed": true,
-                          "description": "The exclusion state of the resource type.",
+                          "description": "The current state of the exclusion configuration.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "state_message": {
                           "computed": true,
-                          "description": "A message describing the exclusion state of the resource type.",
+                          "description": "A message providing additional information about the exclusion state.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -267,18 +269,19 @@ const awsccEc2Vpc = `{
                   },
                   "virtual_private_gateway": {
                     "computed": true,
+                    "description": "The exclusion configuration for virtual private gateway traffic.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "state": {
                           "computed": true,
-                          "description": "The exclusion state of the resource type.",
+                          "description": "The current state of the exclusion configuration.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "state_message": {
                           "computed": true,
-                          "description": "A message describing the exclusion state of the resource type.",
+                          "description": "A message providing additional information about the exclusion state.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -288,18 +291,19 @@ const awsccEc2Vpc = `{
                   },
                   "vpc_lattice": {
                     "computed": true,
+                    "description": "The exclusion configuration for VPC Lattice traffic.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "state": {
                           "computed": true,
-                          "description": "The exclusion state of the resource type.",
+                          "description": "The current state of the exclusion configuration.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "state_message": {
                           "computed": true,
-                          "description": "A message describing the exclusion state of the resource type.",
+                          "description": "A message providing additional information about the exclusion state.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -309,18 +313,19 @@ const awsccEc2Vpc = `{
                   },
                   "vpc_peering": {
                     "computed": true,
+                    "description": "The exclusion configuration for VPC peering connection traffic.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "state": {
                           "computed": true,
-                          "description": "The exclusion state of the resource type.",
+                          "description": "The current state of the exclusion configuration.",
                           "description_kind": "plain",
                           "type": "string"
                         },
                         "state_message": {
                           "computed": true,
-                          "description": "A message describing the exclusion state of the resource type.",
+                          "description": "A message providing additional information about the exclusion state.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -334,45 +339,42 @@ const awsccEc2Vpc = `{
             },
             "state": {
               "computed": true,
-              "description": "The state of the VPC encryption control.",
+              "description": "The current state of the VPC Encryption Control configuration.",
               "description_kind": "plain",
               "type": "string"
             },
             "state_message": {
               "computed": true,
-              "description": "A message describing the state of the VPC encryption control.",
+              "description": "A message providing additional information about the encryption control state.",
               "description_kind": "plain",
               "type": "string"
             },
             "virtual_private_gateway_exclusion": {
               "computed": true,
-              "description": "The desired exclusion mode for Virtual Private Gateways.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "vpc_encryption_control_id": {
               "computed": true,
-              "description": "The ID of the VPC encryption control.",
+              "description": "The ID of the VPC Encryption Control configuration.",
               "description_kind": "plain",
               "type": "string"
             },
             "vpc_id": {
               "computed": true,
-              "description": "The ID of the VPC.",
+              "description": "The ID of the VPC associated with the encryption control configuration.",
               "description_kind": "plain",
               "type": "string"
             },
             "vpc_lattice_exclusion": {
               "computed": true,
-              "description": "The desired exclusion mode for VPC Lattice.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "vpc_peering_exclusion": {
               "computed": true,
-              "description": "The desired exclusion mode for VPC Peering.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
