@@ -196,6 +196,12 @@ const awsccObservabilityadminOrganizationTelemetryRule = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "kms_key_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the customer-managed AWS KMS key used to encrypt the destination log groups specified in the Telemetry Rule.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "log_delivery_parameters": {
                     "computed": true,
                     "description": "Parameters for log delivery configuration",

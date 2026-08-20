@@ -762,6 +762,11 @@ const awsccOpensearchserviceDomain = `{
               "computed": true,
               "description_kind": "plain",
               "type": "bool"
+            },
+            "use_latest_service_software_for_blue_green": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "bool"
             }
           },
           "nesting_mode": "single"

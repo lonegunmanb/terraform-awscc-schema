@@ -638,6 +638,25 @@ const awsccDynamodbGlobalTable = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "tags": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "key": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "value": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "set"
+                    }
                   }
                 },
                 "nesting_mode": "single"

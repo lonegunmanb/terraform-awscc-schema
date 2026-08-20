@@ -545,6 +545,27 @@ const awsccDynamodbTable = `{
               "description": "When an item in the table is modified, ` + "`" + `` + "`" + `StreamViewType` + "`" + `` + "`" + ` determines what information is written to the stream for this table. Valid values for ` + "`" + `` + "`" + `StreamViewType` + "`" + `` + "`" + ` are:\n  +  ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the key attributes of the modified item are written to the stream.\n  +  ` + "`" + `` + "`" + `NEW_IMAGE` + "`" + `` + "`" + ` - The entire item, as it appears after it was modified, is written to the stream.\n  +  ` + "`" + `` + "`" + `OLD_IMAGE` + "`" + `` + "`" + ` - The entire item, as it appeared before it was modified, is written to the stream.\n  +  ` + "`" + `` + "`" + `NEW_AND_OLD_IMAGES` + "`" + `` + "`" + ` - Both the new and the old item images of the item are written to the stream.",
               "description_kind": "plain",
               "type": "string"
+            },
+            "tags": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description": "The key of the tag. Tag keys are case sensitive. Each DynamoDB table can only have up to one tag with the same key. If you try to add an existing tag (same key), the existing tag value will be updated to the new value.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description": "The value of the tag. Tag values are case-sensitive and can be null.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              }
             }
           },
           "nesting_mode": "single"

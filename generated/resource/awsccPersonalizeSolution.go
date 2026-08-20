@@ -297,6 +297,29 @@ const awsccPersonalizeSolution = `{
           "nesting_mode": "single"
         },
         "optional": true
+      },
+      "tags": {
+        "computed": true,
+        "description": "The tags used to organize, track, or control access for this resource.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
       }
     },
     "description": "Resource schema for AWS::Personalize::Solution.",

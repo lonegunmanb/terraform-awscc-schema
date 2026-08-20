@@ -263,6 +263,12 @@ const awsccBedrockagentcoreMemory = `{
                                                     "nesting_mode": "single"
                                                   }
                                                 },
+                                                "extraction_type": {
+                                                  "computed": true,
+                                                  "description": "Specifies whether the metadata value is extracted by the LLM or passed through deterministically from the event",
+                                                  "description_kind": "plain",
+                                                  "type": "string"
+                                                },
                                                 "key": {
                                                   "computed": true,
                                                   "description": "Key name for metadata fields",
@@ -650,6 +656,12 @@ const awsccBedrockagentcoreMemory = `{
                                   "nesting_mode": "single"
                                 }
                               },
+                              "extraction_type": {
+                                "computed": true,
+                                "description": "Specifies whether the metadata value is extracted by the LLM or passed through deterministically from the event",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
                               "key": {
                                 "computed": true,
                                 "description": "Key name for metadata fields",
@@ -847,6 +859,12 @@ const awsccBedrockagentcoreMemory = `{
                                   "nesting_mode": "single"
                                 }
                               },
+                              "extraction_type": {
+                                "computed": true,
+                                "description": "Specifies whether the metadata value is extracted by the LLM or passed through deterministically from the event",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
                               "key": {
                                 "computed": true,
                                 "description": "Key name for metadata fields",
@@ -1003,6 +1021,12 @@ const awsccBedrockagentcoreMemory = `{
                                         },
                                         "nesting_mode": "single"
                                       }
+                                    },
+                                    "extraction_type": {
+                                      "computed": true,
+                                      "description": "Specifies whether the metadata value is extracted by the LLM or passed through deterministically from the event",
+                                      "description_kind": "plain",
+                                      "type": "string"
                                     },
                                     "key": {
                                       "computed": true,
@@ -1198,6 +1222,12 @@ const awsccBedrockagentcoreMemory = `{
                                   },
                                   "nesting_mode": "single"
                                 }
+                              },
+                              "extraction_type": {
+                                "computed": true,
+                                "description": "Specifies whether the metadata value is extracted by the LLM or passed through deterministically from the event",
+                                "description_kind": "plain",
+                                "type": "string"
                               },
                               "key": {
                                 "computed": true,
@@ -1396,6 +1426,12 @@ const awsccBedrockagentcoreMemory = `{
                                   "nesting_mode": "single"
                                 }
                               },
+                              "extraction_type": {
+                                "computed": true,
+                                "description": "Specifies whether the metadata value is extracted by the LLM or passed through deterministically from the event",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
                               "key": {
                                 "computed": true,
                                 "description": "Key name for metadata fields",
@@ -1592,6 +1628,12 @@ const awsccBedrockagentcoreMemory = `{
                                   },
                                   "nesting_mode": "single"
                                 }
+                              },
+                              "extraction_type": {
+                                "computed": true,
+                                "description": "Specifies whether the metadata value is extracted by the LLM or passed through deterministically from the event",
+                                "description_kind": "plain",
+                                "type": "string"
                               },
                               "key": {
                                 "computed": true,

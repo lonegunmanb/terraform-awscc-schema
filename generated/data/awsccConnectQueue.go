@@ -49,6 +49,18 @@ const awsccConnectQueue = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "last_modified_region": {
+        "computed": true,
+        "description": "The AWS Region where this resource was last modified.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "last_modified_time": {
+        "computed": true,
+        "description": "The timestamp when this resource was last modified.",
+        "description_kind": "plain",
+        "type": "number"
+      },
       "max_contacts": {
         "computed": true,
         "description": "The maximum number of contacts that can be in the queue before it is considered full.",
