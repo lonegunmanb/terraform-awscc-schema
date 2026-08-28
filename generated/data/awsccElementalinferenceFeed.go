@@ -9,6 +9,11 @@ import (
 const awsccElementalinferenceFeed = `{
   "block": {
     "attributes": {
+      "access_role_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "arn": {
         "computed": true,
         "description_kind": "plain",
@@ -67,6 +72,20 @@ const awsccElementalinferenceFeed = `{
                           "computed": true,
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "data_source_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "fixture_id": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
                         }
                       },
                       "nesting_mode": "single"
@@ -75,7 +94,33 @@ const awsccElementalinferenceFeed = `{
                   "cropping": {
                     "computed": true,
                     "description_kind": "plain",
-                    "type": "string"
+                    "nested_type": {
+                      "attributes": {
+                        "template_groups": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "name": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "template_uris": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   },
                   "subtitling": {
                     "computed": true,

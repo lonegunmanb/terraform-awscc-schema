@@ -461,6 +461,22 @@ const awsccBatchComputeEnvironment = `{
         "optional": true,
         "type": "string"
       },
+      "ecs_settings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "container_insights": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "eks_configuration": {
         "computed": true,
         "description_kind": "plain",

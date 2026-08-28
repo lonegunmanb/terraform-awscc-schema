@@ -172,6 +172,11 @@ const awsccApigatewayv2Api = `{
         "optional": true,
         "type": "bool"
       },
+      "execute_api_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "fail_on_warnings": {
         "computed": true,
         "description": "Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.",

@@ -9,6 +9,50 @@ import (
 const awsccMwaaserverlessWorkflow = `{
   "block": {
     "attributes": {
+      "code": {
+        "computed": true,
+        "description": "The location of code artifacts in Amazon S3 for the workflow. Modeled as a single-member container so it stays extensible to future artifact types (e.g. OCI images).",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "s3_location": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "bucket": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "object_key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "version_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "code_snapshotted_at": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "created_at": {
         "computed": true,
         "description_kind": "plain",

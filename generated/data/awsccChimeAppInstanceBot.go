@@ -89,9 +89,9 @@ const awsccChimeAppInstanceBot = `{
       },
       "created_timestamp": {
         "computed": true,
-        "description": "The time at which the AppInstanceBot was created. In epoch milliseconds.",
+        "description": "The time at which the AppInstanceBot was created, as an ISO 8601 timestamp.",
         "description_kind": "plain",
-        "type": "number"
+        "type": "string"
       },
       "id": {
         "description": "Uniquely identifies the resource.",
@@ -101,9 +101,9 @@ const awsccChimeAppInstanceBot = `{
       },
       "last_updated_timestamp": {
         "computed": true,
-        "description": "The time at which the AppInstanceBot was last updated. In epoch milliseconds.",
+        "description": "The time at which the AppInstanceBot was last updated, as an ISO 8601 timestamp.",
         "description_kind": "plain",
-        "type": "number"
+        "type": "string"
       },
       "metadata": {
         "computed": true,

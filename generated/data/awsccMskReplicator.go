@@ -93,6 +93,112 @@ const awsccMskReplicator = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "sasl_o_auth_bearer": {
+                    "computed": true,
+                    "description": "Details for client authentication using SASL/OAUTHBEARER.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "client_credentials": {
+                          "computed": true,
+                          "description": "Details for SASL/OAUTHBEARER using standard client_credentials grant. Mutually exclusive with iamJwtBearer and clientCredentialsAssertion.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "token_request_secret_arn": {
+                                "computed": true,
+                                "description": "Secrets Manager ARN of the secret containing the client_id and client_secret used to obtain an OAuth Bearer token via the client_credentials grant.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "client_credentials_assertion": {
+                          "computed": true,
+                          "description": "Details for SASL/OAUTHBEARER using client credentials grant with JWT client assertion (RFC 7521/7523). Mutually exclusive with clientCredentials and iamJwtBearer.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "audience": {
+                                "computed": true,
+                                "description": "The audience (aud claim) set in the STS JWT client assertion.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "signing_algorithm": {
+                                "computed": true,
+                                "description": "The algorithm used to sign the JWT client assertion.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "token_request_secret_arn": {
+                                "computed": true,
+                                "description": "Optional Secrets Manager ARN for identity providers that require client_id as a form parameter alongside the JWT client assertion.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "iam_jwt_bearer": {
+                          "computed": true,
+                          "description": "Details for SASL/OAUTHBEARER using JWT Bearer assertion grant (RFC 7523). Mutually exclusive with clientCredentials and clientCredentialsAssertion.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "audience": {
+                                "computed": true,
+                                "description": "The audience (aud claim) set in the STS JWT assertion.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "signing_algorithm": {
+                                "computed": true,
+                                "description": "The algorithm used to sign the JWT assertion.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "token_request_secret_arn": {
+                                "computed": true,
+                                "description": "Optional Secrets Manager ARN for identity providers that require client authentication alongside the JWT Bearer assertion.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "scope": {
+                          "computed": true,
+                          "description": "OAuth scope to request. Included in the token request if provided.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "token_endpoint_authentication_method": {
+                          "computed": true,
+                          "description": "How client credentials are sent to the identity provider (POST, BASIC, or NONE).",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "token_endpoint_tls_certificate_arn": {
+                          "computed": true,
+                          "description": "Secrets Manager ARN containing a custom CA certificate for the identity provider. Required only if the identity provider uses a private CA.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "token_endpoint_url": {
+                          "computed": true,
+                          "description": "The HTTPS URL of the OAuth token endpoint that vends OAuth Bearer tokens per RFC 6749.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "sasl_scram": {
                     "computed": true,
                     "description": "Details for SASL/SCRAM client authentication.",

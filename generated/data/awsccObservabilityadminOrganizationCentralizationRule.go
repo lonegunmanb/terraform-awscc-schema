@@ -78,6 +78,11 @@ const awsccObservabilityadminOrganizationCentralizationRule = `{
                                 "description_kind": "plain",
                                 "type": "string"
                               },
+                              "encryption_scope": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
                               "encryption_strategy": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -85,6 +90,27 @@ const awsccObservabilityadminOrganizationCentralizationRule = `{
                               },
                               "kms_key_arn": {
                                 "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "tag_propagation_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "destination_role_arn": {
+                                "computed": true,
+                                "description": "The ARN of the destination account IAM role used for tag propagation.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "tag_conflict_resolution_strategy": {
+                                "computed": true,
+                                "description": "The strategy to resolve tag conflicts during propagation.",
                                 "description_kind": "plain",
                                 "type": "string"
                               }

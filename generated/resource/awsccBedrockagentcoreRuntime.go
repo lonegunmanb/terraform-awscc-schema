@@ -500,6 +500,24 @@ const awsccBedrockagentcoreRuntime = `{
         },
         "optional": true
       },
+      "capacity_provider_configuration": {
+        "computed": true,
+        "description": "Capacity provider configuration for the agent runtime",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "capacity_provider_arn": {
+              "computed": true,
+              "description": "ARN of the capacity provider",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "created_at": {
         "computed": true,
         "description": "Timestamp when the Agent was created",
@@ -535,6 +553,31 @@ const awsccBedrockagentcoreRuntime = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "capacity_provider_volume": {
+              "computed": true,
+              "description": "Configuration for a CapacityProvider-managed volume to mount into the agent runtime",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "mount_path": {
+                    "computed": true,
+                    "description": "Mount path for filesystem configuration",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "volume_name": {
+                    "computed": true,
+                    "description": "Name of the capacity provider volume",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "efs_access_point": {
               "computed": true,
               "description": "Configuration for EFS access point filesystem",
@@ -646,14 +689,16 @@ const awsccBedrockagentcoreRuntime = `{
         "optional": true
       },
       "network_configuration": {
+        "computed": true,
         "description": "Network access configuration for the Agent",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "network_mode": {
+              "computed": true,
               "description": "Network mode configuration type",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             },
             "network_mode_config": {
@@ -690,7 +735,7 @@ const awsccBedrockagentcoreRuntime = `{
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
       },
       "protocol_configuration": {
         "computed": true,

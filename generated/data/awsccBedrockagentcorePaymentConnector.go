@@ -9,6 +9,12 @@ import (
 const awsccBedrockagentcorePaymentConnector = `{
   "block": {
     "attributes": {
+      "authorization_url": {
+        "computed": true,
+        "description": "The URL the user must open to complete OAuth consent. Only present when ConnectorStatus is PENDING_AUTHENTICATION.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "connector_created_at": {
         "computed": true,
         "description": "The timestamp when the connector was created",
@@ -39,7 +45,7 @@ const awsccBedrockagentcorePaymentConnector = `{
       },
       "credential_provider_configurations": {
         "computed": true,
-        "description": "The credential provider configurations for the connector",
+        "description": "The credential provider configurations for the connector. Required when ProvisionMode is MANUAL or not specified. Empty for QUICK_CREATE until provisioning completes.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -104,6 +110,12 @@ const awsccBedrockagentcorePaymentConnector = `{
       "payment_manager_id": {
         "computed": true,
         "description": "The identifier of the parent payment manager",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "provision_mode": {
+        "computed": true,
+        "description": "The provision mode for creating the connector. MANUAL requires CredentialProviderConfigurations; QUICK_CREATE orchestrates OAuth consent and credential provisioning.",
         "description_kind": "plain",
         "type": "string"
       }

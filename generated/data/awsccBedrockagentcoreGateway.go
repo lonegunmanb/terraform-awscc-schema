@@ -430,6 +430,25 @@ const awsccBedrockagentcoreGateway = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "waf_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "failure_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "web_acl_arn": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "workload_identity_details": {
         "computed": true,
         "description_kind": "plain",

@@ -363,7 +363,7 @@ const awsccGameliftContainerFleet = `{
             },
             "metric_name": {
               "computed": true,
-              "description": "Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment.",
+              "description": "Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. This is required for RuleBased and TargetBased policies.",
               "description_kind": "plain",
               "type": "string"
             },

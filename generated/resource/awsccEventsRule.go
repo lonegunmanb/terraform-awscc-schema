@@ -56,6 +56,12 @@ const awsccEventsRule = `{
         "optional": true,
         "type": "string"
       },
+      "rule_name": {
+        "computed": true,
+        "description": "The name of the rule, exposed as a read-only attribute for use with Fn::GetAtt.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "schedule_expression": {
         "computed": true,
         "description": "The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\". For more information, see Creating an Amazon EventBridge rule that runs on a schedule.",

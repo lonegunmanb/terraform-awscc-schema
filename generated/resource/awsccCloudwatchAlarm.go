@@ -150,25 +150,26 @@ const awsccCloudwatchAlarm = `{
       },
       "evaluation_window": {
         "computed": true,
+        "description": "The evaluation window that the alarm uses to select the range of metric data that it evaluates. This is either a sliding window or a wall clock window. For more information, see [Alarm evaluation windows](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-evaluation-window.html) in the *CloudWatch User Guide*.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "sliding_window": {
               "computed": true,
-              "description": "Configuration for sliding evaluation window (default behavior).",
+              "description": "A sliding window, which advances each time the alarm is evaluated, forming a rolling time window. This is the default evaluation window.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "wall_clock_window": {
               "computed": true,
-              "description": "Configuration for wall clock based evaluation window.",
+              "description": "A wall clock window, which aligns the evaluated range to fixed clock boundaries that match the alarm's period, such as the top of the hour, midnight, or the start of the calendar week.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "timezone": {
                     "computed": true,
-                    "description": "The timezone for wall clock evaluation, in IANA time zone format (e.g., America/New_York, UTC).",
+                    "description": "The time zone to use when the alarm aligns the evaluation window to clock boundaries. You can specify an IANA time zone name (for example, ` + "`" + `` + "`" + `America/New_York` + "`" + `` + "`" + `), a fixed UTC offset (for example, ` + "`" + `` + "`" + `+05:30` + "`" + `` + "`" + `), or an offset-prefixed identifier (for example, ` + "`" + `` + "`" + `UTC+05:30` + "`" + `` + "`" + `). The offset must be aligned to a multiple of 5 minutes. If you don't specify a time zone, CloudWatch uses ` + "`" + `` + "`" + `UTC` + "`" + `` + "`" + `.\n The time zone affects window alignment for all periods, including periods of one hour or shorter.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -431,6 +432,30 @@ const awsccCloudwatchAlarm = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "warm_up_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "only_start_evaluating_after_warm_up_period_ends": {
+              "computed": true,
+              "description": "Specifies whether the alarm waits for the full warm-up period before it starts evaluating. If true, the alarm waits the entire WarmUpPeriodDurationInMinutes before it starts evaluating, even if metric data arrives earlier. If false, the alarm ends the warm-up period early and starts evaluating as soon as it has enough metric data to fill its evaluation window. This is the default behavior.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "warm_up_period_duration_in_minutes": {
+              "computed": true,
+              "description": "The length of the warm-up period, in minutes. For this duration after you create or update the alarm, the alarm stays in INSUFFICIENT_DATA and doesn't perform alarm actions. Valid values range from 1 to 2880 minutes (2 days). You can change this value while the alarm is still in its warm-up period. Changes have no effect after the warm-up period ends.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       }
     },
     "description": "The ` + "`" + `` + "`" + `AWS::CloudWatch::Alarm` + "`" + `` + "`" + ` type specifies an alarm and associates it with the specified metric or metric math expression.\n When this operation creates an alarm, the alarm state is immediately set to ` + "`" + `` + "`" + `INSUFFICIENT_DATA` + "`" + `` + "`" + `. The alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then executed.\n When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous configuration of the alarm.",

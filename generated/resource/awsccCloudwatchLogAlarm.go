@@ -233,6 +233,31 @@ const awsccCloudwatchLogAlarm = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "warm_up_configuration": {
+        "computed": true,
+        "description": "The warm-up configuration for the alarm. During the warm-up period, the alarm stays in INSUFFICIENT_DATA and doesn't perform alarm actions. For more information, see Alarm warm-up periods in the Amazon CloudWatch User Guide.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "only_start_evaluating_after_warm_up_period_ends": {
+              "computed": true,
+              "description": "Specifies whether the alarm waits for the full warm-up period before it starts evaluating. If true, the alarm waits the entire WarmUpPeriodDurationInMinutes before it starts evaluating, even if metric data arrives earlier. If false, the alarm ends the warm-up period early and starts evaluating as soon as it has enough metric data to fill its evaluation window. This is the default behavior.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "warm_up_period_duration_in_minutes": {
+              "computed": true,
+              "description": "The length of the warm-up period, in minutes. For this duration after you create or update the alarm, the alarm stays in INSUFFICIENT_DATA and doesn't perform alarm actions. Valid values range from 1 to 2,880 minutes (2 days). You can change this value while the alarm is still in its warm-up period. Changes have no effect after the warm-up period ends.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       }
     },
     "description": "Resource Type definition for AWS::CloudWatch::LogAlarm. A LogAlarm evaluates scheduled query results from CloudWatch Logs and triggers actions when thresholds are breached.",

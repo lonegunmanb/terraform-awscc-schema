@@ -46,6 +46,40 @@ const awsccEc2VpcEndpointService = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "private_dns_name": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "private_dns_name_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "state": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "service_id": {
         "computed": true,
         "description_kind": "plain",

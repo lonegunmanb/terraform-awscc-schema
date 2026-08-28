@@ -48,7 +48,7 @@ const awsccEmrWalWorkspace = `{
         "type": "string"
       }
     },
-    "description": "Resource schema for AWS::EMR::WALWorkspace Type",
+    "description": "Resource Type definition for AWS::EMR::WALWorkspace",
     "description_kind": "plain"
   },
   "version": 1
