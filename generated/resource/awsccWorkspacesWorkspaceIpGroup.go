@@ -91,7 +91,7 @@ const awsccWorkspacesWorkspaceIpGroup = `{
         "optional": true
       }
     },
-    "description": "Resource type definition for an IP access control group for Amazon WorkSpaces.",
+    "description": "Resource Type definition for an IP access control group for Amazon WorkSpaces.",
     "description_kind": "plain"
   },
   "version": 1

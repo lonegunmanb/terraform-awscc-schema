@@ -101,6 +101,15 @@ const awsccGuarddutyFilter = `{
                     "optional": true,
                     "type": "number"
                   },
+                  "matches": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
                   "neq": {
                     "computed": true,
                     "description_kind": "plain",
@@ -111,6 +120,15 @@ const awsccGuarddutyFilter = `{
                     ]
                   },
                   "not_equals": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "not_matches": {
                     "computed": true,
                     "description_kind": "plain",
                     "optional": true,

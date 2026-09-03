@@ -71,8 +71,18 @@ const awsccLakeformationPrincipalPermissions = `{
               "computed": true,
               "description": "The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your LFlong environment.",
               "description_kind": "plain",
-              "optional": true,
-              "type": "string"
+              "nested_type": {
+                "attributes": {
+                  "id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "data_cells_filter": {
               "computed": true,

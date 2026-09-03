@@ -312,6 +312,20 @@ const awsccBedrockagentcoreGatewayRule = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "system": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "managed_by": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "updated_at": {
         "computed": true,
         "description_kind": "plain",

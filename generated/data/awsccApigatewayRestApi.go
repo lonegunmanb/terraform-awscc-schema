@@ -187,6 +187,11 @@ const awsccApigatewayRestApi = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "version": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::ApiGateway::RestApi",

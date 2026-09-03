@@ -22,6 +22,31 @@ const awsccMediaconnectFlow = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "encoding_config": {
+        "computed": true,
+        "description": "The encoding configuration to apply to the NDI source content when transcoding it to a transport stream (TS) for downstream distribution. You can choose between several predefined encoding profiles based on common use cases.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "encoding_profile": {
+              "computed": true,
+              "description": "The encoding profile to use when transcoding the NDI source to a Transport Stream. You can change this value while a flow is running.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "video_max_bitrate": {
+              "computed": true,
+              "description": "The maximum video bitrate to use when transcoding the NDI source to a Transport Stream. This parameter enables you to override the default video bitrate within the encoding profile's supported range. The supported range is 10,000,000 - 50,000,000 bits per second (bps). If you do not specify a value, MediaConnect uses the default value of 20,000,000 bps.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "flow_arn": {
         "computed": true,
         "description": "The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.",
@@ -32,6 +57,19 @@ const awsccMediaconnectFlow = `{
         "computed": true,
         "description": "The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.(ReadOnly)",
         "description_kind": "plain",
+        "type": "string"
+      },
+      "flow_ndi_machine_name": {
+        "computed": true,
+        "description": "A prefix for the names of the NDI sources that the flow creates.(ReadOnly)",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "flow_size": {
+        "computed": true,
+        "description": "Determines the processing capacity and feature set of the flow. Set this optional parameter to LARGE if you want to enable NDI sources or outputs on the flow.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "id": {
@@ -191,6 +229,29 @@ const awsccMediaconnectFlow = `{
               "optional": true,
               "type": "string"
             },
+            "tags": {
+              "computed": true,
+              "description": "Key-value pairs that can be used to tag this media stream.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
             "video_format": {
               "computed": true,
               "description": "The resolution of the video.",
@@ -208,6 +269,63 @@ const awsccMediaconnectFlow = `{
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "ndi_config": {
+        "computed": true,
+        "description": "Specifies the configuration settings for NDI sources and outputs. Required when the flow includes NDI sources or outputs.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "machine_name": {
+              "computed": true,
+              "description": "A prefix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect generates a unique 12-character ID as the prefix.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "ndi_discovery_servers": {
+              "computed": true,
+              "description": "A list of up to three NDI discovery server configurations. While not required by the API, this configuration is necessary for NDI functionality to work properly.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "discovery_server_address": {
+                    "computed": true,
+                    "description": "The unique network address of the NDI discovery server.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "discovery_server_port": {
+                    "computed": true,
+                    "description": "The port for the NDI discovery server. Defaults to 5959 if a custom port isn't specified.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "vpc_interface_adapter": {
+                    "computed": true,
+                    "description": "The identifier for the Virtual Private Cloud (VPC) network interface used by the flow.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
+            },
+            "ndi_state": {
+              "computed": true,
+              "description": "A setting that controls whether NDI sources or outputs can be used in the flow. The default value is DISABLED. This value must be set as ENABLED for your flow to support NDI sources or outputs.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "source": {
         "description": "The source of the flow.",
@@ -447,12 +565,95 @@ const awsccMediaconnectFlow = `{
               "optional": true,
               "type": "string"
             },
+            "ndi_source_settings": {
+              "computed": true,
+              "description": "The settings for the NDI flow source. This includes the exact name of the upstream NDI sender that you want to connect to your flow source.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "source_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "protocol": {
               "computed": true,
               "description": "The protocol that is used by the source.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "router_integration_state": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "router_integration_transit_decryption": {
+              "computed": true,
+              "description": "The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "encryption_key_configuration": {
+                    "computed": true,
+                    "description": "Configuration settings for flow transit encryption keys.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "automatic": {
+                          "computed": true,
+                          "description": "Configuration settings for automatic encryption key management, where MediaConnect handles key creation and rotation.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "secrets_manager": {
+                          "computed": true,
+                          "description": "The configuration settings for transit encryption of a flow source using AWS Secrets Manager, including the secret ARN and role ARN.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "role_arn": {
+                                "computed": true,
+                                "description": "The ARN of the IAM role used for transit encryption from the router output using AWS Secrets Manager.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "secret_arn": {
+                                "computed": true,
+                                "description": "The ARN of the AWS Secrets Manager secret used for transit encryption from the router output.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "encryption_key_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "sender_control_port": {
               "computed": true,
@@ -500,6 +701,29 @@ const awsccMediaconnectFlow = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "tags": {
+              "computed": true,
+              "description": "Key-value pairs that can be used to tag this source.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
             },
             "vpc_interface_name": {
               "computed": true,
@@ -691,6 +915,29 @@ const awsccMediaconnectFlow = `{
         },
         "optional": true
       },
+      "tags": {
+        "computed": true,
+        "description": "Key-value pairs that can be used to tag this flow.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "vpc_interfaces": {
         "computed": true,
         "description": "The VPC interfaces that you added to this flow.",
@@ -744,6 +991,29 @@ const awsccMediaconnectFlow = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "tags": {
+              "computed": true,
+              "description": "Key-value pairs that can be used to tag this VPC interface.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "value": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "list"
@@ -751,7 +1021,7 @@ const awsccMediaconnectFlow = `{
         "optional": true
       }
     },
-    "description": "Resource schema for AWS::MediaConnect::Flow",
+    "description": "Resource Type definition for AWS::MediaConnect::Flow",
     "description_kind": "plain"
   },
   "version": 1

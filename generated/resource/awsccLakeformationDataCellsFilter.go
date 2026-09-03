@@ -96,7 +96,7 @@ const awsccLakeformationDataCellsFilter = `{
         "type": "string"
       }
     },
-    "description": "A resource schema representing a Lake Formation Data Cells Filter.",
+    "description": "Resource Type definition for AWS::LakeFormation::DataCellsFilter",
     "description_kind": "plain"
   },
   "version": 1

@@ -159,6 +159,65 @@ const awsccCleanroomsConfiguredTable = `{
                                 "optional": true,
                                 "type": "string"
                               },
+                              "aggregation_thresholds": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "allowed_aggregate_expression_type": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "identity_columns": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "minimum_identity_count": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "number"
+                                    },
+                                    "output_column_thresholds": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "minimum_identity_count": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "number"
+                                          },
+                                          "output_column_name": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      },
+                                      "optional": true
+                                    },
+                                    "type": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                },
+                                "optional": true
+                              },
                               "allowed_analyses": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -176,6 +235,34 @@ const awsccCleanroomsConfiguredTable = `{
                                   "list",
                                   "string"
                                 ]
+                              },
+                              "comparison_controls": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "allowed_column_comparison_columns": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "allowed_literal_comparison_columns": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
                               },
                               "differential_privacy": {
                                 "computed": true,

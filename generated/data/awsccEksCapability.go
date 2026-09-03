@@ -35,8 +35,28 @@ const awsccEksCapability = `{
           "attributes": {
             "ack": {
               "computed": true,
+              "description": "Configuration settings for an ACK (AWS Controllers for Kubernetes) capability.",
               "description_kind": "plain",
-              "type": "string"
+              "nested_type": {
+                "attributes": {
+                  "disabled_services": {
+                    "computed": true,
+                    "description": "A list of ACK service names to disable. Controllers for services in this list are not installed or managed.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "enable_cross_namespace": {
+                    "computed": true,
+                    "description": "Whether cross-namespace references are enabled for ACK controllers. When not specified, the service default applies.",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             },
             "argo_cd": {
               "computed": true,

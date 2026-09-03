@@ -756,6 +756,36 @@ const awsccEc2Ec2Fleet = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "allocation_strategy": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "capacity_reservation_target": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "capacity_reservation_ids": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "capacity_reservation_resource_group_arns": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "reservation_types": {
               "computed": true,
               "description_kind": "plain",
@@ -763,6 +793,23 @@ const awsccEc2Ec2Fleet = `{
                 "list",
                 "string"
               ]
+            },
+            "reserved_capacity_fallback_options": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "market_types": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

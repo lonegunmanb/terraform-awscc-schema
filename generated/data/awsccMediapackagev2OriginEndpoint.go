@@ -1006,6 +1006,11 @@ const awsccMediapackagev2OriginEndpoint = `{
         "description_kind": "plain",
         "type": "number"
       },
+      "stream_name_output_mode": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description_kind": "plain",

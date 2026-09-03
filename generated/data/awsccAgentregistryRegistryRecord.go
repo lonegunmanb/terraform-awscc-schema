@@ -489,7 +489,7 @@ const awsccAgentregistryRegistryRecord = `{
       },
       "registry_id": {
         "computed": true,
-        "description": "The identifier of the registry containing the record.",
+        "description": "The identifier of the registry in which to create the record. You can specify either the registry ID or the registry Amazon Resource Name (ARN). Use the ARN form to reference a registry shared from another account via AWS Resource Access Manager (RAM).",
         "description_kind": "plain",
         "type": "string"
       },

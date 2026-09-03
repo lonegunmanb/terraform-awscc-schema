@@ -213,6 +213,12 @@ const awsccApigatewayRestApi = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "version": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
       }
     },
     "description": "The ` + "`" + `` + "`" + `AWS::ApiGateway::RestApi` + "`" + `` + "`" + ` resource creates a REST API. For more information, see [restapi:create](https://docs.aws.amazon.com/apigateway/latest/api/API_CreateRestApi.html) in the *Amazon API Gateway REST API Reference*.\n  On January 1, 2016, the Swagger Specification was donated to the [OpenAPI initiative](https://docs.aws.amazon.com/https://www.openapis.org/), becoming the foundation of the OpenAPI Specification.",

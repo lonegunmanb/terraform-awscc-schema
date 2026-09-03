@@ -33,6 +33,16 @@ const awsccRdsDbInstance = `{
               "description_kind": "plain",
               "type": "number"
             },
+            "storage_operation_percent_progress": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "storage_operation_status": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "storage_throughput": {
               "computed": true,
               "description": "The storage throughput value for the additional storage volume, in mebibytes per second (MiBps). This setting applies only to the General Purpose SSD (` + "`" + `` + "`" + `gp3` + "`" + `` + "`" + `) storage type.",
@@ -732,6 +742,16 @@ const awsccRdsDbInstance = `{
         "description": "A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.\n If you specify the ` + "`" + `` + "`" + `KmsKeyId` + "`" + `` + "`" + ` property, then you must enable encryption.\n If you specify the ` + "`" + `` + "`" + `SourceDBInstanceIdentifier` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `SourceDbiResourceId` + "`" + `` + "`" + ` property, don't specify this property. The value is inherited from the source DB instance, and if the DB instance is encrypted, the specified ` + "`" + `` + "`" + `KmsKeyId` + "`" + `` + "`" + ` property is used.\n If you specify the ` + "`" + `` + "`" + `SourceDBInstanceAutomatedBackupsArn` + "`" + `` + "`" + ` property, don't specify this property. The value is inherited from the source DB instance automated backup. \n If you specify ` + "`" + `` + "`" + `DBSnapshotIdentifier` + "`" + `` + "`" + ` property, don't specify this property. The value is inherited from the snapshot.\n  *Amazon Aurora* \n Not applicable. The encryption for DB instances is managed by the DB cluster.",
         "description_kind": "plain",
         "type": "bool"
+      },
+      "storage_operation_percent_progress": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "storage_operation_status": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "storage_throughput": {
         "computed": true,

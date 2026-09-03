@@ -1,0 +1,130 @@
+package data
+
+import (
+	"encoding/json"
+
+	tfjson "github.com/hashicorp/terraform-json"
+)
+
+const awsccAppconfigExperimentRun = `{
+  "block": {
+    "attributes": {
+      "application_id": {
+        "computed": true,
+        "description": "The resolved application ID.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "application_identifier": {
+        "computed": true,
+        "description": "The application name or ID used to create the experiment run.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "description": {
+        "computed": true,
+        "description": "Description of the experiment run.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "experiment_definition_id": {
+        "computed": true,
+        "description": "The resolved experiment definition ID.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "experiment_definition_identifier": {
+        "computed": true,
+        "description": "The experiment definition name or ID used to create the experiment run.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "exposure_percentage": {
+        "computed": true,
+        "description": "Percentage of traffic exposed to the experiment (0-100).",
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "id": {
+        "description": "Uniquely identifies the resource.",
+        "description_kind": "plain",
+        "required": true,
+        "type": "string"
+      },
+      "run": {
+        "computed": true,
+        "description": "The run number (auto-assigned by the service).",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "started_at": {
+        "computed": true,
+        "description": "ISO-8601 timestamp when the run started.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "status": {
+        "computed": true,
+        "description": "Current status of the run.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "Tags to associate with the experiment run.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The tag key.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The tag value.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        }
+      },
+      "treatment_overrides": {
+        "computed": true,
+        "description": "Treatment overrides for specific entities.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "inline": {
+              "computed": true,
+              "description": "Map of entity ID to treatment key (t1, t2, ..., or c for control).",
+              "description_kind": "plain",
+              "type": [
+                "map",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "updated_at": {
+        "computed": true,
+        "description": "ISO-8601 timestamp when the run was last updated.",
+        "description_kind": "plain",
+        "type": "string"
+      }
+    },
+    "description": "Data Source schema for AWS::AppConfig::ExperimentRun",
+    "description_kind": "plain"
+  },
+  "version": 0
+}`
+
+func AwsccAppconfigExperimentRunSchema() *tfjson.Schema {
+	var result tfjson.Schema
+	_ = json.Unmarshal([]byte(awsccAppconfigExperimentRun), &result)
+	return &result
+}

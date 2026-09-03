@@ -79,6 +79,124 @@ const awsccSagemakerCluster = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "auto_patch_config": {
+              "computed": true,
+              "description": "The configuration for automatic patching of the instance group. Enables workload-aware, patch-level AMI updates.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "deployment_config": {
+                    "computed": true,
+                    "description": "The configuration to use when updating the AMI versions.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "auto_rollback_configuration": {
+                          "computed": true,
+                          "description": "An array that contains the alarms that SageMaker monitors to know whether to roll back the AMI update.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "alarm_name": {
+                                "computed": true,
+                                "description": "The name of the alarm.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        },
+                        "rolling_update_policy": {
+                          "computed": true,
+                          "description": "The policy that SageMaker uses when updating the AMI versions of the cluster.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "maximum_batch_size": {
+                                "computed": true,
+                                "description": "The configuration of the size measurements of the AMI update. Using this configuration, you can specify whether SageMaker should update your instance group by an amount or percentage of instances.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "type": {
+                                      "computed": true,
+                                      "description": "Specifies whether SageMaker should process the update by amount or percentage of instances.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "value": {
+                                      "computed": true,
+                                      "description": "Specifies the amount or percentage of instances SageMaker updates at a time.",
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "rollback_maximum_batch_size": {
+                                "computed": true,
+                                "description": "The configuration of the size measurements of the AMI update. Using this configuration, you can specify whether SageMaker should update your instance group by an amount or percentage of instances.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "type": {
+                                      "computed": true,
+                                      "description": "Specifies whether SageMaker should process the update by amount or percentage of instances.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "value": {
+                                      "computed": true,
+                                      "description": "Specifies the amount or percentage of instances SageMaker updates at a time.",
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "wait_interval_in_seconds": {
+                          "computed": true,
+                          "description": "The duration in seconds that SageMaker waits before updating more instances in the cluster.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "patch_schedule": {
+                    "computed": true,
+                    "description": "The schedule configuration for automatic patching.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "next_patch_date": {
+                          "computed": true,
+                          "description": "The date and time of the next scheduled patch, set by the system when a patch AMI is detected.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "patching_strategy": {
+                    "computed": true,
+                    "description": "The patching strategy that determines when and how instances are patched. WhenIdle patches instances as they become idle. WhenAllIdle patches all instances when they are all idle.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "capacity_requirements": {
               "computed": true,
               "description": "Specifies the capacity requirements configuration for an instance group",
@@ -131,6 +249,25 @@ const awsccSagemakerCluster = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "instance_requirements": {
+              "computed": true,
+              "description": "The instance requirements for the instance group. Specifies a list of instance types that can be used.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "instance_types": {
+                    "computed": true,
+                    "description": "A list of instance types that can be used for this instance group.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "instance_storage_configs": {
               "computed": true,
               "description": "The instance storage configuration for the instance group.",
@@ -158,6 +295,56 @@ const awsccSagemakerCluster = `{
                           "description": "The size in gigabytes (GB) of the additional EBS volume to be attached to the instances in the SageMaker HyperPod cluster instance group. The additional EBS volume is attached to each instance within the SageMaker HyperPod cluster instance group and mounted to /opt/sagemaker.",
                           "description_kind": "plain",
                           "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "fsx_lustre_config": {
+                    "computed": true,
+                    "description": "Configuration for mounting an Amazon FSx Lustre file system to the instances in the SageMaker HyperPod cluster instance group.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "dns_name": {
+                          "computed": true,
+                          "description": "The DNS name of the FSx for Lustre file system.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "mount_name": {
+                          "computed": true,
+                          "description": "The mount name of the FSx for Lustre file system.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "mount_path": {
+                          "computed": true,
+                          "description": "The mount path for the FSx for Lustre file system.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "fsx_open_zfs_config": {
+                    "computed": true,
+                    "description": "Configuration for mounting an Amazon FSx OpenZFS file system to the instances in the SageMaker HyperPod cluster instance group.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "dns_name": {
+                          "computed": true,
+                          "description": "The DNS name of the FSx for OpenZFS file system.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "mount_path": {
+                          "computed": true,
+                          "description": "The mount path for the FSx for OpenZFS file system.",
+                          "description_kind": "plain",
+                          "type": "string"
                         }
                       },
                       "nesting_mode": "single"
@@ -222,13 +409,19 @@ const awsccSagemakerCluster = `{
             },
             "life_cycle_config": {
               "computed": true,
-              "description": "The lifecycle configuration for a SageMaker HyperPod cluster.",
+              "description": "The lifecycle configuration for a SageMaker HyperPod cluster. When omitted, the instance group uses Bootstrap mode. When provided with SourceS3Uri and OnCreate, uses Customer Managed mode. When provided with SourceS3Uri and OnInitComplete, uses Extended mode.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "on_create": {
                     "computed": true,
-                    "description": "The file name of the entrypoint script of lifecycle scripts under SourceS3Uri. This entrypoint script runs during cluster creation.",
+                    "description": "The file name of the entrypoint script of lifecycle scripts under SourceS3Uri. This entrypoint script runs during cluster creation. Mutually exclusive with OnInitComplete.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "on_init_complete": {
+                    "computed": true,
+                    "description": "The file name of the extension script under SourceS3Uri. This script runs after HyperPod configures the default software on the instance. Mutually exclusive with OnCreate.",
                     "description_kind": "plain",
                     "type": "string"
                   },
@@ -247,6 +440,22 @@ const awsccSagemakerCluster = `{
               "description": "The minimum number of instances required for the instance group to be InService. MinInstanceCount must be less than or equal to InstanceCount.",
               "description_kind": "plain",
               "type": "number"
+            },
+            "network_interface": {
+              "computed": true,
+              "description": "Specifies the network interface configuration for the instance group.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "interface_type": {
+                    "computed": true,
+                    "description": "The type of network interface.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             },
             "on_start_deep_health_checks": {
               "computed": true,
@@ -387,6 +596,31 @@ const awsccSagemakerCluster = `{
                 "nesting_mode": "single"
               }
             },
+            "slurm_config": {
+              "computed": true,
+              "description": "Slurm configuration for the instance group.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "node_type": {
+                    "computed": true,
+                    "description": "The type of Slurm node for this instance group.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "partition_names": {
+                    "computed": true,
+                    "description": "The Slurm partitions that this instance group belongs to. Maximum of 1 partition.",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "threads_per_core": {
               "computed": true,
               "description": "The number you specified to TreadsPerCore in CreateCluster for enabling or disabling multithreading. For instance types that support multithreading, you can specify 1 for disabling multithreading and 2 for enabling multithreading.",
@@ -417,7 +651,7 @@ const awsccSagemakerCluster = `{
       },
       "orchestrator": {
         "computed": true,
-        "description": "Specifies parameter(s) specific to the orchestrator, e.g. specify the EKS cluster.",
+        "description": "Specifies parameter(s) specific to the orchestrator, e.g. specify the EKS cluster or Slurm configuration.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -430,6 +664,22 @@ const awsccSagemakerCluster = `{
                   "cluster_arn": {
                     "computed": true,
                     "description": "The ARN of the EKS cluster, such as arn:aws:eks:us-west-2:123456789012:cluster/my-eks-cluster",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "slurm": {
+              "computed": true,
+              "description": "Specifies parameter(s) related to Slurm as orchestrator.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "slurm_config_strategy": {
+                    "computed": true,
+                    "description": "The strategy for managing Slurm configuration on the cluster.",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -534,6 +784,56 @@ const awsccSagemakerCluster = `{
                       },
                       "nesting_mode": "single"
                     }
+                  },
+                  "fsx_lustre_config": {
+                    "computed": true,
+                    "description": "Configuration for mounting an Amazon FSx Lustre file system to the instances in the SageMaker HyperPod cluster instance group.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "dns_name": {
+                          "computed": true,
+                          "description": "The DNS name of the FSx for Lustre file system.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "mount_name": {
+                          "computed": true,
+                          "description": "The mount name of the FSx for Lustre file system.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "mount_path": {
+                          "computed": true,
+                          "description": "The mount path for the FSx for Lustre file system.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "fsx_open_zfs_config": {
+                    "computed": true,
+                    "description": "Configuration for mounting an Amazon FSx OpenZFS file system to the instances in the SageMaker HyperPod cluster instance group.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "dns_name": {
+                          "computed": true,
+                          "description": "The DNS name of the FSx for OpenZFS file system.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "mount_path": {
+                          "computed": true,
+                          "description": "The mount path for the FSx for OpenZFS file system.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "list"
@@ -596,6 +896,54 @@ const awsccSagemakerCluster = `{
             }
           },
           "nesting_mode": "list"
+        }
+      },
+      "restricted_instance_groups_config": {
+        "computed": true,
+        "description": "The cluster-level configuration for restricted instance groups, including shared environment settings for inter-RIG communication and FSx Lustre sharing.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "shared_environment_config": {
+              "computed": true,
+              "description": "The shared environment configuration for restricted instance groups that use cluster-level shared FSx Lustre storage.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "fsx_lustre_config": {
+                    "computed": true,
+                    "description": "Configuration settings for an Amazon FSx for Lustre file system to be used with the cluster.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "per_unit_storage_throughput": {
+                          "computed": true,
+                          "description": "The throughput capacity of the FSx for Lustre file system, measured in MB/s per TiB of storage.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "size_in_gi_b": {
+                          "computed": true,
+                          "description": "The storage capacity of the FSx for Lustre file system, specified in gibibytes (GiB).",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "fsx_lustre_deletion_policy": {
+                    "computed": true,
+                    "description": "The deletion policy for the shared FSx Lustre file system. Keep retains the FSx when RIGs are deleted. DeleteIfNotUsed deletes the FSx when no RIGs reference it.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
         }
       },
       "tags": {

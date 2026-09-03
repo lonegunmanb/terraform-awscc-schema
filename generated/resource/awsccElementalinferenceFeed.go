@@ -76,11 +76,13 @@ const awsccElementalinferenceFeed = `{
                         },
                         "data_source_configuration": {
                           "computed": true,
+                          "description": "Identifies the fixture whose event data Elemental Inference maps onto the clipping metadata for an output.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "fixture_id": {
                                 "computed": true,
+                                "description": "The ID of the fixture whose event data you want Elemental Inference to map onto this clipping output. To obtain this ID, use the SearchFixtures operation.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"

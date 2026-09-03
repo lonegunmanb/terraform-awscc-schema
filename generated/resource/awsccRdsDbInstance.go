@@ -36,6 +36,18 @@ const awsccRdsDbInstance = `{
               "optional": true,
               "type": "number"
             },
+            "storage_operation_percent_progress": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "storage_operation_status": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "storage_throughput": {
               "computed": true,
               "description": "The storage throughput value for the additional storage volume, in mebibytes per second (MiBps). This setting applies only to the General Purpose SSD (` + "`" + `` + "`" + `gp3` + "`" + `` + "`" + `) storage type.",
@@ -817,6 +829,16 @@ const awsccRdsDbInstance = `{
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
+      },
+      "storage_operation_percent_progress": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "storage_operation_status": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
       },
       "storage_throughput": {
         "computed": true,
