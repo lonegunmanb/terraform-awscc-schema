@@ -433,6 +433,23 @@ const awsccMediaconnectRouterOutput = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "fabric_configuration": {
+        "computed": true,
+        "description": "The fabric configuration settings for the router output.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "recovery_latency_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

@@ -677,6 +677,40 @@ const awsccSagemakerCluster = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "accounting_database": {
+                    "computed": true,
+                    "description": "External MySQL-compatible accounting database that a Slurm cluster's slurmdbd connects to. Database credentials are supplied out-of-band through the referenced Secrets Manager secret. Supported only with Continuous node provisioning.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "endpoint": {
+                          "computed": true,
+                          "description": "Hostname or endpoint of the accounting database, such as an RDS endpoint.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "name": {
+                          "computed": true,
+                          "description": "Name of the accounting database schema. Defaults to slurm_acct_db when omitted.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "port": {
+                          "computed": true,
+                          "description": "TCP port of the accounting database. Defaults to 3306 when omitted.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "ARN of the Secrets Manager secret holding the database credentials.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "slurm_config_strategy": {
                     "computed": true,
                     "description": "The strategy for managing Slurm configuration on the cluster.",

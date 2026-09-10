@@ -65,7 +65,7 @@ const awsccImagebuilderImagePipeline = `{
       },
       "image_scanning_configuration": {
         "computed": true,
-        "description": "Contains settings for vulnerability scans.",
+        "description": "Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -96,7 +96,7 @@ const awsccImagebuilderImagePipeline = `{
             },
             "image_scanning_enabled": {
               "computed": true,
-              "description": "This sets whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the build instance when you create a new image.",
+              "description": "This sets whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the test instance when you create a new image.",
               "description_kind": "plain",
               "type": "bool"
             }

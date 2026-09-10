@@ -15,6 +15,12 @@ const awsccAgentregistryRegistryRecord = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "created_by": {
+        "computed": true,
+        "description": "The identifier of the AWS account that created the registry record.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description": "The description of the registry record.",
@@ -247,6 +253,42 @@ const awsccAgentregistryRegistryRecord = `{
                 "nesting_mode": "single"
               }
             },
+            "agui": {
+              "computed": true,
+              "description": "The AG-UI (Agent-User Interaction) descriptor, populated for records detected from an AG-UI protocol source. This descriptor is source-only: its content is synchronized from the configured source URL rather than supplied inline.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "source": {
+                    "computed": true,
+                    "description": "Source configuration for a source-only descriptor. Unlike mcpServer/a2aAgentCard sources, source-only descriptors do not support credential providers.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "from_url": {
+                          "computed": true,
+                          "description": "URL-based source configuration for a source-only descriptor.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "url": {
+                                "computed": true,
+                                "description": "URL source for descriptor content.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "custom": {
               "computed": true,
               "description": "The custom descriptor, populated when the record type is CUSTOM.",
@@ -258,6 +300,42 @@ const awsccAgentregistryRegistryRecord = `{
                     "description": "Descriptor payload data.",
                     "description_kind": "plain",
                     "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "http": {
+              "computed": true,
+              "description": "The HTTP descriptor, populated for records detected from an HTTP protocol source. This descriptor is source-only: its content is synchronized from the configured source URL rather than supplied inline.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "source": {
+                    "computed": true,
+                    "description": "Source configuration for a source-only descriptor. Unlike mcpServer/a2aAgentCard sources, source-only descriptors do not support credential providers.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "from_url": {
+                          "computed": true,
+                          "description": "URL-based source configuration for a source-only descriptor.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "url": {
+                                "computed": true,
+                                "description": "URL source for descriptor content.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"

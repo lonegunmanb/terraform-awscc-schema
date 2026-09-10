@@ -396,6 +396,82 @@ const awsccIotTopicRule = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "influx_db": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "batch_config": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "batch_across_topics": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
+                              },
+                              "max_batch_open_ms": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "max_batch_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "max_batch_size_bytes": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "database_name": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "destination_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "organization": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "role_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "table_name": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "tags": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        },
+                        "timestamp_unit": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "iot_analytics": {
                     "computed": true,
                     "description_kind": "plain",
@@ -1328,6 +1404,82 @@ const awsccIotTopicRule = `{
                           }
                         },
                         "url": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "influx_db": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "batch_config": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "batch_across_topics": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "bool"
+                              },
+                              "max_batch_open_ms": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "max_batch_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "max_batch_size_bytes": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "database_name": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "destination_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "organization": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "role_arn": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "table_name": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "tags": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": [
+                            "map",
+                            "string"
+                          ]
+                        },
+                        "timestamp_unit": {
                           "computed": true,
                           "description_kind": "plain",
                           "type": "string"

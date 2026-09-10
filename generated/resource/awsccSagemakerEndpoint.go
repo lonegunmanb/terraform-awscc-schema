@@ -240,6 +240,7 @@ const awsccSagemakerEndpoint = `{
         "computed": true,
         "description": "The name of the SageMaker endpoint. This name must be unique within an AWS Region.",
         "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "exclude_retained_variant_properties": {
