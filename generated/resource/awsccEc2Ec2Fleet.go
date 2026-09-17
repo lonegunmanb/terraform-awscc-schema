@@ -127,6 +127,44 @@ const awsccEc2Ec2Fleet = `{
                                 "optional": true,
                                 "type": "string"
                               },
+                              "multi_availability_zone_configuration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "configuration_type": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "standby_availability_zones": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "availability_zone": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "availability_zone_id": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      },
+                                      "optional": true
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
                               "snapshot_id": {
                                 "computed": true,
                                 "description_kind": "plain",

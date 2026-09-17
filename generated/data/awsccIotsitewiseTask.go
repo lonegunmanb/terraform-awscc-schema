@@ -91,6 +91,88 @@ const awsccIotsitewiseTask = `{
                       "string"
                     ]
                   },
+                  "ephemeral_storage_configuration": {
+                    "computed": true,
+                    "description": "Configuration for ephemeral storage attached to the container task.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "storage_class": {
+                          "computed": true,
+                          "description": "The storage type that determines I/O performance characteristics. Family name indicates workload pattern, level number indicates performance within that family.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "storage_size_in_gi_b": {
+                          "computed": true,
+                          "description": "Storage volume size in GiB.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "mounts": {
+                    "computed": true,
+                    "description": "Mounts attached to the container filesystem. Each mount exposes an external data source as a local directory inside the container.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "name": {
+                          "computed": true,
+                          "description": "A unique name for the mount within the task.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "relative_path": {
+                          "computed": true,
+                          "description": "The relative path under the service-owned mount root where this mount is attached inside the container.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "source": {
+                          "computed": true,
+                          "description": "The data source configuration for a mount.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "s3_access_point": {
+                                "computed": true,
+                                "description": "Configures a mount that reads from an Amazon S3 access point.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "access_point_arn": {
+                                      "computed": true,
+                                      "description": "The Amazon Resource Name (ARN) of the Amazon S3 access point. The mount reads objects from the bucket associated with this access point. Access is governed by the access point policy and the task execution role's IAM permissions.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "prefix": {
+                                      "computed": true,
+                                      "description": "An object key name prefix. If specified, the mount includes only objects whose keys begin with this prefix. To include all objects at the access point, omit this field.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "storage_type": {
+                          "computed": true,
+                          "description": "The type of storage used for the mount inside the container.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
                   "processing_type": {
                     "computed": true,
                     "description": "The processing type for compute resources.",

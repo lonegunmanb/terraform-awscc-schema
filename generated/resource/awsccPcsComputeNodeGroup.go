@@ -327,6 +327,19 @@ const awsccPcsComputeNodeGroup = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "gres_custom_settings": {
+              "computed": true,
+              "description": "Additional Slurm gres.conf records for the compute node group. Each item is a map of gres.conf attribute names to values describing one gres.conf record (for example a GPU topology, MIG, MPS, or custom GRES entry). AWS PCS adds the NodeName= prefix and merges these records with the GPU record it derives from the instance type.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                [
+                  "map",
+                  "string"
+                ]
+              ]
+            },
             "scale_down_idle_time_in_seconds": {
               "computed": true,
               "description": "The time before an idle node is scaled down.",

@@ -81,6 +81,25 @@ const awsccVpclatticeResourceConfiguration = `{
               "optional": true,
               "type": "string"
             },
+            "cidr_resource": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "cidr_ranges": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "dns_resource": {
               "computed": true,
               "description_kind": "plain",

@@ -433,11 +433,13 @@ const awsccAutoscalingAutoScalingGroup = `{
                 "attributes": {
                   "distribution_segments": {
                     "computed": true,
+                    "description": "The Distribution Segments configuration. Each segment contains an ordered list of capacity types to prioritize.\n For more information, see [Use Distribution Segments to target multiple capacity types](https://docs.aws.amazon.com/autoscaling/ec2/userguide/use-distribution-segments.html) in the *Amazon EC2 Auto Scaling User Guide*.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "target_capacity_types": {
                           "computed": true,
+                          "description": "The capacity types to prioritize, in order. Amazon EC2 Auto Scaling attempts to launch instances in the priority order of the capacity types, and within each capacity type, in the order of instance types listed in your launch template ` + "`" + `` + "`" + `Overrides` + "`" + `` + "`" + `.\n The following lists the valid values:\n  + on-demand-capacity-reservation On-Demand Capacity Reservations. + capacity-block Capacity Blocks. + interruptible-capacity-reservation Interruptible Capacity Reservations. + on-demand On-Demand capacity. Include this value to allow the group to fall back to On-Demand capacity when the preceding capacity types are unavailable.",
                           "description_kind": "plain",
                           "optional": true,
                           "type": [
@@ -499,7 +501,7 @@ const awsccAutoscalingAutoScalingGroup = `{
             },
             "launch_template": {
               "computed": true,
-              "description": "One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill On-Demand and Spot capacities.",
+              "description": "One or more launch templates and the instance types (overrides) that are used to launch EC2 instances to fulfill the configured capacities.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {

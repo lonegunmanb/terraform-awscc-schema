@@ -114,6 +114,39 @@ const awsccEc2Ec2Fleet = `{
                                 "description_kind": "plain",
                                 "type": "string"
                               },
+                              "multi_availability_zone_configuration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "configuration_type": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "standby_availability_zones": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "availability_zone": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "availability_zone_id": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
                               "snapshot_id": {
                                 "computed": true,
                                 "description_kind": "plain",

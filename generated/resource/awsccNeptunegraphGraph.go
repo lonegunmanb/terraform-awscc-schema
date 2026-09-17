@@ -47,6 +47,123 @@ const awsccNeptunegraphGraph = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "import_task": {
+        "computed": true,
+        "description": "The details of the import task to use to create the graph. When specified, the graph is created using CreateGraphUsingImportTask and data is imported from the supplied source.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "blank_node_handling": {
+              "computed": true,
+              "description": "The method to handle blank nodes in the dataset. Currently, only convertToIri is supported, meaning blank nodes are converted to unique IRIs at load time. Must be provided when format is NTRIPLES",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "fail_on_error": {
+              "computed": true,
+              "description": "If set to true, the task halts when an import error is encountered. If set to false, the task skips the data that caused the error and continues if possible.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "format": {
+              "computed": true,
+              "description": "Specifies the format of S3 data to be imported. Valid values are CSV, which identifies the Gremlin CSV format, OPEN_CYPHER, which identifies the openCypher load format, or NTRIPLES, which identifies the RDF n-triples format.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "import_options": {
+              "computed": true,
+              "description": "Contains options for controlling the import process. For example, if the failOnError key is set to false, the import skips the data that caused the error and continues if possible (whereas if set to true, the default, or if omitted, the import operation halts immediately when an error is encountered).",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "neptune": {
+                    "computed": true,
+                    "description": "Options for importing data from a Neptune database.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "preserve_default_vertex_labels": {
+                          "computed": true,
+                          "description": "Neptune Analytics supports label-less vertices and no labels are assigned unless one is explicitly provided. Neptune assigns default labels when none is explicitly provided. When importing the data into Neptune Analytics, the default vertex labels can be omitted by setting preserveDefaultVertexLabels to false. Note that if the vertex only has default labels, and has no other properties or edges, then the vertex will effectively not get imported into Neptune Analytics when preserveDefaultVertexLabels is set to false.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        },
+                        "preserve_edge_ids": {
+                          "computed": true,
+                          "description": "Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if preserveEdgeIds is set to true, and ids are stored as properties on the relationships with the property name neptuneEdgeId.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        },
+                        "s3_export_kms_key_id": {
+                          "computed": true,
+                          "description": "The KMS key to use to encrypt data in the S3 bucket where the graph data is exported.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "s3_export_path": {
+                          "computed": true,
+                          "description": "The path to an S3 bucket from which to import data.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "max_provisioned_memory": {
+              "computed": true,
+              "description": "The maximum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 1024, or the approved upper limit for your account. If both the minimum and maximum values are specified, the final provisioned-memory will be chosen per the actual size of your imported data. If neither value is specified, 128 m-NCUs are used.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "min_provisioned_memory": {
+              "computed": true,
+              "description": "The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 16",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "parquet_type": {
+              "computed": true,
+              "description": "The parquet type of the import task. Required when Format is PARQUET.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "role_arn": {
+              "computed": true,
+              "description": "The ARN of the IAM role that will allow access to the data that is to be imported.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "source": {
+              "computed": true,
+              "description": "A URL identifying to the location of the data to be imported. This can be an Amazon S3 path, or can point to a Neptune database endpoint or snapshot.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "kms_key_identifier": {
         "computed": true,
         "description": "The ARN of the KMS key used to encrypt data in the Neptune Analytics graph. If not specified, the graph is encrypted with an AWS managed key.",

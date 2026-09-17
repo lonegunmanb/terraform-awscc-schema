@@ -97,14 +97,12 @@ const awsccNetworkmanagerDirectConnectGatewayAttachment = `{
               "computed": true,
               "description": "The rule number in the policy document that applies to this change.",
               "description_kind": "plain",
-              "optional": true,
               "type": "number"
             },
             "network_function_group_name": {
               "computed": true,
               "description": "The name of the network function group to change.",
               "description_kind": "plain",
-              "optional": true,
               "type": "string"
             },
             "tags": {
@@ -117,25 +115,21 @@ const awsccNetworkmanagerDirectConnectGatewayAttachment = `{
                     "computed": true,
                     "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
                     "description_kind": "plain",
-                    "optional": true,
                     "type": "string"
                   },
                   "value": {
                     "computed": true,
                     "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
                     "description_kind": "plain",
-                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "set"
-              },
-              "optional": true
+              }
             }
           },
           "nesting_mode": "single"
-        },
-        "optional": true
+        }
       },
       "proposed_segment_change": {
         "computed": true,
@@ -147,14 +141,12 @@ const awsccNetworkmanagerDirectConnectGatewayAttachment = `{
               "computed": true,
               "description": "The rule number in the policy document that applies to this change.",
               "description_kind": "plain",
-              "optional": true,
               "type": "number"
             },
             "segment_name": {
               "computed": true,
               "description": "The name of the segment to change.",
               "description_kind": "plain",
-              "optional": true,
               "type": "string"
             },
             "tags": {
@@ -167,25 +159,21 @@ const awsccNetworkmanagerDirectConnectGatewayAttachment = `{
                     "computed": true,
                     "description": "The key name of the tag. You can specify a value that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
                     "description_kind": "plain",
-                    "optional": true,
                     "type": "string"
                   },
                   "value": {
                     "computed": true,
                     "description": "The value for the tag. You can specify a value that is 0 to 256 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.",
                     "description_kind": "plain",
-                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "set"
-              },
-              "optional": true
+              }
             }
           },
           "nesting_mode": "single"
-        },
-        "optional": true
+        }
       },
       "resource_arn": {
         "computed": true,

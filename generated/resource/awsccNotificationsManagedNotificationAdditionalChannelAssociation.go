@@ -21,6 +21,13 @@ const awsccNotificationsManagedNotificationAdditionalChannelAssociation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "is_sensitive_events_subscribed": {
+        "computed": true,
+        "description": "Whether the channel association is subscribed to sensitive events. Access to sensitive events is gated by the SubscribeSensitiveEvents virtual IAM action.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "managed_notification_configuration_arn": {
         "description": "ARN identifier of the Managed Notification.\nExample: arn:aws:notifications::381491923782:managed-notification-configuration/category/AWS-Health/sub-category/Billing",
         "description_kind": "plain",

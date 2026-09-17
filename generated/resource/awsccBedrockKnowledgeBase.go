@@ -134,6 +134,13 @@ const awsccBedrockKnowledgeBase = `{
                                 "optional": true,
                                 "type": "string"
                               },
+                              "model_configuration": {
+                                "computed": true,
+                                "description": "Model-specific configuration for the embedding model.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
                               "video": {
                                 "computed": true,
                                 "description": "List of video configurations for multi modal ingestion.",
@@ -192,6 +199,53 @@ const awsccBedrockKnowledgeBase = `{
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "supplemental_data_storage_configuration": {
+                    "computed": true,
+                    "description": "Configurations for supplemental data storage.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "supplemental_data_storage_locations": {
+                          "computed": true,
+                          "description": "List of supplemental data storage locations.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "s3_location": {
+                                "computed": true,
+                                "description": "An Amazon S3 location.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "uri": {
+                                      "computed": true,
+                                      "description": "The location's URI",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "supplemental_data_storage_location_type": {
+                                "computed": true,
+                                "description": "Supplemental data storage location type.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          },
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -588,6 +642,13 @@ const awsccBedrockKnowledgeBase = `{
                               "embedding_data_type": {
                                 "computed": true,
                                 "description": "The data type for the vectors when using a model to convert text into vector embeddings.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "model_configuration": {
+                                "computed": true,
+                                "description": "Model-specific configuration for the embedding model.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "string"

@@ -142,29 +142,25 @@ const awsccConnectMetric = `{
         "type": "string"
       },
       "metric_calculation": {
-        "computed": true,
         "description": "The calculation configuration for the metric",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "calculation": {
-              "computed": true,
               "description": "The calculation formula",
               "description_kind": "plain",
-              "optional": true,
+              "required": true,
               "type": "string"
             },
             "calculation_components": {
-              "computed": true,
               "description": "The calculation components for the metric",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "alias": {
-                    "computed": true,
                     "description": "Metric calculation component alias for use within a calculation",
                     "description_kind": "plain",
-                    "optional": true,
+                    "required": true,
                     "type": "string"
                   },
                   "metric_filters": {
@@ -270,18 +266,17 @@ const awsccConnectMetric = `{
                 },
                 "nesting_mode": "list"
               },
-              "optional": true
+              "required": true
             }
           },
           "nesting_mode": "single"
         },
-        "optional": true
+        "required": true
       },
       "name": {
-        "computed": true,
         "description": "The name of the custom metric",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "positive_trend_indicator": {
@@ -310,10 +305,9 @@ const awsccConnectMetric = `{
         "type": "number"
       },
       "status": {
-        "computed": true,
         "description": "The status of the custom metric",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       },
       "supported_stats": {
@@ -369,10 +363,9 @@ const awsccConnectMetric = `{
         "type": "string"
       },
       "unit": {
-        "computed": true,
         "description": "Display unit for the metric data",
         "description_kind": "plain",
-        "optional": true,
+        "required": true,
         "type": "string"
       }
     },

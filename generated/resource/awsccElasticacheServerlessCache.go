@@ -165,6 +165,13 @@ const awsccElasticacheServerlessCache = `{
         "optional": true,
         "type": "string"
       },
+      "network_type": {
+        "computed": true,
+        "description": "The network type for the serverless cache. Valid values are ipv4, ipv6, or dual_stack.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "reader_endpoint": {
         "computed": true,
         "description": "The address and the port.",

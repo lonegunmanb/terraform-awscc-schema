@@ -21,6 +21,12 @@ const awsccNotificationsManagedNotificationAccountContactAssociation = `{
         "required": true,
         "type": "string"
       },
+      "is_sensitive_events_subscribed": {
+        "computed": true,
+        "description": "Whether the account contact association is subscribed to sensitive events. Access to sensitive events is gated by the SubscribeSensitiveEvents virtual IAM action.",
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "managed_notification_configuration_arn": {
         "computed": true,
         "description": "The managed notification configuration ARN, against which the account contact association will be created",

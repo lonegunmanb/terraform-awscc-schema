@@ -785,6 +785,85 @@ const awsccDynamodbGlobalTable = `{
           "nesting_mode": "single"
         }
       },
+      "vector_indexes": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "dimensions": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "distance_function": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "index_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "projection": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "non_key_attributes": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
+                  "projection_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "search_schema": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "attribute_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "search_schema_element_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            },
+            "vector_attribute": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "attribute_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "set"
+        }
+      },
       "warm_throughput": {
         "computed": true,
         "description_kind": "plain",

@@ -43,6 +43,12 @@ const awsccAppstreamImageBuilder = `{
         "optional": true,
         "type": "string"
       },
+      "disable_imdsv1": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "display_name": {
         "computed": true,
         "description_kind": "plain",

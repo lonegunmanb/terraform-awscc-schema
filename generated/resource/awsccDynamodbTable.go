@@ -708,6 +708,100 @@ const awsccDynamodbTable = `{
         },
         "optional": true
       },
+      "vector_indexes": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "dimensions": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "distance_function": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "index_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "projection": {
+              "computed": true,
+              "description": "Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "non_key_attributes": {
+                    "computed": true,
+                    "description": "Represents the non-key attribute names which will be projected into the index.\n For global and local secondary indexes, the total count of ` + "`" + `` + "`" + `NonKeyAttributes` + "`" + `` + "`" + ` summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total. This limit only applies when you specify the ProjectionType of ` + "`" + `` + "`" + `INCLUDE` + "`" + `` + "`" + `. You still can specify the ProjectionType of ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` to project all attributes from the source table, even if the table has more than 100 attributes.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "projection_type": {
+                    "computed": true,
+                    "description": "The set of attributes that are projected into the index:\n  +  ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + ` - Only the index and primary keys are projected into the index.\n  +  ` + "`" + `` + "`" + `INCLUDE` + "`" + `` + "`" + ` - In addition to the attributes described in ` + "`" + `` + "`" + `KEYS_ONLY` + "`" + `` + "`" + `, the secondary index will include other non-key attributes that you specify.\n  +  ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` - All of the table attributes are projected into the index.\n  \n When using the DynamoDB console, ` + "`" + `` + "`" + `ALL` + "`" + `` + "`" + ` is selected by default.\n You can't modify the projection of an existing index. To change the projected attributes, you must delete the index and create a new one with the projection that you want.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "search_schema": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "attribute_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "search_schema_element_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              },
+              "optional": true
+            },
+            "vector_attribute": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "attribute_name": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
       "warm_throughput": {
         "computed": true,
         "description": "Represents the warm throughput (in read units per second and write units per second) for creating a table.",

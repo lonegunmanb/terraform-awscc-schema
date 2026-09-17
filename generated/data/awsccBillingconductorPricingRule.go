@@ -106,6 +106,34 @@ const awsccBillingconductorPricingRule = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "custom_tiers": {
+              "computed": true,
+              "description": "The set of custom volume tiers for a SKU-scoped TIERING pricing rule. Tiers must start at 0, be contiguous, and the last tier must have no end range.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "begin_range_inclusive": {
+                    "computed": true,
+                    "description": "The inclusive beginning of the tier's usage range.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "end_range_exclusive": {
+                    "computed": true,
+                    "description": "The exclusive end of the tier's usage range. Omit for the last tier (infinity).",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "rate_value": {
+                    "computed": true,
+                    "description": "The custom rate applied to usage within the tier's range.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
             "free_tier": {
               "computed": true,
               "description": "The possible customizable free tier configurations.",
