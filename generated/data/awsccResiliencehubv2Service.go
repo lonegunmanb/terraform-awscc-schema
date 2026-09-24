@@ -252,6 +252,56 @@ const awsccResiliencehubv2Service = `{
                           "description_kind": "plain",
                           "type": "string"
                         },
+                        "label_selector": {
+                          "computed": true,
+                          "description": "Kubernetes label selector that scopes discovery to matching objects in the specified namespaces. An object must satisfy both MatchLabels and MatchExpressions. Specify at least one of them; a selector carrying neither is treated as though no selector were supplied, and all supported objects in the specified namespaces are discovered.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "match_expressions": {
+                                "computed": true,
+                                "description": "Label selector requirements an object must satisfy to be discovered. Up to 20 requirements, all of which must match.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "key": {
+                                      "computed": true,
+                                      "description": "Label key the requirement applies to.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "operator": {
+                                      "computed": true,
+                                      "description": "Operator applied to the label key.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "values": {
+                                      "computed": true,
+                                      "description": "Label values the requirement compares against. Up to 20 values. Required for IN and NOT_IN; omit for EXISTS and DOES_NOT_EXIST.",
+                                      "description_kind": "plain",
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                }
+                              },
+                              "match_labels": {
+                                "computed": true,
+                                "description": "Label key/value pairs an object must carry to be discovered. Up to 20 pairs.",
+                                "description_kind": "plain",
+                                "type": [
+                                  "map",
+                                  "string"
+                                ]
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "namespaces": {
                           "computed": true,
                           "description": "EKS namespaces.",

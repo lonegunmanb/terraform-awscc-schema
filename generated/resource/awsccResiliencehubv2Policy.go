@@ -149,6 +149,13 @@ const awsccResiliencehubv2Policy = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "sharing_enabled": {
+        "computed": true,
+        "description": "Whether the policy is enabled to be shared with other members of the Organization. Only applicable if the policy owner is a management account or delegated admin.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "tags": {
         "computed": true,
         "description": "Tags assigned to the policy.",

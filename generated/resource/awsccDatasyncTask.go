@@ -208,6 +208,13 @@ const awsccDatasyncTask = `{
               "optional": true,
               "type": "string"
             },
+            "object_metadata": {
+              "computed": true,
+              "description": "A value that determines whether source object metadata should be copied to the destination. PRESERVE copies metadata; NONE copies only file-mtime.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "object_tags": {
               "computed": true,
               "description": "A value that determines whether object tags should be read from the source object store and written to the destination object store.",

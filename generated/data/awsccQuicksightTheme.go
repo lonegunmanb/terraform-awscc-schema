@@ -71,27 +71,75 @@ const awsccQuicksightTheme = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "background": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "color": {
+                          "computed": true,
+                          "description": "String to encapsulate the most generic way Color can be formatted (words, hexStrings etc)",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "gradient": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "tile": {
                     "computed": true,
                     "description": "\u003cp\u003eDisplay options related to tiles on a sheet.\u003c/p\u003e",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "background_color": {
+                          "computed": true,
+                          "description": "String to encapsulate the most generic way Color can be formatted (words, hexStrings etc)",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
                         "border": {
                           "computed": true,
                           "description": "\u003cp\u003eThe display options for tile borders for visuals.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "color": {
+                                "computed": true,
+                                "description": "String to encapsulate the most generic way Color can be formatted (words, hexStrings etc)",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
                               "show": {
                                 "computed": true,
                                 "description": "\u003cp\u003eThe option to enable display of borders for visuals.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "type": "bool"
+                              },
+                              "width": {
+                                "computed": true,
+                                "description": "String to encapsulate the most generic way Width can be formatted with whatever units (px, em etc)",
+                                "description_kind": "plain",
+                                "type": "string"
                               }
                             },
                             "nesting_mode": "single"
                           }
+                        },
+                        "border_radius": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "padding": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
                         }
                       },
                       "nesting_mode": "single"
@@ -148,6 +196,183 @@ const awsccQuicksightTheme = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "axis_label_font_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "font_color": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_decoration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_family": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_size": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "absolute": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "font_style": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_weight": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "name": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "axis_title_font_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "font_color": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_decoration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_family": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_size": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "absolute": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "font_style": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_weight": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "name": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "data_label_font_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "font_color": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_decoration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_family": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_size": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "absolute": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "font_style": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_weight": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "name": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "font_families": {
                     "computed": true,
                     "description_kind": "plain",
@@ -161,6 +386,280 @@ const awsccQuicksightTheme = `{
                       },
                       "nesting_mode": "list"
                     }
+                  },
+                  "legend_title_font_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "font_color": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_decoration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_family": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_size": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "absolute": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "font_style": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_weight": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "name": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "legend_value_font_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "font_color": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_decoration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_family": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_size": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "absolute": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "font_style": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "font_weight": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "name": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "visual_subtitle_font_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "font_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "font_color": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_decoration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_family": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "absolute": {
+                                      "computed": true,
+                                      "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "font_style": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_weight": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "name": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "text_alignment": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "text_transform": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "visual_title_font_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "font_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "font_color": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_decoration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_family": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "absolute": {
+                                      "computed": true,
+                                      "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "font_style": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_weight": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "name": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "text_alignment": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "text_transform": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"
@@ -168,7 +667,7 @@ const awsccQuicksightTheme = `{
             },
             "ui_color_palette": {
               "computed": true,
-              "description": "\u003cp\u003eThe theme colors that apply to UI and to charts, excluding data colors. The colors\n            description is a hexadecimal color code that consists of six alphanumerical characters,\n            prefixed with \u003ccode\u003e#\u003c/code\u003e, for example #37BFF5. For more information, see \u003ca href=\"https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html\"\u003eUsing Themes in Amazon QuickSight\u003c/a\u003e in the \u003ci\u003eAmazon QuickSight User\n                Guide.\u003c/i\u003e\n         \u003c/p\u003e",
+              "description": "\u003cp\u003eThe theme colors that apply to UI and to charts, excluding data colors. The colors\n            description is a hexadecimal color code that consists of six alphanumerical characters,\n            prefixed with \u003ccode\u003e#\u003c/code\u003e, for example #37BFF5. For more information, see \u003ca href=\"https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html\"\u003eUsing Themes in Amazon Quick\u003c/a\u003e in the \u003ci\u003eAmazon Quick User\n                Guide.\u003c/i\u003e\n         \u003c/p\u003e",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -315,7 +814,7 @@ const awsccQuicksightTheme = `{
             },
             "principal": {
               "computed": true,
-              "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the principal. This can be one of the\n            following:\u003c/p\u003e\n         \u003cul\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight\n                    ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.\n                    (This is less common.) \u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
+              "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the principal. This can be one of the\n            following:\u003c/p\u003e\n         \u003cul\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon Quick user or group associated with a data source or dataset. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon Quick user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)\u003c/p\u003e\n            \u003c/li\u003e\n            \u003cli\u003e\n               \u003cp\u003eThe ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight\n                    ARN. Use this option only to share resources (templates) across Amazon Web Services accounts.\n                    (This is less common.) \u003c/p\u003e\n            \u003c/li\u003e\n         \u003c/ul\u003e",
               "description_kind": "plain",
               "type": "string"
             }
@@ -368,7 +867,7 @@ const awsccQuicksightTheme = `{
             },
             "base_theme_id": {
               "computed": true,
-              "description": "\u003cp\u003eThe Amazon QuickSight-defined ID of the theme that a custom theme inherits from. All\n            themes initially inherit from a default Amazon QuickSight theme.\u003c/p\u003e",
+              "description": "\u003cp\u003eThe Amazon Quick-defined ID of the theme that a custom theme inherits from. All\n            themes initially inherit from a default Quick theme.\u003c/p\u003e",
               "description_kind": "plain",
               "type": "string"
             },
@@ -418,27 +917,75 @@ const awsccQuicksightTheme = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "background": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "color": {
+                                "computed": true,
+                                "description": "String to encapsulate the most generic way Color can be formatted (words, hexStrings etc)",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "gradient": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "tile": {
                           "computed": true,
                           "description": "\u003cp\u003eDisplay options related to tiles on a sheet.\u003c/p\u003e",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "background_color": {
+                                "computed": true,
+                                "description": "String to encapsulate the most generic way Color can be formatted (words, hexStrings etc)",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
                               "border": {
                                 "computed": true,
                                 "description": "\u003cp\u003eThe display options for tile borders for visuals.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "nested_type": {
                                   "attributes": {
+                                    "color": {
+                                      "computed": true,
+                                      "description": "String to encapsulate the most generic way Color can be formatted (words, hexStrings etc)",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
                                     "show": {
                                       "computed": true,
                                       "description": "\u003cp\u003eThe option to enable display of borders for visuals.\u003c/p\u003e",
                                       "description_kind": "plain",
                                       "type": "bool"
+                                    },
+                                    "width": {
+                                      "computed": true,
+                                      "description": "String to encapsulate the most generic way Width can be formatted with whatever units (px, em etc)",
+                                      "description_kind": "plain",
+                                      "type": "string"
                                     }
                                   },
                                   "nesting_mode": "single"
                                 }
+                              },
+                              "border_radius": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "padding": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
                               }
                             },
                             "nesting_mode": "single"
@@ -495,6 +1042,183 @@ const awsccQuicksightTheme = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "axis_label_font_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "font_color": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_decoration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_family": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "absolute": {
+                                      "computed": true,
+                                      "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "font_style": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_weight": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "name": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "axis_title_font_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "font_color": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_decoration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_family": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "absolute": {
+                                      "computed": true,
+                                      "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "font_style": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_weight": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "name": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "data_label_font_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "font_color": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_decoration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_family": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "absolute": {
+                                      "computed": true,
+                                      "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "font_style": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_weight": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "name": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "font_families": {
                           "computed": true,
                           "description_kind": "plain",
@@ -508,6 +1232,280 @@ const awsccQuicksightTheme = `{
                             },
                             "nesting_mode": "list"
                           }
+                        },
+                        "legend_title_font_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "font_color": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_decoration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_family": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "absolute": {
+                                      "computed": true,
+                                      "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "font_style": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_weight": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "name": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "legend_value_font_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "font_color": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_decoration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_family": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_size": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "absolute": {
+                                      "computed": true,
+                                      "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "font_style": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "font_weight": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "name": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "visual_subtitle_font_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "font_configuration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "font_color": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "font_decoration": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "font_family": {
+                                      "computed": true,
+                                      "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "font_size": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "absolute": {
+                                            "computed": true,
+                                            "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "font_style": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "font_weight": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "name": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "text_alignment": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "text_transform": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "visual_title_font_configuration": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "font_configuration": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "font_color": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "font_decoration": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "font_family": {
+                                      "computed": true,
+                                      "description": "\u003cp\u003eThe font family that you want to use.\u003c/p\u003e",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "font_size": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "absolute": {
+                                            "computed": true,
+                                            "description": "\u003cp\u003eThe font size that you want to use in px.\u003c/p\u003e",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "font_style": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "font_weight": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "name": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "text_alignment": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "text_transform": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
                         }
                       },
                       "nesting_mode": "single"
@@ -515,7 +1513,7 @@ const awsccQuicksightTheme = `{
                   },
                   "ui_color_palette": {
                     "computed": true,
-                    "description": "\u003cp\u003eThe theme colors that apply to UI and to charts, excluding data colors. The colors\n            description is a hexadecimal color code that consists of six alphanumerical characters,\n            prefixed with \u003ccode\u003e#\u003c/code\u003e, for example #37BFF5. For more information, see \u003ca href=\"https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html\"\u003eUsing Themes in Amazon QuickSight\u003c/a\u003e in the \u003ci\u003eAmazon QuickSight User\n                Guide.\u003c/i\u003e\n         \u003c/p\u003e",
+                    "description": "\u003cp\u003eThe theme colors that apply to UI and to charts, excluding data colors. The colors\n            description is a hexadecimal color code that consists of six alphanumerical characters,\n            prefixed with \u003ccode\u003e#\u003c/code\u003e, for example #37BFF5. For more information, see \u003ca href=\"https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html\"\u003eUsing Themes in Amazon Quick\u003c/a\u003e in the \u003ci\u003eAmazon Quick User\n                Guide.\u003c/i\u003e\n         \u003c/p\u003e",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {

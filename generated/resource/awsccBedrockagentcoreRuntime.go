@@ -737,6 +737,13 @@ const awsccBedrockagentcoreRuntime = `{
         },
         "optional": true
       },
+      "platform_version": {
+        "computed": true,
+        "description": "The version of the runtime platform",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "protocol_configuration": {
         "computed": true,
         "description": "Protocol configuration for the agent runtime",

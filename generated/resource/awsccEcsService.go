@@ -185,6 +185,34 @@ const awsccEcsService = `{
               },
               "optional": true
             },
+            "early_success_criteria": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enable": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
+                  "healthy_percent": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "source_service_revision_cleanup": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "lifecycle_hooks": {
               "computed": true,
               "description": "An array of deployment lifecycle hook objects to run custom logic or pause the deployment at specific stages of the deployment lifecycle.",

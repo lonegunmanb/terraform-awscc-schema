@@ -663,6 +663,12 @@ const awsccBedrockagentcoreRuntime = `{
           "nesting_mode": "single"
         }
       },
+      "platform_version": {
+        "computed": true,
+        "description": "The version of the runtime platform",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "protocol_configuration": {
         "computed": true,
         "description": "Protocol configuration for the agent runtime",

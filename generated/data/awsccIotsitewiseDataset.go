@@ -15,6 +15,38 @@ const awsccIotsitewiseDataset = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "dataset_config": {
+        "computed": true,
+        "description": "The configuration for the dataset.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "session": {
+              "computed": true,
+              "description": "The session configuration for a SESSION dataset.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "session_end_time": {
+                    "computed": true,
+                    "description": "The end time of the session as an ISO 8601 UTC instant, for example 2024-12-31T23:59:59Z.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "session_start_time": {
+                    "computed": true,
+                    "description": "The start time of the session as an ISO 8601 UTC instant, for example 2024-01-01T00:00:00Z.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "dataset_description": {
         "computed": true,
         "description": "A description about the dataset, and its functionality.",
@@ -23,7 +55,7 @@ const awsccIotsitewiseDataset = `{
       },
       "dataset_id": {
         "computed": true,
-        "description": "The ID of the dataset.",
+        "description": "The ID of the dataset. For workspace-scoped datasets this is the workspace name and dataset ID joined by a slash, for example my-workspace/123e4567-e89b-42d3-a456-426614174000.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -87,6 +119,12 @@ const awsccIotsitewiseDataset = `{
           "nesting_mode": "single"
         }
       },
+      "dataset_type": {
+        "computed": true,
+        "description": "The type of the dataset.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -112,6 +150,12 @@ const awsccIotsitewiseDataset = `{
           },
           "nesting_mode": "set"
         }
+      },
+      "workspace_name": {
+        "computed": true,
+        "description": "The name of the workspace associated with the dataset.",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::IoTSiteWise::Dataset",

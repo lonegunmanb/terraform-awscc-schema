@@ -186,6 +186,22 @@ const awsccTransferServer = `{
               "optional": true,
               "type": "string"
             },
+            "proxy_config": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "sftp_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "set_stat_option": {
               "computed": true,
               "description_kind": "plain",

@@ -111,7 +111,7 @@ const awsccConnectQueue = `{
       },
       "outbound_email_config": {
         "computed": true,
-        "description": "The outbound email address ID.",
+        "description": "The outbound email configuration for a specified queue.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

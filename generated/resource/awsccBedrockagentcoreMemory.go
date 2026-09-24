@@ -1946,6 +1946,52 @@ const awsccBedrockagentcoreMemory = `{
         "required": true,
         "type": "string"
       },
+      "namespace_keys": {
+        "computed": true,
+        "description": "List of namespace variable key definitions for a memory resource",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "A namespace variable key name. Must start with a lowercase letter and contain only lowercase alphanumeric characters. Cannot be a built-in variable (memoryStrategyId, sessionId, actorId).",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "validation": {
+              "computed": true,
+              "description": "Validation rules for namespace variable values. Multiple rules can be specified and all must pass.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "allowed_values": {
+                    "computed": true,
+                    "description": "List of allowed values for this namespace variable",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "regex_pattern": {
+                    "computed": true,
+                    "description": "A regex pattern that a namespace variable value must match",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "status": {
         "computed": true,
         "description": "Status of the Memory resource",

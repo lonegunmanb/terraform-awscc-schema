@@ -15,6 +15,15 @@ const awsccMediapackagev2Channel = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "attached_multiview_channels": {
+        "computed": true,
+        "description": "\u003cp\u003eThe multiview channels, in the same channel group, that list this channel as an available source. This is a read-only field. You can't delete a channel while any multiview channel still lists it as a source. Use this field to find the multiview channels that you need to update first.\u003c/p\u003e",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "channel_group_name": {
         "computed": true,
         "description_kind": "plain",
@@ -105,6 +114,34 @@ const awsccMediapackagev2Channel = `{
         "description": "\u003cp\u003eThe date and time the channel was modified.\u003c/p\u003e",
         "description_kind": "plain",
         "type": "string"
+      },
+      "multiview_configuration": {
+        "computed": true,
+        "description": "\u003cp\u003eThe multiview configuration for a channel. A multiview channel composites video from several source channels into a single tiled output stream. Players receive one standard HLS or DASH stream instead of several separate streams. This setting is required when \u003ccode\u003eInputType\u003c/code\u003e is \u003ccode\u003eMULTIVIEW\u003c/code\u003e, and can't be set for any other input type.\u003c/p\u003e",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "available_layouts": {
+              "computed": true,
+              "description": "\u003cp\u003eThe tile layouts that players can request from this multiview channel's origin endpoints. Only the layouts that you list here are available. Each layout must appear at most once.\u003c/p\u003e",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "available_sources": {
+              "computed": true,
+              "description": "\u003cp\u003eThe channels that players can use as tiles in this multiview channel's output. Each source channel must be in the same channel group as the multiview channel, and must have an \u003ccode\u003eInputType\u003c/code\u003e of \u003ccode\u003eCMAF\u003c/code\u003e. Only the channels that you list here are available as tiles.\u003c/p\u003e",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "output_header_configuration": {
         "computed": true,

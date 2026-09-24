@@ -20,6 +20,46 @@ const awsccElasticbeanstalkApplicationVersion = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "build_configuration": {
+        "computed": true,
+        "description": "Settings for an AWS CodeBuild build that packages and builds an application version from source code.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "artifact_name": {
+              "computed": true,
+              "description": "The name of the build artifact.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "code_build_service_role": {
+              "computed": true,
+              "description": "The ARN of the IAM role that AWS CodeBuild assumes to build the application version.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "compute_type": {
+              "computed": true,
+              "description": "The compute type for the CodeBuild build environment.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "image": {
+              "computed": true,
+              "description": "The CodeBuild image used for the build environment.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "timeout_in_minutes": {
+              "computed": true,
+              "description": "The timeout for the CodeBuild build, in minutes.",
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "description": {
         "computed": true,
         "description": "A description of this application version.",
@@ -31,6 +71,90 @@ const awsccElasticbeanstalkApplicationVersion = `{
         "description_kind": "plain",
         "required": true,
         "type": "string"
+      },
+      "image_configuration": {
+        "computed": true,
+        "description": "Configuration for image-based application versions.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "build": {
+              "computed": true,
+              "description": "Configuration for building a container image from source code.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "architecture": {
+                    "computed": true,
+                    "description": "The target architecture for the built container image.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "buildpack": {
+                    "computed": true,
+                    "description": "The buildpack to use for building the image.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "code_build_service_role": {
+                    "computed": true,
+                    "description": "The ARN of the IAM role that AWS CodeBuild assumes to build the application version.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "compute_type": {
+                    "computed": true,
+                    "description": "The compute type for the CodeBuild build environment.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "dockerfile_location": {
+                    "computed": true,
+                    "description": "The path to the Dockerfile, relative to the source root.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "timeout_in_minutes": {
+                    "computed": true,
+                    "description": "The timeout for the CodeBuild build, in minutes.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "type": {
+                    "computed": true,
+                    "description": "The type of image build: docker or buildpack.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "source": {
+              "computed": true,
+              "description": "The container image source for this version, as an ECR image URI.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "uri": {
+                    "computed": true,
+                    "description": "The URI of the container image, e.g. an ECR image URI.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "process": {
+        "computed": true,
+        "description": "Pre-process and validate the environment manifest (` + "`" + `env.yaml` + "`" + `) and configuration files in the source bundle. Leave unset for the service default.",
+        "description_kind": "plain",
+        "type": "bool"
       },
       "source_bundle": {
         "computed": true,

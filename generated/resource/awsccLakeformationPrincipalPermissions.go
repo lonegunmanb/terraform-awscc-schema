@@ -75,6 +75,7 @@ const awsccLakeformationPrincipalPermissions = `{
                 "attributes": {
                   "id": {
                     "computed": true,
+                    "description": "An identifier for the catalog resource.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"

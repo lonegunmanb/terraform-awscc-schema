@@ -74,6 +74,66 @@ const awsccDatasyncLocationObjectStorage = `{
           "nesting_mode": "single"
         }
       },
+      "federated_identity": {
+        "computed": true,
+        "description": "Specifies the identity federation configuration that DataSync uses to access your object storage location using an OpenID Connect (OIDC) token.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "aws_iam_role": {
+              "computed": true,
+              "description": "Specifies the ARN of the AWS Identity and Access Management (IAM) role that DataSync assumes to mint the OIDC token used to authenticate with the identity provider.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "external_identity": {
+              "computed": true,
+              "description": "Specifies the external (non-AWS) identity provider that DataSync federates with to access your object storage location.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "google_oidc": {
+                    "computed": true,
+                    "description": "Specifies the Google Cloud workload identity federation configuration that DataSync uses to obtain an access token for your Google Cloud Storage bucket.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "identity_pool_name": {
+                          "computed": true,
+                          "description": "The name of the Google Cloud workload identity pool that DataSync federates with.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "identity_provider_name": {
+                          "computed": true,
+                          "description": "The name of the OIDC identity provider configured in the Google Cloud workload identity pool.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "project_name": {
+                          "computed": true,
+                          "description": "The human-readable Google Cloud project name.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "project_number": {
+                          "computed": true,
+                          "description": "The numeric Google Cloud project ID, as a string.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",

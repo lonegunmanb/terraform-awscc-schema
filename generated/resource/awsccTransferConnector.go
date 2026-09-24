@@ -232,6 +232,16 @@ const awsccTransferConnector = `{
               "optional": true,
               "type": "number"
             },
+            "ordered_user_secret_version_stages": {
+              "computed": true,
+              "description": "Specifies the order in which the connector attempts to use secret versions during authentication. This enables fallback to alternative credentials if the primary version fails.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            },
             "trusted_host_keys": {
               "computed": true,
               "description": "List of public host keys, for the external server to which you are connecting.",

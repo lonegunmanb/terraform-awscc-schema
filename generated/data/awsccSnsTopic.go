@@ -91,6 +91,11 @@ const awsccSnsTopic = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "maximum_message_size": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "number"
+      },
       "signature_version": {
         "computed": true,
         "description": "The signature version corresponds to the hashing algorithm used while creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by Amazon SNS. By default, ` + "`" + `` + "`" + `SignatureVersion` + "`" + `` + "`" + ` is set to ` + "`" + `` + "`" + `1` + "`" + `` + "`" + `.",

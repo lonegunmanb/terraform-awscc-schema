@@ -102,6 +102,44 @@ const awsccDatasyncLocationAzureBlob = `{
           "nesting_mode": "single"
         }
       },
+      "federated_identity": {
+        "computed": true,
+        "description": "Specifies the identity federation configuration that DataSync uses to access your Azure Blob Storage container using an OpenID Connect (OIDC) token.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "aws_iam_role": {
+              "computed": true,
+              "description": "Specifies the ARN of the AWS Identity and Access Management (IAM) role that DataSync assumes to mint the OIDC token used to authenticate with the identity provider.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "azure_oidc": {
+              "computed": true,
+              "description": "Specifies the Microsoft Entra (Azure AD) identity that DataSync federates with to obtain an access token for your Azure Blob Storage container.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "client_id": {
+                    "computed": true,
+                    "description": "Specifies the client ID of the Microsoft Entra (Azure AD) identity that DataSync uses to obtain an access token.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "tenant_id": {
+                    "computed": true,
+                    "description": "Specifies the Microsoft Entra (Azure AD) tenant ID that the identity belongs to.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
