@@ -57,6 +57,12 @@ const awsccQuicksightDataSource = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "consumer_account_role_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "identity_center_configuration": {
                     "computed": true,
                     "description": "\u003cp\u003eThe parameters for an IAM Identity Center configuration.\u003c/p\u003e",
@@ -936,6 +942,12 @@ const awsccQuicksightDataSource = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "consumer_account_role_arn": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
                               "identity_center_configuration": {
                                 "computed": true,
                                 "description": "\u003cp\u003eThe parameters for an IAM Identity Center configuration.\u003c/p\u003e",
@@ -1843,6 +1855,12 @@ const awsccQuicksightDataSource = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "consumer_account_role_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "identity_center_configuration": {
                     "computed": true,
                     "description": "\u003cp\u003eThe parameters for an IAM Identity Center configuration.\u003c/p\u003e",

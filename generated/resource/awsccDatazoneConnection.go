@@ -556,6 +556,13 @@ const awsccDatazoneConnection = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "bool"
+                  },
+                  "role_arn": {
+                    "computed": true,
+                    "description": "The ARN of the IAM role to associate with the connection as the project user role.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"

@@ -9,6 +9,12 @@ import (
 const awsccElasticacheGlobalReplicationGroup = `{
   "block": {
     "attributes": {
+      "arn": {
+        "computed": true,
+        "description": "The ARN (Amazon Resource Name) of the Global Datastore.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "automatic_failover_enabled": {
         "computed": true,
         "description": "AutomaticFailoverEnabled",
@@ -166,6 +172,31 @@ const awsccElasticacheGlobalReplicationGroup = `{
         "description": "The status of the Global Datastore",
         "description_kind": "plain",
         "type": "string"
+      },
+      "tags": {
+        "computed": true,
+        "description": "An array of key-value pairs to apply to this Global Datastore.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "key": {
+              "computed": true,
+              "description": "The key for the tag. May not be null.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "value": {
+              "computed": true,
+              "description": "The tag's value. May be null.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
       }
     },
     "description": "The AWS::ElastiCache::GlobalReplicationGroup resource creates an Amazon ElastiCache Global Replication Group.",

@@ -83,6 +83,13 @@ const awsccElasticacheServerlessCache = `{
         },
         "optional": true
       },
+      "connection_type": {
+        "computed": true,
+        "description": "The connection type for the serverless cache. Valid values are vpc or public.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "create_time": {
         "computed": true,
         "description": "The creation time of the Serverless Cache.",

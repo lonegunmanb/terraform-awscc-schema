@@ -46,10 +46,21 @@ const awsccBedrockagentcoreOnlineEvaluationConfig = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "log_group_name_prefixes": {
+                    "computed": true,
+                    "description": "The list of CloudWatch log group name prefixes to monitor for agent traces. Mutually exclusive with LogGroupNames; specify exactly one of the two selectors.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
                   "log_group_names": {
+                    "computed": true,
                     "description": "The list of CloudWatch log group names to monitor for agent traces.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "list",
                       "string"
@@ -168,17 +179,34 @@ const awsccBedrockagentcoreOnlineEvaluationConfig = `{
                 "attributes": {
                   "log_group_name": {
                     "computed": true,
-                    "description": "The CloudWatch log group name for evaluation results.",
+                    "description": "The CloudWatch log group name for evaluation results. Omit to use the service-managed default log group.",
                     "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "metrics_namespace": {
+                    "computed": true,
+                    "description": "The CloudWatch metrics namespace for evaluation result metrics. Omit to use the service-managed default namespace.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "result_destination": {
+                    "computed": true,
+                    "description": "Where evaluation results are written. DEDICATED_LOG_GROUP, the default when omitted, writes to a dedicated result log group. SOURCE_LOG_GROUP writes results back to the trace source log group; LogGroupName must not be specified with SOURCE_LOG_GROUP.",
+                    "description_kind": "plain",
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
-              }
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"
-        }
+        },
+        "optional": true
       },
       "rule": {
         "description": "The evaluation rule that defines sampling configuration, filters, and session detection settings.",

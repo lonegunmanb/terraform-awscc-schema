@@ -221,6 +221,22 @@ const awsccObservabilityadminTelemetryRule = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "msk_monitoring_parameters": {
+                    "computed": true,
+                    "description": "Configuration parameters for Amazon MSK cluster monitoring.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enhanced_monitoring": {
+                          "computed": true,
+                          "description": "The level of enhanced monitoring for the MSK cluster.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "retention_in_days": {
                     "computed": true,
                     "description": "Number of days to retain the telemetry data in the specified destination",

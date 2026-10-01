@@ -257,6 +257,78 @@ const awsccBedrockDataSource = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  },
+                  "sync_schedule": {
+                    "computed": true,
+                    "description": "Recurring schedule on which the connector automatically refreshes ingested content. Exactly one frequency variant is set.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "daily": {
+                          "computed": true,
+                          "description": "A daily refresh. The run time is system-chosen (off-peak) and not customer-configurable.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "monthly": {
+                          "computed": true,
+                          "description": "A monthly refresh on a specified day of the month.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "day_of_month": {
+                                "computed": true,
+                                "description": "Day of the month on which a monthly refresh runs. Exactly one variant is set: an explicit day number, or the last calendar day of the month.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "day_number": {
+                                      "computed": true,
+                                      "description": "Specific day of the month, 1 through 28 (capped at 28 to avoid month-length ambiguity).",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "number"
+                                    },
+                                    "last_day_of_month": {
+                                      "computed": true,
+                                      "description": "Run on the last calendar day of each month.",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "weekly": {
+                          "computed": true,
+                          "description": "A weekly refresh on a specified day of the week.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "day_of_week": {
+                                "computed": true,
+                                "description": "Day of the week.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"

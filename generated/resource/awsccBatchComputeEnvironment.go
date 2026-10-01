@@ -483,6 +483,30 @@ const awsccBatchComputeEnvironment = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "access_entry": {
+              "computed": true,
+              "description": "The EKS access entry configuration for the compute environment. Controls whether AWS Batch manages the EKS access entry for the compute environment's service role, or inherits it from the cluster.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "desired_state": {
+                    "computed": true,
+                    "description": "The desired state of the EKS access entry managed by AWS Batch. When omitted, AWS Batch applies INHERIT_FROM_CLUSTER.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "status": {
+                    "computed": true,
+                    "description": "The read-only status of the EKS access entry, returned by DescribeComputeEnvironments.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "eks_cluster_arn": {
               "computed": true,
               "description_kind": "plain",

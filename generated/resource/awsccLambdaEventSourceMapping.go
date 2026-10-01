@@ -327,7 +327,7 @@ const awsccLambdaEventSourceMapping = `{
           "attributes": {
             "maximum_pollers": {
               "computed": true,
-              "description": "The maximum number of event pollers this event source can scale up to. For Amazon SQS events source mappings, default is 200, and minimum value allowed is 2. For Amazon MSK and self-managed Apache Kafka event source mappings, default is 200, and minimum value allowed is 1.",
+              "description": "The maximum number of event pollers this event source can scale up to. For Amazon SQS event source mappings, the accepted range is between 2 and 10,000, with a default of 200. For Amazon MSK and self-managed Apache Kafka event source mappings, the accepted range is between 1 and 2,000, with a default of 200.",
               "description_kind": "plain",
               "optional": true,
               "type": "number"
@@ -420,6 +420,13 @@ const awsccLambdaEventSourceMapping = `{
             "consumer_group_id": {
               "computed": true,
               "description": "The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot update this value. For more information, see [Customizable consumer group ID](https://docs.aws.amazon.com/lambda/latest/dg/with-kafka-process.html#services-smaa-topic-add).",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "consumption_mode": {
+              "computed": true,
+              "description": "The mode that determines how Lambda reads from a Kafka topic. Use Stream for ordered processing or Queue for higher throughput when ordering is not required.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

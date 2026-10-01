@@ -124,6 +124,22 @@ const awsccDevopsagentAgentSpace = `{
           "nesting_mode": "single"
         }
       },
+      "preferences": {
+        "computed": true,
+        "description": "Preferences that configure behavior of this AgentSpace. This container fully owns the AgentSpace preferences: the properties supplied here replace the stored preferences in their entirety, and omitting the Preferences container reverts all preferences to their service defaults.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "elevated_actions_enabled": {
+              "computed": true,
+              "description": "Indicates whether elevated directed actions are permitted in this AgentSpace. Defaults to false when not set.",
+              "description_kind": "plain",
+              "type": "bool"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "tags": {
         "computed": true,
         "description": "An array of key-value pairs to apply to this resource.",

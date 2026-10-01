@@ -220,6 +220,71 @@ const awsccMediaconnectRouterOutput = `{
                             "nesting_mode": "single"
                           }
                         },
+                        "rtmp_push": {
+                          "computed": true,
+                          "description": "The configuration settings for a router output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified. These settings include the destination address and port, the application and stream names, and optional TLS encryption configuration.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "application_name": {
+                                "computed": true,
+                                "description": "The name of the RTMP application on the destination server. Together with the stream name, the application name forms the RTMP URL path, in the pattern rtmp://destinationAddress/applicationName/streamName.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "destination_address": {
+                                "computed": true,
+                                "description": "The IP address or hostname of the destination RTMP server that the router output pushes the stream to. Provide only the server address; specify the application and stream names separately.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "destination_port": {
+                                "computed": true,
+                                "description": "The TCP port on the destination RTMP server. For RTMP, valid values range from 1024 to 65535. For RTMPS (RTMP over TLS), valid values are 443 or 1024 to 65535. RTMP typically uses port 1935, and RTMPS typically uses port 443.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "stream_name": {
+                                "computed": true,
+                                "description": "The name of the RTMP stream that the output publishes to the destination application. The stream name forms the final segment of the RTMP URL path.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "tls_encryption": {
+                                "computed": true,
+                                "description": "The Transport Layer Security (TLS) encryption settings used to establish a secure connection to a destination.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "encryption_configuration": {
+                                      "computed": true,
+                                      "description": "The configuration settings for TLS encryption.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "public": {
+                                            "computed": true,
+                                            "description": "The TLS encryption configuration for destinations that present a certificate from a publicly trusted certificate authority. This type does not require any additional settings.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "encryption_type": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "rtp": {
                           "computed": true,
                           "description": "The configuration settings for a router output using the RTP (Real-Time Transport Protocol) protocol, including the destination address and port, and forward error correction state.",
