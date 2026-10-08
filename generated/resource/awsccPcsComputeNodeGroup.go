@@ -35,6 +35,7 @@ const awsccPcsComputeNodeGroup = `{
         "type": "string"
       },
       "custom_launch_template": {
+        "computed": true,
         "description": "An Amazon EC2 launch template AWS PCS uses to launch compute nodes.",
         "description_kind": "plain",
         "nested_type": {
@@ -47,15 +48,16 @@ const awsccPcsComputeNodeGroup = `{
               "type": "string"
             },
             "version": {
+              "computed": true,
               "description": "The version of the EC2 launch template to use to provision instances.",
               "description_kind": "plain",
-              "required": true,
+              "optional": true,
               "type": "string"
             }
           },
           "nesting_mode": "single"
         },
-        "required": true
+        "optional": true
       },
       "error_info": {
         "computed": true,

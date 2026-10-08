@@ -530,9 +530,10 @@ const awsccGameliftContainerGroupDefinition = `{
         "type": "number"
       },
       "total_vcpu_limit": {
+        "computed": true,
         "description": "The total amount of virtual CPUs on the container group definition",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "number"
       },
       "version_description": {

@@ -39,6 +39,24 @@ const awsccConnectIntegrationAssociation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "source_application_name": {
+        "computed": true,
+        "description": "The name of the external application. This is only supported for the EVENT integration type",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "source_application_url": {
+        "computed": true,
+        "description": "The URL for the external application. This is only supported for the EVENT integration type",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "source_type": {
+        "computed": true,
+        "description": "The type of the data source. This is only supported for the EVENT integration type",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "tags": {
         "computed": true,
         "description": "The tags used to organize, track, or control access for this resource.",

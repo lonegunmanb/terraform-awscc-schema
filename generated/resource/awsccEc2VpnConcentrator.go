@@ -46,9 +46,10 @@ const awsccEc2VpnConcentrator = `{
         "type": "string"
       },
       "transit_gateway_id": {
+        "computed": true,
         "description": "The ID of the transit gateway associated with the VPN concentrator.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "type": {

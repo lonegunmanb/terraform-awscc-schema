@@ -42,6 +42,12 @@ const awsccKinesisStream = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "record_distribution_strategy": {
+        "computed": true,
+        "description": "The record distribution strategy for the stream. This property can ONLY be set when StreamMode is ON_DEMAND",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "retention_period_hours": {
         "computed": true,
         "description": "The number of hours for the data records that are stored in shards to remain accessible.",

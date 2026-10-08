@@ -1179,6 +1179,34 @@ const awsccEcsService = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "advanced_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "alternate_target_group_arn": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "production_listener_rule": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "test_listener_rule": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "port_name": {
               "computed": true,
               "description": "The name of the port mapping to register in the VPC Lattice target group. This is the name of the ` + "`" + `` + "`" + `portMapping` + "`" + `` + "`" + ` you defined in your task definition.",

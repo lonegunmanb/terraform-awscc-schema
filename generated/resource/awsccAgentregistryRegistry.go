@@ -37,6 +37,26 @@ const awsccAgentregistryRegistry = `{
         "optional": true,
         "type": "string"
       },
+      "auto_detection_enabled": {
+        "computed": true,
+        "description": "Specifies whether auto-detection is requested for the registry. Must be specified together with AutoDetectionScope. Setting this to true is necessary but not sufficient for auto-detection to become active; the preconditions of the configured scope must also be met. To turn auto-detection off, explicitly set this to false - removing AutoDetectionEnabled and AutoDetectionScope from the template is a no-op and leaves the existing auto-detection settings unchanged. A registry cannot be deleted while auto-detection is enabled: set this to false and update the stack before deleting the registry.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
+      "auto_detection_scope": {
+        "computed": true,
+        "description": "The source from which resources are detected. ORGANIZATION sources resources from all member accounts of an AWS Organization.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "auto_detection_status": {
+        "computed": true,
+        "description": "The current auto-detection status. ACTIVE indicates that the registry is actively being populated with detected resources. INACTIVE indicates that the preconditions required at the configured scope are not currently met.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "created_at": {
         "computed": true,
         "description": "The timestamp when the registry was created.",
@@ -180,6 +200,24 @@ const awsccAgentregistryRegistry = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "encryption_configuration": {
+        "computed": true,
+        "description": "The server-side encryption configuration for a registry. Specifies a customer managed key used to encrypt the registry's content. When omitted, the registry's content is encrypted with an AWS owned key. You cannot change the encryption configuration after registry creation. Specifying a different KMS key, adding this property to an existing registry, or removing it replaces the registry: CloudFormation creates a new registry with a new Amazon Resource Name (ARN) and then deletes the original, including all registry records it contains. Registry records that are not managed by the stack are not re-created in the new registry, and if any remain in the original registry its deletion fails and it is left behind.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "kms_key_arn": {
+              "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the customer-managed AWS KMS key used to encrypt the registry's content. The key must be a symmetric encryption key in the same AWS account and Region as the registry. Multi-Region keys are not supported.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
             }
           },
           "nesting_mode": "single"

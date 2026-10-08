@@ -83,6 +83,12 @@ const awsccNetworksecuritymanagerRule = `{
           "nesting_mode": "set"
         }
       },
+      "updated_at": {
+        "computed": true,
+        "description": "An ISO 8601 timestamp indicating when the rule was last modified.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "version": {
         "computed": true,
         "description": "The version number of the rule.",

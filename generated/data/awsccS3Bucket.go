@@ -9,6 +9,12 @@ import (
 const awsccS3Bucket = `{
   "block": {
     "attributes": {
+      "abac_status": {
+        "computed": true,
+        "description": "The ABAC status of the general purpose bucket. When ABAC is enabled for the general purpose bucket, you can use tags to manage access to the general purpose buckets as well as for cost tracking purposes. When ABAC is disabled for the general purpose buckets, you can only use tags for cost tracking purposes. For more information, see [Using tags with S3 general purpose buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html).",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "accelerate_configuration": {
         "computed": true,
         "description": "Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see [Amazon S3 Transfer Acceleration](https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html) in the *Amazon S3 User Guide*.",
@@ -81,7 +87,7 @@ const awsccS3Bucket = `{
                               },
                               "format": {
                                 "computed": true,
-                                "description": "Specifies the file format used when exporting data to Amazon S3.\n  *Allowed values*: ` + "`" + `` + "`" + `CSV` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `ORC` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Parquet` + "`" + `` + "`" + `",
+                                "description": "Specifies the file format used when exporting data to Amazon S3.\n *Allowed values*: ` + "`" + `` + "`" + `CSV` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `ORC` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Parquet` + "`" + `` + "`" + `",
                                 "description_kind": "plain",
                                 "type": "string"
                               },
@@ -153,6 +159,25 @@ const awsccS3Bucket = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "blocked_encryption_types": {
+                    "computed": true,
+                    "description": "A bucket-level setting for Amazon S3 general purpose buckets used to prevent the upload of new objects encrypted with the specified server-side encryption type. For example, blocking an encryption type will block ` + "`" + `` + "`" + `PutObject` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `CopyObject` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `PostObject` + "`" + `` + "`" + `, multipart upload, and replication requests to the bucket for objects with the specified encryption type. However, you can continue to read and list any pre-existing objects already encrypted with the specified encryption type. For more information, see [Blocking or unblocking SSE-C for a general purpose bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html).\n  Currently, this parameter only supports blocking or unblocking server-side encryption with customer-provided keys (SSE-C). For more information about SSE-C, see [Using server-side encryption with customer-provided keys (SSE-C)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html).",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "encryption_type": {
+                          "computed": true,
+                          "description": "The object encryption type that you want to block or unblock for an Amazon S3 general purpose bucket.\n  Currently, this parameter only supports blocking or unblocking server side encryption with customer-provided keys (SSE-C). For more information about SSE-C, see [Using server-side encryption with customer-provided keys (SSE-C)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html).",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "bucket_key_enabled": {
                     "computed": true,
                     "description": "Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the ` + "`" + `` + "`" + `BucketKeyEnabled` + "`" + `` + "`" + ` element to ` + "`" + `` + "`" + `true` + "`" + `` + "`" + ` causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key is not enabled.\n For more information, see [Amazon S3 Bucket Keys](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html) in the *Amazon S3 User Guide*.",
@@ -167,7 +192,7 @@ const awsccS3Bucket = `{
                       "attributes": {
                         "kms_master_key_id": {
                           "computed": true,
-                          "description": "AWS Key Management Service (KMS) customer managed key ID to use for the default encryption. \n   +   *General purpose buckets* - This parameter is allowed if and only if ` + "`" + `` + "`" + `SSEAlgorithm` + "`" + `` + "`" + ` is set to ` + "`" + `` + "`" + `aws:kms` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `aws:kms:dsse` + "`" + `` + "`" + `.\n  +   *Directory buckets* - This parameter is allowed if and only if ` + "`" + `` + "`" + `SSEAlgorithm` + "`" + `` + "`" + ` is set to ` + "`" + `` + "`" + `aws:kms` + "`" + `` + "`" + `.\n  \n  You can specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS key.\n  +  Key ID: ` + "`" + `` + "`" + `1234abcd-12ab-34cd-56ef-1234567890ab` + "`" + `` + "`" + ` \n  +  Key ARN: ` + "`" + `` + "`" + `arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab` + "`" + `` + "`" + ` \n  +  Key Alias: ` + "`" + `` + "`" + `alias/alias-name` + "`" + `` + "`" + ` \n  \n If you are using encryption with cross-account or AWS service operations, you must use a fully qualified KMS key ARN. For more information, see [Using encryption for cross-account operations](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy).\n   +   *General purpose buckets* - If you're specifying a customer managed KMS key, we recommend using a fully qualified KMS key ARN. If you use a KMS key alias instead, then KMS resolves the key within the requester?s account. This behavior can result in data that's encrypted with a KMS key that belongs to the requester, and not the bucket owner. Also, if you use a key ID, you can run into a LogDestination undeliverable error when creating a VPC flow log. \n  +   *Directory buckets* - When you specify an [customer managed key](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk) for encryption in your directory bucket, only use the key ID or key ARN. The key alias format of the KMS key isn't supported.\n  \n   Amazon S3 only supports symmetric encryption KMS keys. For more information, see [Asymmetric keys in KMS](https://docs.aws.amazon.com//kms/latest/developerguide/symmetric-asymmetric.html) in the *Key Management Service Developer Guide*.",
+                          "description": "AWS Key Management Service (KMS) customer managed key ID to use for the default encryption. \n   +  *General purpose buckets* - This parameter is allowed if and only if ` + "`" + `` + "`" + `SSEAlgorithm` + "`" + `` + "`" + ` is set to ` + "`" + `` + "`" + `aws:kms` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `aws:kms:dsse` + "`" + `` + "`" + `.\n  +  *Directory buckets* - This parameter is allowed if and only if ` + "`" + `` + "`" + `SSEAlgorithm` + "`" + `` + "`" + ` is set to ` + "`" + `` + "`" + `aws:kms` + "`" + `` + "`" + `.\n  \n  You can specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS key.\n  +  Key ID: ` + "`" + `` + "`" + `1234abcd-12ab-34cd-56ef-1234567890ab` + "`" + `` + "`" + `\n  +  Key ARN: ` + "`" + `` + "`" + `arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab` + "`" + `` + "`" + `\n  +  Key Alias: ` + "`" + `` + "`" + `alias/alias-name` + "`" + `` + "`" + `\n  \n If you are using encryption with cross-account or AWS service operations, you must use a fully qualified KMS key ARN. For more information, see [Using encryption for cross-account operations](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy).\n   +  *General purpose buckets* - If you're specifying a customer managed KMS key, we recommend using a fully qualified KMS key ARN. If you use a KMS key alias instead, then KMS resolves the key within the requester’s account. This behavior can result in data that's encrypted with a KMS key that belongs to the requester, and not the bucket owner. Also, if you use a key ID, you can run into a LogDestination undeliverable error when creating a VPC flow log. \n  +  *Directory buckets* - When you specify an [customer managed key](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk) for encryption in your directory bucket, only use the key ID or key ARN. The key alias format of the KMS key isn't supported.\n  \n   Amazon S3 only supports symmetric encryption KMS keys. For more information, see [Asymmetric keys in KMS](https://docs.aws.amazon.com//kms/latest/developerguide/symmetric-asymmetric.html) in the *Key Management Service Developer Guide*.",
                           "description_kind": "plain",
                           "type": "string"
                         },
@@ -195,6 +220,16 @@ const awsccS3Bucket = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "bucket_name_prefix": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "bucket_namespace": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "cors_configuration": {
         "computed": true,
         "description": "Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [Enabling Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html) in the *Amazon S3 User Guide*.",
@@ -218,7 +253,7 @@ const awsccS3Bucket = `{
                   },
                   "allowed_methods": {
                     "computed": true,
-                    "description": "An HTTP method that you allow the origin to run.\n  *Allowed values*: ` + "`" + `` + "`" + `GET` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `PUT` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `HEAD` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `POST` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `DELETE` + "`" + `` + "`" + `",
+                    "description": "An HTTP method that you allow the origin to run.\n *Allowed values*: ` + "`" + `` + "`" + `GET` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `PUT` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `HEAD` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `POST` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `DELETE` + "`" + `` + "`" + `",
                     "description_kind": "plain",
                     "type": [
                       "list",
@@ -353,7 +388,7 @@ const awsccS3Bucket = `{
       },
       "inventory_configurations": {
         "computed": true,
-        "description": "Specifies the inventory configuration for an Amazon S3 bucket. For more information, see [GET Bucket inventory](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html) in the *Amazon S3 API Reference*.",
+        "description": "Specifies the S3 Inventory configuration for an Amazon S3 bucket. For more information, see [GET Bucket inventory](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html) in the *Amazon S3 API Reference*.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -377,7 +412,7 @@ const awsccS3Bucket = `{
                   },
                   "format": {
                     "computed": true,
-                    "description": "Specifies the file format used when exporting data to Amazon S3.\n  *Allowed values*: ` + "`" + `` + "`" + `CSV` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `ORC` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Parquet` + "`" + `` + "`" + `",
+                    "description": "Specifies the file format used when exporting data to Amazon S3.\n *Allowed values*: ` + "`" + `` + "`" + `CSV` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `ORC` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Parquet` + "`" + `` + "`" + `",
                     "description_kind": "plain",
                     "type": "string"
                   },
@@ -636,7 +671,7 @@ const awsccS3Bucket = `{
                         },
                         "transition_in_days": {
                           "computed": true,
-                          "description": "Indicates the number of days after creation when objects are transitioned to the specified storage class. If the specified storage class is ` + "`" + `` + "`" + `INTELLIGENT_TIERING` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `GLACIER_IR` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `GLACIER` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `DEEP_ARCHIVE` + "`" + `` + "`" + `, valid values are ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` or positive integers. If the specified storage class is ` + "`" + `` + "`" + `STANDARD_IA` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `ONEZONE_IA` + "`" + `` + "`" + `, valid values are positive integers greater than ` + "`" + `` + "`" + `30` + "`" + `` + "`" + `. Be aware that some storage classes have a minimum storage duration and that you're charged for transitioning objects before their minimum storage duration. For more information, see [Constraints and considerations for transitions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html#lifecycle-configuration-constraints) in the *Amazon S3 User Guide*.",
+                          "description": "Indicates the number of days after creation when objects are transitioned to the specified storage class. The value can be ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` or any positive integer. Be aware that some storage classes have a minimum storage duration and that you're charged for transitioning objects before their minimum storage duration. For more information, see [Constraints and considerations for transitions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html#lifecycle-configuration-constraints) in the *Amazon S3 User Guide*.",
                           "description_kind": "plain",
                           "type": "number"
                         }
@@ -664,7 +699,7 @@ const awsccS3Bucket = `{
                         },
                         "transition_in_days": {
                           "computed": true,
-                          "description": "Indicates the number of days after creation when objects are transitioned to the specified storage class. If the specified storage class is ` + "`" + `` + "`" + `INTELLIGENT_TIERING` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `GLACIER_IR` + "`" + `` + "`" + `, ` + "`" + `` + "`" + `GLACIER` + "`" + `` + "`" + `, or ` + "`" + `` + "`" + `DEEP_ARCHIVE` + "`" + `` + "`" + `, valid values are ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` or positive integers. If the specified storage class is ` + "`" + `` + "`" + `STANDARD_IA` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `ONEZONE_IA` + "`" + `` + "`" + `, valid values are positive integers greater than ` + "`" + `` + "`" + `30` + "`" + `` + "`" + `. Be aware that some storage classes have a minimum storage duration and that you're charged for transitioning objects before their minimum storage duration. For more information, see [Constraints and considerations for transitions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html#lifecycle-configuration-constraints) in the *Amazon S3 User Guide*.",
+                          "description": "Indicates the number of days after creation when objects are transitioned to the specified storage class. The value can be ` + "`" + `` + "`" + `0` + "`" + `` + "`" + ` or any positive integer. Be aware that some storage classes have a minimum storage duration and that you're charged for transitioning objects before their minimum storage duration. For more information, see [Constraints and considerations for transitions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html#lifecycle-configuration-constraints) in the *Amazon S3 User Guide*.",
                           "description_kind": "plain",
                           "type": "number"
                         }
@@ -678,7 +713,7 @@ const awsccS3Bucket = `{
             },
             "transition_default_minimum_object_size": {
               "computed": true,
-              "description": "Indicates which default minimum object size behavior is applied to the lifecycle configuration.\n  This parameter applies to general purpose buckets only. It isn't supported for directory bucket lifecycle configurations.\n   +   ` + "`" + `` + "`" + `all_storage_classes_128K` + "`" + `` + "`" + ` - Objects smaller than 128 KB will not transition to any storage class by default.\n  +   ` + "`" + `` + "`" + `varies_by_storage_class` + "`" + `` + "`" + ` - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB. \n  \n To customize the minimum object size for any transition you can add a filter that specifies a custom ` + "`" + `` + "`" + `ObjectSizeGreaterThan` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `ObjectSizeLessThan` + "`" + `` + "`" + ` in the body of your transition rule. Custom filters always take precedence over the default transition behavior.",
+              "description": "Indicates which default minimum object size behavior is applied to the lifecycle configuration.\n  This parameter applies to general purpose buckets only. It isn't supported for directory bucket lifecycle configurations.\n   +  ` + "`" + `` + "`" + `all_storage_classes_128K` + "`" + `` + "`" + ` - Objects smaller than 128 KB will not transition to any storage class by default.\n  +  ` + "`" + `` + "`" + `varies_by_storage_class` + "`" + `` + "`" + ` - Objects smaller than 128 KB will transition to Glacier Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other storage classes will prevent transitions smaller than 128 KB. \n  \n To customize the minimum object size for any transition you can add a filter that specifies a custom ` + "`" + `` + "`" + `ObjectSizeGreaterThan` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `ObjectSizeLessThan` + "`" + `` + "`" + ` in the body of your transition rule. Custom filters always take precedence over the default transition behavior.",
               "description_kind": "plain",
               "type": "string"
             }
@@ -740,9 +775,219 @@ const awsccS3Bucket = `{
           "nesting_mode": "single"
         }
       },
+      "metadata_configuration": {
+        "computed": true,
+        "description": "The S3 Metadata configuration for a general purpose bucket.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "annotation_table_configuration": {
+              "computed": true,
+              "description": "The annotation table configuration for a metadata configuration.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "configuration_state": {
+                    "computed": true,
+                    "description": "Specifies whether the annotation table configuration is enabled or disabled.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "encryption_configuration": {
+                    "computed": true,
+                    "description": "The encryption configuration for the annotation table. To encrypt your annotation table with server-side encryption using AWS Key Management Service (AWS KMS) keys (SSE-KMS), set ` + "`" + `` + "`" + `SseAlgorithm` + "`" + `` + "`" + ` to ` + "`" + `` + "`" + `aws:kms` + "`" + `` + "`" + `. You must also set ` + "`" + `` + "`" + `KmsKeyArn` + "`" + `` + "`" + ` to the ARN of a customer managed KMS key in the same Region where your general purpose bucket is located.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "kms_key_arn": {
+                          "computed": true,
+                          "description": "If server-side encryption with KMSlong (KMS) keys (SSE-KMS) is specified, you must also specify the KMS key Amazon Resource Name (ARN). You must specify a customer-managed KMS key that's located in the same Region as the general purpose bucket that corresponds to the metadata table configuration.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "sse_algorithm": {
+                          "computed": true,
+                          "description": "The encryption type specified for a metadata table. To specify server-side encryption with KMSlong (KMS) keys (SSE-KMS), use the ` + "`" + `` + "`" + `aws:kms` + "`" + `` + "`" + ` value. To specify server-side encryption with Amazon S3 managed keys (SSE-S3), use the ` + "`" + `` + "`" + `AES256` + "`" + `` + "`" + ` value.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "role": {
+                    "computed": true,
+                    "description": "The ARN of the IAM role that grants Amazon S3 Metadata permission to read annotations from your bucket.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "table_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) for the annotation table.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "table_name": {
+                    "computed": true,
+                    "description": "The name of the annotation table.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "destination": {
+              "computed": true,
+              "description": "The destination information for the S3 Metadata configuration.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "table_bucket_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the table bucket where the metadata configuration is stored.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "table_bucket_type": {
+                    "computed": true,
+                    "description": "The type of the table bucket where the metadata configuration is stored. The ` + "`" + `` + "`" + `aws` + "`" + `` + "`" + ` value indicates an AWS managed table bucket, and the ` + "`" + `` + "`" + `customer` + "`" + `` + "`" + ` value indicates a customer-managed table bucket. V2 metadata configurations are stored in AWS managed table buckets, and V1 metadata configurations are stored in customer-managed table buckets.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "table_namespace": {
+                    "computed": true,
+                    "description": "The namespace in the table bucket where the metadata tables for a metadata configuration are stored.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "inventory_table_configuration": {
+              "computed": true,
+              "description": "The inventory table configuration for a metadata configuration.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "configuration_state": {
+                    "computed": true,
+                    "description": "The configuration state of the inventory table, indicating whether the inventory table is enabled or disabled.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "encryption_configuration": {
+                    "computed": true,
+                    "description": "The encryption configuration for the inventory table.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "kms_key_arn": {
+                          "computed": true,
+                          "description": "If server-side encryption with KMSlong (KMS) keys (SSE-KMS) is specified, you must also specify the KMS key Amazon Resource Name (ARN). You must specify a customer-managed KMS key that's located in the same Region as the general purpose bucket that corresponds to the metadata table configuration.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "sse_algorithm": {
+                          "computed": true,
+                          "description": "The encryption type specified for a metadata table. To specify server-side encryption with KMSlong (KMS) keys (SSE-KMS), use the ` + "`" + `` + "`" + `aws:kms` + "`" + `` + "`" + ` value. To specify server-side encryption with Amazon S3 managed keys (SSE-S3), use the ` + "`" + `` + "`" + `AES256` + "`" + `` + "`" + ` value.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "table_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) for the inventory table.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "table_name": {
+                    "computed": true,
+                    "description": "The name of the inventory table.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "journal_table_configuration": {
+              "computed": true,
+              "description": "The journal table configuration for a metadata configuration.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "encryption_configuration": {
+                    "computed": true,
+                    "description": "The encryption configuration for the journal table.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "kms_key_arn": {
+                          "computed": true,
+                          "description": "If server-side encryption with KMSlong (KMS) keys (SSE-KMS) is specified, you must also specify the KMS key Amazon Resource Name (ARN). You must specify a customer-managed KMS key that's located in the same Region as the general purpose bucket that corresponds to the metadata table configuration.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "sse_algorithm": {
+                          "computed": true,
+                          "description": "The encryption type specified for a metadata table. To specify server-side encryption with KMSlong (KMS) keys (SSE-KMS), use the ` + "`" + `` + "`" + `aws:kms` + "`" + `` + "`" + ` value. To specify server-side encryption with Amazon S3 managed keys (SSE-S3), use the ` + "`" + `` + "`" + `AES256` + "`" + `` + "`" + ` value.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "record_expiration": {
+                    "computed": true,
+                    "description": "The journal table record expiration settings for the journal table.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "days": {
+                          "computed": true,
+                          "description": "If you enable journal table record expiration, you can set the number of days to retain your journal table records. Journal table records must be retained for a minimum of 7 days. To set this value, specify any whole number from ` + "`" + `` + "`" + `7` + "`" + `` + "`" + ` to ` + "`" + `` + "`" + `2147483647` + "`" + `` + "`" + `. For example, to retain your journal table records for one year, set this value to ` + "`" + `` + "`" + `365` + "`" + `` + "`" + `.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        },
+                        "expiration": {
+                          "computed": true,
+                          "description": "Specifies whether journal table record expiration is enabled or disabled.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "table_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) for the journal table.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "table_name": {
+                    "computed": true,
+                    "description": "The name of the journal table.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "metadata_table_configuration": {
         "computed": true,
-        "description": "The metadata table configuration of an S3 general purpose bucket. For more information, see [Accelerating data discovery with S3 Metadata](https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html) and [Setting up permissions for configuring metadata tables](https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html).",
+        "description": "The metadata table configuration of an S3 general purpose bucket.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -1054,7 +1299,7 @@ const awsccS3Bucket = `{
       },
       "object_lock_configuration": {
         "computed": true,
-        "description": "This operation is not supported for directory buckets.\n  Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket. For more information, see [Locking Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html). \n   +  The ` + "`" + `` + "`" + `DefaultRetention` + "`" + `` + "`" + ` settings require both a mode and a period.\n  +  The ` + "`" + `` + "`" + `DefaultRetention` + "`" + `` + "`" + ` period can be either ` + "`" + `` + "`" + `Days` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `Years` + "`" + `` + "`" + ` but you must select one. You cannot specify ` + "`" + `` + "`" + `Days` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `Years` + "`" + `` + "`" + ` at the same time.\n  +  You can enable Object Lock for new or existing buckets. For more information, see [Configuring Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-configure.html).",
+        "description": "This operation is not supported for directory buckets.\n  Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket. For more information, see [Locking Objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html). \n   +  The ` + "`" + `` + "`" + `DefaultRetention` + "`" + `` + "`" + ` settings require both a mode and a period.\n  +  The ` + "`" + `` + "`" + `DefaultRetention` + "`" + `` + "`" + ` period can be either ` + "`" + `` + "`" + `Days` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `Years` + "`" + `` + "`" + ` but you must select one. You cannot specify ` + "`" + `` + "`" + `Days` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `Years` + "`" + `` + "`" + ` at the same time.\n  +  You can enable Object Lock for new or existing buckets. For more information, see [Configuring Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-configure.html).\n  \n   You must URL encode any signed header values that contain spaces. For example, if your header value is ` + "`" + `` + "`" + `my file.txt` + "`" + `` + "`" + `, containing two spaces after ` + "`" + `` + "`" + `my` + "`" + `` + "`" + `, you must URL encode this value to ` + "`" + `` + "`" + `my%20%20file.txt` + "`" + `` + "`" + `.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -1081,6 +1326,25 @@ const awsccS3Bucket = `{
                           "description": "The number of days that you want to specify for the default retention period. If Object Lock is turned on, you must specify ` + "`" + `` + "`" + `Mode` + "`" + `` + "`" + ` and specify either ` + "`" + `` + "`" + `Days` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `Years` + "`" + `` + "`" + `.",
                           "description_kind": "plain",
                           "type": "number"
+                        },
+                        "default_event_hold": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "days": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "years": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
                         },
                         "mode": {
                           "computed": true,
@@ -1197,13 +1461,13 @@ const awsccS3Bucket = `{
                 "attributes": {
                   "delete_marker_replication": {
                     "computed": true,
-                    "description": "Specifies whether Amazon S3 replicates delete markers. If you specify a ` + "`" + `` + "`" + `Filter` + "`" + `` + "`" + ` in your replication configuration, you must also include a ` + "`" + `` + "`" + `DeleteMarkerReplication` + "`" + `` + "`" + ` element. If your ` + "`" + `` + "`" + `Filter` + "`" + `` + "`" + ` includes a ` + "`" + `` + "`" + `Tag` + "`" + `` + "`" + ` element, the ` + "`" + `` + "`" + `DeleteMarkerReplication` + "`" + `` + "`" + ` ` + "`" + `` + "`" + `Status` + "`" + `` + "`" + ` must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see [Basic Rule Configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config). \n For more information about delete marker replication, see [Basic Rule Configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html). \n  If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see [Backward Compatibility](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations).",
+                    "description": "Specifies whether Amazon S3 replicates delete markers. If you specify a ` + "`" + `` + "`" + `Filter` + "`" + `` + "`" + ` in your replication configuration, you must also include a ` + "`" + `` + "`" + `DeleteMarkerReplication` + "`" + `` + "`" + ` element. If your ` + "`" + `` + "`" + `Filter` + "`" + `` + "`" + ` includes a ` + "`" + `` + "`" + `Tag` + "`" + `` + "`" + ` element, the ` + "`" + `` + "`" + `DeleteMarkerReplication` + "`" + `` + "`" + `` + "`" + `` + "`" + `Status` + "`" + `` + "`" + ` must be set to Disabled, because Amazon S3 does not support replicating delete markers for tag-based rules. For an example configuration, see [Basic Rule Configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config). \n For more information about delete marker replication, see [Basic Rule Configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html). \n  If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see [Backward Compatibility](https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations).",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "status": {
                           "computed": true,
-                          "description": "Indicates whether to replicate delete markers. Disabled by default.",
+                          "description": "Indicates whether to replicate delete markers.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -1327,7 +1591,7 @@ const awsccS3Bucket = `{
                         },
                         "storage_class": {
                           "computed": true,
-                          "description": "The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica. \n For valid values, see the ` + "`" + `` + "`" + `StorageClass` + "`" + `` + "`" + ` element of the [PUT Bucket replication](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html) action in the *Amazon S3 API Reference*.",
+                          "description": "The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica. \n For valid values, see the ` + "`" + `` + "`" + `StorageClass` + "`" + `` + "`" + ` element of the [PUT Bucket replication](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html) action in the *Amazon S3 API Reference*.\n ` + "`" + `` + "`" + `FSX_OPENZFS` + "`" + `` + "`" + ` is not an accepted value when replicating objects.",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -1443,7 +1707,7 @@ const awsccS3Bucket = `{
                             "attributes": {
                               "status": {
                                 "computed": true,
-                                "description": "Specifies whether Amazon S3 replicates modifications on replicas.\n  *Allowed values*: ` + "`" + `` + "`" + `Enabled` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Disabled` + "`" + `` + "`" + `",
+                                "description": "Specifies whether Amazon S3 replicates modifications on replicas.\n *Allowed values*: ` + "`" + `` + "`" + `Enabled` + "`" + `` + "`" + ` | ` + "`" + `` + "`" + `Disabled` + "`" + `` + "`" + `",
                                 "description_kind": "plain",
                                 "type": "string"
                               }
@@ -1623,7 +1887,7 @@ const awsccS3Bucket = `{
                         },
                         "key_prefix_equals": {
                           "computed": true,
-                          "description": "The object key name prefix when the redirect is applied. For example, to redirect requests for ` + "`" + `` + "`" + `ExamplePage.html` + "`" + `` + "`" + `, the key prefix will be ` + "`" + `` + "`" + `ExamplePage.html` + "`" + `` + "`" + `. To redirect request for all pages with the prefix ` + "`" + `` + "`" + `docs/` + "`" + `` + "`" + `, the key prefix will be ` + "`" + `` + "`" + `/docs` + "`" + `` + "`" + `, which identifies all objects in the docs/ folder.\n Required when the parent element ` + "`" + `` + "`" + `Condition` + "`" + `` + "`" + ` is specified and sibling ` + "`" + `` + "`" + `HttpErrorCodeReturnedEquals` + "`" + `` + "`" + ` is not specified. If both conditions are specified, both must be true for the redirect to be applied.",
+                          "description": "The object key name prefix when the redirect is applied. For example, to redirect requests for ` + "`" + `` + "`" + `ExamplePage.html` + "`" + `` + "`" + `, the key prefix will be ` + "`" + `` + "`" + `ExamplePage.html` + "`" + `` + "`" + `. To redirect request for all pages with the prefix ` + "`" + `` + "`" + `docs/` + "`" + `` + "`" + `, the key prefix will be ` + "`" + `` + "`" + `docs/` + "`" + `` + "`" + `, which identifies all objects in the docs/ folder.\n Required when the parent element ` + "`" + `` + "`" + `Condition` + "`" + `` + "`" + ` is specified and sibling ` + "`" + `` + "`" + `HttpErrorCodeReturnedEquals` + "`" + `` + "`" + ` is not specified. If both conditions are specified, both must be true for the redirect to be applied.",
                           "description_kind": "plain",
                           "type": "string"
                         }

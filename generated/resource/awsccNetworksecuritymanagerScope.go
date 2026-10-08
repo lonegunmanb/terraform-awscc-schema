@@ -76,6 +76,12 @@ const awsccNetworksecuritymanagerScope = `{
         },
         "optional": true
       },
+      "updated_at": {
+        "computed": true,
+        "description": "An ISO 8601 timestamp indicating when the scope was last modified.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "version": {
         "computed": true,
         "description": "The version number of the scope.",
