@@ -198,6 +198,13 @@ const awsccMediaconnectFlowOutput = `{
         "optional": true,
         "type": "string"
       },
+      "ndi_audio_reference_level": {
+        "computed": true,
+        "description": "The audio reference level of the NDI receiver, in dBFS.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "ndi_output_timecode_source": {
         "computed": true,
         "description": "The timecode source for the NDI output.",

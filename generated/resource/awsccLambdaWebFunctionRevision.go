@@ -129,6 +129,13 @@ const awsccLambdaWebFunctionRevision = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "egress_network_connector_arn": {
+              "computed": true,
+              "description": "The versioned ARN of the network connector used for outbound network access from the revision.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "environment_variables": {
               "computed": true,
               "description": "Environment variables for the function.",

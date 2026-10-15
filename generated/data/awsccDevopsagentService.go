@@ -80,6 +80,52 @@ const awsccDevopsagentService = `{
                 "nesting_mode": "single"
               }
             },
+            "git_hub": {
+              "computed": true,
+              "description": "GitHub service details returned after registration",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "app_variant": {
+                    "computed": true,
+                    "description": "The GitHub App variant the service was registered with",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "auth_mode": {
+                    "computed": true,
+                    "description": "How the service authenticates against the GitHub API: app after AppVerification, pat after DirectAccess",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "hosting_type": {
+                    "computed": true,
+                    "description": "The GitHub hosting type the service was registered with",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "owner": {
+                    "computed": true,
+                    "description": "The GitHub repository owner name derived from the token",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "owner_type": {
+                    "computed": true,
+                    "description": "Type of repository owner",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "target_url": {
+                    "computed": true,
+                    "description": "GitHub instance URL (absent for github.com)",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "git_lab": {
               "computed": true,
               "description": "GitLab service details returned after registration",
@@ -374,6 +420,12 @@ const awsccDevopsagentService = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "name": {
+        "computed": true,
+        "description": "The display name for the service registration.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "private_connection_name": {
         "computed": true,
         "description": "The name of the private connection to use for VPC connectivity.",
@@ -474,6 +526,78 @@ const awsccDevopsagentService = `{
                             },
                             "nesting_mode": "single"
                           }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "git_hub": {
+              "computed": true,
+              "description": "GitHub personal access token (PAT) service configuration. Exactly one of AppVerification or DirectAccess selects how the token is used",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "app_verification": {
+                    "computed": true,
+                    "description": "The token verifies an existing DevOps Agent GitHub App installation on github.com and is then discarded. Not supported for GitHub Enterprise Server",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "app_variant": {
+                          "computed": true,
+                          "description": "Permission variant of the DevOps Agent GitHub App that must already be installed on the organization or account",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "organization_name": {
+                          "computed": true,
+                          "description": "GitHub organization to scope the service to. The token must be an active member of the organization and only that organization's repositories are accessible. Omit to register the token's own user account",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "target_url": {
+                          "computed": true,
+                          "description": "GitHub instance URL. Omit for github.com. Provide the instance host for GitHub Enterprise Server or GitHub Enterprise Cloud with data residency (e.g. https://github.example.com)",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "token_value": {
+                          "computed": true,
+                          "description": "GitHub personal access token (PAT) value. Accepts classic PATs (ghp_...), fine-grained PATs (github_pat_...), and GitHub Enterprise Server token formats",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "direct_access": {
+                    "computed": true,
+                    "description": "The token is stored and used as the long-lived credential for GitHub API access",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "organization_name": {
+                          "computed": true,
+                          "description": "GitHub organization to scope the service to. The token must be an active member of the organization and only that organization's repositories are accessible. Omit to register the token's own user account",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "target_url": {
+                          "computed": true,
+                          "description": "GitHub instance URL. Omit for github.com. Provide the instance host for GitHub Enterprise Server or GitHub Enterprise Cloud with data residency (e.g. https://github.example.com)",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "token_value": {
+                          "computed": true,
+                          "description": "GitHub personal access token (PAT) value. Accepts classic PATs (ghp_...), fine-grained PATs (github_pat_...), and GitHub Enterprise Server token formats",
+                          "description_kind": "plain",
+                          "type": "string"
                         }
                       },
                       "nesting_mode": "single"

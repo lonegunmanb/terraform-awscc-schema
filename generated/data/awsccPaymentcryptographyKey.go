@@ -149,6 +149,18 @@ const awsccPaymentcryptographyKey = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "kms_key_arn": {
+              "computed": true,
+              "description": "The ARN of the AWS KMS key that protects the replica in this region.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "kms_key_id": {
+              "computed": true,
+              "description": "The AWS KMS key requested for this region, when replication failed before its ARN was known.",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "status": {
               "computed": true,
               "description": "Defines the replication state of a key",

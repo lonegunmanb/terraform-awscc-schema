@@ -207,6 +207,13 @@ const awsccGameliftContainerGroupDefinition = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "vcpu": {
+              "computed": true,
+              "description": "The number of virtual CPUs to give to the game server container. This is required when the container group definition doesn't set TotalVcpuLimit.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
             }
           },
           "nesting_mode": "single"

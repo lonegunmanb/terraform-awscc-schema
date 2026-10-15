@@ -29,7 +29,7 @@ const awsccLambdaNetworkConnector = `{
                 "attributes": {
                   "associated_compute_resource_types": {
                     "computed": true,
-                    "description": "The types of Lambda compute resources that can use this connector. Currently, only MicroVm is supported.",
+                    "description": "The types of Lambda compute resources that can use this connector. Supported values are MicroVm and WebFunction.",
                     "description_kind": "plain",
                     "type": [
                       "list",
@@ -44,7 +44,7 @@ const awsccLambdaNetworkConnector = `{
                   },
                   "security_group_ids": {
                     "computed": true,
-                    "description": "The IDs of the VPC security groups to attach to the ENIs. Specify 0 to 5 security groups. All security groups must be in the same VPC as the subnets.",
+                    "description": "The IDs of the VPC security groups to attach to the ENIs. All security groups must be in the same VPC as the subnets.",
                     "description_kind": "plain",
                     "type": [
                       "list",
@@ -72,6 +72,18 @@ const awsccLambdaNetworkConnector = `{
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "latest_version": {
+        "computed": true,
+        "description": "The version number of the network connector's latest version. Updates to the connector's configuration create a new immutable version; this attribute exposes the most recent one.",
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "latest_version_arn": {
+        "computed": true,
+        "description": "The qualified Amazon Resource Name (ARN) of the network connector's latest version. Includes the immutable version suffix and can be used to pin to a specific version.",
+        "description_kind": "plain",
         "type": "string"
       },
       "name": {

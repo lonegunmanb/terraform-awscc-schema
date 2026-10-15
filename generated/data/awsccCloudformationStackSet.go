@@ -202,7 +202,7 @@ const awsccCloudformationStackSet = `{
                   },
                   "accounts_url": {
                     "computed": true,
-                    "description": "Returns the value of the AccountsUrl property.",
+                    "description": "Returns the value of the AccountsUrl property. AccountsUrl is currently not supported when using Account Level Targeting (ALT).",
                     "description_kind": "plain",
                     "type": "string"
                   },

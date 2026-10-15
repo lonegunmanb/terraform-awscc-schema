@@ -21,11 +21,6 @@ const awsccDaxSubnetGroup = `{
         "description_kind": "plain",
         "type": "string"
       },
-      "subnet_group_id": {
-        "computed": true,
-        "description_kind": "plain",
-        "type": "string"
-      },
       "subnet_group_name": {
         "computed": true,
         "description_kind": "plain",
@@ -41,7 +36,7 @@ const awsccDaxSubnetGroup = `{
         ]
       }
     },
-    "description": "Resource Type definition for AWS::DAX::SubnetGroup",
+    "description": "Resource type definition for AWS::DAX::SubnetGroup",
     "description_kind": "plain"
   },
   "version": 1

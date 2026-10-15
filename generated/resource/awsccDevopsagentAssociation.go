@@ -46,6 +46,13 @@ const awsccDevopsagentAssociation = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "agent_elevated_role_arn": {
+                    "computed": true,
+                    "description": "The IAM role that AWS DevOps Agent assumes to perform elevated directed actions in this AWS account. Elevated actions also require ElevatedActionsEnabled to be set in the Preferences of the AgentSpace. When not provided, only non-elevated directed actions are available. Removing this property from the template clears the role on update. Setting this role is subject to the same iam:PassRole requirement as AssumableRoleArn.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "assumable_role_arn": {
                     "computed": true,
                     "description": "Role ARN to be assumed by DevOpsAgent to operate on behalf of customer",
@@ -331,6 +338,16 @@ const awsccDevopsagentAssociation = `{
                     "optional": true,
                     "type": "bool"
                   },
+                  "enabled_elevated_tools": {
+                    "computed": true,
+                    "description": "The mutative MCP tools enabled for this integration, by tool name. Only tools the service classifies as MUTATIVE may be listed; other names are rejected. Tool names can be found in the console or from the association's current configuration. The list fully replaces the stored value on update: removing a name disables that tool, and removing the property disables all elevated tools.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
                   "endpoint": {
                     "computed": true,
                     "description": "MCP server endpoint URL",
@@ -362,6 +379,16 @@ const awsccDevopsagentAssociation = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "bool"
+                  },
+                  "enabled_elevated_tools": {
+                    "computed": true,
+                    "description": "The mutative MCP tools enabled for this integration, by tool name. Only tools the service classifies as MUTATIVE may be listed; other names are rejected. Tool names can be found in the console or from the association's current configuration. The list fully replaces the stored value on update: removing a name disables that tool, and removing the property disables all elevated tools. Independent of Tools, which selects the toolsets available to the agent.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
                   },
                   "endpoint": {
                     "computed": true,
@@ -536,6 +563,31 @@ const awsccDevopsagentAssociation = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "bidirectional": {
+                    "computed": true,
+                    "description": "Optional bidirectional communication configuration. Supply this configuration and set Enabled to true so you can interact with the agent directly from Slack",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enabled": {
+                          "computed": true,
+                          "description": "Whether bidirectional communication is enabled for this association. When set to true, you can mention the agent in a configured Slack channel and it responds in that channel. When omitted or set to false, the agent ignores mentions and only sends notifications",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        },
+                        "role_arn": {
+                          "computed": true,
+                          "description": "IAM role ARN that AWS DevOps Agent assumes to exchange messages with your Slack workspace on behalf of this association",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "transmission_target": {
                     "computed": true,
                     "description": "Transmission targets for agent notifications",
@@ -607,6 +659,13 @@ const awsccDevopsagentAssociation = `{
                   "account_type": {
                     "computed": true,
                     "description": "Account Type 'source' for DevOpsAgent monitoring",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "agent_elevated_role_arn": {
+                    "computed": true,
+                    "description": "The IAM role that AWS DevOps Agent assumes to perform elevated directed actions in this AWS account. Elevated actions also require ElevatedActionsEnabled to be set in the Preferences of the AgentSpace. When not provided, only non-elevated directed actions are available. Removing this property from the template clears the role on update. Setting this role is subject to the same iam:PassRole requirement as AssumableRoleArn.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"

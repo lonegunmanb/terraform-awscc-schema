@@ -21,6 +21,12 @@ const awsccAgentregistryRegistryRecord = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "custom_metadata": {
+        "computed": true,
+        "description": "The custom metadata to attach to the registry record. Each key must match a property defined in the registry's custom metadata schema. Values can be strings (maximum 128 characters) or native JSON booleans (true or false).",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "description": {
         "computed": true,
         "description": "The description of the registry record.",

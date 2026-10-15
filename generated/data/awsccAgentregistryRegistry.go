@@ -58,6 +58,44 @@ const awsccAgentregistryRegistry = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "custom_metadata_schema_configuration": {
+        "computed": true,
+        "description": "Configuration that defines a typed metadata schema for a registry. A default schema and per-record-type schema overrides are both optional. Schema evolution is additive only: you can add fields and enum values, but you cannot remove fields, change types, or remove enum values.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "default_schema": {
+              "computed": true,
+              "description": "The default JSON Schema that applies to record types without a specific override. Supported property types are string, string with an enum constraint, string with a uri format, and boolean.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "record_type_schema_overrides": {
+              "computed": true,
+              "description": "A list of per-record-type schema overrides. When a record's type matches an override, that override's schema is used instead of the default schema for validation.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "record_type": {
+                    "computed": true,
+                    "description": "The record type that this schema override applies to.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "schema": {
+                    "computed": true,
+                    "description": "The JSON Schema for the specified record type. Must follow the same structural rules as the default schema.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "description": {
         "computed": true,
         "description": "The description of the registry.",

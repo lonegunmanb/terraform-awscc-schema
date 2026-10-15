@@ -873,6 +873,21 @@ const awsccMediapackagev2OriginEndpoint = `{
                           "description_kind": "plain",
                           "type": "string"
                         },
+                        "content_key_period_configuration": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe configuration that controls the content key period timing information that MediaPackage signals to your DRM key provider.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "content_key_period_timing": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
                         "drm_systems": {
                           "computed": true,
                           "description": "\u003cp\u003eThe DRM solution provider you're using to protect your content during distribution.\u003c/p\u003e",
@@ -911,6 +926,11 @@ const awsccMediapackagev2OriginEndpoint = `{
                         "role_arn": {
                           "computed": true,
                           "description": "\u003cp\u003eThe ARN for the IAM role granted by the key provider that provides access to the key provider API. This role must have a trust policy that allows MediaPackage to assume the role, and it must have a sufficient permissions policy to allow access to the specific key retrieval URL. Get this from your DRM solution provider.\u003c/p\u003e \u003cp\u003eValid format: \u003ccode\u003earn:aws:iam::{accountID}:role/{name}\u003c/code\u003e. The following example shows a role ARN: \u003ccode\u003earn:aws:iam::444455556666:role/SpekeAccess\u003c/code\u003e \u003c/p\u003e",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "speke_version": {
+                          "computed": true,
                           "description_kind": "plain",
                           "type": "string"
                         },

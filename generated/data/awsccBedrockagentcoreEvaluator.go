@@ -29,7 +29,7 @@ const awsccBedrockagentcoreEvaluator = `{
       },
       "evaluator_config": {
         "computed": true,
-        "description": "The configuration for the evaluator.",
+        "description": "The configuration for the evaluator, including LLM-as-a-Judge, code-based, or derived settings.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -56,6 +56,141 @@ const awsccBedrockagentcoreEvaluator = `{
                           "description": "The timeout in seconds for the Lambda function invocation.",
                           "description_kind": "plain",
                           "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "derived": {
+              "computed": true,
+              "description": "The configuration for an evaluator derived from an existing base evaluator (a built-in or third-party evaluator), run on your own model. The base evaluator supplies the prompt and scoring logic.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "base_evaluator_id": {
+                    "computed": true,
+                    "description": "The identifier of the base evaluator whose logic to run (a Builtin.* or ThirdParty.* evaluator).",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "model_config": {
+                    "computed": true,
+                    "description": "The model configuration that specifies which foundation model to use for evaluation.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "bedrock_evaluator_model_config": {
+                          "computed": true,
+                          "description": "The configuration for using Amazon Bedrock models in evaluator assessments.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "additional_model_request_fields": {
+                                "computed": true,
+                                "description": "Additional model-specific request fields.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "inference_config": {
+                                "computed": true,
+                                "description": "The inference configuration parameters that control model behavior during evaluation.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "max_tokens": {
+                                      "computed": true,
+                                      "description": "The maximum number of tokens to generate in the model response.",
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    },
+                                    "stop_sequences": {
+                                      "computed": true,
+                                      "description": "The sequences that make the model stop generating further tokens.",
+                                      "description_kind": "plain",
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "temperature": {
+                                      "computed": true,
+                                      "description": "The temperature value that controls randomness in the model's responses.",
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    },
+                                    "top_p": {
+                                      "computed": true,
+                                      "description": "The top-p sampling parameter that controls the diversity of the model's responses.",
+                                      "description_kind": "plain",
+                                      "type": "number"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "model_id": {
+                                "computed": true,
+                                "description": "The identifier of the Amazon Bedrock model to use for evaluation.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "responses_evaluator_model_config": {
+                          "computed": true,
+                          "description": "The configuration for using OpenResponses-compatible models in evaluator assessments.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "max_output_tokens": {
+                                "computed": true,
+                                "description": "The maximum number of output tokens to generate, including visible output and reasoning tokens.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "model_id": {
+                                "computed": true,
+                                "description": "The identifier of the model to use for evaluation.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "reasoning": {
+                                "computed": true,
+                                "description": "The reasoning configuration for reasoning models.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "effort": {
+                                      "computed": true,
+                                      "description": "The level of reasoning effort the model applies.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "temperature": {
+                                "computed": true,
+                                "description": "The sampling temperature between 0 and 2.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "top_p": {
+                                "computed": true,
+                                "description": "The nucleus sampling probability mass between 0 and 1.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
                         }
                       },
                       "nesting_mode": "single"
@@ -106,6 +241,15 @@ const awsccBedrockagentcoreEvaluator = `{
                                       "description": "The maximum number of tokens to generate in the model response.",
                                       "description_kind": "plain",
                                       "type": "number"
+                                    },
+                                    "stop_sequences": {
+                                      "computed": true,
+                                      "description": "The sequences that make the model stop generating further tokens.",
+                                      "description_kind": "plain",
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
                                     },
                                     "temperature": {
                                       "computed": true,
@@ -265,6 +409,12 @@ const awsccBedrockagentcoreEvaluator = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "evaluator_type": {
+        "computed": true,
+        "description": "The kind of evaluator resource. Builtin and ThirdParty are AWS-managed global evaluators that you reference but don't create; Custom, CustomCode, and CustomDerived are evaluators that you create.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "id": {
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
@@ -279,7 +429,13 @@ const awsccBedrockagentcoreEvaluator = `{
       },
       "level": {
         "computed": true,
-        "description": "The evaluation level that determines the scope of evaluation.",
+        "description": "The evaluation level that determines the scope of evaluation. Required for all evaluator configuration types. For Derived evaluators it must match the level of the base evaluator identified by BaseEvaluatorId.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "provider_name": {
+        "computed": true,
+        "description": "Where the evaluator's logic comes from: AWS, a third-party library (DeepEval or AutoEval), or you. Derived evaluators inherit the provider of their base evaluator.",
         "description_kind": "plain",
         "type": "string"
       },

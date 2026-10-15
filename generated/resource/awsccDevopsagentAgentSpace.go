@@ -127,6 +127,68 @@ const awsccDevopsagentAgentSpace = `{
                 "nesting_mode": "single"
               },
               "optional": true
+            },
+            "idp": {
+              "computed": true,
+              "description": "External identity provider configuration for the Operator App.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "client_id": {
+                    "computed": true,
+                    "description": "The OIDC client identifier for the external identity provider application.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "client_secret": {
+                    "computed": true,
+                    "description": "The OIDC client secret for the external identity provider application. Use a Secrets Manager dynamic reference to avoid storing the secret in the template.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "created_at": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "issuer_url": {
+                    "computed": true,
+                    "description": "The OIDC issuer URL for the external identity provider.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "operator_app_role_arn": {
+                    "computed": true,
+                    "description": "The IAM role that Operator App users assume to access DevOps Agent APIs.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "provider": {
+                    "computed": true,
+                    "description": "The external identity provider type.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "updated_at": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "user_id_claim": {
+                    "computed": true,
+                    "description": "The identity claim used to identify users. This value is selected by the service for the configured provider.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

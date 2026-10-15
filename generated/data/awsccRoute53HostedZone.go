@@ -9,6 +9,11 @@ import (
 const awsccRoute53HostedZone = `{
   "block": {
     "attributes": {
+      "delegation_set_id": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "string"
+      },
       "hosted_zone_config": {
         "computed": true,
         "description": "A complex type that contains an optional comment.\n If you don't want to specify a comment, omit the ` + "`" + `` + "`" + `HostedZoneConfig` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `Comment` + "`" + `` + "`" + ` elements.",

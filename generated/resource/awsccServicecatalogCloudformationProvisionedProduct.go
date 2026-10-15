@@ -199,7 +199,7 @@ const awsccServicecatalogCloudformationProvisionedProduct = `{
         "optional": true
       }
     },
-    "description": "Resource Schema for AWS::ServiceCatalog::CloudFormationProvisionedProduct",
+    "description": "Resource Type definition for AWS::ServiceCatalog::CloudFormationProvisionedProduct",
     "description_kind": "plain"
   },
   "version": 1

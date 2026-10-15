@@ -1490,17 +1490,20 @@ const awsccS3Bucket = `{
                         },
                         "default_event_hold": {
                           "computed": true,
+                          "description": "The default Object Lock event hold duration that you want to apply to new objects placed in the specified bucket. When the event hold is released, Amazon S3 retains the object version for this duration.\n  If you specify both a default retention period (` + "`" + `` + "`" + `Days` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `Years` + "`" + `` + "`" + `) and a ` + "`" + `` + "`" + `DefaultEventHold` + "`" + `` + "`" + `, the event hold duration can't exceed the default retention period.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
                               "days": {
                                 "computed": true,
+                                "description": "The number of days that you want to specify for the default event hold duration. Valid values are ` + "`" + `` + "`" + `1` + "`" + `` + "`" + ` to ` + "`" + `` + "`" + `36500` + "`" + `` + "`" + ` days. You must specify either ` + "`" + `` + "`" + `Days` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `Years` + "`" + `` + "`" + `, but not both.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "number"
                               },
                               "years": {
                                 "computed": true,
+                                "description": "The number of years that you want to specify for the default event hold duration. Valid values are ` + "`" + `` + "`" + `1` + "`" + `` + "`" + ` to ` + "`" + `` + "`" + `100` + "`" + `` + "`" + ` years. You must specify either ` + "`" + `` + "`" + `Days` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `Years` + "`" + `` + "`" + `, but not both.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "number"

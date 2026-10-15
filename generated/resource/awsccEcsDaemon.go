@@ -31,6 +31,12 @@ const awsccEcsDaemon = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "critical": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "daemon_arn": {
         "computed": true,
         "description_kind": "plain",

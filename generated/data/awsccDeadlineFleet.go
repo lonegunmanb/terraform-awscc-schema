@@ -467,6 +467,20 @@ const awsccDeadlineFleet = `{
                             "nesting_mode": "single"
                           }
                         },
+                        "software_add_ons": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "name": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        },
                         "v_cpu_count": {
                           "computed": true,
                           "description_kind": "plain",

@@ -11,7 +11,7 @@ const awsccEc2VpcPeeringConnection = `{
     "attributes": {
       "assume_role_region": {
         "computed": true,
-        "description": "The Region code to use when calling Security Token Service (STS) to assume the PeerRoleArn, if provided.",
+        "description": "The Region code to use when calling Security Token Service (STS) to assume the PeerRoleArn, if provided. You can update this property.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -38,7 +38,7 @@ const awsccEc2VpcPeeringConnection = `{
       },
       "peer_role_arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the VPC peer role for the peering connection in another AWS account.",
+        "description": "The Amazon Resource Name (ARN) of the VPC peer role for the peering connection in another AWS account. You can update this property. To manage PeerVpcPeeringConnectionOptions on a peering connection with another AWS account, the role must allow ec2:DescribeVpcPeeringConnections and ec2:ModifyVpcPeeringConnectionOptions.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

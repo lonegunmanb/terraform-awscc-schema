@@ -152,11 +152,56 @@ const awsccQuicksightDataSource = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "authentication_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "host": {
                     "computed": true,
                     "description": "\u003cp\u003eThe host name of the Databricks data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "o_auth_parameters": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "identity_provider_resource_uri": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "identity_provider_vpc_connection_properties": {
+                          "computed": true,
+                          "description": "\u003cp\u003eVPC connection properties.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "vpc_connection_arn": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe Amazon Resource Name (ARN) for the VPC connection.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "o_auth_scope": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "token_provider_url": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   },
                   "port": {
                     "computed": true,
@@ -929,11 +974,56 @@ const awsccQuicksightDataSource = `{
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
+                              "authentication_type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
                               "host": {
                                 "computed": true,
                                 "description": "\u003cp\u003eThe host name of the Databricks data source.\u003c/p\u003e",
                                 "description_kind": "plain",
                                 "type": "string"
+                              },
+                              "o_auth_parameters": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "identity_provider_resource_uri": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "identity_provider_vpc_connection_properties": {
+                                      "computed": true,
+                                      "description": "\u003cp\u003eVPC connection properties.\u003c/p\u003e",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "vpc_connection_arn": {
+                                            "computed": true,
+                                            "description": "\u003cp\u003eThe Amazon Resource Name (ARN) for the VPC connection.\u003c/p\u003e",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      }
+                                    },
+                                    "o_auth_scope": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "token_provider_url": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
                               },
                               "port": {
                                 "computed": true,
@@ -1568,6 +1658,30 @@ const awsccQuicksightDataSource = `{
                 "nesting_mode": "single"
               }
             },
+            "o_auth_client_credentials": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "client_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "client_secret": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "username": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "secret_arn": {
               "computed": true,
               "description": "\u003cp\u003eThe Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.\u003c/p\u003e",
@@ -1726,11 +1840,56 @@ const awsccQuicksightDataSource = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "authentication_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "host": {
                     "computed": true,
                     "description": "\u003cp\u003eThe host name of the Databricks data source.\u003c/p\u003e",
                     "description_kind": "plain",
                     "type": "string"
+                  },
+                  "o_auth_parameters": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "identity_provider_resource_uri": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "identity_provider_vpc_connection_properties": {
+                          "computed": true,
+                          "description": "\u003cp\u003eVPC connection properties.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "vpc_connection_arn": {
+                                "computed": true,
+                                "description": "\u003cp\u003eThe Amazon Resource Name (ARN) for the VPC connection.\u003c/p\u003e",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "o_auth_scope": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "token_provider_url": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   },
                   "port": {
                     "computed": true,

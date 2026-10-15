@@ -98,6 +98,13 @@ const awsccEksCapability = `{
                     },
                     "optional": true
                   },
+                  "endpoint_prefix": {
+                    "computed": true,
+                    "description": "An optional prefix for the Argo CD server endpoint. When specified, EKS uses this prefix to generate the server endpoint; otherwise, the endpoint is generated automatically. This value cannot be changed after the capability is created.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "namespace": {
                     "computed": true,
                     "description": "The Kubernetes namespace where Argo CD resources will be created. If not specified, the default namespace is used.",

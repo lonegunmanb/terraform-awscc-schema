@@ -28,6 +28,12 @@ const awsccTransferServer = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "create_with_host_key": {
+        "computed": true,
+        "description": "When this property is ` + "`" + `true` + "`" + `, AWS Transfer Family will generate an initial host key for your server, making it immediately available to SFTP clients. When set to ` + "`" + `false` + "`" + `, clients will not be able to establish an SFTP session until you import one or more host keys (see AWS::Transfer::HostKey). This property cannot be changed after resource creation. Default: ` + "`" + `true` + "`" + `.",
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "domain": {
         "computed": true,
         "description_kind": "plain",
