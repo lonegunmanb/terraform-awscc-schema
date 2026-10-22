@@ -582,6 +582,36 @@ const awsccEcsTaskDefinition = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "sharing_strategy": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "nvidia_mps": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "max_compute_percent": {
+                                "computed": true,
+                                "description": "The maximum percentage of the GPU's compute capacity that the container can use.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "memory": {
+                                "computed": true,
+                                "description": "The amount of GPU memory, in MiB, allocated to the container.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
                   "type": {
                     "computed": true,
                     "description": "The type of resource to assign to a container.",

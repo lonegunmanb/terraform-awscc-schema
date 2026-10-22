@@ -20,6 +20,13 @@ const awsccConnectInstance = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "auto_mute_agent_on_hold": {
+              "computed": true,
+              "description": "Boolean flag which enables AUTO_MUTE_AGENT_ON_HOLD on an instance.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
             "auto_resolve_best_voices": {
               "computed": true,
               "description": "Boolean flag which enables AUTO_RESOLVE_BEST_VOICES on an instance.",

@@ -89,6 +89,65 @@ const awsccNetworkfirewallFirewall = `{
         "required": true,
         "type": "string"
       },
+      "nat_gateway_mappings": {
+        "computed": true,
+        "description": "The NAT gateways that the firewall proxies egress traffic through when NoSourcePreservation is true.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "nat_gateway_id": {
+              "computed": true,
+              "description": "The unique identifier of a NAT gateway.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        }
+      },
+      "no_source_preservation": {
+        "computed": true,
+        "description": "Indicates whether the firewall operates in proxy mode, where the source IP address of traffic is not preserved. When true, specify NatGatewayMappings and VpcEndpoint instead of the top-level VpcId and SubnetMappings. You can't change this setting after you create the firewall.",
+        "description_kind": "plain",
+        "type": "bool"
+      },
+      "number_of_associations": {
+        "computed": true,
+        "description": "The number of VPC endpoint associations attached to the firewall.",
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "proxy_settings": {
+        "computed": true,
+        "description": "The proxy listener configuration for a proxy-mode (no source preservation) firewall.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "listener_properties": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "port": {
+                    "computed": true,
+                    "description": "The port the proxy listener accepts traffic on.",
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "type": {
+                    "computed": true,
+                    "description": "The protocol the proxy listener uses.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "subnet_change_protection": {
         "computed": true,
         "description_kind": "plain",
@@ -143,6 +202,43 @@ const awsccNetworkfirewallFirewall = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "vpc_endpoint": {
+        "computed": true,
+        "description": "The VPC and subnets for a proxy-mode firewall's endpoint. Provide this instead of the top-level VpcId and SubnetMappings when NoSourcePreservation is true.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "subnet_mappings": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "ip_address_type": {
+                    "computed": true,
+                    "description": "A IPAddressType",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "subnet_id": {
+                    "computed": true,
+                    "description": "A SubnetId.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            },
+            "vpc_id": {
+              "computed": true,
+              "description": "The unique identifier of the VPC for the firewall endpoint.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "vpc_id": {
         "computed": true,

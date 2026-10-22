@@ -358,6 +358,88 @@ const awsccBedrockagentcoreEvaluator = `{
                             "nesting_mode": "list"
                           }
                         },
+                        "multi_dimensional": {
+                          "computed": true,
+                          "description": "The dimensions an LLM-as-a-Judge evaluator scores in a single judge call. Each dimension has its own instruction and rating scale.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "dimension_instruction": {
+                                "computed": true,
+                                "description": "The instruction to the evaluator model describing what to judge for this dimension.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "dimension_name": {
+                                "computed": true,
+                                "description": "The name of the dimension. Must be unique within the evaluator.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "dimension_rating_scale": {
+                                "computed": true,
+                                "description": "The rating scale for one dimension of an LLM-as-a-Judge evaluator.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "categorical": {
+                                      "computed": true,
+                                      "description": "The categorical rating scale for this dimension.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "definition": {
+                                            "computed": true,
+                                            "description": "The description that explains what this categorical rating represents.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "label": {
+                                            "computed": true,
+                                            "description": "The label of this categorical rating option.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      }
+                                    },
+                                    "numerical": {
+                                      "computed": true,
+                                      "description": "The numerical rating scale for this dimension.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "definition": {
+                                            "computed": true,
+                                            "description": "The description that explains what this numerical rating represents.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "label": {
+                                            "computed": true,
+                                            "description": "The label that describes this numerical rating option.",
+                                            "description_kind": "plain",
+                                            "type": "string"
+                                          },
+                                          "value": {
+                                            "computed": true,
+                                            "description": "The numerical value for this rating scale option.",
+                                            "description_kind": "plain",
+                                            "type": "number"
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      }
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        },
                         "numerical": {
                           "computed": true,
                           "description_kind": "plain",

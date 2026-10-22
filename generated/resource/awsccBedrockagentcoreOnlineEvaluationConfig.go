@@ -106,7 +106,7 @@ const awsccBedrockagentcoreOnlineEvaluationConfig = `{
           "attributes": {
             "evaluator_id": {
               "computed": true,
-              "description": "The unique identifier of the evaluator.",
+              "description": "The ID of the evaluator: a built-in evaluator ID (Builtin.*), a managed third-party evaluator ID (ThirdParty.\u003cprovider\u003e.\u003cname\u003e), or a custom evaluator ID. For a custom evaluator in the same template, use Fn::GetAtt with EvaluatorId. Ref returns the evaluator ARN, which this property does not accept.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

@@ -43,7 +43,7 @@ const awsccDmsInstanceProfile = `{
       },
       "instance_profile_identifier": {
         "computed": true,
-        "description": "The property describes an identifier for the instance profile. It is used for describing/deleting/modifying. Can be name/arn",
+        "description": "[DEPRECATED] This property is unused and will be ignored. Identity is managed via the resource ARN (primaryIdentifier) and Name (additionalIdentifier).",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

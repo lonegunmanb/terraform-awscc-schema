@@ -227,6 +227,34 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "optional": true,
                     "type": "string"
                   },
+                  "multiview": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe multiview combination for a pinned manifest. MediaPackage serves the manifest with this layout and these sources, so players request it without an \u003ccode\u003eaws.multiview\u003c/code\u003e query parameter.\u003c/p\u003e \u003cp\u003eIf a request for a pinned manifest also includes an \u003ccode\u003eaws.multiview\u003c/code\u003e query parameter, MediaPackage rejects the request, even when that parameter requests the same combination.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "layout": {
+                          "computed": true,
+                          "description": "\u003cp\u003eA tile layout for a multiview channel. Each layout determines how many source tiles are composited into the output and how those tiles are arranged.\u003c/p\u003e \u003cp\u003eThe allowed values are:\u003c/p\u003e \u003cul\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eLAYOUT_2EH\u003c/code\u003e ? Two tiles of equal size, arranged horizontally.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eLAYOUT_2PL\u003c/code\u003e ? Two tiles, with one larger primary tile.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eLAYOUT_3EL\u003c/code\u003e ? Three tiles of equal size, arranged in two columns.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eLAYOUT_3PL\u003c/code\u003e ? Three tiles, with one larger primary tile on the left and two stacked on the right.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eLAYOUT_4E\u003c/code\u003e ? Four tiles of equal size, arranged in a two-by-two grid.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eLAYOUT_4PL\u003c/code\u003e ? Four tiles, with one larger primary tile on the left and three stacked on the right.\u003c/p\u003e \u003c/li\u003e \u003c/ul\u003e",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "sources": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe source channels to composite, in tile order. Each channel must be one of the \u003ccode\u003eAvailableSources\u003c/code\u003e of the channel that this origin endpoint is on, and the number of channels must equal the number of tiles in \u003ccode\u003eLayout\u003c/code\u003e.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "start": {
                     "computed": true,
                     "description": "\u003cp\u003eOptionally specify the start time for all of your manifest egress requests. When you include start time, note that you cannot use start time query parameters for this manifest's endpoint URL.\u003c/p\u003e",
@@ -521,6 +549,34 @@ const awsccMediapackagev2OriginEndpoint = `{
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
+                  },
+                  "multiview": {
+                    "computed": true,
+                    "description": "\u003cp\u003eThe multiview combination for a pinned manifest. MediaPackage serves the manifest with this layout and these sources, so players request it without an \u003ccode\u003eaws.multiview\u003c/code\u003e query parameter.\u003c/p\u003e \u003cp\u003eIf a request for a pinned manifest also includes an \u003ccode\u003eaws.multiview\u003c/code\u003e query parameter, MediaPackage rejects the request, even when that parameter requests the same combination.\u003c/p\u003e",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "layout": {
+                          "computed": true,
+                          "description": "\u003cp\u003eA tile layout for a multiview channel. Each layout determines how many source tiles are composited into the output and how those tiles are arranged.\u003c/p\u003e \u003cp\u003eThe allowed values are:\u003c/p\u003e \u003cul\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eLAYOUT_2EH\u003c/code\u003e ? Two tiles of equal size, arranged horizontally.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eLAYOUT_2PL\u003c/code\u003e ? Two tiles, with one larger primary tile.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eLAYOUT_3EL\u003c/code\u003e ? Three tiles of equal size, arranged in two columns.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eLAYOUT_3PL\u003c/code\u003e ? Three tiles, with one larger primary tile on the left and two stacked on the right.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eLAYOUT_4E\u003c/code\u003e ? Four tiles of equal size, arranged in a two-by-two grid.\u003c/p\u003e \u003c/li\u003e \u003cli\u003e \u003cp\u003e \u003ccode\u003eLAYOUT_4PL\u003c/code\u003e ? Four tiles, with one larger primary tile on the left and three stacked on the right.\u003c/p\u003e \u003c/li\u003e \u003c/ul\u003e",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "sources": {
+                          "computed": true,
+                          "description": "\u003cp\u003eThe source channels to composite, in tile order. Each channel must be one of the \u003ccode\u003eAvailableSources\u003c/code\u003e of the channel that this origin endpoint is on, and the number of channels must equal the number of tiles in \u003ccode\u003eLayout\u003c/code\u003e.\u003c/p\u003e",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
                   },
                   "start": {
                     "computed": true,

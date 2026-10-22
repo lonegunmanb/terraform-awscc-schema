@@ -9,6 +9,50 @@ import (
 const awsccCloudwatchLogAlarm = `{
   "block": {
     "attributes": {
+      "action_configuration": {
+        "computed": true,
+        "description": "Configuration that applies to the notifications this alarm sends when it performs its actions.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "alarm_tags_propagation": {
+              "computed": true,
+              "description": "Whether the alarm's tags are included in its action notifications and state-change events.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description": "Whether the alarm's tags are included in its action notifications and state-change events.",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "excluded_tag_keys": {
+                    "computed": true,
+                    "description": "The tag keys to leave out. Cannot be specified together with IncludedTagKeys.",
+                    "description_kind": "plain",
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
+                  "included_tag_keys": {
+                    "computed": true,
+                    "description": "The only tag keys to include. Cannot be specified together with ExcludedTagKeys.",
+                    "description_kind": "plain",
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "action_log_line_count": {
         "computed": true,
         "description": "The number of log lines to include in alarm notifications. Valid values are 0 to 50.",

@@ -26,7 +26,6 @@ const awsccDmsMigrationProject = `{
         "computed": true,
         "description": "The property describes an instance profile arn for the migration project. For read",
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "instance_profile_identifier": {
@@ -40,7 +39,6 @@ const awsccDmsMigrationProject = `{
         "computed": true,
         "description": "The property describes an instance profile name for the migration project. For read",
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "migration_project_arn": {
@@ -53,12 +51,11 @@ const awsccDmsMigrationProject = `{
         "computed": true,
         "description": "The property describes a creating time of the migration project.",
         "description_kind": "plain",
-        "optional": true,
         "type": "string"
       },
       "migration_project_identifier": {
         "computed": true,
-        "description": "The property describes an identifier for the migration project. It is used for describing/deleting/modifying can be name/arn",
+        "description": "[DEPRECATED] This property is unused and will be ignored. Identity is managed via the resource ARN (primaryIdentifier) and Name (additionalIdentifier).",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

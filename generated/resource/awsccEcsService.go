@@ -404,6 +404,115 @@ const awsccEcsService = `{
         },
         "optional": true
       },
+      "gateway_connectors": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "filters": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "access_types": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "health_check": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "health_check_interval_seconds": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "health_check_path": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "health_check_port": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "health_check_protocol": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "health_check_timeout_seconds": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "healthy_threshold_count": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "matcher": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "grpc_code": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "http_code": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "unhealthy_threshold_count": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "port_name": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        },
+        "optional": true
+      },
       "health_check_grace_period_seconds": {
         "computed": true,
         "description": "The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you do not specify a health check grace period value, the default value of 0 is used. If you do not use any of the health checks, then ` + "`" + `` + "`" + `healthCheckGracePeriodSeconds` + "`" + `` + "`" + ` is unused.\n If your service has more running tasks than desired, unhealthy tasks in the grace period might be stopped to reach the desired count.",
@@ -706,6 +815,22 @@ const awsccEcsService = `{
                   }
                 },
                 "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "container_configurations": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "log_level": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
               },
               "optional": true
             },
@@ -1185,23 +1310,27 @@ const awsccEcsService = `{
           "attributes": {
             "advanced_configuration": {
               "computed": true,
+              "description": "The advanced settings for VPC Lattice used in blue/green deployments. Specify the alternate target group and listener rules required for traffic shifting during blue/green deployments. For more information, see [Required resources for Amazon ECS blue/green deployments](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/blue-green-deployment-implementation.html) in the *Amazon Elastic Container Service Developer Guide*.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "alternate_target_group_arn": {
                     "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the alternate target group associated with the VPC Lattice Configuration for Amazon ECS blue/green deployments.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "production_listener_rule": {
                     "computed": true,
+                    "description": "The Amazon Resource Name (ARN) that identifies the production listener rule or listener for routing production traffic.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
                   },
                   "test_listener_rule": {
                     "computed": true,
+                    "description": "The Amazon Resource Name (ARN) that identifies the test listener rule or listener for routing test traffic.",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"

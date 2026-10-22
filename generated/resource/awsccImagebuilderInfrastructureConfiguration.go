@@ -118,6 +118,42 @@ const awsccImagebuilderInfrastructureConfiguration = `{
         "required": true,
         "type": "string"
       },
+      "parent_instance": {
+        "computed": true,
+        "description": "The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from, instead of launching a new instance. This applies only to the build phase.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "auto_scaling_group": {
+              "computed": true,
+              "description": "The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "capacity_wait_timeout_seconds": {
+                    "computed": true,
+                    "description": "The number of seconds that Image Builder waits for an instance to become available in the group before the build fails. If you set this value to 0 or omit it, the build fails as soon as the group has no instance available.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "name": {
+                    "computed": true,
+                    "description": "The name of the Auto Scaling group, in the same account and AWS Region as the infrastructure configuration.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "placement": {
         "computed": true,
         "description": "The placement option settings for the infrastructure configuration.",
@@ -200,6 +236,13 @@ const awsccImagebuilderInfrastructureConfiguration = `{
           "map",
           "string"
         ]
+      },
+      "terminate_instance_on_completion": {
+        "computed": true,
+        "description": "Specifies whether Image Builder terminates build and test instances that are still running when image creation ends without a failure. A TerminateInstance step in a workflow runs even when this is false.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
       },
       "terminate_instance_on_failure": {
         "computed": true,

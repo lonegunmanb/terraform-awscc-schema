@@ -118,7 +118,7 @@ const awsccSesConfigurationSetEventDestination = `{
             },
             "name": {
               "computed": true,
-              "description": "The name of the event destination set.",
+              "description": "The name of the event destination set. SES cannot rename an event destination, so changing the name replaces it.",
               "description_kind": "plain",
               "type": "string"
             },

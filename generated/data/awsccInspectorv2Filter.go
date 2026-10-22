@@ -242,6 +242,25 @@ const awsccInspectorv2Filter = `{
                 "nesting_mode": "list"
               }
             },
+            "ecr_image_in_use_count": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "lower_inclusive": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  },
+                  "upper_inclusive": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
             "ecr_image_pushed_at": {
               "computed": true,
               "description_kind": "plain",

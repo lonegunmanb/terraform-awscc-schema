@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestAwsccCloudwatchAnomalyDetectorSchema(t *testing.T) {
+func TestAwsccSecurityhubActionTargetsSchema(t *testing.T) {
 	defaultSchema := &tfjson.Schema{}
-	s := data.AwsccCloudwatchAnomalyDetectorSchema()
+	s := data.AwsccSecurityhubActionTargetsSchema()
 	assert.NotNil(t, s)
 	assert.NotEqual(t, defaultSchema, s)
 }

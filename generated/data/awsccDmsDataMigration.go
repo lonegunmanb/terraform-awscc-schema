@@ -23,7 +23,7 @@ const awsccDmsDataMigration = `{
       },
       "data_migration_identifier": {
         "computed": true,
-        "description": "The property describes an ARN of the data migration.",
+        "description": "[DEPRECATED] This property is unused and will be ignored. Identity is managed via the resource ARN (primaryIdentifier) and Name (additionalIdentifier).",
         "description_kind": "plain",
         "type": "string"
       },

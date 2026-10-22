@@ -75,6 +75,24 @@ const awsccResiliencehubv2Service = `{
         "optional": true,
         "type": "string"
       },
+      "dev_ops_agent_configuration": {
+        "computed": true,
+        "description": "Links the service to an AWS DevOps Agent Agent Space. Provide AgentSpaceArn to connect the service; omit this property to leave an existing link unchanged. The DevOps Agent integration is governed by the service's resilience policy and operates in analysis-only mode.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "agent_space_arn": {
+              "computed": true,
+              "description": "The ARN of the DevOps Agent Agent Space to link to this service.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "effective_policy_values": {
         "computed": true,
         "description": "Effective policy values computed from the associated policy.",

@@ -11,6 +11,7 @@ const awsccBedrockagentcorePaymentManager = `{
     "attributes": {
       "authorizer_configuration": {
         "computed": true,
+        "description": "The authorizer configuration for the payment manager",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -113,6 +114,7 @@ const awsccBedrockagentcorePaymentManager = `{
       },
       "authorizer_type": {
         "computed": true,
+        "description": "The type of authorizer for the payment manager",
         "description_kind": "plain",
         "type": "string"
       },
@@ -148,7 +150,7 @@ const awsccBedrockagentcorePaymentManager = `{
       },
       "payment_manager_arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the payment manager",
+        "description": "The Amazon Resource Name (ARN) of the resource.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -166,31 +168,35 @@ const awsccBedrockagentcorePaymentManager = `{
       },
       "status": {
         "computed": true,
+        "description": "The current status of the payment manager",
         "description_kind": "plain",
         "type": "string"
       },
       "tags": {
         "computed": true,
-        "description": "Tags to assign to the payment manager",
+        "description": "An array of key-value pairs to apply to this resource.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "key": {
               "computed": true,
+              "description": "The key name of the tag.",
               "description_kind": "plain",
               "type": "string"
             },
             "value": {
               "computed": true,
+              "description": "The value for the tag.",
               "description_kind": "plain",
               "type": "string"
             }
           },
-          "nesting_mode": "list"
+          "nesting_mode": "set"
         }
       },
       "workload_identity_details": {
         "computed": true,
+        "description": "The workload identity details for the payment manager",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

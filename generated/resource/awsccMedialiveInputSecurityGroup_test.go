@@ -8,9 +8,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestAwsccCloudwatchAnomalyDetectorSchema(t *testing.T) {
+func TestAwsccMedialiveInputSecurityGroupSchema(t *testing.T) {
 	defaultSchema := &tfjson.Schema{}
-	s := resource.AwsccCloudwatchAnomalyDetectorSchema()
+	s := resource.AwsccMedialiveInputSecurityGroupSchema()
 	assert.NotNil(t, s)
 	assert.NotEqual(t, defaultSchema, s)
 }

@@ -51,9 +51,27 @@ const awsccTransferHostKey = `{
         "required": true,
         "type": "string"
       },
+      "kms_key": {
+        "computed": true,
+        "description": "The Amazon Resource Name (ARN) of a customer managed key used to encrypt the Secrets Manager secret that holds the host key. Applies only when StorageType is SECRETS_MANAGER. If omitted, the AWS managed key is used.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "secret_id": {
+        "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the Secrets Manager secret that holds the host key. Returned only when StorageType is SECRETS_MANAGER.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "server_id": {
         "computed": true,
         "description": "The identifier of the server that contains the host key.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "storage_type": {
+        "computed": true,
+        "description": "The type of storage used for the host key. SERVICE_MANAGED keys are stored within the Transfer Family service. SECRETS_MANAGER keys are stored in an AWS Secrets Manager secret in your account.",
         "description_kind": "plain",
         "type": "string"
       },

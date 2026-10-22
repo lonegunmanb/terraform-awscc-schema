@@ -430,6 +430,12 @@ const awsccDynamodbGlobalTable = `{
               "optional": true,
               "type": "bool"
             },
+            "disassociation_protection_enabled": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
             "global_secondary_indexes": {
               "computed": true,
               "description_kind": "plain",
@@ -873,6 +879,12 @@ const awsccDynamodbGlobalTable = `{
         "type": "string"
       },
       "table_name": {
+        "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "table_type": {
         "computed": true,
         "description_kind": "plain",
         "optional": true,

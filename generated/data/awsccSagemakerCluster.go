@@ -237,6 +237,12 @@ const awsccSagemakerCluster = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "image_release_version": {
+              "computed": true,
+              "description": "The version of the HyperPod-managed AMI for the instance group, in semantic version format MAJOR.MINOR.PATCH (for example, 1.2.3). Supported only for EKS-orchestrated clusters. If omitted at creation, the latest available version is used (or the version of an existing same-architecture instance group when adding a group). Changing this value on an existing instance group triggers a software update via UpdateClusterSoftware. Automatic patching (AutoPatchConfig) and out-of-band software updates can advance the running version past this value; CloudFormation does not revert such changes and may report the property as drifted. Only an explicit change to this value in the template triggers an update.",
+              "description_kind": "plain",
+              "type": "string"
+            },
             "instance_count": {
               "computed": true,
               "description": "The number of instances you specified to add to the instance group of a SageMaker HyperPod cluster.",

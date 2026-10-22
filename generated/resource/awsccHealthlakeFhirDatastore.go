@@ -9,6 +9,24 @@ import (
 const awsccHealthlakeFhirDatastore = `{
   "block": {
     "attributes": {
+      "analytics_configuration": {
+        "computed": true,
+        "description": "The analytics configuration for the Data Store. Omitted when the Data Store can't carry analytics.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "status": {
+              "computed": true,
+              "description": "The analytics status for the Data Store.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "created_at": {
         "computed": true,
         "description": "The time that a Data Store was created.",
@@ -58,7 +76,7 @@ const awsccHealthlakeFhirDatastore = `{
       },
       "datastore_status": {
         "computed": true,
-        "description": "The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING', or 'DELETED'.",
+        "description": "The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'UPDATING', 'UPDATE_FAILED', 'DELETING', or 'DELETED'.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -113,6 +131,24 @@ const awsccHealthlakeFhirDatastore = `{
         },
         "optional": true
       },
+      "nlp_configuration": {
+        "computed": true,
+        "description": "The natural language processing (NLP) configuration for the Data Store.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "status": {
+              "computed": true,
+              "description": "The NLP status for the Data Store.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "preload_data_config": {
         "computed": true,
         "description": "The preloaded data configuration for the Data Store. Only data preloaded from Synthea is supported.",
@@ -125,6 +161,27 @@ const awsccHealthlakeFhirDatastore = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "profile_configuration": {
+        "computed": true,
+        "description": "The profile configuration for the Data Store.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "default_profiles": {
+              "computed": true,
+              "description": "The FHIR profiles the Data Store validates resources against by default, for example us-core-3.1.1.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "set",
+                "string"
+              ]
             }
           },
           "nesting_mode": "single"
