@@ -9,6 +9,12 @@ import (
 const awsccNeptunegraphGraph = `{
   "block": {
     "attributes": {
+      "create_time": {
+        "computed": true,
+        "description": "The time at which the graph was created.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "deletion_protection": {
         "computed": true,
         "description": "Value that indicates whether the Graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.\n\n_Default_: If not specified, the default value is true.",
@@ -170,6 +176,12 @@ const awsccNeptunegraphGraph = `{
         "description": "Specifies the number of replicas you want when finished. All replicas will be provisioned in different availability zones.\n\nReplica Count should always be less than or equal to 2.\n\n_Default_: If not specified, the default value is 1.",
         "description_kind": "plain",
         "type": "number"
+      },
+      "status": {
+        "computed": true,
+        "description": "The current status of the graph.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "tags": {
         "computed": true,

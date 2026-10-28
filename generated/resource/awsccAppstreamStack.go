@@ -247,6 +247,13 @@ const awsccAppstreamStack = `{
         "optional": true,
         "type": "string"
       },
+      "storage_connector_authentication": {
+        "computed": true,
+        "description": "Controls whether stored OneDrive and Google Drive authentication is retained between streaming sessions. Valid values: FORCE_REAUTHENTICATION | REUSE_CREDENTIALS.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "storage_connectors": {
         "computed": true,
         "description": "The storage connectors to enable.",

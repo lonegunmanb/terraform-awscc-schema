@@ -23,13 +23,13 @@ const awsccGuarddutyMaster = `{
       },
       "invitation_id": {
         "computed": true,
-        "description": "Value used to validate the master account to the member account.",
+        "description": "Value used to validate the administrator account to the member account.",
         "description_kind": "plain",
         "type": "string"
       },
       "master_id": {
         "computed": true,
-        "description": "ID of the account used as the master account.",
+        "description": "ID of the account used as the administrator account.",
         "description_kind": "plain",
         "type": "string"
       }

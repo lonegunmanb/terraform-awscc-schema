@@ -39,6 +39,11 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "adobe_analytics_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "amazon_bedrock_ars_action": {
               "computed": true,
               "description_kind": "plain",
@@ -79,6 +84,16 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "athena_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "aurora_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "automate": {
               "computed": true,
               "description_kind": "plain",
@@ -89,7 +104,17 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "bedrock_managed_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "box_agent_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "box_knowledge_base": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -120,6 +145,16 @@ const awsccQuicksightCustomPermissions = `{
               "type": "string"
             },
             "confluence_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "confluence_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_adobe_analytics_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -159,7 +194,17 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "create_and_update_bedrock_managed_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "create_and_update_box_agent_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_and_update_box_knowledge_base": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -180,6 +225,11 @@ const awsccQuicksightCustomPermissions = `{
               "type": "string"
             },
             "create_and_update_confluence_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_and_update_confluence_knowledge_base": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -219,12 +269,22 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "create_and_update_google_drive_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "create_and_update_hubspot_action": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
             "create_and_update_hugging_face_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_and_update_idc_knowledge_base": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -284,12 +344,27 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "create_and_update_one_drive_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "create_and_update_open_api_action": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
             "create_and_update_pager_duty_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_and_update_q_business_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_and_update_s3_knowledge_base": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -344,6 +419,11 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "create_and_update_share_point_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "create_and_update_slack_action": {
               "computed": true,
               "description_kind": "plain",
@@ -369,7 +449,22 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "create_and_update_web_crawler_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "create_and_update_zendesk_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_athena_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_aurora_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -384,7 +479,177 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "create_databricks_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_db_2_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_denodo_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_document_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_dremio_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_dynamo_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_exasol_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_file_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_git_hub_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_google_analytics_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_google_big_query_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_google_sheets_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_impala_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_jira_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_maria_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_mongo_atlas_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_mongo_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_my_sql_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_open_search_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_oracle_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_pay_pal_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_postgre_sql_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_presto_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_radiant_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_rds_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_redshift_auto_discovered_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_redshift_manual_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_s3_analytics_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_s3_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_s3_tables_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_salesforce_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_sap_hana_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_service_now_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "create_shared_folders": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_snowflake_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -394,7 +659,47 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "create_spark_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "create_spice_dataset": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_sql_server_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_square_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_starburst_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_teradata_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_timestream_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_trino_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "create_twitter_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -404,7 +709,42 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "databricks_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "db_2_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "denodo_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "document_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "dremio_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "dynamo_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "edit_visual_with_q": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "exasol_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -449,6 +789,11 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "file_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "flow": {
               "computed": true,
               "description_kind": "plain",
@@ -459,12 +804,37 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "git_hub_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "github_action": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
+            "google_analytics_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "google_big_query_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "google_calendar_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "google_drive_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "google_sheets_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -475,6 +845,21 @@ const awsccQuicksightCustomPermissions = `{
               "type": "string"
             },
             "hugging_face_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "idc_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "impala_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "inbound_email_trigger": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -499,6 +884,11 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "jira_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "knowledge_base": {
               "computed": true,
               "description_kind": "plain",
@@ -514,6 +904,11 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "maria_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "mcp_action": {
               "computed": true,
               "description_kind": "plain",
@@ -524,12 +919,27 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "mongo_atlas_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "mongo_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "ms_exchange_action": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
             "ms_teams_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "my_sql_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -549,7 +959,22 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "one_drive_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "open_api_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "open_search_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "oracle_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -559,7 +984,22 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "pay_pal_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "perform_flow_ui_task": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "postgre_sql_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "presto_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -574,6 +1014,36 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "q_business_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "quick_event_trigger": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "radiant_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "rds_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "redshift_auto_discovered_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "redshift_manual_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "rename_shared_folders": {
               "computed": true,
               "description_kind": "plain",
@@ -584,7 +1054,32 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "s3_analytics_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "s3_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "s3_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "s3_tables_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "salesforce_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "salesforce_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -609,6 +1104,11 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "sap_hana_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "sap_material_stock_action": {
               "computed": true,
               "description_kind": "plain",
@@ -624,7 +1124,22 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "schedule_trigger": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "service_now_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "service_now_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_adobe_analytics_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -664,12 +1179,32 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_athena_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_aurora_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_bamboo_hr_action": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
+            "share_bedrock_managed_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_box_agent_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_box_knowledge_base": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -699,6 +1234,11 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_confluence_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_dashboards": {
               "computed": true,
               "description_kind": "plain",
@@ -709,7 +1249,42 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_databricks_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_datasets": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_db_2_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_denodo_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_document_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_dremio_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_dynamo_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_exasol_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -719,7 +1294,17 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_file_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_generic_http_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_git_hub_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -729,7 +1314,27 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_google_analytics_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_google_big_query_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_google_calendar_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_google_drive_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_google_sheets_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -744,12 +1349,27 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_idc_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_impala_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_intercom_action": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
             "share_jira_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_jira_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -764,6 +1384,11 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_maria_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_mcp_action": {
               "computed": true,
               "description_kind": "plain",
@@ -774,12 +1399,27 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_mongo_atlas_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_mongo_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_ms_exchange_action": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
             "share_ms_teams_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_my_sql_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -799,7 +1439,22 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_one_drive_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_open_api_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_open_search_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_oracle_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -809,12 +1464,82 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_pay_pal_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_point_action": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
+            "share_point_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_postgre_sql_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_presto_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_q_business_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_radiant_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_rds_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_redshift_auto_discovered_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_redshift_manual_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_s3_analytics_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_s3_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_s3_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_s3_tables_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_salesforce_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_salesforce_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -839,6 +1564,11 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_sap_hana_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_sap_material_stock_action": {
               "computed": true,
               "description_kind": "plain",
@@ -859,7 +1589,17 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_service_now_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_share_point_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_share_point_knowledge_base": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -874,12 +1614,62 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "share_snowflake_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_spaces": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
+            "share_spark_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_sql_server_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_square_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_starburst_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_teradata_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "share_textract_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_timestream_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_trino_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_twitter_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "share_web_crawler_knowledge_base": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -899,7 +1689,32 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "snowflake_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "space": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "spark_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "sql_server_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "square_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "starburst_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -909,12 +1724,262 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "teradata_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "textract_action": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
+            "timestream_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "topic": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "trigger": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "trino_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "twitter_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_adobe_analytics_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_athena_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_aurora_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_databricks_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_db_2_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_denodo_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_document_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_dremio_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_dynamo_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_exasol_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_file_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_git_hub_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_google_analytics_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_google_big_query_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_google_sheets_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_impala_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_jira_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_maria_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_mongo_atlas_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_mongo_db_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_my_sql_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_open_search_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_oracle_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_pay_pal_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_postgre_sql_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_presto_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_radiant_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_rds_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_redshift_auto_discovered_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_redshift_manual_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_s3_analytics_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_s3_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_s3_tables_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_salesforce_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_sap_hana_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_service_now_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_snowflake_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_spark_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_sql_server_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_square_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_starburst_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_teradata_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_timestream_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_trino_data_source": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "update_twitter_data_source": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -954,12 +2019,27 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "use_bedrock_managed_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "use_bedrock_models": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
             "use_box_agent_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "use_box_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "use_browser_extension": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -984,6 +2064,16 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "use_confluence_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "use_excel_add_in_extension": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "use_fact_set_action": {
               "computed": true,
               "description_kind": "plain",
@@ -1004,12 +2094,22 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "use_google_drive_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "use_hubspot_action": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
             "use_hugging_face_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "use_idc_knowledge_base": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -1064,12 +2164,37 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "use_one_drive_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "use_open_api_action": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
+            "use_outlook_add_in_extension": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "use_pager_duty_action": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "use_powerpoint_add_in_extension": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "use_q_business_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "use_s3_knowledge_base": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
@@ -1124,6 +2249,11 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "use_share_point_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "use_slack_action": {
               "computed": true,
               "description_kind": "plain",
@@ -1139,12 +2269,27 @@ const awsccQuicksightCustomPermissions = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "use_web_crawler_knowledge_base": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "use_word_add_in_extension": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "use_zendesk_action": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"
             },
             "view_account_spice_capacity": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "web_crawler_knowledge_base": {
               "computed": true,
               "description_kind": "plain",
               "type": "string"

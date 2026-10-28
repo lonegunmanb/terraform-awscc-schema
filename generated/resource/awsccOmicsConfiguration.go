@@ -67,6 +67,13 @@ const awsccOmicsConfiguration = `{
                       "list",
                       "string"
                     ]
+                  },
+                  "vpc_owner_account_id": {
+                    "computed": true,
+                    "description": "The Amazon Web Services account ID of the cross-account VPC owner for RAM-shared VPC configurations.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
                   }
                 },
                 "nesting_mode": "single"

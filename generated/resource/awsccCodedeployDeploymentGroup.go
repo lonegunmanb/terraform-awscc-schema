@@ -328,6 +328,27 @@ const awsccCodedeployDeploymentGroup = `{
         },
         "optional": true
       },
+      "ec_2_deployment_options": {
+        "computed": true,
+        "description": "Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during deployments to the deployment group. Applies only to in-place deployment groups on the EC2/On-premises compute platform that include at least one Auto Scaling group.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "auto_scaling_group_processes_to_suspend": {
+              "computed": true,
+              "description": "The Amazon EC2 Auto Scaling processes to suspend during an in-place deployment. CodeDeploy suspends these processes before it deploys to instances in an Auto Scaling group, and resumes them when the deployment succeeds, fails, or is stopped. Valid values are Terminate, AZRebalance, InstanceRefresh, and ScheduledActions. Process names are case sensitive. To stop suspending processes, remove the property.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "set",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "ec_2_tag_filters": {
         "computed": true,
         "description": "The Amazon EC2 tags that are already applied to Amazon EC2 instances that you want to include in the deployment group. CodeDeploy includes all Amazon EC2 instances identified by any of the tags you specify in this deployment group. Duplicates are not allowed. You can specify EC2TagFilters or Ec2TagSet, but not both.",
