@@ -11,13 +11,13 @@ const awsccCloudwatchDomainAccessGrantForOrganization = `{
     "attributes": {
       "arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the organization access grant.",
+        "description": "The Amazon Resource Name (ARN) of the access grant.",
         "description_kind": "plain",
         "type": "string"
       },
       "created_at": {
         "computed": true,
-        "description": "The time the grant was created.",
+        "description": "The timestamp when the grant was created.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -29,19 +29,19 @@ const awsccCloudwatchDomainAccessGrantForOrganization = `{
       },
       "domain_id": {
         "computed": true,
-        "description": "The unique identifier of the organization domain the grant applies to.",
+        "description": "The ID of the organization domain the grant belongs to.",
         "description_kind": "plain",
         "type": "string"
       },
       "grant_id": {
         "computed": true,
-        "description": "The unique identifier of the grant.",
+        "description": "The unique ID of the access grant.",
         "description_kind": "plain",
         "type": "string"
       },
       "grant_type": {
         "computed": true,
-        "description": "Whether the grant is managed by the service or by the customer.",
+        "description": "Who manages the grant.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -53,19 +53,19 @@ const awsccCloudwatchDomainAccessGrantForOrganization = `{
       },
       "name": {
         "computed": true,
-        "description": "The name of the grant.",
+        "description": "A name that identifies the access grant.",
         "description_kind": "plain",
         "type": "string"
       },
       "permission": {
         "computed": true,
-        "description": "The permission level the grant confers. Organization grants are administrative only.",
+        "description": "The permission granted.",
         "description_kind": "plain",
         "type": "string"
       },
       "principal": {
         "computed": true,
-        "description": "The principal the grant is issued to. Supply PrincipalId, or PrincipalAttributes for an attribute-based grant.",
+        "description": "The principal receiving the grant.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -131,7 +131,7 @@ const awsccCloudwatchDomainAccessGrantForOrganization = `{
       },
       "updated_at": {
         "computed": true,
-        "description": "The time the grant was last updated.",
+        "description": "The timestamp when the grant was last updated.",
         "description_kind": "plain",
         "type": "string"
       }

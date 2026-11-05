@@ -11,7 +11,7 @@ const awsccCloudwatchDomain = `{
     "attributes": {
       "arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the resource.",
+        "description": "The Amazon Resource Name (ARN) of the domain.",
         "description_kind": "plain",
         "type": "string"
       },

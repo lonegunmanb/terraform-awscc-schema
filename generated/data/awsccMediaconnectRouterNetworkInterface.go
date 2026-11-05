@@ -112,7 +112,7 @@ const awsccMediaconnectRouterNetworkInterface = `{
       },
       "region_name": {
         "computed": true,
-        "description": "The AWS Region for the router network interface. Defaults to the current region if not specified.",
+        "description": "The Amazon Web Services Region for the router network interface. Defaults to the current region if not specified.",
         "description_kind": "plain",
         "type": "string"
       },

@@ -14,6 +14,15 @@ const awsccMediaconnectRouterInput = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "associated_destination_endpoint_arns": {
+        "computed": true,
+        "description": "The Amazon Resource Names (ARNs) of one or more destination endpoints that are associated with this router input.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "availability_zone": {
         "computed": true,
         "description": "The Availability Zone where you want to create the router input. This must be a valid Availability Zone for the region specified by regionName, or the current region if no regionName is provided.",
@@ -26,6 +35,82 @@ const awsccMediaconnectRouterInput = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "destination_endpoint": {
+              "computed": true,
+              "description": "Configuration settings for a router input that is represented by a destination endpoint.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "endpoint_lifecycle_management": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "source_transit_decryption": {
+                    "computed": true,
+                    "description": "The encryption settings for an endpoint connection. This is a union type, so exactly one of its members is set: secretsManager when you store the encryption key or passphrase in Secrets Manager, or automatic when you let MediaConnect determine the encryption key when the endpoint connects.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "automatic": {
+                          "computed": true,
+                          "description": "The configuration for automatic endpoint encryption. In this mode, MediaConnect determines the encryption key when the endpoint connects. This type does not require any additional settings.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "secrets_manager": {
+                          "computed": true,
+                          "description": "The endpoint encryption configuration for connections that use a key or passphrase that you store in Secrets Manager.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "encryption_secret": {
+                                "computed": true,
+                                "description": "The configuration for the Secrets Manager secret that holds the key or passphrase used to encrypt an endpoint connection.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "secret_arn": {
+                                      "computed": true,
+                                      "description": "The ARN of the Secrets Manager secret that holds the key or passphrase. The secret must be encrypted with a customer managed Amazon Web Services KMS key that is enabled and symmetric; it cannot use the Amazon Web Services managed key aws/secretsmanager. The secret must be in the same Amazon Web Services account and Region as the endpoint.",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "encryption_secret_type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "source_transit_decryption_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "failover": {
               "computed": true,
               "description": "Configuration settings for a failover router input that allows switching between two input sources.",
@@ -255,7 +340,7 @@ const awsccMediaconnectRouterInput = `{
             },
             "media_connect_flow": {
               "computed": true,
-              "description": "Configuration settings for connecting a router input to a flow output.",
+              "description": "Configuration settings for connecting a router input to a flow output. To connect the router input to the flow output, provide both flowArn and flowOutputArn. To disconnect it, call the update operation and omit both fields while keeping this configuration object. You can't change sourceTransitDecryption while the router input is connected to a flow output. To change it, first disconnect the router input, then update the decryption.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
@@ -340,7 +425,7 @@ const awsccMediaconnectRouterInput = `{
             },
             "media_live_channel": {
               "computed": true,
-              "description": "Configuration settings for connecting a router input to a MediaLive channel output.",
+              "description": "Configuration settings for connecting a router input to a MediaLive channel output. To connect the router input to the MediaLive channel output, provide all three of mediaLiveChannelArn, mediaLivePipelineId, and mediaLiveChannelOutputName. To disconnect it, call the update operation and omit all three fields while keeping this configuration object. You can't change sourceTransitDecryption while the router input is connected to a MediaLive channel output. To change it, first disconnect the router input, then update the decryption.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {

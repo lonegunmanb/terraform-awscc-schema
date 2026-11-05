@@ -389,6 +389,12 @@ const awsccBedrockagentcoreGateway = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "disable_mcp_list_tools_pagination": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
                   "instructions": {
                     "computed": true,
                     "description_kind": "plain",

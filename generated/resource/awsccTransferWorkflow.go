@@ -625,6 +625,16 @@ const awsccTransferWorkflow = `{
         },
         "required": true
       },
+      "structured_log_destinations": {
+        "computed": true,
+        "description": "Specifies the log destinations for the workflow.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "tags": {
         "computed": true,
         "description": "Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.",

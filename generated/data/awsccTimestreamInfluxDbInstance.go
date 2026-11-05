@@ -33,6 +33,12 @@ const awsccTimestreamInfluxDbInstance = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "db_cluster_id": {
+        "computed": true,
+        "description": "The service generated unique identifier of the InfluxDB cluster containing this instance.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "db_instance_type": {
         "computed": true,
         "description": "The compute instance of the InfluxDB instance.",
@@ -78,6 +84,12 @@ const awsccTimestreamInfluxDbInstance = `{
       "influx_db_instance_id": {
         "computed": true,
         "description": "The service generated unique identifier for InfluxDB instance.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "kms_key_id": {
+        "computed": true,
+        "description": "The customer managed key used to encrypt data in the InfluxDB instance.",
         "description_kind": "plain",
         "type": "string"
       },

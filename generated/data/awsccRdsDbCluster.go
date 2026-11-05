@@ -557,6 +557,11 @@ const awsccRdsDbCluster = `{
           "list",
           "string"
         ]
+      },
+      "with_express_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
       }
     },
     "description": "Data Source schema for AWS::RDS::DBCluster",

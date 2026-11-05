@@ -28,6 +28,13 @@ const awsccRoute53ProfilesProfileAssociation = `{
         "required": true,
         "type": "string"
       },
+      "priority": {
+        "computed": true,
+        "description": "The priority of the profile association, used to order the profiles applied to a VPC when multiple profiles are associated with it. Lower values have higher precedence. Omit for the first profile associated with a VPC. This orders whole profiles on a VPC and is distinct from the DNS Firewall rule group priority carried in a ProfileResourceAssociation's ResourceProperties.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "number"
+      },
       "profile_association_id": {
         "computed": true,
         "description": "Primary Identifier for  Profile Association",

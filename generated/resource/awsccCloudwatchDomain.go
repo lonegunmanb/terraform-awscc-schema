@@ -11,7 +11,7 @@ const awsccCloudwatchDomain = `{
     "attributes": {
       "arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the resource.",
+        "description": "The Amazon Resource Name (ARN) of the domain.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -142,7 +142,7 @@ const awsccCloudwatchDomain = `{
         "type": "string"
       }
     },
-    "description": "The account-level boundary for CloudWatch Omni. A domain configures the\nidentity providers users sign in through and exposes the endpoint URLs used\nto reach CloudWatch Omni. Spaces are created within a domain.",
+    "description": "Resource Type definition for AWS::CloudWatch::Domain. A domain is the identity and access boundary for CloudWatch Omni. It configures the identity providers users sign in through and provides the sign-in URL for your team.",
     "description_kind": "plain"
   },
   "version": 1

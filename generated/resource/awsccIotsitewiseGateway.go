@@ -30,7 +30,7 @@ const awsccIotsitewiseGateway = `{
               "type": "string"
             }
           },
-          "nesting_mode": "list"
+          "nesting_mode": "set"
         },
         "optional": true
       },
@@ -136,7 +136,7 @@ const awsccIotsitewiseGateway = `{
         "optional": true
       }
     },
-    "description": "Resource schema for AWS::IoTSiteWise::Gateway",
+    "description": "Resource Type definition for AWS::IoTSiteWise::Gateway",
     "description_kind": "plain"
   },
   "version": 1

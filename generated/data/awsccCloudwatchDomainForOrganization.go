@@ -11,13 +11,13 @@ const awsccCloudwatchDomainForOrganization = `{
     "attributes": {
       "arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the resource.",
+        "description": "The Amazon Resource Name (ARN) of the organization domain.",
         "description_kind": "plain",
         "type": "string"
       },
       "created_at": {
         "computed": true,
-        "description": "The timestamp when the domain was created.",
+        "description": "The timestamp when the organization domain was created.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -32,19 +32,19 @@ const awsccCloudwatchDomainForOrganization = `{
       },
       "domain_access_role_arn": {
         "computed": true,
-        "description": "The ARN of an IAM role in the management account that CloudWatch Omni assumes for domain-scoped credential vending.",
+        "description": "The ARN of the customer-provided IAM role in the management account used for domain access.",
         "description_kind": "plain",
         "type": "string"
       },
       "domain_endpoint_url": {
         "computed": true,
-        "description": "The HTTPS endpoint URL for accessing the domain.",
+        "description": "The HTTPS endpoint URL for accessing the organization domain.",
         "description_kind": "plain",
         "type": "string"
       },
       "domain_id": {
         "computed": true,
-        "description": "The unique ID of the domain.",
+        "description": "The unique ID of the organization domain.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -62,7 +62,7 @@ const awsccCloudwatchDomainForOrganization = `{
       },
       "identity_provider_configuration": {
         "computed": true,
-        "description": "Identity provider configuration for the domain.",
+        "description": "Identity provider configuration for the organization domain.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -88,7 +88,7 @@ const awsccCloudwatchDomainForOrganization = `{
       },
       "identity_providers": {
         "computed": true,
-        "description": "The identity providers configured for the domain.",
+        "description": "The identity providers configured for the organization domain.",
         "description_kind": "plain",
         "type": [
           "list",
@@ -97,31 +97,31 @@ const awsccCloudwatchDomainForOrganization = `{
       },
       "name": {
         "computed": true,
-        "description": "A name that identifies the domain.",
+        "description": "A name that identifies the organization domain.",
         "description_kind": "plain",
         "type": "string"
       },
       "organization_id": {
         "computed": true,
-        "description": "The ID of the AWS Organization this domain belongs to.",
+        "description": "The ID of the AWS Organization that owns the domain.",
         "description_kind": "plain",
         "type": "string"
       },
       "owner_account_id": {
         "computed": true,
-        "description": "The account ID of the organization's management account, which owns this domain.",
+        "description": "The AWS account ID that owns the organization domain.",
         "description_kind": "plain",
         "type": "string"
       },
       "region": {
         "computed": true,
-        "description": "The Region where this domain was created.",
+        "description": "The Region where this organization domain was created.",
         "description_kind": "plain",
         "type": "string"
       },
       "status": {
         "computed": true,
-        "description": "Current status of the domain.",
+        "description": "Current status of the organization domain.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -149,7 +149,7 @@ const awsccCloudwatchDomainForOrganization = `{
       },
       "updated_at": {
         "computed": true,
-        "description": "The timestamp when the domain was last updated.",
+        "description": "The timestamp when the organization domain was last updated.",
         "description_kind": "plain",
         "type": "string"
       }

@@ -17,13 +17,13 @@ const awsccCloudwatchOmniDashboard = `{
       },
       "body": {
         "computed": true,
-        "description": "The dashboard body, a JSON document describing the dashboard's widgets and layout.",
+        "description": "The dashboard definition.",
         "description_kind": "plain",
         "type": "string"
       },
       "created_at": {
         "computed": true,
-        "description": "The time the dashboard was created.",
+        "description": "The timestamp when the dashboard was created.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -35,13 +35,13 @@ const awsccCloudwatchOmniDashboard = `{
       },
       "dashboard_id": {
         "computed": true,
-        "description": "The unique identifier of the dashboard.",
+        "description": "The unique ID of the dashboard.",
         "description_kind": "plain",
         "type": "string"
       },
       "description": {
         "computed": true,
-        "description": "The description of the dashboard.",
+        "description": "An optional description of the dashboard.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -53,13 +53,13 @@ const awsccCloudwatchOmniDashboard = `{
       },
       "name": {
         "computed": true,
-        "description": "The name of the dashboard.",
+        "description": "A name that identifies the dashboard.",
         "description_kind": "plain",
         "type": "string"
       },
       "space_id": {
         "computed": true,
-        "description": "The unique identifier of the space the dashboard belongs to.",
+        "description": "The unique ID of the space to create the dashboard in.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -87,7 +87,7 @@ const awsccCloudwatchOmniDashboard = `{
       },
       "updated_at": {
         "computed": true,
-        "description": "The time the dashboard was last updated.",
+        "description": "The timestamp when the dashboard was last updated.",
         "description_kind": "plain",
         "type": "string"
       }

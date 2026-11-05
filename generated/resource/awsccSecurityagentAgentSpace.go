@@ -177,6 +177,63 @@ const awsccSecurityagentAgentSpace = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "azure_dev_ops_capabilities": {
+                    "computed": true,
+                    "description": "Azure DevOps repository capabilities",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "leave_comments": {
+                          "computed": true,
+                          "description": "Enables Code Review in the repository",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        },
+                        "remediate_code": {
+                          "computed": true,
+                          "description": "Enables creation of pull requests with automated fixes",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "azure_dev_ops_repository": {
+                    "computed": true,
+                    "description": "Azure DevOps repository details",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "name": {
+                          "computed": true,
+                          "description": "Azure DevOps repository name",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "organization": {
+                          "computed": true,
+                          "description": "Read-only Azure DevOps organization that owns the repository, populated from service-side metadata",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "project": {
+                          "computed": true,
+                          "description": "Azure DevOps project that owns the repository",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "bitbucket_capabilities": {
                     "computed": true,
                     "description": "Bitbucket repository capabilities",

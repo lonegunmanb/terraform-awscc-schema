@@ -189,6 +189,25 @@ const awsccTransferServer = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "sftp_ports": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "communication_mode": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "sftp_port": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
             "tls_session_resumption_mode": {
               "computed": true,
               "description_kind": "plain",

@@ -16,14 +16,14 @@ const awsccCloudwatchOmniDashboard = `{
         "type": "string"
       },
       "body": {
-        "description": "The dashboard body, a JSON document describing the dashboard's widgets and layout.",
+        "description": "The dashboard definition.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
       "created_at": {
         "computed": true,
-        "description": "The time the dashboard was created.",
+        "description": "The timestamp when the dashboard was created.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -35,13 +35,13 @@ const awsccCloudwatchOmniDashboard = `{
       },
       "dashboard_id": {
         "computed": true,
-        "description": "The unique identifier of the dashboard.",
+        "description": "The unique ID of the dashboard.",
         "description_kind": "plain",
         "type": "string"
       },
       "description": {
         "computed": true,
-        "description": "The description of the dashboard.",
+        "description": "An optional description of the dashboard.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -53,13 +53,13 @@ const awsccCloudwatchOmniDashboard = `{
         "type": "string"
       },
       "name": {
-        "description": "The name of the dashboard.",
+        "description": "A name that identifies the dashboard.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
       "space_id": {
-        "description": "The unique identifier of the space the dashboard belongs to.",
+        "description": "The unique ID of the space to create the dashboard in.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
@@ -91,12 +91,12 @@ const awsccCloudwatchOmniDashboard = `{
       },
       "updated_at": {
         "computed": true,
-        "description": "The time the dashboard was last updated.",
+        "description": "The timestamp when the dashboard was last updated.",
         "description_kind": "plain",
         "type": "string"
       }
     },
-    "description": "Resource type definition for AWS::CloudWatch::OmniDashboard",
+    "description": "Resource Type definition for AWS::CloudWatch::OmniDashboard. A dashboard is a saved arrangement of panels that shows your team one agreed view of a system, backed by queries against your space's telemetry.",
     "description_kind": "plain"
   },
   "version": 1

@@ -124,6 +124,128 @@ const awsccBedrockagentcoreGatewayRule = `{
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
+                        "fallback": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "circuit_breaker": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "mode": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "first_byte_timeout_milliseconds": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              },
+                              "target_fallback": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "first_byte_timeout_milliseconds": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "number"
+                                    },
+                                    "model": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "target_name": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "trigger_on": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "errors": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          },
+                                          "status_codes": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
+                                    }
+                                  },
+                                  "nesting_mode": "list"
+                                },
+                                "optional": true
+                              },
+                              "trigger_on": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "errors": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "status_codes": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "model": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
                         "target_name": {
                           "computed": true,
                           "description_kind": "plain",
@@ -151,6 +273,122 @@ const awsccBedrockagentcoreGatewayRule = `{
                                 "optional": true,
                                 "type": "string"
                               },
+                              "fallback": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "circuit_breaker": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "mode": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
+                                    },
+                                    "first_byte_timeout_milliseconds": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "number"
+                                    },
+                                    "target_fallback": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "first_byte_timeout_milliseconds": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "number"
+                                          },
+                                          "model": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "target_name": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "trigger_on": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "errors": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "optional": true,
+                                                  "type": [
+                                                    "list",
+                                                    "string"
+                                                  ]
+                                                },
+                                                "status_codes": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "optional": true,
+                                                  "type": [
+                                                    "list",
+                                                    "string"
+                                                  ]
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            },
+                                            "optional": true
+                                          }
+                                        },
+                                        "nesting_mode": "list"
+                                      },
+                                      "optional": true
+                                    },
+                                    "trigger_on": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "errors": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          },
+                                          "status_codes": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": [
+                                              "list",
+                                              "string"
+                                            ]
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
                               "metadata": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -159,6 +397,12 @@ const awsccBedrockagentcoreGatewayRule = `{
                                   "map",
                                   "string"
                                 ]
+                              },
+                              "model": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
                               },
                               "name": {
                                 "computed": true,
@@ -203,6 +447,38 @@ const awsccBedrockagentcoreGatewayRule = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "match_models": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "any_of": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "operator": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "value": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "match_paths": {
               "computed": true,
               "description_kind": "plain",

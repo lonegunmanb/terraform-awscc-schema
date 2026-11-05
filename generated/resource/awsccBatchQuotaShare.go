@@ -66,9 +66,10 @@ const awsccBatchQuotaShare = `{
         "type": "string"
       },
       "quota_share_name": {
+        "computed": true,
         "description": "The name of the quota share. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "resource_sharing_configuration": {
