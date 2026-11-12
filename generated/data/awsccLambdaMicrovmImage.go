@@ -208,6 +208,12 @@ const awsccLambdaMicrovmImage = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "kms_key_identifier": {
+        "computed": true,
+        "description": "The customer managed KMS key used to encrypt the MicroVM image configuration at rest. When omitted, a service owned key is used.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "latest_active_image_version": {
         "computed": true,
         "description": "The latest active version of the MicroVM image.",

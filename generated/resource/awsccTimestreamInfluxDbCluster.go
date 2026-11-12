@@ -57,6 +57,12 @@ const awsccTimestreamInfluxDbCluster = `{
         "optional": true,
         "type": "string"
       },
+      "effective_db_parameter_group_identifier": {
+        "computed": true,
+        "description": "The parameter group actually applied to the InfluxDB cluster. When the service applies optimized defaults it creates a system-managed parameter group and this field reflects that effective parameter group, while DbParameterGroupIdentifier continues to reflect the customer-provided parameter group. When no service-managed parameter group is applied, this equals DbParameterGroupIdentifier.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "endpoint": {
         "computed": true,
         "description": "The connection endpoint for the InfluxDB cluster.",
@@ -92,6 +98,13 @@ const awsccTimestreamInfluxDbCluster = `{
         "computed": true,
         "description": "The service generated unique identifier for InfluxDB cluster.",
         "description_kind": "plain",
+        "type": "string"
+      },
+      "kms_key_id": {
+        "computed": true,
+        "description": "The customer managed key used to encrypt data in the InfluxDB cluster.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "log_delivery_configuration": {
@@ -154,6 +167,34 @@ const awsccTimestreamInfluxDbCluster = `{
           "nesting_mode": "single"
         },
         "optional": true
+      },
+      "member_count": {
+        "computed": true,
+        "description": "The number of DB instances that belong to the InfluxDB cluster.",
+        "description_kind": "plain",
+        "type": "number"
+      },
+      "member_mode_counts": {
+        "computed": true,
+        "description": "DB cluster member counts grouped by instance mode.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "count": {
+              "computed": true,
+              "description": "The number of DB cluster members reporting this instance mode.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "mode": {
+              "computed": true,
+              "description": "The instance mode reported by DB cluster members.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
       },
       "name": {
         "computed": true,

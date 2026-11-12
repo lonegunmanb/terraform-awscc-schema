@@ -35,7 +35,7 @@ const awsccSesCustomVerificationEmailTemplate = `{
       },
       "tags": {
         "computed": true,
-        "description": "The tags (keys and values) associated with the tenant.",
+        "description": "The tags (keys and values) associated with the custom verification email template.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

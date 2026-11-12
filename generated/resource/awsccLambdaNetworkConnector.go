@@ -34,12 +34,6 @@ const awsccLambdaNetworkConnector = `{
                       "string"
                     ]
                   },
-                  "elastic_ip_configuration": {
-                    "computed": true,
-                    "description_kind": "plain",
-                    "optional": true,
-                    "type": "string"
-                  },
                   "network_protocol": {
                     "description": "The network protocol for the connector. Specify IPv4 for IPv4-only networking, or DualStack for both IPv4 and IPv6.",
                     "description_kind": "plain",
@@ -101,7 +95,7 @@ const awsccLambdaNetworkConnector = `{
       },
       "operator_role": {
         "computed": true,
-        "description": "The ARN of the IAM role that Lambda assumes to manage elastic network interfaces in your VPC. This role must have permissions for ec2:CreateNetworkInterface and related describe operations. If ElasticIpConfiguration Type is ServiceManaged, this role must also have permissions for ec2:AllocateAddress and ec2:AssociateAddress.",
+        "description": "The ARN of the IAM role that Lambda assumes to manage elastic network interfaces in your VPC. This role must have permissions for ec2:CreateNetworkInterface and related describe operations.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

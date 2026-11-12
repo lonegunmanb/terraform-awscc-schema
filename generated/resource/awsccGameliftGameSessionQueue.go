@@ -66,6 +66,42 @@ const awsccGameliftGameSessionQueue = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "log_configuration": {
+        "computed": true,
+        "description": "A policy that determines where a game session queue's placement logs are delivered.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "delivery_destinations": {
+              "computed": true,
+              "description": "The set of destinations that receive the game session queue's placement logs. A queue can deliver logs to between 1 and 3 destinations.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "destination_arn": {
+                    "computed": true,
+                    "description": "The Amazon Resource Name (ARN) of the resource that receives the placement logs. The resource type must match LogDestination (a CloudWatch Logs log group, S3 bucket, or Firehose delivery stream). Required for FIREHOSE; optional for CLOUDWATCH and S3.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "log_destination": {
+                    "computed": true,
+                    "description": "The type of service that receives the game session queue's placement logs.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "name": {
         "description": "A descriptive label that is associated with game session queue. Queue names must be unique within each Region.",
         "description_kind": "plain",

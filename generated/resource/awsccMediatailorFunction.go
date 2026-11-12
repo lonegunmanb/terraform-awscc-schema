@@ -28,6 +28,38 @@ const awsccMediatailorFunction = `{
               "optional": true,
               "type": "string"
             },
+            "cache": {
+              "computed": true,
+              "description": "The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the AWS service, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description": "A JSONata expression that MediaTailor evaluates to a custom cache key. By default, the cache key is a hash of the HTTP URL, request body, and HTTP method; request headers are not included. The evaluated key must be smaller than 1 KB.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "ttl_maximum_seconds": {
+                    "computed": true,
+                    "description": "The upper bound, in seconds, on how long MediaTailor caches a response. This value must be greater than or equal to TtlMinimumSeconds.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "ttl_minimum_seconds": {
+                    "computed": true,
+                    "description": "The lower bound, in seconds, on how long MediaTailor caches a response. MediaTailor also uses this value as the cache duration when a response has no Cache-Control max-age directive.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "headers": {
               "computed": true,
               "description": "A map of HTTP header names to expression values. MediaTailor evaluates each header value expression at runtime and includes the result in the outbound request to the AWS service. Use this to pass any headers required by the target service operation. You can include a maximum of 50 headers.",
@@ -228,6 +260,38 @@ const awsccMediatailorFunction = `{
               "optional": true,
               "type": "string"
             },
+            "cache": {
+              "computed": true,
+              "description": "The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the HTTP endpoint, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description": "A JSONata expression that MediaTailor evaluates to a custom cache key. By default, the cache key is a hash of the HTTP URL, request body, and HTTP method; request headers are not included. The evaluated key must be smaller than 1 KB.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "ttl_maximum_seconds": {
+                    "computed": true,
+                    "description": "The upper bound, in seconds, on how long MediaTailor caches a response. This value must be greater than or equal to TtlMinimumSeconds.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "ttl_minimum_seconds": {
+                    "computed": true,
+                    "description": "The lower bound, in seconds, on how long MediaTailor caches a response. MediaTailor also uses this value as the cache duration when a response has no Cache-Control max-age directive.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "headers": {
               "computed": true,
               "description": "A map of HTTP headers to include in the request.",
@@ -389,6 +453,38 @@ const awsccMediatailorFunction = `{
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "cache": {
+              "computed": true,
+              "description": "The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the HTTP endpoint, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "key": {
+                    "computed": true,
+                    "description": "A JSONata expression that MediaTailor evaluates to a custom cache key. By default, the cache key is a hash of the HTTP URL, request body, and HTTP method; request headers are not included. The evaluated key must be smaller than 1 KB.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "ttl_maximum_seconds": {
+                    "computed": true,
+                    "description": "The upper bound, in seconds, on how long MediaTailor caches a response. This value must be greater than or equal to TtlMinimumSeconds.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  },
+                  "ttl_minimum_seconds": {
+                    "computed": true,
+                    "description": "The lower bound, in seconds, on how long MediaTailor caches a response. MediaTailor also uses this value as the cache duration when a response has no Cache-Control max-age directive.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             },
             "headers": {
               "computed": true,

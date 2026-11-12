@@ -734,6 +734,22 @@ const awsccEcsDaemonTaskDefinition = `{
               },
               "optional": true
             },
+            "log_driver_volume_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "driver": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "name": {
               "computed": true,
               "description": "The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.\n When using a volume configured at launch, the ` + "`" + `` + "`" + `name` + "`" + `` + "`" + ` is required and must also be specified as the volume name in the ` + "`" + `` + "`" + `ServiceVolumeConfiguration` + "`" + `` + "`" + ` or ` + "`" + `` + "`" + `TaskVolumeConfiguration` + "`" + `` + "`" + ` parameter when creating your service or standalone task.\n For all other types of volumes, this name is referenced in the ` + "`" + `` + "`" + `sourceVolume` + "`" + `` + "`" + ` parameter of the ` + "`" + `` + "`" + `mountPoints` + "`" + `` + "`" + ` object in the container definition.\n When a volume is using the ` + "`" + `` + "`" + `efsVolumeConfiguration` + "`" + `` + "`" + `, the name is required.\n When a volume is using the ` + "`" + `` + "`" + `s3filesVolumeConfiguration` + "`" + `` + "`" + `, the name is required.",

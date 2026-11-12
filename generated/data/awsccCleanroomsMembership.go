@@ -53,6 +53,11 @@ const awsccCleanroomsMembership = `{
                           "computed": true,
                           "description_kind": "plain",
                           "type": "string"
+                        },
+                        "result_format": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
                         }
                       },
                       "nesting_mode": "single"

@@ -486,6 +486,11 @@ const awsccEcsCapacityProvider = `{
                       "nesting_mode": "single"
                     }
                   },
+                  "nitro_enclaves_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
                   "storage_configuration": {
                     "computed": true,
                     "description_kind": "plain",

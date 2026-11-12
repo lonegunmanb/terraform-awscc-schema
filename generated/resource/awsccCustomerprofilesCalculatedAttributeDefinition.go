@@ -180,6 +180,81 @@ const awsccCustomerprofilesCalculatedAttributeDefinition = `{
         "required": true,
         "type": "string"
       },
+      "filter": {
+        "computed": true,
+        "description": "Defines how to filter the objects coming in for calculated attributes.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "groups": {
+              "computed": true,
+              "description": "Holds the list of Filter groups within the Filter definition.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "dimensions": {
+                    "computed": true,
+                    "description": "Object that holds the attributes to filter on.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "attributes": {
+                          "computed": true,
+                          "description": "Is the attribute within the FilterDimension map",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "dimension_type": {
+                                "computed": true,
+                                "description": "The action to filter with.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "values": {
+                                "computed": true,
+                                "description": "The values to apply the DimensionType on.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": [
+                                  "set",
+                                  "string"
+                                ]
+                              }
+                            },
+                            "nesting_mode": "map"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "set"
+                    },
+                    "optional": true
+                  },
+                  "type": {
+                    "computed": true,
+                    "description": "The type of logical relationship between the dimensions of the Filter group.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              },
+              "optional": true
+            },
+            "include": {
+              "computed": true,
+              "description": "Define whether to include or exclude objects for Calculated Attributed calculation that fit the filter groups criteria.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

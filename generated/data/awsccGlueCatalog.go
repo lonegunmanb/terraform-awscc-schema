@@ -172,7 +172,7 @@ const awsccGlueCatalog = `{
         "computed": true,
         "description": "The time at which the catalog was created.",
         "description_kind": "plain",
-        "type": "number"
+        "type": "string"
       },
       "description": {
         "computed": true,
@@ -277,7 +277,7 @@ const awsccGlueCatalog = `{
         "computed": true,
         "description": "The time at which the catalog was last updated.",
         "description_kind": "plain",
-        "type": "number"
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::Glue::Catalog",

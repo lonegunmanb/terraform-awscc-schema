@@ -558,6 +558,12 @@ const awsccEcsCapacityProvider = `{
                     },
                     "optional": true
                   },
+                  "nitro_enclaves_enabled": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "bool"
+                  },
                   "storage_configuration": {
                     "computed": true,
                     "description_kind": "plain",

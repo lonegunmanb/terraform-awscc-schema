@@ -152,6 +152,85 @@ const awsccCustomerprofilesEventTrigger = `{
         "required": true,
         "type": "string"
       },
+      "intent_filter_definition": {
+        "computed": true,
+        "description": "Filters the destination to profiles whose predicted intents meet the specified conditions.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "groups": {
+              "computed": true,
+              "description": "A list of intent filter groups combined by the definition's logical operator.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "conditions": {
+                    "computed": true,
+                    "description": "A list of intent filter conditions.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "comparison_operator": {
+                          "computed": true,
+                          "description": "The operator used to compare the predicted intent against a list of values.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "intent": {
+                          "computed": true,
+                          "description": "Identifies a predicted intent by domain and type.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "intent_domain": {
+                                "computed": true,
+                                "description": "The domain of the intent.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "type": {
+                                "computed": true,
+                                "description": "The type of the intent.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "values": {
+                          "computed": true,
+                          "description": "A list of intent values used for comparison.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
+                  "logical_operator": {
+                    "computed": true,
+                    "description": "The operator used to combine multiple dimensions.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
+            "logical_operator": {
+              "computed": true,
+              "description": "The operator used to combine multiple dimensions.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "last_updated_at": {
         "computed": true,
         "description": "The timestamp of when the event trigger was most recently updated.",

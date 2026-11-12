@@ -105,6 +105,12 @@ const awsccPcsComputeNodeGroup = `{
           "nesting_mode": "list"
         }
       },
+      "launch_template_mode": {
+        "computed": true,
+        "description": "How AWS PCS gets the launch template for the compute node group. CUSTOM uses CustomLaunchTemplate. MANAGED has AWS PCS generate and manage the launch template from the instance settings; omit CustomLaunchTemplate. Defaults to CUSTOM on create.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "name": {
         "computed": true,
         "description": "The name that identifies the compute node group.",
@@ -295,6 +301,15 @@ const awsccPcsComputeNodeGroup = `{
           "nesting_mode": "single"
         }
       },
+      "security_group_ids": {
+        "computed": true,
+        "description": "The IDs of the EC2 security groups configured directly on the compute node group. These replace the security groups from the custom launch template. A request cannot specify this property with a launch template that defines NetworkInterfaces. When not provided and a custom launch template is present, AWS PCS uses the security groups from the launch template.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
+      },
       "slurm_configuration": {
         "computed": true,
         "description": "Additional options related to the Slurm scheduler.",
@@ -360,6 +375,12 @@ const awsccPcsComputeNodeGroup = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "ssh_key_name": {
+        "computed": true,
+        "description": "The name of the EC2 key pair configured directly on the compute node group. The key pair must exist in the caller's account and Region and overrides the key pair from the custom launch template. When not provided and a custom launch template is present, AWS PCS uses the key pair from the launch template.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "status": {
         "computed": true,

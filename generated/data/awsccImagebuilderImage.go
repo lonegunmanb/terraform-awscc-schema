@@ -131,6 +131,37 @@ const awsccImagebuilderImage = `{
               "description": "This sets whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the test instance when you create a new image.",
               "description_kind": "plain",
               "type": "bool"
+            },
+            "image_scanning_types": {
+              "computed": true,
+              "description": "The type of vulnerability scan that Image Builder runs for AMI output when ImageScanningEnabled is true. Specify a single value. If you omit ImageScanningTypes, Image Builder uses TEST_INSTANCE_CVE. With TEST_INSTANCE_CVE, Amazon Inspector scans the test instance during image tests, and you must activate Amazon Inspector for Amazon EC2 scanning in your account. With ON_DEMAND_AMI_CVE, Amazon Inspector starts an on-demand scan of the output AMI during image tests. You must build from an image recipe, but you do not need to activate Amazon Inspector in your account.",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "scan_result_condition": {
+              "computed": true,
+              "description": "The condition that the output AMI's scan results must meet for the image to pass. You can set ScanResultCondition only when ImageScanningTypes is ON_DEMAND_AMI_CVE. If you omit it, Image Builder starts the scan but does not wait for it or use its results to pass or fail the image.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "fix_available": {
+                    "computed": true,
+                    "description": "Specifies whether only findings that have a fix available count toward MaximumSeverityLabel. When false, Image Builder counts every finding. The default is true.",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "maximum_severity_label": {
+                    "computed": true,
+                    "description": "The maximum severity allowed for findings on the output AMI. A finding above this severity fails the image, unless FixAvailable excludes it.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

@@ -57,7 +57,7 @@ const awsccKinesisanalyticsv2Application = `{
                         },
                         "text_content": {
                           "computed": true,
-                          "description": "The text-format code for a Flink-based Kinesis Data Analytics application.",
+                          "description": "The text-format code for a Kinesis Data Analytics Studio notebook, as a Zeppelin note JSON object.",
                           "description_kind": "plain",
                           "type": "string"
                         },
@@ -109,6 +109,12 @@ const awsccKinesisanalyticsv2Application = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "snapshot_mode": {
+                    "computed": true,
+                    "description": "The snapshot mode of a Flink-based Kinesis Data Analytics application. Changing from APPLICATION_SNAPSHOTS_LEGACY to ENHANCED_SNAPSHOTS is one-way; an application in ENHANCED_SNAPSHOTS mode cannot return to APPLICATION_SNAPSHOTS_LEGACY.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "snapshots_enabled": {
                     "computed": true,
                     "description": "Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.",
@@ -270,214 +276,6 @@ const awsccKinesisanalyticsv2Application = `{
                         }
                       },
                       "nesting_mode": "single"
-                    }
-                  }
-                },
-                "nesting_mode": "single"
-              }
-            },
-            "sql_application_configuration": {
-              "computed": true,
-              "description": "The creation and update parameters for a SQL-based Kinesis Data Analytics application.",
-              "description_kind": "plain",
-              "nested_type": {
-                "attributes": {
-                  "inputs": {
-                    "computed": true,
-                    "description": "The array of Input objects describing the input streams used by the application.",
-                    "description_kind": "plain",
-                    "nested_type": {
-                      "attributes": {
-                        "input_parallelism": {
-                          "computed": true,
-                          "description": "Describes the number of in-application streams to create.",
-                          "description_kind": "plain",
-                          "nested_type": {
-                            "attributes": {
-                              "count": {
-                                "computed": true,
-                                "description": "The number of in-application streams to create.",
-                                "description_kind": "plain",
-                                "type": "number"
-                              }
-                            },
-                            "nesting_mode": "single"
-                          }
-                        },
-                        "input_processing_configuration": {
-                          "computed": true,
-                          "description": "The InputProcessingConfiguration for the input. An input processor transforms records as they are received from the stream, before the application's SQL code executes. Currently, the only input processing configuration available is InputLambdaProcessor.",
-                          "description_kind": "plain",
-                          "nested_type": {
-                            "attributes": {
-                              "input_lambda_processor": {
-                                "computed": true,
-                                "description": "The InputLambdaProcessor that is used to preprocess the records in the stream before being processed by your application code.",
-                                "description_kind": "plain",
-                                "nested_type": {
-                                  "attributes": {
-                                    "resource_arn": {
-                                      "computed": true,
-                                      "description": "The ARN of the Amazon Lambda function that operates on records in the stream.",
-                                      "description_kind": "plain",
-                                      "type": "string"
-                                    }
-                                  },
-                                  "nesting_mode": "single"
-                                }
-                              }
-                            },
-                            "nesting_mode": "single"
-                          }
-                        },
-                        "input_schema": {
-                          "computed": true,
-                          "description": "Describes the format of the data in the streaming source, and how each data element maps to corresponding columns in the in-application stream that is being created.",
-                          "description_kind": "plain",
-                          "nested_type": {
-                            "attributes": {
-                              "record_columns": {
-                                "computed": true,
-                                "description": "A list of ` + "`" + `RecordColumn` + "`" + ` objects.",
-                                "description_kind": "plain",
-                                "nested_type": {
-                                  "attributes": {
-                                    "mapping": {
-                                      "computed": true,
-                                      "description": "A reference to the data element in the streaming input or the reference data source.",
-                                      "description_kind": "plain",
-                                      "type": "string"
-                                    },
-                                    "name": {
-                                      "computed": true,
-                                      "description": "The name of the column that is created in the in-application input stream or reference table.",
-                                      "description_kind": "plain",
-                                      "type": "string"
-                                    },
-                                    "sql_type": {
-                                      "computed": true,
-                                      "description": "The type of column created in the in-application input stream or reference table.",
-                                      "description_kind": "plain",
-                                      "type": "string"
-                                    }
-                                  },
-                                  "nesting_mode": "list"
-                                }
-                              },
-                              "record_encoding": {
-                                "computed": true,
-                                "description": "Specifies the encoding of the records in the streaming source. For example, UTF-8.",
-                                "description_kind": "plain",
-                                "type": "string"
-                              },
-                              "record_format": {
-                                "computed": true,
-                                "description": "Specifies the format of the records on the streaming source.",
-                                "description_kind": "plain",
-                                "nested_type": {
-                                  "attributes": {
-                                    "mapping_parameters": {
-                                      "computed": true,
-                                      "description": "When you configure application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.",
-                                      "description_kind": "plain",
-                                      "nested_type": {
-                                        "attributes": {
-                                          "csv_mapping_parameters": {
-                                            "computed": true,
-                                            "description": "Provides additional mapping information when the record format uses delimiters (for example, CSV).",
-                                            "description_kind": "plain",
-                                            "nested_type": {
-                                              "attributes": {
-                                                "record_column_delimiter": {
-                                                  "computed": true,
-                                                  "description": "The column delimiter. For example, in a CSV format, a comma (\",\") is the typical column delimiter.",
-                                                  "description_kind": "plain",
-                                                  "type": "string"
-                                                },
-                                                "record_row_delimiter": {
-                                                  "computed": true,
-                                                  "description": "The row delimiter. For example, in a CSV format, '\\n' is the typical row delimiter.",
-                                                  "description_kind": "plain",
-                                                  "type": "string"
-                                                }
-                                              },
-                                              "nesting_mode": "single"
-                                            }
-                                          },
-                                          "json_mapping_parameters": {
-                                            "computed": true,
-                                            "description": "Provides additional mapping information when JSON is the record format on the streaming source.",
-                                            "description_kind": "plain",
-                                            "nested_type": {
-                                              "attributes": {
-                                                "record_row_path": {
-                                                  "computed": true,
-                                                  "description": "The path to the top-level parent that contains the records.",
-                                                  "description_kind": "plain",
-                                                  "type": "string"
-                                                }
-                                              },
-                                              "nesting_mode": "single"
-                                            }
-                                          }
-                                        },
-                                        "nesting_mode": "single"
-                                      }
-                                    },
-                                    "record_format_type": {
-                                      "computed": true,
-                                      "description": "The type of record format.",
-                                      "description_kind": "plain",
-                                      "type": "string"
-                                    }
-                                  },
-                                  "nesting_mode": "single"
-                                }
-                              }
-                            },
-                            "nesting_mode": "single"
-                          }
-                        },
-                        "kinesis_firehose_input": {
-                          "computed": true,
-                          "description": "If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies the delivery stream's ARN.",
-                          "description_kind": "plain",
-                          "nested_type": {
-                            "attributes": {
-                              "resource_arn": {
-                                "computed": true,
-                                "description": "The Amazon Resource Name (ARN) of the delivery stream.",
-                                "description_kind": "plain",
-                                "type": "string"
-                              }
-                            },
-                            "nesting_mode": "single"
-                          }
-                        },
-                        "kinesis_streams_input": {
-                          "computed": true,
-                          "description": "If the streaming source is an Amazon Kinesis data stream, identifies the stream's Amazon Resource Name (ARN).",
-                          "description_kind": "plain",
-                          "nested_type": {
-                            "attributes": {
-                              "resource_arn": {
-                                "computed": true,
-                                "description": "The ARN of the input Kinesis data stream to read.",
-                                "description_kind": "plain",
-                                "type": "string"
-                              }
-                            },
-                            "nesting_mode": "single"
-                          }
-                        },
-                        "name_prefix": {
-                          "computed": true,
-                          "description": "The name prefix to use when creating an in-application stream. Suppose that you specify a prefix ` + "`" + `\"MyInApplicationStream\"` + "`" + `. Kinesis Data Analytics then creates one or more (as per the InputParallelism count you specified) in-application streams with the names ` + "`" + `\"MyInApplicationStream_001\"` + "`" + `, ` + "`" + `\"MyInApplicationStream_002\"` + "`" + `, and so on.",
-                          "description_kind": "plain",
-                          "type": "string"
-                        }
-                      },
-                      "nesting_mode": "list"
                     }
                   }
                 },
@@ -730,9 +528,15 @@ const awsccKinesisanalyticsv2Application = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "snapshot_arn": {
+                    "computed": true,
+                    "description": "The ARN of an existing snapshot to use to restart an application. The application uses this value if RESTORE_FROM_CUSTOM_SNAPSHOT is specified for the ApplicationRestoreType. Specify either SnapshotName or SnapshotArn, not both.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "snapshot_name": {
                     "computed": true,
-                    "description": "The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if RESTORE_FROM_CUSTOM_SNAPSHOT is specified for the ApplicationRestoreType.",
+                    "description": "The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if RESTORE_FROM_CUSTOM_SNAPSHOT is specified for the ApplicationRestoreType. Specify either SnapshotName or SnapshotArn, not both.",
                     "description_kind": "plain",
                     "type": "string"
                   }

@@ -11,7 +11,7 @@ const awsccCloudwatchSpace = `{
     "attributes": {
       "agent_core_evaluation_role_arn": {
         "computed": true,
-        "description": "The Amazon Resource Name (ARN) of the IAM role used for AgentCore evaluation.",
+        "description": "The ARN of the IAM role used by AgentCore online evaluation. Absent when the space was created without one.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -24,38 +24,38 @@ const awsccCloudwatchSpace = `{
       },
       "created_at": {
         "computed": true,
-        "description": "The time the space was created.",
+        "description": "The timestamp when the space was created.",
         "description_kind": "plain",
         "type": "string"
       },
       "data_access_role_arn": {
-        "description": "The Amazon Resource Name (ARN) of the IAM role the space uses to access observability data.",
+        "description": "The ARN of the IAM role used for data access.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
       "domain_id": {
-        "description": "The identifier of the domain the space belongs to.",
+        "description": "The ID of the domain to create the space in.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
       "encryption_configuration": {
         "computed": true,
-        "description": "The encryption configuration for the space.",
+        "description": "How the space's data at rest is encrypted. Always populated.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "encryption_strategy": {
               "computed": true,
-              "description": "Whether the space is encrypted with an AWS owned key or a customer managed key.",
+              "description": "Which kind of key to use. Required.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
             },
             "kms_key_arn": {
               "computed": true,
-              "description": "The Amazon Resource Name (ARN) of the customer managed KMS key. Required when encryptionStrategy is CUSTOMER_MANAGED.",
+              "description": "Customer managed KMS key ARN. Required when encryptionStrategy is CUSTOMER_MANAGED, and must be omitted when it is AWS_OWNED. Must be a symmetric ENCRYPT_DECRYPT key in the caller's account and region.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
@@ -72,26 +72,26 @@ const awsccCloudwatchSpace = `{
         "type": "string"
       },
       "name": {
-        "description": "The name of the space.",
+        "description": "A name that identifies the space.",
         "description_kind": "plain",
         "required": true,
         "type": "string"
       },
       "owner_account_id": {
         "computed": true,
-        "description": "The AWS account that owns the space.",
+        "description": "AWS account ID that owns this space.",
         "description_kind": "plain",
         "type": "string"
       },
       "region": {
         "computed": true,
-        "description": "The AWS Region the space resides in.",
+        "description": "The region where this space was created.",
         "description_kind": "plain",
         "type": "string"
       },
       "space_id": {
         "computed": true,
-        "description": "The unique identifier of the space.",
+        "description": "The unique ID of the space.",
         "description_kind": "plain",
         "type": "string"
       },
@@ -128,12 +128,12 @@ const awsccCloudwatchSpace = `{
       },
       "updated_at": {
         "computed": true,
-        "description": "The time the space was last updated.",
+        "description": "The timestamp when the space was last updated.",
         "description_kind": "plain",
         "type": "string"
       }
     },
-    "description": "Resource type definition for AWS::CloudWatch::Space",
+    "description": "Resource Type definition for AWS::CloudWatch::Space. A space is where you work in CloudWatch Omni. It gives you access to telemetry from the account and Region in which the space is hosted, and controls who can see it.",
     "description_kind": "plain"
   },
   "version": 1

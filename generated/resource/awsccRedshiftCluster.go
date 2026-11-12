@@ -463,7 +463,7 @@ const awsccRedshiftCluster = `{
         ]
       }
     },
-    "description": "An example resource schema demonstrating some basic constructs and validation rules.",
+    "description": "Resource Type definition for AWS::Redshift::Cluster",
     "description_kind": "plain"
   },
   "version": 1

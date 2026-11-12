@@ -121,7 +121,7 @@ const awsccCertificatemanagerAcmeEndpoint = `{
         "optional": true
       }
     },
-    "description": "Resource Type definition for AWS::CertificateManager::AcmeEndpoint",
+    "description": "Resource Type definition for AWS::CertificateManager::AcmeEndpoint, an ACME protocol endpoint for issuing certificates through AWS Certificate Manager",
     "description_kind": "plain"
   },
   "version": 1
