@@ -416,6 +416,20 @@ const awsccDmsDataProvider = `{
                     "optional": true,
                     "type": "number"
                   },
+                  "s3_access_role_arn": {
+                    "computed": true,
+                    "description": "The ARN for the role the application uses to access its Amazon S3 bucket.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "s3_path": {
+                    "computed": true,
+                    "description": "The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
                   "secrets_manager_oracle_asm_access_role_arn": {
                     "computed": true,
                     "description_kind": "plain",

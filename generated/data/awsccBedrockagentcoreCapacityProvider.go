@@ -83,6 +83,22 @@ const awsccBedrockagentcoreCapacityProvider = `{
                                   "nesting_mode": "single"
                                 }
                               },
+                              "cpu_options": {
+                                "computed": true,
+                                "description": "The CPU options for the instances.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "nested_virtualization": {
+                                      "computed": true,
+                                      "description": "Indicates whether nested virtualization is enabled on the instances, which exposes hardware virtualization (KVM) to agents. Default: DISABLED.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
                               "ephemeral_volumes": {
                                 "computed": true,
                                 "description": "The block device mapping for ephemeral (instance store) volumes.",

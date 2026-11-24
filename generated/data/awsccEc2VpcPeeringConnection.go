@@ -21,6 +21,12 @@ const awsccEc2VpcPeeringConnection = `{
         "required": true,
         "type": "string"
       },
+      "multipath_resilience_status": {
+        "computed": true,
+        "description": "The multipath resilience status of the VPC peering connection: enabled when both the requester and accepter sides allow multipath resilience, pending when only one side allows it, and disabled when neither side allows it.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "peer_owner_id": {
         "computed": true,
         "description": "The AWS account ID of the owner of the accepter VPC.",
@@ -44,6 +50,34 @@ const awsccEc2VpcPeeringConnection = `{
         "description": "The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the request.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "peer_vpc_peering_connection_options": {
+        "computed": true,
+        "description": "The VPC peering connection options corresponding to the accepter side of the connection.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "allow_dns_resolution_from_remote_vpc": {
+              "computed": true,
+              "description": "If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in the peer VPC.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "allow_multipath_resilience": {
+              "computed": true,
+              "description": "If true, allows multipath resilience on this side of the peering connection. Multipath resilience is enabled only when both the requester and accepter sides allow it; MultipathResilienceStatus reports the result.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "multipath_resilience_mode": {
+              "computed": true,
+              "description": "The mode of multipath resilience on the peering connection. Applies when AllowMultipathResilience is true.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "tags": {
         "computed": true,
@@ -76,6 +110,34 @@ const awsccEc2VpcPeeringConnection = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "vpc_peering_connection_options": {
+        "computed": true,
+        "description": "The VPC peering connection options corresponding to the requester side of the connection.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "allow_dns_resolution_from_remote_vpc": {
+              "computed": true,
+              "description": "If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in the peer VPC.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "allow_multipath_resilience": {
+              "computed": true,
+              "description": "If true, allows multipath resilience on this side of the peering connection. Multipath resilience is enabled only when both the requester and accepter sides allow it; MultipathResilienceStatus reports the result.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "multipath_resilience_mode": {
+              "computed": true,
+              "description": "The mode of multipath resilience on the peering connection. Applies when AllowMultipathResilience is true.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       }
     },
     "description": "Data Source schema for AWS::EC2::VPCPeeringConnection",

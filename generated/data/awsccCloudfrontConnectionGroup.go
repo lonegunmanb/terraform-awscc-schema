@@ -100,6 +100,20 @@ const awsccCloudfrontConnectionGroup = `{
           },
           "nesting_mode": "list"
         }
+      },
+      "viewer_fallback": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "distribution_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
       }
     },
     "description": "Data Source schema for AWS::CloudFront::ConnectionGroup",

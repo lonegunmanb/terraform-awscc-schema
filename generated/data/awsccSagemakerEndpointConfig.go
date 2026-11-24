@@ -94,6 +94,28 @@ const awsccSagemakerEndpointConfig = `{
           "nesting_mode": "single"
         }
       },
+      "cross_region_traffic_config": {
+        "computed": true,
+        "description": "Limits the requests per second that the endpoint accepts from other AWS Regions. The limit is MaxCrossRegionPercentPerEndpoint percent of MaxInvocationsPerSecondPerInstance multiplied by the number of InService instances, shared by all production variants and inference components of the endpoint. Requests from the endpoint's own Region are not counted. Not supported with serverless variants or AsyncInferenceConfig. If you don't specify it, requests from other Regions are not limited.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "max_cross_region_percent_per_endpoint": {
+              "computed": true,
+              "description": "The percentage of the endpoint's capacity (MaxInvocationsPerSecondPerInstance multiplied by the number of InService instances) that requests from other Regions can use. Valid values are 1 to 100.",
+              "description_kind": "plain",
+              "type": "number"
+            },
+            "max_invocations_per_second_per_instance": {
+              "computed": true,
+              "description": "The number of invocations per second that one InService instance can serve, used to size the limit on requests from other Regions. One value applies to every production variant, whatever its instance type. Valid values are 1 to 10000.",
+              "description_kind": "plain",
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "data_capture_config": {
         "computed": true,
         "description": "Specifies how to capture endpoint data for model monitor. The data capture configuration applies to all production variants hosted at the endpoint.",

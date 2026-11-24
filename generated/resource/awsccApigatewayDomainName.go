@@ -127,6 +127,7 @@ const awsccApigatewayDomainName = `{
       },
       "security_policy": {
         "computed": true,
+        "description": "The Transport Layer Security (TLS) version + cipher suite for this DomainName.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"

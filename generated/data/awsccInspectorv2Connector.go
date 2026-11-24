@@ -122,7 +122,7 @@ const awsccInspectorv2Connector = `{
                       "attributes": {
                         "container_image_scanning": {
                           "computed": true,
-                          "description": "Defines the scope of Azure resources to monitor for a specific resource type.",
+                          "description": "Defines the scope of cloud resources to monitor for a specific resource type.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -133,7 +133,7 @@ const awsccInspectorv2Connector = `{
                               },
                               "scope_values": {
                                 "computed": true,
-                                "description": "List of subscription IDs. Empty for TENANT scope.",
+                                "description": "List of scope identifiers. For Azure, subscription IDs (empty for TENANT scope). For GCP, project IDs or organization ID (empty for ORGANIZATION scope).",
                                 "description_kind": "plain",
                                 "type": [
                                   "list",
@@ -157,7 +157,7 @@ const awsccInspectorv2Connector = `{
                         },
                         "serverless_scanning": {
                           "computed": true,
-                          "description": "Defines the scope of Azure resources to monitor for a specific resource type.",
+                          "description": "Defines the scope of cloud resources to monitor for a specific resource type.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -168,7 +168,7 @@ const awsccInspectorv2Connector = `{
                               },
                               "scope_values": {
                                 "computed": true,
-                                "description": "List of subscription IDs. Empty for TENANT scope.",
+                                "description": "List of scope identifiers. For Azure, subscription IDs (empty for TENANT scope). For GCP, project IDs or organization ID (empty for ORGANIZATION scope).",
                                 "description_kind": "plain",
                                 "type": [
                                   "list",
@@ -192,7 +192,7 @@ const awsccInspectorv2Connector = `{
                         },
                         "vm_scanning": {
                           "computed": true,
-                          "description": "Defines the scope of Azure resources to monitor for a specific resource type.",
+                          "description": "Defines the scope of cloud resources to monitor for a specific resource type.",
                           "description_kind": "plain",
                           "nested_type": {
                             "attributes": {
@@ -203,7 +203,152 @@ const awsccInspectorv2Connector = `{
                               },
                               "scope_values": {
                                 "computed": true,
-                                "description": "List of subscription IDs. Empty for TENANT scope.",
+                                "description": "List of scope identifiers. For Azure, subscription IDs (empty for TENANT scope). For GCP, project IDs or organization ID (empty for ORGANIZATION scope).",
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "state": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "state_reason": {
+                                "computed": true,
+                                "description": "Reason for the current scope state.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "gcp": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "auto_install_vm_scanner": {
+                    "computed": true,
+                    "description": "Whether to automatically install the VM scanner. Defaults to true.",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "aws_config_connector_arn": {
+                    "computed": true,
+                    "description": "The ARN of the AWS Config connector used for GCP resource discovery.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "gcp_regions": {
+                    "computed": true,
+                    "description": "List of GCP regions to scan (e.g. us-central1).",
+                    "description_kind": "plain",
+                    "type": [
+                      "list",
+                      "string"
+                    ]
+                  },
+                  "scope_configuration": {
+                    "computed": true,
+                    "description": "Defines which GCP resource types to scan and at what scope level. GCP supports multiple capabilities per connector.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "container_image_scanning": {
+                          "computed": true,
+                          "description": "Defines the scope of cloud resources to monitor for a specific resource type.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "scope_type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "scope_values": {
+                                "computed": true,
+                                "description": "List of scope identifiers. For Azure, subscription IDs (empty for TENANT scope). For GCP, project IDs or organization ID (empty for ORGANIZATION scope).",
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "state": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "state_reason": {
+                                "computed": true,
+                                "description": "Reason for the current scope state.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "serverless_scanning": {
+                          "computed": true,
+                          "description": "Defines the scope of cloud resources to monitor for a specific resource type.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "scope_type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "scope_values": {
+                                "computed": true,
+                                "description": "List of scope identifiers. For Azure, subscription IDs (empty for TENANT scope). For GCP, project IDs or organization ID (empty for ORGANIZATION scope).",
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              },
+                              "state": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "state_reason": {
+                                "computed": true,
+                                "description": "Reason for the current scope state.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "vm_scanning": {
+                          "computed": true,
+                          "description": "Defines the scope of cloud resources to monitor for a specific resource type.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "scope_type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "scope_values": {
+                                "computed": true,
+                                "description": "List of scope identifiers. For Azure, subscription IDs (empty for TENANT scope). For GCP, project IDs or organization ID (empty for ORGANIZATION scope).",
                                 "description_kind": "plain",
                                 "type": [
                                   "list",

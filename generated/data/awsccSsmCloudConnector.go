@@ -98,6 +98,66 @@ const awsccSsmCloudConnector = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "gcp_configuration": {
+              "computed": true,
+              "description": "Configuration for connecting to Google Cloud.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "organization_id": {
+                    "computed": true,
+                    "description": "The GCP organization ID. Required when Targets is omitted, which targets the entire organization. Cannot be changed after creation.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "service_account_email": {
+                    "computed": true,
+                    "description": "The GCP service account the connector impersonates. Its project is the connector's management project. Cannot be changed after creation.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "targets": {
+                    "computed": true,
+                    "description": "The targets for the cloud connector. If omitted, the entire organization is targeted.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "projects": {
+                          "computed": true,
+                          "description": "List of GCP projects.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "project_display_name": {
+                                "computed": true,
+                                "description": "The display name of the GCP project.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "project_id": {
+                                "computed": true,
+                                "description": "The GCP project ID.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "workload_identity_pool_provider": {
+                    "computed": true,
+                    "description": "The resource name of the workload identity pool provider that trusts the connector's IAM role.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
             }
           },
           "nesting_mode": "single"

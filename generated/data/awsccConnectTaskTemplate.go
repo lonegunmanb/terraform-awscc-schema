@@ -115,6 +115,22 @@ const awsccConnectTaskTemplate = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "contact_hooks": {
+        "computed": true,
+        "description": "The contact hooks for the task template.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "wrap_up_flow_arn": {
+              "computed": true,
+              "description": "The identifier (arn) of the flow module that runs when an agent attempts to disconnect from a task created by referencing this template. If no agent ever connects to the task, the flow module runs when the task is terminated.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "defaults": {
         "computed": true,
         "description_kind": "plain",

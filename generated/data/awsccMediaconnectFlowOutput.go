@@ -288,6 +288,59 @@ const awsccMediaconnectFlowOutput = `{
           "nesting_mode": "single"
         }
       },
+      "rtmp_push_settings": {
+        "computed": true,
+        "description": "The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified. These settings include the application and stream names, and optional TLS encryption configuration.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "application_name": {
+              "computed": true,
+              "description": "The name of the RTMP application on the destination server. Together with the stream name, the application name forms the RTMP URL path, in the pattern rtmp://destinationAddress/applicationName/streamName.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "stream_name": {
+              "computed": true,
+              "description": "The name of the RTMP stream that the output publishes to the destination application. The stream name forms the final segment of the RTMP URL path.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "tls_encryption": {
+              "computed": true,
+              "description": "The Transport Layer Security (TLS) encryption settings used to establish a secure connection to a destination.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "encryption_configuration": {
+                    "computed": true,
+                    "description": "The configuration settings for TLS encryption.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "public": {
+                          "computed": true,
+                          "description": "The TLS encryption configuration for destinations that present a certificate from a publicly trusted certificate authority. This type does not require any additional settings.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "encryption_type": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "smoothing_latency": {
         "computed": true,
         "description": "The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.",

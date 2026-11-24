@@ -61,6 +61,44 @@ const awsccConfigConformancePack = `{
         "required": true,
         "type": "string"
       },
+      "scope": {
+        "computed": true,
+        "description": "The global tag scope of the managed conformance pack. If specified, only resources with this tag key and value pair are in scope of the conformance pack.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "tag_key": {
+              "computed": true,
+              "description": "The tag key of the tag scope. Only resources with this tag key are in scope of the conformance pack.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "tag_value": {
+              "computed": true,
+              "description": "The tag value of the tag scope. If omitted, resources are in scope based on the presence of the tag key alone, regardless of its value.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "source": {
+        "computed": true,
+        "description": "The source of a managed conformance pack. Specifying Source creates a managed conformance pack, whose Config rules are managed by AWS. You can only specify one of Source or the template body or template S3Uri fields.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "source_identifier": {
+              "computed": true,
+              "description": "The identifier specifying which managed conformance pack is being deployed.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "tags": {
         "computed": true,
         "description": "The tags for the conformance pack.",
@@ -114,6 +152,12 @@ const awsccConfigConformancePack = `{
           },
           "nesting_mode": "single"
         }
+      },
+      "type": {
+        "computed": true,
+        "description": "The type of the conformance pack. CUSTOM for a conformance pack whose Config rules are managed by the customer; MANAGED for a managed conformance pack whose Config rules are managed by AWS.",
+        "description_kind": "plain",
+        "type": "string"
       }
     },
     "description": "Data Source schema for AWS::Config::ConformancePack",

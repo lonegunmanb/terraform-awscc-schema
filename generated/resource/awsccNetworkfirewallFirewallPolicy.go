@@ -54,6 +54,66 @@ const awsccNetworkfirewallFirewallPolicy = `{
               },
               "optional": true
             },
+            "route_53_resolved_ip_validation": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "action": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "bypass_destination_validation_ip_ranges": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "address_definition": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
+                  "dns_expiry_exception_policy": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "dns_firewall_rule_group_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "source_ip_ranges": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "address_definition": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "stateful_default_actions": {
               "computed": true,
               "description_kind": "plain",

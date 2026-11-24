@@ -100,38 +100,44 @@ const awsccSecurityhubConnector = `{
         "type": "string"
       },
       "provider_name": {
+        "description": "The CSPM provider configuration for the connector",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
             "azure": {
+              "computed": true,
               "description": "The configuration for connecting to an Azure environment.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "aws_config_connector_arn": {
+                    "computed": true,
                     "description": "The ARN of the multi-cloud configuration connector used to establish the connection to Azure.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "azure_regions": {
+                    "computed": true,
                     "description": "The list of Azure regions to monitor.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": [
                       "set",
                       "string"
                     ]
                   },
                   "scope_configuration": {
+                    "computed": true,
                     "description": "The scope configuration that defines which Azure resources are monitored.",
                     "description_kind": "plain",
                     "nested_type": {
                       "attributes": {
                         "scope_type": {
+                          "computed": true,
                           "description": "The type of scope. Valid values are ` + "`" + `` + "`" + `tenant` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `subscription` + "`" + `` + "`" + `.",
                           "description_kind": "plain",
-                          "required": true,
+                          "optional": true,
                           "type": "string"
                         },
                         "scope_values": {
@@ -147,12 +153,66 @@ const awsccSecurityhubConnector = `{
                       },
                       "nesting_mode": "single"
                     },
-                    "required": true
+                    "optional": true
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
+            },
+            "gcp": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "aws_config_connector_arn": {
+                    "computed": true,
+                    "description": "The ARN of the AWS Config connector used for the GCP integration",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "gcp_regions": {
+                    "computed": true,
+                    "description": "The list of GCP regions to include in the connector scope",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
+                  "scope_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "scope_type": {
+                          "computed": true,
+                          "description": "The scope type for the GCP connector",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "scope_values": {
+                          "computed": true,
+                          "description": "The list of scope values for the GCP connector",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "set",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

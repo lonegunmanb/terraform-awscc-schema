@@ -73,6 +73,12 @@ const awsccCloudformationGeneratedTemplate = `{
           "nesting_mode": "single"
         }
       },
+      "stack_id": {
+        "computed": true,
+        "description": "The Amazon Resource Name (ARN) of the stack to use as the base stack for the generated template.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "status": {
         "computed": true,
         "description": "The status of the template generation.",

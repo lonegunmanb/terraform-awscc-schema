@@ -118,7 +118,7 @@ const awsccOpensearchserverlessCollection = `{
       },
       "tags": {
         "computed": true,
-        "description": "List of tags to be added to the resource",
+        "description": "List of tags to associate with the collection. Tag changes are applied in place without replacing the collection. Reading, adding, changing or removing tags requires the aoss:ListTagsForResource, aoss:TagResource and aoss:UntagResource permissions.",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {

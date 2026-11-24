@@ -172,6 +172,62 @@ const awsccSecurityhubConnectorV2 = `{
               },
               "optional": true
             },
+            "gcp": {
+              "computed": true,
+              "description": "The configuration settings required to establish an integration between AWS Security Hub and GCP",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "aws_config_connector_arn": {
+                    "computed": true,
+                    "description": "The ARN of the AWS Config connector used for the GCP integration",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "gcp_regions": {
+                    "computed": true,
+                    "description": "The list of GCP regions to include in the connector scope",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
+                  "scope_configuration": {
+                    "computed": true,
+                    "description": "The scope configuration for a GCP connector",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "scope_type": {
+                          "computed": true,
+                          "description": "The scope type for the GCP connector",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "scope_values": {
+                          "computed": true,
+                          "description": "The list of scope values for the GCP connector",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": [
+                            "set",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "jira_cloud": {
               "computed": true,
               "description": "The initial configuration settings required to establish an integration between Security Hub and Jira Cloud",

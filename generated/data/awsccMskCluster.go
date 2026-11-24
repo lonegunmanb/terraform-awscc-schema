@@ -183,6 +183,11 @@ const awsccMskCluster = `{
                 },
                 "nesting_mode": "single"
               }
+            },
+            "topic_reassignment": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             }
           },
           "nesting_mode": "single"

@@ -80,6 +80,13 @@ const awsccRoute53GlobalresolverGlobalResolver = `{
         "optional": true,
         "type": "string"
       },
+      "public_ip_status": {
+        "computed": true,
+        "description": "Whether the Global Resolver's public IP addresses are enabled and reserved. Change it one step at a time: ENABLED_RESERVED \u003c-\u003e DISABLED_RESERVED, DISABLED_RESERVED -\u003e DISABLED_RELEASED, DISABLED_RELEASED -\u003e ENABLED_RESERVED (new public IP addresses). DISABLED_RELEASED gives the public IP addresses back and cannot be undone. DISABLED_RESERVED is not allowed at create.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "regions": {
         "description": "The list of regions the Global Resolver exists in. Regions can be added or removed on update; the order of this list is not significant.",
         "description_kind": "plain",

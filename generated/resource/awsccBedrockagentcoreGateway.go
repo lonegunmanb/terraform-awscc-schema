@@ -56,6 +56,54 @@ const awsccBedrockagentcoreGateway = `{
                       "string"
                     ]
                   },
+                  "certificate_configurations": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "s3": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "bucket_owner_account_id": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "uri": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "secrets_manager": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "secret_arn": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
                   "custom_claims": {
                     "computed": true,
                     "description_kind": "plain",
@@ -232,6 +280,31 @@ const awsccBedrockagentcoreGateway = `{
         "optional": true,
         "type": "string"
       },
+      "domain_override": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "alternate_domains": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "default_domain": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "exception_level": {
         "computed": true,
         "description_kind": "plain",
@@ -335,6 +408,28 @@ const awsccBedrockagentcoreGateway = `{
                       "nesting_mode": "single"
                     },
                     "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "response_interception_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "response_streaming_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "max_events_per_invocation": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
                   }
                 },
                 "nesting_mode": "single"

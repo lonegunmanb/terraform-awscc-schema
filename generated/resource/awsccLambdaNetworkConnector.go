@@ -34,6 +34,24 @@ const awsccLambdaNetworkConnector = `{
                       "string"
                     ]
                   },
+                  "elastic_ip_configuration": {
+                    "computed": true,
+                    "description": "Specifies whether Lambda assigns an Elastic IP address to each of the network connector's elastic network interfaces (ENIs). If you don't specify an Elastic IP configuration, no Elastic IP address is assigned. When you update this configuration, the change applies to the ENIs of the new connector version.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "type": {
+                          "computed": true,
+                          "description": "The Elastic IP address type for the connector's ENIs. With None, Lambda doesn't assign an Elastic IP address. With ServiceManaged, Lambda allocates a service-managed Elastic IP address in your account for each ENI, associates it with that ENI, and releases it when it deletes the ENI. The connector's operator role must allow the ec2:AllocateAddress and ec2:AssociateAddress actions on Elastic IP addresses and on the connector's ENIs.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "network_protocol": {
                     "description": "The network protocol for the connector. Specify IPv4 for IPv4-only networking, or DualStack for both IPv4 and IPv6.",
                     "description_kind": "plain",

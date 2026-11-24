@@ -54,6 +54,13 @@ const awsccRoute53HealthCheck = `{
               "optional": true,
               "type": "bool"
             },
+            "endpoint_type": {
+              "computed": true,
+              "description": "Whether the health check targets a public endpoint or a private endpoint inside a VPC. Defaults to PUBLIC. Adding this property to an existing health check's template replaces the health check; leave it unset for existing public health checks.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "failure_threshold": {
               "computed": true,
               "description_kind": "plain",
@@ -62,6 +69,13 @@ const awsccRoute53HealthCheck = `{
             },
             "fully_qualified_domain_name": {
               "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "health_check_source_id": {
+              "computed": true,
+              "description": "The ID of the health check source that Route 53 uses to reach a private endpoint. Required when EndpointType is PRIVATE.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"

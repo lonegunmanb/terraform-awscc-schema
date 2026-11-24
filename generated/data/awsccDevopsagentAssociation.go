@@ -21,6 +21,86 @@ const awsccDevopsagentAssociation = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "capabilities": {
+        "computed": true,
+        "description": "Automated AWS DevOps Agent capabilities enabled for this association, such as code change risk analysis",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "code_change_risk_analysis": {
+              "computed": true,
+              "description": "Configuration for code change risk analysis, in which AWS DevOps Agent automatically analyzes pull requests and merge requests for deployment risk.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description": "Whether the capability is enabled for this association",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  },
+                  "trigger_filter_groups": {
+                    "computed": true,
+                    "description": "Filter groups controlling when the capability triggers automatically. The capability triggers when any group matches. When omitted, all applicable events trigger the capability. Retained while the capability is disabled.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "events": {
+                          "computed": true,
+                          "description": "Passes when the webhook event is one of the listed events",
+                          "description_kind": "plain",
+                          "type": [
+                            "set",
+                            "string"
+                          ]
+                        },
+                        "target_branches": {
+                          "computed": true,
+                          "description": "Passes when the change request target branch matches",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "patterns": {
+                                "computed": true,
+                                "description": "Anchored full-match regex patterns, for example 'main' or 'release/.*'",
+                                "description_kind": "plain",
+                                "type": [
+                                  "list",
+                                  "string"
+                                ]
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "code_change_risk_analysis_automated_testing": {
+              "computed": true,
+              "description": "Configuration for code change risk analysis automated testing, in which AWS DevOps Agent also runs tests against the change during the analysis.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "enabled": {
+                    "computed": true,
+                    "description": "Whether the capability is enabled for this association",
+                    "description_kind": "plain",
+                    "type": "bool"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "configuration": {
         "computed": true,
         "description": "The configuration that directs how AgentSpace interacts with the given service",
@@ -190,6 +270,12 @@ const awsccDevopsagentAssociation = `{
                     "description_kind": "plain",
                     "type": "string"
                   },
+                  "release_management_association_id": {
+                    "computed": true,
+                    "description": "The ID of the release management association that this repository uses for automated testing",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
                   "repo_id": {
                     "computed": true,
                     "description": "Associated Github repo ID",
@@ -233,6 +319,12 @@ const awsccDevopsagentAssociation = `{
                   "project_path": {
                     "computed": true,
                     "description": "Full GitLab project path (e.g., namespace/project-name)",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "release_management_association_id": {
+                    "computed": true,
+                    "description": "The ID of the release management association that this project uses for automated testing",
                     "description_kind": "plain",
                     "type": "string"
                   }
@@ -467,6 +559,54 @@ const awsccDevopsagentAssociation = `{
                       "list",
                       "string"
                     ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "release_management": {
+              "computed": true,
+              "description": "Configuration for a release management environment. A release management environment defines how AWS DevOps Agent reaches your application, and other associations reference it to run automatic verification testing against that application.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "name": {
+                    "computed": true,
+                    "description": "The name for this release management environment",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "network_access": {
+                    "computed": true,
+                    "description": "Specifies how AWS DevOps Agent reaches your application using this release management environment",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "private_access": {
+                          "computed": true,
+                          "description": "Private network access to your application inside a VPC, reached through a private connection",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "private_connection_name": {
+                                "computed": true,
+                                "description": "Name of the private connection that supplies the VPC configuration for this release management environment",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "runtime_role_arn": {
+                                "computed": true,
+                                "description": "Role ARN that AWS DevOps Agent assumes at runtime to connect to your VPC",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
                   }
                 },
                 "nesting_mode": "single"

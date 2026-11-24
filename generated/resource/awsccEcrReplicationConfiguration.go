@@ -30,6 +30,23 @@ const awsccEcrReplicationConfiguration = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "delete_replication": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "enabled": {
+                          "computed": true,
+                          "description": "Whether image deletions and image tag removals in the source registry are replicated to the replication destinations.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
                   "destinations": {
                     "description": "An array of objects representing the destination for a replication rule.",
                     "description_kind": "plain",

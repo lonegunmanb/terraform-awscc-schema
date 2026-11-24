@@ -51,6 +51,7 @@ const awsccVpclatticeResourceConfiguration = `{
       },
       "port_ranges": {
         "computed": true,
+        "description": "The port ranges the resource configuration listens on, as single ports or ranges (for example, 80 or 1001-2000). Applies to SINGLE, GROUP, CHILD, and CIDR resource configurations. For a CIDR resource configuration with ProtocolType TCP_UDP, these ranges cover both TCP and UDP traffic, so include port 53 to carry DNS to the network segment.",
         "description_kind": "plain",
         "optional": true,
         "type": [
@@ -60,6 +61,7 @@ const awsccVpclatticeResourceConfiguration = `{
       },
       "protocol_type": {
         "computed": true,
+        "description": "The protocol the resource configuration accepts. SINGLE and GROUP resource configurations support TCP. CIDR resource configurations support TCP and TCP_UDP; use TCP_UDP to carry UDP traffic such as DNS on port 53.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -83,11 +85,13 @@ const awsccVpclatticeResourceConfiguration = `{
             },
             "cidr_resource": {
               "computed": true,
+              "description": "The CIDR ranges that make up a CIDR resource configuration. Only valid when ResourceConfigurationType is CIDR, and the resource gateway must have ResourceConfigDnsResolution set to IN_VPC.",
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "cidr_ranges": {
                     "computed": true,
+                    "description": "The IPv4 CIDR ranges reachable through this resource configuration, in CIDR notation (for example, 10.0.0.0/24).",
                     "description_kind": "plain",
                     "optional": true,
                     "type": [

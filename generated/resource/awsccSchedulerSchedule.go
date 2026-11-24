@@ -377,6 +377,52 @@ const awsccSchedulerSchedule = `{
               },
               "optional": true
             },
+            "event_bridge_put_events_v2_parameters": {
+              "computed": true,
+              "description": "EventBridge PutEvent V2 predefined target type",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "detail_type": {
+                    "computed": true,
+                    "description": "Free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "source": {
+                    "computed": true,
+                    "description": "The source of the event.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "event_bridge_put_raw_events_parameters": {
+              "computed": true,
+              "description": "EventBridge PutRawEvent predefined target type",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "metadata": {
+                    "computed": true,
+                    "description": "Customer-defined metadata key-value pairs.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": [
+                      "map",
+                      "string"
+                    ]
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "input": {
               "computed": true,
               "description": "The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.",

@@ -251,6 +251,33 @@ const awsccComputeoptimizerAutomationRule = `{
                 "string"
               ]
             },
+            "excluded_account_ids": {
+              "computed": true,
+              "description": "List of account IDs to exclude from the organization rule. Excluded accounts take precedence over included organizational units and accounts.",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "excluded_organizational_unit_ids": {
+              "computed": true,
+              "description": "List of organizational unit or organization root IDs to exclude from the organization rule. Exclusions include accounts in descendant organizational units and take precedence over included organizational units and accounts.",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "organizational_unit_ids": {
+              "computed": true,
+              "description": "List of organizational unit or organization root IDs where the organization rule applies. The rule also applies to accounts in descendant organizational units.",
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
             "rule_apply_order": {
               "computed": true,
               "description": "When the rule should be applied relative to account rules",

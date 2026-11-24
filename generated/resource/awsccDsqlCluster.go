@@ -75,6 +75,24 @@ const awsccDsqlCluster = `{
         "optional": true,
         "type": "string"
       },
+      "metric_groups": {
+        "computed": true,
+        "description": "The Advanced monitoring metric groups to enable on the cluster. Omit to enable none.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "metric_group": {
+              "computed": true,
+              "description": "The name of the metric group. Valid values: STATEMENT_STATISTICS.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "set"
+        },
+        "optional": true
+      },
       "multi_region_properties": {
         "computed": true,
         "description": "The Multi-region properties associated to this cluster.",

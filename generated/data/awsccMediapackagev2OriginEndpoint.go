@@ -71,6 +71,11 @@ const awsccMediapackagev2OriginEndpoint = `{
                 "nesting_mode": "single"
               }
             },
+            "bandwidth_reporting_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "base_urls": {
               "computed": true,
               "description": "\u003cp\u003eThe base URL to use for retrieving segments.\u003c/p\u003e",

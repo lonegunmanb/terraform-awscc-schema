@@ -296,6 +296,82 @@ const awsccEventsv2Subscriber = `{
               },
               "optional": true
             },
+            "msk_parameters": {
+              "computed": true,
+              "description": "Parameters for producing events to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster, used when TargetArn is an Amazon MSK cluster ARN.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "acks": {
+                    "computed": true,
+                    "description": "Producer acknowledgement mode. ALL waits for all in-sync replicas. LEADER waits for the partition leader only. Defaults to ALL.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "client_id": {
+                    "computed": true,
+                    "description": "Producer client.id passed to the Kafka broker. A literal, not a JSONata expression.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "compression": {
+                    "computed": true,
+                    "description": "Producer compression codec applied to the record batch. Defaults to NONE.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "connectivity": {
+                    "computed": true,
+                    "description": "Specifies how the service connects to the Amazon MSK cluster. PUBLIC connects through the cluster's public access. PRIVATE connects through the cluster's multi-VPC private connectivity. You must turn on the chosen connectivity path, with IAM access control, on the cluster.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "headers": {
+                    "computed": true,
+                    "description": "Kafka record headers attached to each produced record.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "key": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "value": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    },
+                    "optional": true
+                  },
+                  "partition_key": {
+                    "computed": true,
+                    "description": "Kafka record key. Accepts a literal or a JSONata expression; the resolved value selects the destination partition.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "topic_name": {
+                    "computed": true,
+                    "description": "Name of the Kafka topic events are produced to. Accepts a literal or a JSONata expression.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "role_arn": {
               "description": "The ARN of the IAM role the service assumes to invoke the target. The role must belong to the same account as the subscriber.",
               "description_kind": "plain",

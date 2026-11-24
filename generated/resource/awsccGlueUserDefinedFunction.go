@@ -15,6 +15,13 @@ const awsccGlueUserDefinedFunction = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "artifact_location": {
+        "computed": true,
+        "description": "The registered Amazon S3 location that contains the function artifacts. Required when GovernanceMode is LAKE_FORMATION.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
       "class_name": {
         "computed": true,
         "description": "The Java class that contains the function code.",
@@ -37,6 +44,13 @@ const awsccGlueUserDefinedFunction = `{
       "function_type": {
         "computed": true,
         "description": "The type of the function.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "governance_mode": {
+        "computed": true,
+        "description": "How access to the function is governed. The mode cannot be changed after creation.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -67,6 +81,13 @@ const awsccGlueUserDefinedFunction = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "last_modified": {
+              "computed": true,
+              "description": "The time at which Glue recorded the resource as last modified in Amazon S3 for a Lake Formation governed function.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "resource_type": {
               "computed": true,
               "description": "The type of the resource.",

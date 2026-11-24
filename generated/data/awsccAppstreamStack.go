@@ -37,9 +37,21 @@ const awsccAppstreamStack = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "kms_key_arn": {
+              "computed": true,
+              "description": "The Amazon Resource Name (ARN) of the customer managed symmetric encryption KMS key that encrypts Replay Session artifacts while WorkSpaces Applications processes them. The key must be in the same Region as the stack, and ReplaySessionEnabled must be true. To remove the key, use AttributesToDelete with the AGENT_ACCESS_CONFIG_KMS_KEY_ARN value.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "replay_session_enabled": {
+              "computed": true,
+              "description": "Indicates whether Replay Session is enabled for agent sessions. WorkSpaces Applications delivers a video combining session screenshots, a transcript, and a report for each session. Requires the COMPUTER_VISION agent action. Setting this attribute to false also removes the KmsKeyArn value from the stack.",
+              "description_kind": "plain",
+              "type": "bool"
+            },
             "s3_bucket_arn": {
               "computed": true,
-              "description": "The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots are stored. Required when ScreenshotsUploadEnabled is true.",
+              "description": "The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots and Replay Session artifacts are stored. Required when ScreenshotsUploadEnabled or ReplaySessionEnabled is true.",
               "description_kind": "plain",
               "type": "string"
             },

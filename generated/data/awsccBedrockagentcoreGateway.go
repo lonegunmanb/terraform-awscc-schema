@@ -52,6 +52,48 @@ const awsccBedrockagentcoreGateway = `{
                       "string"
                     ]
                   },
+                  "certificate_configurations": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "s3": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "bucket_owner_account_id": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "uri": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "secrets_manager": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "secret_arn": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
                   "custom_claims": {
                     "computed": true,
                     "description_kind": "plain",
@@ -206,6 +248,28 @@ const awsccBedrockagentcoreGateway = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "domain_override": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "alternate_domains": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": [
+                "list",
+                "string"
+              ]
+            },
+            "default_domain": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "exception_level": {
         "computed": true,
         "description_kind": "plain",
@@ -300,6 +364,25 @@ const awsccBedrockagentcoreGateway = `{
                       },
                       "nesting_mode": "single"
                     }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "response_interception_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "response_streaming_configuration": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "max_events_per_invocation": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "number"
                   }
                 },
                 "nesting_mode": "single"

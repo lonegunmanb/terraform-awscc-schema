@@ -265,7 +265,7 @@ const awsccConnectUser = `{
       },
       "security_profile_arns": {
         "computed": true,
-        "description": "One or more security profile arns for the user",
+        "description": "One or more customer-managed or AWS-managed security profile ARNs for the user.",
         "description_kind": "plain",
         "type": [
           "set",

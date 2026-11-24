@@ -162,6 +162,73 @@ const awsccMediaconnectRouterInput = `{
                           },
                           "optional": true
                         },
+                        "rtmp_push": {
+                          "computed": true,
+                          "description": "The configuration settings for a router input using the RTMP (Real-Time Messaging Protocol) protocol.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "naming_configuration": {
+                                "computed": true,
+                                "description": "The configuration settings for the RTMP (Real-Time Messaging Protocol) application and stream names.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "automatic": {
+                                      "computed": true,
+                                      "description": "The automatic RTMP naming configuration, where MediaConnect generates the application and stream names. This type does not require any additional settings.",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "manual": {
+                                      "computed": true,
+                                      "description": "The manual RTMP naming configuration, where you specify the application and stream names.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "application_name": {
+                                            "computed": true,
+                                            "description": "The name of the RTMP application. Together with the stream name, the application name forms the RTMP URL path, in the pattern rtmp://ingestAddress/applicationName/streamName.",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "stream_name": {
+                                            "computed": true,
+                                            "description": "The name of the RTMP stream. The stream name forms the final segment of the RTMP URL path.",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "naming_type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "port": {
+                                "computed": true,
+                                "description": "The port number for the RTMP protocol. The only valid value is 1935.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
                         "rtp": {
                           "computed": true,
                           "description": "The configuration settings for a Router Input using the RTP (Real-Time Transport Protocol) protocol, including the port and forward error correction state.",
@@ -588,6 +655,142 @@ const awsccMediaconnectRouterInput = `{
                             "nesting_mode": "single"
                           },
                           "optional": true
+                        },
+                        "srt_caller": {
+                          "computed": true,
+                          "description": "The configuration settings for a router input using the SRT (Secure Reliable Transport) protocol in caller mode, including the source address and port, minimum latency, stream ID, and decryption key configuration.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "decryption_configuration": {
+                                "computed": true,
+                                "description": "Contains the configuration settings for decrypting SRT streams, including the encryption key details and decryption parameters.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "encryption_key": {
+                                      "computed": true,
+                                      "description": "The configuration settings for transit encryption using Secrets Manager, including the secret ARN and role ARN.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "role_arn": {
+                                            "computed": true,
+                                            "description": "The ARN of the IAM role assumed by MediaConnect to access the Secrets Manager secret.",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "secret_arn": {
+                                            "computed": true,
+                                            "description": "The ARN of the Secrets Manager secret used for transit encryption.",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "minimum_latency_milliseconds": {
+                                "computed": true,
+                                "description": "The minimum latency in milliseconds for the SRT protocol in caller mode.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              },
+                              "source_address": {
+                                "computed": true,
+                                "description": "The source IP address for the SRT protocol in caller mode.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "source_port": {
+                                "computed": true,
+                                "description": "The source port number for the SRT protocol in caller mode.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              },
+                              "stream_id": {
+                                "computed": true,
+                                "description": "The stream ID for the SRT protocol in caller mode.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "srt_listener": {
+                          "computed": true,
+                          "description": "The configuration settings for a router input using the SRT (Secure Reliable Transport) protocol in listener mode, including the port, minimum latency, and decryption key configuration.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "decryption_configuration": {
+                                "computed": true,
+                                "description": "Contains the configuration settings for decrypting SRT streams, including the encryption key details and decryption parameters.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "encryption_key": {
+                                      "computed": true,
+                                      "description": "The configuration settings for transit encryption using Secrets Manager, including the secret ARN and role ARN.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "role_arn": {
+                                            "computed": true,
+                                            "description": "The ARN of the IAM role assumed by MediaConnect to access the Secrets Manager secret.",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "secret_arn": {
+                                            "computed": true,
+                                            "description": "The ARN of the Secrets Manager secret used for transit encryption.",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "minimum_latency_milliseconds": {
+                                "computed": true,
+                                "description": "The minimum latency in milliseconds for the SRT protocol in listener mode.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              },
+                              "port": {
+                                "computed": true,
+                                "description": "The port number for the SRT protocol in listener mode.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
                         }
                       },
                       "nesting_mode": "list"
@@ -640,6 +843,73 @@ const awsccMediaconnectRouterInput = `{
                               "recovery_latency_milliseconds": {
                                 "computed": true,
                                 "description": "The recovery latency in milliseconds for the RIST protocol in the router input configuration.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        },
+                        "rtmp_push": {
+                          "computed": true,
+                          "description": "The configuration settings for a router input using the RTMP (Real-Time Messaging Protocol) protocol.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "naming_configuration": {
+                                "computed": true,
+                                "description": "The configuration settings for the RTMP (Real-Time Messaging Protocol) application and stream names.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "automatic": {
+                                      "computed": true,
+                                      "description": "The automatic RTMP naming configuration, where MediaConnect generates the application and stream names. This type does not require any additional settings.",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "manual": {
+                                      "computed": true,
+                                      "description": "The manual RTMP naming configuration, where you specify the application and stream names.",
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "application_name": {
+                                            "computed": true,
+                                            "description": "The name of the RTMP application. Together with the stream name, the application name forms the RTMP URL path, in the pattern rtmp://ingestAddress/applicationName/streamName.",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "stream_name": {
+                                            "computed": true,
+                                            "description": "The name of the RTMP stream. The stream name forms the final segment of the RTMP URL path.",
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "naming_type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "port": {
+                                "computed": true,
+                                "description": "The port number for the RTMP protocol. The only valid value is 1935.",
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "number"
@@ -1033,6 +1303,194 @@ const awsccMediaconnectRouterInput = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "stream_details": {
+        "computed": true,
+        "description": "Configuration details for the router input stream.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "destination_endpoint": {
+              "computed": true,
+              "description": "Configuration details for a router input stream that is represented by a destination endpoint.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "failover": {
+              "computed": true,
+              "description": "Configuration details for a failover router input that can automatically switch between two sources.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "source_index_one_stream_details": {
+                    "computed": true,
+                    "description": "Configuration details for an indexed stream in a failover router input setup.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "rtmp_push": {
+                          "computed": true,
+                          "description": "Configuration details for an RTMP (Real-Time Messaging Protocol) router input stream, including the application and stream names.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "application_name": {
+                                "computed": true,
+                                "description": "The name of the RTMP application.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "stream_name": {
+                                "computed": true,
+                                "description": "The name of the RTMP stream.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "source_index": {
+                          "computed": true,
+                          "description": "The index number (0 or 1) assigned to this source in the failover configuration.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "source_index_zero_stream_details": {
+                    "computed": true,
+                    "description": "Configuration details for an indexed stream in a failover router input setup.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "rtmp_push": {
+                          "computed": true,
+                          "description": "Configuration details for an RTMP (Real-Time Messaging Protocol) router input stream, including the application and stream names.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "application_name": {
+                                "computed": true,
+                                "description": "The name of the RTMP application.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "stream_name": {
+                                "computed": true,
+                                "description": "The name of the RTMP stream.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "source_index": {
+                          "computed": true,
+                          "description": "The index number (0 or 1) assigned to this source in the failover configuration.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "media_connect_flow": {
+              "computed": true,
+              "description": "Configuration details for a MediaConnect flow when used as a router input source.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "media_live_channel": {
+              "computed": true,
+              "description": "Configuration details for a MediaLive channel when used as a router input source.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "merge": {
+              "computed": true,
+              "description": "Configuration details for a merge router input that combines two input sources.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "source_index_one_stream_details": {
+                    "computed": true,
+                    "description": "Configuration details for an indexed stream in a merge router input setup.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "source_index": {
+                          "computed": true,
+                          "description": "The index number (0 or 1) assigned to this source in the merge configuration.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "source_index_zero_stream_details": {
+                    "computed": true,
+                    "description": "Configuration details for an indexed stream in a merge router input setup.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "source_index": {
+                          "computed": true,
+                          "description": "The index number (0 or 1) assigned to this source in the merge configuration.",
+                          "description_kind": "plain",
+                          "type": "number"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "standard": {
+              "computed": true,
+              "description": "Configuration details for a standard router input stream type.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "rtmp_push": {
+                    "computed": true,
+                    "description": "Configuration details for an RTMP (Real-Time Messaging Protocol) router input stream, including the application and stream names.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "application_name": {
+                          "computed": true,
+                          "description": "The name of the RTMP application.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "stream_name": {
+                          "computed": true,
+                          "description": "The name of the RTMP stream.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            }
+          },
+          "nesting_mode": "single"
+        }
       },
       "tags": {
         "computed": true,

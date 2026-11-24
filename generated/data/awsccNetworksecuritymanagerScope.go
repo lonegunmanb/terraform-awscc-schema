@@ -45,6 +45,12 @@ const awsccNetworksecuritymanagerScope = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "specialized_scope_type": {
+        "computed": true,
+        "description": "Marks the scope as built for one specific use. Omit for a standard scope. A specialized scope cannot be associated with a deployment. Cannot be changed after creation.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "status": {
         "computed": true,
         "description": "The status of the scope.",

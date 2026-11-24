@@ -58,6 +58,28 @@ const awsccFsxVolume = `{
                 "nesting_mode": "single"
               }
             },
+            "clone_configuration": {
+              "computed": true,
+              "description": "Creates the volume as an ONTAP FlexClone of an existing volume. The clone takes SizeInMegabytes and StorageEfficiencyEnabled from the parent volume: omit them, or set them to the parent's values.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "parent_volume_id": {
+                    "computed": true,
+                    "description": "The ID of the volume to clone. It must be in the same storage virtual machine (SVM) as the new volume.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "snapshot_id": {
+                    "computed": true,
+                    "description": "The ID of a snapshot of the parent volume to clone from. If you omit it, the clone is created from the parent volume's current state. Required when this volume's OntapVolumeType is DP (the parent volume must then also be DP).",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "copy_tags_to_backups": {
               "computed": true,
               "description": "A boolean flag indicating whether tags for the volume should be copied to backups.",

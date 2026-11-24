@@ -109,6 +109,27 @@ const awsccCloudfrontDistributionTenant = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "domain_mappings": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "domain": {
+              "computed": true,
+              "description": "The domain to serve only on the Anycast IP list. Must be lowercase and must also be listed in ` + "`" + `Domains` + "`" + `.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "serve_on": {
+              "computed": true,
+              "description": "Set to ` + "`" + `anycast-ip-list-only` + "`" + ` to serve the domain only on the Anycast IP list of the tenant's connection group. To serve a domain normally, on all CloudFront IP addresses, omit it from ` + "`" + `DomainMappings` + "`" + `.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "list"
+        }
+      },
       "domain_results": {
         "computed": true,
         "description_kind": "plain",
@@ -120,9 +141,24 @@ const awsccCloudfrontDistributionTenant = `{
               "description_kind": "plain",
               "type": "string"
             },
+            "serve_on": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
             "status": {
               "computed": true,
               "description": "Whether the domain is active or inactive.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "status_reason": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "status_reason_code": {
+              "computed": true,
               "description_kind": "plain",
               "type": "string"
             }
@@ -192,6 +228,11 @@ const awsccCloudfrontDistributionTenant = `{
       "name": {
         "computed": true,
         "description": "The name of the distribution tenant.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "on_domain_takeover": {
+        "computed": true,
         "description_kind": "plain",
         "type": "string"
       },

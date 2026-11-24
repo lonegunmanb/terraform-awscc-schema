@@ -59,7 +59,7 @@ const awsccLambdaWebFunctionRevision = `{
               "nested_type": {
                 "attributes": {
                   "runtime": {
-                    "description": "The runtime identifier.",
+                    "description": "The runtime identifier. Either a short runtime name (for example, nodejs24.x) or a Lambda runtime ARN.",
                     "description_kind": "plain",
                     "required": true,
                     "type": "string"

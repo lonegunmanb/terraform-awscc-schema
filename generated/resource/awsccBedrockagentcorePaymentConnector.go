@@ -15,6 +15,12 @@ const awsccBedrockagentcorePaymentConnector = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "aws_billing_iam_role_arn": {
+        "computed": true,
+        "description": "The ARN of the AWS Marketplace service-linked role in the payment manager's account, set by the service. Only present for AwsBilling connectors.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "connector_created_at": {
         "computed": true,
         "description": "The timestamp when the connector was created",
@@ -49,7 +55,58 @@ const awsccBedrockagentcorePaymentConnector = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "amazon_pay": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "credential_provider_arn": {
+                    "computed": true,
+                    "description": "The ARN of the payment credential provider",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "coinbase_cdp": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "credential_provider_arn": {
+                    "computed": true,
+                    "description": "The ARN of the payment credential provider",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "pay_pal": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "credential_provider_arn": {
+                    "computed": true,
+                    "description": "The ARN of the payment credential provider",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "stripe": {
               "computed": true,
               "description_kind": "plain",
               "nested_type": {

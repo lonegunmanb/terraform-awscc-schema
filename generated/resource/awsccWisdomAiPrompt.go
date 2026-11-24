@@ -47,6 +47,40 @@ const awsccWisdomAiPrompt = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "inference_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "max_tokens_to_sample": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "temperature": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "top_k": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            },
+            "top_p": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "model_id": {
         "description_kind": "plain",
         "required": true,

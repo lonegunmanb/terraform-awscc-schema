@@ -285,7 +285,7 @@ const awsccBedrockagentcoreRuntime = `{
                   },
                   "discovery_url": {
                     "computed": true,
-                    "description": "OpenID Connect discovery URL",
+                    "description": "OpenID Connect discovery URL or OAuth 2.0 authorization server metadata URL",
                     "description_kind": "plain",
                     "optional": true,
                     "type": "string"
@@ -651,6 +651,75 @@ const awsccBedrockagentcoreRuntime = `{
         },
         "optional": true
       },
+      "hooks_configuration": {
+        "computed": true,
+        "description": "Lifecycle hooks for the agent runtime",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "build": {
+              "computed": true,
+              "description": "Hooks that run while the platform builds a runtime version, before any session exists",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "warmup": {
+                    "computed": true,
+                    "description": "A lifecycle hook and the action it runs",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "action": {
+                          "computed": true,
+                          "description": "The action a lifecycle hook runs. HttpPost is the only action.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "http_post": {
+                                "computed": true,
+                                "description": "Sends an HTTP POST to the agent's container. Any 2xx response ends the hook; anything else fails it. The path and port must not be a route the platform already calls on the container, such as the protocol's invocation path or the default health check.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "path": {
+                                      "computed": true,
+                                      "description": "Path the platform sends the POST to. Must start with a slash.",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "port": {
+                                      "computed": true,
+                                      "description": "Port in the agent's container the platform sends the POST to. Defaults to the runtime's server port.",
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "number"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",
@@ -769,6 +838,24 @@ const awsccBedrockagentcoreRuntime = `{
             }
           },
           "nesting_mode": "single"
+        },
+        "optional": true
+      },
+      "resource_configurations": {
+        "computed": true,
+        "description": "Resource configurations for the agent runtime",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "minimum_memory_in_mi_b": {
+              "computed": true,
+              "description": "The minimum amount of memory in MiB to allocate to the agent runtime",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "number"
+            }
+          },
+          "nesting_mode": "list"
         },
         "optional": true
       },

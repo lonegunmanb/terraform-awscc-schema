@@ -9,6 +9,11 @@ import (
 const awsccRolesanywhereTrustAnchor = `{
   "block": {
     "attributes": {
+      "crl_dp_revocation_enabled": {
+        "computed": true,
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "enabled": {
         "computed": true,
         "description_kind": "plain",

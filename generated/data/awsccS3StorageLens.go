@@ -306,6 +306,54 @@ const awsccS3StorageLens = `{
                 "nesting_mode": "single"
               }
             },
+            "cost_and_usage_reports_publish": {
+              "computed": true,
+              "description": "Settings for publishing Amazon S3 Storage Lens metrics to AWS Cost and Usage Reports.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "prefix_level": {
+                    "computed": true,
+                    "description": "Prefix-level settings for publishing Amazon S3 Storage Lens metrics to AWS Cost and Usage Reports.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "is_enabled": {
+                          "computed": true,
+                          "description": "Specifies whether publishing prefix-level metrics to AWS Cost and Usage Reports is enabled or disabled.",
+                          "description_kind": "plain",
+                          "type": "bool"
+                        },
+                        "selection_criteria": {
+                          "computed": true,
+                          "description": "Selection criteria for the data that Amazon S3 Storage Lens publishes to AWS Cost and Usage Reports.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "max_depth": {
+                                "computed": true,
+                                "description": "The maximum prefix depth to publish to AWS Cost and Usage Reports. You must specify MinDepth and MaxDepth together, or neither. If you specify neither, MaxDepth defaults to 3.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              },
+                              "min_depth": {
+                                "computed": true,
+                                "description": "The minimum prefix depth to publish to AWS Cost and Usage Reports. You must specify MinDepth and MaxDepth together, or neither. If you specify neither, MinDepth defaults to 1.",
+                                "description_kind": "plain",
+                                "type": "number"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "data_export": {
               "computed": true,
               "description": "Specifies how Amazon S3 Storage Lens metrics should be exported.",
@@ -635,6 +683,22 @@ const awsccS3StorageLens = `{
                       "set",
                       "string"
                     ]
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "int_access_tiers": {
+              "computed": true,
+              "description": "Metric breakdown per Intelligent-Tiering access tiers.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "is_enabled": {
+                    "computed": true,
+                    "description": "Specifies whether metric breakdown per Intelligent-Tiering access tiers is enabled or disabled.",
+                    "description_kind": "plain",
+                    "type": "bool"
                   }
                 },
                 "nesting_mode": "single"

@@ -409,6 +409,22 @@ const awsccEcsService = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "deregistration_delay": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "timeout_seconds": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "number"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "filters": {
               "computed": true,
               "description_kind": "plain",

@@ -74,6 +74,12 @@ const awsccMediapackagev2OriginEndpoint = `{
               },
               "optional": true
             },
+            "bandwidth_reporting_mode": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "base_urls": {
               "computed": true,
               "description": "\u003cp\u003eThe base URL to use for retrieving segments.\u003c/p\u003e",

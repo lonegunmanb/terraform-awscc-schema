@@ -33,6 +33,7 @@ const awsccSsmCloudConnector = `{
         "nested_type": {
           "attributes": {
             "azure_configuration": {
+              "computed": true,
               "description": "Configuration for connecting to Azure.",
               "description_kind": "plain",
               "nested_type": {
@@ -45,9 +46,10 @@ const awsccSsmCloudConnector = `{
                     "type": "string"
                   },
                   "application_id": {
+                    "computed": true,
                     "description": "The Azure AD application ID.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "targets": {
@@ -94,15 +96,84 @@ const awsccSsmCloudConnector = `{
                     "type": "string"
                   },
                   "tenant_id": {
+                    "computed": true,
                     "description": "The Azure AD tenant ID. Cannot be changed after creation.",
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   }
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
+            },
+            "gcp_configuration": {
+              "computed": true,
+              "description": "Configuration for connecting to Google Cloud.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "organization_id": {
+                    "computed": true,
+                    "description": "The GCP organization ID. Required when Targets is omitted, which targets the entire organization. Cannot be changed after creation.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "service_account_email": {
+                    "computed": true,
+                    "description": "The GCP service account the connector impersonates. Its project is the connector's management project. Cannot be changed after creation.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "targets": {
+                    "computed": true,
+                    "description": "The targets for the cloud connector. If omitted, the entire organization is targeted.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "projects": {
+                          "computed": true,
+                          "description": "List of GCP projects.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "project_display_name": {
+                                "computed": true,
+                                "description": "The display name of the GCP project.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "project_id": {
+                                "computed": true,
+                                "description": "The GCP project ID.",
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "list"
+                          },
+                          "optional": true
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "workload_identity_pool_provider": {
+                    "computed": true,
+                    "description": "The resource name of the workload identity pool provider that trusts the connector's IAM role.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

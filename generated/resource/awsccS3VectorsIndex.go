@@ -92,6 +92,28 @@ const awsccS3VectorsIndex = `{
                 "set",
                 "string"
               ]
+            },
+            "text_search_configurations": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "language": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "metadata_key": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

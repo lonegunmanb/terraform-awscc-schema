@@ -37,6 +37,28 @@ const awsccRoute53RecordSet = `{
           "nesting_mode": "single"
         }
       },
+      "az_affinity": {
+        "computed": true,
+        "description": "AZ affinity resource record sets only: the source location (Availability Zone, Availability Zone group, Region, partition, or global) of the DNS queries that this record set's answers apply to.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "location_id": {
+              "computed": true,
+              "description": "The ID of the location, for example an Availability Zone ID such as use1-az1, or a Region such as us-east-1.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "location_type": {
+              "computed": true,
+              "description": "The type of the source location that the record set's answers apply to.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "cidr_routing_config": {
         "computed": true,
         "description": "The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.",

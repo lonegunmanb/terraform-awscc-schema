@@ -33,6 +33,12 @@ const awsccCertificatemanagerCertificate = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "certificate_usage": {
+        "computed": true,
+        "description": "The extended key usage of an Amazon N2 certificate. Valid only with RootHierarchyType. Defaults to CLIENT_AND_SERVER_AUTH. CLIENT_AUTH_ONLY requires N2_AMAZON_MANAGED.",
+        "description_kind": "plain",
+        "type": "string"
+      },
       "domain_name": {
         "computed": true,
         "description": "The fully qualified domain name (FQDN), such as www.example.com, with which you want to secure an ACM certificate",
@@ -73,6 +79,12 @@ const awsccCertificatemanagerCertificate = `{
       "key_algorithm": {
         "computed": true,
         "description": "Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "root_hierarchy_type": {
+        "computed": true,
+        "description": "The Amazon N2 root hierarchy that issues the certificate. Omit for a public TLS certificate. Amazon N2 roots are not trusted by browsers.",
         "description_kind": "plain",
         "type": "string"
       },

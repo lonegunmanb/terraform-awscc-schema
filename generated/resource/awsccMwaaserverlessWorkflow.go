@@ -111,6 +111,27 @@ const awsccMwaaserverlessWorkflow = `{
         },
         "optional": true
       },
+      "environment": {
+        "computed": true,
+        "description": "Contains the environment variables that tasks in a workflow use during execution.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "variables": {
+              "computed": true,
+              "description": "A map of environment variable names to values. Up to 50 variables. Names must start with a letter and contain only letters, numbers, and underscores. Names starting with AWS_ or AIRFLOW__ are reserved, except AIRFLOW__WORKERS__SECRETS_BACKEND, AIRFLOW__WORKERS__SECRETS_BACKEND_KWARGS, and names prefixed with AIRFLOW__WORKERS__SECRETS_BACKEND_KWARG__.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": [
+                "map",
+                "string"
+              ]
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "id": {
         "computed": true,
         "description": "Uniquely identifies the resource.",

@@ -210,12 +210,175 @@ const awsccGlueCatalog = `{
               "optional": true,
               "type": "string"
             },
+            "connection_type": {
+              "computed": true,
+              "description": "The type of connection used to access the federated catalog. Synchronization is only supported for certain connection types.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
             "identifier": {
               "computed": true,
               "description": "A unique identifier for the federated catalog.",
               "description_kind": "plain",
               "optional": true,
               "type": "string"
+            },
+            "sync_configuration": {
+              "computed": true,
+              "description": "Configuration for synchronizing a federated catalog with its external data source. Removing this property does not disable synchronization: Glue keeps the stored configuration for anything omitted from an update. To stop synchronizing, set the Status of each mode to DISABLED.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "assets_sync_configuration": {
+                    "computed": true,
+                    "description": "Configuration for synchronizing assets from the external data source. Omitting this property on an update leaves the stored configuration unchanged; set Status to DISABLED to stop synchronizing assets.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "managed_crawler_details": {
+                          "computed": true,
+                          "description": "The state of the crawler Glue manages on your behalf for a synchronization mode. Returned by the service; Glue rejects it as input.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "crawler_arn": {
+                                "computed": true,
+                                "description": "The Amazon Resource Name (ARN) of the crawler.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "error": {
+                                "computed": true,
+                                "description": "Details about an error.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "error_code": {
+                                      "computed": true,
+                                      "description": "The code associated with this error.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "error_message": {
+                                      "computed": true,
+                                      "description": "A message describing the error.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "status": {
+                                "computed": true,
+                                "description": "The provisioning state of the crawler.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "refresh_interval_minutes": {
+                          "computed": true,
+                          "description": "How often the crawler synchronizes assets, in minutes. Glue enforces a service-side minimum that may be higher than the minimum accepted here.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "status": {
+                          "computed": true,
+                          "description": "Whether asset synchronization is enabled.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "lineage_sync_configuration": {
+                    "computed": true,
+                    "description": "Configuration for synchronizing lineage from the external data source. Omitting this property on an update leaves the stored configuration unchanged; set Status to DISABLED to stop synchronizing lineage.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "managed_crawler_details": {
+                          "computed": true,
+                          "description": "The state of the crawler Glue manages on your behalf for a synchronization mode. Returned by the service; Glue rejects it as input.",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "crawler_arn": {
+                                "computed": true,
+                                "description": "The Amazon Resource Name (ARN) of the crawler.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "error": {
+                                "computed": true,
+                                "description": "Details about an error.",
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "error_code": {
+                                      "computed": true,
+                                      "description": "The code associated with this error.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    },
+                                    "error_message": {
+                                      "computed": true,
+                                      "description": "A message describing the error.",
+                                      "description_kind": "plain",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                }
+                              },
+                              "status": {
+                                "computed": true,
+                                "description": "The provisioning state of the crawler.",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "refresh_interval_minutes": {
+                          "computed": true,
+                          "description": "How often the crawler synchronizes lineage, in minutes. Glue enforces a service-side minimum that may be higher than the minimum accepted here.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "status": {
+                          "computed": true,
+                          "description": "Whether lineage synchronization is enabled.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "role_arn": {
+                    "computed": true,
+                    "description": "The IAM role, in the catalog owner's account, that the crawlers Glue manages on your behalf assume.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
             }
           },
           "nesting_mode": "single"

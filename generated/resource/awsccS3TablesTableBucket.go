@@ -40,6 +40,60 @@ const awsccS3TablesTableBucket = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "logging_configuration": {
+        "computed": true,
+        "description": "Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a table bucket.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "target_bucket": {
+              "computed": true,
+              "description": "The name of the general purpose bucket that logs are delivered to. The bucket must be in the same AWS Region and owned by the same AWS account as the table bucket. The bucket can't use SSE-KMS or DSSE-KMS default encryption, can't have S3 Object Lock enabled, and can't have Requester Pays enabled. You can deliver logs from multiple table buckets to the same target bucket. In this case, choose a different TargetPrefix for each table bucket so that you can tell their log objects apart.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "target_object_key_format": {
+              "computed": true,
+              "description": "The key format of the log objects. Only PartitionedPrefix is supported.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "partitioned_prefix": {
+                    "computed": true,
+                    "description": "Amazon S3 keys for log objects are partitioned in the following format: [TargetPrefix][SourceAccountId]/[SourceRegion]/[SourceTableBucket]/[YYYY]/[MM]/[DD]/[YYYY]-[MM]-[DD]-[hh]-[mm]-[ss]-[UniqueString]",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "partition_date_source": {
+                          "computed": true,
+                          "description": "The date to use for the log object key partitions. Valid values are EventTime, the time that the requests in the log were made, and DeliveryTime, the time that the log was delivered.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "target_prefix": {
+              "computed": true,
+              "description": "The prefix for the keys of the log objects that are delivered to the target bucket.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "metrics_configuration": {
         "computed": true,
         "description": "Settings governing the Metric configuration for the table bucket.",

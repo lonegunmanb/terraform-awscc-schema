@@ -1142,6 +1142,30 @@ const awsccEcsTaskDefinition = `{
         "optional": true,
         "type": "string"
       },
+      "trusted_execution_configuration": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "attestation_policy": {
+              "computed": true,
+              "description": "A base64-encoded attestation policy that verifies the workload before the task runs. Only valid when IsolationMode is CONFIDENTIAL_SANDBOX.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "isolation_mode": {
+              "computed": true,
+              "description": "The isolation mode for the task. SHARED uses standard shared placement. ISOLATED_SANDBOX runs the task in its own isolated sandbox on a shared instance with hypervisor-level isolation. CONFIDENTIAL_SANDBOX runs the task in an isolated sandbox and supports an attestation policy to verify the workload before it runs.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "volumes": {
         "computed": true,
         "description": "The list of data volume definitions for the task. For more information, see [Using data volumes in tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) in the *Amazon Elastic Container Service Developer Guide*.\n  The ` + "`" + `` + "`" + `host` + "`" + `` + "`" + ` and ` + "`" + `` + "`" + `sourcePath` + "`" + `` + "`" + ` parameters aren't supported for tasks run on FARGATElong.",

@@ -54,12 +54,14 @@ const awsccAppintegrationsApplication = `{
         "nested_type": {
           "attributes": {
             "external_url_config": {
+              "computed": true,
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
                   "access_url": {
+                    "computed": true,
                     "description_kind": "plain",
-                    "required": true,
+                    "optional": true,
                     "type": "string"
                   },
                   "approved_origins": {
@@ -74,7 +76,7 @@ const awsccAppintegrationsApplication = `{
                 },
                 "nesting_mode": "single"
               },
-              "required": true
+              "optional": true
             }
           },
           "nesting_mode": "single"
@@ -87,6 +89,35 @@ const awsccAppintegrationsApplication = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "auth_config": {
+        "computed": true,
+        "description": "The authentication configuration. Required when ApplicationType is A2A_SERVER.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "audience_override": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "auth_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "credential_provider_identifier": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "description": {
         "computed": true,
@@ -143,6 +174,18 @@ const awsccAppintegrationsApplication = `{
         "description_kind": "plain",
         "optional": true,
         "type": "bool"
+      },
+      "last_modified_region": {
+        "computed": true,
+        "description": "The region in which the application was last modified.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "last_modified_time": {
+        "computed": true,
+        "description": "The time when the application was last modified.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "name": {
         "description": "The name of the application.",

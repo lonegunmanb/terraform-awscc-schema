@@ -138,6 +138,54 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
               "description_kind": "plain",
               "nested_type": {
                 "attributes": {
+                  "certificate_configurations": {
+                    "computed": true,
+                    "description": "Private certificate authority (CA) configurations for the identity provider, referenced by Amazon S3 object or AWS Secrets Manager secret",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "s3": {
+                          "computed": true,
+                          "description": "A reference to a PEM-encoded private CA certificate stored as an Amazon S3 object",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "bucket_owner_account_id": {
+                                "computed": true,
+                                "description": "The account ID of the Amazon S3 bucket owner, used for cross-account access to the bucket",
+                                "description_kind": "plain",
+                                "type": "string"
+                              },
+                              "uri": {
+                                "computed": true,
+                                "description": "The URI of the Amazon S3 object that contains the PEM-encoded certificate",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        },
+                        "secrets_manager": {
+                          "computed": true,
+                          "description": "A reference to a PEM-encoded private CA certificate stored in an AWS Secrets Manager secret",
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "secret_arn": {
+                                "computed": true,
+                                "description": "The ARN of the AWS Secrets Manager secret that contains the PEM-encoded certificate",
+                                "description_kind": "plain",
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          }
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
                   "client_authentication_method": {
                     "computed": true,
                     "description": "The client authentication method to use when authenticating with the token endpoint",
@@ -229,7 +277,7 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                         },
                         "discovery_url": {
                           "computed": true,
-                          "description": "The discovery URL for the OAuth2 provider",
+                          "description": "OpenID Connect discovery URL or OAuth 2.0 authorization server metadata URL",
                           "description_kind": "plain",
                           "type": "string"
                         }
@@ -883,6 +931,54 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "certificate_configurations": {
+              "computed": true,
+              "description": "Private certificate authority (CA) configurations for the identity provider, referenced by Amazon S3 object or AWS Secrets Manager secret",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "s3": {
+                    "computed": true,
+                    "description": "A reference to a PEM-encoded private CA certificate stored as an Amazon S3 object",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "bucket_owner_account_id": {
+                          "computed": true,
+                          "description": "The account ID of the Amazon S3 bucket owner, used for cross-account access to the bucket",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "uri": {
+                          "computed": true,
+                          "description": "The URI of the Amazon S3 object that contains the PEM-encoded certificate",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "secrets_manager": {
+                    "computed": true,
+                    "description": "A reference to a PEM-encoded private CA certificate stored in an AWS Secrets Manager secret",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "The ARN of the AWS Secrets Manager secret that contains the PEM-encoded certificate",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "list"
+              }
+            },
             "client_authentication_method": {
               "computed": true,
               "description": "The client authentication method used when authenticating with the token endpoint",
@@ -939,7 +1035,7 @@ const awsccBedrockagentcoreOAuth2CredentialProvider = `{
                   },
                   "discovery_url": {
                     "computed": true,
-                    "description": "The discovery URL for the OAuth2 provider",
+                    "description": "OpenID Connect discovery URL or OAuth 2.0 authorization server metadata URL",
                     "description_kind": "plain",
                     "type": "string"
                   }

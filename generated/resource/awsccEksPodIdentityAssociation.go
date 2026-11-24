@@ -102,6 +102,38 @@ const awsccEksPodIdentityAssociation = `{
         "description_kind": "plain",
         "optional": true,
         "type": "string"
+      },
+      "workload_identity_config": {
+        "computed": true,
+        "description": "The workload identity configuration of the pod identity association. When enabled, the association also provisions a SPIFFE identity for the workload. Setting Enabled to false disables workload identity and keeps the ARNs. Removing the property from the template leaves the association unchanged; set Enabled to false to disable workload identity.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "enabled": {
+              "computed": true,
+              "description": "Whether workload identity is enabled for the association. Enabling it requires TemplateArn and ProviderArn, and cannot be combined with TargetRoleArn.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "provider_arn": {
+              "computed": true,
+              "description": "The ARN of the customer-owned IAM workload identity provider that produces the trusted context assertion for the workload.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            },
+            "template_arn": {
+              "computed": true,
+              "description": "The ARN of the customer-owned IAM workload identity template that renders the workload's SPIFFE identity.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       }
     },
     "description": "An object representing an Amazon EKS PodIdentityAssociation.",

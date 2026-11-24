@@ -191,6 +191,82 @@ const awsccMediaconnectFlowSource = `{
         "optional": true,
         "type": "string"
       },
+      "rtmp_push_details": {
+        "computed": true,
+        "description": "The read-only details for the RTMP (Real-Time Messaging Protocol) source.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "application_name": {
+              "computed": true,
+              "description": "The name of the RTMP application. Together with the stream name, the application name forms the RTMP URL path, in the pattern rtmp://ingestAddress/applicationName/streamName.",
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "stream_name": {
+              "computed": true,
+              "description": "The name of the RTMP stream. The stream name forms the final segment of the RTMP URL path.",
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
+      "rtmp_push_settings": {
+        "computed": true,
+        "description": "The settings for the RTMP (Real-Time Messaging Protocol) source.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "naming_configuration": {
+              "computed": true,
+              "description": "The configuration settings for the RTMP (Real-Time Messaging Protocol) application and stream names.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "automatic": {
+                    "computed": true,
+                    "description": "The automatic RTMP naming configuration, where MediaConnect generates the application and stream names. This type does not require any additional settings.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "manual": {
+                    "computed": true,
+                    "description": "The manual RTMP naming configuration, where you specify the application and stream names.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "application_name": {
+                          "computed": true,
+                          "description": "The name of the RTMP application. Together with the stream name, the application name forms the RTMP URL path, in the pattern rtmp://ingestAddress/applicationName/streamName.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "stream_name": {
+                          "computed": true,
+                          "description": "The name of the RTMP stream. The stream name forms the final segment of the RTMP URL path.",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
+      },
       "sender_control_port": {
         "computed": true,
         "description": "The port that the flow uses to send outbound requests to initiate connection with the sender for fujitsu-qos protocol.",

@@ -289,6 +289,13 @@ const awsccCloudtrailTrail = `{
         "optional": true,
         "type": "string"
       },
+      "recursive_logging": {
+        "computed": true,
+        "description": "Specifies whether recursive logging is enabled for the trail. When set to false, CloudTrail will suppress recursive delivery events (such as PutObject events generated when CloudTrail delivers log files to the trail S3 bucket). The default is true.",
+        "description_kind": "plain",
+        "optional": true,
+        "type": "bool"
+      },
       "s3_bucket_name": {
         "description": "Specifies the name of the Amazon S3 bucket designated for publishing log files. See Amazon S3 Bucket Naming Requirements.",
         "description_kind": "plain",

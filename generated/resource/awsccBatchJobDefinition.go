@@ -1333,6 +1333,34 @@ const awsccBatchJobDefinition = `{
                                 "optional": true,
                                 "type": "bool"
                               },
+                              "capabilities": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "add": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "drop": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
                               "privileged": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -1362,6 +1390,28 @@ const awsccBatchJobDefinition = `{
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "number"
+                              },
+                              "seccomp_profile": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "localhost_profile": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
@@ -1537,6 +1587,34 @@ const awsccBatchJobDefinition = `{
                                 "optional": true,
                                 "type": "bool"
                               },
+                              "capabilities": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "add": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    },
+                                    "drop": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": [
+                                        "list",
+                                        "string"
+                                      ]
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
                               "privileged": {
                                 "computed": true,
                                 "description_kind": "plain",
@@ -1566,6 +1644,28 @@ const awsccBatchJobDefinition = `{
                                 "description_kind": "plain",
                                 "optional": true,
                                 "type": "number"
+                              },
+                              "seccomp_profile": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "localhost_profile": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
                               }
                             },
                             "nesting_mode": "single"
@@ -1639,6 +1739,62 @@ const awsccBatchJobDefinition = `{
                           "description_kind": "plain",
                           "optional": true,
                           "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "security_context": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "fs_group": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "run_as_group": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "run_as_non_root": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "bool"
+                        },
+                        "run_as_user": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "number"
+                        },
+                        "seccomp_profile": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "nested_type": {
+                            "attributes": {
+                              "localhost_profile": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              },
+                              "type": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            "nesting_mode": "single"
+                          },
+                          "optional": true
                         }
                       },
                       "nesting_mode": "single"
@@ -3030,6 +3186,34 @@ const awsccBatchJobDefinition = `{
                                             "optional": true,
                                             "type": "bool"
                                           },
+                                          "capabilities": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "add": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "optional": true,
+                                                  "type": [
+                                                    "list",
+                                                    "string"
+                                                  ]
+                                                },
+                                                "drop": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "optional": true,
+                                                  "type": [
+                                                    "list",
+                                                    "string"
+                                                  ]
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            },
+                                            "optional": true
+                                          },
                                           "privileged": {
                                             "computed": true,
                                             "description_kind": "plain",
@@ -3059,6 +3243,28 @@ const awsccBatchJobDefinition = `{
                                             "description_kind": "plain",
                                             "optional": true,
                                             "type": "number"
+                                          },
+                                          "seccomp_profile": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "localhost_profile": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "optional": true,
+                                                  "type": "string"
+                                                },
+                                                "type": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "optional": true,
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            },
+                                            "optional": true
                                           }
                                         },
                                         "nesting_mode": "single"
@@ -3234,6 +3440,34 @@ const awsccBatchJobDefinition = `{
                                             "optional": true,
                                             "type": "bool"
                                           },
+                                          "capabilities": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "add": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "optional": true,
+                                                  "type": [
+                                                    "list",
+                                                    "string"
+                                                  ]
+                                                },
+                                                "drop": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "optional": true,
+                                                  "type": [
+                                                    "list",
+                                                    "string"
+                                                  ]
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            },
+                                            "optional": true
+                                          },
                                           "privileged": {
                                             "computed": true,
                                             "description_kind": "plain",
@@ -3263,6 +3497,28 @@ const awsccBatchJobDefinition = `{
                                             "description_kind": "plain",
                                             "optional": true,
                                             "type": "number"
+                                          },
+                                          "seccomp_profile": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "nested_type": {
+                                              "attributes": {
+                                                "localhost_profile": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "optional": true,
+                                                  "type": "string"
+                                                },
+                                                "type": {
+                                                  "computed": true,
+                                                  "description_kind": "plain",
+                                                  "optional": true,
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "nesting_mode": "single"
+                                            },
+                                            "optional": true
                                           }
                                         },
                                         "nesting_mode": "single"
@@ -3336,6 +3592,62 @@ const awsccBatchJobDefinition = `{
                                       "description_kind": "plain",
                                       "optional": true,
                                       "type": "string"
+                                    }
+                                  },
+                                  "nesting_mode": "single"
+                                },
+                                "optional": true
+                              },
+                              "security_context": {
+                                "computed": true,
+                                "description_kind": "plain",
+                                "nested_type": {
+                                  "attributes": {
+                                    "fs_group": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "number"
+                                    },
+                                    "run_as_group": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "number"
+                                    },
+                                    "run_as_non_root": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "bool"
+                                    },
+                                    "run_as_user": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "optional": true,
+                                      "type": "number"
+                                    },
+                                    "seccomp_profile": {
+                                      "computed": true,
+                                      "description_kind": "plain",
+                                      "nested_type": {
+                                        "attributes": {
+                                          "localhost_profile": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          },
+                                          "type": {
+                                            "computed": true,
+                                            "description_kind": "plain",
+                                            "optional": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "nesting_mode": "single"
+                                      },
+                                      "optional": true
                                     }
                                   },
                                   "nesting_mode": "single"

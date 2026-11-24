@@ -9,6 +9,12 @@ import (
 const awsccEc2TransitGatewayPeeringAttachment = `{
   "block": {
     "attributes": {
+      "accepter_allow_multipath_resilience": {
+        "computed": true,
+        "description": "Whether the accepter side of the peering attachment has opted in to MultipathResilience.",
+        "description_kind": "plain",
+        "type": "bool"
+      },
       "creation_time": {
         "computed": true,
         "description": "The time the transit gateway peering attachment was created.",
@@ -20,6 +26,37 @@ const awsccEc2TransitGatewayPeeringAttachment = `{
         "description": "Uniquely identifies the resource.",
         "description_kind": "plain",
         "type": "string"
+      },
+      "multipath_resilience_status": {
+        "computed": true,
+        "description": "The connection-level MultipathResilience status, computed from both sides of the peering attachment. (enabled/pending/disabled)",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "options": {
+        "computed": true,
+        "description": "Options for transit gateway peering attachment",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "allow_multipath_resilience": {
+              "computed": true,
+              "description": "Whether to enable MultipathResilience on this side of the peering attachment.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "bool"
+            },
+            "multipath_resilience_mode": {
+              "computed": true,
+              "description": "The MultipathResilience mode. Only valid when AllowMultipathResilience is true.",
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       },
       "peer_account_id": {
         "description": "The ID of the peer account",
@@ -37,6 +74,18 @@ const awsccEc2TransitGatewayPeeringAttachment = `{
         "description": "The ID of the peer transit gateway.",
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "requester_allow_multipath_resilience": {
+        "computed": true,
+        "description": "Whether the requester side of the peering attachment has opted in to MultipathResilience.",
+        "description_kind": "plain",
+        "type": "bool"
+      },
+      "requester_multipath_resilience_mode": {
+        "computed": true,
+        "description": "The MultipathResilience mode chosen by the requester side of the peering attachment.",
+        "description_kind": "plain",
         "type": "string"
       },
       "state": {

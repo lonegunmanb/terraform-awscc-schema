@@ -20,12 +20,21 @@ const awsccRoute53GlobalresolverAccessSource = `{
         "type": "string"
       },
       "cidr": {
+        "computed": true,
+        "description": "The IP address range (CIDR) whose traffic this access source admits. Required unless the access source uses a core network endpoint.",
         "description_kind": "plain",
-        "required": true,
+        "optional": true,
         "type": "string"
       },
       "client_token": {
         "computed": true,
+        "description_kind": "plain",
+        "optional": true,
+        "type": "string"
+      },
+      "core_network_endpoint_id": {
+        "computed": true,
+        "description": "The ID of the core network endpoint whose Cloud WAN segment traffic this access source admits. Use together with Segment instead of Cidr. The core network endpoint must be OPERATIONAL.",
         "description_kind": "plain",
         "optional": true,
         "type": "string"
@@ -61,6 +70,13 @@ const awsccRoute53GlobalresolverAccessSource = `{
       "protocol": {
         "description_kind": "plain",
         "required": true,
+        "type": "string"
+      },
+      "segment": {
+        "computed": true,
+        "description": "The name of the Cloud WAN segment of the core network endpoint, or * for all of its segments. Requires CoreNetworkEndpointId.",
+        "description_kind": "plain",
+        "optional": true,
         "type": "string"
       },
       "status": {

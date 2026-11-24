@@ -27,6 +27,15 @@ const awsccEc2VpcEndpointServicePermissions = `{
         "computed": true,
         "description_kind": "plain",
         "type": "string"
+      },
+      "transit_gateway_attachment_allowed_principals": {
+        "computed": true,
+        "description": "The AWS account root ARNs (arn:aws:iam::account-id:root) allowed to create transit gateway attachments that connect to this Gateway Load Balancer endpoint service.",
+        "description_kind": "plain",
+        "type": [
+          "list",
+          "string"
+        ]
       }
     },
     "description": "Data Source schema for AWS::EC2::VPCEndpointServicePermissions",

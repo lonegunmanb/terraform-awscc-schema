@@ -51,6 +51,84 @@ const awsccBedrockagentcorePaymentCredentialProvider = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "amazon_pay_configuration": {
+              "computed": true,
+              "description": "Amazon Pay configuration with merchant identifiers and a delegated authorization token",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "amazon_pay_region": {
+                    "computed": true,
+                    "description": "The Amazon Pay region the merchant's authorization token belongs to. AgentCore uses it to pick the Amazon Pay API host.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "authorization_token": {
+                    "computed": true,
+                    "description": "The delegated authorization token, supplied inline. Mutually exclusive with AuthorizationTokenConfig.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "authorization_token_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "authorization_token_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "environment": {
+                    "computed": true,
+                    "description": "The Amazon Pay API environment",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "merchant_id": {
+                    "computed": true,
+                    "description": "The Amazon Pay merchant (seller) ID",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "store_id": {
+                    "computed": true,
+                    "description": "The Amazon Pay store (client) ID",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
             "coinbase_cdp_configuration": {
               "computed": true,
               "description": "Coinbase CDP configuration with API credentials",
@@ -136,6 +214,127 @@ const awsccBedrockagentcorePaymentCredentialProvider = `{
                     "optional": true
                   },
                   "wallet_secret_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "pay_pal_configuration": {
+              "computed": true,
+              "description": "PayPal configuration with REST app credentials",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "client_id": {
+                    "computed": true,
+                    "description": "The PayPal REST app client ID",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "client_secret": {
+                    "computed": true,
+                    "description": "The PayPal REST app client secret, supplied inline. Mutually exclusive with ClientSecretConfig.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "client_secret_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "client_secret_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "environment": {
+                    "computed": true,
+                    "description": "The PayPal API environment",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              },
+              "optional": true
+            },
+            "stripe_configuration": {
+              "computed": true,
+              "description": "Stripe configuration with a restricted key, supplied inline (MANAGED) or as a Secrets Manager reference (EXTERNAL)",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "publishable_key": {
+                    "computed": true,
+                    "description": "The Stripe publishable key (pk_live_* or pk_test_*). Its mode must match the restricted key's.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "restricted_key": {
+                    "computed": true,
+                    "description": "The Stripe restricted key (rk_live_* or rk_test_*), supplied inline. Mutually exclusive with RestrictedKeyConfig.",
+                    "description_kind": "plain",
+                    "optional": true,
+                    "type": "string"
+                  },
+                  "restricted_key_config": {
+                    "computed": true,
+                    "description": "A reference to a customer-provided secret stored in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "json_key": {
+                          "computed": true,
+                          "description": "The JSON key within the secret that contains the credential value",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        },
+                        "secret_id": {
+                          "computed": true,
+                          "description": "The ID or ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "optional": true,
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    },
+                    "optional": true
+                  },
+                  "restricted_key_source": {
                     "computed": true,
                     "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
                     "description_kind": "plain",
@@ -261,6 +460,68 @@ const awsccBedrockagentcorePaymentCredentialProvider = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "amazon_pay_configuration": {
+              "computed": true,
+              "description": "Amazon Pay configuration output with the authorization token secret ARN",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "amazon_pay_region": {
+                    "computed": true,
+                    "description": "The Amazon Pay region the merchant's authorization token belongs to. AgentCore uses it to pick the Amazon Pay API host.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "authorization_token_arn": {
+                    "computed": true,
+                    "description": "Contains information about a secret in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "The ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "authorization_token_json_key": {
+                    "computed": true,
+                    "description": "The JSON key within the secret that contains the authorization token value",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "authorization_token_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "environment": {
+                    "computed": true,
+                    "description": "The Amazon Pay API environment",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "merchant_id": {
+                    "computed": true,
+                    "description": "The Amazon Pay merchant (seller) ID",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "store_id": {
+                    "computed": true,
+                    "description": "The Amazon Pay store (client) ID",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "coinbase_cdp_configuration": {
               "computed": true,
               "description": "Coinbase CDP configuration output with secret ARNs",
@@ -324,6 +585,100 @@ const awsccBedrockagentcorePaymentCredentialProvider = `{
                     "type": "string"
                   },
                   "wallet_secret_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "pay_pal_configuration": {
+              "computed": true,
+              "description": "PayPal configuration output with the client secret ARN",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "client_id": {
+                    "computed": true,
+                    "description": "The PayPal REST app client ID",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "client_secret_arn": {
+                    "computed": true,
+                    "description": "Contains information about a secret in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "The ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "client_secret_json_key": {
+                    "computed": true,
+                    "description": "The JSON key within the secret that contains the client secret value",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "client_secret_source": {
+                    "computed": true,
+                    "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "environment": {
+                    "computed": true,
+                    "description": "The PayPal API environment",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "stripe_configuration": {
+              "computed": true,
+              "description": "Stripe configuration output with the restricted key secret ARN",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "publishable_key": {
+                    "computed": true,
+                    "description": "The Stripe publishable key stored on the provider. Only present when one was supplied.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "restricted_key_arn": {
+                    "computed": true,
+                    "description": "Contains information about a secret in AWS Secrets Manager",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "secret_arn": {
+                          "computed": true,
+                          "description": "The ARN of the secret in AWS Secrets Manager",
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  },
+                  "restricted_key_json_key": {
+                    "computed": true,
+                    "description": "The JSON key within the secret that contains the restricted key value",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "restricted_key_source": {
                     "computed": true,
                     "description": "The source of the secret. Use MANAGED for service-managed secrets or EXTERNAL for customer-provided secrets.",
                     "description_kind": "plain",

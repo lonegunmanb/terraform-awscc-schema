@@ -50,6 +50,58 @@ const awsccNetworkfirewallFirewallPolicy = `{
                 "nesting_mode": "single"
               }
             },
+            "route_53_resolved_ip_validation": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "action": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "bypass_destination_validation_ip_ranges": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "address_definition": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  },
+                  "dns_expiry_exception_policy": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "dns_firewall_rule_group_id": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "source_ip_ranges": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "address_definition": {
+                          "computed": true,
+                          "description_kind": "plain",
+                          "type": "string"
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "stateful_default_actions": {
               "computed": true,
               "description_kind": "plain",

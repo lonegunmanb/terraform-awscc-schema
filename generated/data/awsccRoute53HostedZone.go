@@ -25,6 +25,11 @@ const awsccRoute53HostedZone = `{
               "description": "Any comments that you want to include about the hosted zone.",
               "description_kind": "plain",
               "type": "string"
+            },
+            "hosted_zone_tier": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
             }
           },
           "nesting_mode": "single"
@@ -36,7 +41,54 @@ const awsccRoute53HostedZone = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "change_guardrails": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "name": {
+                    "computed": true,
+                    "description": "The name of the Change Guardrail.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "status": {
+                    "computed": true,
+                    "description": "The status of the Change Guardrail. ENABLED makes Route 53 block the corresponding destructive change; DISABLED turns the guardrail off.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "set"
+              }
+            },
+            "change_history": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "retention_starts_at": {
+                    "computed": true,
+                    "description": "The earliest time the hosted zone's change history can be read from, as an ISO 8601 timestamp. Present only when Status is ENABLED.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "status": {
+                    "computed": true,
+                    "description": "Whether change history is enabled for the hosted zone.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "enable_accelerated_recovery": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "bool"
+            },
+            "enable_public_dns_fallback": {
               "computed": true,
               "description_kind": "plain",
               "type": "bool"

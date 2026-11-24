@@ -100,6 +100,7 @@ const awsccSecurityhubConnector = `{
       },
       "provider_name": {
         "computed": true,
+        "description": "The CSPM provider configuration for the connector",
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
@@ -139,6 +140,54 @@ const awsccSecurityhubConnector = `{
                         "scope_values": {
                           "computed": true,
                           "description": "The list of scope values, such as subscription IDs, when the scope type is ` + "`" + `` + "`" + `subscription` + "`" + `` + "`" + `.",
+                          "description_kind": "plain",
+                          "type": [
+                            "set",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "single"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
+            "gcp": {
+              "computed": true,
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "aws_config_connector_arn": {
+                    "computed": true,
+                    "description": "The ARN of the AWS Config connector used for the GCP integration",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "gcp_regions": {
+                    "computed": true,
+                    "description": "The list of GCP regions to include in the connector scope",
+                    "description_kind": "plain",
+                    "type": [
+                      "set",
+                      "string"
+                    ]
+                  },
+                  "scope_configuration": {
+                    "computed": true,
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "scope_type": {
+                          "computed": true,
+                          "description": "The scope type for the GCP connector",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "scope_values": {
+                          "computed": true,
+                          "description": "The list of scope values for the GCP connector",
                           "description_kind": "plain",
                           "type": [
                             "set",

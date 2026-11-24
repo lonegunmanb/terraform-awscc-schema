@@ -55,6 +55,47 @@ const awsccNetworksecuritymanagerPolicy = `{
         "description_kind": "plain",
         "nested_type": {
           "attributes": {
+            "igw_firewall_config": {
+              "computed": true,
+              "description": "Internet gateway firewall policy settings. Populated only for IGW_FIREWALL firewall type policies.",
+              "description_kind": "plain",
+              "nested_type": {
+                "attributes": {
+                  "default_subnet_connectivity": {
+                    "computed": true,
+                    "description": "The default internet connectivity treatment applied to subnets in scope unless a subnet connectivity override applies. Required for IGW_FIREWALL policies.",
+                    "description_kind": "plain",
+                    "type": "string"
+                  },
+                  "subnet_connectivity_overrides": {
+                    "computed": true,
+                    "description": "An ordered list of subnet connectivity overrides. When a subnet matches more than one override, the first match applies. At most one override per connectivity type.",
+                    "description_kind": "plain",
+                    "nested_type": {
+                      "attributes": {
+                        "connectivity_type": {
+                          "computed": true,
+                          "description": "The connectivity treatment applied to the subnets that the referenced scope selects.",
+                          "description_kind": "plain",
+                          "type": "string"
+                        },
+                        "scopes": {
+                          "computed": true,
+                          "description": "The ARN of the IGW_FIREWALL_SUBNET_CONNECTIVITY_OVERRIDE scope whose selected subnets receive ConnectivityType.",
+                          "description_kind": "plain",
+                          "type": [
+                            "list",
+                            "string"
+                          ]
+                        }
+                      },
+                      "nesting_mode": "list"
+                    }
+                  }
+                },
+                "nesting_mode": "single"
+              }
+            },
             "remediation_enabled": {
               "computed": true,
               "description": "Controls automatic remediation of non-compliant resources.",

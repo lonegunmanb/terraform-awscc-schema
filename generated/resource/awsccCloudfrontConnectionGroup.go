@@ -106,6 +106,22 @@ const awsccCloudfrontConnectionGroup = `{
           "nesting_mode": "list"
         },
         "optional": true
+      },
+      "viewer_fallback": {
+        "computed": true,
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "distribution_id": {
+              "computed": true,
+              "description_kind": "plain",
+              "optional": true,
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        },
+        "optional": true
       }
     },
     "description": "The connection group for your distribution tenants. When you first create a distribution tenant and you don't specify a connection group, CloudFront will automatically create a default connection group for you. When you create a new distribution tenant and don't specify a connection group, the default one will be associated with your distribution tenant.",

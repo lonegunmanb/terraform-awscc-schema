@@ -83,6 +83,31 @@ const awsccAppintegrationsApplication = `{
         "description_kind": "plain",
         "type": "string"
       },
+      "auth_config": {
+        "computed": true,
+        "description": "The authentication configuration. Required when ApplicationType is A2A_SERVER.",
+        "description_kind": "plain",
+        "nested_type": {
+          "attributes": {
+            "audience_override": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "auth_type": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            },
+            "credential_provider_identifier": {
+              "computed": true,
+              "description_kind": "plain",
+              "type": "string"
+            }
+          },
+          "nesting_mode": "single"
+        }
+      },
       "description": {
         "computed": true,
         "description": "The application description.",
@@ -132,6 +157,18 @@ const awsccAppintegrationsApplication = `{
         "description": "Indicates if the application is a service",
         "description_kind": "plain",
         "type": "bool"
+      },
+      "last_modified_region": {
+        "computed": true,
+        "description": "The region in which the application was last modified.",
+        "description_kind": "plain",
+        "type": "string"
+      },
+      "last_modified_time": {
+        "computed": true,
+        "description": "The time when the application was last modified.",
+        "description_kind": "plain",
+        "type": "string"
       },
       "name": {
         "computed": true,
